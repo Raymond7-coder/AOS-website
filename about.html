@@ -478,12 +478,39 @@
 						thrive.</p
 					>
 				</div>
-				<div
-					class="border-[30px] h-35 w-60 xsm:w-80 border-primary flex items-center justify-center"
-				>
+				<div class="relative flex items-center justify-center" style="width: 430px; height: 260px;">
+					<!-- LEFT GREEN BRACKET -->
+
+					<div
+		              style="
+			             position: absolute;
+			             left: 0;
+			             width: 80px;
+			             height: 220px;
+			             border-left: 30px solid #019b39;
+			             border-top: 30px solid #019b39;
+			              border-bottom: 30px solid #019b39;
+		                "
+						></div>
+
+	                    <!-- RIGHT GREEN BRACKET -->
+	                    <div
+		                    style="
+			                   position: absolute;
+			                   right: 0;
+			                   width: 80px;
+			                   height: 220px;
+			                   border-right: 30px solid #019b39;
+			                   border-top: 30px solid #019b39;
+			                   border-bottom: 30px solid #019b39;
+	              	       "
+	                    ></div>
+
+				     <!-- VIDEO / SLIDESHOW -->
 					<video
 						src="./videos/about.mp4"
-						class="object-cover object-top w-40 h-40 -mt-5 -mb-5 sm:-mt-7.5 sm:-mb-7.5 bg-amber-200"
+						style="width: 320px; height: 310px; z-index: 2;"
+						class="object-cover object-top"
 						loop
 						muted
 						autoplay
