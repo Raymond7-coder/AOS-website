@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS Orwell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+   <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
+        <a href="/index.html"><img src="./images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
+
+        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
+            <span
+					id="nav-highlight"
+					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
+					style="
+						background: white;
+						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;"
+				></span>
+            <a href="about.html"  onmouseenter="showAboutLinks()" >About Us</a>
+            <a href="services.html" class="text-primary " onmouseenter="showServiceLinks()">Services</a>
+            <a href="hse.html">QHSE</a>
+            <a href="media.html"  onmouseenter="showMediaLinks()">Media</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+
+        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
+            <img src="./images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
+            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
+                <a href="about.html" class="hover:text-secondary">Our Story</a>
+                <a href="management.html" class="hover:text-secondary">Management</a>
+                <a href="board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
+            </div>
+        </div>
+
+        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
+            <img src="./images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
+            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
+                <a href="corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
+                <a href="gallery.html" class="hover:text-secondary">Our Gallery</a>
+                <a href="news.html" class="hover:text-secondary">News/Press Releases</a>
+                <a href="blog.html" class="hover:text-secondary">Blog</a>
+            </div>
+        </div>
+    
+        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
+            <img src="./images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
+            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
+                <a href="well-construction.html" class="hover:text-secondary">Well Construction</a>
+                <a href="process-management.html" class="hover:text-secondary">Process Management</a>
+                <a href="new-services.html" class="hover:text-secondary">New Services / O&M</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
+			<div class="flex flex-col space-y-4 text-black text-sm">
+				<!-- About Us with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
+						<span>About Us</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="about-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="about.html" class="hover:text-primary">Our Story</a>
+							<a href="management.html" class="hover:text-primary">Management</a>
+							<a href="board-of-directors.html" class="hover:text-primary">Board of Directors</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Services with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
+						<span>Services</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="services-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="well-construction.html" class="hover:text-primary">Well Construction</a>
+							<a href="process-management.html" class="hover:text-primary">Process Management</a>
+							<a href="new-services.html" class="hover:text-primary">New Services / O&M</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- QHSE (no dropdown) -->
+				<a href="hse.html" class="hover:text-primary transition py-2">QHSE</a>
+
+				<!-- Media with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
+						<span>Media</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="media-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
+							<a href="gallery.html" class="hover:text-primary">Our Gallery</a>
+							<a href="news.html" class="hover:text-primary">News/Press Releases</a>
+							<a href="blog.html" class="hover:text-primary">Blog</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Careers (no dropdown) -->
+				<a href="careers.html" class="hover:text-primary transition py-2">Careers</a>
+
+				<!-- Contact Us (no dropdown) -->
+				<a href="contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
+			</div>
+		</div>
+
+
+
+    <section id="services" class="processmanagement  gap-y-10 items-center relative">
+        <div class="w-full h-full bg-black/50   flex flex-col gap-y-4 items-center py-30 px-6 md:px-20  text-center">
+            <h1 class="text-xl xsm:text-2xl lg:text-3xl font-bold text-white bouncein">Electrical & Instrumentation (E&I)</h1>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose bouncein">Wide range of products, solutions and turnkey services for Electrical and Instrumentation and Automation & Control</p>
+        </div>
+    </section>
+
+    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20 slidein">
+        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-20 md:mt-20 items-center w-full xl:w-5/6 mb-10">
+            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
+                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
+                <img src="./images/elect.jpeg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
+            </div>
+
+            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
+                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
+              <h3 class="text-base sm:text-lg font-semibold text-black">
+  Mechanical, Electrical & Instrumentation (M, E&I) Services
+</h3>
+
+<p class="text-xs sm:text-[13px] text-gray-600 leading-loose text-justify">
+  AOS Orwell Electrical & Instrumentation (E&I) offers a wide range of products, solutions and turnkey services for electricity distribution and control, across various sectors: Industries, Utilities, Buildings, Residences. We are a leading distributor of high-quality electrical equipment. Our commitment to quality and customer satisfaction is reflected in the exceptional products we offer and the exceptional service we provide. Our business offerings improve the reliability and efficiency of its customers’ activities across all major industries including the residential sector. Our single-point solutions philosophy delivers value, spanning system design, application engineering, application software, product selection, control & monitoring systems, commissioning and lifecycle management.
+</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
+        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 bouncein">
+            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
+                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
+                <img src="./images/tion3.jpg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
+            </div>
+
+      <div class="flex flex-col gap-y-2 w-full md:w-1/2">
+                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
+                <h3 class="text-base sm:text-lg font-semibold text-white">E House Integrated Solutions</h3>
+                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Field Auxillary Room ( FAR ) Relocatable Pre Fabricated Containerized Buildings for housing of equipment : ICSS ( Integrated Control Safety System ) , Power Distribution & Management System, UPS, Switchgear, FGS, Telecommunication. Bundled offerings including design & engineering and construction; incorporates auxillary equipment. Our products include a wide range of switchgear and equipment for different applications, including low voltage switchgear, medium voltage switchgear, distribution boards, control panels, transformers, and more. All of our products are manufactured to the highest standards and are tested rigorously before leaving our factory to ensure their reliability and safety.
+                           
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-20 py-16 w-full bg-green-100">
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- Title -->
+    <h2 class="text-green-600 font-semibold text-lg md:text-xl mb-10">
+      In-country engineering capabilities for specialized systems as;
+    </h2>
+
+    <!-- Grid List -->
+    <div class="grid sm:grid-cols-2 gap-10 text-left text-gray-700 text-sm md:text-base">
+      
+      <ul class="space-y-4">
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Integrated Control and Safety Systems
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Substations & Field Auxiliary Control Room
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Switchgear, Motors, LV Panels
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          PCS, DCS, PLC, PACs, RTU and HMI systems
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Modular Substations and Blast-proof E-houses
+        </li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Field Instrumentation Systems and Testing (Bench Testing, Calibration, Loop Checking)
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Security Systems (Access Control, CCTV, Intercom, PA) installation
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          Safety Systems installation & commissioning services
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600">✔</span>
+          SCADA systems installation & commissioning services
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+    <section class="px-6 md:px-20 py-10 w-full">
+  <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+    
+    <!-- Card 1 -->
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/tion1.jpg" alt="LV & MV Switchgear" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">LV & MV Switchgear</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">
+          Our low voltage switchgear is designed for use in a wide range of applications, including residential, commercial, and industrial settings. It includes panel boards, distribution boards, MCCBs, and more. Our low voltage switchgear is built to withstand the toughest conditions and provide reliable performance. From circuit breakers and buses to enclosures, panel boards and switchboards, we offer a full range of safe, reliable solutions for low-voltage electrical distribution applications.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/panel.jpg" alt="Control Panels" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Control Panels</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">
+          Our control panels are designed for use in a wide range of applications, including motor control, lighting control, and HVAC control. We can customize our control panels to meet your specific requirements, ensuring that you get exactly what you need to meet your electrical needs.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/tion2.jpg" alt="Busbar Trunking and Cable Management" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Busbar Trunking and Cable Management</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">
+          Busbar Trunking System is the is a system of distributing electric power using copper or aluminium busbar with suitable enclosures and good amount of protection to prevent the cables from getting damaged due to foreign bodies. The compact size and flexible design requires limited space and results in the availability of more usable floor area on every floor, adds a touch of elegance to the ambiance, and reduces on-site installation time.
+        </p>
+      </div>
+    </div>
+
+    <!-- Duplicate the structure for the remaining 6 cards -->
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/tion4.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Transformers</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">We offer a wide range of transformers, including distribution transformers, power transformers, dry-type transformers, oil-immersed transformers and special transformers. Our transformers are designed to provide reliable performance and are built to the highest standards. Our transformers are designed to provide reliable and safe operation in various applications, including residential, commercial, and industrial settings. We also offer customized transformers to meet specific requirements.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/light.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Lighting & Controls</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">We deliver a range of innovative and reliable indoor and outdoor lighting and controls solutions, specifically designed to maximize performance, energy efficiency and safety.
+
+LED solutions from our OEMs are built to withstand the toughest conditions, deliver maximum lighting performance and safety, and reduce expensive maintenance costs. Our SMEs work with your team to consider about the key factors when selecting LED luminaires for your industrial lighting application.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/drives.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Drives & Motors</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">We offer a variety of drives and motors, including AC drives, DC drives, servo drives, stepper motors, and more. Our drives and motors are designed to provide reliable and efficient operation in various applications, including industrial machinery, robotics, and automation systems. We also offer customized drives and motors to meet specific requirements.
+
+Our AC drives are designed for use with AC motors and provide precise control over motor speed and torque. Our drives are manufactured using high-quality materials and are designed to be energy-efficient and reliable.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/tion5.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Industrial UPS Systems</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">We offer a variety of industrial UPS systems, including single-phase and three-phase UPS systems, modular UPS systems, and more. Our UPS systems are designed to provide reliable and uninterrupted power supply in various applications, including industrial machinery, data centers, and critical facilities.
+
+Our single-phase and three-phase UPS systems are designed to provide reliable and uninterrupted power supply in various applications.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/training.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">E&I Training Facility</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">Training Center in Port Harcourt, Nigeria Training courses in field instrumentations and control systems
+
+Certified trainers
+
+600+ local engineers trained in Western Africa on Emerson Products and Systems
+
+Extended to offer E&I training courses</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
+      <img src="./images/tion6.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
+      <div class="p-5">
+        <h3 class="font-bold text-lg mb-2">Aftersales Support Services</h3>
+        <div class="w-12 h-1 bg-red-600 mb-3"></div>
+        <p class="text-gray-600 text-sm">AOS ORWELL provides post-installation and commissioning activities, with 24x7 resident support and OEMs packaged solutions.
+
+Design, Engineering, Assembly, FAT
+Installation & Commissioning Support
+Site Preparation E&I works
+Annual Maintenance Contracts
+Training</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
+      <!-- Logo + Nav -->
+      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
+        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
+        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="hse.html">QHSE</a>
+          <a href="media.html">Media</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    
+      <!-- Footer Content -->
+    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
+      <!-- Company Info -->
+      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
+        <div class="w-full">
+          <p class="text-xs sm:text-[13px] font-medium leading-loose">
+            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
+            Our service offerings cover Wellbore Construction, Process Automation & Control, 
+            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          </p>
+          <!-- Social -->
+        <div class="mt-5 flex flex-col gap-y-2">
+          <h3 class="text-base font-medium">Stay Connected</h3>
+          <div class="flex gap-x-3">
+            <!-- Facebook -->
+            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-youtube text-white text-lg"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-instagram text-white text-lg"></i>
+            </a>
+            <!-- X (Twitter) -->
+            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-twitter-x text-white text-lg"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-linkedin text-white text-lg"></i>
+            </a>
+          </div>
+        </div>
+        </div>
+        
+    
+      </div>
+      <!-- Locations + Email -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
+        <div class="flex flex-col gap-y-3">
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+          </div>
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
+          </div>
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-sm">Ghana Office</p>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
+          </div>
+        </div>
+  
+        
+      </div>
+    
+      <!-- Links + Social -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+        <h4 class="font-medium text-sm sm:text-base">Links</h4>
+        <div class="flex flex-col gap-y-2">
+          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
+          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
+          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
+          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
+          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
+          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+        </div>
+        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+        <div class="flex flex-col gap-y-1">
+          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
+          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
+        </div>
+    
+        
+      </div>
+
+    
+      <!-- Contact -->
+      <div class="w-full lg:w-2/5">
+        <h4 class="font-medium text-base">Contact Us</h4>
+        <form class="flex flex-col gap-y-5 mt-2">
+          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
+          <div class="w-full flex justify-end">
+            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    </footer>
+    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
+    
+     
+    <script src="./index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animation functions
+            function slideIn(element) {
+                Motion.animate(element, {
+                    opacity: 1,
+                    transform: "translateX(0)"
+                }, {
+                    duration: 0.8,
+                    easing: "ease-out"
+                });
+            }
+
+            function fadeIn(element) {
+                Motion.animate(element, {
+                    opacity: 1
+                }, {
+                    duration: 1,
+                    easing: "ease-out"
+                });
+            }
+
+            function bounceIn(element) {
+                Motion.animate(element, {
+                    opacity: 1,
+                    transform: "scale(1)"
+                }, {
+                    duration: 0.6,
+                    easing: [0.175, 0.885, 0.32, 1.275]
+                });
+            }
+
+            function slideInRight(element) {
+                Motion.animate(element, {
+                    opacity: 1,
+                    transform: "translateX(0)"
+                }, {
+                    duration: 0.8,
+                    easing: "ease-out"
+                });
+            }
+
+            // Set up Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('slidein')) {
+                            slideIn(entry.target);
+                        }
+                        else if (entry.target.classList.contains('fadein')) {
+                            fadeIn(entry.target);
+                        }
+                        else if (entry.target.classList.contains('bouncein')) {
+                            bounceIn(entry.target);
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all animated elements
+            document.querySelectorAll('.slidein, .fadein, .bouncein').forEach(el => {
+                // Set initial styles
+                if (el.classList.contains('slidein')) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateX(-50px)';
+                }
+                else if (el.classList.contains('fadein')) {
+                    el.style.opacity = '0';
+                }
+                else if (el.classList.contains('bouncein')) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'scale(0.8)';
+                }
+                
+                observer.observe(el);
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
+

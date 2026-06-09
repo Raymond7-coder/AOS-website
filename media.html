@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AOS Orwell</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Icons -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+		/>
+
+		<!-- Tailwind Output -->
+		<link rel="stylesheet" href="output.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+		/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+		<!-- GSAP -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	</head>
+	<script type="text/javascript">
+		/* curator-feed-default-feed-layout */
+		(function(){
+			var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+			i.src="https://cdn.curator.io/published/9e4f6e6a-5f60-42dc-af64-6670974939c9.js";
+			e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+		})();
+	</script>
+	<body class="bg-[#F5F5F5] relative overflow-x-hidden transition">
+		<!-- ✅ NAVIGATION -->
+		<nav
+			class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300"
+			onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()"
+		>
+			<a href="/index.html"
+				><img src="./images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"
+			/></a>
+
+			<div
+				id="nav-link"
+				class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative"
+			>
+				<span
+					id="nav-highlight"
+					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
+					style="
+						background: white;
+						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
+					"
+				></span>
+				<a href="about.html" onmouseenter="showAboutLinks()">About Us</a>
+				<a href="services.html" onmouseenter="showServiceLinks()">Services</a>
+				<a href="hse.html">QHSE</a>
+				<a href="media.html" onmouseenter="showMediaLinks()" class="text-primary">Media</a>
+				<a href="careers.html">Careers</a>
+				<a href="contact-us.html">Contact Us</a>
+			</div>
+
+			<button
+				id="mobile-menu-button"
+				class="lg:hidden text-black focus:outline-none"
+			>
+				<svg
+					class="w-6 h-6"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h16"
+					></path>
+				</svg>
+			</button>
+
+			<div
+				id="aboutLinks"
+				onmouseleave="hideAboutLinks()"
+				class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3 xl:w-1/2"
+			>
+				<img
+					src="./images/group12.png"
+					alt=""
+					class="w-60 lg:w-60 xl:w-80 h-auto"
+				/>
+				<div class="text-primary flex flex-col gap-y-4 text-base font-semibold">
+					<a href="about.html" class="hover:text-secondary">Our Story</a>
+					<a href="management.html" class="hover:text-secondary">Management</a>
+					<a href="board-of-directors.html" class="hover:text-secondary"
+						>Board of Directors</a
+					>
+				</div>
+			</div>
+
+			<div
+				id="mediaLinks"
+				onmouseleave="hideMediaLinks()"
+				class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3 xl:w-[55%]"
+			>
+				<img
+					src="./images/medianav.png"
+					alt=""
+					class="w-60 lg:w-60 xl:w-80 h-auto"
+				/>
+				<div class="text-primary flex flex-col gap-y-4 text-base font-semibold">
+					<a
+						href="corporate-social-responsibility.html"
+						class="hover:text-secondary"
+						>Corporate Social Responsibility</a
+					>
+					<a href="gallery.html" class="hover:text-secondary">Our Gallery</a>
+					<a href="news.html" class="hover:text-secondary"
+						>News/Press Releases</a
+					>
+					<a href="blog.html" class="hover:text-secondary">Blog</a>
+				</div>
+			</div>
+
+			<div
+				id="serviceLinks"
+				onmouseleave="hideServiceLinks()"
+				class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3 xl:w-1/2"
+			>
+				<img
+					src="./images/serviceNav.png"
+					alt=""
+					class="w-60 lg:w-60 xl:w-80 h-auto"
+				/>
+				<div class="text-primary flex flex-col gap-y-4 text-base font-semibold">
+					<a href="well-construction.html" class="hover:text-secondary"
+						>Well Construction</a
+					>
+					<a href="process-management.html" class="hover:text-secondary"
+						>Process Management</a
+					>
+					<a href="new-services.html" class="hover:text-secondary"
+						>New Services / O&M</a
+					>
+				</div>
+			</div>
+		</nav>
+
+		<div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
+			<div class="flex flex-col space-y-4 text-black text-sm">
+				<!-- About Us with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
+						<span>About Us</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="about-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="about.html" class="hover:text-primary">Our Story</a>
+							<a href="management.html" class="hover:text-primary">Management</a>
+							<a href="board-of-directors.html" class="hover:text-primary">Board of Directors</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Services with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
+						<span>Services</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="services-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="well-construction.html" class="hover:text-primary">Well Construction</a>
+							<a href="process-management.html" class="hover:text-primary">Process Management</a>
+							<a href="new-services.html" class="hover:text-primary">New Services / O&M</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- QHSE (no dropdown) -->
+				<a href="hse.html" class="hover:text-primary transition py-2">QHSE</a>
+
+				<!-- Media with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
+						<span>Media</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="media-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
+							<a href="gallery.html" class="hover:text-primary">Our Gallery</a>
+							<a href="news.html" class="hover:text-primary">News/Press Releases</a>
+							<a href="blog.html" class="hover:text-primary">Blog</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Careers (no dropdown) -->
+				<a href="careers.html" class="hover:text-primary transition py-2">Careers</a>
+
+				<!-- Contact Us (no dropdown) -->
+				<a href="contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
+			</div>
+		</div>
+
+		<!-- ✅ HERO SECTION -->
+		<style>
+			/* Hero sizing + easy cropping variable */
+			#hero {
+				--hero-pos: center center;
+				height: 25vh;
+				min-height: 160px;
+				background-image: url("./images/med.jpg");
+				background-size: cover;
+				background-position: var(--hero-pos);
+				background-repeat: no-repeat;
+				position: relative;
+				overflow: hidden;
+			}
+
+			/* larger viewports */
+			@media (min-width: 768px) {
+				/* md */
+				#hero {
+					height: 35vh;
+				}
+			}
+			@media (min-width: 1024px) {
+				/* lg */
+				#hero {
+					height: 40vh;
+				}
+			}
+
+			/* overlay and text */
+			#hero .hero-overlay {
+				position: absolute;
+				inset: 0;
+				background: rgba(3, 52, 45, 0.55);
+			}
+			#hero .hero-content {
+				position: relative;
+				z-index: 4;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start; /* ✅ text aligned left */
+				text-align: left;
+				padding: 0 1rem;
+				color: #fff;
+			}
+
+			
+		</style>
+
+		<section id="hero" class="w-full ">
+			<div class="hero-overlay" aria-hidden="true"></div>
+
+			<div class="hero-content max-w-4xl mx-auto px-4">
+				<h1 class="text-3xl md:text-5xl font-bold mb-3 slidein">Media</h1>
+				<p class="text-base md:text-lg leading-relaxed max-w-2xl slidein">
+					Stay updated with our latest news, stories, and insights.
+				</p>
+			</div>
+		</section>
+
+		<!-- ✅ Blog Section -->
+		<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 slidein">
+			<!-- Header -->
+			<div class="flex justify-between items-center mb-8">
+				<h2 class="text-3xl font-bold text-gray-800 ">Latest Blog Posts</h2>
+				<a href="blog.html" class="text-green-700 font-semibold hover:underline"
+					>View All →</a
+				>
+			</div>
+
+			<!-- Blog Grid -->
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 ">
+				<!-- Blog Card 1 -->
+				<div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+					<img
+						src="images/blog/tubing.jpg"
+						alt="Blog 1"
+						class="w-full h-48 object-cover rounded-md mb-4"
+					/>
+					<h3 class="text-[13px] xsm:text-sm md:text-base font-semibold text-gray-800 mb-2"
+						>Optimizing Casing Running Through Automated Tubular Running
+						Systems.</h3
+					>
+					<p class="text-gray-600 text-xs sm:text-[13px] mb-4"
+						>In many fields, manual tubular running methods are still being
+						deployed. The operations depend heavily on the use of manually
+						operated..</p
+					>
+					<a
+						href="blog/Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html"
+						class="text-green-700 font-medium hover:underline text-xs sm:text-[13px]"
+						>Read More</a
+					>
+				</div>
+
+				<!-- Blog Card 2 -->
+				<div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+					<img
+						src="images/blog/rentals.jpg"
+						alt="Blog 2"
+						class="w-full h-48 object-cover rounded-md mb-4"
+					/>
+					<h3 class="text-[13px] xsm:text-sm md:text-base font-semibold text-gray-800 mb-2"
+						>Supply Chain Disruptions and Their Impact on Oilfield Equipment
+						Availability.</h3
+					>
+					<p class="text-gray-600 text-xs sm:text-[13px] mb-4"
+						>In the oil and gas industry, every second counts. A well that isn’t
+						drilled on schedule, a maintenance operation that’s delayed, or a
+						missing piece of critical equipment can result in..</p
+					>
+					<a
+						href="blog/Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html"
+						class="text-green-700 font-medium hover:underline text-xs sm:text-[13px]"
+						>Read More</a
+					>
+				</div>
+
+				<!-- Blog Card 3 -->
+				<div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+					<img
+						src="images/blog/service-7.jpg"
+						alt="Blog 3"
+						class="w-full h-48 object-cover rounded-md mb-4"
+					/>
+					<h3 class="text-[13px] xsm:text-sm md:text-base font-semibold text-gray-800 mb-2"
+						>AOS Orwell Employee Community Service Visits Compassionate Centre
+						for Physically Challenged Children.</h3
+					>
+					<p class="text-gray-600 text-xs sm:text-[13px] mb-4"
+						>As part of our ongoing commitment to community engagement, members
+						of the AOS Orwell Employee Community Service visited the
+						Compassionate Centre for..</p
+					>
+					<a
+						href="blog/AOS-Orwell-Employee-Community-Service-Visits-Compassionate-Centre-for-Physically-Challenged-Children.html"
+						class="text-green-700 font-medium hover:underline text-xs sm:text-[13px]"
+						>Read More</a
+					>
+				</div>
+			</div>
+		</section>
+
+		<!-- ✅ PRESS SECTION -->
+		<section class="relative w-full py-16 bg-secondarybg bouncein">
+			<div class="relative max-w-7xl mx-auto px-6 md:px-12 ">
+				<!-- Header -->
+				<div class="flex justify-between items-center mb-12 ">
+					<h2 class="text-3xl font-bold text-white slideinup">Press Release</h2>
+					<a href="news.html" class="text-red-200 font-semibold hover:underline"
+						>More Press Releases →</a
+					>
+				</div>
+
+				<!-- Grid -->
+				<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 slideinup">
+					<!-- Release Card 1 -->
+					<div
+						class="rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg transition flex flex-col"
+					>
+						<!-- Card Image -->
+						<img
+							src="./images/news/naice2025.jpg"
+							alt="Press Release 1"
+							class="w-full h-40 object-cover"
+						/>
+						<div class="p-6 flex flex-col">
+							<span class="text-sm font-medium text-gray-200 mb-2"
+								>July 2025</span
+							>
+							<h3 class="text-lg font-semibold text-white mb-3"
+								>From Conversations to Connections: AOS Orwell at SPE NAICE
+								2025.</h3
+							>
+							<p class="text-gray-200 text-sm mb-4 flex-grow">
+								Lagos, Nigeria – At this year’s Society of Petroleum Engineers
+								Nigeria Annual International Conference and Exhibition (SPE
+								NAICE 2025), AOS Orwell didn’t just put up a booth, we...
+							</p>
+							<a
+								href="news/spenaice2025.html"
+								class="text-red-200 font-medium hover:underline"
+								>Read More</a
+							>
+						</div>
+					</div>
+
+					<!-- Release Card 2 -->
+					<div
+						class="rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg transition flex flex-col"
+					>
+						<!-- Card Image -->
+						<img
+							src="./images/news/abb.jpg"
+							alt="Press Release 2"
+							class="w-full h-40 object-cover"
+						/>
+						<div class="p-6 flex flex-col">
+							<span class="text-sm font-medium text-gray-200 mb-2"
+								>July 2025</span
+							>
+							<h3 class="text-lg font-semibold text-white mb-3"
+								>ABB President Visits AOS Orwell Office in Lagos to Strengthen
+								Strategic Partnership.</h3
+							>
+							<p class="text-gray-200 text-sm mb-4 flex-grow">
+								AOS Orwell, a leading indigenous oil and gas solutions provider
+								in Nigeria, was honoured to welcome Mr. Kiran Dutt, President –
+								Electrification, ABB..
+							</p>
+							<a href="#" class="text-red-200 font-medium hover:underline"
+								>Read More</a
+							>
+						</div>
+					</div>
+
+					<!-- Release Card 3 -->
+					<div
+						class="rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg transition flex flex-col"
+					>
+						<!-- Card Image -->
+						<img
+							src="./images/news/otc.jpg"
+							alt="Press Release 3"
+							class="w-full h-40 object-cover"
+						/>
+						<div class="p-6 flex flex-col">
+							<span class="text-sm font-medium text-gray-200 mb-2"
+								>May 2025</span
+							>
+							<h3 class="text-lg font-semibold text-white mb-3"
+								>Building Global Bridges: AOS Orwell at OTC 2025</h3
+							>
+							<p class="text-gray-200 text-sm mb-4 flex-grow">
+								Over the course of the week, our team engaged with international
+								prospects, technology partners, and industry stakeholders from
+								across the energy value chain.....
+							</p>
+							<a href="#" class="text-red-200 font-medium hover:underline"
+								>Read More</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ✅ GALLERY SECTION -->
+		<section class="w-full bg-[#F5F5F5] py-16 slideinup">
+			<div class="max-w-7xl mx-auto px-6 md:px-12">
+				<!-- Header -->
+				<div class="flex justify-between items-center mb-6">
+					<div>
+						<h2 class="text-2xl font-bold text-gray-800 slideinup">Our Gallery</h2>
+						<p class="text-gray-600 text-sm"
+							>Moments from projects, community events, and our people.</p
+						>
+					</div>
+					<a
+						href="gallery.html"
+						class="text-green-700 font-semibold hover:underline"
+						>View all</a
+					>
+				</div>
+
+				<!-- Gallery Grid -->
+				<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
+						<img
+							src="./images/otc1.jpg"
+							alt=""
+							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
+						/>
+						<a
+							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
+							href="./gallery/offshore-technology-conference.html"
+							rel="noopener noreferrer"
+						>
+							Offshore Technology Conference (OTC) (2025)
+						</a>
+					</div>
+					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
+						<img
+							src="./images/saipec7.jpg"
+							alt=""
+							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
+						/>
+						<a
+							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
+							href="./gallery/saipec-2025.html"
+							rel="noopener noreferrer"
+						>
+							SAIPEC(2025)
+						</a>
+					</div>
+					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
+						<img
+							src="./images/naice2025.jpg"
+							alt=""
+							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
+						/>
+						<a
+							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
+							href="./gallery/spe-naice-2025.html"
+							rel="noopener noreferrer"
+						>
+							SPE NAICE (2025)
+						</a>
+					</div>
+					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
+						<img
+							src="./images/endress1.jpg"
+							alt=""
+							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
+						/>
+						<a
+							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
+							href="./gallery/AOS-Orwell-host-Flow-Measurement-Seminar-with-Endress-Hauser.html"
+							rel="noopener noreferrer"
+						>
+							AOS Orwell host Flow Measurement Seminar with Endress+Hauser
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ✅ VIDEOS OF EVENTS SECTION -->
+		<section class="w-full bg-[#FFF] py-20 bouncein">
+			<div class="max-w-7xl mx-auto px-6 md:px-12">
+				<!-- Header -->
+				<div class="flex justify-between items-center mb-6">
+					<div>
+						<h2 class="text-2xl font-bold text-gray-800 ">Videos of Events</h2>
+						<p class="text-gray-600 text-sm"
+							>Highlights and recaps from our programmes and operations.</p
+						>
+					</div>
+					<a
+						href="./gallery.html"
+						class="text-green-700 font-semibold hover:underline"
+						>View all</a
+					>
+				</div>
+
+				<!-- Video Grid -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+					<div
+						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
+					>
+						<iframe
+							class="w-full h-full rounded-md"
+							src="https://www.youtube.com/embed/jyKwPcb4Ico?si=soRy2Q_xgX2vI1Ep"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</div>
+					<div
+						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
+					>
+						<iframe
+							class="w-full h-full rounded-md"
+							src="https://www.youtube.com/embed/GqTVfdFd_Jg?si=agMNVzs8Uwww5ZeN"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</div>
+					<div
+						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
+					>
+						<iframe
+							class="w-full h-full rounded-md"
+							src="https://www.youtube.com/embed/zC9kw4-KtN4?si=BTuxUHkzb7RufMQV"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</div>
+					<div
+						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
+					>
+						<iframe
+							class="w-full h-full rounded-md"
+							src="https://www.youtube.com/embed/5_avpifAv-A?si=7CPAzw-ekEIl7V4C"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<!-- ✅ CORPORATE CATALOGUE DOWNLOAD -->
+<section class="relative w-full py-16 bg-secondarybg slidein"  id="catalogue">
+<div class="relative max-w-7xl mx-auto px-6 md:px-12 ">
+    <!-- Centered header -->
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white text-center slideinup">
+      Download our catalogue
+    </h2>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <!-- Left: Text -->
+      <div class="space-y-5 max-w-2xl mx-auto lg:mx-0">
+       <h3 class="text-lg md:text-xl font-semibold text-gray-200 mb-3">
+  Download Our Corporate Catalogue
+</h3>
+
+<p class="text-gray-300 text-sm md:text-base leading-relaxed text-justify">
+  Explore our full range of services and solutions in one place. Download the AOS Orwell Corporate
+  Catalogue to learn more about how we deliver excellence across the energy, power, and industrial sectors.
+</p>
+
+        <p class="text-gray-300 text-sm md:text-base leading-relaxed text-justify">
+          Inside, you’ll find detailed information on our capabilities in Well Construction, Process Management,
+          Automation, and Operations &amp; Maintenance. From advanced technologies to proven expertise, the catalogue
+          showcases how AOS Orwell partners with clients to optimize performance, reduce risk, and achieve operational
+          success.
+        </p>
+      </div>
+
+      <!-- Right: Image -->
+<div class="flex flex-col items-center justify-center">
+  <a href="javascript:void(0)" onclick="openDownloadModal()" aria-label="Open download form">
+    <img
+      src="images/cover.png"
+      alt="AOS Orwell Corporate Catalogue"
+      class="w-auto max-h-[400px] rounded-xl shadow-lg object-contain transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-900/50"
+    />
+  </a>
+  
+  <!-- Download Icon -->
+  <a href="images/cover.png" download class="mt-4" aria-label="Download Catalogue">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-700 hover:text-green-900 transition" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M3 14a1 1 0 011-1h3v2H5v2h10v-2h-2v-2h3a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4zm7-12a1 1 0 011 1v7h2.586a.5.5 0 01.354.854l-3.586 3.586a.5.5 0 01-.708 0L7.06 11.707A.5.5 0 017.414 11H10V3a1 1 0 011-1z" clip-rule="evenodd"/>
+    </svg>
+  </a>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ✅ COMPACT SQUARE-STYLE DOWNLOAD MODAL -->
+<div id="downloadModal"
+     class="fixed inset-0 z-10 hidden items-center justify-center bg-black/50 p-4"
+     aria-hidden="true">
+  <div
+    class="max-sm:w-full w-[420px] rounded-2xl bg-white p-6 pt-8 shadow-xl relative text-center"
+    role="dialog" aria-modal="true" aria-labelledby="catalogueTitle"
+  >
+    <!-- Close button -->
+    <button
+      type="button"
+      class="flex w-full align-right justify-end text-red-600 text-gray-400 hover:text-gray-600 text-xl leading-none"
+      aria-label="Close download form"
+      onclick="closeDownloadModal()"
+    >
+      &times;
+    </button>
+
+    <!-- Logo -->
+    <div class="flex justify-center mb-4">
+      <img src="./images/jogo.png" alt="AOS Orwell Logo" class="h-8 object-contain" />
+    </div>
+
+    <!-- Copy -->
+    <h4 id="catalogueTitle" class="text-base font-semibold text-gray-900 mb-1">
+      Before you download
+    </h4>
+    <p class="text-sm text-gray-600 mb-4">
+      Please provide your details to receive the corporate catalogue.
+    </p>
+
+    <!-- Form -->
+    <form id="catalogueForm" onsubmit="handleCatalogueSubmit(event)" class="space-y-3 text-left">
+      <div>
+        <label class="block text-xs font-medium text-gray-700 mb-1">Name</label>
+        <input type="text" name="name" required
+               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-gray-700 mb-1">Organisation</label>
+        <input type="text" name="organisation" required
+               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-gray-700 mb-1">Designation</label>
+        <input type="text" name="designation" required
+               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" name="email" required
+               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
+      </div>
+
+      <p class="text-[11px] text-gray-500">
+        We respect your privacy. Your details are used only to share the catalogue and related updates.
+      </p>
+
+      <div class="flex items-center justify-center gap-3 pt-1">
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+          style="background-color:#2e7d32"
+        >
+          Submit &amp; Download
+        </button>
+        <button type="button" onclick="closeDownloadModal()" class="text-sm text-gray-600 hover:underline">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+		<!-- SOCIAL MEDIA SECTION -->
+		<div class="bg-white p-4 bouncein">
+			<h3 class="text-base sm:text-lg font-bold "
+				>Follow us on Social Media</h3
+			>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+				<!-- INSTAGRAM WIDGET -->
+				<div class="w-full">
+					<blockquote
+						class="instagram-media"
+						data-instgrm-permalink="https://www.instagram.com/aosorwell/"
+						data-instgrm-version="14"
+						style="
+							background: #fff;
+							border: 0;
+							border-radius: 3px;
+							box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
+								0 1px 10px 0 rgba(0, 0, 0, 0.15);
+							margin: 1px;
+							max-width: 400px;
+							min-width: 326px;
+							padding: 0;
+							width: 100%;
+						"
+					>
+						<div style="padding: 16px">
+							<a
+								href="https://www.instagram.com/aosorwell/"
+								style="
+									background: #ffffff;
+									line-height: 0;
+									padding: 0 0;
+									text-align: center;
+									text-decoration: none;
+									width: 100%;
+								"
+								target="_blank"
+							>
+								<div
+									style="
+										display: flex;
+										flex-direction: row;
+										align-items: center;
+									"
+								>
+									<div
+										style="
+											background-color: #f4f4f4;
+											border-radius: 50%;
+											flex-grow: 0;
+											height: 40px;
+											margin-right: 14px;
+											width: 40px;
+										"
+									></div>
+									<div
+										style="
+											display: flex;
+											flex-direction: column;
+											flex-grow: 1;
+											justify-content: center;
+										"
+									>
+										<div
+											style="
+												background-color: #f4f4f4;
+												border-radius: 4px;
+												flex-grow: 0;
+												height: 14px;
+												margin-bottom: 6px;
+												width: 100px;
+											"
+										></div>
+										<div
+											style="
+												background-color: #f4f4f4;
+												border-radius: 4px;
+												flex-grow: 0;
+												height: 14px;
+												width: 60px;
+											"
+										></div>
+									</div>
+								</div>
+								<div style="padding: 19% 0"></div>
+								<div
+									style="
+										display: block;
+										height: 50px;
+										margin: 0 auto 12px;
+										width: 50px;
+									"
+								></div>
+								<div style="padding-top: 8px">
+									<div
+										style="
+											color: #3897f0;
+											font-family: Arial, sans-serif;
+											font-size: 14px;
+											font-style: normal;
+											font-weight: 550;
+											line-height: 18px;
+										"
+										>View this profile on Instagram</div
+									>
+								</div>
+								<div style="padding: 12.5% 0"></div>
+								<div
+									style="
+										display: flex;
+										flex-direction: row;
+										margin-bottom: 14px;
+										align-items: center;
+									"
+								>
+									<div>
+										<div
+											style="
+												background-color: #f4f4f4;
+												border-radius: 50%;
+												height: 12.5px;
+												width: 12.5px;
+												transform: translateX(0px) translateY(7px);
+											"
+										></div>
+										<div
+											style="
+												background-color: #f4f4f4;
+												height: 12.5px;
+												transform: rotate(-45deg) translateX(3px)
+													translateY(1px);
+												width: 12.5px;
+												flex-grow: 0;
+												margin-right: 14px;
+												margin-left: 2px;
+											"
+										></div>
+										<div
+											style="
+												background-color: #f4f4f4;
+												border-radius: 50%;
+												height: 12.5px;
+												width: 12.5px;
+												transform: translateX(9px) translateY(-18px);
+											"
+										></div>
+									</div>
+									<div style="margin-left: 8px">
+										<div
+											style="
+												background-color: #f4f4f4;
+												border-radius: 50%;
+												flex-grow: 0;
+												height: 20px;
+												width: 20px;
+											"
+										></div>
+										<div
+											style="
+												width: 0;
+												height: 0;
+												border-top: 2px solid transparent;
+												border-left: 6px solid #f4f4f4;
+												border-bottom: 2px solid transparent;
+												transform: translateX(16px) translateY(-4px)
+													rotate(30deg);
+											"
+										></div>
+									</div>
+									<div style="margin-left: auto">
+										<div
+											style="
+												width: 0px;
+												border-top: 8px solid #f4f4f4;
+												border-right: 8px solid transparent;
+												transform: translateY(16px);
+											"
+										></div>
+										<div
+											style="
+												background-color: #f4f4f4;
+												flex-grow: 0;
+												height: 12px;
+												width: 16px;
+												transform: translateY(-4px);
+											"
+										></div>
+										<div
+											style="
+												width: 0;
+												height: 0;
+												border-top: 8px solid #f4f4f4;
+												border-left: 8px solid transparent;
+												transform: translateY(-4px) translateX(8px);
+											"
+										></div>
+									</div>
+								</div>
+								<div
+									style="
+										display: flex;
+										flex-direction: column;
+										flex-grow: 1;
+										justify-content: center;
+										margin-bottom: 24px;
+									"
+								>
+									<div
+										style="
+											background-color: #f4f4f4;
+											border-radius: 4px;
+											flex-grow: 0;
+											height: 14px;
+											margin-bottom: 6px;
+											width: 224px;
+										"
+									></div>
+									<div
+										style="
+											background-color: #f4f4f4;
+											border-radius: 4px;
+											flex-grow: 0;
+											height: 14px;
+											width: 144px;
+										"
+									></div>
+								</div>
+							</a>
+						</div>
+					</blockquote>
+				</div>
+				<!-- INSTAGRAM WIDGET END -->
+
+				<!-- TWITTER -->
+				<div class="w-full">
+					<div class="tagembed-widget" style="width:100%;height:95%;overflow:none;" data-widget-id="300515" data-website="1"></div>
+				</div>
+				<!-- LINKEDIN WIDGET -->
+				<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag"></a></div>
+				<!-- LINKEDIN WIDGET END -->
+			</div>
+		</div>
+
+		<!-- NEWSLETTER SECTION -->
+		<section class="newsletter py-16">
+			<div class="max-w-4xl mx-auto px-6">
+				<div
+					class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl shadow border border-dashed border-gray-300 p-8 text-center"
+				>
+					<h2 class="text-2xl font-bold mb-2 slideinup"
+						>Subscribe to our Quarterly Newsletter</h2
+					>
+					<p class="text-gray-600 mb-6"
+						>Get curated stories, case studies, and press updates—once per
+						quarter.</p
+					>
+
+					<form
+						class="flex flex-col md:flex-row items-center gap-4 justify-center"
+					>
+						<input
+							type="text"
+							placeholder="Full name"
+							class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none"
+						/>
+						<input
+							type="email"
+							placeholder="Work email"
+							class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none"
+						/>
+						<button
+							type="submit"
+							class="px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition"
+						>
+							Subscribe
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<footer
+			class="w-full flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+		>
+			<!-- Logo + Nav -->
+			<div
+				class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+			>
+				<img
+					src="./images/jogo.png"
+					alt=""
+					class="h-15 sm:h-20 w-auto object-cover"
+				/>
+				<div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
+					<a href="about.html">About Us</a>
+					<a href="services.html">Services</a>
+					<a href="hse.html">QHSE</a>
+					<a href="media.html">Media</a>
+					<a href="careers.html">Careers</a>
+					<a href="contact-us.html">Contact Us</a>
+				</div>
+			</div>
+
+			<!-- Footer Content -->
+			<div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
+				<!-- Company Info -->
+				<div
+					class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+				>
+					<div class="w-full">
+						<p class="text-xs sm:text-[13px] font-medium leading-loose">
+							We are one of the foremost Indigenous Oilfield Servicing Companies
+							in the country. Our service offerings cover Wellbore Construction,
+							Process Automation & Control, New Services/Operations &
+							Maintenance and Oilfield Tubular & Accessories Manufacturing &
+							Repair.
+						</p>
+						<!-- Social -->
+						<div class="mt-5 flex flex-col gap-y-2">
+							<h3 class="text-base font-medium">Stay Connected</h3>
+							<div class="flex gap-x-3">
+								<!-- Facebook -->
+								<a
+									href="https://www.youtube.com/@aosorwell8369"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-youtube text-white text-lg"></i>
+								</a>
+								<!-- Instagram -->
+								<a
+									href="https://www.instagram.com/aosorwell/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-instagram text-white text-lg"></i>
+								</a>
+								<!-- X (Twitter) -->
+								<a
+									href="https://x.com/AOSOrwell"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-twitter-x text-white text-lg"></i>
+								</a>
+								<!-- LinkedIn -->
+								<a
+									href="https://ng.linkedin.com/company/aosorwell"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-linkedin text-white text-lg"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Locations + Email -->
+				<div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+					<h4 class="font-medium text-sm sm:text-base">Locations</h4>
+					<div class="flex flex-col gap-y-3">
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-[13px] sm:text-sm">Head Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt,
+								Rivers State</p
+							>
+						</div>
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p
+							>
+						</div>
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-sm">Ghana Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful
+								Takoradi, Ghana</p
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Links + Social -->
+				<div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+					<h4 class="font-medium text-sm sm:text-base">Links</h4>
+					<div class="flex flex-col gap-y-2">
+						<a
+							href="about.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Our Story</a
+						>
+						<a
+							href="management.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Management</a
+						>
+						<a
+							href="media.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Media</a
+						>
+						<a
+							href="policies-index.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Policy Statement</a
+						>
+						<a
+							href="whistle-blower.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Whistle Blower</a
+						>
+						<a
+							href="downloadables.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Downloadables</a
+						>
+					</div>
+					<h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+					<div class="flex flex-col gap-y-1">
+						<p class="text-xs sm:text-[13px] text-gray-200"
+							>marketing@aosorwell.com</p
+						>
+						<p class="text-xs sm:text-[13px] text-gray-200"
+							>sales@aosorwell.com</p
+						>
+					</div>
+				</div>
+
+				<!-- Contact -->
+				<div class="w-full lg:w-2/5">
+					<h4 class="font-medium text-base">Contact Us</h4>
+					<form class="flex flex-col gap-y-5 mt-2">
+						<input
+							type="text"
+							placeholder="Company Name"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<input
+							type="text"
+							placeholder="Your Name"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<input
+							type="email"
+							placeholder="Email Address"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<textarea
+							placeholder="Your Message"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+						></textarea>
+						<div class="w-full flex justify-end">
+							<button
+								type="submit"
+								class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+								>SEND</button
+							>
+						</div>
+					</form>
+				</div>
+			</div>
+		</footer>
+		<div
+			class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+			>&copy; 2025 AOS Orwell. All rights reserved.</div
+		>
+
+		<!-- ✅ SCRIPTS -->
+		<script src="./index.js"></script>
+
+		<script async src="//www.instagram.com/embed.js"></script>
+
+		<script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const container = document.getElementById("nav-link"); // Fixed ID typo
+				const links = container.querySelectorAll("a");
+				const highlight = document.getElementById("nav-highlight");
+
+				// Highlight under link on hover
+				links.forEach((link) => {
+					link.addEventListener("mouseenter", () => {
+						const left = link.offsetLeft; // relative to container
+						const width = link.offsetWidth;
+						highlight.style.left = left + "px";
+						highlight.style.width = width + "px";
+					});
+				});
+
+				// Hide highlight when leaving nav
+				container.addEventListener("mouseleave", () => {
+					highlight.style.width = 0;
+				});
+
+				// Change highlight color on scroll
+				window.addEventListener("scroll", () => {
+					if (window.scrollY > 50) {
+						highlight.style.background = "#0B5850"; // dark green
+					} else {
+						highlight.style.background = "white"; // default when navbar is transparent
+					}
+				});
+			});
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// Function to handle counter animation
+				function animateCounter(elementId, targetValue, duration) {
+					const counterElement = document.getElementById(elementId);
+					if (!counterElement) return;
+
+					Motion.animate(0, targetValue, {
+						duration: duration,
+						onUpdate: (latest) => {
+							counterElement.textContent = Math.floor(latest);
+						},
+						onComplete: () => {
+							counterElement.textContent += "+";
+						},
+					});
+				}
+
+				// Animation functions
+				function slideIn(element) {
+					Motion.animate(
+						element,
+						{
+							opacity: 1,
+							transform: "translateX(0)",
+						},
+						{
+							duration: 0.4,
+							easing: "ease-out",
+						},
+					);
+				}
+
+				// Animation functions
+				function slideInup(element) {
+					Motion.animate(
+						element,
+						{
+							opacity: 1,
+							transform: "translateY(0)",
+						},
+						{
+							duration: 0.4,
+							easing: "ease-out",
+						},
+					);
+				}
+
+				function fadeIn(element) {
+					Motion.animate(
+						element,
+						{
+							opacity: 1,
+						},
+						{
+							duration: 0.4,
+							easing: "ease-out",
+						},
+					);
+				}
+
+				function bounceIn(element) {
+					Motion.animate(
+						element,
+						{
+							opacity: 1,
+							transform: "scale(1)",
+						},
+						{
+							duration: 0.6,
+							easing: [0.175, 0.885, 0.32, 1.275], // Bounce easing
+						},
+					);
+				}
+
+				function slideInRight(element) {
+					Motion.animate(
+						element,
+						{
+							opacity: 1,
+							transform: "translateX(0)",
+						},
+						{
+							duration: 0.4,
+							easing: "ease-out",
+						},
+					);
+				}
+
+				// Set up Intersection Observer
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								// Handle class-based animations
+								if (entry.target.classList.contains("slidein")) {
+									slideIn(entry.target);
+								} else if (entry.target.classList.contains("fadein")) {
+									fadeIn(entry.target);
+								} else if (entry.target.classList.contains("bouncein")) {
+									bounceIn(entry.target);
+								}
+								else if (entry.target.classList.contains("slideinup")) {
+									slideInup(entry.target);
+								}
+								// Handle ID-based animations
+								else if (entry.target.id === "count") {
+									animateCounter("count", 1000, 2);
+								} else if (entry.target.id === "count2") {
+									animateCounter("count2", 5000, 4);
+								} else if (entry.target.id === "slider-text") {
+									slideInRight(entry.target);
+								}
+
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					{
+						threshold: 0.3,
+						rootMargin: "0px 0px -50px 0px",
+					},
+				);
+
+				// Observe all animated elements
+				document
+					.querySelectorAll(
+						".slidein, .fadein, .bouncein, .slideinup, #count, #count2, #slider-text",
+					)
+					.forEach((el) => {
+						observer.observe(el);
+					});
+			});
+		</script>
+
+<script>
+  // ✅ Correct PDF path
+  const CATALOGUE_PDF_URL = './docs/ipmupdate.pdf';
+
+  const modal = document.getElementById('downloadModal');
+
+  function openDownloadModal() {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    const firstInput = document.querySelector('#catalogueForm input[name="name"]');
+    if (firstInput) firstInput.focus();
+    document.addEventListener('keydown', escClose);
+  }
+  function closeDownloadModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.removeEventListener('keydown', escClose);
+  }
+  function escClose(e) { if (e.key === 'Escape') closeDownloadModal(); }
+  modal && modal.addEventListener('click', (e) => { if (e.target === modal) closeDownloadModal(); });
+
+  async function handleCatalogueSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (!data.name || !data.organisation || !data.designation || !data.email) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    // TODO: send data to EmailJS/backend if desired
+
+    // Download PDF
+    const a = document.createElement('a');
+    a.href = CATALOGUE_PDF_URL;
+    a.download = '';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    closeDownloadModal();
+    form.reset();
+  }
+</script>
+	</body>
+</html>

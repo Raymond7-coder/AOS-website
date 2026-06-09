@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS Orwell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../output.css">
+</head>
+<body>
+    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
+        <a href="../index.html"><img src=".//images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
+
+        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
+          <span
+					id="nav-highlight"
+					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
+					style="
+						background: white;
+						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
+					"
+				></span>
+            <a href="../about.html"  onmouseenter="showAboutLinks()">About Us</a>
+            <a href="../services.html"  onmouseenter="showServiceLinks()">Services</a>
+            <a href="../hse.html">QHSE</a>
+            <a href="../media.html"  onmouseenter="showMediaLinks()">Media</a>
+            <a href="../careers.html" class="text-primary " >Careers</a>
+            <a href="../contact-us.html">Contact Us</a>
+        </div>
+
+        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
+            <img src=".//images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
+            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
+                <a href="../about.html" class="hover:text-secondary">Our Story</a>
+                <a href="../management.html" class="hover:text-secondary">Management</a>
+                <a href="../board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
+            </div>
+        </div>
+
+        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
+            <img src=".//images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
+            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
+                <a href="../corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
+                <a href="../gallery.html" class="hover:text-secondary">Our Gallery</a>
+                <a href="../news.html" class="hover:text-secondary">News/Press Releases</a>
+                <a href="../blog.html" class="hover:text-secondary">Blog</a>
+            </div>
+        </div>
+    
+        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
+            <img src=".//images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
+            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
+                <a href="../well-construction.html" class="hover:text-secondary">Well Construction</a>
+                <a href="../process-management.html" class="hover:text-secondary">Process Management</a>
+                <a href="../new-services.html" class="hover:text-secondary">New Services / O&M</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
+			<div class="flex flex-col space-y-4 text-black text-sm">
+				<!-- About Us with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
+						<span>About Us</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="about-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="../about.html" class="hover:text-primary">Our Story</a>
+							<a href="../management.html" class="hover:text-primary">Management</a>
+							<a href="../board-of-directors.html" class="hover:text-primary">Board of Directors</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Services with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
+						<span>Services</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="services-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="../well-construction.html" class="hover:text-primary">Well Construction</a>
+							<a href="../process-management.html" class="hover:text-primary">Process Management</a>
+							<a href="../new-services.html" class="hover:text-primary">New Services / O&M</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- QHSE (no dropdown) -->
+				<a href="../hse.html" class="hover:text-primary transition py-2">QHSE</a>
+
+				<!-- Media with dropdown -->
+				<div class="menu-item">
+					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
+						<span>Media</span>
+						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+					<div id="media-submenu" class="submenu pl-6">
+						<div class="flex flex-col space-y-3 py-2">
+							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
+							<a href="../gallery.html" class="hover:text-primary">Our Gallery</a>
+							<a href="../news.html" class="hover:text-primary">News/Press Releases</a>
+							<a href="../blog.html" class="hover:text-primary">Blog</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Careers (no dropdown) -->
+				<a href="../careers.html" class="hover:text-primary transition py-2">Careers</a>
+
+				<!-- Contact Us (no dropdown) -->
+				<a href="../contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
+			</div>
+		</div>
+
+
+
+    <!-- HEADING -->
+
+    <section class="h-[30vh] sm:h-[40vh]  careerbg">
+        <div class="px-4 md:px-20 w-full flex flex-col justify-center items-center h-full bg-black/70">
+            <h1 class="text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-6xl">VACANCY</h1>
+        </div>
+    </section>
+
+    <!-- JOB DETAILS -->
+     <section class="flex flex-col gap-y-5 px-4 md:px-20 py-10 leading-normal">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">Accountant</h2>
+        <div class="flex flex-col gap-y-3 text-xs md:text-sm">
+            <p class="leading-normal">AOS Orwell, an integrated indigenous oilfield services company in Nigeria offering well construction and engineering services to the oil and gas sector. We are currently recruiting for a suitable and qualified accountant to join our team.</p>
+            <p><b>Location:</b> Port Harcourt, Nigeria</p>
+        </div>
+        <ul class="text-xs md:text-sm list-disc flex flex-col gap-y-3 mt-4">
+            <b>RESPONSIBILITIES:</b>
+            <li class="ml-4">Ensures all direct and incidental cost of Assets are duly capitalized</li>
+            <li class="ml-4">Maintains Fixed Asset Register</li>
+            <li class="ml-4">Handles all Monthly prepayment and Amortization</li>
+            <li class="ml-4">Prepares monthly MIS for the Company.</li>
+            <li class="ml-4">Maintains all loans and interest calculations. </li>
+            <li class="ml-4">Prepares Monthly Balance sheet and PL analysis </li>
+        </ul>
+        <ul class="text-xs md:text-sm list-disc flex flex-col gap-y-3 mt-4">
+            <b>QUALIFICATIONS:</b>
+            <li class="ml-4">Bachelor’s degree in Accounting, Finance, Economics, or a related field.</li>
+            <li class="ml-4">Professional Accounting Certification (e.g., ACA, ICAN) is mandatory.</li>
+            <li class="ml-4">5 years’ cognate experience preferably in oil & gas services or related industries.</li>
+            <li class="ml-4">Knowledge of Microsoft Dynamics is an added advantage</li>
+            <li class="ml-4">Excellent analytical, problem-solving, and organisational skills.</li>
+            <li class="ml-4">High attention to detail with a focus on accuracy and compliance. </li>
+            <li class="ml-4">Strong communication and interpersonal skills for effective stakeholder management </li>
+        </ul>
+        <div class="text-xs md:text-sm flex flex-col gap-y-3 mt-4">
+            <b>HOW TO APPLY:</b>
+            <p>Suitable and interested candidates invited to submit their applications to <a href="../mailto:careers@aosorwell.com" class="text-blue-600">careers@aosorwell.com</a>, clearly stating the job title as the subject of the email.</p>
+        </div>
+        <b class="text-xs md:text-sm ">Application closes on the 31st October 2025</b>
+     </section>
+
+
+
+
+
+
+
+
+
+
+    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
+      <!-- Logo + Nav -->
+      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
+        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
+        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
+          <a href="../about.html">About Us</a>
+          <a href="../services.html">Services</a>
+          <a href="../hse.html">QHSE</a>
+          <a href="../media.html">Media</a>
+          <a href="../careers.html">Careers</a>
+          <a href="../contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    
+      <!-- Footer Content -->
+    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
+      <!-- Company Info -->
+      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
+        <div class="w-full">
+          <p class="text-xs sm:text-[13px] font-medium leading-loose">
+            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
+            Our service offerings cover Wellbore Construction, Process Automation & Control, 
+            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          </p>
+          <!-- Social -->
+        <div class="mt-5 flex flex-col gap-y-2">
+          <h3 class="text-base font-medium">Stay Connected</h3>
+          <div class="flex gap-x-3">
+            <!-- Facebook -->
+            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-youtube text-white text-lg"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-instagram text-white text-lg"></i>
+            </a>
+            <!-- X (Twitter) -->
+            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-twitter-x text-white text-lg"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
+               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
+              <i class="bi bi-linkedin text-white text-lg"></i>
+            </a>
+          </div>
+        </div>
+        </div>
+        
+    
+      </div>
+      <!-- Locations + Email -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
+        <div class="flex flex-col gap-y-3">
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+          </div>
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
+          </div>
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-sm">Ghana Office</p>
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
+          </div>
+        </div>
+  
+        
+      </div>
+    
+      <!-- Links + Social -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+        <h4 class="font-medium text-sm sm:text-base">Links</h4>
+        <div class="flex flex-col gap-y-2">
+          <a href="../about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
+          <a href="../management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
+          <a href="../media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
+          <a href="../policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
+          <a href="../whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
+          <a href="../downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+        </div>
+        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+        <div class="flex flex-col gap-y-1">
+          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
+          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
+        </div>
+    
+        
+      </div>
+
+    
+      <!-- Contact -->
+      <div class="w-full lg:w-2/5">
+        <h4 class="font-medium text-base">Contact Us</h4>
+        <form class="flex flex-col gap-y-5 mt-2">
+          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
+          <div class="w-full flex justify-end">
+            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    </footer>
+    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
+
+     
+    <script src="../index.js"></script>
+</body>

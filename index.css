@@ -1,0 +1,554 @@
+/** @format */
+
+@import "tailwindcss";
+@theme {
+	--breakpoint-xs: 350px;
+	--breakpoint-xsm: 450px;
+	--color-primary: #019b39;
+	--color-primarybg: #066828;
+	--color-background: #f8fff8;
+	--color-secondary: #f9030a;
+	--color-secondarybg: #87162c;
+}
+* {
+	font-family: "Poppins", sans-serif;
+}
+body {
+	background-color: whitesmoke;
+}
+button {
+	cursor: pointer;
+}
+@keyframes slide {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-25%);
+	}
+}
+
+@keyframes pulse {
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.eapps-social-feed-posts-item:nth-child(n + 7) {
+	display: none !important;
+}
+
+#footprints {
+	display: flex;
+	animation: slide 10s linear infinite;
+	width: 100%; /* 4 cards = 400% width */
+}
+
+#footprints:hover {
+	animation-play-state: paused;
+}
+
+#footprints > div {
+	min-width: 400px;
+	height: 200px; /* Prevent flex items from growing beyond their flex basis */
+}
+@media (max-width: 640px) {
+	#footprints > div {
+		height: 130px;
+		min-width: 300px;
+	}
+}
+
+.hero h1 {
+	font-family: "Montserrat", sans-serif;
+}
+.blogTitle {
+	font-family: "Montserrat", sans-serif;
+}
+#management h1 {
+	font-family: "Montserrat", sans-serif;
+}
+#services h1 {
+	font-family: "Montserrat", sans-serif;
+}
+#board h1 {
+	font-family: "Montserrat", sans-serif;
+}
+.hero h1 {
+	font-family: "Montserrat", sans-serif;
+}
+.countSection {
+	background-image: url("./images/countSection.png");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	height: 90vh;
+}
+@media (max-width: 1200px) {
+	.countSection {
+		height: fit-content;
+	}
+}
+.corporateCard:hover > div {
+	display: none;
+}
+.material-symbols-outlined {
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.blogIcon {
+	font-size: 14px;
+}
+.swiper {
+	height: 200px;
+	width: 100%;
+	overflow: hidden;
+}
+.swiper-slide {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	align-items: center;
+	text-align: center;
+	height: 160px;
+	justify-content: center;
+}
+@media (max-width: 640px) {
+	.swiper-slide {
+		height: 160px !important;
+	}
+}
+.swiper-button-next,
+.swiper-button-prev {
+	display: none !important;
+}
+
+.partnerSwiper {
+	width: fit-content;
+	height: fit-content;
+}
+
+.aboutSwiper {
+	width: 100%;
+	border: 30px solid #016125;
+}
+.aboutSwiperSLide {
+	width: 100%;
+}
+
+.serviceSection {
+	background-image: url("./images/services frame.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: fit-content;
+	width: 100%;
+}
+#nav-link p {
+	cursor: pointer;
+}
+.serviceSection2 {
+	background-image: url("./images/serviceframesmall.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: fit-content;
+	width: 100%;
+}
+
+@media (max-width: 680px) {
+	.serviceSection {
+		background-image: url("./images/serviceframesmall.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: fit-content;
+		width: 100%;
+	}
+}
+
+.wellconstruction {
+	background-image: url("./images/new service background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: fit-content;
+	width: 100%;
+}
+.processmanagement {
+	background-image: url("./images/automation.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: fit-content;
+	width: 100%;
+}
+.newservices {
+	background-image: url("./images/new service background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: fit-content;
+	width: 100%;
+}
+
+.searchIcon {
+	font-size: 16px;
+	color: gray;
+}
+
+.chevron {
+	font-size: 16px;
+	color: gray;
+}
+.arrowBack {
+	font-size: 15px;
+}
+
+#map-container {
+	position: relative;
+	width: 100%;
+}
+
+#map-container canvas {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+/* Animation classes */
+.fade-in-section {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Service card hover effects */
+.service-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Arrow button animation */
+.arrow-button {
+	transition: all 0.3s ease;
+}
+
+/* Hero button animation */
+.hero button {
+	transition: background-color 0.2s ease;
+}
+
+#slidein {
+	opacity: 0;
+	transform: translateX(-50px);
+}
+#fadein {
+	opacity: 0;
+}
+#bouncein {
+	opacity: 0;
+	transform: scale(0.8);
+}
+#slider-text {
+	opacity: 0;
+	transform: translateX(50px);
+}
+/* Carousel styles */
+.partners-carousel,
+.clients-carousel {
+	display: flex;
+	width: 100%;
+	will-change: transform;
+}
+
+.partners-carousel img,
+.clients-carousel img {
+	flex: 0 0 auto;
+	margin: 0 20px; /* Adjust spacing between logos */
+}
+
+/* Initial animation states */
+.slidein {
+	opacity: 0;
+	transform: translateX(-50px);
+}
+.slideinup {
+	opacity: 0;
+	transform: translateY(-50px);
+}
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.submenu.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+/* Carousel Styles */
+.partners-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.partners-track {
+	display: flex;
+	position: relative;
+	will-change: transform;
+}
+
+.partners-track img {
+	flex: 0 0 auto;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.partners-track img:hover {
+	transform: scale(1.1);
+}
+.client-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.client-track {
+	display: flex;
+	position: relative;
+	will-change: transform;
+}
+
+.client-track img {
+	flex: 0 0 auto;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.client-track img:hover {
+	transform: scale(1.1);
+}
+.fadein {
+	opacity: 0;
+}
+
+.bouncein {
+	opacity: 0;
+	transform: scale(0.8);
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.close-btn {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background: none;
+	border: none;
+	font-size: 30px;
+	color: red;
+	cursor: pointer;
+}
+
+.green {
+	color: green;
+	font-weight: 700;
+}
+.read-more-btn {
+	align-self: flex-start; /* aligns with left edge of text */
+	background-color: red;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.blogBackground {
+	background-image: url("./images/perfect-green-grass.jpg");
+	background-size: cover;
+}
+.blogBackgorundoverlay {
+	background-color: #016126c9;
+	border-radius: 20px 20px 0px 0px;
+}
+.newsBackground {
+	background-image: url("./images/perfect-green-grass.jpg");
+	background-size: cover;
+}
+.newsBackgorundoverlay {
+	background-color: #87162cc9;
+	border-radius: 20px 20px 0px 0px;
+}
+.modal p,
+.modal ul,
+.modal li {
+	text-align: justify;
+}
+
+.read-less-btn {
+	align-self: flex-start;
+	background-color: red;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-top: 2rem;
+	float: right;
+}
+
+.more-content h3 {
+	font-size: 3rem; /* Keep headings slightly bigger */
+	font-weight: 600; /* Same as .font-semibold */
+	margin-top: 1.5rem;
+}
+
+.more-content p {
+	margin-top: 0.5rem;
+}
+
+.more-content ul {
+	margin: 0.5rem 0 0.5rem 1.5rem;
+	line-height: 1.8;
+}
+
+/* Only blur this wrapper */
+#main-wrapper {
+	transition: filter 0.3s ease;
+}
+
+body.modal-active #main-wrapper {
+	filter: blur(6px);
+}
+
+/* Lock scroll when modal is open */
+body.modal-active {
+	overflow: hidden;
+}
+
+/* Modal overlay stays on top */
+.overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.slide-in.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.above-map-section {
+	transform-origin: center center;
+}
+
+#video-placeholder {
+	z-index: 50; /* ensures it’s always on top until hidden */
+}
+
+.timeline-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4rem 1rem;
+	background: #111; /* dark background for contrast */
+	color: #fff;
+}
+
+.timeline {
+	display: flex;
+	gap: 1rem;
+	max-width: 1200px;
+	width: 100%;
+}
+
+.timeline-item {
+	position: relative;
+	flex: 1;
+	background: #1f1f1f;
+	border-radius: 1rem;
+	padding: 2rem 1rem;
+	overflow: hidden;
+	cursor: pointer;
+	transition: flex 0.5s ease, background 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--accent, #d4af37);
+	opacity: 0.15;
+	transition: opacity 0.3s ease;
+}
+
+.timeline-year {
+	font-size: 2rem;
+	font-weight: bold;
+	z-index: 1;
+	margin-bottom: 1rem;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.timeline-content {
+	opacity: 0;
+	transform: translateY(20px);
+	text-align: center;
+	transition: opacity 0.4s ease, transform 0.4s ease;
+	z-index: 1;
+}
+
+.timeline-item:hover {
+	flex: 2;
+	background: #222;
+}
+
+.timeline-item:hover::before {
+	opacity: 0.3;
+}
+
+.timeline-item:hover .timeline-year {
+	color: var(--accent, #d4af37);
+	transform: scale(1.2);
+}
+
+.timeline-item:hover .timeline-content {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.timeline {
+		flex-direction: column;
+	}
+	.timeline-item {
+		flex: unset;
+		width: 100%;
+	}
+}
+
+.careerbg {
+	background-image: url("./images/hiring.jpg");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}

@@ -1,0 +1,1885 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AOS Orwell</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+		/>
+		<link rel="stylesheet" href="output.css" />
+		<!-- After <link rel="stylesheet" href="output.css" /> -->
+<style id="privacy-cookie-tweaks">
+  /* No sideways jiggle on first paint */
+  html, body { max-width:100%; overflow-x:hidden; }
+
+  /* Overlay states */
+  .overlay.is-peek  { display:flex; pointer-events:none; }   /* visible, not clickable */
+  .overlay.is-active{ display:flex; pointer-events:auto; }   /* interactive */
+
+  /* Layering: cookie bar sits above the privacy overlay */
+  .overlay { z-index: 2147483646 !important; background: rgba(0,0,0,.55); }
+  #cookie-bar { z-index: 2147483647 !important; }
+
+  /* Keep modal a card, not full-width */
+  #privacy-modal{
+    max-width: 900px;       /* same as your Tailwind max-w-[900px] */
+    width: 100%;
+    background:#fff;        /* ensure the card itself is opaque */
+    border-radius: 1rem;
+  }
+
+  /* While peeking (on page load): de-emphasize the card slightly */
+  .overlay.is-peek #privacy-modal{
+    opacity: .85;           /* soft dim (not too transparent) */
+    transform: scale(.985);
+    filter: saturate(.92) contrast(.96);
+    transition: opacity .18s ease, transform .18s ease, filter .18s ease;
+  }
+
+  /* When active: full strength */
+  .overlay.is-active #privacy-modal{
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+  }
+
+  /* Close “X” — plain, no circle */
+  #privacy-modal .close-btn{
+    position:absolute; top:.75rem; right:.75rem;
+    background:transparent !important; border:0 !important;
+    width:auto !important; height:auto !important; padding:0 !important; margin:0;
+    color:#C8102E; font-size:28px; line-height:1; font-weight:700;
+    border-radius:0 !important; box-shadow:none !important; cursor:pointer;
+    transition: transform .12s ease, opacity .12s ease;
+  }
+  #privacy-modal .close-btn:hover{ transform: scale(1.08); }
+  .overlay.is-peek #privacy-modal .close-btn{ opacity:.55; } /* softer while peeking */
+</style>
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+</style>
+
+
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	</head>
+	<body class="bg-[#F5F5F5] relative overflow-x-hidden">
+
+<header style="z-index: 9999;" class="fixed top-0 left-0 right-0">
+
+	<!-- TOP BAR -->
+<div style="height: 44px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
+    <div class="w-full flex justify-end items-center pr-[220px] gap-10 h-full">
+		<a href="hse.html" class="inline-flex items-center gap-[3px] hover:text-[#4CAF50] transition-colors whitespace-nowrap mr-6">
+	       QHSE
+	       <span class="text-[10px] leading-none font-bold">
+		       ↗
+	       </span>
+        </a>
+
+		<a href="contact-us.html"
+		   style="background-color: #007a32; color: white; height: 32px; padding: 0 22px; border-radius: 4px; min-width: 150px;"
+		   class="inline-flex items-center justify-center font-semibold shadow-sm hover:opacity-90 transition whitespace-nowrap">
+			Request for Quote
+		</a>
+
+		<div class="flex items-center gap-2">
+			<input
+				id="top-search-input"
+				type="text"
+				placeholder="Search..."
+				class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
+			/>
+
+			<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
+	           <span class="material-symbols-outlined text-[22px]">search</span>
+            </button>
+		</div>
+
+	</div>
+</div>
+<!-- ######################################################## -->
+<!-- ################## NAVBAR BEGINS #######################-->
+<!-- ######################################################## -->
+
+<nav class="h-[74px] flex justify-between items-center md:px-20 px-4 bg-white/95 backdrop-blur-md border-b border-b-gray-300 transition-all">
+	<a href="/index.html">
+		<img src="./images/jogo.png" alt="AOS Orwell Logo" class="h-16 xsm:h-18 w-auto" />
+	</a>
+
+	<div class="hidden lg:flex items-center gap-x-8 text-[14px] font-semibold text-gray-800">
+		
+		<!-- Company Button -->
+		<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
+			Company 
+			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
+		</button>
+
+		<!-- Services Button -->
+		<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
+			Services
+			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
+		</button>
+
+	</div>
+
+	<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
+		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+		</svg>
+	</button>
+</nav>
+</header>
+
+<!-- DESKTOP COMPANY MEGA MENU -->
+<div id="desktop-mega-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
+	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
+		<button onclick="switchMegaTab('aosorwell')" id="tab-aosorwell" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
+			AOSOrwell <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="switchMegaTab('csr')" id="tab-csr" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			CSR <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="switchMegaTab('media')" id="tab-media" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Media & Resources <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="switchMegaTab('qhse')" id="tab-qhse" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			QHSE <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+	</div>
+
+	<div class="flex-1 bg-white p-12 relative flex">
+		<button onclick="toggleMegaMenu()" class="absolute top-6 right-8 text-gray-400 hover:text-gray-800 transition-colors z-10">
+			<span class="material-symbols-outlined">close</span>
+		</button>
+
+		<div id="content-aosorwell" class="mega-content flex w-full h-full">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="about.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">About Us</a>
+				<a href="management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Company Leadership</a>
+				<a href="careers.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Careers</a>
+				<a href="contact-us.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Contact Us</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+
+		<div id="content-csr" class="mega-content hidden w-full h-full animate-fadeIn">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="corporate-social-responsibility.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Employee Community Service</a>
+				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Healthcare</a>
+				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Education</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+
+		<div id="content-media" class="mega-content hidden w-full h-full animate-fadeIn">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Photo Gallery</a>
+				<a href="gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Video Gallery</a>
+				<a href="news.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">News & Press Releases</a>
+				<a href="blog.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Case Study</a>
+				<a href="policies-index.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Resources & Policies</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+
+		<div id="content-qhse" class="mega-content hidden w-full h-full animate-fadeIn">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Quality Policy</a>
+				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Health & Safety</a>
+				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Environmental Standards</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+	</div>
+</div>
+
+<!-- DESKTOP SERVICES MEGA MENU -->
+<div id="desktop-services-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
+	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
+		<button onclick="showServicesContent('wcd')" id="services-tab-wcd" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
+			WCD <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<a href="ipm-index.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			IPM & Turnkey: PMD
+		</a>
+
+		<a href="well-construction.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Operations & Maintenance
+		</a>
+
+		<a href="process-management.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Product Enquiry
+		</a>
+	</div>
+
+	<div class="flex-1 bg-white p-12 relative flex">
+		<button onclick="toggleServicesMenu()" class="absolute top-6 right-8 text-gray-400 hover:text-gray-800 transition-colors z-10">
+			<span class="material-symbols-outlined">close</span>
+		</button>
+
+		<div id="services-content-wcd" class="services-content flex w-full h-full">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="well-construction.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Well Construction</a>
+				<a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Electrical & Instrumentation</a>
+				<a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Process Automation & Control</a>
+				<a href="new-services.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">New Services/O&M</a>
+			</div>
+
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+	</div>
+</div>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed z-50 top-19 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto max-h-[85vh]">
+	<div class="flex flex-col text-black text-[15px] font-medium">
+		
+		<div class="menu-item border-b border-gray-100 flex flex-col">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-aos-submenu', this)">
+				<span>AOSOrwell</span>
+				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+			</button>
+			<div id="mob-aos-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+				<div class="flex flex-col gap-y-4">
+					<a href="about.html" class="hover:text-[#4CAF50] transition-colors block">About Us</a>
+					<a href="management.html" class="hover:text-[#4CAF50] transition-colors block">Company Leadership</a>
+					<a href="careers.html" class="hover:text-[#4CAF50] transition-colors block">Careers</a>
+					<a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">Contact Us</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-item border-b border-gray-100">
+			<a href="corporate-social-responsibility.html" class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition">
+				<span>CSR</span>
+			</a>
+		</div>
+
+		<div class="menu-item border-b border-gray-100 flex flex-col">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-media-submenu', this)">
+				<span>Media & Resources</span>
+				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+			</button>
+			<div id="mob-media-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+				<div class="flex flex-col gap-y-4">
+					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Photo Gallery</a>
+					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Video Gallery</a>
+					<a href="news.html" class="hover:text-[#4CAF50] transition-colors block">News & Press Releases</a>
+					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Case Study</a>
+					<a href="policies-index.html" class="hover:text-[#4CAF50] transition-colors block">Resources/Policies</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-item border-b border-gray-100 flex flex-col">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-services-submenu', this)">
+				<span>Services</span>
+				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+			</button>
+			<div id="mob-services-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+				<div class="flex flex-col gap-y-4">
+					<div class="flex flex-col border-b border-gray-100 pb-2">
+						<button class="w-full flex justify-between items-center py-2 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-wcd-submenu', this)">
+							<span>WCD</span>
+							<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+						</button>
+						<div id="mob-wcd-submenu" class="hidden relative w-full pl-4 pt-2 text-[13px] text-gray-500 bg-white flex flex-col gap-y-3">
+							<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Well Construction</a>
+							<a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Electrical & Instrumentation</a>
+							<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Process Automation & Control</a>
+							<a href="new-services.html" class="hover:text-[#4CAF50] transition-colors block">New Services/O&M</a>
+						</div>
+					</div>
+					<a href="ipm-index.html" class="hover:text-[#4CAF50] transition-colors block">IPM & Turnkey:PMD</a>
+					<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Operations & Maintenance</a>
+					<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Product Enquiry</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-item border-b border-gray-100">
+			<a href="hse.html" class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition">
+				<span>QHSE</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- ######################################################## -->
+<!-- #################### NAVBAR ENDS #######################-->
+<!-- ######################################################## -->
+
+
+<div class="hidden lg:block" style="height: 118px;"></div>
+		<!-- hero sections begins -->
+		<div class="hero h-[90vh] xsm:h-screen relative">
+			<video autoplay muted loop playsinline class="w-full object-cover h-full" id="main-hero-video">
+				<source src="./videos/Hero Section.mp4" type="video/mp4" />
+			</video>
+
+			<div class="absolute inset-0 bg-black/50 pointer-events-none"></div>
+
+			<div class="absolute z-10 top-0 w-full md:w-190 lg:w-230 pt-43 max-xsm:pb-53 xsm:pt-50 xl:pt-65 text-white px-8 sm:px-20 md:pl-20 xl:pl-25 flex flex-col gap-y-5">
+				<h1 class="text-2xl xsm:text-3xl md:text-4xl xl:text-5xl font-bold"></h1>
+				<p class="border-l-4 border-white pl-4 w-full xsm:w-2/3 text-[13px] xsm:text-sm xl:text-[15px] text-gray-300"></p>
+				<button class="w-fit bg-[#016125] text-white text-xs sm:text-sm px-8 sm:px-10 py-2.5 sm:py-3 mt-7 xsm:mt-10 xl:mt-15 rounded-sm" id="fadein">
+					Learn More
+				</button>
+			</div>
+
+			
+		</div>
+
+		<!-- hero section -->
+
+<!-- SECTION BELOW HERO BEGINS -->
+<section class="bg-[#f8f9fa] py-12 px-6 sm:px-10 lg:px-16 xl:px-20 w-full font-sans border-t border-b border-gray-200">
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 md:gap-12 lg:gap-0 lg:divide-x divide-gray-300">
+		
+		<!-- 1 -->
+		<div class="flex flex-col lg:pr-8">
+			<!-- Oil Rig Icon -->
+			<svg class="w-12 h-12 text-[#459c7a] mb-6" fill="none" stroke="currentColor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 52V18M40 52V18M20 52H44M26 18H38M22 28H42M24 38H40" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 18L32 6L40 18" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 28L40 18M40 28L24 18M24 38L40 28M40 38L24 28" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M44 30H54V38" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M54 38L58 42" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 56C16 52 20 60 24 56C28 52 32 60 36 56C40 52 44 60 48 56C52 52 56 60 60 56" />
+			</svg>
+
+			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
+				Most Trusted Partner for Well Construction Excellence
+			</h3>
+
+			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">
+				Delivering end-to-end well construction solutions trusted by leading operators across Africa.
+			</p>
+		</div>
+
+		<!-- 2 -->
+		<div class="flex flex-col lg:px-8">
+			<!-- Switchgear / Control Room Icon -->
+			<svg class="w-12 h-12 text-[#459c7a] mb-6" fill="none" stroke="currentColor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+				<rect x="12" y="10" width="40" height="44" rx="2" stroke-width="2" />
+				<circle cx="24" cy="20" r="4" stroke-width="2" />
+				<circle cx="40" cy="20" r="4" stroke-width="2" />
+				<rect x="20" y="30" width="24" height="12" stroke-width="2" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 38L30 34L35 37L40 32" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 28H20M16 34H20M16 40H20" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M44 28H48M44 34H48M44 40H48" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 54V46M40 54V46M12 54H52" />
+			</svg>
+
+			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
+				The Go-To Engineering Partner of Choice for Automation and Process Solutions
+			</h3>
+
+			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">
+				Engineering advanced automation, instrumentation, and process solutions that power operational excellence.
+			</p>
+		</div>
+
+		<!-- 3 -->
+		<div class="flex flex-col lg:px-8">
+			<!-- Project Coordinator / Worksheet Icon -->
+			<svg class="w-12 h-12 text-[#459c7a] mb-6" fill="none" stroke="currentColor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+				<rect x="18" y="12" width="30" height="40" rx="3" stroke-width="2" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M27 12C27 8 37 8 37 12H27Z" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M25 26L28 29L34 23" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M38 27H44" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M25 36L28 39L34 33" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M38 37H44" />
+				<circle cx="47" cy="48" r="10" stroke-width="2" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M42 51C44 47 50 47 52 51" />
+				<circle cx="47" cy="45" r="3" stroke-width="2" />
+			</svg>
+
+			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
+				The Preferred Single-Point Accountability Partner for End-to-End & Turnkey Well Delivery Service
+			</h3>
+
+			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">
+				Providing single-point accountability for seamless project execution from concept to completion.
+			</p>
+		</div>
+
+		<!-- 4 -->
+		<div class="flex flex-col lg:pl-8">
+			<!-- Service / Maintenance Icon -->
+			<svg class="w-12 h-12 text-[#459c7a] mb-6" fill="none" stroke="currentColor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M32 8L36 14L43 12L46 19L53 22L50 29L56 34L52 40L54 48L46 51L42 58L35 55L28 58L24 51L16 48L18 40L12 34L18 29L15 22L22 19L25 12L32 14V8Z" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 34C24 28 28 24 34 24C36 24 38 25 40 26L32 34L38 40L46 32C47 34 48 36 48 38C48 44 44 48 38 48C36 48 34 47 32 46L22 56L16 50L26 40C25 38 24 36 24 34Z" />
+			</svg>
+
+			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
+				Pacesetter in Operations & Maintenance & Asset Management in Nigeria
+			</h3>
+
+			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">
+				Maximizing asset performance through reliable operations and maintenance support.
+			</p>
+		</div>
+
+	</div>
+</section>
+<!-- SECTION BELOW HERO ENDS -->
+
+
+		<!-- WHO WE ARE AND WHAT WE DO -->
+		<section class="flex flex-col gap-y-20 pb-20 pt-20 md:pt-30 xl:pt-35 px-8 sm:px-20 xl:px-30">
+			<div class="flex flex-col w-full md:flex-row gap-10  lg:gap-16 items-center">
+				<div class="flex flex-col md:w-3/5 items-start text-left">
+					<div class="w-10 h-1 bg-green-500 mb-5"></div>
+					<h3 class="font-semibold text-2xl sm:text-3xl 2xl:text-4xl text-[#1a3b32] mb-6">
+						Who we are
+					</h3>
+					<p class="leading-relaxed font-normal text-gray-600 text-[13px] sm:text-sm xl:text-base mb-8">
+						We are Nigeria’s leading oilfield servicing company delivering integrated solutions to the oil and gas, power, and industrial sectors. Combining strong local expertise with world-class technologies through strategic OEM partnerships, we help clients achieve safe, efficient, and reliable operations.
+					</p>
+					<a href="/about.html" class="text-[#4CAF50] font-medium text-[13px] md:text-sm tracking-widest uppercase flex items-center gap-2 hover:opacity-80 transition-opacity">
+						Discover More
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</a>
+				</div>
+				
+				<div class="relative md:w-2/5 md:max-w-400 h-[200px] sm:h-[200px] overflow-hidden group cursor-pointer video-container">
+					<video 
+						src="./videos/AOS ORWELL-DOCUMENTARY (1) - Trim.mp4" 
+						class="w-full h-full object-cover rounded-7xl brightness-75 group-hover:brightness-50 transition-all duration-300"
+						muted 
+						loop 
+						playsinline
+					></video>
+					<div class="play-overlay absolute inset-0 flex items-center justify-center pointer-events-none">
+						<div class="w-14 h-14 sm:w-12 sm:h-9 rounded-full flex items-center justify-center bg-white text-black backdrop-blur-sm">
+							<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="#000000" viewBox="0 0 24 24">
+								<path d="M8 5v14l11-7z"/>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col  items-start text-left w-full max-lg:pt-10 lg:mt-4">
+				<div class="w-10 h-1 bg-green-500 mb-4"></div>
+				<h3 class="font-semibold text-2xl sm:text-3xl 2xl:text-4xl text-[#1a3b32] mb-6">
+					What we do
+				</h3>
+				<p class="leading-relaxed font-normal text-gray-600 text-[13px] sm:text-sm xl:text-base w-full lg:max-w-[90%]">
+					We provide well construction, process management, engineering, automation, and operations support services. From drilling and wireline to metering skids, EPIC projects, and maintenance solutions, we deliver fit-for-purpose technologies and technical expertise that enhance performance and operational excellence.
+				</p>
+			</div>
+		</section>
+
+		<!-- SERVICES SECTION BEGINS -->
+		 <section class="w-full px-8 sm:px-20 xl:px-30">
+			<div class="flex flex-col md:flex-row w-full max-w-[1600px] mx-auto min-h-[500px]  border border-gray-200">
+				
+				<div class="w-full md:w-1/4 bg-gray-100 flex flex-col shrink-0" id="services-sidebar">
+					<button class="tab-btn w-full text-left px-6 py-8 text-sm md:text-[15px]lg:text-base font-medium text-[#1a3b32] bg-white border-l-[3px] border-[#2e8b57] transition-colors" data-id="well-construction">
+						Well Construction
+					</button>
+					<button class="tab-btn w-full text-left px-6 py-8 text-sm md:text-[15px]lg:text-base font-medium text-gray-600 bg-transparent border-l-[3px] border-transparent hover:bg-white hover:text-[#1a3b32] transition-colors" data-id="electrical">
+						Electrical and Instrumentation
+					</button>
+					<button class="tab-btn w-full text-left px-6 py-8 text-sm md:text-[15px]lg:text-base font-medium text-gray-600 bg-transparent border-l-[3px] border-transparent hover:bg-white hover:text-[#1a3b32] transition-colors" data-id="automation">
+						Process Automation and Control
+					</button>
+					<button class="tab-btn w-full text-left px-6 py-8 text-sm md:text-[15px]lg:text-base font-medium text-gray-600 bg-transparent border-l-[3px] border-transparent hover:bg-white hover:text-[#1a3b32] transition-colors" data-id="maintenance">
+						New Services/O&M
+					</button>
+				</div>
+
+				<div class="flex-1 md:w-3/4 bg-white px-10 md:px-13 py-8 shadow-[-10px_0_20px_rgba(0,0,0,0.02)]" id="services-content">
+					
+				</div>
+			</div>
+		</section>
+		<!-- SERVICES SECTION ENDS -->
+
+		<!-- BLACK BACKGROUND BEGINS -->
+		<div class="bg-[#27272C] h-120 -mt-70">
+
+		</div>
+		<!-- BLACK BACKGROUND ENDS -->
+
+		
+
+		<!-- COUNTING -->
+		<section
+			class="countSection flex flex-col max-md:pb-20 md:flex-row items-center justify-center px-8 sm:px-20 md:px-20  "
+		>
+			<!-- Left Text Block -->
+			<div
+				class="fade-in-left w-full md:w-1/2 flex flex-col gap-y-4 md:pr-10 xl:pr-30 pb-10 md:py-40 max-md:border-b md:border-r border-b-gray-300 md:border-r-gray-300"
+			>
+				<h2
+					class="font-bold text-lg xsm:text-xl lg:text-2xl xl:text-3xl text-primary"
+				>
+					Leading Oilfield Services Provider In Nigeria And Beyond
+				</h2>
+				<p class="text-xs md:text-sm leading-loose font-medium">
+					“From empowering Africa’s energy future to powering industries and
+					supporting critical infrastructure, our expertise drives success
+					across Nigeria and beyond. We combine local content with global
+					standards to provide sustainable, cutting-edge services that meet the
+					evolving needs of our clients”.
+				</p>
+			</div>
+
+			<!-- Right Count Stats -->
+			<div class="w-full md:w-1/2 max-md:pt-10 md:pl-20 flex flex-col gap-y-8">
+				<div class="flex flex-col gap-y-1 px-4 xl:px-20 fade-in-up">
+					<h1 class="text-4xl xsm:text-5xl xl:text-6xl font-semibold" id="count"
+						>1000+</h1
+					>
+					<p class="text-[11px] leading-loose sm:text-[13px] font-medium">
+						Dedicated experts delivering world-class oilfield services and
+						solutions to meet the demands of the upstream sector.
+					</p>
+				</div>
+
+				<hr class="border border-gray-300" />
+
+				<div class="flex flex-col gap-y-1 px-4 xl:px-20 fade-in-up">
+					<h1
+						class="text-4xl xsm:text-5xl xl:text-6xl font-semibold"
+						id="count2"
+						>5000+</h1
+					>
+					<p class="text-[11px] leading-loose sm:text-[13px] font-medium">
+						Successful projects completed, showcasing our commitment to quality,
+						safety, and operational excellence across various oil and gas
+						operations.
+					</p>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- VIDEO -->
+		<section class="relative h-screen w-full overflow-hidden">
+			<!-- Video -->
+			<video
+				src="./videos/Aosorwell.mp4"
+				class="hidden absolute inset-0 w-full h-full object-cover z-10"
+				loop
+				controls
+				id="hero-video"
+			></video>
+
+			<!-- Placeholder -->
+			<div
+				id="video-placeholder"
+				class="absolute inset-0 w-full h-full flex items-center justify-center transition-opacity duration-700 opacity-100 z-20"
+			>
+				<!-- Background image at the very back -->
+				<img
+					src="./images/thumbnail.png"
+					alt="Video Thumbnail"
+					class="absolute inset-0 w-full h-full object-cover z-0"
+				/>
+
+				<!-- Semi-transparent black overlay -->
+				<div class="absolute inset-0 bg-black/50 z-10"></div>
+
+				<!-- Play button on top -->
+				<button
+					id="play-button-placeholder"
+					class="relative z-20 flex items-center justify-center h-20 w-20 rounded-full shadow-xl focus:outline-none cursor-pointer hover:scale-110 transition-transform"
+				>
+					<img src="./images/play.png" alt="Play video" class="h-12 w-12" />
+				</button>
+			</div>
+		</section>
+
+		<!-- NEWS AND BLOG -->
+		<section class="px-6 md:px-20 xl:px-30 py-25 flex flex-col gap-y-12 slide-in">
+			<div
+				class="slide-left-item flex justify-between items-center flex-wrap gap-2"
+			>
+				<h2 class="text-2xl sm:text-2xl md:text-3xl font-bold"
+					>Latest News and Blog</h2
+				>
+			</div>
+			<div class=" flex flex-col lg:flex-row gap-x-12 gap-y-6">
+				<div class="w-full lg:w-1/2 flex flex-col gap-y-2">
+					<img
+						src="./images/blog/tubing.jpg"
+						alt=""
+						class="w-full rounded-2xl h-50 xsm:h-70 sm:h-100 md:h-130 object-cover shadow-md"
+					/>
+					<div class="flex flex-col gap-y-2 p-2">
+						<small class="text-gray-600 text-[11px] sm:text-xs"
+							>May 10th, 2025</small
+						>
+						<h2 class="font-medium text-xl sm:text-2xl lg:text-[26px]"
+							>Optimizing Casing Running Through Automated Tubular Running Systems.</h2
+						>
+						<a href="./blog/Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html" class="w-full">
+							<span
+								class="text-white bg-primary text-[10px] xsm:text-[11px] px-2 py-0.5 w-fit mt-1 border border-gray-300 rounded-full"
+								>BLOG</span
+							>
+						</a>
+					</div>
+				</div>
+				<hr class="lg:hidden border border-gray-300" />
+				<div class="w-full lg:w-1/2 flex flex-col gap-y-4">
+					<div
+						class="flex items-center gap-x-3 max-xsm:flex-col gap-y-4 max-xsm:items-start"
+					>
+						<img
+							src="./images/naice2025.jpg"
+							alt=""
+							class="w-full xsm:w-45 h-40 rounded-lg object-cover"
+						/>
+						<div class="flex flex-col gap-y-2 p-2">
+							<small class="text-gray-600 text-[10px] sm:text-[11px]"
+								>July 27th, 2025</small
+							>
+							<h2 class="font-medium text-base sm:text-lg lg:text-xl"
+								>From Conversations to Connections: AOS Orwell at SPE NAICE 2025.</h2
+							>
+							<p class="text-gray-600 text-xs"
+								>Lagos, Nigeria – At this year’s Society of Petroleum Engineers Nigeria Annual International Conference and Exhibition (SPE NAICE 2025),
+								AOS Orwell didn’t just put up a booth, we....</p
+							>
+
+							<a href="./news/spenaice2025.html" class="w-full">
+								<span
+									class="text-white bg-secondary text-[9px] xsm:text-[10px] px-2 py-0.5 w-fit mt-1 rounded-full"
+									>NEWS</span
+								>
+							</a>
+						</div>
+					</div>
+					<hr class="border border-gray-200" />
+					<div
+						class="flex items-center gap-x-3 max-xsm:flex-col gap-y-4 max-xsm:items-start"
+					>
+						<img
+							src="./images/blog/rentals.jpg"
+							alt=""
+							class="w-full xsm:w-45 h-40 rounded-lg object-cover"
+						/>
+						<div class="flex flex-col gap-y-2 p-2">
+							<small class="text-gray-600 text-[10px] sm:text-[11px]"
+								>February 22nd, 2025</small
+							>
+							<h2 class="font-medium text-base sm:text-lg lg:text-xl"
+								>Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability.</h2
+							>
+							<p class="text-gray-600 text-xs"
+								>In the oil and gas industry, every second counts. A well that isn’t drilled on sche>dule, a maintenance operation that’s delayed, 
+								or a missing piece of critical equipment can result in huge financial..</p>
+							<a href="./blog/Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html" class="w-full">
+                                <span
+                                    class="text-white bg-primary text-[10px] xsm:text-[11px] px-2 py-0.5 w-fit mt-1 border border-gray-300 rounded-full"
+                                    >BLOG</span
+                                >
+                            </a>
+						</div>
+					</div>
+					<hr class="border border-gray-200" />
+					<div
+						class="flex items-center gap-x-3 max-xsm:flex-col gap-y-4 max-xsm:items-start"
+					>
+						<img
+							src="./images/news/otc.jpg"
+							alt=""
+							class="w-full xsm:w-45 h-40 rounded-lg object-cover"
+						/>
+						<div class="flex flex-col gap-y-2 p-2">
+							<small class="text-gray-600 text-[10px] sm:text-[11px]"
+								>May 10th, 2025</small
+							>
+							<h2 class="font-medium text-base sm:text-lg lg:text-xl"
+								>Building Global Bridges: AOS Orwell at OTC 2025</h2
+							>
+							<p class="text-gray-600 text-xs"
+								>Over the course of the week, our team engaged with international prospects, technology partners,
+								and industry stakeholders from across the energy value chain.....</p
+							>
+							<a href="./news/Building-global-bridges.html" class="w-full">
+								<span
+									class="text-white bg-secondary text-[9px] xsm:text-[10px] px-2 py-0.5 w-fit mt-1 rounded-full"
+									>NEWS</span
+								>
+							</a>
+						</div>
+					</div>
+					<hr class="border border-gray-200" />
+					<div class="flex justify-between gap-y-2 flex-wrap">
+						<a
+							href="./news.html"
+							class="text-xs sm:text-[13px] font-medium flex items-center gap-x-1 cursor-pointer"
+							>View more news
+							<span class="material-symbols-outlined blogIcon">
+								arrow_forward
+							</span></a
+						>
+						<a
+							href="./blog.html"
+							class="text-xs sm:text-[13px] font-medium flex items-center gap-x-1 cursor-pointer"
+							>View more blog
+							<span class="material-symbols-outlined blogIcon">
+								arrow_forward
+							</span></a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MANAGEMENT MESSAGE -->
+		<section class="flex flex-col bounce-in">
+			<div
+				class="slide-right-item mx-6 md:mx-20 lg:mx-40 flex flex-col md:flex-row static z-4 h-fit lg:h-135"
+			>
+				<img
+					src="./images/akeem.png"
+					alt=""
+					class="w-80 lg:w-[45%] max-xs:h-50 max-md:h-70 object-cover"
+				/>
+				<div
+					class="w-full lg:w-[55%] flex flex-col gap-y-4 md:gap-y-6 bg-secondarybg px-5 py-5 lg:px-13 lg:py-13 text-white"
+				>
+					<h3 class="font-medium text-base lg:text-lg">Management Message</h3>
+					<hr class="border border-gray-300" />
+					<div class="flex flex-col">
+						<div class="text-xs leading-loose lg:text-[13px]">
+							<p
+								>Welcome to AOS Orwell, where excellence in service is our
+								commitment. We take pride in delivering top-tier solutions that
+								drive efficiency, reliability, and value for our clients. Our
+								dedicated team combines expertise with innovation to meet the
+								unique needs of every project, ensuring the highest standards of
+								quality and customer satisfaction. <br /><br />
+								At AOS Orwell, we believe in building lasting relationships
+								based on trust, integrity, and exceptional service. Thank you
+								for choosing us as your trusted partner. We look forward to
+								working with you to achieve your goals.</p
+							>
+						</div>
+					</div>
+					<div class="flex flex-col gap-y-2 mt-5 items-start">
+						<p class="text-xs lg:text-sm">Akeem Ariyo</p>
+						<p class="text-[11px] lg:text-xs">Managing Director/CEO</p>
+						<p class="text-[11px] lg:text-xs">AOS Orwell</p>
+					</div>
+				</div>
+			</div>
+			<div class="max-xsm:hidden bg-primary h-100 -mt-65"></div>
+		</section>
+
+		<!-- PARTNERS -->
+		<section
+			class="pt-20 flex flex-col items-center justify-center gap-y-6 xsm:gap-y-13"
+		>
+			<div class="flex items-center justify-center gap-x-5 w-full px-4">
+				<hr class="hidden xsm:flex border border-gray-300 w-1/4" />
+				<h2 class="text-xl sm:text-2xl font-semibold w-fit text-center"
+					>Our Trusted Partners</h2
+				>
+				<hr class="hidden xsm:flex border border-gray-200 w-1/4" />
+			</div>
+			<div
+				class="partners-container w-full overflow-hidden relative h-20 cursor-pointer"
+			>
+				<div class="partners-track flex">
+					<!-- Original Logos -->
+					<img
+						src="./images/abb.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/detronics.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/eaton.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hauser.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hoerbiger.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/kepl.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/ksb.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/itv.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/schneider.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/severn.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/suillar.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/baker.png"
+						alt=""
+						class="h-10 xsm:h-13 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/dsi.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/halliburton.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hamilton.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hilong.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/lee.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/pbl.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/saga.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/slb.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/wellbore.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+
+					<!-- Duplicated Logos (for seamless looping) -->
+					<img
+						src="./images/abb.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/detronics.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/eaton.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hauser.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hoerbiger.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/kepl.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/ksb.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/itv.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/schneider.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/severn.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/suillar.png"
+						alt=""
+						class="h-12 xsm:h-17 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/baker.png"
+						alt=""
+						class="h-10 xsm:h-13 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/dsi.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/halliburton.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hamilton.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/hilong.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/lee.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/pbl.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/saga.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/slb.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/wellbore.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<!-- PARTNERS -->
+		<section
+			class="py-20 flex flex-col items-center justify-center gap-y-6 mt-10 xsm:gap-y-13"
+		>
+			<div class="flex items-center justify-center gap-x-5 w-full px-4">
+				<hr class="hidden xsm:flex border border-gray-300 w-1/4" />
+				<h2 class="text-xl sm:text-2xl font-semibold w-fit text-center"
+					>Our Trusted Clients</h2
+				>
+				<hr class="hidden xsm:flex border border-gray-200 w-1/4" />
+			</div>
+			<div
+				class="client-container w-full overflow-hidden relative h-20 cursor-pointer"
+			>
+				<div class="client-track flex">
+					<!-- Original Logos -->
+					<img
+						src="./images/po1.png"
+						alt=""
+						class="h-10 xsm:h-13 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po2.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po3.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po4.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po5.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po6.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po7.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po8.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po9.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/p10.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+
+					<!-- Duplicated Logos (for seamless looping) -->
+					<img
+						src="./images/po1.png"
+						alt=""
+						class="h-10 xsm:h-13 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po2.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po3.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po4.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po5.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po6.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po7.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po8.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/po9.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+					<img
+						src="./images/p10.png"
+						alt=""
+						class="h-10 xsm:h-15 w-auto object-cover mx-5"
+					/>
+				</div>
+			</div>
+		</section>
+		<!-- Privacy Modal -->
+		<div class="overlay fixed inset-0 z-[9999] bg-black/60 hidden items-start justify-center p-4 sm:p-6" aria-hidden="true">
+			<div id="privacy-modal" class="bg-white w-full max-w-[900px] rounded-2xl p-6 md:p-10 relative overflow-y-auto max-h-[90vh] overflow-x-hidden break-words">
+				<button type="button" id="privacy-close" aria-label="Close" class="close-btn absolute top-4 right-4 text-2xl" onclick="closePrivacyModal()">
+					&times;
+				</button>
+
+				<h2 style="font-size: 23px; font-weight: bold; margin-bottom: 15px"> 
+					<span class="green">PRIVACY STATEMENT FOR AOS Orwell.com</span>
+				</h2>
+
+				<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;" class="font-semibold">INTRODUCTION</h3>
+				<p class="text-xs sm:text-[13px] leading-loose">
+					At AOS Orwell Limited (AOSO) we value and prioritize the privacy of our users and customers. This Privacy Statement outlines how we collect, use, disclose, and safeguard your personal information when you visit our website (AOS Orwell.com) or interact with our services. AOS Orwell Limited is a registered company in Nigeria with its principal place of business at 52/53 Trans-Amadi Industrial Layout, Port Harcourt, Rivers State. By accessing or using our website, you acknowledge that you have read and understood this Privacy Statement and agree to be bound by it. This constitutes your consent to the processing of your personal data by us.
+				</p>
+
+				<p style="margin-bottom: 8px" class="text-xs sm:text-[13px] leading-loose">
+					AOSO is committed to protecting the privacy of confidential and “Personal Data” (information that directly or indirectly identifies individuals, including clients, employees, agents, job applicants, or others inside or outside the organization). This Policy sets out AOSO’s compliance with Nigeria Data Protection Act (NDPA) 2023 and other applicable international data protection laws.
+				</p>
+
+				<button id="readMoreBtn" class="bg-red-700 flex items-start text-white cursor-pointer hover:scale-110 py-2 px-4 w-fit rounded-sm mt-2" onclick="toggleContent()">Read More</button>
+
+				<div id="moreContent" style="display: none; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-size: 14px; line-height: 1.8; color: #000; letter-spacing: normal; margin-bottom: 8px;">
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">INFORMATION WE COLLECT</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">
+						<strong>Personal Information:</strong> Name, email, phone number, mailing address, job title, department, and professional qualifications (when engaged in a business relationship).<br />
+						<strong>Usage Information:</strong> IP address, browser type, device type, pages visited and visit timestamps.
+					</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">LAWFUL BASIS FOR PROCESSING PERSONAL DATA</h3>
+					<ul style="margin: 0.5rem 0 0.5rem 1.5rem; line-height: 1.8; list-style-type: disc; font-size: 13px;">
+						<li>Consent (where you provide explicit permission).</li>
+						<li>Contractual necessity (to fulfil agreements with you).</li>
+						<li>Legal compliance (where required by law).</li>
+						<li>Legitimate business interests (e.g., improving services, fraud prevention).</li>
+					</ul>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">HOW WE USE YOUR INFORMATION</h3>
+					<ul style="margin: 0.5rem 0 0.5rem 1.5rem; line-height: 1.8; list-style-type: disc; font-size: 13px;">
+						<li>Provide, personalize, and improve our services.</li>
+						<li>Communicate about products, services, and updates.</li>
+						<li>Conduct analytics and marketing (with opt-out options).</li>
+						<li>Comply with legal obligations.</li>
+					</ul>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">RECIPIENTS OF PERSONAL DATA</h3>
+					<ul style="margin: 0.5rem 0 0.5rem 1.5rem; line-height: 1.8; list-style-type: disc; font-size: 13px;">
+						<li>Third-party service providers (e.g., hosting, analytics, marketing).</li>
+						<li>Legal & regulatory authorities (where required by law).</li>
+						<li>Business partners (for contractual purposes).</li>
+					</ul>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">INTERNATIONAL DATA TRANSFERS</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">Your data may be transferred outside Nigeria for due diligence or legal compliance. We ensure such transfers adhere to applicable data protection laws.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">DATA SECURITY</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">We implement technical and organizational measures to protect your data. However, no method is 100% secure, and we cannot guarantee absolute security.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">YOUR RIGHTS UNDER THE NDPA</h3>
+					<ul style="margin: 0.5rem 0 0.5rem 1.5rem; line-height: 1.8; list-style-type: disc; font-size: 13px;">
+						<li>Access, correct, or delete your Personal Data.</li>
+						<li>Withdraw consent at any time.</li>
+						<li>Object to automated decision-making (including profiling).</li>
+						<li>Restrict or opt-out of data processing.</li>
+						<li>Lodge complaints with the Nigeria Data Protection Commission (NDPC).</li>
+					</ul>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">RETENTION PERIOD</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">We retain Personal Data only as long as necessary for the purposes stated, unless a longer retention period is required by law.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">AUTOMATED DECISION-MAKING AND PROFILING</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">If we use automated processing (e.g., AI-driven analytics), we will inform you of its significance and consequences.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">REMEDIES FOR VIOLATIONS</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">If you believe your privacy rights have been violated, contact us at <a href="mailto:compliance@aosorwell.com">compliance@aosorwell.com</a>. We will investigate and respond within 30 days. You may escalate complaints to the NDPC.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">CHILDREN’S PRIVACY</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">Our website is not intended for minors. If we discover unintentional collection of minors’ data, we will delete it promptly.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">CHANGES TO THIS PRIVACY STATEMENT</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">We may update this Privacy Statement periodically. The effective date will be indicated at the top. Continued use of our website constitutes acceptance of changes.</p>
+
+					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">CONTACT US</h3>
+					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">
+						For questions or requests regarding your Personal Data, contact:<br />
+						Email: <a href="mailto:compliance@aosorwell.com">compliance@aosorwell.com</a><br />
+						Address: 52/53 Trans-Amadi Industrial Layout, Port Harcourt, Rivers State
+					</p>
+					<button id="readLessBtn" class="read-less-btn mt-4 py-2 px-4 w-fit rounded-sm" style="display: none" onclick="toggleContent()">Read Less</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="cookie-backdrop" style="position:fixed;inset:0;background:rgba(0,0,0,0.38);z-index:2147483646;display:none;"></div>
+
+		<div id="cookie-bar" role="dialog" aria-live="polite" aria-label="Cookie consent" style="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -4px 16px rgba(0,0,0,.15);padding:14px;display:none;">
+			<div style="max-width:1200px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+				<p style="margin:0;font-size:14px;line-height:1.5;color:#111827;">
+					This website uses cookies to enhance your experience.
+					<a href="javascript:void(0)" onclick="openPrivacyFromCookies()" style="color:#007A33;font-weight:600;text-decoration:underline;">
+						Learn more (Privacy Statement)
+					</a>
+				</p>
+				<div style="display:flex;gap:8px;flex-wrap:wrap;">
+					<button type="button" onclick="handleCookieAction()" style="background:#007A33;color:#fff;border:0;border-radius:6px;padding:10px 14px;font-size:14px;cursor:pointer;">
+						Accept
+					</button>
+					<button type="button" onclick="handleCookieAction()" style="background:#C8102E;color:#fff;border:0;border-radius:6px;padding:10px 14px;font-size:14px;cursor:pointer;">
+						Decline
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			body.cookie-locked { overflow: hidden; }
+		</style>
+
+		<footer
+			class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+		>
+			<!-- Logo + Nav -->
+			<div
+				class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+			>
+				<img
+					src="./images/jogo.png"
+					alt=""
+					class="h-15 sm:h-20 w-auto object-cover"
+				/>
+				<div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
+					<a href="about.html">About Us</a>
+					<a href="services.html">Services</a>
+					<a href="hse.html">QHSE</a>
+					<a href="media.html">Media</a>
+					<a href="careers.html">Careers</a>
+					<a href="contact-us.html">Contact Us</a>
+				</div>
+			</div>
+
+			<!-- Footer Content -->
+			<div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
+				<!-- Company Info -->
+				<div
+					class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+				>
+					<div class="w-full">
+						<p class="text-xs sm:text-[13px] font-medium leading-loose">
+							We are one of the foremost Indigenous Oilfield Servicing Companies
+							in the country. Our service offerings cover Wellbore Construction,
+							Process Automation & Control, New Services/Operations &
+							Maintenance and Oilfield Tubular & Accessories Manufacturing &
+							Repair.
+						</p>
+						<!-- Social -->
+						<div class="mt-5 flex flex-col gap-y-2">
+							<h3 class="text-base font-medium">Stay Connected</h3>
+							<div class="flex gap-x-3">
+								<!-- Facebook -->
+								<a
+									href="https://www.youtube.com/@aosorwell8369"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-youtube text-white text-lg"></i>
+								</a>
+								<!-- Instagram -->
+								<a
+									href="https://www.instagram.com/aosorwell/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-instagram text-white text-lg"></i>
+								</a>
+								<!-- X (Twitter) -->
+								<a
+									href="https://x.com/AOSOrwell"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-twitter-x text-white text-lg"></i>
+								</a>
+								<!-- LinkedIn -->
+								<a
+									href="https://ng.linkedin.com/company/aosorwell"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-linkedin text-white text-lg"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Locations + Email -->
+				<div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+					<h4 class="font-medium text-sm sm:text-base">Locations</h4>
+					<div class="flex flex-col gap-y-3">
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-[13px] sm:text-sm">Head Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt,
+								Rivers State</p
+							>
+						</div>
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p
+							>
+						</div>
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-sm">Ghana Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful
+								Takoradi, Ghana</p
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Links + Social -->
+				<div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+					<h4 class="font-medium text-sm sm:text-base">Links</h4>
+					<div class="flex flex-col gap-y-2">
+						<a
+							href="about.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Our Story</a
+						>
+						<a
+							href="management.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Management</a
+						>
+						<a
+							href="media.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Media</a
+						>
+						<a
+							href="policies-index.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Policy Statement</a
+						>
+						<a
+							href="whistle-blower.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Whistle Blower</a
+						>
+						<a
+							href="downloadables.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Downloadables</a
+						>
+					</div>
+					<h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+					<div class="flex flex-col gap-y-1">
+						<p class="text-xs sm:text-[13px] text-gray-200"
+							>marketing@aosorwell.com</p
+						>
+						<p class="text-xs sm:text-[13px] text-gray-200"
+							>sales@aosorwell.com</p
+						>
+					</div>
+				</div>
+
+				<!-- Contact -->
+				<div class="w-full lg:w-2/5">
+					<h4 class="font-medium text-base">Contact Us</h4>
+					<form class="flex flex-col gap-y-5 mt-2">
+						<input
+							type="text"
+							placeholder="Company Name"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<input
+							type="text"
+							placeholder="Your Name"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<input
+							type="email"
+							placeholder="Email Address"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<textarea
+							placeholder="Your Message"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+						></textarea>
+						<div class="w-full flex justify-end">
+							<button
+								type="submit"
+								class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+								>SEND</button
+							>
+						</div>
+					</form>
+				</div>
+			</div>
+		</footer>
+		<div
+			class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+			>&copy; 2025 AOS Orwell. All rights reserved.
+		</div>
+
+		<script src="./index.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const heading = document.querySelector(".hero h1");
+				const subText = document.querySelector(".hero p");
+				const indicatorDots = document.querySelectorAll("#indicator-dots > div");
+				const nextBtn = document.getElementById("next-btn");
+				const prevBtn = document.getElementById("prev-btn");
+
+				let currentIndex = 0;
+				let slideTimer;
+
+				const heroHeadings = [
+					"POWERING AFRICA'S ENERGY FUTURE",
+					"24/7 ACCESS TO OEM CERTIFIED PERSONNEL",
+					"YOUR TRUSTED ENERGY INFRASTRUCTURE PARTNER"
+				];
+
+				const heroSubTexts = [
+					"Driven by precision. Powered by expertise.",
+					"With the highest guarantees for excellent work in-country",
+					"Delivering reliable solutions with global standards and local expertise"
+				];
+
+				function updateHeroText() {
+					// Optional: Add a quick fade out/in effect using inline styles or Tailwind classes
+					heading.style.opacity = '0';
+					subText.style.opacity = '0';
+					
+					setTimeout(() => {
+						// Instantly update the text (no typewriter)
+						heading.textContent = heroHeadings[currentIndex];
+						subText.textContent = heroSubTexts[currentIndex];
+						
+						// Fade back in
+						heading.style.transition = 'opacity 0.3s ease-in';
+						subText.style.transition = 'opacity 0.3s ease-in';
+						heading.style.opacity = '1';
+						subText.style.opacity = '1';
+					}, 150); // Small delay to let it fade out first
+
+					indicatorDots.forEach((dot, i) => {
+						dot.classList.toggle("bg-green-500", i === currentIndex);
+						dot.classList.toggle("bg-gray-300", i !== currentIndex);
+					});
+				}
+
+				function nextSlide() {
+					currentIndex = (currentIndex + 1) % heroHeadings.length; 
+					updateHeroText();
+					resetTimer();
+				}
+
+				function prevSlide() {
+					currentIndex = (currentIndex - 1 + heroHeadings.length) % heroHeadings.length;
+					updateHeroText();
+					resetTimer();
+				}
+				
+				function resetTimer() {
+					clearInterval(slideTimer);
+					slideTimer = setInterval(nextSlide, 6000);
+				}
+
+				if(nextBtn && prevBtn) {
+					nextBtn.addEventListener("click", nextSlide);
+					prevBtn.addEventListener("click", prevSlide);
+				}
+
+				// Initialize first slide instantly without the fade delay
+				heading.textContent = heroHeadings[0];
+				subText.textContent = heroSubTexts[0];
+				indicatorDots.forEach((dot, i) => {
+					dot.classList.toggle("bg-green-500", i === 0);
+					dot.classList.toggle("bg-gray-300", i !== 0);
+				});
+				
+				slideTimer = setInterval(nextSlide, 6000);
+			});
+
+			// ... (The rest of your carousel, swiper, and modal logic remains exactly the same below here)
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const container = document.getElementById("navlink");
+				const links = container.querySelectorAll("a");
+				const highlight = document.getElementById("nav-highlight");
+
+				// Highlight under link on hover
+				links.forEach((link) => {
+					link.addEventListener("mouseenter", () => {
+						const left = link.offsetLeft; // relative to container
+						const width = link.offsetWidth;
+						highlight.style.left = left + "px";
+						highlight.style.width = width + "px";
+					});
+				});
+
+				// Hide highlight when leaving nav
+				container.addEventListener("mouseleave", () => {
+					highlight.style.width = 0;
+				});
+
+				// Change highlight color on scroll
+				window.addEventListener("scroll", () => {
+					if (window.scrollY > 50) {
+						// adjust based on when navbar becomes white
+						highlight.style.background = "#0B5850"; // green
+					} else {
+						highlight.style.background = "white"; // default when navbar is transparent
+					}
+				});
+			});
+		</script>
+
+		<!-- privacy policy and cookie script -->
+		<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		const cookieBar = document.getElementById('cookie-bar');
+
+		if (cookieBar) {
+			cookieBar.style.display = 'none';
+		}
+
+		showPrivacyModal();
+
+		const closeBtn = document.getElementById('privacy-close');
+		if (closeBtn) {
+			closeBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				closePrivacyModal();
+			});
+		}
+	});
+
+	function showPrivacyModal() {
+		const overlay = document.querySelector('.overlay');
+		if (overlay) {
+			overlay.style.display = 'flex';
+			overlay.style.pointerEvents = 'auto';
+			overlay.classList.remove('hidden');
+			overlay.classList.add('is-active');
+			overlay.setAttribute('aria-hidden', 'false');
+		}
+	}
+
+	function closePrivacyModal() {
+		const overlay = document.querySelector('.overlay');
+		if (!overlay) return;
+		
+		overlay.style.display = 'none';
+		overlay.style.pointerEvents = '';
+		overlay.classList.remove('is-active');
+		overlay.classList.add('hidden');
+		overlay.setAttribute('aria-hidden', 'true');
+
+		const cookieBar = document.getElementById('cookie-bar');
+		if (cookieBar) {
+			cookieBar.style.display = 'block';
+		}
+	}
+
+	function toggleContent() {
+		const moreContent = document.getElementById('moreContent');
+		const readMoreBtn = document.getElementById('readMoreBtn');
+		const readLessBtn = document.getElementById('readLessBtn');
+
+		if (!moreContent) return;
+
+		const isHidden = moreContent.style.display === 'none' || moreContent.style.display === '';
+
+		if (isHidden) {
+			moreContent.style.display = 'block';
+
+			if (readMoreBtn) {
+				readMoreBtn.style.display = 'none';
+			}
+
+			if (readLessBtn) {
+				readLessBtn.style.display = 'inline-block';
+			}
+		} else {
+			moreContent.style.display = 'none';
+
+			if (readMoreBtn) {
+				readMoreBtn.style.display = 'inline-block';
+			}
+
+			if (readLessBtn) {
+				readLessBtn.style.display = 'none';
+			}
+		}
+	}
+
+	function handleCookieAction() {
+		const cookieBar = document.getElementById('cookie-bar');
+		const cookieBackdrop = document.getElementById('cookie-backdrop');
+
+		if (cookieBar) cookieBar.style.display = 'none';
+		if (cookieBackdrop) cookieBackdrop.style.display = 'none';
+	}
+
+	window.acceptCookies = handleCookieAction;
+	window.declineCookies = handleCookieAction;
+
+	function openPrivacyFromCookies() {
+		const cookieBar = document.getElementById('cookie-bar');
+		const cookieBackdrop = document.getElementById('cookie-backdrop');
+
+		if (cookieBar) cookieBar.style.display = 'none';
+		if (cookieBackdrop) cookieBackdrop.style.display = 'none';
+
+		showPrivacyModal();
+	}
+	
+	window.openPrivacyFromCookies = openPrivacyFromCookies;
+	window.closePrivacyModal = closePrivacyModal;
+	window.closeModal = closePrivacyModal;
+	window.toggleContent = toggleContent;
+</script>
+		<script>
+			const videoContainers = document.querySelectorAll('.video-container');
+
+			videoContainers.forEach(container => {
+				const video = container.querySelector('video');
+				const overlay = container.querySelector('.play-overlay');
+
+				container.addEventListener('click', () => {
+					if (video.paused) {
+						video.play();
+						overlay.style.opacity = '0';
+						video.classList.remove('brightness-75', 'group-hover:brightness-50');
+					} else {
+						video.pause();
+						overlay.style.opacity = '1';
+						video.classList.add('brightness-75', 'group-hover:brightness-50');
+					}
+				});
+			});
+		</script>
+		<script>
+			const servicesData = {
+				'well-construction': {
+					intro: 'Through a series of integrated activities and processes, we combine the right technology, the right people and several years of experience, to provide winning solutions in well construction and management.',
+					viewMoreText: 'VIEW MORE WELL CONSTRUCTION SERVICES',
+	                viewMoreLink: './well-construction.html',
+					featured: [
+						{
+							title: 'IPM & Turnkey Well Delivery Services',
+							desc: 'At AOS Orwell, we provide full Integrated Project Management and Turnkey Well Delivery Services by offering our clients a one-stop solution for delivering cost-efficient wells, safer and faster..',
+							img: './images/IPM.png',
+							link: './ipm-index.html'
+						},
+						{   
+							title: 'Fishing',
+							desc: 'We have the largest inventory of fishing tools in Nigeria and over 100 combined years of experience in fishing operations in-country..',
+							img: './images/well-fishing.png',
+							link: './well-construction.html'
+						}
+					]
+				},
+				'electrical': {
+					intro: 'We provide a wide range of products, solutions and turnkey services for Electrical and Instrumentation, as well as Automation & Control.',
+					viewMoreText: 'VIEW MORE ELECTRICAL & INSTRUMENTATION SERVICES',
+	                viewMoreLink: './new-services.html',
+					featured: [
+						{
+							title: 'Mechanical, Electrical & Instrumentation (M, E&I) Services',
+							desc: 'AOS Orwell Electrical & Instrumentation (E&I) offers a wide range of products, solutions and turnkey services for electricity distribution and control, across various sectors: Industries, Utilities, Buildings, Residences. We are a leading distributor of high-quality electrical equipment.',
+							img: './images/elect.jpeg',
+							link: './electrical-and-instrumentation.html'
+						},
+						{
+							title: 'E House Integrated Solutions',
+							desc: 'Field Auxillary Room ( FAR ) Relocatable Pre Fabricated Containerized Buildings for housing of equipment : ICSS ( Integrated Control Safety System ) , Power Distribution & Management System, UPS, Switchgear,.',
+							img: './images/e-house.jpg',
+							link: './new-services.html'
+						}
+					]
+				},
+				'automation': {
+					intro: 'We have a wide range of services that we offer mainly Project Management Services along with Design and Engineering Services.',
+					viewMoreText: 'VIEW MORE AUTOMATION & CONTROL SERVICES',
+					viewMoreLink: './process-management.html',
+					featured: [
+						{
+							title: 'Integrated Control and Safety Systems (ICSS)',
+							desc: 'This is a combination of technologies that combine elements of Process Control and Functional Safety into one single composition..',
+							img: './images/process-integrated.png',
+							link: './process-management.html'
+						},
+						{
+							title: 'Engineering Design and Project Management',
+							desc: 'We strive to provide cost-effective solutions to our clients in this industry as well as in the pharmaceutical sector..',
+							img: './images/process-eng.png',
+							link: './process-management.html'
+						}
+					]
+				},
+				'maintenance': {
+					intro: 'We provide Operations & Maintenance (O&M) services, including daily operations, repairs, upkeep, and component replacements to maintain assets and ensure their longevity.',
+					viewMoreText: 'VIEW MORE MAINTENANCE SERVICES',
+					viewMoreLink: './new-services.html',
+					featured: [
+						{
+							title: 'Valves & Rotatory Equipment Asset Management',
+							desc: 'We help you reduce total lifecycle costs by extending the life of your equipment. Our comprehensive services include full-service repair and reliability programs for pumps, related rotating equipment, valves, and instrumentation.',
+							img: './images/new-valves.png',
+							link: './new-services.html'
+						},
+						{
+							title: 'Metering Skid Solutions',
+							desc: 'We offer specialized Engineering Design, Construction, and Commissioning of field-proven, innovative solutions for custody transfer flow management within the oil and gas industry.',
+							img: './images/new-metering.png',
+							link: './new-services.html'
+						}
+					]
+				}
+			};
+
+			function renderContent(dataId) {
+				const data = servicesData[dataId];
+				const container = document.getElementById('services-content');
+				
+				if (!data || !container) return;
+
+				let featuredHTML = '';
+
+				data.featured.forEach(item => {
+					featuredHTML += `
+						<div class="flex flex-col lg:flex-row gap-6 lg:gap-8 group">
+				          <div class="w-full md:w-[250px] lg:w-[250px] h-[180px] shrink-0 overflow-hidden bg-gray-100">
+					        <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+				        </div>
+
+				        <div class="flex flex-col justify-center">
+					       <h4 class="text-sm xl:text-base font-semibold text-[#1a3b32] mb-3">
+						     ${item.title}
+					       </h4>
+
+					       <p class="text-gray-500 text-[12px] xl:text-[13px] leading-relaxed mb-6">
+						     ${item.desc}
+					       </p>
+
+					       <a href="${item.link}" class="text-[#2e8b57] text-[13px] uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-green-800 transition-colors">
+						      READ MORE 
+						      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						      </svg>
+					</a>
+				</div>
+			</div>
+		`;
+	});
+
+				container.innerHTML = `
+		           <div class="animate-fade-in relative min-h-[620px] pb-20">
+			          <p class="text-gray-500 text-[13px] md:text-sm leading-relaxed mb-12 max-w-4xl">
+				        ${data.intro}
+			         </p>
+
+			         <div class="w-6 h-[2px] bg-[#2e8b57] mb-2"></div>
+
+			         <h3 class="text-base xl:text-lg text-[#1a3b32] mb-9">
+				         Featured
+			         </h3>
+
+			         <div class="flex flex-col gap-5 mb-4">
+				          ${featuredHTML}
+			         </div>
+
+			         <a href="${data.viewMoreLink}"
+			            class="absolute bottom-4 right-0 flex items-center gap-2 text-[#2e8b57] text-[13px] uppercase tracking-widest font-semibold hover:text-green-800 transition-all">
+				         ${data.viewMoreText}
+				         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				         </svg>
+			         </a>
+		            </div>
+	`;
+  }
+
+			const tabs = document.querySelectorAll('.tab-btn');
+			
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					tabs.forEach(t => {
+						t.classList.remove('bg-white', 'border-[#2e8b57]', 'text-[#1a3b32]');
+						t.classList.add('bg-transparent', 'border-transparent', 'text-gray-600');
+					});
+					
+					tab.classList.remove('bg-transparent', 'border-transparent', 'text-gray-600');
+					tab.classList.add('bg-white', 'border-[#2e8b57]', 'text-[#1a3b32]');
+					
+					renderContent(tab.dataset.id);
+				});
+			});
+
+			renderContent('well-construction');
+		</script>
+		<style>
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateY(10px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+			.animate-fade-in {
+				animation: fadeIn 0.4s ease-out forwards;
+			}
+		</style>
+	</body>
+</html>

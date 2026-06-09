@@ -1,0 +1,248 @@
+<header style="z-index: 9999;" class="fixed top-0 left-0 right-0">
+
+	<!-- TOP BAR -->
+<div style="height: 44px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
+    <div class="w-full flex justify-end items-center pr-[220px] gap-10 h-full">
+		<a href="hse.html" class="inline-flex items-center gap-[3px] hover:text-[#4CAF50] transition-colors whitespace-nowrap mr-6">
+	       QHSE
+	       <span class="text-[10px] leading-none font-bold">
+		       ↗
+	       </span>
+        </a>
+
+		<a href="contact-us.html"
+		   style="background-color: #007a32; color: white; height: 32px; padding: 0 22px; border-radius: 4px; min-width: 150px;"
+		   class="inline-flex items-center justify-center font-semibold shadow-sm hover:opacity-90 transition whitespace-nowrap">
+			Request for Quote
+		</a>
+
+		<div class="flex items-center gap-2">
+			<input
+				id="top-search-input"
+				type="text"
+				placeholder="Search..."
+				class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
+			/>
+
+			<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
+	           <span class="material-symbols-outlined text-[22px]">search</span>
+            </button>
+		</div>
+
+	</div>
+</div>
+<!-- ######################################################## -->
+<!-- ################## NAVBAR BEGINS #######################-->
+<!-- ######################################################## -->
+
+<nav class="h-[74px] flex justify-between items-center md:px-20 px-4 bg-white border-b border-b-gray-300 transition-all">
+	<a href="/index.html">
+		<img src="./images/jogo.png" alt="AOS Orwell Logo" class="h-16 xsm:h-18 w-auto" />
+	</a>
+
+	<div class="hidden lg:flex items-center gap-x-8 text-[14px] font-semibold text-gray-800">
+		
+		<!-- Company Button -->
+		<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
+			Company 
+			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
+		</button>
+
+		<!-- Services Button -->
+		<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
+			Services
+			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
+		</button>
+
+	</div>
+
+	<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
+		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+		</svg>
+	</button>
+</nav>
+</header>
+
+<!-- DESKTOP COMPANY MEGA MENU -->
+<div id="desktop-mega-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
+	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
+		<button onclick="switchMegaTab('aosorwell')" id="tab-aosorwell" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
+			AOSOrwell <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="switchMegaTab('csr')" id="tab-csr" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			CSR <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="switchMegaTab('media')" id="tab-media" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Media & Resources <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="switchMegaTab('qhse')" id="tab-qhse" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			QHSE <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+	</div>
+
+	<div class="flex-1 bg-white p-12 relative flex">
+		<button onclick="toggleMegaMenu()" class="absolute top-6 right-8 text-gray-400 hover:text-gray-800 transition-colors z-10">
+			<span class="material-symbols-outlined">close</span>
+		</button>
+
+		<div id="content-aosorwell" class="mega-content flex w-full h-full">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="about.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">About Us</a>
+				<a href="management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Company Leadership</a>
+				<a href="careers.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Careers</a>
+				<a href="contact-us.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Contact Us</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+
+		<div id="content-csr" class="mega-content hidden w-full h-full animate-fadeIn">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="corporate-social-responsibility.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Employee Community Service</a>
+				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Healthcare</a>
+				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Education</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+
+		<div id="content-media" class="mega-content hidden w-full h-full animate-fadeIn">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Photo Gallery</a>
+				<a href="gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Video Gallery</a>
+				<a href="news.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">News & Press Releases</a>
+				<a href="blog.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Case Study</a>
+				<a href="policies-index.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Resources & Policies</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+
+		<div id="content-qhse" class="mega-content hidden w-full h-full animate-fadeIn">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Quality Policy</a>
+				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Health & Safety</a>
+				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Environmental Standards</a>
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+	</div>
+</div>
+
+<!-- DESKTOP SERVICES MEGA MENU -->
+<div id="desktop-services-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
+	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
+		<button onclick="showServicesContent('wcd')" id="services-tab-wcd" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
+			WCD <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<a href="ipm-index.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			IPM & Turnkey: PMD
+		</a>
+
+		<a href="well-construction.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Operations & Maintenance
+		</a>
+
+		<a href="process-management.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Product Enquiry
+		</a>
+	</div>
+
+	<div class="flex-1 bg-white p-12 relative flex">
+		<button onclick="toggleServicesMenu()" class="absolute top-6 right-8 text-gray-400 hover:text-gray-800 transition-colors z-10">
+			<span class="material-symbols-outlined">close</span>
+		</button>
+
+		<div id="services-content-wcd" class="services-content flex w-full h-full">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="well-construction.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Well Construction</a>
+				<a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Electrical & Instrumentation</a>
+				<a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Process Automation & Control</a>
+				<a href="new-services.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">New Services/O&M</a>
+			</div>
+
+			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+		</div>
+	</div>
+</div>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed z-50 top-19 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto max-h-[85vh]">
+	<div class="flex flex-col text-black text-[15px] font-medium">
+		
+		<div class="menu-item border-b border-gray-100 flex flex-col">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-aos-submenu', this)">
+				<span>AOSOrwell</span>
+				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+			</button>
+			<div id="mob-aos-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+				<div class="flex flex-col gap-y-4">
+					<a href="about.html" class="hover:text-[#4CAF50] transition-colors block">About Us</a>
+					<a href="management.html" class="hover:text-[#4CAF50] transition-colors block">Company Leadership</a>
+					<a href="careers.html" class="hover:text-[#4CAF50] transition-colors block">Careers</a>
+					<a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">Contact Us</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-item border-b border-gray-100">
+			<a href="corporate-social-responsibility.html" class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition">
+				<span>CSR</span>
+			</a>
+		</div>
+
+		<div class="menu-item border-b border-gray-100 flex flex-col">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-media-submenu', this)">
+				<span>Media & Resources</span>
+				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+			</button>
+			<div id="mob-media-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+				<div class="flex flex-col gap-y-4">
+					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Photo Gallery</a>
+					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Video Gallery</a>
+					<a href="news.html" class="hover:text-[#4CAF50] transition-colors block">News & Press Releases</a>
+					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Case Study</a>
+					<a href="policies-index.html" class="hover:text-[#4CAF50] transition-colors block">Resources/Policies</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-item border-b border-gray-100 flex flex-col">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-services-submenu', this)">
+				<span>Services</span>
+				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+			</button>
+			<div id="mob-services-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+				<div class="flex flex-col gap-y-4">
+					<div class="flex flex-col border-b border-gray-100 pb-2">
+						<button class="w-full flex justify-between items-center py-2 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-wcd-submenu', this)">
+							<span>WCD</span>
+							<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
+						</button>
+						<div id="mob-wcd-submenu" class="hidden relative w-full pl-4 pt-2 text-[13px] text-gray-500 bg-white flex flex-col gap-y-3">
+							<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Well Construction</a>
+							<a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Electrical & Instrumentation</a>
+							<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Process Automation & Control</a>
+							<a href="new-services.html" class="hover:text-[#4CAF50] transition-colors block">New Services/O&M</a>
+						</div>
+					</div>
+					<a href="ipm-index.html" class="hover:text-[#4CAF50] transition-colors block">IPM & Turnkey:PMD</a>
+					<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Operations & Maintenance</a>
+					<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Product Enquiry</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-item border-b border-gray-100">
+			<a href="hse.html" class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition">
+				<span>QHSE</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- ######################################################## -->
+<!-- #################### NAVBAR ENDS #######################-->
+<!-- ######################################################## -->
