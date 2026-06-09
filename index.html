@@ -262,77 +262,119 @@
 </div>
 
 <!-- MOBILE MENU -->
-<div id="mobile-menu" class="fixed z-50 top-19 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto max-h-[85vh]">
+<div id="mobile-menu"
+     style="top: 74px; z-index: 9996; max-height: calc(100vh - 74px);"
+     class="fixed left-0 right-0 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto border-b border-b-gray-300">
+
 	<div class="flex flex-col text-black text-[15px] font-medium">
-		
+
+		<!-- COMPANY -->
 		<div class="menu-item border-b border-gray-100 flex flex-col">
-			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-aos-submenu', this)">
-				<span>AOSOrwell</span>
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white"
+			        onclick="toggleSubmenu('mobile-company-menu', this)">
+				<span>Company</span>
 				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
 			</button>
-			<div id="mob-aos-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+
+			<div id="mobile-company-menu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
 				<div class="flex flex-col gap-y-4">
-					<a href="about.html" class="hover:text-[#4CAF50] transition-colors block">About Us</a>
-					<a href="management.html" class="hover:text-[#4CAF50] transition-colors block">Company Leadership</a>
-					<a href="careers.html" class="hover:text-[#4CAF50] transition-colors block">Careers</a>
-					<a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">Contact Us</a>
+
+					<!-- AOSOrwell -->
+					<button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
+					        onclick="toggleSubmenu('mobile-aos-menu', this)">
+						<span>AOSOrwell</span>
+						<span class="material-symbols-outlined text-[18px] transition-transform duration-300 transform">expand_more</span>
+					</button>
+
+					<div id="mobile-aos-menu" class="hidden pl-4 pt-2 text-[13px] text-gray-500">
+						<div class="flex flex-col gap-y-3">
+							<a href="about.html" class="hover:text-[#4CAF50] transition-colors block">About Us</a>
+							<a href="management.html" class="hover:text-[#4CAF50] transition-colors block">Company Leadership</a>
+							<a href="careers.html" class="hover:text-[#4CAF50] transition-colors block">Careers</a>
+							<a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">Contact Us</a>
+						</div>
+					</div>
+
+					<a href="corporate-social-responsibility.html" class="hover:text-[#4CAF50] transition-colors block">
+						CSR
+					</a>
+
+					<!-- Media & Resources -->
+					<button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
+					        onclick="toggleSubmenu('mobile-media-menu', this)">
+						<span>Media & Resources</span>
+						<span class="material-symbols-outlined text-[18px] transition-transform duration-300 transform">expand_more</span>
+					</button>
+
+					<div id="mobile-media-menu" class="hidden pl-4 pt-2 text-[13px] text-gray-500">
+						<div class="flex flex-col gap-y-3">
+							<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Photo Gallery</a>
+							<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Video Gallery</a>
+							<a href="news.html" class="hover:text-[#4CAF50] transition-colors block">News & Press Releases</a>
+							<a href="blog.html" class="hover:text-[#4CAF50] transition-colors block">Case Study</a>
+							<a href="policies-index.html" class="hover:text-[#4CAF50] transition-colors block">Resources & Policies</a>
+						</div>
+					</div>
+
+					<a href="hse.html" class="hover:text-[#4CAF50] transition-colors block">
+						QHSE
+					</a>
+
 				</div>
 			</div>
 		</div>
 
-		<div class="menu-item border-b border-gray-100">
-			<a href="corporate-social-responsibility.html" class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition">
-				<span>CSR</span>
-			</a>
-		</div>
-
+		<!-- SERVICES -->
 		<div class="menu-item border-b border-gray-100 flex flex-col">
-			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-media-submenu', this)">
-				<span>Media & Resources</span>
-				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
-			</button>
-			<div id="mob-media-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
-				<div class="flex flex-col gap-y-4">
-					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Photo Gallery</a>
-					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Video Gallery</a>
-					<a href="news.html" class="hover:text-[#4CAF50] transition-colors block">News & Press Releases</a>
-					<a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Case Study</a>
-					<a href="policies-index.html" class="hover:text-[#4CAF50] transition-colors block">Resources/Policies</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="menu-item border-b border-gray-100 flex flex-col">
-			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-services-submenu', this)">
+			<button class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white"
+			        onclick="toggleSubmenu('mobile-services-menu', this)">
 				<span>Services</span>
 				<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
 			</button>
-			<div id="mob-services-submenu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
+
+			<div id="mobile-services-menu" class="hidden relative w-full pl-6 pb-4 pt-2 text-[14px] text-gray-600 bg-white">
 				<div class="flex flex-col gap-y-4">
-					<div class="flex flex-col border-b border-gray-100 pb-2">
-						<button class="w-full flex justify-between items-center py-2 cursor-pointer hover:text-[#4CAF50] transition focus:outline-none bg-white" onclick="toggleSubmenu('mob-wcd-submenu', this)">
-							<span>WCD</span>
-							<span class="material-symbols-outlined transition-transform duration-300 transform">expand_more</span>
-						</button>
-						<div id="mob-wcd-submenu" class="hidden relative w-full pl-4 pt-2 text-[13px] text-gray-500 bg-white flex flex-col gap-y-3">
+
+					<!-- WCD -->
+					<button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
+					        onclick="toggleSubmenu('mobile-wcd-menu', this)">
+						<span>WCD</span>
+						<span class="material-symbols-outlined text-[18px] transition-transform duration-300 transform">expand_more</span>
+					</button>
+
+					<div id="mobile-wcd-menu" class="hidden pl-4 pt-2 text-[13px] text-gray-500">
+						<div class="flex flex-col gap-y-3">
 							<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Well Construction</a>
 							<a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Electrical & Instrumentation</a>
 							<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Process Automation & Control</a>
 							<a href="new-services.html" class="hover:text-[#4CAF50] transition-colors block">New Services/O&M</a>
 						</div>
 					</div>
-					<a href="ipm-index.html" class="hover:text-[#4CAF50] transition-colors block">IPM & Turnkey:PMD</a>
-					<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Operations & Maintenance</a>
-					<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Product Enquiry</a>
+
+					<a href="ipm-index.html" class="hover:text-[#4CAF50] transition-colors block">
+						IPM & Turnkey: PMD
+					</a>
+
+					<a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
+						Operations & Maintenance
+					</a>
+
+					<a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">
+						Product Enquiry
+					</a>
+
 				</div>
 			</div>
 		</div>
 
-		<div class="menu-item border-b border-gray-100">
-			<a href="hse.html" class="w-full flex justify-between items-center py-4 cursor-pointer hover:text-[#4CAF50] transition">
-				<span>QHSE</span>
+		<!-- REQUEST FOR QUOTE -->
+		<div class="pt-4">
+			<a href="contact-us.html"
+			   class="w-full flex justify-center items-center bg-[#007a32] text-white py-3 rounded-[4px] font-semibold hover:bg-[#006428] transition">
+				Request for Quote
 			</a>
 		</div>
+
 	</div>
 </div>
 
