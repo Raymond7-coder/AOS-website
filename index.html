@@ -94,67 +94,97 @@
 <header style="z-index: 9999;" class="fixed top-0 left-0 right-0">
 
 	<!-- TOP BAR -->
-<div style="height: 44px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
-    <div class="w-full flex justify-end items-center pr-[220px] gap-10 h-full">
-		<a href="hse.html" class="inline-flex items-center gap-[3px] hover:text-[#4CAF50] transition-colors whitespace-nowrap mr-6">
-	       QHSE
-	       <span class="text-[10px] leading-none font-bold">
-		       ↗
-	       </span>
-        </a>
+	<div style="height: 38px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
+		<div style="width: 100%; display: flex; justify-content: flex-end; align-items: center; padding-right: 140px; gap: 44px; height: 100%;">
 
-		<a href="contact-us.html"
-		   style="background-color: #007a32; color: white; height: 32px; padding: 0 22px; border-radius: 4px; min-width: 150px;"
-		   class="inline-flex items-center justify-center font-semibold shadow-sm hover:opacity-90 transition whitespace-nowrap">
-			Request for Quote
-		</a>
+			<a href="hse.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
+	           QHSE
+	           <span
+		            class="material-symbols-outlined"
+		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
+	            >
+		            north_east
+	          </span>
+          </a>
 
-		<div class="flex items-center gap-2">
-			<input
-				id="top-search-input"
-				type="text"
-				placeholder="Search..."
-				class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
-			/>
+            <a href="careers.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
+	           Careers
+	           <span
+		            class="material-symbols-outlined"
+		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
+	            >
+		            north_east
+	            </span>
+           </a>
 
-			<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
-	           <span class="material-symbols-outlined text-[22px]">search</span>
-            </button>
+            <a href="contact-us.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
+	           Contact Us
+	           <span
+		            class="material-symbols-outlined"
+		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
+	            >
+		        north_east
+	            </span>
+          </a>
+			<div class="flex items-center">
+				<input
+					id="top-search-input"
+					type="text"
+					placeholder="Search..."
+					class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
+				/>
+
+				<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
+					<span class="material-symbols-outlined text-[22px]">search</span>
+				</button>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- MAIN NAVBAR -->
+	<nav style="height: 82px;" class="relative flex justify-between items-center md:px-20 px-4 bg-white border-b border-b-gray-300 transition-all">
+		
+		<a href="./index.html" class="shrink-0">
+	       <img
+		      src="./images/jogo.png"
+		      alt="AOS Orwell Logo"
+		      style="height: 94px; width: auto;"
+	       />
+       </a>
+
+		<div
+			style="position: absolute; left: 58%; transform: translateX(-50%); gap: 50px;"
+	        class="hidden lg:flex items-center text-[15px] font-semibold text-gray-800"
+		>
+			<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
+				The Company 
+				<span class="material-symbols-outlined text-[21px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
+			</button>
+
+			<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
+				Our Services
+				<span class="material-symbols-outlined text-[21px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
+			</button>
+
+			<a
+	           href="contact-us.html"
+	           style="background-color: #007a32; color: white; height: 36px; padding: 0 24px; border-radius: 4px; min-width: 165px; transition: all 0.25s ease;"
+	           onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.25)'"
+	           onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+	           class="inline-flex items-center justify-center font-semibold whitespace-nowrap"
+            >
+	           Request for Quote
+           </a>
 		</div>
 
-	</div>
-</div>
-<!-- ######################################################## -->
-<!-- ################## NAVBAR BEGINS #######################-->
-<!-- ######################################################## -->
-
-<nav class="h-[74px] flex justify-between items-center md:px-20 px-4 bg-white/95 backdrop-blur-md border-b border-b-gray-300 transition-all">
-	<a href="/index.html">
-		<img src="./images/jogo.png" alt="AOS Orwell Logo" class="h-16 xsm:h-18 w-auto" />
-	</a>
-
-	<div class="hidden lg:flex items-center gap-x-8 text-[14px] font-semibold text-gray-800">
-		
-		<!-- Company Button -->
-		<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
-			Company 
-			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
+		<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
 		</button>
 
-		<!-- Services Button -->
-		<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
-			Services
-			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
-		</button>
-
-	</div>
-
-	<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
-		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-		</svg>
-	</button>
-</nav>
+	</nav>
 </header>
 
 <!-- DESKTOP COMPANY MEGA MENU -->
@@ -262,10 +292,7 @@
 </div>
 
 <!-- MOBILE MENU -->
-<div id="mobile-menu"
-     style="top: 74px; z-index: 9996; max-height: calc(100vh - 74px);"
-     class="fixed left-0 right-0 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto border-b border-b-gray-300">
-
+<div id="mobile-menu" style="top: 82px; max-height: calc(100vh - 82px);" class="fixed z-50 left-0 right-0 border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto">
 	<div class="flex flex-col text-black text-[15px] font-medium">
 
 		<!-- COMPANY -->
@@ -392,13 +419,24 @@
 
 			<div class="absolute inset-0 bg-black/50 pointer-events-none"></div>
 
-			<div class="absolute z-10 top-0 w-full md:w-190 lg:w-230 pt-43 max-xsm:pb-53 xsm:pt-50 xl:pt-65 text-white px-8 sm:px-20 md:pl-20 xl:pl-25 flex flex-col gap-y-5">
-				<h1 class="text-2xl xsm:text-3xl md:text-4xl xl:text-5xl font-bold"></h1>
-				<p class="border-l-4 border-white pl-4 w-full xsm:w-2/3 text-[13px] xsm:text-sm xl:text-[15px] text-gray-300"></p>
-				<button class="w-fit bg-[#016125] text-white text-xs sm:text-sm px-8 sm:px-10 py-2.5 sm:py-3 mt-7 xsm:mt-10 xl:mt-15 rounded-sm" id="fadein">
-					Learn More
-				</button>
-			</div>
+			<div 
+			     style="top: 55%; transform: translateY(-50%);"
+	             class="absolute z-10 left-0 right-0 flex flex-col items-center text-center text-white px-6 sm:px-20 gap-y-4"
+            >
+	           <h1 class="text-2xl xsm:text-3xl md:text-4xl xl:text-5xl font-bold max-w-5xl"></h1>
+
+	           <p class="w-full max-w-2xl text-[13px] xsm:text-sm xl:text-[15px] text-gray-300 leading-relaxed"></p>
+
+	          <a
+	              href="about.html"
+	              style="color: white; height: 38px; padding: 0 28px; border: 1.5px solid white; border-radius: 4px; min-width: 145px; display: inline-flex; align-items: center; justify-content: center; margin-top: 10px; z-index: 20; transition: all 0.25s ease;"
+	              onmouseover="this.style.backgroundColor='white'; this.style.color='#007a32'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.25)'"
+	              onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+	              class="font-semibold whitespace-nowrap"
+               >
+	              Learn More
+               </a>
+          </div>
 
 			
 		</div>
@@ -1203,7 +1241,7 @@
 			</div>
 		</section>
 		<!-- Privacy Modal -->
-		<div class="overlay fixed inset-0 z-[9999] bg-black/60 hidden items-start justify-center p-4 sm:p-6" aria-hidden="true">
+		<div id="privacy-overlay" class="overlay fixed inset-0 z-[9999] bg-black/60 hidden items-start justify-center p-4 sm:p-6" aria-hidden="true">
 			<div id="privacy-modal" class="bg-white w-full max-w-[900px] rounded-2xl p-6 md:p-10 relative overflow-y-auto max-h-[90vh] overflow-x-hidden break-words">
 				<button type="button" id="privacy-close" aria-label="Close" class="close-btn absolute top-4 right-4 text-2xl" onclick="closePrivacyModal()">
 					&times;
@@ -1222,8 +1260,16 @@
 					AOSO is committed to protecting the privacy of confidential and “Personal Data” (information that directly or indirectly identifies individuals, including clients, employees, agents, job applicants, or others inside or outside the organization). This Policy sets out AOSO’s compliance with Nigeria Data Protection Act (NDPA) 2023 and other applicable international data protection laws.
 				</p>
 
-				<button id="readMoreBtn" class="bg-red-700 flex items-start text-white cursor-pointer hover:scale-110 py-2 px-4 w-fit rounded-sm mt-2" onclick="toggleContent()">Read More</button>
-
+                <button
+	                id="readMoreBtn"
+	                style="background-color: #007a32; color: white; transition: all 0.25s ease;"
+	                class="flex items-start cursor-pointer py-2 px-4 w-fit rounded-sm mt-2 font-semibold"
+	                onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.20)'"
+	                onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+	                onclick="toggleContent()"
+               >
+	               Read More
+                </button>
 				<div id="moreContent" style="display: none; margin-top: 1rem; font-family: 'Poppins', sans-serif; font-size: 14px; line-height: 1.8; color: #000; letter-spacing: normal; margin-bottom: 8px;">
 					<h3 style="font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem;">INFORMATION WE COLLECT</h3>
 					<p style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 13px">
@@ -1290,7 +1336,18 @@
 						Email: <a href="mailto:compliance@aosorwell.com">compliance@aosorwell.com</a><br />
 						Address: 52/53 Trans-Amadi Industrial Layout, Port Harcourt, Rivers State
 					</p>
-					<button id="readLessBtn" class="read-less-btn mt-4 py-2 px-4 w-fit rounded-sm" style="display: none" onclick="toggleContent()">Read Less</button>
+				 <div style="width: 100%; display: flex; justify-content: flex-end;">
+					 <button
+	                     id="readLessBtn"
+	                     style="background-color: #007a32; color: white; transition: all 0.25s ease;"
+	                     class="flex items-start cursor-pointer py-2 px-4 w-fit rounded-sm mt-2 font-semibold"
+	                     onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.20)'"
+	                     onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+	                     onclick="toggleContent()"
+                        >
+	                       Read Less
+                      </button>
+				 </div>
 				</div>
 			</div>
 		</div>
@@ -1306,12 +1363,12 @@
 					</a>
 				</p>
 				<div style="display:flex;gap:8px;flex-wrap:wrap;">
-					<button type="button" onclick="handleCookieAction()" style="background:#007A33;color:#fff;border:0;border-radius:6px;padding:10px 14px;font-size:14px;cursor:pointer;">
-						Accept
-					</button>
-					<button type="button" onclick="handleCookieAction()" style="background:#C8102E;color:#fff;border:0;border-radius:6px;padding:10px 14px;font-size:14px;cursor:pointer;">
-						Decline
-					</button>
+					<button type="button" onclick="handleCookieAction('accepted')" style="background:#007A33;color:#fff;border:0;border-radius:6px;padding:10px 14px;font-size:14px;cursor:pointer;">
+	                  Accept
+                    </button>
+					<button type="button" onclick="handleCookieAction('declined')" style="background:#C8102E;color:#fff;border:0;border-radius:6px;padding:10px 14px;font-size:14px;cursor:pointer;">
+	                  Decline
+                    </button>
 				</div>
 			</div>
 		</div>

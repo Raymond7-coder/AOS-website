@@ -1,67 +1,97 @@
 <header style="z-index: 9999;" class="fixed top-0 left-0 right-0">
 
 	<!-- TOP BAR -->
-<div style="height: 44px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
-    <div class="w-full flex justify-end items-center pr-[220px] gap-10 h-full">
-		<a href="hse.html" class="inline-flex items-center gap-[3px] hover:text-[#4CAF50] transition-colors whitespace-nowrap mr-6">
-	       QHSE
-	       <span class="text-[10px] leading-none font-bold">
-		       ↗
-	       </span>
-        </a>
+	<div style="height: 38px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
+		<div style="width: 100%; display: flex; justify-content: flex-end; align-items: center; padding-right: 140px; gap: 44px; height: 100%;">
 
-		<a href="contact-us.html"
-		   style="background-color: #007a32; color: white; height: 32px; padding: 0 22px; border-radius: 4px; min-width: 150px;"
-		   class="inline-flex items-center justify-center font-semibold shadow-sm hover:opacity-90 transition whitespace-nowrap">
-			Request for Quote
-		</a>
+			<a href="hse.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
+	           QHSE
+	           <span
+		            class="material-symbols-outlined"
+		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
+	            >
+		            north_east
+	          </span>
+          </a>
 
-		<div class="flex items-center gap-2">
-			<input
-				id="top-search-input"
-				type="text"
-				placeholder="Search..."
-				class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
-			/>
+            <a href="careers.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
+	           Careers
+	           <span
+		            class="material-symbols-outlined"
+		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
+	            >
+		            north_east
+	            </span>
+           </a>
 
-			<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
-	           <span class="material-symbols-outlined text-[22px]">search</span>
-            </button>
+            <a href="contact-us.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
+	           Contact Us
+	           <span
+		            class="material-symbols-outlined"
+		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
+	            >
+		        north_east
+	            </span>
+          </a>
+			<div class="flex items-center">
+				<input
+					id="top-search-input"
+					type="text"
+					placeholder="Search..."
+					class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
+				/>
+
+				<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
+					<span class="material-symbols-outlined text-[22px]">search</span>
+				</button>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- MAIN NAVBAR -->
+	<nav style="height: 82px;" class="relative flex justify-between items-center md:px-20 px-4 bg-white border-b border-b-gray-300 transition-all">
+		
+		<a href="./index.html" class="shrink-0">
+	       <img
+		      src="./images/jogo.png"
+		      alt="AOS Orwell Logo"
+		      style="height: 94px; width: auto;"
+	       />
+       </a>
+
+		<div
+			style="position: absolute; left: 58%; transform: translateX(-50%); gap: 50px;"
+	        class="hidden lg:flex items-center text-[15px] font-semibold text-gray-800"
+		>
+			<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
+				The Company 
+				<span class="material-symbols-outlined text-[21px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
+			</button>
+
+			<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
+				Our Services
+				<span class="material-symbols-outlined text-[21px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
+			</button>
+
+			<a
+	           href="contact-us.html"
+	           style="background-color: #007a32; color: white; height: 36px; padding: 0 24px; border-radius: 4px; min-width: 165px; transition: all 0.25s ease;"
+	           onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.25)'"
+	           onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+	           class="inline-flex items-center justify-center font-semibold whitespace-nowrap"
+            >
+	           Request for Quote
+           </a>
 		</div>
 
-	</div>
-</div>
-<!-- ######################################################## -->
-<!-- ################## NAVBAR BEGINS #######################-->
-<!-- ######################################################## -->
-
-<nav class="h-[74px] flex justify-between items-center md:px-20 px-4 bg-white border-b border-b-gray-300 transition-all">
-	<a href="/index.html">
-		<img src="./images/jogo.png" alt="AOS Orwell Logo" class="h-16 xsm:h-18 w-auto" />
-	</a>
-
-	<div class="hidden lg:flex items-center gap-x-8 text-[14px] font-semibold text-gray-800">
-		
-		<!-- Company Button -->
-		<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
-			Company 
-			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
+		<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
 		</button>
 
-		<!-- Services Button -->
-		<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group">
-			Services
-			<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
-		</button>
-
-	</div>
-
-	<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
-		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-		</svg>
-	</button>
-</nav>
+	</nav>
 </header>
 
 <!-- DESKTOP COMPANY MEGA MENU -->
@@ -169,7 +199,7 @@
 </div>
 
 <!-- MOBILE MENU -->
-<div id="mobile-menu" class="fixed z-50 top-19 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto max-h-[85vh]">
+<div id="mobile-menu" style="top: 82px; max-height: calc(100vh - 82px);" class="fixed z-50 left-0 right-0 border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto">
 	<div class="flex flex-col text-black text-[15px] font-medium">
 		
 		<div class="menu-item border-b border-gray-100 flex flex-col">
