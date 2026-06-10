@@ -1980,5 +1980,75 @@
 				animation: fadeIn 0.4s ease-out forwards;
 			}
 		</style>
+
+	 <script>
+	          document.addEventListener("DOMContentLoaded", function () 
+		      const cookieBar = document.getElementById("cookie-bar");
+		       const cookieBackdrop = document.getElementById("cookie-backdrop");
+		       const privacyOverlay = document.getElementById("privacy-overlay");
+
+		       const cookieChoice = localStorage.getItem("aosCookieChoice");
+
+		      // Privacy modal should never open automatically
+		    if (privacyOverlay) {
+			   privacyOverlay.classList.add("hidden");
+			   privacyOverlay.classList.remove("flex");
+			   privacyOverlay.setAttribute("aria-hidden", "true");
+		    }
+
+		      // Cookie banner should show only if user has not accepted or declined
+		    if (cookieBar) {
+			if (cookieChoice === "accepted" || cookieChoice === "declined") {
+				cookieBar.style.display = "none";
+			} else {
+				cookieBar.style.display = "block";
+			}
+		    }
+
+		    // Keep backdrop hidden unless you intentionally want it
+		    if (cookieBackdrop) {
+			cookieBackdrop.style.display = "none";
+		     }
+
+		     document.body.classList.remove("cookie-locked");
+	  });
+
+	   function handleCookieAction(choice) {
+		localStorage.setItem("aosCookieChoice", choice);
+
+		const cookieBar = document.getElementById("cookie-bar");
+		const cookieBackdrop = document.getElementById("cookie-backdrop");
+
+		if (cookieBar) {
+			cookieBar.style.display = "none";
+		}
+
+		if (cookieBackdrop) {
+			cookieBackdrop.style.display = "none";
+		}
+
+		document.body.classList.remove("cookie-locked");
+	   }
+
+	 function openPrivacyFromCookies() {
+		const privacyOverlay = document.getElementById("privacy-overlay");
+
+		if (privacyOverlay) {
+			privacyOverlay.classList.remove("hidden");
+			privacyOverlay.classList.add("flex");
+			privacyOverlay.setAttribute("aria-hidden", "false");
+		}
+	 }
+
+	 function closePrivacyModal() {
+		const privacyOverlay = document.getElementById("privacy-overlay");
+
+		if (privacyOverlay) {
+			privacyOverlay.classList.add("hidden");
+			privacyOverlay.classList.remove("flex");
+			privacyOverlay.setAttribute("aria-hidden", "true");
+		}
+	 }
+  </script>
 	</body>
 </html>
