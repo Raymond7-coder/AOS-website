@@ -154,7 +154,7 @@
        </a>
 
 		<div
-			style="position: absolute; left: 58%; transform: translateX(-50%); gap: 50px;"
+			style="position: absolute; left: 69%; transform: translateX(-50%); gap: 50px;"
 	        class="hidden lg:flex items-center text-[15px] font-semibold text-gray-800"
 		>
 			<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
@@ -256,19 +256,23 @@
 <!-- DESKTOP SERVICES MEGA MENU -->
 <div id="desktop-services-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
 	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
-		<button onclick="showServicesContent('wcd')" id="services-tab-wcd" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
-			WCD <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		<button onclick="showServicesContent('well construction')" id="services-tab-wcd" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
+			Well Construction <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		</button>
 
 		<a href="ipm-index.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			IPM & Turnkey: PMD
+			IPM & Turnkey 
 		</a>
 
-		<a href="well-construction.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			Operations & Maintenance
-		</a>
+		<button onclick="showServicesContent('process management')" id="services-tab-pm" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			Process Management <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
 
-		<a href="process-management.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+		<button onclick="showServicesContent('operations maintenance')" id="services-tab-om" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+	         Operations & Maintenance <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </button>
+
+		<a href="contact-us.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
 			Product Enquiry
 		</a>
 	</div>
@@ -280,16 +284,151 @@
 
 		<div id="services-content-wcd" class="services-content flex w-full h-full">
 			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="well-construction.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Well Construction</a>
-				<a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Electrical & Instrumentation</a>
-				<a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Process Automation & Control</a>
-				<a href="new-services.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">New Services/O&M</a>
+				<a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-fishing.png', 'Fishing')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Fishing
+		      </a>
+
+				<a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-casing.png', 'Casing')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Casing & Tubular Running Services (CTR)
+		      </a>
+
+			  <a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-sickline.png', 'Cased Hole')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Cased Hole Wireline & Slickline Services
+		      </a>
+
+			  <a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-plug.png', 'Plug')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Plug, Abandonment and Slot Recovery
+		      </a>
+
+			  <a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-drillpipe.png', 'Drillpipe')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Drillpipe Tubular Rentals
+		      </a>
+
+			  <a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-jar.png', 'Jar and Downhole Tools')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Jar and Downhole Tools
+		      </a>
+
+			  <a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/completion.png', 'Completion, Assembly & Hammer Services')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Completion, Assembly & Hammer Services
+		      </a>
+
+			  <a href="well-construction.html"
+		           onmouseenter="changeServiceImage('./images/well-drilling.png', 'Drilling')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Drilling
+		      </a>
+
+			  <a href="machine-shop.html"
+		           onmouseenter="changeServiceImage('./images/macshop.jpeg', 'Machine Shop and Fabrication')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Machine Shop and Fabrication
+		      </a>
+			
 			</div>
 
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
+			<div class="w-1/2 lg:w-3/5 pl-8 relative flex justify-center items-start">
+	             <div class="w-[360px] h-[230px] rounded-md overflow-hidden bg-gray-100 shadow-md">
+			        <img
+				      id="service-preview-image"
+				      src="./images/well-fishing.png"
+				      alt="Fishing"
+				      class="w-full h-full object-cover transition-all duration-300"
+			        >
+		   </div>
 		</div>
 	</div>
+
+		<div id="services-content-pm" class="services-content hidden w-full h-full">
+	        <div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+
+				<button onclick="showProcessSubContent('ei')" id="process-subtab-ei" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Electrical & Instrumentation
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+		       <button onclick="showProcessSubContent('pac')" id="process-subtab-pac" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Process Automation & Control
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+	       </div>
+
+		   <div class="w-1/2 lg:w-3/5 pl-8 relative">
+
+		       <div id="process-subcontent-ei" class="process-subcontent hidden flex-col gap-4">
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E House Integrated Solutions</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Control Panels</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E & I Engineered Packages</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Aftersales Support Services</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Busbar Trunking and Cable Management</a>
+
+		      </div>
+
+		      <div id="process-subcontent-pac" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Integrated Control and Safety Systems (ICSS)</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Complete Valves Solutions</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Engineering Design and Project Management</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Fire & Gas Safety Services</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Commissioning & Startup Services</a>
+				  <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
+		       </div>
+		        
+
+	        </div>
+		</div>
+
+
+		<div id="services-content-om" class="services-content hidden w-full h-full">
+	       <div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+
+		       <a href="operations-maintenance.html"
+		            onmouseenter="changeOperationsImage('./images/new-valves.png', 'Rotating Equipment & Valve Asset Management')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			         Rotating Equipment & Valve Asset Management
+		       </a>
+
+			   <a href="operations-maintenance.html"
+		            onmouseenter="changeOperationsImage('./images/process-commission.png', 'Automation & Control')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Automation, Control & Metering Asset Management
+		       </a>
+
+			   <a href="operations-maintenance.html"
+		            onmouseenter="changeOperationsImage('./images/new-maintenance.png', 'Rotating Equipment & Valve Asset Management')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			          Fabric Maintemnance & Asset Integrity
+		       </a>
+	       </div>
+
+	       <div class="w-1/2 lg:w-3/5 pl-8 relative flex justify-center items-start">
+			   <div class="w-[360px] h-[230px] rounded-md overflow-hidden bg-gray-100 shadow-md">
+			     <img
+				   id="operations-preview-image"
+				   src="./images/new-valves.png"
+				   alt="Rotating Equipment & Valve Asset Management"
+				   class="w-full h-full object-cover transition-all duration-300"
+			    >
+		      </div>
+           </div>
+	   </div>
+   </div>
 </div>
+<!-- DESKTOP SERVICES MEGA MENU ENDS -->
 
 <!-- MOBILE MENU -->
 <div id="mobile-menu" style="top: 82px; max-height: calc(100vh - 82px);" class="fixed z-50 left-0 right-0 border-b border-b-gray-400 lg:hidden hidden bg-white w-full py-4 px-4 shadow-lg overflow-y-auto">
