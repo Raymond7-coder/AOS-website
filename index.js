@@ -20,28 +20,6 @@ if (mobileMenuButton) {
 // Toggle mobile menu
 // NAVBAR SCRIPT BEGINS
 
-window.toggleMegaMenu = function () {
-    const companyMenu = document.getElementById('desktop-mega-menu');
-    const servicesMenu = document.getElementById('desktop-services-menu');
-
-    if (!companyMenu) return;
-
-    const isHidden = companyMenu.classList.contains('hidden');
-
-    if (isHidden) {
-        companyMenu.classList.remove('hidden');
-        companyMenu.classList.add('flex');
-
-        if (servicesMenu) {
-            servicesMenu.classList.add('hidden');
-            servicesMenu.classList.remove('flex');
-        }
-    } else {
-        companyMenu.classList.add('hidden');
-        companyMenu.classList.remove('flex');
-    }
-};
-
 window.toggleServicesMenu = function () {
     const companyMenu = document.getElementById('desktop-mega-menu');
     const servicesMenu = document.getElementById('desktop-services-menu');
@@ -58,6 +36,10 @@ window.toggleServicesMenu = function () {
             companyMenu.classList.add('hidden');
             companyMenu.classList.remove('flex');
         }
+
+        // Always reset to Well Construction when Services menu opens
+        showServicesContent('well construction');
+
     } else {
         servicesMenu.classList.add('hidden');
         servicesMenu.classList.remove('flex');
@@ -96,39 +78,108 @@ window.showServicesContent = function (serviceName) {
         el.classList.remove('flex');
     });
 
-    const targetContent = document.getElementById('services-content-' + serviceName);
+    document.querySelectorAll('.services-tab-btn').forEach(btn => {
+        btn.classList.remove('text-[#4CAF50]', 'font-semibold', 'border-[#4CAF50]', 'bg-white/5');
+        btn.classList.add('border-transparent');
+    });
+
+    let contentId = '';
+    let tabId = '';
+
+    if (serviceName === 'well construction') {
+        contentId = 'services-content-wcd';
+        tabId = 'services-tab-wcd';
+    }
+
+    if (serviceName === 'process management') {
+        contentId = 'services-content-pm';
+        tabId = 'services-tab-pm';
+    }
+
+    if (serviceName === 'operations maintenance') {
+        contentId = 'services-content-om';
+        tabId = 'services-tab-om';
+    }
+
+    const targetContent = document.getElementById(contentId);
+    const activeTab = document.getElementById(tabId);
 
     if (targetContent) {
         targetContent.classList.remove('hidden');
         targetContent.classList.add('flex');
     }
 
-    document.querySelectorAll('.services-tab-btn').forEach(btn => {
-        btn.classList.remove('text-[#4CAF50]', 'font-semibold', 'border-[#4CAF50]');
-        btn.classList.add('border-transparent');
-    });
-
-    const activeTab = document.getElementById('services-tab-' + serviceName);
-
     if (activeTab) {
-        activeTab.classList.add('text-[#4CAF50]', 'font-semibold', 'border-[#4CAF50]');
+        activeTab.classList.add('text-[#4CAF50]', 'font-semibold', 'border-[#4CAF50]', 'bg-white/5');
         activeTab.classList.remove('border-transparent');
     }
-};
 
-window.toggleSubmenu = function (submenuId, element) {
-    const submenu = document.getElementById(submenuId);
-    if (!submenu) return;
-
-    const icon = element.querySelector('.material-symbols-outlined');
-
-    submenu.classList.toggle('hidden');
-
-    if (icon) {
-        icon.classList.toggle('rotate-180');
+    // This makes Electrical & Instrumentation show automatically
+    // when Process Management is selected
+    if (serviceName === 'process management') {
+        showProcessSubContent('ei');
     }
 };
 
+window.showProcessSubContent = function (subName) {
+    document.querySelectorAll('.process-subcontent').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+    });
+
+    document.querySelectorAll('.process-subtab-btn').forEach(btn => {
+        btn.classList.remove('text-[#4CAF50]', 'font-semibold');
+        btn.classList.add('text-gray-600');
+    });
+
+    let contentId = '';
+    let tabId = '';
+
+    if (subName === 'ei') {
+        contentId = 'process-subcontent-ei';
+        tabId = 'process-subtab-ei';
+    }
+
+    if (subName === 'pac') {
+        contentId = 'process-subcontent-pac';
+        tabId = 'process-subtab-pac';
+    }
+
+    const targetContent = document.getElementById(contentId);
+    const activeTab = document.getElementById(tabId);
+
+    if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('flex');
+    }
+
+    if (activeTab) {
+        activeTab.classList.remove('text-gray-600');
+        activeTab.classList.add('text-[#4CAF50]', 'font-semibold');
+    }
+};
+
+window.changeServiceImage = function (imageSrc, title) {
+    const previewImage = document.getElementById('service-preview-image');
+    const previewTitle = document.getElementById('service-preview-title');
+
+    if (previewImage) {
+        previewImage.src = imageSrc;
+        previewImage.alt = title;
+    }
+
+    if (previewTitle) {
+        previewTitle.textContent = title;
+    }
+};
+window.changeOperationsImage = function (imageSrc, title) {
+    const previewImage = document.getElementById('operations-preview-image');
+
+    if (previewImage) {
+        previewImage.src = imageSrc;
+        previewImage.alt = title;
+    }
+};
 window.toggleTopSearch = function () {
 	const searchInput = document.getElementById('top-search-input');
 
