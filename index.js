@@ -19,6 +19,41 @@ if (mobileMenuButton) {
 
 // Toggle mobile menu
 // NAVBAR SCRIPT BEGINS
+window.toggleMegaMenu = function () {
+    const companyMenu = document.getElementById('desktop-mega-menu');
+    const servicesMenu = document.getElementById('desktop-services-menu');
+
+    if (!companyMenu) {
+        console.error("Company menu not found. Check if the company dropdown has id='desktop-mega-menu'");
+        return;
+    }
+
+    const isHidden = companyMenu.classList.contains('hidden');
+
+    if (isHidden) {
+        companyMenu.classList.remove('hidden');
+        companyMenu.classList.add('flex');
+
+        if (servicesMenu) {
+            servicesMenu.classList.add('hidden');
+            servicesMenu.classList.remove('flex');
+        }
+    } else {
+        companyMenu.classList.add('hidden');
+        companyMenu.classList.remove('flex');
+    }
+
+    const companyIcon = document.getElementById('mega-menu-icon');
+    const servicesIcon = document.getElementById('services-menu-icon');
+
+    if (companyIcon) {
+        companyIcon.classList.toggle('rotate-180', isHidden);
+    }
+
+    if (servicesIcon) {
+        servicesIcon.classList.remove('rotate-180');
+    }
+};
 
 window.toggleServicesMenu = function () {
     const companyMenu = document.getElementById('desktop-mega-menu');
