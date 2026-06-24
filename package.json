@@ -3,6 +3,29 @@
     "@tailwindcss/cli": "^4.1.13"
   },
   "devDependencies": {
+    "pagefind": "^1.5.2",
     "tailwindcss": "^4.3.0"
-  }
+  },
+  "name": "aos-main",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000A\u0000O\u0000S\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raymond7-coder/AOS-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Raymond7-coder/AOS-website/issues"
+  },
+  "homepage": "https://github.com/Raymond7-coder/AOS-website#readme"
 }

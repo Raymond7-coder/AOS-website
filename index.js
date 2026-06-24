@@ -216,16 +216,103 @@ window.changeOperationsImage = function (imageSrc, title) {
     }
 };
 window.toggleTopSearch = function () {
-	const searchInput = document.getElementById('top-search-input');
+    const topInput = document.getElementById("top-search-input");
+    const dropdown = document.getElementById("top-search-dropdown");
+    const dropdownInput = document.getElementById("dropdown-search-input");
 
-	if (!searchInput) return;
+    if (!topInput || !dropdown || !dropdownInput) return;
 
-	searchInput.classList.toggle('hidden');
+    topInput.classList.remove("hidden");
+    dropdown.classList.toggle("hidden");
 
-	if (!searchInput.classList.contains('hidden')) {
-		searchInput.focus();
-	}
+    if (!dropdown.classList.contains("hidden")) {
+        setTimeout(() => dropdownInput.focus(), 100);
+    }
 };
+
+window.openTopSearch = function () {
+    const topInput = document.getElementById("top-search-input");
+    const dropdown = document.getElementById("top-search-dropdown");
+    const dropdownInput = document.getElementById("dropdown-search-input");
+
+    if (!topInput || !dropdown || !dropdownInput) return;
+
+    topInput.classList.remove("hidden");
+    dropdown.classList.remove("hidden");
+
+    setTimeout(() => dropdownInput.focus(), 100);
+};
+
+window.handleTopSearchTyping = function () {
+    const topInput = document.getElementById("top-search-input");
+    const dropdownInput = document.getElementById("dropdown-search-input");
+
+    if (!topInput || !dropdownInput) return;
+
+    dropdownInput.value = topInput.value;
+};
+
+window.selectPopularSearch = function (term) {
+    const topInput = document.getElementById("top-search-input");
+    const dropdownInput = document.getElementById("dropdown-search-input");
+
+    if (!topInput || !dropdownInput) return;
+
+    topInput.value = term;
+    dropdownInput.value = term;
+
+    submitTopSearch();
+};
+
+window.submitTopSearch = function () {
+    const dropdownInput = document.getElementById("dropdown-search-input");
+    const topInput = document.getElementById("top-search-input");
+
+    let searchValue = "";
+
+    if (dropdownInput && dropdownInput.value.trim() !== "") {
+        searchValue = dropdownInput.value.trim();
+    } else if (topInput && topInput.value.trim() !== "") {
+        searchValue = topInput.value.trim();
+    }
+
+    if (searchValue === "") return;
+
+    window.location.href = `./search.html?q=${encodeURIComponent(searchValue)}`;
+};
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownInput = document.getElementById("dropdown-search-input");
+    const topInput = document.getElementById("top-search-input");
+
+    if (dropdownInput) {
+        dropdownInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                submitTopSearch();
+            }
+        });
+    }
+
+    if (topInput) {
+        topInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                submitTopSearch();
+            }
+        });
+    }
+});
+
+document.addEventListener("click", function (event) {
+    const wrapper = document.getElementById("top-search-wrapper");
+    const topInput = document.getElementById("top-search-input");
+    const dropdown = document.getElementById("top-search-dropdown");
+
+    if (!wrapper || !topInput || !dropdown) return;
+
+    if (!wrapper.contains(event.target)) {
+        dropdown.classList.add("hidden");
+        topInput.classList.add("hidden");
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');

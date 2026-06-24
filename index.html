@@ -94,8 +94,8 @@
 <header style="z-index: 9999;" class="fixed top-0 left-0 right-0">
 
 	<!-- TOP BAR -->
-	<div style="height: 38px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium">
-		<div style="width: 100%; display: flex; justify-content: flex-end; align-items: center; padding-right: 140px; gap: 44px; height: 100%;">
+	<div style="height: 38px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium overflow-visible">
+		<div style="width: 100%; display: flex; justify-content: flex-end; align-items: center; padding-right: 140px; gap: 44px; height: 100%; overflow-visible;">
 
 			<a href="hse.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
 	           QHSE
@@ -126,18 +126,67 @@
 		        north_east
 	            </span>
           </a>
-			<div class="flex items-center">
-				<input
-					id="top-search-input"
-					type="text"
-					placeholder="Search..."
-					class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
-				/>
+			<div class="relative flex items-center" id="top-search-wrapper">
+              <input
+                 id="top-search-input"
+                 type="text"
+                 placeholder="Search..."
+                 onclick="openTopSearch()"
+                 oninput="handleTopSearchTyping()"
+				 onkeydown="if(event.key === 'Enter') submitTopSearch()"
+                 class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
+                />
 
-				<button type="button" onclick="toggleTopSearch()" class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors">
-					<span class="material-symbols-outlined text-[22px]">search</span>
-				</button>
-			</div>
+                <button
+                  type="button"
+                  onclick="toggleTopSearch()"
+                  class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[22px]">search</span>
+                </button>
+
+                <!-- Search dropdown -->
+                <div
+                  id="top-search-dropdown"
+                  style="top: 38px; width: 350px;"
+                  class="hidden absolute right-0 bg-white text-black shadow-lg rounded-b-md z-[9999] px-6 py-5"
+                >
+				
+                 <div class="flex items-center border-b border-gray-300 pb-3">
+                  <input
+                    id="dropdown-search-input"
+                    type="text"
+                    placeholder="What are you looking for?"
+					onkeydown="if(event.key === 'Enter') submitTopSearch()"
+                    class="w-full text-[14px] text-gray-700 focus:outline-none"
+                  />
+
+                  <button type="button" onclick="submitTopSearch()">
+                    <span class="material-symbols-outlined text-gray-500">arrow_forward</span>
+                  </button>
+                </div>
+
+                <h3 class="font-semibold text-[15px] mt-4 mb-4">Popular searches</h3>
+
+                <div class="grid grid-cols-2 gap-y-2 text-[15px]">
+                  <button onclick="selectPopularSearch('Turnkey')" style="color:#019B39;" class="text-left hover:underline">Turnkey</button>
+                  <button onclick="selectPopularSearch('Well')" style="color:#019B39;" class="text-left hover:underline">Well</button>
+
+                  <button onclick="selectPopularSearch('Fishing')" style="color:#019B39;" class="text-left hover:underline">Fishing</button>
+                  <button onclick="selectPopularSearch('Instrumentation')" style="color:#019B39;" class="text-left hover:underline">Instrumentation</button>
+
+                  <button onclick="selectPopularSearch('ipm')" style="color:#019B39;" class="text-left hover:underline">ipm</button>
+                  <button onclick="selectPopularSearch('tubular')" style="color:#019B39;" class="text-left hover:underline">tubular</button>
+
+                  <button onclick="selectPopularSearch('wireline')" style="color:#019B39;" class="text-left hover:underline">wireline</button>
+                  <button onclick="selectPopularSearch('drilling')" style="color:#019B39;" class="text-left hover:underline">drilling</button>
+
+                  <button onclick="selectPopularSearch('valve')" style="color:#019B39;" class="text-left hover:underline">valve</button>
+                  <button onclick="selectPopularSearch('electrical')" style="color:#019B39;" class="text-left hover:underline">electrical</button>
+                </div>
+          </div>
+        </div>
+			
 
 		</div>
 	</div>
@@ -168,15 +217,16 @@
 			</button>
 
 			<a
-	           href="contact-us.html"
-	           style="background-color: #007a32; color: white; height: 36px; padding: 0 24px; border-radius: 4px; min-width: 165px; transition: all 0.25s ease;"
-	           onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.25)'"
-	           onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
-	           class="inline-flex items-center justify-center font-semibold whitespace-nowrap"
+              href="request-form.html"
+              style="background-color: #007a32; color: white; height: 36px; padding: 0 24px; border-radius: 4px; min-width: 165px; transition: all 0.25s ease;"
+              onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.25)'"
+              onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+              class="inline-flex items-center justify-center font-semibold whitespace-nowrap"
             >
-	           Request for Quote
-           </a>
-		</div>
+              How can we help you?
+            </a>
+
+			</div>
 
 		<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
 			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -679,7 +729,7 @@
 			</svg>
 
 			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
-				Most Trusted Partner for Well Construction Excellence
+				Your Trusted Partner for Well Construction Excellence
 			</h3>
 
 			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">
@@ -726,7 +776,7 @@
 			</svg>
 
 			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
-				The Preferred Single-Point Accountability Partner for End-to-End & Turnkey Well Delivery Service
+				One partner, Total accountability. Complete Well Delivery
 			</h3>
 
 			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">
@@ -743,7 +793,7 @@
 			</svg>
 
 			<h3 class="text-[#1a2b25] text-lg md:text-xl font-semibold leading-snug mb-4">
-				Pacesetter in Operations & Maintenance & Asset Management in Nigeria
+				Redefining O&M and asset management in Nigeria
 			</h3>
 
 			<p class="text-gray-600 text-sm md:text-[15px] leading-relaxed">

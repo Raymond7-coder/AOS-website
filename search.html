@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | AOS Orwell</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .search-hero {
+      background: #019B39;
+      color: white;
+      padding: 80px 8%;
+    }
+
+    .search-hero h1 {
+      font-size: 56px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .search-area {
+      padding: 50px 8%;
+      max-width: 1100px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 16px;
+      font-size: 16px;
+      border: 1px solid #9ca3af;
+      outline: none;
+    }
+
+    .search-box button {
+      padding: 16px 36px;
+      background: #019B39;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .result-count {
+      margin-bottom: 30px;
+      font-size: 15px;
+      color: #374151;
+    }
+
+    .result-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 24px 0;
+    }
+
+    .result-type {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .result-title {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .result-title a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .result-title a:hover {
+      color: #019B39;
+    }
+
+    .result-excerpt {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .empty-state {
+      font-size: 18px;
+      color: #6b7280;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="search-hero">
+    <h1>Search</h1>
+  </section>
+
+  <main class="search-area">
+    <div class="search-box">
+      <input id="search-input" type="text" placeholder="Search AOS Orwell..." />
+      <button id="search-button">Search</button>
+    </div>
+
+    <div id="result-count" class="result-count"></div>
+    <div id="search-results"></div>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+    const resultCount = document.getElementById("result-count");
+    const resultsContainer = document.getElementById("search-results");
+
+    const params = new URLSearchParams(window.location.search);
+    const queryFromUrl = params.get("q") || "";
+
+    searchInput.value = queryFromUrl;
+
+    async function runSearch(query) {
+      if (!query.trim()) {
+        resultCount.textContent = "";
+        resultsContainer.innerHTML = `<p class="empty-state">Type something to search the website.</p>`;
+        return;
+      }
+
+      resultCount.textContent = "Searching...";
+      resultsContainer.innerHTML = "";
+
+      try {
+        const pagefind = await import("/pagefind/pagefind.js");
+        const search = await pagefind.search(query);
+
+        const results = await Promise.all(
+          search.results.map(result => result.data())
+        );
+
+        resultCount.textContent = `Results 1-${results.length} for "${query}"`;
+
+        if (results.length === 0) {
+          resultsContainer.innerHTML = `<p class="empty-state">No results found for "${query}".</p>`;
+          return;
+        }
+
+        resultsContainer.innerHTML = results.map(result => `
+          <article class="result-item">
+            <div class="result-type">Page</div>
+
+            <h2 class="result-title">
+              <a href="${result.url}">${result.meta.title || result.title || "Untitled page"}</a>
+            </h2>
+
+            <p class="result-excerpt">
+              ${result.excerpt || ""}
+            </p>
+          </article>
+        `).join("");
+
+      } catch (error) {
+        resultCount.textContent = "";
+        resultsContainer.innerHTML = `
+          <p class="empty-state">
+            Search is being prepared. Please use the navigation menu or contact us if you need help finding something.
+          </p>
+        `;
+      }
+    }
+
+    searchButton.addEventListener("click", function () {
+      const query = searchInput.value.trim();
+
+      if (!query) return;
+
+      window.history.pushState({}, "", `search.html?q=${encodeURIComponent(query)}`);
+      runSearch(query);
+    });
+
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        searchButton.click();
+      }
+    });
+
+    runSearch(queryFromUrl);
+  </script>
+
+</body>
+</html>
