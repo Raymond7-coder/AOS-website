@@ -12,126 +12,9 @@
     <link rel="stylesheet" href="../output.css">
 </head>
 <body>
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="/index.html"><img src="./images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
+    <div id="navbar-placeholder"></div>
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-            <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="about.html"  onmouseenter="showAboutLinks()">About Us</a>
-            <a href="services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="hse.html">QHSE</a>
-            <a href="media.html"   onmouseenter="showMediaLinks()">Media</a>
-            <a href="careers.html" class="text-primary ">Careers</a>
-            <a href="contact-us.html">Contact Us</a>
-        </div>
-
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="about.html" class="hover:text-secondary">Our Story</a>
-                <a href="management.html" class="hover:text-secondary">Management</a>
-                <a href="board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
-
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="./images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
-
-
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="about.html" class="hover:text-primary">Our Story</a>
-							<a href="management.html" class="hover:text-primary">Management</a>
-							<a href="board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- QHSE (no dropdown) -->
-				<a href="hse.html" class="hover:text-primary transition py-2">QHSE</a>
-
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Careers (no dropdown) -->
-				<a href="careers.html" class="hover:text-primary transition py-2">Careers</a>
-
-				<!-- Contact Us (no dropdown) -->
-				<a href="contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
+   <div style="height: 100px;"></div>
 
 
     <!-- HEADING -->
@@ -143,9 +26,13 @@
         </div>
      </section>
 
-     <section class="px-4 md:px-20 h-fit rounded-md">
-        <img src="./images/careers.png" alt="" class="w-full h-auto max-h-[100vh] sm:h-full object-cover rounded-md object-top">
-     </section>
+     <section class="px-4 md:px-20 rounded-md">
+       <img 
+           src="./images/careers.png" 
+           alt="Careers image" 
+          class="w-full h-[380px] md:h-[320px] lg:h-[380px] object-cover object-top rounded-md"
+        >
+      </section>
 
      <section class="px-6 md:px-20 py-20">
         <p class="text-xs sm:text-[15px] text-gray-600 leading-loose">
@@ -170,6 +57,22 @@
             </div>
             <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You have what it takes to provide logistics support to an oil service operation safely, efficiently and cost effectively in line with industry and AOS Orwell operational safety standards and procedures.</span>
         </div>
+
+        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
+            <div class="flex items-center gap-x-1">
+                <img src="./images/mic.png" alt="" class="h-10 w-auto">
+                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Sales & Marketing</h3>
+            </div>
+            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are a natural choice to spearhead the broadening of sales and marketing in a highly competitive industry or a critical contributor to finding and meeting the unique needs of an ever more diversified and complex customer group.</span>
+        </div>
+
+        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
+            <div class="flex items-center gap-x-1">
+                <img src="./images/mic.png" alt="" class="h-10 w-auto">
+                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Corporate and Regulatory Affairs</h3>
+            </div>
+            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You must be well versed and can interact with all industry regulatory bodies. You will be tasked to manage Community Relations, Engagements and must be familiar CSR activities.</span>
+        </div>
         
         <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
             <div class="flex items-center gap-x-1">
@@ -177,14 +80,6 @@
                 <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Key / Client Account Management</h3>
             </div>
             <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You typically are a self-starter. You need little or no encouragement to hunt down new business opportunities. You have natural talent for building open, enduring customer relationships that generate revenue over time. As a key account Manager, you have proven you can help to deliver this growth.</span>
-        </div>
-        
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/mic.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Sales & Marketing</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are a natural choice to spearhead the broadening of sales and marketing in a highly competitive industry or a critical contributor to finding and meeting the unique needs of an ever more diversified and complex customer group.</span>
         </div>
         
         <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
@@ -197,10 +92,10 @@
         
         <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
             <div class="flex items-center gap-x-1">
-                <img src="./images/mic.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Corporate and Regulatory Affairs</h3>
+                <img src="./images/human.png" alt="" class="h-10 w-auto">
+                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Human Resource and General Support</h3>
             </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You must be well versed and can interact with all industry regulatory bodies. You will be tasked to manage Community Relations, Engagements and must be familiar CSR activities.</span>
+            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are an expert in your field with a professional approach and responsive attitude. You are friendly, transparent and rational. You have the ability to propose pragmatic, credible solutions to a purpose driven, fast-paced business.</span>
         </div>
         
         <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
@@ -219,14 +114,6 @@
             <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are passionate about the quality of life and health and the overall safety for yourself and of others around you. You are responsible, deliberate, alert and focused on meeting global Quality and Safety standards no matter what because you understand that they are the key to running a sustainable, successful oilfield service business.</span>
         </div>
 
-         <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/human.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Human Resource and General Support</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are an expert in your field with a professional approach and responsive attitude. You are friendly, transparent and rational. You have the ability to propose pragmatic, credible solutions to a purpose driven, fast-paced business.</span>
-        </div>
-
       <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
             <div class="flex items-center gap-x-1">
                 <img src="./images/customer-support.png" alt="" class="h-10 w-auto">
@@ -238,20 +125,17 @@
 
 
     <section class="px-6 mt-20 md:px-20 py-16 flex flex-col items-center text-center gap-y-6 bg-primary">
-      <h2 class="text-2xl sm:text-3xl font-bold text-white">AOSO Fit</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">AOS Orwell Graduate Trainee Program</h2>
       <div class="w-16 h-[3px] bg-red-700 mb-6"></div>
       
       <p class="max-w-5xl text-gray-300 text-sm sm:text-base leading-relaxed">
-        The AOSO intern is a solution provider and has a ‘can-do’ attitude to learning, growth and development. 
-        We run a robust and intensive yearly Graduate Trainee programme that is focused on attracting and guiding 
-        the most talented, innovative and creative minds within this industry.
+        The AOS Orwell Graduate Trainee Programme is designed to develop exceptional talent and prepare the next generation of industry leaders. 
+        Through intensive training, practical experience, mentorship, and exposure to diverse disciplines, participants are empowered to grow, innovate, and build rewarding careers.
       </p>
     
       <p class="max-w-5xl text-gray-300 text-sm sm:text-base leading-relaxed">
-        This programme will push the limits of your knowledge until you become an expert in your chosen field. 
-        You also enjoy the benefit of accelerated growth through the system, if you prove to be that valuable 
-        resource we require. Our GT network brings together some of the brightest and most diverse minds you will 
-        ever work with, giving you the opportunity to learn, unlearn and relearn in a healthy work environment.
+        By bringing together some of the brightest minds in a culture that encourages continuous learning and collaboration, the programme provides a solid foundation for young professionals 
+        to thrive and make meaningful contributions to the future of the energy industry.
       </p>
     </section>
 
@@ -298,36 +182,9 @@
     </div>
   </form>
 
-  <!-- 1. Accountant -->
+  <!-- 1. Executive Accounts Manager -->
   <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">1. Accountant</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Ensure financial accuracy and support strategic decision-making.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/accountant.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Accountant','./careers/accountant.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Executive Accounts Manager -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">2. Executive Accounts Manager</h3>
+    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">1. Executive Accounts Manager</h3>
     <div class="flex justify-between items-end flex-wrap gap-y-4">
       <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
         <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
@@ -352,63 +209,9 @@
     </div>
   </div>
 
-  <!-- 3. Field Service Engineer -->
+  <!-- 2. Lead, Design Engineer – Instrumentation -->
   <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">3. Field Service Engineer</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Offshore, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Deliver hands-on technical solutions in dynamic field environments.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/field-service-engineer.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Field Service Engineer','./careers/field-service-engineer.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. ICSS Engineer -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">4. ICSS Engineer</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Specialize in integrated control and safety systems for upstream operations.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/icss-engineer.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('ICSS Engineer','./careers/icss-engineer.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Lead, Design Engineer – Instrumentation -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">5. Lead, Design Engineer – Instrumentation</h3>
+    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">2. Lead, Design Engineer – Instrumentation</h3>
     <div class="flex justify-between items-end flex-wrap gap-y-4">
       <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
         <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
@@ -433,36 +236,9 @@
     </div>
   </div>
 
-  <!-- 6. Project Manager -->
+  <!-- 3. Revenue to Cash Realization Officer -->
   <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">6. Project Manager</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Manage EPC/E&I projects to time, margin and customer satisfaction.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/project-manager.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Project Manager','./careers/project-manager.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 7. Revenue to Cash Realization Officer -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">7. Revenue to Cash Realization Officer</h3>
+    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">3. Revenue to Cash Realization Officer</h3>
     <div class="flex justify-between items-end flex-wrap gap-y-4">
       <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
         <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
@@ -487,9 +263,9 @@
     </div>
   </div>
 
-  <!-- 8. Technical Sales Engineer – PMD -->
+  <!-- 4. Technical Sales Engineer – PMD -->
   <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">8. Technical Sales Engineer – PMD</h3>
+    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">4. Technical Sales Engineer – PMD</h3>
     <div class="flex justify-between items-end flex-wrap gap-y-4">
       <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
         <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
@@ -507,60 +283,6 @@
         </a>
         <button type="button"
                 onclick="shareJob('Technical Sales Engineer – PMD','./careers/technical-sales-engineer-pmd.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 9. Technical Sales Engineer – WCD -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">9. Technical Sales Engineer – WCD</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Advise clients and solve challenges in Wellbore Construction Delivery.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/technical-sales-engineer-wcd.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Technical Sales Engineer – WCD','./careers/technical-sales-engineer-wcd.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10. Graduate Trainee -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">10. Graduate Trainee</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Kickstart your career with hands-on training across our engineering disciplines.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/graduate-trainee.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Graduate Trainee','./careers/graduate-trainee.html')"
                 class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
           Share
         </button>
@@ -763,6 +485,18 @@
     el.title = "Posted on " + dt.toLocaleString(); // tooltip with exact date
   });
 })();
+</script>
+
+<script>
+  fetch("./navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
 </script>
 </body>
 </html>

@@ -24,8 +24,10 @@
 	</head>
 	<body class="!bg-white">
 	   <div id="navbar-placeholder"></div>
-	   <div style="height: 80px; width: 100%;"></div>
 
+       <div style="height: 120px;"></div>
+
+	   
 		<!-- BLOG HEADING -->
 		<section
 			class=" w-full md:py-10 px-0 md:px-20"
@@ -487,14 +489,31 @@
 
 		<script src="./index.js"></script>
 
-		<script>
-	     fetch('./navbar.html')
-		    .then(response => response.text())
-		    .then(data => {
-			    document.getElementById('navbar-placeholder').innerHTML = data;
-		    });
-        </script>
+    <script>
+     fetch("./navbar.html")
+      .then(response => response.text())
+      .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
 
-        <script src="./index.js"></script>
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
+   </script> 
+
+  <script src="./index.js"></script>
+
+  <script>
+  fetch("./navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
+ </script> 
+
 	</body>
 </html>

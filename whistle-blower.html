@@ -17,128 +17,9 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 <body class="bg-[#F5F5F5] relative overflow-x-hidden">
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="/index.html"><img src="./images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
+  <div id="navbar-placeholder"></div>
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="about.html"  onmouseenter="showAboutLinks()" >About Us</a>
-            <a href="services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="hse.html">QHSE</a>
-            <a href="media.html"  onmouseenter="showMediaLinks()">Media</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact-us.html">Contact Us</a>
-        </div>
-
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="about.html" class="hover:text-secondary">Our Story</a>
-                <a href="management.html" class="hover:text-secondary">Management</a>
-                <a href="board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
-
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="./images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
-
-    
-    <!-- ✅ Mobile Menu -->
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="about.html" class="hover:text-primary">Our Story</a>
-							<a href="management.html" class="hover:text-primary">Management</a>
-							<a href="board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- QHSE (no dropdown) -->
-				<a href="hse.html" class="hover:text-primary transition py-2">QHSE</a>
-
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Careers (no dropdown) -->
-				<a href="careers.html" class="hover:text-primary transition py-2">Careers</a>
-
-				<!-- Contact Us (no dropdown) -->
-				<a href="contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
-
+  <div style="height: 100px;"></div>
   <!-- HERO -->
 <section class="relative w-full h-[400px] bg-cover bg-center" style="background-image: url('./images/pol-bg.jpeg');">
   <div class="absolute inset-0 bg-black/60"></div>
@@ -375,5 +256,16 @@
     mobileMenu.classList.toggle('hidden');
   });
 </script>
+<script>
+   fetch("./navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
+ </script>
 </body>
 </html>

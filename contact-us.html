@@ -24,305 +24,467 @@
     transform: translate(0, 0);
   }
 }
-button:hover {
-  background:#0056b3;
+.contact-location-btn.active-location {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
+.contact-map-office-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.contact-map-box {
+  height: 430px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contact-office-panel {
+  min-height: 430px;
+  background: #014E1E;
+  color: white;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-office-label {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.contact-office-title {
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact-office-subtitle {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 14px;
+}
+
+.contact-office-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-location-btn {
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  transition: 0.25s ease;
+}
+
+.contact-location-btn:hover,
+.contact-location-btn.active-location {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.contact-location-btn h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.contact-location-btn p {
+  font-size: 11px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-email-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .contact-map-office-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map-box {
+    height: 340px;
+  }
+
+  .contact-office-panel {
+    min-height: auto;
+  }
+
+  .contact-email-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+.contact-form-social-section {
+  background: #f7f8f7;
+  padding: 70px 80px 55px;
+}
+
+.contact-form-social-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.contact-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card h2,
+.contact-card h3 {
+  margin: 0;
+}
+
+.contact-card-title {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.contact-card-text {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.contact-card-text a {
+  color: #019B39;
+  font-weight: 700;
+}
+
+.contact-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.contact-field textarea {
+  height: 110px;
+  resize: none;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #019B39;
+  box-shadow: 0 0 0 3px rgba(1, 155, 57, 0.12);
+}
+
+.contact-submit-btn {
+  width: 100%;
+  background: #019B39;
+  color: #ffffff;
+  border: 1px solid #019B39;
+  border-radius: 8px;
+  padding: 13px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.contact-submit-btn:hover {
+  background: #007a32;
+  border-color: #007a32;
+}
+
+.contact-instagram-box {
+  margin-top: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px;
+  max-height: 560px;
+  overflow: hidden;
+}
+
+.contact-instagram-box .instagram-media {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .contact-form-social-section {
+    padding: 56px 24px;
+  }
+
+  .contact-form-social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 28px;
+  }
+}
 </style>
 </head>
 <body>
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="/index.html"><img src="./images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
+  <div id="navbar-placeholder"></div>
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="about.html"  onmouseenter="showAboutLinks()">About Us</a>
-            <a href="services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="hse.html">QHSE</a>
-            <a href="media.html"  onmouseenter="showMediaLinks()">Media</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact-us.html"  class="text-primary ">Contact Us</a>
-        </div>
+ <div style="height: 120px;"></div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+
+<!-- CONTACT HERO + MAP START -->
+<section class="pt-24 pb-14 px-6 md:px-20 bg-white">
+  <div class="text-center max-w-3xl mx-auto mb-10">
+    <small class="text-xs sm:text-[13px] font-semibold text-primary">
+      Contact Us
+    </small>
+
+    <h1 class="text-2xl md:text-4xl font-bold mt-3 mb-3">
+      Get in Touch with Us
+    </h1>
+
+    <p class="text-xs sm:text-[13px] md:text-sm font-medium text-gray-600">
+      We're here to provide the support and solutions you need—reach out today!
+    </p>
+  </div>
+
+  <div class="contact-map-office-grid">
+    <!-- MAP SIDE -->
+    <div class="contact-map-box">
+      <iframe
+        id="contact-map-frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010.3552573945462!2d7.029755375077731!3d4.811511944981281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cc4bc208b26f%3A0x15f94a26792870fd!2sAosorwell%20Ltd!5e0!3m2!1sen!2sng!4v1755688733645!5m2!1sen!2sng"
+        class="border-0 w-full h-full"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <!-- ADDRESS SIDE -->
+    <div class="contact-office-panel">
+      <small class="contact-office-label">
+        Our Locations
+      </small>
+
+      <h2 class="contact-office-title">
+        Visit our offices
+      </h2>
+
+      <p class="contact-office-subtitle">
+        Click an office below to view its location on the map.
+      </p>
+
+      <div class="contact-office-list">
+        <button
+          type="button"
+          onclick="changeContactMap('head-office', this)"
+          class="contact-location-btn active-location"
+        >
+          <h3>Head Office</h3>
+          <p>
+            Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State
+          </p>
         </button>
 
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="about.html" class="hover:text-secondary">Our Story</a>
-                <a href="management.html" class="hover:text-secondary">Management</a>
-                <a href="board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
+        <button
+          type="button"
+          onclick="changeContactMap('lagos-office', this)"
+          class="contact-location-btn"
+        >
+          <h3>Lagos Office</h3>
+          <p>
+            3/5, Adeyemo Alakija Street, Victoria Island, Lagos.
+          </p>
+        </button>
 
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="./images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
+        <button
+          type="button"
+          onclick="changeContactMap('ghana-office', this)"
+          class="contact-location-btn"
+        >
+          <h3>Ghana Office</h3>
+          <p>
+            Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana
+          </p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT HERO + MAP END -->
 
 
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="about.html" class="hover:text-primary">Our Story</a>
-							<a href="management.html" class="hover:text-primary">Management</a>
-							<a href="board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
+<!-- EMAILS STARTS -->
+<section class="py-10 px-6 md:px-20 bg-white">
+  <div class="contact-email-grid">
+    <div class="flex flex-col gap-y-3 items-center justify-center">
+      <h3 class="text-base md:text-lg font-semibold">Marketing</h3>
+      <p class="text-gray-600 font-medium text-xs md:text-sm">
+        Our friendly team is here to help
+      </p>
+      <a href="mailto:marketing@aosorwell.com" class="text-primary font-medium text-xs md:text-sm">
+        marketing@aosorwell.com
+      </a>
+    </div>
 
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
+    <div class="flex flex-col gap-y-3 items-center justify-center">
+      <h3 class="text-base md:text-lg font-semibold">Sales</h3>
+      <p class="text-gray-600 font-medium text-xs md:text-sm">
+        Question or queries? Get in touch!
+      </p>
+      <a href="mailto:sales@aosorwell.com" class="text-primary font-medium text-xs md:text-sm">
+        sales@aosorwell.com
+      </a>
+    </div>
 
-				<!-- QHSE (no dropdown) -->
-				<a href="hse.html" class="hover:text-primary transition py-2">QHSE</a>
-
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Careers (no dropdown) -->
-				<a href="careers.html" class="hover:text-primary transition py-2">Careers</a>
-
-				<!-- Contact Us (no dropdown) -->
-				<a href="contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
-
-
-    <!-- HEADING STARTS -->
-     <section class="above-map-section flex flex-col gap-y-2 items-center text-center py-15 px-6 md:px-20">
-        <small class="text-xs sm:text-[13px] font-semibold text-primary">Contact Us</small>
-        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Get in Touch with Us</h1>
-        <p  class="text-xs sm:text-[13px] font-medium text-gray-600">We're here to provide the support and solutions you need—reach out today!</p>
-     </section>
-    <!-- HEADING ENDS -->
-
-
-    <!-- MAP START -->
-     <section id="map-container" class=" h-70vh sm:h-[80vh] w-full">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010.3552573945462!2d7.029755375077731!3d4.811511944981281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cc4bc208b26f%3A0x15f94a26792870fd!2sAosorwell%20Ltd!5e0!3m2!1sen!2sng!4v1755688733645!5m2!1sen!2sng" class="border-0 w-full h-full" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-     </section>
-    <!-- MAP END -->
-
-    <!-- EMAILS STARTS -->
-     <section class="py-15 px-6 md:px-20 flex justify-between flex-col gap-y-10 sm:flex-row gap-x-3">
-        <div class="w-full sm:w-1/3 flex flex-col gap-y-3 items-center jusify-center text-center">
-            <h3 class="text-base md:text-lg font-semibold">Marketing</h3>
-            <p class="text-gray-600 font-medium text-xs md:text-sm">Our friendly team is here to help</p>
-            <a href="" class="text-primary font-medium text-xs md:text-sm">marketing@aosorwell.com</a>
-        </div>
-        <div class="w-full sm:w-1/3 flex flex-col gap-y-3 items-center jusify-center text-center">
-            <h3 class="text-base md:text-lg font-semibold">Sales</h3>
-            <p class="text-gray-600 font-medium text-xs md:text-sm">Question or queries? Get in touch!</p>
-            <a href="" class="text-primary font-medium text-xs md:text-sm">sales@aosorwell.com</a>
-        </div>
-        <div class="w-full sm:w-1/3 flex flex-col gap-y-3 items-center jusify-center text-center">
-            <h3 class="text-base md:text-lg font-semibold">Phone</h3>
-            <p class="text-gray-600 font-medium text-xs md:text-sm">Mon-Fri from 7:30am - 4:30pm</p>
-            <!-- <a href="" class="text-primary font-medium text-xs md:text-sm">+234 (000) 800 4005</a> -->
-        </div>
-     </section>
-    <!-- EMAILS ENDS -->
-
-
-    <!-- OFFICE LOCATION STARTS -->
-     <section class="bg-[#014E1E] py-15 px-6 md:px-20 flex flex-col lg:flex-row items-start gap-y-10 sm:gap-y-15 gap-x-30 text-white">
-        <!-- Left Info -->
-        <div class="w-full lg:w-1/3 flex flex-col gap-y-5">
-            <small class="text-xs sm:text-[13px] lg:text-sm mb-2 sm:mb-6">Our Locations</small>
-            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Visit our offices</h1>
-            <p class="text-xs sm:text-[13px] lg:text-[15px]">You can find us at any of these office locations.</p>
-        </div>
-    
-        <!-- Right Locations -->
-        <div class="flex flex-col lg:flex-row gap-x-10 w-full lg:w-2/3">
-            <div class="flex flex-col gap-y-3 w-full lg:w-1/3">
-                <h3 class="text-base md:text-lg font-semibold">Head Office</h3>
-                <p class="text-xs sm:text-[13px] lg:text-sm leading-loose font-normal text-gray-300">
-                    Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State
-                </p>
-            </div>
-    
-            <div class="flex flex-col gap-y-3 w-full lg:w-1/3">
-                <h3 class="text-base md:text-lg font-semibold">Lagos Office</h3>
-                <p class="text-xs sm:text-[13px] lg:text-sm leading-loose font-normal text-gray-300">
-                    3/5, Adeyemo Alakija Street, Victoria Island, Lagos.
-                </p>
-            </div>
-    
-            <div class="flex flex-col gap-y-3 w-full lg:w-1/3">
-                <h3 class="text-base md:text-lg font-semibold">Ghana Office</h3>
-                <p class="text-xs sm:text-[13px] lg:text-sm leading-loose font-normal text-gray-300">
-                    Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- OFFICE LOCATION ENDS -->
+    <div class="flex flex-col gap-y-3 items-center justify-center">
+      <h3 class="text-base md:text-lg font-semibold">Phone</h3>
+      <p class="text-gray-600 font-medium text-xs md:text-sm">
+        Mon-Fri from 7:30am - 4:30pm
+      </p>
+    </div>
+  </div>
+</section>
+<!-- EMAILS ENDS -->
 
 
    
-<!-- ✅ FORM + MEDIA SECTION -->
-<section class=" flex flex-col items-start lg:flex-row justify-center gap-6 w-full  mx-auto ">
+<!-- FORM + INSTAGRAM SECTION START -->
+<section class="contact-form-social-section">
+  <div class="contact-form-social-grid">
 
-  <!-- ✅ FORM SECTION -->
-  <form action="" class="flex-1 w-full lg:w-2/5 px-6 md:px-20 py-10 lg:mt-3 h-fit rounded-xl flex flex-col gap-y-4">
-    <div class="flex flex-col gap-y-3">
-      <h2 class="text-lg md:text-xl lg:text-2xl font-semibold">We would love to hear from you</h2>
-      <p class="text-gray-600 text-xs sm:text-[13px] font-medium">
-        You can reach us anytime via 
-        <a href="mailto:sales@aosorwell.com" class="text-primary font-bold">sales@aosorwell.com</a>
+    <!-- FORM CARD -->
+    <div class="contact-card">
+      <h2 class="contact-card-title">We would love to hear from you</h2>
+
+      <p class="contact-card-text">
+        You can reach us anytime via
+        <a href="mailto:sales@aosorwell.com">sales@aosorwell.com</a>
       </p>
+
+      <form action="" class="contact-form-fields">
+        <div class="contact-field">
+          <label>Name</label>
+          <input type="text" placeholder="Your Name">
+        </div>
+
+        <div class="contact-field">
+          <label>Email</label>
+          <input type="email" placeholder="you@untitled.com">
+        </div>
+
+        <div class="contact-field">
+          <label>Phone Number</label>
+          <input type="text" placeholder="+2348238494850">
+        </div>
+
+        <div class="contact-field">
+          <label>How can we help?</label>
+          <textarea placeholder="Tell us a little about how we can help"></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit-btn">
+          Get Started
+        </button>
+      </form>
     </div>
 
-    <!-- ✅ Name -->
-    <div class="flex flex-col gap-y-2">
-      <label class="text-gray-800 text-[13px] sm:text-sm font-medium">Name</label>
-      <input type="text" placeholder="Your Name" class="text-[13px] sm:text-sm px-3 py-2 border border-gray-300 rounded outline-0 focus:shadow-sm">
-    </div>
+    <!-- INSTAGRAM CARD -->
+    <div class="contact-card">
+      <h3 class="contact-card-title" style="color:#019B39; font-size:22px;">
+        Follow us on Instagram
+      </h3>
 
-    <!-- ✅ Email -->
-    <div class="flex flex-col gap-y-2">
-      <label class="text-gray-800 text-[13px] sm:text-sm font-medium">Email</label>
-      <input type="email" placeholder="you@untitled.com" class="text-[13px] sm:text-sm px-3 py-2 border border-gray-300 rounded outline-0 focus:shadow-sm">
-    </div>
+      <p class="contact-card-text">
+        Stay updated with our latest projects, services, and company activities.
+      </p>
 
-    <!-- ✅ Phone -->
-    <div class="flex flex-col gap-y-2">
-      <label class="text-gray-800 text-[13px] sm:text-sm font-medium">Phone Number</label>
-      <input type="text" placeholder="+2348238494850" class="text-[13px] sm:text-sm px-3 py-2 border border-gray-300 rounded outline-0 focus:shadow-sm">
-    </div>
-
-    <!-- ✅ Message -->
-    <div class="flex flex-col gap-y-2">
-      <label class="text-gray-800 text-[13px] sm:text-sm font-medium">How can we help?</label>
-      <textarea class="text-[13px] sm:text-sm px-3 py-2 border border-gray-300 rounded outline-0 focus:shadow-sm resize-none h-16" placeholder="Tell us a little about how we can help"></textarea>
-    </div>
-
-    <!-- ✅ Submit Button -->
-    <button class="text-[13px] mt-3 sm:text-sm px-3 py-2 border-2 text-white bg-primary border-primary rounded outline-0 hover:bg-white hover:text-primary transition cursor-pointer">
-      Get Started
-    </button>
-  </form>
-
-  <!-- ✅ MEDIA SECTION (Instagram Embed) -->
-  <div class="flex-1 w-full lg:w-3/5 flex flex-col gap-6">
-    
-    <!-- Instagram Widget -->
-    <div class="bg-white p-4 ">
-      <h3 class="text-lg font-semibold mb-3 text-primary">Follow us on Instagram</h3>
-      <div class="w-full">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/aosorwell/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:600px; min-width:326px; padding:0; width:100%;">
+      <div class="contact-instagram-box">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/aosorwell/"
+          data-instgrm-version="14"
+          style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin:0; max-width:100%; min-width:0; padding:0; width:100%;"
+        >
           <div style="padding:16px;">
-            <a href="https://www.instagram.com/aosorwell/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+            <a
+              href="https://www.instagram.com/aosorwell/"
+              style="background:#FFFFFF; line-height:0; padding:0; text-align:center; text-decoration:none; width:100%;"
+              target="_blank"
+            >
               <div style="display: flex; flex-direction: row; align-items: center;">
-                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
                 <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                  <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                  <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
                 </div>
               </div>
+
               <div style="padding: 19% 0;"></div>
-              <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"></div>
-              <div style="padding-top: 8px;">
-                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this profile on Instagram</div>
+
+              <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-weight:550; line-height:18px;">
+                View this profile on Instagram
               </div>
+
               <div style="padding: 12.5% 0;"></div>
-              <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
-                <div>
-                  <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div>
-                  <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div>
-                  <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div>
-                </div>
-                <div style="margin-left: 8px;">
-                  <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div>
-                  <div style="width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg);"></div>
-                </div>
-                <div style="margin-left: auto;">
-                  <div style="width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div>
-                  <div style="background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div>
-                  <div style="width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
-                <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div>
-                <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div>
-              </div>
             </a>
           </div>
         </blockquote>
       </div>
     </div>
-    
-    
-  </div>
 
+  </div>
 </section>
+<!-- FORM + INSTAGRAM SECTION END -->
 
 
     <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
@@ -462,40 +624,47 @@ button:hover {
     duration: 1.5,
     ease: "power2.out"
   });
-
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('navlink');
-    const links = container.querySelectorAll('a');
-    const highlight = document.getElementById('nav-highlight');
-
-    // Highlight under link on hover
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            const left = link.offsetLeft; // relative to container
-            const width = link.offsetWidth;
-            highlight.style.left = left + 'px';
-            highlight.style.width = width + 'px';
-        });
-    });
-
-    // Hide highlight when leaving nav
-    container.addEventListener('mouseleave', () => {
-        highlight.style.width = 0;
-    });
-
-    // Change highlight color on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // adjust based on when navbar becomes white
-            highlight.style.background = '#0B5850'; // green
-        } else {
-            highlight.style.background = 'white'; // default when navbar is transparent
-        }
-    });
-});
     
 </script>
 <script async src="//www.instagram.com/embed.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+<script>
+  const contactMaps = {
+    "head-office": "https://www.google.com/maps?q=Plot%2052%2F53%2C%20Trans%20Amadi%20Industrial%20Layout%2C%20Port%20Harcourt%2C%20Rivers%20State&output=embed",
+
+    "lagos-office": "https://www.google.com/maps?q=3%2F5%20Adeyemo%20Alakija%20Street%2C%20Victoria%20Island%2C%20Lagos&output=embed",
+
+    "ghana-office": "https://www.google.com/maps?q=Plot%2053%20Apowa%20Light%20Industrial%20Area%2C%20Sankoba%2C%20New%20Amanful%20Takoradi%2C%20Ghana&output=embed"
+  };
+
+  function changeContactMap(locationKey, button) {
+    const mapFrame = document.getElementById("contact-map-frame");
+
+    if (mapFrame && contactMaps[locationKey]) {
+      mapFrame.src = contactMaps[locationKey];
+    }
+
+    document.querySelectorAll(".contact-location-btn").forEach(btn => {
+      btn.classList.remove("active-location");
+    });
+
+    if (button) {
+      button.classList.add("active-location");
+    }
+  }
+</script>
+<script>
+  fetch("./navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
+</script>
 </body>
 </html>
