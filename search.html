@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search | AOS Orwell</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+<link rel="stylesheet" href="./output.css" />
+
   <style>
     body {
       margin: 0;
@@ -16,11 +26,11 @@
     .search-hero {
       background: #019B39;
       color: white;
-      padding: 80px 8%;
+      padding: 20px 8%;
     }
 
     .search-hero h1 {
-      font-size: 56px;
+      font-size: 48px;
       font-weight: 500;
       margin: 0;
     }
@@ -96,14 +106,26 @@
       color: #6b7280;
       margin-top: 20px;
     }
+    .search-navbar-spacer {
+      height: 82px;
+    }
+    @media (min-width: 1024px) {
+     .search-navbar-spacer {
+      height: 120px;
+    }
+   }
   </style>
 </head>
 
 <body>
+  <div id="navbar-placeholder"></div>
+  <div class="search-navbar-spacer"></div>
 
   <section class="search-hero">
-    <h1>Search</h1>
+   <h1>Search</h1>
   </section>
+
+  <section class="search-hero"></section>
 
   <main class="search-area">
     <div class="search-box">
@@ -193,5 +215,16 @@
     runSearch(queryFromUrl);
   </script>
 
+  <script>
+  fetch("./navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
+</script>
 </body>
 </html>

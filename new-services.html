@@ -11,128 +11,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
     <link rel="stylesheet" href="output.css">
+    <style>
+  .clean-green-section {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate;
+  }
+
+  .clean-green-section > div {
+    position: relative;
+    z-index: 3;
+  }
+
+  .clean-green-section .green-bottom-mask {
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -95px;
+    height: 190px;
+    background: #ffffff !important;
+    z-index: 5;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    pointer-events: none;
+  }
+
+  .last-green-section {
+    padding-bottom: 150px !important;
+    margin-bottom: -110px !important;
+  }
+
+  .last-green-section .green-bottom-mask {
+    bottom: -120px;
+    height: 230px;
+  }
+ </style>
 </head>
 <body>
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="/index.html"><img src="./images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
+   <div id="navbar-placeholder"></div>
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-            <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="about.html"  onmouseenter="showAboutLinks()" class="text-primary ">About Us</a>
-            <a href="services.html" class="text-primary underline" onmouseenter="showServiceLinks()">Services</a>
-            <a href="hse.html">QHSE</a>
-            <a href="media.html"  onmouseenter="showMediaLinks()">Media</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact-us.html">Contact Us</a>
-        </div>
-
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="about.html" class="hover:text-secondary">Our Story</a>
-                <a href="management.html" class="hover:text-secondary">Management</a>
-                <a href="board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
-
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="./images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="./images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
-
-
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="about.html" class="hover:text-primary">Our Story</a>
-							<a href="management.html" class="hover:text-primary">Management</a>
-							<a href="board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- QHSE (no dropdown) -->
-				<a href="hse.html" class="hover:text-primary transition py-2">QHSE</a>
-
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Careers (no dropdown) -->
-				<a href="careers.html" class="hover:text-primary transition py-2">Careers</a>
-
-				<!-- Contact Us (no dropdown) -->
-				<a href="contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
+   <div style="height: 120px;"></div>
 
 
 
@@ -161,7 +78,7 @@ Our certified and highly experienced engineers deliver customizable, easy-to-und
         </div>
     </section>
     <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-30 md:mt-40 items-center w-full xl:w-5/6 mb-10 bouncein">
+        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
             <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
                 <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
                 <img src="./images/new-maintenance.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
@@ -184,7 +101,7 @@ Our certified and highly experienced engineers deliver customizable, easy-to-und
             </div>
         </div>
     </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
+    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20" style="padding-bottom: 130px; margin-bottom: -100px;">
         <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
             <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
                 <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
@@ -202,10 +119,11 @@ In addition, we provide certified after-sales services and offer OEM training, e
                 
             </div>
         </div>
+        <div class="green-bottom-mask"></div>
     </section>
    
 
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
+    <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->
       <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
         <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
@@ -404,5 +322,16 @@ In addition, we provide certified after-sales services and offer OEM training, e
             });
         });
     </script>
+    <script>
+  fetch("./navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const script = document.createElement("script");
+      script.src = "./navbar.js";
+      document.body.appendChild(script);
+    });
+</script>
 </body>
 </html>
