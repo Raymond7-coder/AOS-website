@@ -5029,3 +5029,122 @@ body.modal-active {
     padding-right: 24px;
   }
 }
+.ipm-solution-block .aos-solution-link {
+  margin-top: 7px !important;
+}
+
+/* =================================
+   PARTNERS AND CLIENTS LOGO MARQUEE
+================================= */
+
+.partners-container,
+.client-container {
+  width: 100% !important;
+  height: 130px !important;
+  overflow: hidden !important;
+  position: relative;
+  display: flex !important;
+  align-items: center;
+}
+
+.partners-track,
+.client-track {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 24px !important;
+
+  width: max-content !important;
+  min-width: max-content !important;
+  flex-shrink: 0 !important;
+
+  will-change: transform;
+}
+
+.partners-track {
+  animation: aosPartnersMove 40s linear infinite !important;
+}
+
+.client-track {
+  animation: aosPartnersMove 25s linear infinite !important;
+}
+
+@keyframes aosPartnersMove {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-50% - 12px), 0, 0);
+  }
+}
+
+/* Make every logo large and place it inside a frame */
+.partners-track img,
+.client-track img {
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
+
+  height: 100px !important;
+  min-height: 100px !important;
+  max-height: 100px !important;
+
+  flex: 0 0 190px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  margin: 0 !important;
+  padding: 12px !important;
+
+  background: #ffffff !important;
+  border: 1px solid #dfe4e7 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07) !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Endress+Hauser is a very wide logo, so give it more space */
+.partners-track img[src*="hauser.png"] {
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
+  flex-basis: 240px !important;
+  padding: 4px !important;
+}
+
+/* Pause when hovered */
+.partners-container:hover .partners-track,
+.client-container:hover .client-track {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 640px) {
+  .partners-container,
+  .client-container {
+    height: 105px !important;
+  }
+
+  .partners-track img,
+  .client-track img {
+    width: 155px !important;
+    min-width: 155px !important;
+    max-width: 155px !important;
+
+    height: 82px !important;
+    min-height: 82px !important;
+    max-height: 82px !important;
+
+    flex-basis: 155px !important;
+    padding: 9px !important;
+  }
+
+  .partners-track img[src*="hauser.png"] {
+    width: 195px !important;
+    min-width: 195px !important;
+    max-width: 195px !important;
+    flex-basis: 195px !important;
+  }
+}

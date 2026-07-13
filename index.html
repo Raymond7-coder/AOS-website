@@ -606,7 +606,7 @@
               <div id="mobile-ei-menu" class="hidden pl-4 text-[13px] text-gray-500">
                 <div class="flex flex-col gap-y-3">
                   <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">E House Integrated Solutions</a>
+                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">E-House Integrated Solutions</a>
                   <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Control Panels</a>
                   <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">E & I Engineered Packages</a>
                   <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Aftersales Support Services</a>
@@ -995,7 +995,7 @@
   </div>
 
  <!-- IPM & TURNKEY WELL DELIVERY -->
- <div class="aos-solution-block">
+ <div class="aos-solution-block ipm-solution-block">
   <div class="aos-solution-header">
     <div>
 
@@ -1007,7 +1007,11 @@
       </p>
     </div>
 
-    <a href="./ipm-index.html" class="aos-solution-link">
+    <a
+      href="./ipm-index.html"
+      class="aos-solution-link"
+      style="margin-top: 0 !important; align-self: flex-start;"
+    >
       Explore IPM & Turnkey services
       <span class="material-symbols-outlined">arrow_forward</span>
     </a>
@@ -1029,15 +1033,6 @@
       </a>
 
     </div>
-	<div class="aos-carousel-controls">
-        <div class="aos-arrow-group">
-          <button type="button" class="aos-carousel-prev">
-            <span class="material-symbols-outlined">chevron_left</span>
-          </button>
-          <button type="button" class="aos-carousel-next">
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-        </div>
 
         <div class="aos-carousel-dots"></div>
       </div>
@@ -1079,7 +1074,7 @@
 
         <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
           <div class="aos-card-default">
-            <h3>E House Integrated Solutions</h3>
+            <h3>E-House Integrated Solutions</h3>
             <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
           </div>
           <div class="aos-card-hover">
@@ -1154,7 +1149,11 @@
   <div class="aos-solution-header">
     <div>
 
-      <h2>PROCESS AUTOMATION & CONTROL</h2>
+      <h2>
+		 PROCESS AUTOMATION
+	     <br class="desktop-break">
+		  & CONTROL
+	  </h2>
 
       <p class="aos-solution-intro">
         We provide process automation, control, safety, engineering and commissioning solutions
@@ -1162,7 +1161,11 @@
       </p>
     </div>
 
-    <a href="./process-management.html" class="aos-solution-link">
+    <a
+      href="./process-management.html"
+      class="aos-solution-link"
+      style="margin-top: 0 !important; align-self: flex-start;"
+    >
       Explore Process Automation & Control services
       <span class="material-symbols-outlined">arrow_forward</span>
     </a>
@@ -1257,7 +1260,11 @@
       </p>
     </div>
 
-    <a href="./new-services.html" class="aos-solution-link">
+    <a
+      href="./new-services.html"
+      class="aos-solution-link"
+      style="margin-top: 0 !important; align-self: flex-start;"
+    >
       Explore Operations & Maintenance services
       <span class="material-symbols-outlined">arrow_forward</span>
     </a>
@@ -1301,18 +1308,6 @@
 
     </div>
 
-    <div class="aos-carousel-controls">
-      <div class="aos-arrow-group">
-        <button type="button" class="aos-carousel-prev">
-          <span class="material-symbols-outlined">chevron_left</span>
-        </button>
-
-        <button type="button" class="aos-carousel-next">
-          <span class="material-symbols-outlined">chevron_right</span>
-        </button>
-      </div>
-
-      <div class="aos-carousel-dots"></div>
     </div>
   </div>
  </div>
@@ -1362,7 +1357,7 @@
 				<hr class="border border-gray-300" />
 
 				<div class="flex flex-col gap-y-1 px-4 xl:px-20 fade-in-up">
-					<h1 class="text-4xl xsm:text-5xl xl:text-6xl font-semibold aos-counter" data-count="5000" data-suffix="+">0</h1>
+					<h1 class="text-4xl xsm:text-5xl xl:text-6xl font-semibold aos-counter" data-count="1000" data-suffix="+">0</h1>
 					<p class="text-[11px] leading-loose sm:text-[13px] font-medium">
 						Successful projects completed, showcasing our commitment to quality,
 						safety, and operational excellence across various oil and gas
@@ -2823,9 +2818,20 @@
                return 2;
              }
 
-              function getTotalPages() {
-               return Math.ceil(cards.length / getCardsPerPage());
-              }
+            function getTotalPages() {
+               const maxScroll = Math.max(
+                  0,
+                  track.scrollWidth - track.clientWidth
+               );
+
+               const pageStep =
+                 getCardStep() * getCardsPerPage();
+
+               return Math.max(
+                1,
+                Math.ceil(maxScroll / pageStep) + 1
+               );
+            }
 
              function getCardStep() {
                const gap = 20;
@@ -2837,7 +2843,7 @@
                const maxScroll = track.scrollWidth - track.clientWidth;
 
              if (pageIndex >= getTotalPages() - 1) {
-               return maxScroll - 40;
+               return maxScroll;
              }
 
              return pageIndex * getCardStep() * cardsPerPage;
@@ -2957,5 +2963,33 @@
            });
          });
        </script>
+
+	<script>
+     document.addEventListener("DOMContentLoaded", function () {
+        const logos = document.querySelectorAll(
+         ".partners-track img, .client-track img"
+        );
+
+        logos.forEach(function (img) {
+          /* Avoid wrapping the image twice */
+          if (img.parentElement.classList.contains("logo-frame")) {
+            return;
+          }
+
+          const frame = document.createElement("div");
+          frame.className = "logo-frame";
+
+          img.parentNode.insertBefore(frame, img);
+          frame.appendChild(img);
+
+          const imageSource = img.getAttribute("src") || "";
+
+          /* Enlarge both copies of Endress+Hauser */
+          if (imageSource.includes("hauser.png")) {
+           img.classList.add("logo-hauser");
+         }
+       });
+      });
+    </script>
 	</body>
 </html>
