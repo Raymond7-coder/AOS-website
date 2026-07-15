@@ -113,6 +113,11 @@ window.showServicesContent = function (serviceName) {
     tabId = "services-tab-pm";
   }
 
+  if (serviceName === "IPM") {
+    contentId = "services-content-ipm";
+    tabId = "services-tab-ipm";
+  }
+
   if (serviceName === "operations maintenance") {
     contentId = "services-content-om";
     tabId = "services-tab-om";
@@ -165,6 +170,41 @@ window.showProcessSubContent = function (subName) {
     tabId = "process-subtab-pac";
   }
 
+  if (subName === "modular") {
+  contentId = "process-subcontent-modular";
+  tabId = "process-subtab-modular";
+}
+
+if (subName === "measurement") {
+  contentId = "process-subcontent-measurement";
+  tabId = "process-subtab-measurement";
+}
+
+if (subName === "valves") {
+  contentId = "process-subcontent-valves";
+  tabId = "process-subtab-valves";
+}
+
+if (subName === "rotating") {
+  contentId = "process-subcontent-rotating";
+  tabId = "process-subtab-rotating";
+}
+
+if (subName === "fire") {
+  contentId = "process-subcontent-fire";
+  tabId = "process-subtab-fire";
+}
+
+if (subName === "operations") {
+  contentId = "process-subcontent-operations";
+  tabId = "process-subtab-operations";
+}
+
+if (subName === "design") {
+  contentId = "process-subcontent-design";
+  tabId = "process-subtab-design";
+}
+
   const targetContent = document.getElementById(contentId);
   const activeTab = document.getElementById(tabId);
 
@@ -185,6 +225,16 @@ window.changeServiceImage = function (imageSrc, title) {
   if (previewImage) {
     previewImage.src = imageSrc;
     previewImage.alt = title || "";
+  }
+};
+
+window.changeIPMImage = function (imageSrc, title) {
+  const previewImage = document.getElementById("ipm-preview-image");
+
+  if (previewImage) {
+    previewImage.src = imageSrc;
+    previewImage.alt = title || "";
+    previewImage.classList.remove("hidden");
   }
 };
 

@@ -223,12 +223,12 @@
 			Well Construction <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		</button>
 
-		<a href="/ipm-index.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			IPM & Turnkey 
-		</a>
-
 		<button onclick="showServicesContent('process management')" id="services-tab-pm" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
 			Process Management <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		</button>
+
+		<button onclick="showServicesContent('IPM')" id="services-tab-ipm" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
+			IPM & Turnkey  <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		</button>
 
 		<button onclick="showServicesContent('operations maintenance')" id="services-tab-om" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
@@ -293,7 +293,7 @@
 			  <a href="/well-construction.html"
 		           onmouseenter="changeServiceImage('/images/well-drilling.png', 'Drilling')"
 		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Drilling
+			        Directional Drilling & Logging
 		      </a>
 
 			  <a href="/machine-shop.html"
@@ -324,12 +324,47 @@
 	        <div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
 
 				<button onclick="showProcessSubContent('ei')" id="process-subtab-ei" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
-			        Electrical & Instrumentation
+			        Automation & Control
 			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		       </button>
 
 		       <button onclick="showProcessSubContent('pac')" id="process-subtab-pac" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
-			        Process Automation & Control
+			        Electrical & Instrumentation
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('modular')" id="process-subtab-modular" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Modular Solutions and Process Skid Packages
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('measurement')" id="process-subtab-measurement" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Measurement Solutions
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('valves')" id="process-subtab-valves" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Valves & Actuations
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('rotating')" id="process-subtab-rotating" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Rotating Equipment
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('fire')" id="process-subtab-fire" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Fire & Gas Systems
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('operations')" id="process-subtab-operations" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Operation & Maintenance
+			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+		       </button>
+
+           <button onclick="showProcessSubContent('design')" id="process-subtab-design" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
+			        Design & Engineering
 			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		       </button>
 
@@ -338,27 +373,137 @@
 		   <div class="w-1/2 lg:w-3/5 pl-8 relative">
 
 		       <div id="process-subcontent-ei" class="process-subcontent hidden flex-col gap-4">
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E House Integrated Solutions</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Control Panels</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E & I Engineered Packages</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Aftersales Support Services</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Busbar Trunking and Cable Management</a>
-
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">SCADA</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">ICSS</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">PLC</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Digital Solutions</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Greenhouse Emissions Monitoring</a>
+			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Cybersecurity Solutions</a>
+            <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Pipeline Leak Detection</a>
 		      </div>
 
 		      <div id="process-subcontent-pac" class="process-subcontent hidden flex-col gap-4">
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Integrated Control and Safety Systems (ICSS)</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Complete Valves Solutions</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Engineering Design and Project Management</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Fire & Gas Safety Services</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Commissioning & Startup Services</a>
-				  <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-		       </div>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E House</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">LV / MV Switchgear RMU</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Transformers</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Lighting & Controls</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">UPS and Battery Management System</a>
+				    <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Substation Automation</a>
+		      </div>
+
+          <div id="process-subcontent-modular" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Early Production Facility</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Produced Water Treatment</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Oil Processing Equipment</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gas Processing Equipment</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Sea Water Treatment</a>
+				    <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Wellhead Control Panels</a>
+            <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Chemical Injection Skid</a>
+            <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Dosing Skids</a>
+
+		      </div>
+
+          <div id="process-subcontent-measurement" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Level, Flow, Pressure, Temperature Transmitters</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Metering Skids / LACT Units</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Pressure Reduction Metering Skids</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gas Analysers</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gas Chromatograph</a>
+				    <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Flare Gas Metering</a>
+		      </div>
+
+          <div id="process-subcontent-valves" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Flow Control Valves</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Emergency Shutdown Valves/ Blowdown Valves</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gate Globe Check Valves</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Trunnion-mounted Ball Valves</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Cryogenic Valves</a>
+				    <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Triple-offset Butterfly Valve</a>
+            <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">HIPPS package</a>
+
+		      </div>
+
+          <div id="process-subcontent-rotating" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Air Compression Package</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gas Compression Package</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">API Pumps</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gas Generators / Engines</a>
+			    
+		      </div>
+
+          <div id="process-subcontent-fire" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Flame Detectors</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Gas Detectors</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Fire & Gas Detection Safety System & Supression Systems</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Smoke Detection VESDA</a>
+		      </div>
+
+          <div id="process-subcontent-operations" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Integrated Plant Maintenance Services</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Fabric Maintenance Services</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Automation & Metering Services</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Rotating Equipment Reliability Services & Upgrades</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">FPSO & Marine Structural Integrity Services</a>
+				    <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Asset Integrity / Inspection services</a>
+            <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E&I Services</a>
+            <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Calibration & Recertification Services</a>
+
+
+		      </div>
+
+           <div id="process-subcontent-design" class="process-subcontent hidden flex-col gap-4">
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">FEED & Feasibility Studies</a>
+			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Detailed Engineering Design</a>
+	
+		      </div>
 		        
 
 	        </div>
 		</div>
+
+
+		<div id="services-content-ipm" class="services-content w-full h-full">
+			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
+				<a href="/well-construction.html"
+		           onmouseenter="changeIPMImage('/images/well-fishing.png', 'Fishing')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Project Management 
+		      </a>
+
+				<a href="/well-construction.html"
+		           onmouseenter="changeIPMImage('/images/well-casing.png', 'Casing')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Bundled Services 
+		      </a>
+
+			  <a href="/well-construction.html"
+		           onmouseenter="changeIPMImage('/images/well-sickline.png', 'Cased Hole')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Integrated Project Management 
+		      </a>
+
+			  <a href="/well-construction.html"
+		           onmouseenter="changeIPMImage('/images/well-casing.png', 'Casing')"
+		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			        Turnkey Well Delivery 
+		      </a>
+			
+			</div>
+			<div class="w-1/2 lg:w-3/5 pl-10 relative flex justify-center items-start">
+              <div
+                class="rounded-md overflow-hidden bg-gray-100 shadow-md"
+                style="width: 520px; height: 450px;"
+              >
+                <img
+                  id="ipm-preview-image"
+                  src=""
+                  alt=""
+                  class="hidden w-full h-full object-cover transition-all duration-300"
+                >
+               </div>
+            </div>
+
+		 </div>
 
 
 		<div id="services-content-om" class="services-content hidden w-full h-full">
@@ -367,28 +512,52 @@
 		       <a href="new-services.html"
 		            onmouseenter="changeOperationsImage('./images/new-valves.png', 'Rotating Equipment & Valve Asset Management')"
 		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			         Rotating Equipment & Valve Asset Management
+			         Rotating Equipment Reliability Services & Upgrades
 		       </a>
 
 			   <a href="new-services.html"
 		            onmouseenter="changeOperationsImage('./images/process-commission.png', 'Automation & Control')"
 		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Automation, Control & Metering Asset Management
+			        Automation & Metering Services
+		       </a>
+
+			   <a href="new-services.html"
+		            onmouseenter="changeOperationsImage('./images/new-valves.png', 'Rotating Equipment & Valve Asset Management')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			          Fabric Maintenance Services
 		       </a>
 
 			   <a href="new-services.html"
 		            onmouseenter="changeOperationsImage('./images/new-maintenance.png', 'Rotating Equipment & Valve Asset Management')"
 		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			          Fabric Maintenance & Asset Integrity
+			          FPSO & Marine Structural Integrity Services
+		       </a>
+
+			   <a href="new-services.html"
+		            onmouseenter="changeOperationsImage('./images/process-commission.png', 'Rotating Equipment & Valve Asset Management')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			          Asset Integrity / Inspection services
+		       </a>
+
+			   <a href="new-services.html"
+		            onmouseenter="changeOperationsImage('./images/new-maintenance.png', 'Rotating Equipment & Valve Asset Management')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			          E&I Services
+		       </a>
+
+			   <a href="new-services.html"
+		            onmouseenter="changeOperationsImage('./images/new-valves.png', 'Rotating Equipment & Valve Asset Management')"
+		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
+			          Calibration & Recertification Services
 		       </a>
 	       </div>
 
 	       <div class="w-1/2 lg:w-3/5 pl-10 relative flex justify-center items-start">
-			    <div 
-            class="rounded-md overflow-hidden bg-gray-100 shadow-md"
-            style="width: 520px; height: 450px;"
-          >
-          <img
+			<div 
+             class="rounded-md overflow-hidden bg-gray-100 shadow-md"
+             style="width: 520px; height: 450px;"
+            >
+             <img
 				   id="operations-preview-image"
 				   src="./images/new-valves.png"
 				   alt="Rotating Equipment & Valve Asset Management"
@@ -488,7 +657,7 @@
               <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Drillpipe Tubular Rentals</a>
               <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Jar and Downhole Tools</a>
               <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Completion, Assembly & Hammer Services</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Drilling</a>
+              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Directional Drilling & Logging</a>
               <a href="machine-shop.html" class="hover:text-[#4CAF50] transition-colors block">Machine Shop and Fabrication</a>
             </div>
           </div>

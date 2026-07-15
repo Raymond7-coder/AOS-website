@@ -90,595 +90,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	</head>
 	<body class="bg-[#F5F5F5] relative overflow-x-hidden">
-
-<header style="z-index: 9999;" class="fixed top-0 left-0 right-0">
-
-	<!-- TOP BAR -->
-	<div style="height: 38px;" class="hidden lg:flex items-center bg-[#2a2b2e] text-white text-[13px] font-medium overflow-visible">
-		<div style="width: 100%; display: flex; justify-content: flex-end; align-items: center; padding-right: 140px; gap: 44px; height: 100%; overflow: visible;">
-
-			<a href="hse.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
-	           QHSE
-	           <span
-		            class="material-symbols-outlined"
-		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
-	            >
-		            north_east
-	          </span>
-          </a>
-
-            <a href="careers.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
-	           Careers
-	           <span
-		            class="material-symbols-outlined"
-		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
-	            >
-		            north_east
-	            </span>
-           </a>
-
-            <a href="contact-us.html" class="inline-flex items-center hover:text-[#4CAF50] transition-colors whitespace-nowrap">
-	           Contact Us
-	           <span
-		            class="material-symbols-outlined"
-		            style="font-size: 16px; line-height: 1; margin-left: 2px; font-weight: 700;"
-	            >
-		        north_east
-	            </span>
-          </a>
-			<div class="relative flex items-center" id="top-search-wrapper">
-              <input
-                 id="top-search-input"
-                 type="text"
-                 placeholder="Search..."
-                 onclick="openTopSearch()"
-                 oninput="handleTopSearchTyping()"
-				 onkeydown="if(event.key === 'Enter') submitTopSearch()"
-                 class="hidden w-[220px] bg-white text-black text-[13px] px-3 py-2 rounded-[4px] focus:outline-none"
-                />
-
-                <button
-                  type="button"
-                  onclick="toggleTopSearch()"
-                  class="ml-2 flex items-center justify-center hover:text-[#4CAF50] transition-colors"
-                >
-                  <span class="material-symbols-outlined text-[22px]">search</span>
-                </button>
-
-                <!-- Search dropdown -->
-                <div
-                  id="top-search-dropdown"
-                  style="top: 38px; width: 350px;"
-                  class="hidden absolute right-0 bg-white text-black shadow-lg rounded-b-md z-[9999] px-6 py-5"
-                >
-				
-                 <div class="flex items-center border-b border-gray-300 pb-3">
-                  <input
-                    id="dropdown-search-input"
-                    type="text"
-                    placeholder="What are you looking for?"
-					onkeydown="if(event.key === 'Enter') submitTopSearch()"
-                    class="w-full text-[14px] text-gray-700 focus:outline-none"
-                  />
-
-                  <button type="button" onclick="submitTopSearch()">
-                    <span class="material-symbols-outlined text-gray-500">arrow_forward</span>
-                  </button>
-                </div>
-
-                <h3 class="font-semibold text-[15px] mt-4 mb-4">Popular searches</h3>
-
-                <div class="grid grid-cols-2 gap-y-2 text-[15px]">
-                  <button onclick="selectPopularSearch('Turnkey')" style="color:#019B39;" class="text-left hover:underline">Turnkey</button>
-                  <button onclick="selectPopularSearch('Well')" style="color:#019B39;" class="text-left hover:underline">Well</button>
-
-                  <button onclick="selectPopularSearch('Fishing')" style="color:#019B39;" class="text-left hover:underline">Fishing</button>
-                  <button onclick="selectPopularSearch('Instrumentation')" style="color:#019B39;" class="text-left hover:underline">Instrumentation</button>
-
-                  <button onclick="selectPopularSearch('ipm')" style="color:#019B39;" class="text-left hover:underline">ipm</button>
-                  <button onclick="selectPopularSearch('tubular')" style="color:#019B39;" class="text-left hover:underline">tubular</button>
-
-                  <button onclick="selectPopularSearch('wireline')" style="color:#019B39;" class="text-left hover:underline">wireline</button>
-                  <button onclick="selectPopularSearch('drilling')" style="color:#019B39;" class="text-left hover:underline">drilling</button>
-
-                  <button onclick="selectPopularSearch('valve')" style="color:#019B39;" class="text-left hover:underline">valve</button>
-                  <button onclick="selectPopularSearch('electrical')" style="color:#019B39;" class="text-left hover:underline">electrical</button>
-                </div>
-          </div>
-        </div>
-			
-
-		</div>
-	</div>
-
-	<!-- MAIN NAVBAR -->
-	<nav style="height: 82px;" class="relative flex justify-between items-center md:px-20 px-4 bg-white border-b border-b-gray-300 transition-all">
-		
-		<a href="./index.html" class="shrink-0">
-	       <img
-		      src="./images/jogo.png"
-		      alt="AOS Orwell Logo"
-		      style="height: 94px; width: auto;"
-	       />
-       </a>
-
-		<div
-			style="position: absolute; left: 69%; transform: translateX(-50%); gap: 50px;"
-	        class="hidden lg:flex items-center text-[15px] font-semibold text-gray-800"
-		>
-			<button onclick="toggleMegaMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
-				The Company 
-				<span class="material-symbols-outlined text-[21px] transition-transform duration-300" id="mega-menu-icon">expand_more</span>
-			</button>
-
-			<button onclick="toggleServicesMenu()" class="flex items-center gap-1 hover:text-[#4CAF50] transition-colors focus:outline-none group whitespace-nowrap">
-				Our Services
-				<span class="material-symbols-outlined text-[21px] transition-transform duration-300" id="services-menu-icon">expand_more</span>
-			</button>
-
-			<a
-              href="request-form.html"
-              style="background-color: #007a32; color: white; height: 36px; padding: 0 24px; border-radius: 4px; min-width: 165px; transition: all 0.25s ease;"
-              onmouseover="this.style.backgroundColor='#005f27'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.25)'"
-              onmouseout="this.style.backgroundColor='#007a32'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
-              class="inline-flex items-center justify-center font-semibold whitespace-nowrap"
-            >
-              How can we help you?
-            </a>
-
-			</div>
-
-		<button id="mobile-menu-button" class="lg:hidden text-gray-800 focus:outline-none">
-			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-			</svg>
-		</button>
-
-	</nav>
-</header>
-
-<!-- DESKTOP COMPANY MEGA MENU -->
-<div id="desktop-mega-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
-	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
-		<button onclick="switchMegaTab('aosorwell')" id="tab-aosorwell" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
-			AOS Orwell <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
-
-		<button onclick="switchMegaTab('csr')" id="tab-csr" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			CSR <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
-
-		<button onclick="switchMegaTab('media')" id="tab-media" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			Media & Resources <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
-
-		<button onclick="switchMegaTab('qhse')" id="tab-qhse" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			QHSE <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
-	</div>
-
-	<div class="flex-1 bg-white p-12 relative flex">
-		<button onclick="toggleMegaMenu()" class="absolute top-6 right-8 z-10">
-			<span
-              class="material-symbols-outlined"
-              style="color: red; font-size: 27px; font-variation-settings: 'wght' 500;"
-            >
-              close
-            </span>
-		</button>
-
-		<div id="content-aosorwell" class="mega-content flex w-full h-full">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="about.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">About Us</a>
-				<a href="management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Company Leadership</a>
-				<a href="careers.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Careers</a>
-				<a href="contact-us.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Contact Us</a>
-			</div>
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
-		</div>
-
-		<div id="content-csr" class="mega-content hidden w-full h-full animate-fadeIn">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="corporate-social-responsibility.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Employee Community Service</a>
-				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Healthcare</a>
-				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Education</a>
-			</div>
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
-		</div>
-
-		<div id="content-media" class="mega-content hidden w-full h-full animate-fadeIn">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Photo Gallery</a>
-				<a href="gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Video Gallery</a>
-				<a href="news.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">News & Press Releases</a>
-				<a href="blog.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Case Study</a>
-				<a href="policies-index.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Resources & Policies</a>
-			</div>
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
-		</div>
-
-		<div id="content-qhse" class="mega-content hidden w-full h-full animate-fadeIn">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Quality Policy</a>
-				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Health & Safety</a>
-				<a href="hse.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Environmental Standards</a>
-			</div>
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
-		</div>
-	</div>
-</div>
-
-<!-- DESKTOP SERVICES MEGA MENU -->
-<div id="desktop-services-menu" style="top: 108px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-118px)] min-h-[400px]">
-	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
-		<button onclick="showServicesContent('well construction')" id="services-tab-wcd" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
-			Well Construction <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
-
-		<a href="ipm-index.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			IPM & Turnkey 
-		</a>
-
-		<button onclick="showServicesContent('process management')" id="services-tab-pm" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			Process Management <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
-
-		<button onclick="showServicesContent('operations maintenance')" id="services-tab-om" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-	         Operations & Maintenance <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-        </button>
-
-		<a href="contact-us.html" class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			Product Enquiry
-		</a>
-	</div>
-
-	<div class="flex-1 bg-white p-12 relative flex">
-		<button onclick="toggleServicesMenu()" class="absolute top-6 right-8 z-10">
-			<span
-               class="material-symbols-outlined"
-               style="color: red; font-size: 27px; font-variation-settings: 'wght' 500;"
-            >
-               close
-            </span>
-		</button>
-
-		<div id="services-content-wcd" class="services-content flex w-full h-full">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-fishing.png', 'Fishing')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Fishing
-		      </a>
-
-				<a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-casing.png', 'Casing')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Casing & Tubular Running Services (CTR)
-		      </a>
-
-			  <a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-sickline.png', 'Cased Hole')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Cased Hole Wireline & Slickline Services
-		      </a>
-
-			  <a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-plug.png', 'Plug')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Plug, Abandonment and Slot Recovery
-		      </a>
-
-			  <a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-drillpipe.png', 'Drillpipe')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Drillpipe Tubular Rentals
-		      </a>
-
-			  <a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-jar.png', 'Jar and Downhole Tools')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Jar and Downhole Tools
-		      </a>
-
-			  <a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/completion.png', 'Completion, Assembly & Hammer Services')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Completion, Assembly & Hammer Services
-		      </a>
-
-			  <a href="well-construction.html"
-		           onmouseenter="changeServiceImage('./images/well-drilling.png', 'Drilling')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Drilling
-		      </a>
-
-			  <a href="machine-shop.html"
-		           onmouseenter="changeServiceImage('./images/macshop.jpg', 'Machine Shop and Fabrication')"
-		           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Machine Shop and Fabrication
-		      </a>
-			
-			</div>
-
-			<div class="w-1/2 lg:w-3/5 pl-8 relative flex justify-center items-start">
-	             <div class="w-[360px] h-[230px] rounded-md overflow-hidden bg-gray-100 shadow-md">
-			        <img
-				      id="service-preview-image"
-				      src="./images/well-fishing.png"
-				      alt="Fishing"
-				      class="w-full h-full object-cover transition-all duration-300"
-			        >
-		   </div>
-		</div>
-	</div>
-
-		<div id="services-content-pm" class="services-content hidden w-full h-full">
-	        <div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-
-				<button onclick="showProcessSubContent('ei')" id="process-subtab-ei" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
-			        Electrical & Instrumentation
-			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		       </button>
-
-		       <button onclick="showProcessSubContent('pac')" id="process-subtab-pac" class="process-subtab-btn flex items-center justify-between text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] w-full text-left">
-			        Process Automation & Control
-			        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		       </button>
-
-	       </div>
-
-		   <div class="w-1/2 lg:w-3/5 pl-8 relative">
-
-		       <div id="process-subcontent-ei" class="process-subcontent hidden flex-col gap-4">
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E House Integrated Solutions</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Control Panels</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">E & I Engineered Packages</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Aftersales Support Services</a>
-			      <a href="electrical-and-instrumentation.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Busbar Trunking and Cable Management</a>
-
-		      </div>
-
-		      <div id="process-subcontent-pac" class="process-subcontent hidden flex-col gap-4">
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Integrated Control and Safety Systems (ICSS)</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Complete Valves Solutions</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Engineering Design and Project Management</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Fire & Gas Safety Services</a>
-			      <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Commissioning & Startup Services</a>
-				  <a href="process-management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-		       </div>
-		        
-
-	        </div>
-		</div>
-
-
-		<div id="services-content-om" class="services-content hidden w-full h-full">
-	       <div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-
-		       <a href="new-services.html"
-		            onmouseenter="changeOperationsImage('./images/new-valves.png', 'Rotating Equipment & Valve Asset Management')"
-		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			         Rotating Equipment & Valve Asset Management
-		       </a>
-
-			   <a href="new-services.html"
-		            onmouseenter="changeOperationsImage('./images/process-commission.png', 'Automation & Control')"
-		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			        Automation, Control & Metering Asset Management
-		       </a>
-
-			   <a href="new-services.html"
-		            onmouseenter="changeOperationsImage('./images/new-maintenance.png', 'Rotating Equipment & Valve Asset Management')"
-		            class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">
-			          Fabric Maintemnance & Asset Integrity
-		       </a>
-	       </div>
-
-	       <div class="w-1/2 lg:w-3/5 pl-8 relative flex justify-center items-start">
-			   <div class="w-[360px] h-[230px] rounded-md overflow-hidden bg-gray-100 shadow-md">
-			     <img
-				   id="operations-preview-image"
-				   src="./images/new-valves.png"
-				   alt="Rotating Equipment & Valve Asset Management"
-				   class="w-full h-full object-cover transition-all duration-300"
-			    >
-		      </div>
-           </div>
-	   </div>
-   </div>
-</div>
-</div>
-<!-- DESKTOP SERVICES MEGA MENU ENDS -->
-
-<!-- MOBILE MENU -->
-<div id="mobile-menu" style="top: 82px; max-height: calc(100vh - 82px);" class="fixed z-50 left-0 right-0 border-b border-b-gray-300 lg:hidden hidden bg-white w-full py-4 px-5 shadow-lg overflow-y-auto">
-  <div class="flex flex-col text-black text-[15px] font-medium">
-
-    <!-- COMPANY -->
-    <div class="border-b border-gray-100">
-      <button class="w-full flex justify-between items-center py-4 hover:text-[#4CAF50] transition focus:outline-none bg-white"
-        onclick="toggleSubmenu('mobile-company-menu', this)">
-        <span>The Company</span>
-        <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
-      </button>
-
-      <div id="mobile-company-menu" class="hidden pb-4 pl-4 text-[14px] text-gray-600">
-        <div class="flex flex-col gap-y-4">
-
-          <!-- AOS Orwell -->
-          <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-aos-menu', this)">
-            <span>AOS Orwell</span>
-            <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-          </button>
-
-          <div id="mobile-aos-menu" class="hidden pl-4 pt-1 text-[13px] text-gray-500">
-            <div class="flex flex-col gap-y-3">
-              <a href="about.html" class="hover:text-[#4CAF50] transition-colors block">About Us</a>
-              <a href="management.html" class="hover:text-[#4CAF50] transition-colors block">Company Leadership</a>
-              <a href="careers.html" class="hover:text-[#4CAF50] transition-colors block">Careers</a>
-              <a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">Contact Us</a>
-            </div>
-          </div>
-
-          <a href="corporate-social-responsibility.html" class="hover:text-[#4CAF50] transition-colors block">
-            CSR
-          </a>
-
-          <!-- Media & Resources -->
-          <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-media-menu', this)">
-            <span>Media & Resources</span>
-            <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-          </button>
-
-          <div id="mobile-media-menu" class="hidden pl-4 pt-1 text-[13px] text-gray-500">
-            <div class="flex flex-col gap-y-3">
-              <a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Photo Gallery</a>
-              <a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Video Gallery</a>
-              <a href="news.html" class="hover:text-[#4CAF50] transition-colors block">News & Press Releases</a>
-              <a href="blog.html" class="hover:text-[#4CAF50] transition-colors block">Case Study</a>
-              <a href="policies-index.html" class="hover:text-[#4CAF50] transition-colors block">Resources & Policies</a>
-            </div>
-          </div>
-
-          <a href="hse.html" class="hover:text-[#4CAF50] transition-colors block">
-            QHSE
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="border-b border-gray-100">
-      <button class="w-full flex justify-between items-center py-4 hover:text-[#4CAF50] transition focus:outline-none bg-white"
-        onclick="toggleSubmenu('mobile-services-menu', this)">
-        <span>Our Services</span>
-        <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
-      </button>
-
-      <div id="mobile-services-menu" class="hidden pb-4 pl-4 text-[14px] text-gray-600">
-        <div class="flex flex-col gap-y-4">
-
-          <!-- Well Construction -->
-          <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-well-construction-menu', this)">
-            <span>Well Construction</span>
-            <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-          </button>
-
-          <div id="mobile-well-construction-menu" class="hidden pl-4 pt-1 text-[13px] text-gray-500">
-            <div class="flex flex-col gap-y-3">
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Fishing</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Casing & Tubular Running Services (CTR)</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Cased Hole Wireline & Slickline Services</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Plug, Abandonment and Slot Recovery</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Drillpipe Tubular Rentals</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Jar and Downhole Tools</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Completion, Assembly & Hammer Services</a>
-              <a href="well-construction.html" class="hover:text-[#4CAF50] transition-colors block">Drilling</a>
-              <a href="machine-shop.html" class="hover:text-[#4CAF50] transition-colors block">Machine Shop and Fabrication</a>
-            </div>
-          </div>
-
-          <a href="ipm-index.html" class="hover:text-[#4CAF50] transition-colors block">
-            IPM & Turnkey
-          </a>
-
-          <!-- Process Management -->
-          <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-process-management-menu', this)">
-            <span>Process Management</span>
-            <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-          </button>
-
-          <div id="mobile-process-management-menu" class="hidden pl-4 pt-1 text-[13px] text-gray-500">
-            <div class="flex flex-col gap-y-4">
-
-              <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-                onclick="toggleSubmenu('mobile-ei-menu', this)">
-                <span>Electrical & Instrumentation</span>
-                <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-              </button>
-
-              <div id="mobile-ei-menu" class="hidden pl-4 text-[13px] text-gray-500">
-                <div class="flex flex-col gap-y-3">
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">E-House Integrated Solutions</a>
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Control Panels</a>
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">E & I Engineered Packages</a>
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Aftersales Support Services</a>
-                  <a href="electrical-and-instrumentation.html" class="hover:text-[#4CAF50] transition-colors block">Busbar Trunking and Cable Management</a>
-                </div>
-              </div>
-
-              <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-                onclick="toggleSubmenu('mobile-pac-menu', this)">
-                <span>Process Automation & Control</span>
-                <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-              </button>
-
-              <div id="mobile-pac-menu" class="hidden pl-4 text-[13px] text-gray-500">
-                <div class="flex flex-col gap-y-3">
-                  <a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Integrated Control and Safety Systems (ICSS)</a>
-                  <a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Complete Valves Solutions</a>
-                  <a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Engineering Design and Project Management</a>
-                  <a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Fire & Gas Safety Services</a>
-                  <a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Commissioning & Startup Services</a>
-                  <a href="process-management.html" class="hover:text-[#4CAF50] transition-colors block">Mechanical, Electrical & Instrumentation (M, E&I) Services</a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Operations & Maintenance -->
-          <button class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-operations-menu', this)">
-            <span>Operations & Maintenance</span>
-            <span class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-          </button>
-
-          <div id="mobile-operations-menu" class="hidden pl-4 pt-1 text-[13px] text-gray-500">
-            <div class="flex flex-col gap-y-3">
-              <a href="new-services.html" class="hover:text-[#4CAF50] transition-colors block">Rotating Equipment & Valve Asset Management</a>
-              <a href="new-services.html" class="hover:text-[#4CAF50] transition-colors block">Automation, Control & Metering Asset Management</a>
-              <a href="new-services.html" class="hover:text-[#4CAF50] transition-colors block">Fabric Maintenance & Asset Integrity</a>
-            </div>
-          </div>
-
-          <a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">
-            Product Enquiry
-          </a>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- TOP BAR LINKS ON MOBILE -->
-    <div class="border-b border-gray-100 py-4 flex flex-col gap-y-4 text-[14px] text-gray-600">
-      <a href="hse.html" class="hover:text-[#4CAF50] transition-colors block">QHSE</a>
-      <a href="careers.html" class="hover:text-[#4CAF50] transition-colors block">Careers</a>
-      <a href="contact-us.html" class="hover:text-[#4CAF50] transition-colors block">Contact Us</a>
-    </div>
-
-    <!-- REQUEST FOR QUOTE -->
-    <div class="pt-5">
-      <a href="contact-us.html"
-        class="w-full flex justify-center items-center bg-[#007a32] text-white py-3 rounded-[4px] font-semibold hover:bg-[#006428] transition">
-        Request for Quote
-      </a>
-    </div>
-
-  </div>
-</div>
-
-<!-- ######################################################## -->
-<!-- #################### NAVBAR ENDS #######################-->
-<!-- ######################################################## -->
-
+	<div id="navbar-placeholder"></div>
+    <div style="height: 120px;"></div>
 
 <div class="hidden lg:block" style="height: 118px;"></div>
 		<!-- hero sections begins -->
@@ -957,7 +370,7 @@
 
         <a href="./well-construction.html" class="aos-solution-card">
           <div class="aos-card-default">
-             <h3>Drilling</h3>
+             <h3>Directional Drilling & Logging</h3>
              <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
          </div>
          <div class="aos-card-hover">
@@ -977,9 +390,148 @@
          </div>
         </a>
 
+		<a href="./machine-shop.html" class="aos-solution-card">
+          <div class="aos-card-default">
+             <h3>Machine Shop and Fabrication</h3>
+             <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+           <p>Precision machining and fabrication support for oilfield equipment, components and service operations.</p>
+           <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+         </div>
+        </a>
+
     </div>
 
       <div class="aos-carousel-controls">
+        <div class="aos-arrow-group">
+          <button type="button" class="aos-carousel-prev">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button type="button" class="aos-carousel-next">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+        <div class="aos-carousel-dots"></div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- PROCESS MANAGEMENT -->
+  <div class="aos-solution-block" data-aos-carousel>
+    <div class="aos-solution-header">
+      <div>
+
+        <h2>PROCESS MANAGEMENT</h2>
+
+        <p class="aos-solution-intro">
+          We provide a wide range of products, solutions and turnkey services for Electrical and
+          Instrumentation, as well as Automation & Control.
+        </p>
+      </div>
+
+      <a href="./electrical-and-instrumentation.html" class="aos-solution-link">
+        Explore our Electrical and Instrumentation services
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="aos-carousel-wrap">
+      <div class="aos-card-track">
+
+        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Automation & Control</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Integrated M, E&I services for industrial, utility, building and energy infrastructure projects.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Modular Solutions and Process Skid Packages</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Prefabricated and integrated electrical houses for power distribution and control systems.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Measurement Solutions</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Engineered control panel solutions for safe, reliable and efficient plant operations.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Valves & Actuations</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Custom engineered electrical and instrumentation packages for complex project needs.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Rotating Equipment</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Technical support, maintenance and service assistance after project delivery.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+		<a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Fire & Gas Systems</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Busbar, trunking and cable management systems for organized and reliable power distribution.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+		<a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Operations & Maintenance</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Busbar, trunking and cable management systems for organized and reliable power distribution.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+
+        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
+          <div class="aos-card-default">
+            <h3>Design & Engineering</h3>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+          <div class="aos-card-hover">
+            <p>Busbar, trunking and cable management systems for organized and reliable power distribution.</p>
+            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+          </div>
+        </a>
+    </div>
+	
+
+	<div class="aos-carousel-controls">
         <div class="aos-arrow-group">
           <button type="button" class="aos-carousel-prev">
             <span class="material-symbols-outlined">chevron_left</span>
@@ -1008,7 +560,7 @@
     </div>
 
     <a
-      href="./ipm-index.html"
+      href="./ipm.html"
       class="aos-solution-link"
       style="margin-top: 0 !important; align-self: flex-start;"
     >
@@ -1020,18 +572,53 @@
   <div class="aos-carousel-wrap">
     <div class="aos-card-track">
 
-      <a href="./ipm-index.html" class="aos-solution-card">
+	  <a href="./ipm-index.html" class="aos-solution-card">
         <div class="aos-card-default">
-          <h3>IPM & Turnkey Well Delivery Services</h3>
+          <h3>Project Management</h3>
           <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
         </div>
 
         <div class="aos-card-hover">
-          <p>Single-point project delivery support for safer, faster and more cost-efficient well execution.</p>
+          <p>Well planning and full-cycle coordination & optimization of well delivery by experienced Project Delivery Team</p>
           <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
         </div>
       </a>
 
+	  <a href="./ipm-index.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>Bundled Services</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+
+        <div class="aos-card-hover">
+          <p>One-contract covering flexible tailored well services bundle to support well construction or intervention projects</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./ipm-index.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3> Integrated Project Management</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+
+        <div class="aos-card-hover">
+          <p>Full-cycle end-to-end well planning and execution of well delivery via cross-functional planning, equipment & services procurement</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./ipm-index.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>Turnkey Well Delivery </h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+
+        <div class="aos-card-hover">
+          <p>Single-contract, end-to-end well delivery with full performance responsibility</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
     </div>
 
         <div class="aos-carousel-dots"></div>
@@ -1039,213 +626,6 @@
     </div>
   </div>
 
-  <!-- ELECTRICAL AND INSTRUMENTATION -->
-  <div class="aos-solution-block" data-aos-carousel>
-    <div class="aos-solution-header">
-      <div>
-
-        <h2>ELECTRICAL AND INSTRUMENTATION</h2>
-
-        <p class="aos-solution-intro">
-          We provide a wide range of products, solutions and turnkey services for Electrical and
-          Instrumentation, as well as Automation & Control.
-        </p>
-      </div>
-
-      <a href="./electrical-and-instrumentation.html" class="aos-solution-link">
-        Explore our Electrical and Instrumentation services
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
-    </div>
-
-    <div class="aos-carousel-wrap">
-      <div class="aos-card-track">
-
-        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
-          <div class="aos-card-default">
-            <h3>Mechanical, Electrical & Instrumentation Services</h3>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-          <div class="aos-card-hover">
-            <p>Integrated M, E&I services for industrial, utility, building and energy infrastructure projects.</p>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-        </a>
-
-        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
-          <div class="aos-card-default">
-            <h3>E-House Integrated Solutions</h3>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-          <div class="aos-card-hover">
-            <p>Prefabricated and integrated electrical houses for power distribution and control systems.</p>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-        </a>
-
-        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
-          <div class="aos-card-default">
-            <h3>Control Panels</h3>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-          <div class="aos-card-hover">
-            <p>Engineered control panel solutions for safe, reliable and efficient plant operations.</p>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-        </a>
-
-        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
-          <div class="aos-card-default">
-            <h3>E & I Engineered Packages</h3>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-          <div class="aos-card-hover">
-            <p>Custom engineered electrical and instrumentation packages for complex project needs.</p>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-        </a>
-
-        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
-          <div class="aos-card-default">
-            <h3>Aftersales Support Services</h3>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-          <div class="aos-card-hover">
-            <p>Technical support, maintenance and service assistance after project delivery.</p>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-        </a>
-
-        <a href="./electrical-and-instrumentation.html" class="aos-solution-card">
-          <div class="aos-card-default">
-            <h3>Busbar Trunking and Cable Management</h3>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-          <div class="aos-card-hover">
-            <p>Busbar, trunking and cable management systems for organized and reliable power distribution.</p>
-            <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-          </div>
-        </a>
-    </div>
-
-	<div class="aos-carousel-controls">
-        <div class="aos-arrow-group">
-          <button type="button" class="aos-carousel-prev">
-            <span class="material-symbols-outlined">chevron_left</span>
-          </button>
-          <button type="button" class="aos-carousel-next">
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-        </div>
-
-        <div class="aos-carousel-dots"></div>
-      </div>
-    </div>
-  </div>
-
-
- <!-- PROCESS AUTOMATION & CONTROL -->
- <div class="aos-solution-block" data-aos-carousel>
-  <div class="aos-solution-header">
-    <div>
-
-      <h2>
-		 PROCESS AUTOMATION
-	     <br class="desktop-break">
-		  & CONTROL
-	  </h2>
-
-      <p class="aos-solution-intro">
-        We provide process automation, control, safety, engineering and commissioning solutions
-        designed to improve operational efficiency, reliability and asset performance.
-      </p>
-    </div>
-
-    <a
-      href="./process-management.html"
-      class="aos-solution-link"
-      style="margin-top: 0 !important; align-self: flex-start;"
-    >
-      Explore Process Automation & Control services
-      <span class="material-symbols-outlined">arrow_forward</span>
-    </a>
-  </div>
-
-  <div class="aos-carousel-wrap">
-    <div class="aos-card-track">
-
-      <a href="./process-management.html" class="aos-solution-card">
-        <div class="aos-card-default">
-          <h3>Integrated Control and Safety Systems</h3>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-        <div class="aos-card-hover">
-          <p>Integrated control and safety systems combining process control and functional safety technologies.</p>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-      </a>
-
-      <a href="./process-management.html" class="aos-solution-card">
-        <div class="aos-card-default">
-          <h3>Complete Valves Solutions</h3>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-        <div class="aos-card-hover">
-          <p>Valve solutions that support safe, reliable and efficient process operations.</p>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-      </a>
-
-      <a href="./process-management.html" class="aos-solution-card">
-        <div class="aos-card-default">
-          <h3>Engineering Design and Project Management</h3>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-        <div class="aos-card-hover">
-          <p>Engineering design and project management services for industrial and energy-sector projects.</p>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-      </a>
-
-      <a href="./process-management.html" class="aos-solution-card">
-        <div class="aos-card-default">
-          <h3>Fire & Gas Safety Services</h3>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-        <div class="aos-card-hover">
-          <p>Fire and gas safety solutions designed to protect people, assets and critical operations.</p>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-      </a>
-
-      <a href="./process-management.html" class="aos-solution-card">
-        <div class="aos-card-default">
-          <h3>Commissioning & Startup Services</h3>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-        <div class="aos-card-hover">
-          <p>Commissioning and startup support to help projects move smoothly into safe operations.</p>
-          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="aos-carousel-controls">
-      <div class="aos-arrow-group">
-        <button type="button" class="aos-carousel-prev">
-          <span class="material-symbols-outlined">chevron_left</span>
-        </button>
-
-        <button type="button" class="aos-carousel-next">
-          <span class="material-symbols-outlined">chevron_right</span>
-        </button>
-      </div>
-
-      <div class="aos-carousel-dots"></div>
-    </div>
-  </div>
- </div>
 
  <!-- OPERATIONS & MAINTENANCE -->
  <div class="aos-solution-block" data-aos-carousel>
@@ -1275,7 +655,7 @@
 
       <a href="./new-services.html" class="aos-solution-card">
         <div class="aos-card-default">
-          <h3>Rotating Equipment & Valve Asset Management</h3>
+          <h3>Rotating Equipment Reliability Services & Upgrades</h3>
           <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
         </div>
         <div class="aos-card-hover">
@@ -1286,7 +666,7 @@
 
       <a href="./new-services.html" class="aos-solution-card">
         <div class="aos-card-default">
-          <h3>Automation, Control & Metering Asset Management</h3>
+          <h3>Automation & Metering Services</h3>
           <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
         </div>
         <div class="aos-card-hover">
@@ -1297,7 +677,62 @@
 
       <a href="./new-services.html" class="aos-solution-card">
         <div class="aos-card-default">
-          <h3>Fabric Maintenance & Asset Integrity</h3>
+          <h3>Fabric Maintenance Services</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+        <div class="aos-card-hover">
+          <p>Fabric maintenance and asset integrity services to preserve asset condition and operational safety.</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./new-services.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>FPSO Structural integrity</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+        <div class="aos-card-hover">
+          <p>Fabric maintenance and asset integrity services to preserve asset condition and operational safety.</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./new-services.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>Integrated Plant Maintenance Services</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+        <div class="aos-card-hover">
+          <p>Fabric maintenance and asset integrity services to preserve asset condition and operational safety.</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./new-services.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>Asset Integrity / Inspection services</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+        <div class="aos-card-hover">
+          <p>Fabric maintenance and asset integrity services to preserve asset condition and operational safety.</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./new-services.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>E&I Services</h3>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+        <div class="aos-card-hover">
+          <p>Fabric maintenance and asset integrity services to preserve asset condition and operational safety.</p>
+          <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </a>
+
+	  <a href="./new-services.html" class="aos-solution-card">
+        <div class="aos-card-default">
+          <h3>Calibration & Recertification Services</h3>
           <span>Explore <span class="material-symbols-outlined">arrow_forward</span></span>
         </div>
         <div class="aos-card-hover">
@@ -1307,6 +742,21 @@
       </a>
 
     </div>
+
+	<div class="aos-carousel-controls">
+        <div class="aos-arrow-group">
+          <button type="button" class="aos-carousel-prev">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button type="button" class="aos-carousel-next">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+        <div class="aos-carousel-dots"></div>
+      </div>
+    </div>
+  </div>
 
     </div>
   </div>
@@ -2140,7 +1590,7 @@
 							<div class="flex gap-x-3">
 								<!-- Facebook -->
 								<a
-									href="https://www.youtube.com/@aosorwell8369"
+									href="https://www.youtube.com/@aosorwellonline"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
@@ -2291,7 +1741,6 @@
 		</div>
 
 		<script src="./index.js"></script>
-		<script src="./navbar.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
@@ -2990,6 +2439,18 @@
          }
        });
       });
+    </script>
+
+	<script>
+      fetch("./navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+
+          const script = document.createElement("script");
+          script.src = "./navbar.js";
+          document.body.appendChild(script);
+       });
     </script>
 	</body>
 </html>
