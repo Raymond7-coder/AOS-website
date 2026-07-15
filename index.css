@@ -5409,6 +5409,9 @@ body.modal-active {
   white-space: nowrap;
   margin-top: 45px;
 }
+.process-solution-block .aos-solution-link {
+	margin-top: 5px;
+}
 .ipm-solution-block .aos-solution-link {
   margin-top: 7px;
 }
