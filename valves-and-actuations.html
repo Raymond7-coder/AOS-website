@@ -25,6 +25,617 @@
     </script>
 
     <link rel="stylesheet" href="output.css">
+    <style>
+  :root {
+    --va-green: #007a33;
+    --va-green-dark: #004225;
+    --va-black: #101411;
+    --va-copy: #505c55;
+    --va-soft: #f3f6f4;
+    --va-border: #dfe7e2;
+    --va-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .va-page,
+  .va-page * {
+    box-sizing: border-box;
+  }
+
+  .va-page {
+    overflow: hidden;
+    background: #ffffff;
+    color: var(--va-black);
+    font-family: "Poppins", sans-serif;
+  }
+
+  .va-shell {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .va-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.93) 0%,
+        rgba(0, 0, 0, 0.78) 48%,
+        rgba(0, 0, 0, 0.38) 100%
+      ),
+      url("./images/valves-hero.jpg") center / cover no-repeat;
+  }
+
+  .va-hero::after {
+    content: "";
+    position: absolute;
+    right: -110px;
+    bottom: -165px;
+    width: 440px;
+    height: 440px;
+    border: 70px solid rgba(0, 122, 51, 0.38);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .va-hero-content {
+    max-width: 900px;
+    padding: 130px 0 105px;
+    color: #ffffff;
+  }
+
+  .va-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #8fe5b2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .va-eyebrow::before {
+    content: "";
+    width: 42px;
+    height: 3px;
+    background: var(--va-green);
+  }
+
+  .va-hero h1 {
+    max-width: 880px;
+    margin: 0 0 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(39px, 5vw, 67px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .va-hero-copy {
+    max-width: 860px;
+    margin: 0;
+    color: #eef4f0;
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  /* =========================
+     QUICK NAVIGATION
+  ========================= */
+
+  .va-quick-nav {
+    position: relative;
+    z-index: 5;
+    margin-top: -43px;
+  }
+
+  .va-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    background: #ffffff;
+    border: 1px solid var(--va-border);
+    box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
+  }
+
+  .va-quick-link {
+    grid-column: span 3;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 13px;
+
+    border-right: 1px solid var(--va-border);
+    border-bottom: 1px solid var(--va-border);
+
+    color: #27322c;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  /* Last three items fill the second row equally */
+  .va-quick-link:nth-child(n + 5) {
+    grid-column: span 4;
+    border-bottom: 0;
+  }
+
+  .va-quick-link:nth-child(4),
+  .va-quick-link:nth-child(7) {
+    border-right: 0;
+  }
+
+  .va-quick-link:hover,
+  .va-quick-link:focus-visible {
+    background: var(--va-green);
+    color: #ffffff;
+    transform: translateY(-4px);
+    outline: none;
+  }
+
+  /* =========================
+     SERVICE SECTIONS
+  ========================= */
+
+  .va-section {
+    padding: 104px 0;
+    scroll-margin-top: 120px;
+  }
+
+  .va-section-soft {
+    background: var(--va-soft);
+  }
+
+  .va-section-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.18fr)
+      minmax(350px, 0.82fr);
+
+    gap: 66px;
+    align-items: center;
+  }
+
+  .va-section-grid.va-reverse {
+    grid-template-columns:
+      minmax(350px, 0.82fr)
+      minmax(0, 1.18fr);
+  }
+
+  .va-section-grid.va-reverse .va-copy {
+    order: 2;
+  }
+
+  .va-section-grid.va-reverse .va-visual {
+    order: 1;
+  }
+
+  .va-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--va-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .va-label::after {
+    content: "";
+    width: 52px;
+    height: 2px;
+    background: var(--va-green);
+  }
+
+  .va-copy h2 {
+    margin: 0 0 22px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(27px, 3.1vw, 41px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  .va-copy p {
+    margin: 0;
+    color: var(--va-copy);
+    font-size: 13px;
+    line-height: 1.95;
+    text-align: justify;
+  }
+
+  .va-copy p + p {
+    margin-top: 17px;
+  }
+
+  /* =========================
+     OFFERING LISTS
+  ========================= */
+
+  .va-offering-list {
+    display: grid;
+    gap: 11px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .va-offering-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    color: #39443d;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .va-offering-list li::before {
+    content: "✓";
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    border: 1.5px solid var(--va-green);
+    border-radius: 50%;
+    color: var(--va-green);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .va-application {
+    margin-top: 20px !important;
+    padding: 17px 19px;
+    border-left: 4px solid var(--va-green);
+    background: #edf7f1;
+    color: #334239 !important;
+    text-align: left !important;
+  }
+
+  /* =========================
+     IMAGE FRAME
+  ========================= */
+
+  .va-image-frame {
+    position: relative;
+    padding: 28px 0 0 28px;
+  }
+
+  .va-image-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 45%;
+    background: var(--va-green);
+  }
+
+  .va-image-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 430px;
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+  }
+
+  .va-section-soft .va-image-frame::before {
+    background: #b8c3bc;
+  }
+
+  /* =========================
+     BENEFITS
+  ========================= */
+
+  .va-benefits {
+    padding: 100px 0 80px;
+    background: #ffffff;
+  }
+
+  .va-benefits-heading {
+    max-width: 760px;
+    margin-bottom: 46px;
+  }
+
+  .va-benefits-heading h2 {
+    margin: 0 0 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .va-benefits-heading p {
+    margin: 0;
+    color: var(--va-copy);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .va-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--va-border);
+    border-bottom: 1px solid var(--va-border);
+  }
+
+  .va-benefit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 34px 45px 34px 0;
+  }
+
+  .va-benefit-column + .va-benefit-column {
+    padding-right: 0;
+    padding-left: 48px;
+    border-left: 1px solid var(--va-border);
+  }
+
+  .va-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #182019;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .va-benefit-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    border: 1.5px solid var(--va-green);
+    border-radius: 50%;
+    color: var(--va-green);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* =========================
+     FINAL CTA
+  ========================= */
+
+  .va-final-cta {
+    padding: 0 0 105px;
+    background: #ffffff;
+  }
+
+  .va-final-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 34px 38px;
+    background: var(--va-green);
+    border-radius: 12px;
+    box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
+  }
+
+  .va-final-cta-box h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(21px, 2.5vw, 28px);
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .va-contact-button {
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    background: var(--va-green-dark);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .va-contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  /* =========================
+     TABLET
+  ========================= */
+
+  @media (max-width: 1050px) {
+    .va-section-grid,
+    .va-section-grid.va-reverse {
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(315px, 0.92fr);
+
+      gap: 42px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .va-quick-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .va-quick-link,
+    .va-quick-link:nth-child(n + 5) {
+      grid-column: auto;
+      border-right: 1px solid var(--va-border);
+      border-bottom: 1px solid var(--va-border);
+    }
+
+    .va-quick-link:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .va-quick-link:nth-child(7) {
+      grid-column: 1 / -1;
+      border-right: 0;
+      border-bottom: 0;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 820px) {
+    .va-shell {
+      width: min(100% - 32px, 680px);
+    }
+
+    .va-hero {
+      min-height: auto;
+      background-position: 60% center;
+    }
+
+    .va-hero-content {
+      padding: 112px 0 85px;
+    }
+
+    .va-quick-nav {
+      margin-top: -28px;
+    }
+
+    .va-section {
+      padding: 76px 0;
+    }
+
+    .va-section-grid,
+    .va-section-grid.va-reverse {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .va-section-grid.va-reverse .va-copy,
+    .va-section-grid.va-reverse .va-visual {
+      order: initial;
+    }
+
+    .va-copy p {
+      text-align: left;
+    }
+
+    .va-image-frame img {
+      height: 370px;
+    }
+
+    .va-benefits {
+      padding-top: 76px;
+    }
+
+    .va-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .va-benefit-column,
+    .va-benefit-column + .va-benefit-column {
+      padding: 28px 0;
+      border-left: 0;
+    }
+
+    .va-benefit-column + .va-benefit-column {
+      border-top: 1px solid var(--va-border);
+    }
+
+    .va-final-cta-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .va-shell {
+      width: calc(100% - 24px);
+    }
+
+    .va-hero h1 {
+      font-size: 37px;
+    }
+
+    .va-hero-content {
+      padding: 100px 0 75px;
+    }
+
+    .va-quick-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .va-quick-link,
+    .va-quick-link:nth-child(n + 5),
+    .va-quick-link:nth-child(7) {
+      grid-column: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--va-border);
+    }
+
+    .va-quick-link:last-child {
+      border-bottom: 0;
+    }
+
+    .va-copy h2 {
+      font-size: 28px;
+    }
+
+    .va-image-frame {
+      padding: 18px 0 0 18px;
+    }
+
+    .va-image-frame img {
+      height: 300px;
+      padding: 12px;
+    }
+
+    .va-final-cta {
+      padding-bottom: 75px;
+    }
+
+    .va-contact-button {
+      width: 100%;
+    }
+  }
+</style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
@@ -32,170 +643,588 @@
    <div style="height: 120px;"></div>
 
 
+   <main class="va-page">
 
-     <section id="services" class="wellconstruction flex flex-col gap-y-10 items-center  relative">
-        <div class="w-full h-full bg-black/50  flex flex-col gap-y-4 items-center text-center py-30 px-6 md:px-20">
-            <h1 class="bouncein text-xl xsm:text-2xl lg:text-3xl font-bold text-white">WELL CONSTRUCTION</h1>
-            <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed bouncein">During the entire Well Construction process, we provide seamless services that bridge the divide between drilling and completions. Through a series of integrated activities and processes, we combine the right technology, the right people and several years of experience, to provide winning solutions in well construction and management.</p>
+  <!-- HERO -->
+  <section class="va-hero">
+    <div class="va-shell">
+      <div class="va-hero-content">
+
+        <div class="va-eyebrow bouncein">
+          Reliable flow control and isolation
         </div>
-    </section>
 
-   <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-20 md:mt-20 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/IPM.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h1 class="bouncein">
+          Valves &amp; Actuation Solutions
+        </h1>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">IPM & Turnkey Well Delivery Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">At AOS Orwell, we provide full Integrated Project Management and Turnkey Well Delivery Services by offering our clients a one-stop solution for delivering cost-efficient wells, safer and faster. Our approach safeguards our clients from the complexities of managing multiple vendors by bundling the entire scope of work from engineering and planning to execution and handover of the project including drilling, completions, interventions, and workover, under one experience, accountable team.</p>    
-                <a href="ipm-index.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+        <p class="va-hero-copy bouncein">
+          AOS Orwell provides a comprehensive range of engineered valve,
+          actuation, isolation, and pressure-protection solutions for
+          demanding industrial applications. Supported by globally
+          recognized OEM partners and our in-country engineering expertise,
+          our solutions deliver precise process control, dependable
+          isolation, safe emergency response, and long-term operational
+          reliability.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAVIGATION -->
+  <nav
+    class="va-quick-nav"
+    aria-label="Valves and actuation services"
+  >
+    <div class="va-shell va-quick-grid">
+
+      <a class="va-quick-link" href="#control-valves">
+        Control Valves
+      </a>
+
+      <a class="va-quick-link" href="#shutdown-valves">
+        Emergency Shutdown &amp; Blowdown Valves
+      </a>
+
+      <a class="va-quick-link" href="#gate-globe-check">
+        Gate, Globe &amp; Check Valves
+      </a>
+
+      <a class="va-quick-link" href="#trunnion-ball">
+        Trunnion Ball Valves
+      </a>
+
+      <a class="va-quick-link" href="#butterfly-valves">
+        Double, Triple-Offset &amp; OCT Butterfly Valves
+      </a>
+
+      <a class="va-quick-link" href="#hipps">
+        HIPPS
+      </a>
+
+      <a class="va-quick-link" href="#other-isolation">
+        Other Isolation &amp; Automated Valves
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- CONTROL VALVES -->
+  <section id="control-valves" class="va-section">
+    <div class="va-shell va-section-grid slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          01 / Precise process control
         </div>
-    </section>
 
+        <h2>
+          Pressure &amp; Flow Control Valves
+        </h2>
 
-    <section class="relative serviceSection flex justify-center items-center pb-10 h-fit max-md:pb-20 -z-3 -mt-30  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-50 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-fishing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          AOS Orwell offers high-performance Pressure Control Valves
+          and Flow Control Valves designed to deliver precise and
+          reliable process control across demanding industrial
+          applications.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Fishing</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">We have the largest inventory of fishing tools in Nigeria and over 100 combined years of experience in fishing operations in-country. <br> (Our fishing experts have fished in almost all Oilfields in Nigeria). During the course of drilling oil wells, some objects like tools, junk, debris or other ‘fish’ get stuck in the well and this often disrupts drilling, workover or production. <br> Specialized tools called fishing tools are used in fishing to get the junk out. This means that our trained experts are competent in fishing to retrieve foreign objects and optimize the utility of the well.</p>
-               
-            </div>
+        <p>
+          Our Pressure Control Valves maintain stable process pressure,
+          while our Flow Control Valves accurately regulate the flow of
+          liquids, gases, and steam through continuous modulation.
+          Supported by globally recognized OEM partners and our
+          in-country engineering expertise, these solutions provide
+          safe, efficient, and dependable performance.
+        </p>
+
+        <ul class="va-offering-list">
+
+          <li>
+            Globe valves, including angle and globe patterns,
+            anti-surge and cryogenic valves
+          </li>
+
+          <li>
+            Double-offset, triple-offset and OCT zero-leakage
+            butterfly valves
+          </li>
+
+          <li>
+            Manual and automated choke valves
+          </li>
+
+          <li>
+            Pneumatic, diaphragm and manual actuators
+          </li>
+
+        </ul>
+
+        <p class="va-application">
+          <strong>Applications:</strong> Severe-service valve solutions
+          for high-temperature, high-abrasion and cryogenic processes
+          across oil and gas, LNG, power and other process industries.
+        </p>
+
+      </article>
+
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/control-valves.jpg"
+          alt="Pressure and flow control valves"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ESDV AND BDV -->
+  <section
+    id="shutdown-valves"
+    class="va-section va-section-soft"
+  >
+    <div class="va-shell va-section-grid va-reverse slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          02 / Emergency isolation
         </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20"> 
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-casing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Casing & Tubular Running Services (CTR)</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">We are prominent providers of Casing and Tubular running systems in the country. <br> We get the casing to the bottom. We combine conventional and patented casing and tubing running technologies comprising Top Casing Systems (TCDS). Our solutions consist of a full line of services including casing and tubing running, hammer services, casing and bucking accessories. <br> Our system creates a fundamentally superior process of getting casing to total depth, on time, every time. Our technologies bring significant improvements in safety, performance, reliability and efficiency in running casing wells.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20" style="margin-top: -70px; z-index: 5;">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-30 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-sickline.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h2>
+          Emergency Shutdown Valves &amp; Blowdown Valves
+        </h2>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Cased Hole Wireline & Slickline Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">We offer a wide range of Cased Hole, Wireline and Pipe Recovery Services that are suited for all our customers operational and evaluation needs. <br> Our experienced and well trained personnel combined with technical alliance partners places us in the best position to deliver safe and efficient operations and excellent well intervention solutions, using decades of Pipe Recovery Service and electric wireline expertise in Nigeria for all customers both offshore and on land.</p>
-                
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-plug.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          AOS Orwell provides high-integrity Emergency Shutdown Valves
+          and Blowdown Valves engineered to safeguard personnel, assets,
+          the environment and critical process infrastructure.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Plug, Abandonment and Slot Recovery</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">The plug and abandonment process involves setting up permanent barriers to seal up an oil well or a section of it. When casing retrieval is required, either for slot recovery to maximize the life and production rate of a well or to abandon the well permanently, it is indispensable to have a reliable partner to overcome the challenges that can be presented. <br> With our broad inventory and expertise we can achieve recovery of casings saving time of intervention on any type of installation.For offshore and deep water installations, we can provide single trip cut and recovery solutions to avoid long intervention time and associated cost.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-drillpipe.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          Emergency Shutdown Valves deliver rapid and reliable isolation
+          of process equipment during emergency conditions, while
+          Blowdown Valves enable the controlled depressurization of
+          systems to minimize risk and protect plant integrity.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Drillpipe Tubular Rentals</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Tubulars generally refer to tubes that are used for oil and gas production. These include drill pipes, pup joints, casing and tubing. Because these tubes can easily be exposed to rust, wear and tear, maintenance and logistics of storage can be a problem. <br> We offer excellent tubular rental and a wide variety of tubing, drill string, handling and ancillary tools thus helping you save storage and maintenance costs.</p>
-                
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-jar.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          Designed for safety-critical service and supported by our
+          globally recognized OEM partners and local engineering
+          expertise, these solutions provide dependable performance for
+          upstream, midstream, downstream and power-industry
+          applications.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Jar and Downhole Tools</h3>
-                <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">Downhole tools are the equipment used in oilfield drilling, completion, intervention and workover services. We offer a wide range of in-country oil and gas downhole drilling tools & Automation of Machine operations that saves cost and time and support the delivery of high performing oilfields. <br> Our equipment is expertly managed and we provide efficient on-site service. We have the capacity to offer specialized tools that improve efficiency and minimize drilling production cost. <br> Our tools cover services in areas like wireline and slickline, drilling jars, fishing tools, drill pipes, tubular tools and others.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/completion.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+      </article>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Completion, Assembly & Hammer Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Our completion tools deliver customized, cost-effective completion solutions that support your well completion process with distinctive service quality. <br> Our Hammer services are the efficient solution for any large-diameter tubular driving job, such as conductor driving and pile driving. Our technology enables the tool operate at most angles, including horizontally and underwater without energy loss. For conductor driving, we use S90 hydraulic hammers that drive piles deeper and faster than any other design and result in much more efficient operations. Our technologies are environmentally friendly.
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-drilling.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/esdv-bdv-valves.jpg"
+          alt="Emergency shutdown and blowdown valves"
+        >
+      </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Drilling</h3>
-                <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">At AOS Orwell, we recognize the need for a cost effective, minimized rig time yet, with an efficiently drilled oil well. Be it Exploration, Appraisal or Development, we painstakingly take matters beyond just getting the well drilled to exceeding our valued client expectations by optimizing Well placement, formation evaluation and Safety. <br> We guarantee you the best tools because we partner with some of the best technical partners in the world. <br> We can provide: Bit, Mud Motors/RSS, Measurement While Drilling-MWD and Logging While Drilling –LWD. Our personnel are trained to the highest competency and will get the job done at a budget friendly price with outstanding outcome.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/macshop.jpg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+    </div>
+  </section>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2" style="padding-bottom: 100px; margin-bottom: -100px;">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Machine Shop and Fabrication</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">At AOS Orwell, our Machine Shop & Fabrication Services are designed to deliver precision, reliability, and world-class quality to support the oil and gas industry. From manufacturing and refurbishing vital components to providing advanced welding and fabrication solutions, we ensure that every project meets international standards and client expectations. Our services cover a wide range of machining, threading, coupling, and fabrication works that keep operations running efficiently. Whether it’s supporting drilling and completion, handling repairs, or building custom solutions, AOS Orwell remains your trusted partner for performance and innovation.</p>    
-                <a href="machine-shop.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+  <!-- GATE GLOBE CHECK -->
+  <section id="gate-globe-check" class="va-section">
+    <div class="va-shell va-section-grid slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          03 / Isolation and regulation
         </div>
-    </section>
+
+        <h2>
+          Gate, Globe &amp; Check Valves
+        </h2>
+
+        <p>
+          We offer a comprehensive range of Gate, Globe and Check Valves
+          designed to provide reliable isolation, flow regulation and
+          backflow prevention across a wide range of industrial
+          applications.
+        </p>
+
+        <p>
+          Engineered for durability, safety and long service life, these
+          valves are available in a variety of materials, pressure
+          classes and end connections to meet the requirements of oil
+          and gas, power, petrochemical and other process industries.
+        </p>
+
+        <ul class="va-offering-list">
+
+          <li>
+            Gate valves for dependable full-flow isolation
+          </li>
+
+          <li>
+            Globe valves for accurate throttling and flow regulation
+          </li>
+
+          <li>
+            Check valves for reliable backflow prevention
+          </li>
+
+          <li>
+            Multiple body materials, pressure classes and end connections
+          </li>
+
+        </ul>
+
+      </article>
+
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/gate-globe-check-valves.jpg"
+          alt="Gate, globe and check valves"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUNNION BALL -->
+  <section
+    id="trunnion-ball"
+    class="va-section va-section-soft"
+  >
+    <div class="va-shell va-section-grid va-reverse slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          04 / High-integrity isolation
+        </div>
+
+        <h2>
+          Trunnion Ball Valves
+        </h2>
+
+        <p>
+          Our ball-valve portfolio includes Trunnion Mounted Ball Valves
+          and advanced Zero-Leakage Metal-Seated Ball Valves engineered
+          for reliable isolation in the most demanding service
+          conditions.
+        </p>
+
+        <p>
+          Designed for superior performance in high-pressure,
+          high-temperature, abrasive and corrosive applications, these
+          valves provide exceptional durability, bubble-tight shutoff
+          and reduced maintenance requirements.
+        </p>
+
+        <p>
+          Supported by globally recognized OEM partners and our local
+          engineering expertise, our metal-seated ball valves are backed
+          by an industry-leading four-year warranty, delivering
+          long-term reliability and confidence.
+        </p>
+
+      </article>
+
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/trunnion-ball-valves.jpg"
+          alt="Trunnion-mounted and metal-seated ball valves"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUTTERFLY VALVES -->
+  <section id="butterfly-valves" class="va-section">
+    <div class="va-shell va-section-grid slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          05 / Advanced sealing technology
+        </div>
+
+        <h2>
+          Double, Triple-Offset &amp; OCT Butterfly Valves
+        </h2>
+
+        <p>
+          Our comprehensive range of Double-Offset, Triple-Offset and OCT
+          Butterfly Valves is engineered to deliver reliable isolation
+          and control in demanding process applications.
+        </p>
+
+        <p>
+          Designed for exceptional sealing performance, durability and
+          operational efficiency, these valves are suitable for
+          high-pressure, high-temperature and severe-service conditions
+          across oil and gas, petrochemical, power and process
+          industries.
+        </p>
+
+        <p>
+          Our patented OCT butterfly-valve technology introduces a fourth
+          offset that provides tight shutoff up to Class 4 leakage. This
+          enables the valve to perform both throttling and isolation
+          functions within the same application.
+        </p>
+
+      </article>
+
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/butterfly-valves.jpg"
+          alt="Double-offset, triple-offset and OCT butterfly valves"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HIPPS -->
+  <section id="hipps" class="va-section va-section-soft">
+    <div class="va-shell va-section-grid va-reverse slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          06 / Overpressure protection
+        </div>
+
+        <h2>
+          High Integrity Pressure Protection Systems
+        </h2>
+
+        <p>
+          AOS Orwell provides complete High Integrity Pressure
+          Protection System packages designed to protect process
+          facilities from overpressure while eliminating the need for
+          conventional relief systems in suitable applications.
+        </p>
+
+        <p>
+          Engineered to meet stringent functional-safety requirements,
+          our HIPPS solutions integrate high-integrity sensors, logic
+          solvers and fast-acting shutdown valves to provide rapid and
+          reliable isolation during abnormal operating conditions.
+        </p>
+
+        <ul class="va-offering-list">
+
+          <li>
+            High-integrity pressure sensors and transmitters
+          </li>
+
+          <li>
+            Certified safety logic solvers
+          </li>
+
+          <li>
+            Fast-acting shutdown and isolation valves
+          </li>
+
+          <li>
+            Integrated testing, validation and functional-safety support
+          </li>
+
+        </ul>
+
+      </article>
+
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/hipps.jpg"
+          alt="High Integrity Pressure Protection System"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OTHER ISOLATION VALVES -->
+  <section id="other-isolation" class="va-section">
+    <div class="va-shell va-section-grid slidein">
+
+      <article class="va-copy">
+
+        <div class="va-label">
+          07 / Complete valve portfolio
+        </div>
+
+        <h2>
+          Other Isolation &amp; Automated Valve Solutions
+        </h2>
+
+        <p>
+          In addition to our primary control and isolation portfolio, we
+          provide a broad range of specialized valves and automated
+          valve solutions for demanding industrial and process
+          applications.
+        </p>
+
+        <p>
+          These products can be configured with suitable manual,
+          pneumatic, hydraulic or electric actuation systems and
+          accessories to meet the required operating philosophy,
+          shutdown time, control-system interface and safety
+          classification.
+        </p>
+
+        <ul class="va-offering-list">
+
+          <li>Plug valves</li>
+
+          <li>Cryogenic valves</li>
+
+          <li>Pressure-seal valves</li>
+
+          <li>Forged-steel valves</li>
+
+          <li>Emergency Shutdown Valves</li>
+
+          <li>Double block and bleed valves</li>
+
+          <li>Diverter and switching valves</li>
+
+          <li>Coking and slurry valves</li>
+
+          <li>Complete automated valve solutions</li>
+
+        </ul>
+
+      </article>
+
+      <div class="va-visual va-image-frame">
+        <img
+          src="./images/other-isolation-valves.jpg"
+          alt="Isolation and automated valve solutions"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="va-benefits">
+    <div class="va-shell">
+
+      <div class="va-benefits-heading bouncein">
+
+        <div class="va-label">
+          Why AOS Orwell
+        </div>
+
+        <h2>
+          Engineered valve solutions for critical service
+        </h2>
+
+        <p>
+          Our approach combines internationally recognized valve
+          technology, experienced local engineering, lifecycle support
+          and application-specific product selection.
+        </p>
+
+      </div>
+
+      <div class="va-benefits-grid slidein">
+
+        <div class="va-benefit-column">
+
+          <div class="va-benefit">
+            <span class="va-benefit-icon">✓</span>
+
+            <span>
+              Precise pressure, flow and process-control capability
+            </span>
+          </div>
+
+          <div class="va-benefit">
+            <span class="va-benefit-icon">✓</span>
+
+            <span>
+              Reliable emergency isolation and depressurization
+            </span>
+          </div>
+
+          <div class="va-benefit">
+            <span class="va-benefit-icon">✓</span>
+
+            <span>
+              Severe-service solutions for temperature, abrasion and
+              cryogenic applications
+            </span>
+          </div>
+
+        </div>
+
+        <div class="va-benefit-column">
+
+          <div class="va-benefit">
+            <span class="va-benefit-icon">✓</span>
+
+            <span>
+              Global OEM technologies supported by local engineering
+            </span>
+          </div>
+
+          <div class="va-benefit">
+            <span class="va-benefit-icon">✓</span>
+
+            <span>
+              Broad material, pressure-class and connection options
+            </span>
+          </div>
+
+          <div class="va-benefit">
+            <span class="va-benefit-icon">✓</span>
+
+            <span>
+              Manual, pneumatic, hydraulic and automated actuation
+              solutions
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="va-final-cta">
+    <div class="va-shell">
+
+      <div class="va-final-cta-box bouncein">
+
+        <h2>
+          Let’s Engineer Safer Flow Control — Together
+        </h2>
+
+        <a
+          href="./contact-us.html"
+          class="va-contact-button"
+        >
+          Contact Us
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
     
     <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->

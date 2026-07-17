@@ -25,177 +25,1340 @@
     </script>
 
     <link rel="stylesheet" href="output.css">
+    <style>
+  :root {
+    --ac-green: #007a33;
+    --ac-green-dark: #004225;
+    --ac-black: #101411;
+    --ac-copy: #505c55;
+    --ac-soft: #f3f6f4;
+    --ac-border: #dfe7e2;
+    --ac-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .ac-page,
+  .ac-page * {
+    box-sizing: border-box;
+  }
+
+  .ac-page {
+    overflow: hidden;
+    background: #ffffff;
+    color: var(--ac-black);
+    font-family: "Poppins", sans-serif;
+  }
+
+  .ac-shell {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .ac-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.93) 0%,
+        rgba(0, 0, 0, 0.76) 48%,
+        rgba(0, 0, 0, 0.36) 100%
+      ),
+      url("./images/elect.jpeg") center / cover no-repeat;
+  }
+
+  .ac-hero::after {
+    content: "";
+    position: absolute;
+    right: -110px;
+    bottom: -165px;
+    width: 440px;
+    height: 440px;
+    border: 70px solid rgba(0, 122, 51, 0.38);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .ac-hero-content {
+    max-width: 910px;
+    padding: 130px 0 105px;
+    color: #ffffff;
+  }
+
+  .ac-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #8fe5b2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ac-eyebrow::before {
+    content: "";
+    width: 42px;
+    height: 3px;
+    background: var(--ac-green);
+  }
+
+  .ac-hero h1 {
+    max-width: 900px;
+    margin: 0 0 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(39px, 5vw, 67px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .ac-hero-copy {
+    max-width: 870px;
+    margin: 0;
+    color: #eef4f0;
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  /* =========================
+     QUICK NAVIGATION
+  ========================= */
+
+  .ac-quick-nav {
+    position: relative;
+    z-index: 5;
+    margin-top: -43px;
+  }
+
+  .ac-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    background: #ffffff;
+    border: 1px solid var(--ac-border);
+    box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
+  }
+
+  /* First four items */
+  .ac-quick-link {
+    grid-column: span 3;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 13px;
+
+    border-right: 1px solid var(--ac-border);
+    border-bottom: 1px solid var(--ac-border);
+
+    color: #27322c;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  /* Last three items fill the second row equally */
+  .ac-quick-link:nth-child(n + 5) {
+    grid-column: span 4;
+    border-bottom: 0;
+  }
+
+  .ac-quick-link:nth-child(4),
+  .ac-quick-link:nth-child(7) {
+    border-right: 0;
+  }
+
+  .ac-quick-link:hover,
+  .ac-quick-link:focus-visible {
+    background: var(--ac-green);
+    color: #ffffff;
+    transform: translateY(-4px);
+    outline: none;
+  }
+
+  /* =========================
+     SERVICE SECTIONS
+  ========================= */
+
+  .ac-section {
+    padding: 104px 0;
+    scroll-margin-top: 120px;
+  }
+
+  .ac-section-soft {
+    background: var(--ac-soft);
+  }
+
+  .ac-section-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.18fr)
+      minmax(350px, 0.82fr);
+
+    gap: 66px;
+    align-items: center;
+  }
+
+  .ac-section-grid.ac-reverse {
+    grid-template-columns:
+      minmax(350px, 0.82fr)
+      minmax(0, 1.18fr);
+  }
+
+  .ac-section-grid.ac-reverse .ac-copy {
+    order: 2;
+  }
+
+  .ac-section-grid.ac-reverse .ac-visual {
+    order: 1;
+  }
+
+  .ac-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--ac-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .ac-label::after {
+    content: "";
+    width: 52px;
+    height: 2px;
+    background: var(--ac-green);
+  }
+
+  .ac-copy h2 {
+    margin: 0 0 22px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(27px, 3.1vw, 41px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  .ac-copy p {
+    margin: 0;
+    color: var(--ac-copy);
+    font-size: 13px;
+    line-height: 1.95;
+    text-align: justify;
+  }
+
+  .ac-copy p + p {
+    margin-top: 17px;
+  }
+
+  .ac-highlight {
+    margin-top: 22px !important;
+    padding: 17px 19px;
+    border-left: 4px solid var(--ac-green);
+    background: #eaf5ee;
+    color: #304039 !important;
+    text-align: left !important;
+  }
+
+  /* =========================
+     TECHNICAL VISUAL PANELS
+  ========================= */
+
+  .ac-visual-panel {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 38px;
+
+    background:
+      radial-gradient(
+        circle at 88% 10%,
+        rgba(66, 221, 127, 0.28),
+        transparent 34%
+      ),
+      linear-gradient(145deg, #111b15, #031208);
+
+    color: #ffffff;
+    box-shadow: 0 20px 52px rgba(6, 38, 18, 0.18);
+  }
+
+  .ac-visual-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.17;
+    pointer-events: none;
+
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px
+      );
+
+    background-size: 28px 28px;
+  }
+
+  .ac-visual-panel::after {
+    content: "";
+    position: absolute;
+    right: -85px;
+    bottom: -85px;
+    width: 230px;
+    height: 230px;
+    border: 45px solid rgba(0, 122, 51, 0.48);
+    border-radius: 50%;
+  }
+
+  .ac-panel-top,
+  .ac-panel-bottom {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ac-panel-icon {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    background: var(--ac-green);
+  }
+
+  .ac-panel-icon .material-symbols-outlined {
+    font-size: 40px;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 300,
+      "GRAD" 0,
+      "opsz" 48;
+  }
+
+  .ac-panel-kicker {
+    margin-top: 22px;
+    color: #8ce5ad;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ac-panel-title {
+    max-width: 340px;
+    margin-top: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .ac-panel-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 34px;
+  }
+
+  .ac-panel-data span {
+    min-height: 65px;
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* =========================
+     BENEFITS
+  ========================= */
+
+  .ac-benefits {
+    padding: 100px 0 80px;
+    background: #ffffff;
+  }
+
+  .ac-benefits-heading {
+    max-width: 790px;
+    margin-bottom: 46px;
+  }
+
+  .ac-benefits-heading h2 {
+    margin: 0 0 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .ac-benefits-heading p {
+    margin: 0;
+    color: var(--ac-copy);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .ac-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--ac-border);
+    border-bottom: 1px solid var(--ac-border);
+  }
+
+  .ac-benefit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 34px 45px 34px 0;
+  }
+
+  .ac-benefit-column + .ac-benefit-column {
+    padding-right: 0;
+    padding-left: 48px;
+    border-left: 1px solid var(--ac-border);
+  }
+
+  .ac-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #182019;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ac-benefit-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    border: 1.5px solid var(--ac-green);
+    border-radius: 50%;
+    color: var(--ac-green);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* =========================
+     FINAL CTA
+  ========================= */
+
+  .ac-final-cta {
+    padding: 0 0 105px;
+    background: #ffffff;
+  }
+
+  .ac-final-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 34px 38px;
+    background: var(--ac-green);
+    border-radius: 12px;
+    box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
+  }
+
+  .ac-final-cta-box h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(21px, 2.5vw, 28px);
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .ac-contact-button {
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    background: var(--ac-green-dark);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .ac-contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  /* =========================
+     RESPONSIVE
+  ========================= */
+
+  @media (max-width: 1050px) {
+    .ac-section-grid,
+    .ac-section-grid.ac-reverse {
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(315px, 0.92fr);
+
+      gap: 42px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .ac-quick-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ac-quick-link,
+    .ac-quick-link:nth-child(n + 5) {
+      grid-column: auto;
+      border-right: 1px solid var(--ac-border);
+      border-bottom: 1px solid var(--ac-border);
+    }
+
+    .ac-quick-link:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .ac-quick-link:nth-child(7) {
+      grid-column: 1 / -1;
+      border-right: 0;
+      border-bottom: 0;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .ac-shell {
+      width: min(100% - 32px, 680px);
+    }
+
+    .ac-hero {
+      min-height: auto;
+      background-position: 60% center;
+    }
+
+    .ac-hero-content {
+      padding: 112px 0 85px;
+    }
+
+    .ac-quick-nav {
+      margin-top: -28px;
+    }
+
+    .ac-section {
+      padding: 76px 0;
+    }
+
+    .ac-section-grid,
+    .ac-section-grid.ac-reverse {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .ac-section-grid.ac-reverse .ac-copy,
+    .ac-section-grid.ac-reverse .ac-visual {
+      order: initial;
+    }
+
+    .ac-copy p {
+      text-align: left;
+    }
+
+    .ac-visual-panel {
+      min-height: 360px;
+    }
+
+    .ac-benefits {
+      padding-top: 76px;
+    }
+
+    .ac-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ac-benefit-column,
+    .ac-benefit-column + .ac-benefit-column {
+      padding: 28px 0;
+      border-left: 0;
+    }
+
+    .ac-benefit-column + .ac-benefit-column {
+      border-top: 1px solid var(--ac-border);
+    }
+
+    .ac-final-cta-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ac-shell {
+      width: calc(100% - 24px);
+    }
+
+    .ac-hero h1 {
+      font-size: 37px;
+    }
+
+    .ac-hero-content {
+      padding: 100px 0 75px;
+    }
+
+    .ac-quick-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ac-quick-link,
+    .ac-quick-link:nth-child(n + 5),
+    .ac-quick-link:nth-child(7) {
+      grid-column: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--ac-border);
+    }
+
+    .ac-quick-link:last-child {
+      border-bottom: 0;
+    }
+
+    .ac-copy h2 {
+      font-size: 28px;
+    }
+
+    .ac-visual-panel {
+      min-height: 345px;
+      padding: 28px 22px;
+    }
+
+    .ac-panel-data {
+      grid-template-columns: 1fr;
+    }
+
+    .ac-panel-data span {
+      min-height: 47px;
+    }
+
+    .ac-final-cta {
+      padding-bottom: 75px;
+    }
+
+    .ac-contact-button {
+      width: 100%;
+    }
+  }
+</style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
    <div style="height: 120px;"></div>
 
+   <main class="ac-page">
 
+  <!-- HERO -->
+  <section class="ac-hero">
+    <div class="ac-shell">
+      <div class="ac-hero-content">
 
-     <section id="services" class="wellconstruction flex flex-col gap-y-10 items-center  relative">
-        <div class="w-full h-full bg-black/50  flex flex-col gap-y-4 items-center text-center py-30 px-6 md:px-20">
-            <h1 class="bouncein text-xl xsm:text-2xl lg:text-3xl font-bold text-white">WELL CONSTRUCTION</h1>
-            <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed bouncein">During the entire Well Construction process, we provide seamless services that bridge the divide between drilling and completions. Through a series of integrated activities and processes, we combine the right technology, the right people and several years of experience, to provide winning solutions in well construction and management.</p>
+        <div class="ac-eyebrow bouncein">
+          Intelligent, safe and connected operations
         </div>
-    </section>
 
-   <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-20 md:mt-20 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/IPM.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h1 class="bouncein">
+          Process Automation &amp; Control
+        </h1>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">IPM & Turnkey Well Delivery Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">At AOS Orwell, we provide full Integrated Project Management and Turnkey Well Delivery Services by offering our clients a one-stop solution for delivering cost-efficient wells, safer and faster. Our approach safeguards our clients from the complexities of managing multiple vendors by bundling the entire scope of work from engineering and planning to execution and handover of the project including drilling, completions, interventions, and workover, under one experience, accountable team.</p>    
-                <a href="ipm-index.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+        <p class="ac-hero-copy bouncein">
+          AOS Orwell delivers integrated automation, control, safety,
+          monitoring and digital solutions that help industrial operators
+          achieve greater visibility, reliability and operational
+          performance. Our capabilities span process-control platforms,
+          safety systems, programmable automation, industrial data,
+          environmental monitoring, operational technology security and
+          pipeline surveillance.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAVIGATION -->
+  <nav
+    class="ac-quick-nav"
+    aria-label="Automation and Control services"
+  >
+    <div class="ac-shell ac-quick-grid">
+
+      <a class="ac-quick-link" href="#scada">
+        SCADA
+      </a>
+
+      <a class="ac-quick-link" href="#icss">
+        Integrated Control &amp; Safety Systems
+      </a>
+
+      <a class="ac-quick-link" href="#plc">
+        PLC
+      </a>
+
+      <a class="ac-quick-link" href="#digital-solutions">
+        Digital Solutions
+      </a>
+
+      <a class="ac-quick-link" href="#emissions-monitoring">
+        Greenhouse Emissions Monitoring
+      </a>
+
+      <a class="ac-quick-link" href="#cybersecurity">
+        Cybersecurity Solutions
+      </a>
+
+      <a class="ac-quick-link" href="#pipeline-leak">
+        Pipeline Leak Detection
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- SCADA -->
+  <section id="scada" class="ac-section">
+    <div class="ac-shell ac-section-grid slidein">
+
+      <article class="ac-copy">
+
+        <div class="ac-label">
+          01 / Supervisory control
         </div>
-    </section>
 
+        <h2>
+          SCADA
+        </h2>
 
-    <section class="relative serviceSection flex justify-center items-center pb-10 h-fit max-md:pb-20 -z-3 -mt-30  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-50 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-fishing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          Our Supervisory Control and Data Acquisition solutions provide
+          centralized monitoring and control of industrial processes,
+          equipment and geographically distributed assets. We integrate
+          field devices, Remote Terminal Units, control systems,
+          communication networks and operator interfaces into a unified
+          operational platform.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Fishing</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">We have the largest inventory of fishing tools in Nigeria and over 100 combined years of experience in fishing operations in-country. <br> (Our fishing experts have fished in almost all Oilfields in Nigeria). During the course of drilling oil wells, some objects like tools, junk, debris or other ‘fish’ get stuck in the well and this often disrupts drilling, workover or production. <br> Specialized tools called fishing tools are used in fishing to get the junk out. This means that our trained experts are competent in fishing to retrieve foreign objects and optimize the utility of the well.</p>
-               
-            </div>
+        <p>
+          Through real-time visualization, alarm management, historical
+          data collection and remote operational control, our SCADA
+          solutions help operators identify abnormal conditions quickly,
+          improve decision-making and maintain reliable production across
+          both local and remote facilities.
+        </p>
+
+        <p class="ac-highlight">
+          This is temporary SCADA copy and can be replaced when the
+          approved technical content is available.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              monitoring
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            Centralized operational visibility
+          </div>
+
+          <div class="ac-panel-title">
+            Monitor, control and manage distributed industrial assets
+          </div>
+
         </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20"> 
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-casing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Casing & Tubular Running Services (CTR)</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">We are prominent providers of Casing and Tubular running systems in the country. <br> We get the casing to the bottom. We combine conventional and patented casing and tubing running technologies comprising Top Casing Systems (TCDS). Our solutions consist of a full line of services including casing and tubing running, hammer services, casing and bucking accessories. <br> Our system creates a fundamentally superior process of getting casing to total depth, on time, every time. Our technologies bring significant improvements in safety, performance, reliability and efficiency in running casing wells.</p>
-               
-            </div>
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>Alarms</span>
+            <span>Historian</span>
+            <span>Remote Control</span>
+          </div>
         </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20" style="margin-top: -70px; z-index: 5;">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-30 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-sickline.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Cased Hole Wireline & Slickline Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">We offer a wide range of Cased Hole, Wireline and Pipe Recovery Services that are suited for all our customers operational and evaluation needs. <br> Our experienced and well trained personnel combined with technical alliance partners places us in the best position to deliver safe and efficient operations and excellent well intervention solutions, using decades of Pipe Recovery Service and electric wireline expertise in Nigeria for all customers both offshore and on land.</p>
-                
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-plug.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+      </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Plug, Abandonment and Slot Recovery</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">The plug and abandonment process involves setting up permanent barriers to seal up an oil well or a section of it. When casing retrieval is required, either for slot recovery to maximize the life and production rate of a well or to abandon the well permanently, it is indispensable to have a reliable partner to overcome the challenges that can be presented. <br> With our broad inventory and expertise we can achieve recovery of casings saving time of intervention on any type of installation.For offshore and deep water installations, we can provide single trip cut and recovery solutions to avoid long intervention time and associated cost.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-drillpipe.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+    </div>
+  </section>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Drillpipe Tubular Rentals</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Tubulars generally refer to tubes that are used for oil and gas production. These include drill pipes, pup joints, casing and tubing. Because these tubes can easily be exposed to rust, wear and tear, maintenance and logistics of storage can be a problem. <br> We offer excellent tubular rental and a wide variety of tubing, drill string, handling and ancillary tools thus helping you save storage and maintenance costs.</p>
-                
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-jar.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+  <!-- ICSS -->
+  <section id="icss" class="ac-section ac-section-soft">
+    <div class="ac-shell ac-section-grid ac-reverse slidein">
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Jar and Downhole Tools</h3>
-                <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">Downhole tools are the equipment used in oilfield drilling, completion, intervention and workover services. We offer a wide range of in-country oil and gas downhole drilling tools & Automation of Machine operations that saves cost and time and support the delivery of high performing oilfields. <br> Our equipment is expertly managed and we provide efficient on-site service. We have the capacity to offer specialized tools that improve efficiency and minimize drilling production cost. <br> Our tools cover services in areas like wireline and slickline, drilling jars, fishing tools, drill pipes, tubular tools and others.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/completion.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+      <article class="ac-copy">
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Completion, Assembly & Hammer Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Our completion tools deliver customized, cost-effective completion solutions that support your well completion process with distinctive service quality. <br> Our Hammer services are the efficient solution for any large-diameter tubular driving job, such as conductor driving and pile driving. Our technology enables the tool operate at most angles, including horizontally and underwater without energy loss. For conductor driving, we use S90 hydraulic hammers that drive piles deeper and faster than any other design and result in much more efficient operations. Our technologies are environmentally friendly.
+        <div class="ac-label">
+          02 / Integrated control and safety
         </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-drilling.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Drilling</h3>
-                <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">At AOS Orwell, we recognize the need for a cost effective, minimized rig time yet, with an efficiently drilled oil well. Be it Exploration, Appraisal or Development, we painstakingly take matters beyond just getting the well drilled to exceeding our valued client expectations by optimizing Well placement, formation evaluation and Safety. <br> We guarantee you the best tools because we partner with some of the best technical partners in the world. <br> We can provide: Bit, Mud Motors/RSS, Measurement While Drilling-MWD and Logging While Drilling –LWD. Our personnel are trained to the highest competency and will get the job done at a budget friendly price with outstanding outcome.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/macshop.jpg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h2>
+          Integrated Control &amp; Safety Systems
+        </h2>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2" style="padding-bottom: 100px; margin-bottom: -100px;">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Machine Shop and Fabrication</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">At AOS Orwell, our Machine Shop & Fabrication Services are designed to deliver precision, reliability, and world-class quality to support the oil and gas industry. From manufacturing and refurbishing vital components to providing advanced welding and fabrication solutions, we ensure that every project meets international standards and client expectations. Our services cover a wide range of machining, threading, coupling, and fabrication works that keep operations running efficiently. Whether it’s supporting drilling and completion, handling repairs, or building custom solutions, AOS Orwell remains your trusted partner for performance and innovation.</p>    
-                <a href="machine-shop.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+        <p>
+          We are an in-country partner providing Integrated Control and
+          Safety System solutions for process automation with SIL 3
+          integrity.
+        </p>
+
+        <p>
+          We operate one of Africa’s largest Exida-approved ICSS assembly
+          facilities, enabling us to provide advanced system integration
+          for the oil and gas, power, renewable energy, water and
+          healthcare industries.
+        </p>
+
+        <p>
+          Our ICSS solutions provide both process-control and safety
+          functions by operating the Basic Process Control System and
+          Safety Instrumented System on a common platform. The systems can
+          be delivered as a complete integrated package or provided as
+          separate control and safety services according to the project’s
+          operational requirements.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              hub
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            SIL 3 process protection
+          </div>
+
+          <div class="ac-panel-title">
+            Unified process control and safety-system integration
+          </div>
+
         </div>
-    </section>
+
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>BPCS</span>
+            <span>SIS</span>
+            <span>SIL 3</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLC -->
+  <section id="plc" class="ac-section">
+    <div class="ac-shell ac-section-grid slidein">
+
+      <article class="ac-copy">
+
+        <div class="ac-label">
+          03 / Programmable automation
+        </div>
+
+        <h2>
+          Programmable Logic Controllers
+        </h2>
+
+        <p>
+          Our PLC solutions provide reliable and flexible automation for
+          machines, process units, utility systems and packaged equipment.
+          We support PLC system design, hardware selection, control-panel
+          assembly, software development, testing, commissioning and
+          integration with field instrumentation and supervisory systems.
+        </p>
+
+        <p>
+          We also support system upgrades, migration of obsolete control
+          platforms, redundant controller architectures, communication
+          interface development and troubleshooting of existing automation
+          systems.
+        </p>
+
+        <p class="ac-highlight">
+          This is temporary PLC copy and can be updated with the approved
+          product, OEM and service information later.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              memory
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            Reliable machine and process control
+          </div>
+
+          <div class="ac-panel-title">
+            Flexible PLC architectures for industrial automation
+          </div>
+
+        </div>
+
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>Programming</span>
+            <span>Integration</span>
+            <span>Migration</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIGITAL SOLUTIONS -->
+  <section
+    id="digital-solutions"
+    class="ac-section ac-section-soft"
+  >
+    <div class="ac-shell ac-section-grid ac-reverse slidein">
+
+      <article class="ac-copy">
+
+        <div class="ac-label">
+          04 / Industrial digitalization
+        </div>
+
+        <h2>
+          Digital Solutions
+        </h2>
+
+        <p>
+          Our Digital Solutions integrate industrial automation, field
+          instrumentation and digital technologies to provide real-time
+          visibility into operations and asset performance.
+        </p>
+
+        <p>
+          From data integration and remote monitoring to analytics and
+          performance dashboards, we help clients optimize processes,
+          improve reliability, reduce downtime and accelerate their
+          digital transformation.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              dashboard
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            Connected industrial intelligence
+          </div>
+
+          <div class="ac-panel-title">
+            Transform operational data into real-time performance insight
+          </div>
+
+        </div>
+
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>Analytics</span>
+            <span>Dashboards</span>
+            <span>Remote Monitoring</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EMISSIONS MONITORING -->
+  <section id="emissions-monitoring" class="ac-section">
+    <div class="ac-shell ac-section-grid slidein">
+
+      <article class="ac-copy">
+
+        <div class="ac-label">
+          05 / Environmental performance
+        </div>
+
+        <h2>
+          Greenhouse Emissions Monitoring
+        </h2>
+
+        <p>
+          Our Greenhouse Emissions Monitoring solutions help operators
+          accurately measure, monitor and report greenhouse gas emissions
+          to support regulatory compliance, ESG reporting and
+          sustainability goals.
+        </p>
+
+        <p>
+          Using advanced monitoring technologies and integrated data
+          solutions, we deliver reliable emissions data that enables
+          clients to improve environmental performance, optimize
+          operations and make informed decisions with confidence.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              co2
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            Accurate environmental data
+          </div>
+
+          <div class="ac-panel-title">
+            Monitor emissions and strengthen sustainability reporting
+          </div>
+
+        </div>
+
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>GHG Data</span>
+            <span>ESG Reporting</span>
+            <span>Compliance</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CYBERSECURITY -->
+  <section
+    id="cybersecurity"
+    class="ac-section ac-section-soft"
+  >
+    <div class="ac-shell ac-section-grid ac-reverse slidein">
+
+      <article class="ac-copy">
+
+        <div class="ac-label">
+          06 / Operational technology protection
+        </div>
+
+        <h2>
+          Cybersecurity Solutions
+        </h2>
+
+        <p>
+          Our industrial cybersecurity solutions help protect
+          operational technology environments, automation systems and
+          critical process infrastructure against unauthorized access,
+          disruption and emerging digital threats.
+        </p>
+
+        <p>
+          Our approach can include OT cybersecurity assessments, network
+          segmentation, secure remote access, system hardening, user-access
+          controls, backup and recovery planning, vulnerability management
+          and continuous security monitoring.
+        </p>
+
+        <p>
+          By integrating security requirements into the automation
+          lifecycle, we help clients strengthen system resilience while
+          preserving the availability and safety of critical operations.
+        </p>
+
+        <p class="ac-highlight">
+          This is temporary cybersecurity copy and should be replaced
+          with the approved AOS Orwell service scope when available.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              shield_lock
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            Secure industrial operations
+          </div>
+
+          <div class="ac-panel-title">
+            Protect automation and critical operational technology
+          </div>
+
+        </div>
+
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>Assessment</span>
+            <span>Segmentation</span>
+            <span>Monitoring</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIPELINE LEAK DETECTION -->
+  <section id="pipeline-leak" class="ac-section">
+    <div class="ac-shell ac-section-grid slidein">
+
+      <article class="ac-copy">
+
+        <div class="ac-label">
+          07 / Pipeline surveillance
+        </div>
+
+        <h2>
+          Pipeline Leak Detection
+        </h2>
+
+        <p>
+          Our Pipeline Leak Detection solutions provide continuous
+          monitoring of pipeline operating conditions to support the early
+          identification of leaks, abnormal flow behaviour and potential
+          integrity events.
+        </p>
+
+        <p>
+          By integrating pressure, flow, temperature and other available
+          field data with analytical monitoring tools, alarm systems and
+          SCADA platforms, operators can detect possible losses more
+          quickly and coordinate an effective operational response.
+        </p>
+
+        <p>
+          The solution can be configured for transmission pipelines,
+          gathering networks and other critical fluid-transfer systems to
+          improve environmental protection, production accountability and
+          pipeline availability.
+        </p>
+
+        <p class="ac-highlight">
+          This is temporary pipeline leak-detection copy and can be
+          replaced when the final technical description is approved.
+        </p>
+
+      </article>
+
+      <div class="ac-visual ac-visual-panel" aria-hidden="true">
+
+        <div class="ac-panel-top">
+
+          <div class="ac-panel-icon">
+            <span class="material-symbols-outlined">
+              water_drop
+            </span>
+          </div>
+
+          <div class="ac-panel-kicker">
+            Continuous pipeline awareness
+          </div>
+
+          <div class="ac-panel-title">
+            Detect abnormal conditions and respond to potential leaks
+          </div>
+
+        </div>
+
+        <div class="ac-panel-bottom">
+          <div class="ac-panel-data">
+            <span>Pressure</span>
+            <span>Flow</span>
+            <span>Alarm Response</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="ac-benefits">
+    <div class="ac-shell">
+
+      <div class="ac-benefits-heading bouncein">
+
+        <div class="ac-label">
+          Why AOS Orwell
+        </div>
+
+        <h2>
+          Integrated automation from field instrumentation to enterprise data
+        </h2>
+
+        <p>
+          Our solutions connect control, safety, monitoring and digital
+          information systems to support safer operations, greater
+          visibility and improved asset performance.
+        </p>
+
+      </div>
+
+      <div class="ac-benefits-grid slidein">
+
+        <div class="ac-benefit-column">
+
+          <div class="ac-benefit">
+            <span class="ac-benefit-icon">✓</span>
+
+            <span>
+              Integrated engineering across control and safety platforms
+            </span>
+          </div>
+
+          <div class="ac-benefit">
+            <span class="ac-benefit-icon">✓</span>
+
+            <span>
+              Real-time process, asset and environmental visibility
+            </span>
+          </div>
+
+          <div class="ac-benefit">
+            <span class="ac-benefit-icon">✓</span>
+
+            <span>
+              Local system integration, assembly and technical support
+            </span>
+          </div>
+
+        </div>
+
+        <div class="ac-benefit-column">
+
+          <div class="ac-benefit">
+            <span class="ac-benefit-icon">✓</span>
+
+            <span>
+              Scalable solutions for new projects and existing facilities
+            </span>
+          </div>
+
+          <div class="ac-benefit">
+            <span class="ac-benefit-icon">✓</span>
+
+            <span>
+              Improved reliability, safety and operational decision-making
+            </span>
+          </div>
+
+          <div class="ac-benefit">
+            <span class="ac-benefit-icon">✓</span>
+
+            <span>
+              Lifecycle support from design through commissioning and upgrades
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="ac-final-cta">
+    <div class="ac-shell">
+
+      <div class="ac-final-cta-box bouncein">
+
+        <h2>
+          Let’s Build Smarter, Safer and More Connected Operations
+        </h2>
+
+        <a
+          href="./contact-us.html"
+          class="ac-contact-button"
+        >
+          Contact Us
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
     
     <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->

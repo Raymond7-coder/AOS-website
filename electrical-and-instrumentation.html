@@ -11,228 +11,889 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
     <link rel="stylesheet" href="output.css">
+    <style>
+  :root {
+    --ei-primary: #019b39;
+    --ei-primary-dark: #006f2a;
+    --ei-ink: #101411;
+    --ei-copy: #4f5c54;
+    --ei-soft: #f3f6f4;
+    --ei-border: #dfe7e2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .ei-page,
+  .ei-page * {
+    box-sizing: border-box;
+  }
+
+  .ei-page {
+    overflow: hidden;
+    color: var(--ei-ink);
+    background: #ffffff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .ei-shell {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .ei-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.91) 0%,
+        rgba(0, 0, 0, 0.75) 48%,
+        rgba(0, 0, 0, 0.36) 100%
+      ),
+      url("./images/elect.jpeg") center / cover no-repeat;
+  }
+
+  .ei-hero::after {
+    content: "";
+    position: absolute;
+    right: -105px;
+    bottom: -160px;
+    width: 430px;
+    height: 430px;
+    border: 68px solid rgba(1, 155, 57, 0.34);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .ei-hero-content {
+    max-width: 900px;
+    padding: 125px 0 105px;
+    color: #ffffff;
+  }
+
+  .ei-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #8ce8ad;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ei-eyebrow::before {
+    content: "";
+    width: 42px;
+    height: 3px;
+    background: var(--ei-primary);
+  }
+
+  .ei-hero h1 {
+    max-width: 860px;
+    margin: 0 0 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .ei-hero-copy {
+    max-width: 880px;
+    margin: 0;
+    color: #eef4f0;
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  .ei-hero-copy + .ei-hero-copy {
+    margin-top: 14px;
+  }
+
+  /* =========================
+     QUICK SERVICE NAVIGATION
+  ========================= */
+
+  .ei-quick-nav {
+    position: relative;
+    z-index: 4;
+    margin-top: -43px;
+  }
+
+  .ei-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    background: #ffffff;
+    border: 1px solid var(--ei-border);
+    box-shadow: 0 18px 52px rgba(11, 52, 27, 0.13);
+  }
+
+  .ei-quick-link {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 12px;
+    border-right: 1px solid var(--ei-border);
+    color: #28332c;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .ei-quick-link:last-child {
+    border-right: 0;
+  }
+
+  .ei-quick-link:hover,
+  .ei-quick-link:focus-visible {
+    background: var(--ei-primary);
+    color: #ffffff;
+    transform: translateY(-4px);
+    outline: none;
+  }
+
+  /* =========================
+     SERVICE SECTIONS
+  ========================= */
+
+  .ei-section {
+    padding: 104px 0;
+    scroll-margin-top: 120px;
+  }
+
+  .ei-section-soft {
+    background: var(--ei-soft);
+  }
+
+  .ei-section-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.18fr)
+      minmax(350px, 0.82fr);
+
+    gap: 66px;
+    align-items: center;
+  }
+
+  .ei-section-grid.ei-reverse {
+    grid-template-columns:
+      minmax(350px, 0.82fr)
+      minmax(0, 1.18fr);
+  }
+
+  .ei-section-grid.ei-reverse .ei-copy {
+    order: 2;
+  }
+
+  .ei-section-grid.ei-reverse .ei-visual {
+    order: 1;
+  }
+
+  .ei-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--ei-primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .ei-label::after {
+    content: "";
+    width: 52px;
+    height: 2px;
+    background: var(--ei-primary);
+  }
+
+  .ei-copy h2 {
+    margin: 0 0 22px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(27px, 3.1vw, 41px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  .ei-copy p {
+    margin: 0;
+    color: var(--ei-copy);
+    font-size: 13px;
+    line-height: 1.95;
+    text-align: justify;
+  }
+
+  .ei-copy p + p {
+    margin-top: 17px;
+  }
+
+  /* =========================
+     SERVICE IMAGES
+  ========================= */
+
+  .ei-image-frame {
+    position: relative;
+    padding: 28px 0 0 28px;
+  }
+
+  .ei-image-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 45%;
+    background: var(--ei-primary);
+  }
+
+  .ei-image-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 455px;
+    object-fit: cover;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+  }
+
+  /* =========================
+     CTA
+  ========================= */
+
+  .ei-cta {
+    padding: 0 0 104px;
+  }
+
+  .ei-cta-box {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 35px;
+    align-items: center;
+    padding: 52px 58px;
+    background: var(--ei-primary);
+    color: #ffffff;
+  }
+
+  .ei-cta-box::after {
+    content: "";
+    position: absolute;
+    right: 160px;
+    top: -115px;
+    width: 260px;
+    height: 260px;
+    border: 55px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+  }
+
+  .ei-cta-copy {
+    position: relative;
+    z-index: 1;
+  }
+
+  .ei-cta h2 {
+    margin: 0 0 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .ei-cta p {
+    max-width: 720px;
+    margin: 0;
+    color: #eafff1;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .ei-cta-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    padding: 15px 22px;
+    background: #ffffff;
+    color: var(--ei-primary-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .ei-cta-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+  }
+
+  /* =========================
+     TABLET
+  ========================= */
+
+  @media (max-width: 1050px) {
+    .ei-quick-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ei-quick-link:nth-child(3) {
+      border-right: 0;
+    }
+
+    .ei-quick-link:nth-child(-n + 3) {
+      border-bottom: 1px solid var(--ei-border);
+    }
+
+    .ei-section-grid,
+    .ei-section-grid.ei-reverse {
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(315px, 0.92fr);
+
+      gap: 42px;
+    }
+  }
+
+  /* =========================
+     MOBILE/TABLET
+  ========================= */
+
+  @media (max-width: 820px) {
+    .ei-shell {
+      width: min(100% - 32px, 680px);
+    }
+
+    .ei-hero {
+      min-height: auto;
+      background-position: 62% center;
+    }
+
+    .ei-hero-content {
+      padding: 112px 0 86px;
+    }
+
+    .ei-hero-copy {
+      line-height: 1.8;
+    }
+
+    .ei-quick-nav {
+      margin-top: -28px;
+    }
+
+    .ei-section {
+      padding: 76px 0;
+    }
+
+    .ei-section-grid,
+    .ei-section-grid.ei-reverse {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .ei-section-grid.ei-reverse .ei-copy,
+    .ei-section-grid.ei-reverse .ei-visual {
+      order: initial;
+    }
+
+    .ei-copy p {
+      text-align: left;
+    }
+
+    .ei-image-frame img {
+      height: 385px;
+    }
+
+    .ei-cta-box {
+      grid-template-columns: 1fr;
+      padding: 42px 32px;
+    }
+
+    .ei-cta-link {
+      width: fit-content;
+    }
+  }
+
+  /* =========================
+     SMALL MOBILE
+  ========================= */
+
+  @media (max-width: 560px) {
+    .ei-shell {
+      width: calc(100% - 24px);
+    }
+
+    .ei-hero h1 {
+      font-size: 36px;
+    }
+
+    .ei-hero-content {
+      padding: 100px 0 75px;
+    }
+
+    .ei-quick-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ei-quick-link {
+      min-height: 80px;
+      border-bottom: 1px solid var(--ei-border);
+    }
+
+    .ei-quick-link:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .ei-quick-link:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .ei-copy h2 {
+      font-size: 28px;
+    }
+
+    .ei-image-frame {
+      padding: 18px 0 0 18px;
+    }
+
+    .ei-image-frame img {
+      height: 300px;
+    }
+
+    .ei-cta {
+      padding-bottom: 74px;
+    }
+
+    .ei-cta-box {
+      padding: 38px 24px;
+    }
+  }
+</style>
 </head>
 <body>
    <div id="navbar-placeholder"></div>
 
    <div style="height: 100px;"></div>
 
+   <main class="ei-page">
 
+  <!-- HERO -->
+  <section class="ei-hero">
+    <div class="ei-shell">
+      <div class="ei-hero-content">
 
-    <section id="services" class="processmanagement  gap-y-10 items-center relative">
-        <div class="w-full h-full bg-black/50   flex flex-col gap-y-4 items-center py-30 px-6 md:px-20  text-center">
-            <h1 class="text-xl xsm:text-2xl lg:text-3xl font-bold text-white bouncein">Electrical & Instrumentation Solutions</h1>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose bouncein">Wide range of products, solutions and turnkey services for Electrical and Instrumentation and Automation & Control</p>
+        <div class="ei-eyebrow bouncein">
+          Powering intelligent infrastructure
         </div>
-    </section>
 
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20 slidein">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-20 md:mt-20 items-center w-full xl:w-5/6 mb-10">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/elect.jpeg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h1 class="bouncein">
+          Electrical &amp; Instrumentation Solutions
+        </h1>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-              <h3 class="text-base sm:text-lg font-semibold text-black">
-  Mechanical, Electrical & Instrumentation (M, E&I) Services
-</h3>
+        <p class="ei-hero-copy bouncein">
+          AOS Orwell delivers turnkey, multi-disciplinary engineering,
+          asset integration, and lifecycle management for complex power
+          distribution, process automation, and safety-critical
+          infrastructures. Our engineering workflows seamlessly integrate
+          heavy electrical switchgear with digital control topography to
+          ensure peak operational availability and safety.
+        </p>
 
-<p class="text-xs sm:text-[13px] text-gray-600 leading-loose text-justify">
-  AOS Orwell Electrical & Instrumentation (E&I) offers a wide range of products, solutions and turnkey services for electricity distribution and control, across various sectors: Industries, Utilities, Buildings, Residences. We are a leading distributor of high-quality electrical equipment. Our commitment to quality and customer satisfaction is reflected in the exceptional products we offer and the exceptional service we provide. Our business offerings improve the reliability and efficiency of its customers’ activities across all major industries including the residential sector. Our single-point solutions philosophy delivers value, spanning system design, application engineering, application software, product selection, control & monitoring systems, commissioning and lifecycle management.
-</p>
+        <p class="ei-hero-copy bouncein">
+          At AOS Orwell, we engineer physical electrical infrastructure to
+          act as an intelligent node within your digital enterprise. By
+          leveraging deep strategic alliances with global technology
+          leaders—including ABB, Schneider Electric, Eaton, and Vertiv—we
+          deliver localized engineering execution that preserves OEM
+          warranty integrity while satisfying rigorous local content
+          mandates. From high-voltage isolation to sub-millisecond
+          safety-logic handshakes, our systems are built for deterministic
+          performance in the most challenging operating environments across
+          the region.
+        </p>
 
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SERVICE NAVIGATION -->
+  <nav
+    class="ei-quick-nav"
+    aria-label="Electrical and Instrumentation services"
+  >
+    <div class="ei-shell ei-quick-grid">
+
+      <a class="ei-quick-link" href="#e-house">
+        Modular E-House Solutions
+      </a>
+
+      <a class="ei-quick-link" href="#switchgear">
+        LV &amp; MV Switchgear
+      </a>
+
+      <a class="ei-quick-link" href="#substation">
+        Substation Automation
+      </a>
+
+      <a class="ei-quick-link" href="#transformers">
+        Transformers
+      </a>
+
+      <a class="ei-quick-link" href="#lighting">
+        Lighting &amp; Controls
+      </a>
+
+      <a class="ei-quick-link" href="#ups">
+        UPS &amp; Battery Management
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- E-HOUSE -->
+  <section id="e-house" class="ei-section">
+    <div class="ei-shell ei-section-grid slidein">
+
+      <article class="ei-copy">
+        <div class="ei-label">
+          01 / Engineered packages
         </div>
-    </section>
 
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/tion3.jpg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h2>
+          Highly Engineered Modular E-House Solutions
+        </h2>
 
-      <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">E House Integrated Solutions</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Field Auxillary Room ( FAR ) Relocatable Pre Fabricated Containerized Buildings for housing of equipment : ICSS ( Integrated Control Safety System ) , Power Distribution & Management System, UPS, Switchgear, FGS, Telecommunication. Bundled offerings including design & engineering and construction; incorporates auxillary equipment. Our products include a wide range of switchgear and equipment for different applications, including low voltage switchgear, medium voltage switchgear, distribution boards, control panels, transformers, and more. All of our products are manufactured to the highest standards and are tested rigorously before leaving our factory to ensure their reliability and safety.
-                           
-            </div>
+        <p>
+          Our custom-designed, structurally optimized, and fully integrated
+          modular Electrical Houses (E-Houses) provide turnkey power
+          distribution and control solutions engineered specifically for
+          demanding onshore and offshore applications. We serve critical
+          sectors including Oil &amp; Gas, Power Generation, and
+          Petrochemicals, delivering robust infrastructure capable of
+          withstanding the world's harshest operating conditions—from
+          extreme offshore platforms to highly corrosive coastal
+          environments.
+        </p>
+
+        <p>
+          Every unit is precision-engineered to meet stringent regulatory
+          and safety standards. Our structures feature advanced blast-rated
+          designs and high-performance fire insulation (H-60 and A-60
+          ratings) to safeguard critical assets and personnel. To ensure
+          total equipment protection and seamless field deployment, our
+          engineering process fully integrates complex structural load
+          dynamics, specialized HVAC climate control systems, and strict
+          compliance with localized Hazardous Area Classifications,
+          including ATEX and IECEx Zone 1 and Zone 2 requirements.
+        </p>
+
+        <p>
+          Every E-House undergoes comprehensive testing and commissioning
+          prior to delivery, ensuring it is fully operational from the
+          moment it arrives on-site through a Plug-and-Play concept.
+        </p>
+      </article>
+
+      <div class="ei-visual ei-image-frame">
+        <img
+          src="./images/ehouse.jpg"
+          alt="Engineer inspecting electrical distribution equipment"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SWITCHGEAR -->
+  <section id="switchgear" class="ei-section ei-section-soft">
+    <div class="ei-shell ei-section-grid ei-reverse slidein">
+
+      <article class="ei-copy">
+        <div class="ei-label">
+          02 / Power distribution
         </div>
-    </section>
 
-    <section class="px-6 md:px-20 py-16 w-full bg-green-100">
-  <div class="max-w-5xl mx-auto text-center">
-    <!-- Title -->
-    <h2 class="text-green-600 font-semibold text-lg md:text-xl mb-10">
-      In-country engineering capabilities for specialized systems as;
-    </h2>
+        <h2>
+          Low-Voltage &amp; Medium-Voltage Switchgears and Motor Control
+          Centers
+        </h2>
 
-    <!-- Grid List -->
-    <div class="grid sm:grid-cols-2 gap-10 text-left text-gray-700 text-sm md:text-base">
-      
-      <ul class="space-y-4">
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Integrated Control and Safety Systems
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Substations & Field Auxiliary Control Room
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Switchgear, Motors, LV Panels
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          PCS, DCS, PLC, PACs, RTU and HMI systems
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Modular Substations and Blast-proof E-houses
-        </li>
-      </ul>
-
-      <ul class="space-y-4">
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Field Instrumentation Systems and Testing (Bench Testing, Calibration, Loop Checking)
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Security Systems (Access Control, CCTV, Intercom, PA) installation
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          Safety Systems installation & commissioning services
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-600">✔</span>
-          SCADA systems installation & commissioning services
-        </li>
-      </ul>
-
-    </div>
-  </div>
-</section>
-
-    <section class="px-6 md:px-20 py-10 w-full">
-  <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-    
-    <!-- Card 1 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/tion1.jpg" alt="LV & MV Switchgear" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">LV & MV Switchgear</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">
-          Our low voltage switchgear is designed for use in a wide range of applications, including residential, commercial, and industrial settings. It includes panel boards, distribution boards, MCCBs, and more. Our low voltage switchgear is built to withstand the toughest conditions and provide reliable performance. From circuit breakers and buses to enclosures, panel boards and switchboards, we offer a full range of safe, reliable solutions for low-voltage electrical distribution applications.
+        <p>
+          Operating as a certified local partner aligned with premier
+          global OEMs—including Schneider Electric, ABB, and Eaton—we
+          provide fully type-tested, locally assembled, and
+          factory-validated low-voltage switchgears, intelligent Motor
+          Control Centers (iMCCs), and main distribution boards. By
+          fabricating and assembling these systems locally to strict OEM
+          design topologies, we ensure absolute compliance with
+          international safety and performance standards while maximizing
+          local content value.
         </p>
-      </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/panel.jpg" alt="Control Panels" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Control Panels</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">
-          Our control panels are designed for use in a wide range of applications, including motor control, lighting control, and HVAC control. We can customize our control panels to meet your specific requirements, ensuring that you get exactly what you need to meet your electrical needs.
+        <p>
+          Beyond our low-voltage capabilities, our strong strategic
+          partnerships with these OEMs allow us to deliver
+          state-of-the-art medium-voltage switchgears equipped with
+          advanced arc-flash mitigation technologies. These highly
+          specialized systems are critical for safely receiving power from
+          primary generation sources and distributing it reliably across
+          the entire network architecture.
         </p>
-      </div>
-    </div>
 
-    <!-- Card 3 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/tion2.jpg" alt="Busbar Trunking and Cable Management" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Busbar Trunking and Cable Management</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">
-          Busbar Trunking System is the is a system of distributing electric power using copper or aluminium busbar with suitable enclosures and good amount of protection to prevent the cables from getting damaged due to foreign bodies. The compact size and flexible design requires limited space and results in the availability of more usable floor area on every floor, adds a touch of elegance to the ambiance, and reduces on-site installation time.
+        <p>
+          This infrastructure handles everything from bulk power delivery
+          to high-capacity consumer assets such as export pumps, down to
+          secondary distribution networks via Ring Main Units (RMUs), and
+          finally to localized equipment through step-down transformers.
+          This collaborative model ensures that every piece of
+          infrastructure leaving our facility combines world-class
+          engineering with localized agility, rigorous quality control, and
+          dedicated technical support.
         </p>
+      </article>
+
+      <div class="ei-visual ei-image-frame">
+        <img
+          src="./images/voltagegear.jpg"
+          alt="Electrical switchgear and motor control centre"
+        >
       </div>
-    </div>
 
-    <!-- Duplicate the structure for the remaining 6 cards -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/tion4.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Transformers</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">We offer a wide range of transformers, including distribution transformers, power transformers, dry-type transformers, oil-immersed transformers and special transformers. Our transformers are designed to provide reliable performance and are built to the highest standards. Our transformers are designed to provide reliable and safe operation in various applications, including residential, commercial, and industrial settings. We also offer customized transformers to meet specific requirements.</p>
+    </div>
+  </section>
+
+  <!-- SUBSTATION AUTOMATION -->
+  <section id="substation" class="ei-section">
+    <div class="ei-shell ei-section-grid slidein">
+
+      <article class="ei-copy">
+        <div class="ei-label">
+          03 / Digital grid intelligence
+        </div>
+
+        <h2>
+          Substation Automation
+        </h2>
+
+        <p>
+          At AOS Orwell, we design and deploy high-availability Substation
+          Automation Systems (SAS) that turn traditional electrical
+          infrastructure into intelligent, self-healing networks. Backed by
+          our strategic alliances with ABB, Schneider Electric, and Eaton,
+          our engineering teams build open-architecture networks using IEC
+          61850 standards.
+        </p>
+
+        <p>
+          We configure sub-4-millisecond GOOSE messaging across advanced
+          Intelligent Electronic Devices (IEDs) to handle critical
+          protection schemes such as high-speed interlocking and arc-flash
+          mitigation before a fault can spread. By bridging type-tested
+          switchgears with industrial UPS backbones, our systems run smart,
+          high-speed load-shedding algorithms during grid anomalies while
+          streaming field telemetry over Modbus TCP or DNP3 into the
+          OSIsoft PI historian.
+        </p>
+
+        <p>
+          The result is total asset visibility, robust safety isolation,
+          and operational resilience that can be relied on across demanding
+          industrial environments.
+        </p>
+      </article>
+
+      <div class="ei-visual ei-image-frame">
+        <img
+          src="./images/tion1.jpg"
+          alt="Substation automation equipment"
+        >
       </div>
+
     </div>
+  </section>
 
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/light.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Lighting & Controls</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">We deliver a range of innovative and reliable indoor and outdoor lighting and controls solutions, specifically designed to maximize performance, energy efficiency and safety.
+  <!-- TRANSFORMERS -->
+  <section id="transformers" class="ei-section ei-section-soft">
+    <div class="ei-shell ei-section-grid ei-reverse slidein">
 
-LED solutions from our OEMs are built to withstand the toughest conditions, deliver maximum lighting performance and safety, and reduce expensive maintenance costs. Our SMEs work with your team to consider about the key factors when selecting LED luminaires for your industrial lighting application.</p>
+      <article class="ei-copy">
+        <div class="ei-label">
+          04 / Grid resilience
+        </div>
+
+        <h2>
+          Transformers
+        </h2>
+
+        <p>
+          Managing heavy electrical loads in volatile grid environments
+          demands highly resilient, custom-engineered equipment that
+          eliminates single points of failure. At AOS Orwell, we engineer
+          and provision an elite portfolio of power-hardening
+          infrastructure spanning medium-voltage power transformers,
+          localized distribution transformers, oil-immersed units, and
+          specialized dry-type cast-resin architectures.
+        </p>
+
+        <p>
+          Built to strict IEC and IEEE standards, our transformers are
+          meticulously designed for high dielectric strength, superior
+          short-circuit withstand capabilities, and optimized thermal
+          performance across industrial, offshore, and heavy commercial
+          applications.
+        </p>
+
+        <p>
+          Recognizing that standard solutions rarely fit complex project
+          scopes, we collaborate with our OEM partners to design
+          custom-built, highly engineered transformer packages—balancing
+          impedance matching, harmonic load mitigation, and structural
+          footprint constraints to deliver absolute operational safety and
+          grid resilience.
+        </p>
+      </article>
+
+      <div class="ei-visual ei-image-frame">
+        <img
+          src="./images/tion4.jpg"
+          alt="Industrial transformer installation"
+        >
       </div>
+
     </div>
+  </section>
 
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/drives.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Drives & Motors</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">We offer a variety of drives and motors, including AC drives, DC drives, servo drives, stepper motors, and more. Our drives and motors are designed to provide reliable and efficient operation in various applications, including industrial machinery, robotics, and automation systems. We also offer customized drives and motors to meet specific requirements.
+  <!-- LIGHTING -->
+  <section id="lighting" class="ei-section">
+    <div class="ei-shell ei-section-grid slidein">
 
-Our AC drives are designed for use with AC motors and provide precise control over motor speed and torque. Our drives are manufactured using high-quality materials and are designed to be energy-efficient and reliable.</p>
+      <article class="ei-copy">
+        <div class="ei-label">
+          05 / Industrial illumination
+        </div>
+
+        <h2>
+          Lighting &amp; Controls
+        </h2>
+
+        <p>
+          When operating in harsh, heavy-industrial or hazardous
+          environments, lighting is not only about visibility—it is a
+          critical safety parameter and a major operational expense. At AOS
+          Orwell, we design and deploy high-performance indoor, outdoor, and
+          explosion-proof lighting architectures engineered to maximize
+          luminous efficacy while reducing lifecycle maintenance costs.
+        </p>
+
+        <p>
+          Partnering with Eaton, a global pioneer in industrial
+          illumination, we deliver ruggedized LED solutions and intelligent
+          control systems built to withstand extreme thermal stresses,
+          heavy vibration, and corrosive coastal atmospheres. Our Subject
+          Matter Experts work directly with client engineering teams to map
+          critical deployment factors—from photometrics and lumen
+          maintenance (L70/B50 ratings) to strict ATEX and IECEx Zone 1 and
+          Zone 2 hazardous-area classifications.
+        </p>
+
+        <p>
+          By integrating Eaton's smart control topologies with existing
+          plant infrastructure, we help facilities achieve optimized
+          optical performance, deterministic safety compliance, and
+          substantial reductions in energy consumption.
+        </p>
+      </article>
+
+      <div class="ei-visual ei-image-frame">
+        <img
+          src="./images/light.png"
+          alt="Industrial lighting and control solution"
+        >
       </div>
+
     </div>
+  </section>
 
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/tion5.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Industrial UPS Systems</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">We offer a variety of industrial UPS systems, including single-phase and three-phase UPS systems, modular UPS systems, and more. Our UPS systems are designed to provide reliable and uninterrupted power supply in various applications, including industrial machinery, data centers, and critical facilities.
+  <!-- UPS AND BATTERY MANAGEMENT -->
+  <section id="ups" class="ei-section ei-section-soft">
+    <div class="ei-shell ei-section-grid ei-reverse slidein">
 
-Our single-phase and three-phase UPS systems are designed to provide reliable and uninterrupted power supply in various applications.</p>
+      <article class="ei-copy">
+        <div class="ei-label">
+          06 / Power continuity
+        </div>
+
+        <h2>
+          UPS and Battery Management Systems
+        </h2>
+
+        <p>
+          When critical operations run around the clock, a power
+          interruption is more than an inconvenience—it can trigger a
+          costly shutdown. At AOS Orwell, we engineer industrial-grade
+          Uninterruptible Power Supply (UPS) and Battery Management Systems
+          (BMS) designed to guarantee absolute power continuity for
+          safety-critical control and instrumentation loops.
+        </p>
+
+        <p>
+          Partnering with global power technology leaders such as Vertiv,
+          our multi-disciplinary teams integrate ruggedized,
+          high-fault-tolerant UPS architectures engineered to survive
+          severe transient surges and harmonic distortion. We pair these
+          systems with intelligent BMS configurations that continuously
+          monitor cell health, internal resistance, and thermal states,
+          eliminating the blind spots that lead to sudden battery-bank
+          failures.
+        </p>
+
+        <p>
+          Through native communication protocols such as Modbus TCP and
+          Profibus, system data can be remotely monitored and logged to
+          support preventive maintenance and performance management. The
+          result is a hardened, transparent power-backup infrastructure
+          that executes emergency shutdown and load-shedding handshakes
+          reliably, keeping operations resilient when the grid goes dark.
+        </p>
+      </article>
+
+      <div class="ei-visual ei-image-frame">
+        <img
+          src="./images/tion5.jpg"
+          alt="Industrial UPS and battery management system"
+        >
       </div>
+
     </div>
+  </section>
 
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/training.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">E&I Training Facility</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">Training Center in Port Harcourt, Nigeria Training courses in field instrumentations and control systems
-
-Certified trainers
-
-600+ local engineers trained in Western Africa on Emerson Products and Systems
-
-Extended to offer E&I training courses</p>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-      <img src="./images/tion6.jpg" alt="" class="w-full h-48 object-cover rounded-t-lg">
-      <div class="p-5">
-        <h3 class="font-bold text-lg mb-2">Aftersales Support Services</h3>
-        <div class="w-12 h-1 bg-red-600 mb-3"></div>
-        <p class="text-gray-600 text-sm">AOS ORWELL provides post-installation and commissioning activities, with 24x7 resident support and OEMs packaged solutions.
-
-Design, Engineering, Assembly, FAT
-Installation & Commissioning Support
-Site Preparation E&I works
-Annual Maintenance Contracts
-Training</p>
-      </div>
-    </div>
-
-  </div>
-</section>
+</main>
 
     <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->

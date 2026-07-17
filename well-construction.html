@@ -25,177 +25,1167 @@
     </script>
 
     <link rel="stylesheet" href="output.css">
+    <style>
+  :root {
+    --wc-green: #007a33;
+    --wc-green-dark: #004225;
+    --wc-black: #101411;
+    --wc-copy: #505c55;
+    --wc-soft: #f3f6f4;
+    --wc-border: #dfe7e2;
+    --wc-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .wc-page,
+  .wc-page * {
+    box-sizing: border-box;
+  }
+
+  .wc-page {
+    overflow: hidden;
+    background: #ffffff;
+    color: var(--wc-black);
+    font-family: "Poppins", sans-serif;
+  }
+
+  .wc-shell {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .wc-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.92) 0%,
+        rgba(0, 0, 0, 0.75) 48%,
+        rgba(0, 0, 0, 0.34) 100%
+      ),
+      url("./images/well-construction.png") center / cover no-repeat;
+  }
+
+  .wc-hero::after {
+    content: "";
+    position: absolute;
+    right: -110px;
+    bottom: -165px;
+    width: 440px;
+    height: 440px;
+    border: 70px solid rgba(0, 122, 51, 0.38);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .wc-hero-content {
+    max-width: 900px;
+    padding: 130px 0 105px;
+    color: #ffffff;
+  }
+
+  .wc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #8fe5b2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .wc-eyebrow::before {
+    content: "";
+    width: 42px;
+    height: 3px;
+    background: var(--wc-green);
+  }
+
+  .wc-hero h1 {
+    max-width: 880px;
+    margin: 0 0 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .wc-hero-copy {
+    max-width: 850px;
+    margin: 0;
+    color: #eef4f0;
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  /* =========================
+     QUICK NAVIGATION
+  ========================= */
+
+  .wc-quick-nav {
+    position: relative;
+    z-index: 5;
+    margin-top: -43px;
+  }
+
+.wc-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  background: #ffffff;
+  border: 1px solid var(--wc-border);
+  box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
+}
+
+/* First five items: 5 equal columns */
+.wc-quick-link {
+  grid-column: span 4;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 12px;
+  border-right: 1px solid var(--wc-border);
+  border-bottom: 1px solid var(--wc-border);
+  color: #27322c;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Last four items: 4 equal columns filling the whole row */
+.wc-quick-link:nth-child(n + 6) {
+  grid-column: span 5;
+  border-bottom: 0;
+}
+
+/* Remove right border from the final item on each row */
+.wc-quick-link:nth-child(5),
+.wc-quick-link:nth-child(9) {
+  border-right: 0;
+}
+
+  .wc-quick-link:hover,
+  .wc-quick-link:focus-visible {
+    background: var(--wc-green);
+    color: #ffffff;
+    transform: translateY(-4px);
+    outline: none;
+  }
+
+  /* =========================
+     SERVICE SECTIONS
+  ========================= */
+
+  .wc-section {
+    padding: 104px 0;
+    scroll-margin-top: 120px;
+  }
+
+  .wc-section-soft {
+    background: var(--wc-soft);
+  }
+
+  .wc-section-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.18fr)
+      minmax(350px, 0.82fr);
+
+    gap: 66px;
+    align-items: center;
+  }
+
+  .wc-section-grid.wc-reverse {
+    grid-template-columns:
+      minmax(350px, 0.82fr)
+      minmax(0, 1.18fr);
+  }
+
+  .wc-section-grid.wc-reverse .wc-copy {
+    order: 2;
+  }
+
+  .wc-section-grid.wc-reverse .wc-visual {
+    order: 1;
+  }
+
+  .wc-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--wc-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .wc-label::after {
+    content: "";
+    width: 52px;
+    height: 2px;
+    background: var(--wc-green);
+  }
+
+  .wc-copy h2 {
+    margin: 0 0 22px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(27px, 3.1vw, 41px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  .wc-copy p {
+    margin: 0;
+    color: var(--wc-copy);
+    font-size: 13px;
+    line-height: 1.95;
+    text-align: justify;
+  }
+
+  .wc-copy p + p {
+    margin-top: 17px;
+  }
+
+  .wc-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    margin-top: 23px;
+    color: var(--wc-green);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .wc-read-more:hover {
+    text-decoration: underline;
+  }
+
+  /* =========================
+     IMAGE FRAMES
+  ========================= */
+
+  .wc-image-frame {
+    position: relative;
+    padding: 28px 0 0 28px;
+  }
+
+  .wc-image-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 45%;
+    background: var(--wc-green);
+  }
+
+  .wc-image-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    background: #e8ece9;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+  }
+
+  .wc-section-soft .wc-image-frame::before {
+    background: #bcc5bf;
+  }
+
+  /* =========================
+     BENEFITS
+  ========================= */
+
+  .wc-benefits {
+    padding: 100px 0 80px;
+    background: #ffffff;
+  }
+
+  .wc-benefits-heading {
+    max-width: 760px;
+    margin-bottom: 46px;
+  }
+
+  .wc-benefits-heading h2 {
+    margin: 0 0 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .wc-benefits-heading p {
+    margin: 0;
+    color: var(--wc-copy);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .wc-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--wc-border);
+    border-bottom: 1px solid var(--wc-border);
+  }
+
+  .wc-benefit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 34px 45px 34px 0;
+  }
+
+  .wc-benefit-column + .wc-benefit-column {
+    padding-right: 0;
+    padding-left: 48px;
+    border-left: 1px solid var(--wc-border);
+  }
+
+  .wc-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #182019;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .wc-benefit-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    border: 1.5px solid var(--wc-green);
+    border-radius: 50%;
+    color: var(--wc-green);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* =========================
+     FINAL CTA
+  ========================= */
+
+  .wc-final-cta {
+    padding: 0 0 105px;
+    background: #ffffff;
+  }
+
+  .wc-final-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 34px 38px;
+    background: var(--wc-green);
+    border-radius: 12px;
+    box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
+  }
+
+  .wc-final-cta-box h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(21px, 2.5vw, 28px);
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .wc-contact-button {
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    background: var(--wc-green-dark);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .wc-contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  /* =========================
+     TABLET
+  ========================= */
+
+  @media (max-width: 1050px) {
+    .wc-quick-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wc-quick-link,
+    .wc-quick-link:nth-child(5n) {
+      border-right: 1px solid var(--wc-border);
+      border-bottom: 1px solid var(--wc-border);
+    }
+
+    .wc-quick-link:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .wc-quick-link:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .wc-section-grid,
+    .wc-section-grid.wc-reverse {
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(315px, 0.92fr);
+
+      gap: 42px;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 820px) {
+    .wc-shell {
+      width: min(100% - 32px, 680px);
+    }
+
+    .wc-hero {
+      min-height: auto;
+      background-position: 60% center;
+    }
+
+    .wc-hero-content {
+      padding: 112px 0 85px;
+    }
+
+    .wc-quick-nav {
+      margin-top: -28px;
+    }
+
+    .wc-section {
+      padding: 76px 0;
+    }
+
+    .wc-section-grid,
+    .wc-section-grid.wc-reverse {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .wc-section-grid.wc-reverse .wc-copy,
+    .wc-section-grid.wc-reverse .wc-visual {
+      order: initial;
+    }
+
+    .wc-copy p {
+      text-align: left;
+    }
+
+    .wc-image-frame img {
+      height: 370px;
+    }
+
+    .wc-benefits {
+      padding-top: 76px;
+    }
+
+    .wc-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wc-benefit-column,
+    .wc-benefit-column + .wc-benefit-column {
+      padding: 28px 0;
+      border-left: 0;
+    }
+
+    .wc-benefit-column + .wc-benefit-column {
+      border-top: 1px solid var(--wc-border);
+    }
+
+    .wc-final-cta-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .wc-shell {
+      width: calc(100% - 24px);
+    }
+
+    .wc-hero h1 {
+      font-size: 38px;
+    }
+
+    .wc-hero-content {
+      padding: 100px 0 75px;
+    }
+
+    .wc-quick-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wc-quick-link,
+    .wc-quick-link:nth-child(2n),
+    .wc-quick-link:nth-child(5n) {
+      border-right: 0;
+      border-bottom: 1px solid var(--wc-border);
+    }
+
+    .wc-quick-link:last-child {
+      border-bottom: 0;
+    }
+
+    .wc-copy h2 {
+      font-size: 28px;
+    }
+
+    .wc-image-frame {
+      padding: 18px 0 0 18px;
+    }
+
+    .wc-image-frame img {
+      height: 300px;
+    }
+
+    .wc-final-cta {
+      padding-bottom: 75px;
+    }
+
+    .wc-contact-button {
+      width: 100%;
+    }
+  }
+</style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
    <div style="height: 120px;"></div>
+   <main class="wc-page">
 
+  <!-- HERO -->
+  <section class="wc-hero">
+    <div class="wc-shell">
+      <div class="wc-hero-content">
 
-
-     <section id="services" class="wellconstruction flex flex-col gap-y-10 items-center  relative">
-        <div class="w-full h-full bg-black/50  flex flex-col gap-y-4 items-center text-center py-30 px-6 md:px-20">
-            <h1 class="bouncein text-xl xsm:text-2xl lg:text-3xl font-bold text-white">WELL CONSTRUCTION</h1>
-            <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed bouncein">During the entire Well Construction process, we provide seamless services that bridge the divide between drilling and completions. Through a series of integrated activities and processes, we combine the right technology, the right people and several years of experience, to provide winning solutions in well construction and management.</p>
+        <div class="wc-eyebrow bouncein">
+          End-to-end well delivery
         </div>
-    </section>
 
-   <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-20 md:mt-20 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/IPM.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h1 class="bouncein">
+          Well Construction
+        </h1>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">IPM & Turnkey Well Delivery Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">At AOS Orwell, we provide full Integrated Project Management and Turnkey Well Delivery Services by offering our clients a one-stop solution for delivering cost-efficient wells, safer and faster. Our approach safeguards our clients from the complexities of managing multiple vendors by bundling the entire scope of work from engineering and planning to execution and handover of the project including drilling, completions, interventions, and workover, under one experience, accountable team.</p>    
-                <a href="ipm-index.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+        <p class="wc-hero-copy bouncein">
+          Throughout the entire well-construction process, AOS Orwell
+          provides seamless services that bridge the divide between drilling
+          and completions. Through integrated activities and processes, we
+          combine the right technology, experienced personnel, extensive
+          in-country capacity, and several years of operational experience to
+          deliver winning solutions in well construction and management.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAVIGATION -->
+  <nav
+    class="wc-quick-nav"
+    aria-label="Well Construction services"
+  >
+    <div class="wc-shell wc-quick-grid">
+
+      <a class="wc-quick-link" href="#fishing">
+        Fishing
+      </a>
+
+      <a class="wc-quick-link" href="#casing">
+        Casing &amp; Tubular Running
+      </a>
+
+      <a class="wc-quick-link" href="#wireline">
+        Cased Hole Wireline &amp; Slickline
+      </a>
+
+      <a class="wc-quick-link" href="#plug-abandonment">
+        Plug, Abandonment &amp; Slot Recovery
+      </a>
+
+      <a class="wc-quick-link" href="#tubular-rentals">
+        Drillpipe Tubular Rentals
+      </a>
+
+      <a class="wc-quick-link" href="#downhole-tools">
+        Jar &amp; Downhole Tools
+      </a>
+
+      <a class="wc-quick-link" href="#completion">
+        Completion &amp; Hammer Services
+      </a>
+
+      <a class="wc-quick-link" href="#drilling">
+        Directional Drilling And Logging
+      </a>
+
+      <a class="wc-quick-link" href="#machine-shop">
+        Machine Shop &amp; Fabrication
+      </a>
+
+    </div>
+  </nav>
+
+
+  <!-- FISHING -->
+  <section id="fishing" class="wc-section wc-section-soft">
+    <div class="wc-shell wc-section-grid wc-reverse slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          01 / Well intervention
         </div>
-    </section>
 
+        <h2>
+          Fishing
+        </h2>
 
-    <section class="relative serviceSection flex justify-center items-center pb-10 h-fit max-md:pb-20 -z-3 -mt-30  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-50 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-fishing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          We maintain one of the largest inventories of fishing tools in
+          Nigeria and have more than 100 combined years of experience in
+          fishing operations in-country. Our fishing specialists have
+          successfully worked across many oilfields in Nigeria.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Fishing</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">We have the largest inventory of fishing tools in Nigeria and over 100 combined years of experience in fishing operations in-country. <br> (Our fishing experts have fished in almost all Oilfields in Nigeria). During the course of drilling oil wells, some objects like tools, junk, debris or other ‘fish’ get stuck in the well and this often disrupts drilling, workover or production. <br> Specialized tools called fishing tools are used in fishing to get the junk out. This means that our trained experts are competent in fishing to retrieve foreign objects and optimize the utility of the well.</p>
-               
-            </div>
+        <p>
+          During drilling, workover, or production activities, tools, junk,
+          debris, or other foreign objects may become stuck in the well and
+          disrupt operations. Our trained personnel use specialized fishing
+          tools and proven recovery techniques to retrieve these objects,
+          restore well access, and optimize the continued use of the well.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-fishing.png"
+          alt="Oilfield fishing tools and recovery services"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CASING -->
+  <section id="casing" class="wc-section">
+    <div class="wc-shell wc-section-grid slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          02 / Tubular running
         </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20"> 
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-casing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Casing & Tubular Running Services (CTR)</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">We are prominent providers of Casing and Tubular running systems in the country. <br> We get the casing to the bottom. We combine conventional and patented casing and tubing running technologies comprising Top Casing Systems (TCDS). Our solutions consist of a full line of services including casing and tubing running, hammer services, casing and bucking accessories. <br> Our system creates a fundamentally superior process of getting casing to total depth, on time, every time. Our technologies bring significant improvements in safety, performance, reliability and efficiency in running casing wells.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20" style="margin-top: -70px; z-index: 5;">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-30 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-sickline.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h2>
+          Casing &amp; Tubular Running Services
+        </h2>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Cased Hole Wireline & Slickline Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">We offer a wide range of Cased Hole, Wireline and Pipe Recovery Services that are suited for all our customers operational and evaluation needs. <br> Our experienced and well trained personnel combined with technical alliance partners places us in the best position to deliver safe and efficient operations and excellent well intervention solutions, using decades of Pipe Recovery Service and electric wireline expertise in Nigeria for all customers both offshore and on land.</p>
-                
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-plug.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          AOS Orwell is a prominent provider of casing and tubular running
+          systems. We combine conventional and patented casing and tubing
+          running technologies, including Top Casing Drive Systems, to get
+          casing safely to total depth.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Plug, Abandonment and Slot Recovery</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">The plug and abandonment process involves setting up permanent barriers to seal up an oil well or a section of it. When casing retrieval is required, either for slot recovery to maximize the life and production rate of a well or to abandon the well permanently, it is indispensable to have a reliable partner to overcome the challenges that can be presented. <br> With our broad inventory and expertise we can achieve recovery of casings saving time of intervention on any type of installation.For offshore and deep water installations, we can provide single trip cut and recovery solutions to avoid long intervention time and associated cost.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-drillpipe.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          Our solutions include casing and tubing running, hammer services,
+          casing accessories, and bucking services. This integrated system
+          creates a fundamentally superior process for getting casing to
+          total depth—on time, every time—while delivering significant
+          improvements in safety, performance, reliability, and efficiency.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Drillpipe Tubular Rentals</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Tubulars generally refer to tubes that are used for oil and gas production. These include drill pipes, pup joints, casing and tubing. Because these tubes can easily be exposed to rust, wear and tear, maintenance and logistics of storage can be a problem. <br> We offer excellent tubular rental and a wide variety of tubing, drill string, handling and ancillary tools thus helping you save storage and maintenance costs.</p>
-                
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-jar.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+      </article>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Jar and Downhole Tools</h3>
-                <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">Downhole tools are the equipment used in oilfield drilling, completion, intervention and workover services. We offer a wide range of in-country oil and gas downhole drilling tools & Automation of Machine operations that saves cost and time and support the delivery of high performing oilfields. <br> Our equipment is expertly managed and we provide efficient on-site service. We have the capacity to offer specialized tools that improve efficiency and minimize drilling production cost. <br> Our tools cover services in areas like wireline and slickline, drilling jars, fishing tools, drill pipes, tubular tools and others.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/completion.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-casing.png"
+          alt="Casing and tubular running services"
+        >
+      </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Completion, Assembly & Hammer Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Our completion tools deliver customized, cost-effective completion solutions that support your well completion process with distinctive service quality. <br> Our Hammer services are the efficient solution for any large-diameter tubular driving job, such as conductor driving and pile driving. Our technology enables the tool operate at most angles, including horizontally and underwater without energy loss. For conductor driving, we use S90 hydraulic hammers that drive piles deeper and faster than any other design and result in much more efficient operations. Our technologies are environmentally friendly.
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-drilling.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+    </div>
+  </section>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Drilling</h3>
-                <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">At AOS Orwell, we recognize the need for a cost effective, minimized rig time yet, with an efficiently drilled oil well. Be it Exploration, Appraisal or Development, we painstakingly take matters beyond just getting the well drilled to exceeding our valued client expectations by optimizing Well placement, formation evaluation and Safety. <br> We guarantee you the best tools because we partner with some of the best technical partners in the world. <br> We can provide: Bit, Mud Motors/RSS, Measurement While Drilling-MWD and Logging While Drilling –LWD. Our personnel are trained to the highest competency and will get the job done at a budget friendly price with outstanding outcome.</p>
-               
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/macshop.jpg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+  <!-- WIRELINE -->
+  <section id="wireline" class="wc-section wc-section-soft">
+    <div class="wc-shell wc-section-grid wc-reverse slidein">
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2" style="padding-bottom: 100px; margin-bottom: -100px;">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Machine Shop and Fabrication</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">At AOS Orwell, our Machine Shop & Fabrication Services are designed to deliver precision, reliability, and world-class quality to support the oil and gas industry. From manufacturing and refurbishing vital components to providing advanced welding and fabrication solutions, we ensure that every project meets international standards and client expectations. Our services cover a wide range of machining, threading, coupling, and fabrication works that keep operations running efficiently. Whether it’s supporting drilling and completion, handling repairs, or building custom solutions, AOS Orwell remains your trusted partner for performance and innovation.</p>    
-                <a href="machine-shop.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          03 / Well intervention
         </div>
-    </section>
+
+        <h2>
+          Cased Hole Wireline &amp; Slickline Services
+        </h2>
+
+        <p>
+          We offer a wide range of cased-hole wireline, slickline, and pipe
+          recovery services designed to meet clients’ operational,
+          intervention, and evaluation requirements.
+        </p>
+
+        <p>
+          Our experienced and well-trained personnel, supported by our
+          technical alliance partners, are positioned to deliver safe and
+          efficient operations and dependable well-intervention solutions.
+          We bring decades of pipe-recovery and electric-wireline expertise
+          in Nigeria to both offshore and land-based operations.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-sickline.png"
+          alt="Cased hole wireline and slickline operation"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLUG AND ABANDONMENT -->
+  <section id="plug-abandonment" class="wc-section">
+    <div class="wc-shell wc-section-grid slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          04 / Well decommissioning
+        </div>
+
+        <h2>
+          Plug, Abandonment &amp; Slot Recovery
+        </h2>
+
+        <p>
+          The plug-and-abandonment process involves installing permanent
+          barriers to safely seal an oil well or a section of the well.
+          Where casing retrieval is required for slot recovery or permanent
+          abandonment, a dependable and experienced service partner is
+          essential.
+        </p>
+
+        <p>
+          With our broad tool inventory and operational expertise, we can
+          recover casing while reducing intervention time across different
+          installation types. For offshore and deepwater installations, we
+          provide single-trip cutting and recovery solutions that help
+          reduce lengthy intervention periods and associated project costs.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-plug.png"
+          alt="Plug abandonment and slot recovery services"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DRILLPIPE RENTALS -->
+  <section id="tubular-rentals" class="wc-section wc-section-soft">
+    <div class="wc-shell wc-section-grid wc-reverse slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          05 / Rental services
+        </div>
+
+        <h2>
+          Drillpipe Tubular Rentals
+        </h2>
+
+        <p>
+          Tubulars used in oil and gas production include drill pipes, pup
+          joints, casing, and tubing. Because these assets are exposed to
+          rust, wear, and demanding operating conditions, their maintenance,
+          storage, and logistics can present significant operational
+          challenges.
+        </p>
+
+        <p>
+          We provide dependable tubular rental services and a broad range of
+          tubing, drill-string, handling, and ancillary tools. This allows
+          clients to access properly maintained equipment while reducing
+          storage, ownership, and maintenance costs.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-drillpipe.png"
+          alt="Drillpipe and tubular rental equipment"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DOWNHOLE TOOLS -->
+  <section id="downhole-tools" class="wc-section">
+    <div class="wc-shell wc-section-grid slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          06 / Downhole performance
+        </div>
+
+        <h2>
+          Jar &amp; Downhole Tools
+        </h2>
+
+        <p>
+          Downhole tools are used throughout oilfield drilling, completion,
+          intervention, and workover activities. We provide a wide range of
+          in-country drilling and downhole tools, supported by automated
+          machine operations that improve efficiency and help reduce project
+          time and cost.
+        </p>
+
+        <p>
+          Our equipment is professionally managed and supported by efficient
+          on-site services. We have the capacity to provide specialized tools
+          that improve operational performance and minimize drilling and
+          production costs, including drilling jars, fishing tools, drill
+          pipes, tubular tools, wireline tools, and slickline equipment.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-jar.png"
+          alt="Drilling jars and downhole tools"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPLETION -->
+  <section id="completion" class="wc-section wc-section-soft">
+    <div class="wc-shell wc-section-grid wc-reverse slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          07 / Completion support
+        </div>
+
+        <h2>
+          Completion, Assembly &amp; Hammer Services
+        </h2>
+
+        <p>
+          Our completion tools deliver customized and cost-effective
+          solutions that support the well-completion process with dependable
+          service quality and operational performance.
+        </p>
+
+        <p>
+          Our hammer services provide an efficient solution for
+          large-diameter tubular driving operations, including conductor and
+          pile driving. The technology can operate at different angles,
+          including horizontally and underwater, without significant energy
+          loss.
+        </p>
+
+        <p>
+          For conductor driving, we use high-performance hydraulic hammers
+          capable of driving piles deeper and faster, improving operational
+          efficiency while supporting environmentally responsible project
+          execution.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/completion.png"
+          alt="Completion assembly and hydraulic hammer services"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DRILLING -->
+  <section id="drilling" class="wc-section">
+    <div class="wc-shell wc-section-grid slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          08 / Well drilling
+        </div>
+
+        <h2>
+          Directional Drilling And Logging
+        </h2>
+
+        <p>
+          At AOS Orwell, we understand the need to minimize rig time while
+          delivering a safely and efficiently drilled well. Whether the
+          objective is exploration, appraisal, or development, we focus on
+          more than simply reaching total depth.
+        </p>
+
+        <p>
+          We support optimized well placement, formation evaluation,
+          operational safety, and dependable project performance. Through
+          our technical partnerships, we provide high-quality drilling
+          technologies, including drill bits, mud motors, Rotary Steerable
+          Systems, Measurement While Drilling, and Logging While Drilling
+          solutions.
+        </p>
+
+        <p>
+          Our personnel are trained to high competency standards and are
+          equipped to deliver reliable results while maintaining strong cost
+          and schedule performance.
+        </p>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/well-drilling.png"
+          alt="Well drilling operation"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MACHINE SHOP -->
+  <section id="machine-shop" class="wc-section wc-section-soft">
+    <div class="wc-shell wc-section-grid wc-reverse slidein">
+
+      <article class="wc-copy">
+
+        <div class="wc-label">
+          09 / Manufacturing and repair
+        </div>
+
+        <h2>
+          Machine Shop &amp; Fabrication
+        </h2>
+
+        <p>
+          Our Machine Shop and Fabrication Services deliver precision,
+          reliability, and world-class quality in support of oil and gas
+          operations. From manufacturing and refurbishing critical
+          components to advanced welding and fabrication, every project is
+          executed to recognized international standards.
+        </p>
+
+        <p>
+          Our services include machining, threading, coupling, repair, and
+          fabrication activities that help keep client operations running
+          efficiently. Whether supporting drilling and completion,
+          refurbishing damaged equipment, or building custom-engineered
+          solutions, AOS Orwell provides dependable performance and
+          technical innovation.
+        </p>
+
+        <a href="./machine-shop.html" class="wc-read-more">
+          Explore Machine Shop Services
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </article>
+
+      <div class="wc-visual wc-image-frame">
+        <img
+          src="./images/macshop.jpg"
+          alt="AOS Orwell machine shop and fabrication facility"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="wc-benefits">
+    <div class="wc-shell">
+
+      <div class="wc-benefits-heading bouncein">
+
+        <div class="wc-label">
+          Why AOS Orwell
+        </div>
+
+        <h2>
+          Complete well-construction capability under one roof
+        </h2>
+
+        <p>
+          Our integrated service model combines experienced personnel,
+          extensive in-country equipment, strong technical partnerships,
+          and accountable project execution.
+        </p>
+
+      </div>
+
+      <div class="wc-benefits-grid slidein">
+
+        <div class="wc-benefit-column">
+
+          <div class="wc-benefit">
+            <span class="wc-benefit-icon">✓</span>
+
+            <span>
+              Extensive inventory of fishing, drilling, tubular, and
+              intervention tools
+            </span>
+          </div>
+
+          <div class="wc-benefit">
+            <span class="wc-benefit-icon">✓</span>
+
+            <span>
+              Experienced in-country technical and operational personnel
+            </span>
+          </div>
+
+          <div class="wc-benefit">
+            <span class="wc-benefit-icon">✓</span>
+
+            <span>
+              Integrated support from drilling through completion and
+              intervention
+            </span>
+          </div>
+
+        </div>
+
+        <div class="wc-benefit-column">
+
+          <div class="wc-benefit">
+            <span class="wc-benefit-icon">✓</span>
+
+            <span>
+              Local execution supported by international technology partners
+            </span>
+          </div>
+
+          <div class="wc-benefit">
+            <span class="wc-benefit-icon">✓</span>
+
+            <span>
+              Improved safety, equipment reliability, and operational
+              efficiency
+            </span>
+          </div>
+
+          <div class="wc-benefit">
+            <span class="wc-benefit-icon">✓</span>
+
+            <span>
+              Responsive technical support for offshore and land operations
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="wc-final-cta">
+    <div class="wc-shell">
+
+      <div class="wc-final-cta-box bouncein">
+
+        <h2>
+          Let’s Build Your Next Well — Safely and Efficiently
+        </h2>
+
+        <a
+          href="./contact-us.html"
+          class="wc-contact-button"
+        >
+          Contact Us
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  </main>
     
     <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->

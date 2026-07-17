@@ -25,89 +25,1265 @@
     </script>
 
     <link rel="stylesheet" href="output.css">
+    <style>
+  :root {
+    --ipm-green: #00853f;
+    --ipm-green-dark: #004d2a;
+    --ipm-black: #111411;
+    --ipm-copy: #505c55;
+    --ipm-soft: #f4f7f5;
+    --ipm-border: #dfe7e2;
+    --ipm-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .ipm-page,
+  .ipm-page * {
+    box-sizing: border-box;
+  }
+
+  .ipm-page {
+    overflow: hidden;
+    background: #ffffff;
+    color: var(--ipm-black);
+    font-family: "Poppins", sans-serif;
+  }
+
+  .ipm-shell {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .ipm-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.92) 0%,
+        rgba(0, 0, 0, 0.76) 47%,
+        rgba(0, 0, 0, 0.34) 100%
+      ),
+      url("./images/IPM.png") center / cover no-repeat;
+  }
+
+  .ipm-hero::after {
+    content: "";
+    position: absolute;
+    right: -110px;
+    bottom: -165px;
+    width: 440px;
+    height: 440px;
+    border: 70px solid rgba(0, 133, 63, 0.38);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .ipm-hero-content {
+    max-width: 900px;
+    padding: 130px 0 105px;
+    color: #ffffff;
+  }
+
+  .ipm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #8fe5b2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ipm-eyebrow::before {
+    content: "";
+    width: 42px;
+    height: 3px;
+    background: var(--ipm-green);
+  }
+
+  .ipm-hero h1 {
+    max-width: 880px;
+    margin: 0 0 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .ipm-hero-copy {
+    max-width: 850px;
+    margin: 0;
+    color: #eef4f0;
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  /* =========================
+     QUICK NAVIGATION
+  ========================= */
+
+  .ipm-quick-nav {
+    position: relative;
+    z-index: 5;
+    margin-top: -43px;
+  }
+
+  .ipm-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    background: #ffffff;
+    border: 1px solid var(--ipm-border);
+    box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
+  }
+
+  .ipm-quick-link {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 15px;
+    border-right: 1px solid var(--ipm-border);
+    color: #27322c;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .ipm-quick-link:last-child {
+    border-right: 0;
+  }
+
+  .ipm-quick-link:hover,
+  .ipm-quick-link:focus-visible {
+    background: var(--ipm-green);
+    color: #ffffff;
+    transform: translateY(-4px);
+    outline: none;
+  }
+
+  /* =========================
+     SERVICE SECTIONS
+  ========================= */
+
+  .ipm-section {
+    padding: 105px 0;
+    scroll-margin-top: 120px;
+  }
+
+  .ipm-section-soft {
+    background: var(--ipm-soft);
+  }
+
+  .ipm-section-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.18fr)
+      minmax(350px, 0.82fr);
+
+    gap: 66px;
+    align-items: center;
+  }
+
+  .ipm-section-grid.ipm-reverse {
+    grid-template-columns:
+      minmax(350px, 0.82fr)
+      minmax(0, 1.18fr);
+  }
+
+  .ipm-section-grid.ipm-reverse .ipm-copy {
+    order: 2;
+  }
+
+  .ipm-section-grid.ipm-reverse .ipm-visual {
+    order: 1;
+  }
+
+  .ipm-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--ipm-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .ipm-label::after {
+    content: "";
+    width: 52px;
+    height: 2px;
+    background: var(--ipm-green);
+  }
+
+  .ipm-copy h2 {
+    margin: 0 0 22px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 3.1vw, 42px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  .ipm-copy p {
+    margin: 0;
+    color: var(--ipm-copy);
+    font-size: 14px;
+    line-height: 1.95;
+    text-align: justify;
+  }
+
+  /* =========================
+     VISUAL PANELS
+  ========================= */
+
+  .ipm-visual-panel {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 38px;
+
+    background:
+      radial-gradient(
+        circle at 88% 10%,
+        rgba(66, 221, 127, 0.28),
+        transparent 34%
+      ),
+      linear-gradient(145deg, #111b15, #031208);
+
+    color: #ffffff;
+    box-shadow: 0 20px 52px rgba(6, 38, 18, 0.18);
+  }
+
+  .ipm-visual-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.17;
+    pointer-events: none;
+
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px
+      );
+
+    background-size: 28px 28px;
+  }
+
+  .ipm-visual-panel::after {
+    content: "";
+    position: absolute;
+    right: -85px;
+    bottom: -85px;
+    width: 230px;
+    height: 230px;
+    border: 45px solid rgba(0, 133, 63, 0.48);
+    border-radius: 50%;
+  }
+
+  .ipm-panel-top,
+  .ipm-panel-bottom {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ipm-panel-icon {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    background: var(--ipm-green);
+    color: #ffffff;
+  }
+
+  .ipm-panel-icon .material-symbols-outlined {
+    font-size: 40px;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 300,
+      "GRAD" 0,
+      "opsz" 48;
+  }
+
+  .ipm-panel-kicker {
+    margin-top: 22px;
+    color: #8ce5ad;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ipm-panel-title {
+    max-width: 330px;
+    margin-top: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .ipm-panel-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 34px;
+  }
+
+  .ipm-panel-data span {
+    min-height: 66px;
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* =========================
+     BENEFITS SECTION
+  ========================= */
+
+  .ipm-benefits {
+    padding: 100px 0 78px;
+    background: #ffffff;
+  }
+
+  .ipm-benefits-heading {
+    max-width: 760px;
+    margin-bottom: 48px;
+  }
+
+  .ipm-benefits-heading h2 {
+    margin: 0 0 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .ipm-benefits-heading p {
+    margin: 0;
+    color: var(--ipm-copy);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .ipm-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--ipm-border);
+    border-bottom: 1px solid var(--ipm-border);
+  }
+
+  .ipm-benefit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 34px 45px 34px 0;
+  }
+
+  .ipm-benefit-column + .ipm-benefit-column {
+    padding-right: 0;
+    padding-left: 48px;
+    border-left: 1px solid var(--ipm-border);
+  }
+
+  .ipm-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #182019;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .ipm-benefit-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    border: 1.5px solid var(--ipm-green);
+    border-radius: 50%;
+    color: var(--ipm-green);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* =========================
+     BOTTOM CTA
+  ========================= */
+
+  .ipm-final-cta {
+    padding: 0 0 105px;
+    background: #ffffff;
+  }
+
+  .ipm-final-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 32px;
+    background: var(--ipm-green);
+    border-radius: 12px;
+    box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
+  }
+
+  .ipm-final-cta-box h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(21px, 2.5vw, 28px);
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .ipm-final-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+  }
+
+  .ipm-contact-button,
+  .ipm-download-button {
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 23px;
+    border: 0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .ipm-contact-button {
+    background: var(--ipm-green-dark);
+    color: #ffffff;
+  }
+
+  .ipm-download-button {
+    background: #ffffff;
+    color: var(--ipm-green);
+  }
+
+  .ipm-contact-button:hover,
+  .ipm-download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  /* =========================
+     BROCHURE MODAL
+  ========================= */
+
+  .ipm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.72);
+  }
+
+  .ipm-modal.ipm-modal-open {
+    display: flex;
+  }
+
+  .ipm-modal-card {
+    position: relative;
+    width: min(520px, 100%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 38px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+  }
+
+  .ipm-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 17px;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: #eef3ef;
+    color: #1b261e;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .ipm-modal-label {
+    margin-bottom: 10px;
+    color: var(--ipm-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .ipm-modal-card h2 {
+    margin: 0 45px 10px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .ipm-modal-intro {
+    margin: 0 0 25px;
+    color: var(--ipm-copy);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .ipm-brochure-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ipm-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .ipm-form-group label {
+    color: #253028;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .ipm-form-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 13px;
+    border: 1px solid #ced8d1;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #111411;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+  }
+
+  .ipm-form-group input:focus {
+    border-color: var(--ipm-green);
+    box-shadow: 0 0 0 3px rgba(0, 133, 63, 0.1);
+  }
+
+  .ipm-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #687169;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .ipm-consent input {
+    margin-top: 3px;
+    accent-color: var(--ipm-green);
+  }
+
+  .ipm-form-submit {
+    min-height: 51px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--ipm-green);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition:
+      background-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .ipm-form-submit:hover {
+    background: var(--ipm-green-dark);
+    transform: translateY(-2px);
+  }
+
+  .ipm-form-message {
+    display: none;
+    padding: 12px;
+    border-radius: 6px;
+    background: #eaf8ef;
+    color: #09622c;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* =========================
+     RESPONSIVE
+  ========================= */
+
+  @media (max-width: 1050px) {
+    .ipm-section-grid,
+    .ipm-section-grid.ipm-reverse {
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(315px, 0.92fr);
+
+      gap: 42px;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .ipm-shell {
+      width: min(100% - 32px, 680px);
+    }
+
+    .ipm-hero {
+      min-height: auto;
+      background-position: 60% center;
+    }
+
+    .ipm-hero-content {
+      padding: 112px 0 85px;
+    }
+
+    .ipm-quick-nav {
+      margin-top: -28px;
+    }
+
+    .ipm-quick-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ipm-quick-link:nth-child(2) {
+      border-right: 0;
+    }
+
+    .ipm-quick-link:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--ipm-border);
+    }
+
+    .ipm-section {
+      padding: 76px 0;
+    }
+
+    .ipm-section-grid,
+    .ipm-section-grid.ipm-reverse {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .ipm-section-grid.ipm-reverse .ipm-copy,
+    .ipm-section-grid.ipm-reverse .ipm-visual {
+      order: initial;
+    }
+
+    .ipm-copy p {
+      text-align: left;
+    }
+
+    .ipm-visual-panel {
+      min-height: 360px;
+    }
+
+    .ipm-benefits {
+      padding-top: 76px;
+    }
+
+    .ipm-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ipm-benefit-column,
+    .ipm-benefit-column + .ipm-benefit-column {
+      padding: 28px 0;
+      border-left: 0;
+    }
+
+    .ipm-benefit-column + .ipm-benefit-column {
+      border-top: 1px solid var(--ipm-border);
+    }
+
+    .ipm-final-cta-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ipm-final-actions {
+      width: 100%;
+    }
+
+    .ipm-contact-button,
+    .ipm-download-button {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ipm-shell {
+      width: calc(100% - 24px);
+    }
+
+    .ipm-hero h1 {
+      font-size: 36px;
+    }
+
+    .ipm-hero-content {
+      padding: 100px 0 75px;
+    }
+
+    .ipm-quick-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ipm-quick-link,
+    .ipm-quick-link:nth-child(2) {
+      border-right: 0;
+      border-bottom: 1px solid var(--ipm-border);
+    }
+
+    .ipm-quick-link:last-child {
+      border-bottom: 0;
+    }
+
+    .ipm-copy h2 {
+      font-size: 28px;
+    }
+
+    .ipm-visual-panel {
+      min-height: 345px;
+      padding: 28px 22px;
+    }
+
+    .ipm-panel-data {
+      grid-template-columns: 1fr;
+    }
+
+    .ipm-panel-data span {
+      min-height: 47px;
+    }
+
+    .ipm-final-cta {
+      padding-bottom: 75px;
+    }
+
+    .ipm-final-actions {
+      flex-direction: column;
+    }
+
+    .ipm-contact-button,
+    .ipm-download-button {
+      width: 100%;
+    }
+
+    .ipm-modal-card {
+      padding: 32px 22px 25px;
+    }
+  }
+</style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
    <div style="height: 120px;"></div>
 
+   <main class="ipm-page">
 
+  <!-- HERO -->
+  <section class="ipm-hero">
+    <div class="ipm-shell">
+      <div class="ipm-hero-content">
 
-     <section id="services" class="wellconstruction flex flex-col gap-y-10 items-center  relative">
-        <div class="w-full h-full bg-black/50  flex flex-col gap-y-4 items-center text-center py-30 px-6 md:px-20">
-            <h1 class="bouncein text-xl xsm:text-2xl lg:text-3xl font-bold text-white">IPM & Turnkey Well Delivery</h1>
-            <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed bouncein">During the entire Well Construction process, we provide seamless services that bridge the divide between drilling and completions. Through a series of integrated activities and processes, we combine the right technology, the right people and several years of experience, to provide winning solutions in well construction and management.</p>
+        <div class="ipm-eyebrow bouncein">
+          Integrated well delivery
         </div>
-    </section>
 
-   <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-20 md:mt-20 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/IPM.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <h1 class="bouncein">
+          IPM &amp; Turnkey Well Delivery
+        </h1>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Project Management</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">Our Project Management service provides expert planning, coordination, and execution support throughout the well lifecycle. Led by an experienced Project Delivery Team, we oversee every stage of the project—from planning and scheduling to resource coordination, risk management, and performance monitoring—to ensure wells are delivered safely, efficiently, on time, and within budget while maintaining the highest operational standards.</p>    
-                <a href="ipm-index.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+        <p class="ipm-hero-copy bouncein">
+          AOS Orwell provides integrated project management and turnkey
+          well delivery solutions that bring planning, engineering,
+          procurement, logistics, equipment, and field execution together
+          under one accountable delivery structure.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAVIGATION -->
+  <nav
+    class="ipm-quick-nav"
+    aria-label="IPM and Turnkey services"
+  >
+    <div class="ipm-shell ipm-quick-grid">
+
+      <a class="ipm-quick-link" href="#project-management">
+        Project Management
+      </a>
+
+      <a class="ipm-quick-link" href="#bundled-services">
+        Bundled Services
+      </a>
+
+      <a class="ipm-quick-link" href="#integrated-project-management">
+        Integrated Project Management
+      </a>
+
+      <a class="ipm-quick-link" href="#turnkey-well-delivery">
+        Turnkey Well Delivery
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- PROJECT MANAGEMENT -->
+  <section id="project-management" class="ipm-section">
+    <div class="ipm-shell ipm-section-grid slidein">
+
+      <article class="ipm-copy">
+
+        <div class="ipm-label">
+          01 / Delivery governance
         </div>
-    </section>
 
+        <h2>
+          Project Management
+        </h2>
 
-    <section class="relative serviceSection flex justify-center items-center pb-10 h-fit max-md:pb-20 -z-3 -mt-30  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-50 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-fishing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <p>
+          Our Project Management service provides expert planning,
+          coordination, and execution support throughout the well lifecycle.
+          Led by an experienced Project Delivery Team, we oversee every
+          stage of the project—from planning and scheduling to resource
+          coordination, risk management, and performance monitoring—to
+          ensure wells are delivered safely, efficiently, on time, and
+          within budget while maintaining the highest operational
+          standards.
+        </p>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Bundled Services</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Our Bundled Services solution combines multiple well construction and intervention services into a single, flexible service package tailored to each project's requirements. By integrating complementary services under one commercial framework, clients benefit from simplified contract management, improved operational efficiency, reduced interface risks, and optimized project costs without compromising quality or performance.</p>
-               
-            </div>
+      </article>
+
+      <div class="ipm-visual ipm-visual-panel" aria-hidden="true">
+
+        <div class="ipm-panel-top">
+
+          <div class="ipm-panel-icon">
+            <span class="material-symbols-outlined">
+              account_tree
+            </span>
+          </div>
+
+          <div class="ipm-panel-kicker">
+            Full lifecycle coordination
+          </div>
+
+          <div class="ipm-panel-title">
+            Structured planning and disciplined project execution
+          </div>
+
         </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20"> 
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-10 md:mt-16 items-center w-full xl:w-5/6 mb-10 bouncein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well-casing.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Integrated Project Management (IPM)</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">Our Integrated Project Management (IPM) service delivers comprehensive, full-cycle management of well projects through a single, multidisciplinary team. We integrate planning, engineering, procurement, logistics, equipment, service delivery, and operational oversight to provide seamless project execution. This collaborative approach enhances efficiency, improves decision-making, reduces non-productive time (NPT), and optimizes overall well performance from concept to completion.</p> 
-            </div>
+        <div class="ipm-panel-bottom">
+          <div class="ipm-panel-data">
+            <span>Planning</span>
+            <span>Risk Control</span>
+            <span>Performance</span>
+          </div>
         </div>
-    </section>
-   
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10 slidein">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/turnkey-well-delivery.jpg" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2" style="padding-bottom: 100px; margin-bottom: -100px;">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">Turnkey Well Delivery</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">Our Turnkey Well Delivery service provides complete end-to-end execution of well projects under a single contract with full performance accountability. From initial planning and engineering through procurement, mobilization, drilling, completion, and project close-out, AOS Orwell assumes responsibility for delivering the agreed project outcomes. This approach minimizes client interfaces, streamlines execution, improves cost certainty, and ensures safe, reliable, and efficient well delivery.</p>    
-                <a href="ipm-index.html" 
-                   class="inline-flex items-center font-semibold text-green-500 hover:underline transition">
-                   Read More <i class="bi bi-arrow-right ml-2"></i>
-                </a>
-            </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUNDLED SERVICES -->
+  <section
+    id="bundled-services"
+    class="ipm-section ipm-section-soft"
+  >
+    <div class="ipm-shell ipm-section-grid ipm-reverse slidein">
+
+      <article class="ipm-copy">
+
+        <div class="ipm-label">
+          02 / Flexible service packaging
         </div>
-    </section>
+
+        <h2>
+          Bundled Services
+        </h2>
+
+        <p>
+          Our Bundled Services solution combines multiple well
+          construction and intervention services into a single, flexible
+          service package tailored to each project's requirements. By
+          integrating complementary services under one commercial
+          framework, clients benefit from simplified contract management,
+          improved operational efficiency, reduced interface risks, and
+          optimized project costs without compromising quality or
+          performance.
+        </p>
+
+      </article>
+
+      <div class="ipm-visual ipm-visual-panel" aria-hidden="true">
+
+        <div class="ipm-panel-top">
+
+          <div class="ipm-panel-icon">
+            <span class="material-symbols-outlined">
+              deployed_code
+            </span>
+          </div>
+
+          <div class="ipm-panel-kicker">
+            One commercial framework
+          </div>
+
+          <div class="ipm-panel-title">
+            Complementary services combined around your project
+          </div>
+
+        </div>
+
+        <div class="ipm-panel-bottom">
+          <div class="ipm-panel-data">
+            <span>Fewer Interfaces</span>
+            <span>Cost Efficiency</span>
+            <span>Flexible Scope</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTEGRATED PROJECT MANAGEMENT -->
+  <section
+    id="integrated-project-management"
+    class="ipm-section"
+  >
+    <div class="ipm-shell ipm-section-grid slidein">
+
+      <article class="ipm-copy">
+
+        <div class="ipm-label">
+          03 / Integrated execution
+        </div>
+
+        <h2>
+          Integrated Project Management (IPM)
+        </h2>
+
+        <p>
+          Our Integrated Project Management service delivers
+          comprehensive, full-cycle management of well projects through a
+          single, multidisciplinary team. We integrate planning,
+          engineering, procurement, logistics, equipment, service
+          delivery, and operational oversight to provide seamless project
+          execution.
+        </p>
+
+        <p style="margin-top: 17px;">
+          This collaborative approach enhances efficiency, improves
+          decision-making, reduces non-productive time, and optimizes
+          overall well performance from concept to completion.
+        </p>
+
+      </article>
+
+      <div class="ipm-visual ipm-visual-panel" aria-hidden="true">
+
+        <div class="ipm-panel-top">
+
+          <div class="ipm-panel-icon">
+            <span class="material-symbols-outlined">
+              hub
+            </span>
+          </div>
+
+          <div class="ipm-panel-kicker">
+            Single multidisciplinary team
+          </div>
+
+          <div class="ipm-panel-title">
+            Integrated control from concept through completion
+          </div>
+
+        </div>
+
+        <div class="ipm-panel-bottom">
+          <div class="ipm-panel-data">
+            <span>Engineering</span>
+            <span>Procurement</span>
+            <span>Operations</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TURNKEY WELL DELIVERY -->
+  <section
+    id="turnkey-well-delivery"
+    class="ipm-section ipm-section-soft"
+  >
+    <div class="ipm-shell ipm-section-grid ipm-reverse slidein">
+
+      <article class="ipm-copy">
+
+        <div class="ipm-label">
+          04 / Full accountability
+        </div>
+
+        <h2>
+          Turnkey Well Delivery
+        </h2>
+
+        <p>
+          Our Turnkey Well Delivery service provides complete end-to-end
+          execution of well projects under a single contract with full
+          performance accountability. From initial planning and
+          engineering through procurement, mobilization, drilling,
+          completion, and project close-out, AOS Orwell assumes
+          responsibility for delivering the agreed project outcomes.
+        </p>
+
+        <p style="margin-top: 17px;">
+          This approach minimizes client interfaces, streamlines
+          execution, improves cost certainty, and ensures safe, reliable,
+          and efficient well delivery.
+        </p>
+
+      </article>
+
+      <div class="ipm-visual ipm-visual-panel" aria-hidden="true">
+
+        <div class="ipm-panel-top">
+
+          <div class="ipm-panel-icon">
+            <span class="material-symbols-outlined">
+              oil_barrel
+            </span>
+          </div>
+
+          <div class="ipm-panel-kicker">
+            End-to-end delivery
+          </div>
+
+          <div class="ipm-panel-title">
+            One contract with complete performance accountability
+          </div>
+
+        </div>
+
+        <div class="ipm-panel-bottom">
+          <div class="ipm-panel-data">
+            <span>Mobilization</span>
+            <span>Well Execution</span>
+            <span>Close-Out</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="ipm-benefits">
+    <div class="ipm-shell">
+
+      <div class="ipm-benefits-heading bouncein">
+
+        <div class="ipm-label">
+          Why AOS Orwell
+        </div>
+
+        <h2>
+          Integrated delivery with clear accountability
+        </h2>
+
+        <p>
+          Our model aligns technical capability, commercial structure,
+          local execution, and performance management around the client's
+          well objectives.
+        </p>
+
+      </div>
+
+      <div class="ipm-benefits-grid slidein">
+
+        <div class="ipm-benefit-column">
+
+          <div class="ipm-benefit">
+            <span class="ipm-benefit-icon">✓</span>
+
+            <span>
+              Bundled services tailored to drilling and intervention
+              requirements
+            </span>
+          </div>
+
+          <div class="ipm-benefit">
+            <span class="ipm-benefit-icon">✓</span>
+
+            <span>
+              Turnkey well execution with full accountability
+            </span>
+          </div>
+
+          <div class="ipm-benefit">
+            <span class="ipm-benefit-icon">✓</span>
+
+            <span>
+              Transparent reporting and real-time performance tracking
+            </span>
+          </div>
+
+        </div>
+
+        <div class="ipm-benefit-column">
+
+          <div class="ipm-benefit">
+            <span class="ipm-benefit-icon">✓</span>
+
+            <span>
+              Local execution aligned with global operational standards
+            </span>
+          </div>
+
+          <div class="ipm-benefit">
+            <span class="ipm-benefit-icon">✓</span>
+
+            <span>
+              Reduced project interfaces and simplified contract
+              management
+            </span>
+          </div>
+
+          <div class="ipm-benefit">
+            <span class="ipm-benefit-icon">✓</span>
+
+            <span>
+              Structured funding solutions for eligible projects
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="ipm-final-cta">
+    <div class="ipm-shell">
+
+      <div class="ipm-final-cta-box bouncein">
+
+        <h2>
+          Let’s Deliver Your Next Well — Together
+        </h2>
+
+        <div class="ipm-final-actions">
+
+          <a
+            href="./contact-us.html"
+            class="ipm-contact-button"
+          >
+            Contact Us
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+          </a>
+
+          <button
+             type="button"
+             id="ipmDownloadButton"
+             class="ipm-download-button"
+          >
+             Download Brochure
+
+             <span class="material-symbols-outlined">
+               download
+             </span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
     
     <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->
@@ -222,6 +1398,138 @@
     
     </footer>
     <div class="relative z-20 bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
+
+
+    <!-- IPM BROCHURE FORM MODAL -->
+<div
+  id="ipmBrochureModal"
+  class="ipm-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="ipmBrochureTitle"
+  aria-hidden="true"
+>
+  <div class="ipm-modal-card">
+
+    <button
+      type="button"
+      id="ipmModalClose"
+      class="ipm-modal-close"
+      aria-label="Close brochure form"
+    >
+      &times;
+    </button>
+
+    <div class="ipm-modal-label">
+      Download Resource
+    </div>
+
+    <h2 id="ipmBrochureTitle">
+      IPM &amp; Turnkey Brochure
+    </h2>
+
+    <p class="ipm-modal-intro">
+      Please provide your details before downloading the IPM &amp;
+      Turnkey Well Delivery brochure.
+    </p>
+
+    <form
+      id="ipmBrochureForm"
+      class="ipm-brochure-form"
+    >
+
+      <div class="ipm-form-group">
+        <label for="ipmFullName">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="ipmFullName"
+          name="fullName"
+          autocomplete="name"
+          required
+        >
+      </div>
+
+      <div class="ipm-form-group">
+        <label for="ipmCompany">
+          Company Name
+        </label>
+
+        <input
+          type="text"
+          id="ipmCompany"
+          name="company"
+          autocomplete="organization"
+          required
+        >
+      </div>
+
+      <div class="ipm-form-group">
+        <label for="ipmEmail">
+          Business Email
+        </label>
+
+        <input
+          type="email"
+          id="ipmEmail"
+          name="email"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="ipm-form-group">
+        <label for="ipmPhone">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="ipmPhone"
+          name="phone"
+          autocomplete="tel"
+          required
+        >
+      </div>
+
+      <label class="ipm-consent">
+
+        <input
+          type="checkbox"
+          id="ipmConsent"
+          name="consent"
+          required
+        >
+
+        <span>
+          I agree that AOS Orwell may use the information provided
+          to respond to my enquiry and share relevant service
+          information.
+        </span>
+
+      </label>
+
+      <div
+        id="ipmFormMessage"
+        class="ipm-form-message"
+        role="status"
+      >
+        Thank you. Your brochure download will begin shortly.
+      </div>
+
+      <button
+        type="submit"
+        class="ipm-form-submit"
+      >
+        Submit and Download Brochure
+      </button>
+
+    </form>
+
+  </div>
+</div>
     
      
     <script src="./index.js"></script>
@@ -317,6 +1625,136 @@
       script.src = "./navbar.js";
       document.body.appendChild(script);
     });
+</script>
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const downloadButton =
+      document.getElementById("ipmDownloadButton");
+
+    const brochureModal =
+      document.getElementById("ipmBrochureModal");
+
+    const closeButton =
+      document.getElementById("ipmModalClose");
+
+    const brochureForm =
+      document.getElementById("ipmBrochureForm");
+
+    const formMessage =
+      document.getElementById("ipmFormMessage");
+
+    function openBrochureModal() {
+      brochureModal.classList.add("ipm-modal-open");
+      brochureModal.setAttribute("aria-hidden", "false");
+
+      document.body.style.overflow = "hidden";
+
+      setTimeout(function () {
+        document.getElementById("ipmFullName").focus();
+      }, 100);
+    }
+
+    function closeBrochureModal() {
+      brochureModal.classList.remove("ipm-modal-open");
+      brochureModal.setAttribute("aria-hidden", "true");
+
+      document.body.style.overflow = "";
+    }
+
+    downloadButton.addEventListener(
+      "click",
+      openBrochureModal
+    );
+
+    closeButton.addEventListener(
+      "click",
+      closeBrochureModal
+    );
+
+    brochureModal.addEventListener(
+      "click",
+      function (event) {
+        if (event.target === brochureModal) {
+          closeBrochureModal();
+        }
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+        if (
+          event.key === "Escape" &&
+          brochureModal.classList.contains("ipm-modal-open")
+        ) {
+          closeBrochureModal();
+        }
+      }
+    );
+
+    brochureForm.addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+
+        if (!brochureForm.checkValidity()) {
+          brochureForm.reportValidity();
+          return;
+        }
+
+        const brochureDetails = {
+          fullName:
+            document.getElementById("ipmFullName").value.trim(),
+
+          company:
+            document.getElementById("ipmCompany").value.trim(),
+
+          email:
+            document.getElementById("ipmEmail").value.trim(),
+
+          phone:
+            document.getElementById("ipmPhone").value.trim(),
+
+          submittedAt:
+            new Date().toISOString()
+        };
+
+        console.log(
+          "IPM brochure request:",
+          brochureDetails
+        );
+
+        formMessage.style.display = "block";
+
+        setTimeout(function () {
+          const brochureLink =
+            document.createElement("a");
+
+          brochureLink.href =
+            "./IPM-Turnkey-Brochure.pdf";
+
+          brochureLink.download =
+            "IPM-Turnkey-Brochure.pdf";
+
+          brochureLink.style.display = "none";
+
+          document.body.appendChild(
+            brochureLink
+          );
+
+          brochureLink.click();
+          brochureLink.remove();
+        }, 500);
+
+        setTimeout(function () {
+          closeBrochureModal();
+          brochureForm.reset();
+          formMessage.style.display = "none";
+        }, 1800);
+      }
+    );
+  });
 </script>
 </body>
 </html>
