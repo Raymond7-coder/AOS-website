@@ -1424,3 +1424,51 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "power2.out"
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const marqueeTracks = document.querySelectorAll(
+    ".logo-marquee-track"
+  );
+
+  marqueeTracks.forEach(function (track) {
+    const originalGroup = track.querySelector(
+      ".logo-marquee-group"
+    );
+
+    if (!originalGroup) {
+      return;
+    }
+
+    /*
+      Prevent another duplicate from being created if
+      the script is loaded more than once.
+    */
+    if (track.querySelector('[data-logo-clone="true"]')) {
+      return;
+    }
+
+    const clonedGroup = originalGroup.cloneNode(true);
+
+    clonedGroup.setAttribute(
+      "data-logo-clone",
+      "true"
+    );
+
+    clonedGroup.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    /*
+      The copied images are decorative because the same
+      logos have already been announced in the first group.
+    */
+    clonedGroup.querySelectorAll("img").forEach(
+      function (image) {
+        image.alt = "";
+      }
+    );
+
+    track.appendChild(clonedGroup);
+  });
+});

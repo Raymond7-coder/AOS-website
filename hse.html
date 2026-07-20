@@ -30,13 +30,616 @@
         .cert-logo:hover {
             filter: none;
         }
-        .award-card {
-            transition: transform 0.3s ease;
-        }
-        .award-card:hover {
-            transform: translateY(-5px);
-        }
-    </style>
+
+        /* ==========================================
+   QHSE CERTIFICATION CARDS
+========================================== */
+
+.qhse-certifications {
+  max-width: 1180px;
+  margin-top: 95px;
+  margin-bottom: 100px;
+}
+
+.qhse-section-heading {
+  max-width: 780px;
+  margin-bottom: 38px;
+}
+
+.qhse-section-label {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #019b39;
+
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.qhse-section-heading h2 {
+  margin: 0 0 13px;
+  padding-left: 13px;
+
+  border-left: 4px solid #019b39;
+
+  color: #111914;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(27px, 3vw, 39px);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.qhse-section-heading > p {
+  margin: 0;
+
+  color: #657068;
+
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Five equal cards */
+
+.qhse-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 17px;
+  align-items: stretch;
+}
+
+.qhse-cert-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 315px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 25px 21px;
+
+  background: #ffffff;
+  border: 1px solid #dce6df;
+  border-radius: 11px;
+
+  color: #152019;
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px
+    rgba(12, 54, 28, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.qhse-cert-card:hover,
+.qhse-cert-card:focus-visible {
+  transform: translateY(-7px);
+
+  border-color: #98caaa;
+
+  box-shadow:
+    0 18px 42px
+    rgba(12, 54, 28, 0.14);
+
+  outline: none;
+}
+
+.qhse-cert-icon {
+  width: 53px;
+  height: 53px;
+  flex: 0 0 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 21px;
+
+  background: #eaf7ee;
+  border-radius: 50%;
+
+  color: #019b39;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.qhse-cert-card:hover .qhse-cert-icon,
+.qhse-cert-card:focus-visible .qhse-cert-icon {
+  background: #019b39;
+  color: #ffffff;
+}
+
+.qhse-cert-icon .material-symbols-outlined {
+  font-size: 27px;
+}
+
+.qhse-cert-number {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #019b39;
+
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.qhse-cert-card > strong {
+  display: block;
+  min-height: 48px;
+
+  margin-bottom: 10px;
+
+  color: #152019;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 650;
+}
+
+.qhse-cert-card > p {
+  margin: 0 0 21px;
+
+  color: #67726b;
+
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.qhse-cert-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: auto;
+
+  color: #018834;
+
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.qhse-cert-action .material-symbols-outlined {
+  font-size: 17px;
+
+  transition: transform 0.2s ease;
+}
+
+.qhse-cert-card:hover
+  .qhse-cert-action
+  .material-symbols-outlined {
+  transform: scale(1.12);
+}
+
+/* ==========================================
+   CERTIFICATE MODAL
+========================================== */
+
+.qhse-cert-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+}
+
+.qhse-cert-modal.qhse-cert-modal-open {
+  display: flex;
+}
+
+.qhse-cert-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+.qhse-cert-modal-card {
+  position: relative;
+  z-index: 2;
+
+  width: min(850px, 100%);
+  max-height: calc(100vh - 50px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border-radius: 13px;
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.35);
+}
+
+.qhse-cert-modal-header {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px 23px;
+
+  border-bottom: 1px solid #e1e8e3;
+}
+
+.qhse-cert-modal-label {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #019b39;
+
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.qhse-cert-modal-header h2 {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  color: #111914;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.qhse-cert-modal-close {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf3ef;
+  border: 0;
+  border-radius: 50%;
+
+  color: #1b261f;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.qhse-cert-modal-close:hover {
+  background: #019b39;
+  color: #ffffff;
+}
+
+.qhse-cert-modal-close .material-symbols-outlined {
+  font-size: 22px;
+}
+
+.qhse-cert-modal-image-wrap {
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding: 26px;
+
+  background: #edf1ee;
+}
+
+.qhse-cert-modal-image-wrap img {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100vh - 175px);
+
+  margin-inline: auto;
+
+  object-fit: contain;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 28px
+    rgba(0, 0, 0, 0.14);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+  .qhse-cert-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .qhse-cert-card:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+
+  .qhse-cert-card:nth-child(5) {
+    grid-column: 2 / 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .qhse-cert-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qhse-cert-card:nth-child(4),
+  .qhse-cert-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .qhse-cert-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 9px);
+    justify-self: center;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 540px) {
+  .qhse-certifications {
+    margin-top: 70px;
+    margin-bottom: 75px;
+  }
+
+  .qhse-cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qhse-cert-card,
+  .qhse-cert-card:last-child {
+    grid-column: auto;
+    width: 100%;
+    min-height: 275px;
+  }
+
+  .qhse-cert-modal {
+    padding: 12px;
+  }
+
+  .qhse-cert-modal-card {
+    max-height: calc(100vh - 24px);
+  }
+
+  .qhse-cert-modal-header {
+    padding: 16px;
+  }
+
+  .qhse-cert-modal-header h2 {
+    font-size: 17px;
+  }
+
+  .qhse-cert-modal-image-wrap {
+    padding: 14px;
+  }
+
+  .qhse-cert-modal-image-wrap img {
+    max-height: calc(100vh - 145px);
+  }
+}
+/* ==========================================
+   SAFETY DAY GALLERY — FINAL ALIGNMENT FIX
+========================================== */
+
+.qhse-safety-section {
+  width: min(1180px, calc(100% - 40px));
+  max-width: 1180px;
+
+  margin: 90px auto;
+  padding: 0;
+}
+
+/* Three equal cards in one row */
+
+.qhse-safety-grid {
+  width: 100%;
+
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px;
+
+  align-items: stretch;
+}
+
+/* Each card */
+
+.qhse-safety-card,
+.qhse-safety-card:last-child {
+  grid-column: auto !important;
+
+  width: 100% !important;
+  min-width: 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #dfe7e2;
+  border-radius: 10px;
+
+  box-shadow:
+    0 8px 24px
+    rgba(12, 54, 28, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.qhse-safety-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 16px 35px
+    rgba(12, 54, 28, 0.14);
+}
+
+/* Fixed, equal image area */
+
+.qhse-safety-media {
+  width: 100%;
+  height: 220px;
+
+  overflow: hidden;
+
+  background: #e7ece8;
+}
+
+/* Every image receives the same dimensions */
+
+.qhse-safety-media img {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center;
+
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  transition: transform 0.4s ease;
+}
+
+.qhse-safety-card:hover .qhse-safety-media img {
+  transform: scale(1.04);
+}
+
+/* Equal captions */
+
+.qhse-safety-card figcaption {
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 16px 18px;
+
+  color: #162019;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Button alignment */
+
+.qhse-safety-action {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 28px;
+}
+
+.qhse-safety-action .btn {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 22px;
+}
+
+/* Tablet: two cards per row */
+
+@media (max-width: 850px) {
+  .qhse-safety-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .qhse-safety-card:last-child {
+    grid-column: 1 / -1 !important;
+
+    width: calc(50% - 11px) !important;
+
+    justify-self: center;
+  }
+
+  .qhse-safety-media {
+    height: 210px;
+  }
+}
+
+/* Mobile: one card per row */
+
+@media (max-width: 600px) {
+  .qhse-safety-section {
+    width: calc(100% - 28px);
+
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  .qhse-safety-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .qhse-safety-card,
+  .qhse-safety-card:last-child {
+    grid-column: auto !important;
+
+    width: 100% !important;
+  }
+
+  .qhse-safety-media {
+    height: 230px;
+  }
+
+  .qhse-safety-action .btn {
+    width: 100%;
+  }
+}
+  </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
     <div id="navbar-placeholder"></div>
@@ -103,39 +706,365 @@
     </p>
   </section>
 
-  <!-- Awards & Certifications -->
-	<section class="content-block">
-	  <h2>Certifications</h2>
-	  <div class="awards-masonry">
-	    <img src="images/safety/qcor.jpeg" alt="Certificate 1">
-	    <img src="images/safety/qcoa.jpeg" alt="Certificate 2">
-	    <img src="images/safety/qcorb.jpeg" alt="Certificate 3">
-	    <img src="images/safety/qcoa2.jpeg" alt="Certificate 4">
-	    <img src="images/safety/qcors.jpeg" alt="Certificate 5">
-	  </div>
-		
-	  <p class="awards-text">
-	    These certifications reflect our commitment to quality, safety, innovation, and excellence in service delivery across all operations.
-	  </p>
-	</section>
+    <!-- CERTIFICATIONS -->
+<section class="content-block qhse-certifications">
 
+  <div class="qhse-section-heading">
 
-  <!-- Safety Day -->
-  <section class="content-block safety-day">
-    <h2>Join Us on Our Safety Day</h2>
+    <span class="qhse-section-label">
+      Quality and compliance
+    </span>
+
+    <h2>Our Certifications</h2>
+
     <p>
-      Our Annual Safety Day brings together employees, partners, and stakeholders to celebrate and 
-      amplify our commitment to health, safety, and environment. Explore the highlights below.
+      Our certifications demonstrate AOS Orwell's commitment to
+      recognised standards in quality, health, safety, environmental
+      responsibility, and operational excellence.
     </p>
 
-    <div class="media-gallery">
-      <img src="images/safe6.jpg" alt="Safety Day Event Photo">
-      <img src="images/safe3.jpg" alt="Team Demonstration">
-      <img src="images/safe4.jpg" alt="Award Presentation">
+  </div>
+
+  <div class="qhse-cert-grid">
+
+    <!-- CERTIFICATE 1 -->
+    <button
+      type="button"
+      class="qhse-cert-card"
+      data-certificate-image="images/safety/qcor.jpeg"
+      data-certificate-title="Certification 01"
+      aria-label="View Certification 01"
+    >
+
+      <span class="qhse-cert-icon">
+        <span class="material-symbols-outlined">
+          workspace_premium
+        </span>
+      </span>
+
+      <span class="qhse-cert-number">
+        Certification 01
+      </span>
+
+      <strong>
+        Quality and Operational Compliance
+      </strong>
+
+      <p>
+        This certification demonstrates our commitment to recognised
+        quality standards, controlled processes, and dependable service
+        delivery.
+      </p>
+
+      <span class="qhse-cert-action">
+        View Certificate
+
+        <span class="material-symbols-outlined">
+          open_in_full
+        </span>
+      </span>
+
+    </button>
+
+    <!-- CERTIFICATE 2 -->
+    <button
+      type="button"
+      class="qhse-cert-card"
+      data-certificate-image="images/safety/qcoa.jpeg"
+      data-certificate-title="Certification 02"
+      aria-label="View Certification 02"
+    >
+
+      <span class="qhse-cert-icon">
+        <span class="material-symbols-outlined">
+          verified
+        </span>
+      </span>
+
+      <span class="qhse-cert-number">
+        Certification 02
+      </span>
+
+      <strong>
+        Management System Certification
+      </strong>
+
+      <p>
+        Recognition of our structured management systems and commitment
+        to continuous improvement across our operations.
+      </p>
+
+      <span class="qhse-cert-action">
+        View Certificate
+
+        <span class="material-symbols-outlined">
+          open_in_full
+        </span>
+      </span>
+
+    </button>
+
+    <!-- CERTIFICATE 3 -->
+    <button
+      type="button"
+      class="qhse-cert-card"
+      data-certificate-image="images/safety/qcorb.jpeg"
+      data-certificate-title="Certification 03"
+      aria-label="View Certification 03"
+    >
+
+      <span class="qhse-cert-icon">
+        <span class="material-symbols-outlined">
+          health_and_safety
+        </span>
+      </span>
+
+      <span class="qhse-cert-number">
+        Certification 03
+      </span>
+
+      <strong>
+        Health and Safety Compliance
+      </strong>
+
+      <p>
+        This certification reflects our commitment to safe operations,
+        risk management, employee wellbeing, and responsible work
+        practices.
+      </p>
+
+      <span class="qhse-cert-action">
+        View Certificate
+
+        <span class="material-symbols-outlined">
+          open_in_full
+        </span>
+      </span>
+
+    </button>
+
+    <!-- CERTIFICATE 4 -->
+    <button
+      type="button"
+      class="qhse-cert-card"
+      data-certificate-image="images/safety/qcoa2.jpeg"
+      data-certificate-title="Certification 04"
+      aria-label="View Certification 04"
+    >
+
+      <span class="qhse-cert-icon">
+        <span class="material-symbols-outlined">
+          shield
+        </span>
+      </span>
+
+      <span class="qhse-cert-number">
+        Certification 04
+      </span>
+
+      <strong>
+        Industry Standards Certification
+      </strong>
+
+      <p>
+        Recognition of our compliance with established industry
+        requirements, technical standards, and quality-assurance
+        practices.
+      </p>
+
+      <span class="qhse-cert-action">
+        View Certificate
+
+        <span class="material-symbols-outlined">
+          open_in_full
+        </span>
+      </span>
+
+    </button>
+
+    <!-- CERTIFICATE 5 -->
+    <button
+      type="button"
+      class="qhse-cert-card"
+      data-certificate-image="images/safety/qcors.jpeg"
+      data-certificate-title="Certification 05"
+      aria-label="View Certification 05"
+    >
+
+      <span class="qhse-cert-icon">
+        <span class="material-symbols-outlined">
+          approval
+        </span>
+      </span>
+
+      <span class="qhse-cert-number">
+        Certification 05
+      </span>
+
+      <strong>
+        Quality Assurance Registration
+      </strong>
+
+      <p>
+        This registration reinforces our commitment to reliable
+        processes, accountable delivery, and consistent quality across
+        our services.
+      </p>
+
+      <span class="qhse-cert-action">
+        View Certificate
+
+        <span class="material-symbols-outlined">
+          open_in_full
+        </span>
+      </span>
+
+    </button>
+
+  </div>
+
+</section>
+
+ <!-- CERTIFICATE VIEWER MODAL -->
+<div
+  id="qhseCertificateModal"
+  class="qhse-cert-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="qhseCertificateModalTitle"
+  aria-hidden="true"
+>
+
+  <div class="qhse-cert-modal-backdrop"></div>
+
+  <div class="qhse-cert-modal-card">
+
+    <div class="qhse-cert-modal-header">
+
+      <div>
+
+        <span class="qhse-cert-modal-label">
+          AOS Orwell Certification
+        </span>
+
+        <h2 id="qhseCertificateModalTitle">
+          Certification
+        </h2>
+
+      </div>
+
+      <button
+        type="button"
+        id="qhseCertificateModalClose"
+        class="qhse-cert-modal-close"
+        aria-label="Close certificate"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+
     </div>
 
-    <a href="./gallery/safety-day-2024.html" class="btn">View More</a>
-  </section>
+    <div class="qhse-cert-modal-image-wrap">
+
+      <img
+        id="qhseCertificateModalImage"
+        src=""
+        alt=""
+      >
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <!-- SAFETY DAY -->
+<section class="content-block safety-day qhse-safety-section">
+
+  <div class="qhse-section-heading">
+
+    <span class="qhse-section-label">
+      Safety culture in action
+    </span>
+
+    <h2>Join Us on Our Safety Day</h2>
+
+    <p>
+      Our Annual Safety Day brings together employees, partners, and
+      stakeholders to celebrate and amplify our commitment to health,
+      safety, and the environment. Explore some of the highlights below.
+    </p>
+
+  </div>
+
+  <div class="qhse-safety-grid">
+
+    <figure class="qhse-safety-card">
+
+      <div class="qhse-safety-media">
+        <img
+          src="images/safe6.jpg"
+          alt="AOS Orwell Safety Day event"
+        >
+      </div>
+
+      <figcaption>
+        Safety Day Event
+      </figcaption>
+
+    </figure>
+
+    <figure class="qhse-safety-card">
+
+      <div class="qhse-safety-media">
+        <img
+          src="images/safe3.jpg"
+          alt="AOS Orwell team safety demonstration"
+        >
+      </div>
+
+      <figcaption>
+        Team Demonstration
+      </figcaption>
+
+    </figure>
+
+    <figure class="qhse-safety-card">
+
+      <div class="qhse-safety-media">
+        <img
+          src="images/safe4.jpg"
+          alt="AOS Orwell Safety Day award presentation"
+        >
+      </div>
+
+      <figcaption>
+        Award Presentation
+      </figcaption>
+
+    </figure>
+
+  </div>
+
+  <div class="qhse-safety-action">
+
+    <a
+      href="./gallery/safety-day-2024.html"
+      class="btn"
+    >
+      View More Safety Day Highlights
+
+      <span class="material-symbols-outlined">
+        arrow_forward
+      </span>
+    </a>
+
+  </div>
+
+</section>
 
 	<!-- Policies Section -->
 <section class="content-block policies">
@@ -237,60 +1166,6 @@
   border-left: 4px solid #006400;
   padding-left: 15px;
 }
-
-.safety-day .media-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
-}
-.safety-day img,
-.safety-day video {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.award-main {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.award-main img {
-  max-width: 400px; /* adjust size as needed */
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-	
-.awards-masonry {
-  column-count: 3;         /* Number of columns */
-  column-gap: 20px;        /* Space between columns */
-  margin-top: 20px;
-}
-
-.awards-masonry img {
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  display: block;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.awards-masonry img:hover {
-  transform: scale(1.05);
-}
-
-.awards-text {
-  margin-top: 25px;
-  font-size: 1rem;
-  color: #444;
-  text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
 	
 .btn {
   display: inline-block;
@@ -305,35 +1180,6 @@
   background: #cc0000;
 }
 
-	.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.award-card {
-  text-align: center;
-}
-
-.award-card img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.award-card img:hover {
-  transform: scale(1.05);
-}
-
-.award-card p {
-  margin-top: 10px;
-  font-size: 0.9rem;       /* smaller font */
-  font-weight: 400;        /* lighter weight */
-  color: #b0b0b0;
-  line-height: 1.5;
-}
 
 	.policy-grid {
   display: grid;
@@ -555,6 +1401,116 @@ document.addEventListener("DOMContentLoaded", () => {
       script.src = "./navbar.js";
       document.body.appendChild(script);
     });
+</script>
+
+<script>
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      const certificateCards =
+        document.querySelectorAll(".qhse-cert-card");
+
+      const certificateModal =
+        document.getElementById("qhseCertificateModal");
+
+      const certificateModalImage =
+        document.getElementById(
+          "qhseCertificateModalImage"
+        );
+
+      const certificateModalTitle =
+        document.getElementById(
+          "qhseCertificateModalTitle"
+        );
+
+      const certificateModalClose =
+        document.getElementById(
+          "qhseCertificateModalClose"
+        );
+
+      const certificateModalBackdrop =
+        certificateModal.querySelector(
+          ".qhse-cert-modal-backdrop"
+        );
+
+      function openCertificate(card) {
+        const imagePath =
+          card.dataset.certificateImage;
+
+        const certificateTitle =
+          card.dataset.certificateTitle;
+
+        certificateModalImage.src = imagePath;
+
+        certificateModalImage.alt =
+          certificateTitle;
+
+        certificateModalTitle.textContent =
+          certificateTitle;
+
+        certificateModal.classList.add(
+          "qhse-cert-modal-open"
+        );
+
+        certificateModal.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.style.overflow = "hidden";
+
+        certificateModalClose.focus();
+      }
+
+      function closeCertificate() {
+        certificateModal.classList.remove(
+          "qhse-cert-modal-open"
+        );
+
+        certificateModal.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        document.body.style.overflow = "";
+
+        certificateModalImage.src = "";
+      }
+
+      certificateCards.forEach(function (card) {
+        card.addEventListener(
+          "click",
+          function () {
+            openCertificate(card);
+          }
+        );
+      });
+
+      certificateModalClose.addEventListener(
+        "click",
+        closeCertificate
+      );
+
+      certificateModalBackdrop.addEventListener(
+        "click",
+        closeCertificate
+      );
+
+      document.addEventListener(
+        "keydown",
+        function (event) {
+          if (
+            event.key === "Escape" &&
+            certificateModal.classList.contains(
+              "qhse-cert-modal-open"
+            )
+          ) {
+            closeCertificate();
+          }
+        }
+      );
+    }
+  );
 </script>
 </body>
 </html>

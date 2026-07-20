@@ -27,32 +27,32 @@
     <link rel="stylesheet" href="output.css">
     <style>
   :root {
-    --fg-green: #007a33;
-    --fg-green-dark: #004225;
-    --fg-black: #101411;
-    --fg-copy: #505c55;
-    --fg-soft: #f3f6f4;
-    --fg-border: #dfe7e2;
-    --fg-white: #ffffff;
+    --re-green: #007a33;
+    --re-green-dark: #004225;
+    --re-black: #101411;
+    --re-copy: #505c55;
+    --re-soft: #f3f6f4;
+    --re-border: #dfe7e2;
+    --re-white: #ffffff;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  .fg-page,
-  .fg-page * {
+  .re-page,
+  .re-page * {
     box-sizing: border-box;
   }
 
-  .fg-page {
+  .re-page {
     overflow: hidden;
     background: #ffffff;
-    color: var(--fg-black);
+    color: var(--re-black);
     font-family: "Poppins", sans-serif;
   }
 
-  .fg-shell {
+  .re-shell {
     width: min(1180px, calc(100% - 40px));
     margin-inline: auto;
   }
@@ -61,7 +61,7 @@
      HERO
   ========================= */
 
-  .fg-hero {
+  .re-hero {
     position: relative;
     isolation: isolate;
     min-height: 620px;
@@ -72,15 +72,15 @@
     background:
       linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.94) 0%,
-        rgba(0, 0, 0, 0.78) 48%,
+        rgba(0, 0, 0, 0.93) 0%,
+        rgba(0, 0, 0, 0.77) 48%,
         rgba(0, 0, 0, 0.35) 100%
       ),
-      url("./images/fire-gas-hero.jpg")
+      url("./images/rotating-equipment-hero.jpg")
       center / cover no-repeat;
   }
 
-  .fg-hero::after {
+  .re-hero::after {
     content: "";
     position: absolute;
     right: -110px;
@@ -92,13 +92,13 @@
     z-index: -1;
   }
 
-  .fg-hero-content {
+  .re-hero-content {
     max-width: 920px;
     padding: 130px 0 105px;
     color: #ffffff;
   }
 
-  .fg-eyebrow {
+  .re-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -110,14 +110,14 @@
     text-transform: uppercase;
   }
 
-  .fg-eyebrow::before {
+  .re-eyebrow::before {
     content: "";
     width: 42px;
     height: 3px;
-    background: var(--fg-green);
+    background: var(--re-green);
   }
 
-  .fg-hero h1 {
+  .re-hero h1 {
     max-width: 900px;
     margin: 0 0 24px;
     font-family: "Montserrat", sans-serif;
@@ -127,7 +127,7 @@
     font-weight: 700;
   }
 
-  .fg-hero-copy {
+  .re-hero-copy {
     max-width: 880px;
     margin: 0;
     color: #eef4f0;
@@ -139,27 +139,27 @@
      QUICK NAVIGATION
   ========================= */
 
-  .fg-quick-nav {
+  .re-quick-nav {
     position: relative;
     z-index: 5;
     margin-top: -43px;
   }
 
-  .fg-quick-grid {
+  .re-quick-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     background: #ffffff;
-    border: 1px solid var(--fg-border);
+    border: 1px solid var(--re-border);
     box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
   }
 
-  .fg-quick-link {
+  .re-quick-link {
     min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px 15px;
-    border-right: 1px solid var(--fg-border);
+    border-right: 1px solid var(--re-border);
     color: #27322c;
     font-size: 13px;
     line-height: 1.5;
@@ -173,13 +173,13 @@
       transform 0.25s ease;
   }
 
-  .fg-quick-link:last-child {
+  .re-quick-link:last-child {
     border-right: 0;
   }
 
-  .fg-quick-link:hover,
-  .fg-quick-link:focus-visible {
-    background: var(--fg-green);
+  .re-quick-link:hover,
+  .re-quick-link:focus-visible {
+    background: var(--re-green);
     color: #ffffff;
     transform: translateY(-4px);
     outline: none;
@@ -189,38 +189,38 @@
      INTRODUCTION
   ========================= */
 
-  .fg-intro {
-    padding: 105px 0 70px;
+  .re-intro {
+    padding: 105px 0 65px;
     background: #ffffff;
   }
 
-  .fg-intro-grid {
+  .re-intro-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
     gap: 70px;
     align-items: center;
   }
 
-  .fg-label {
+  .re-label {
     display: inline-flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
-    color: var(--fg-green);
+    color: var(--re-green);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
-  .fg-label::after {
+  .re-label::after {
     content: "";
     width: 52px;
     height: 2px;
-    background: var(--fg-green);
+    background: var(--re-green);
   }
 
-  .fg-intro h2 {
+  .re-intro h2 {
     margin: 0 0 22px;
     font-family: "Montserrat", sans-serif;
     font-size: clamp(29px, 3.4vw, 44px);
@@ -229,37 +229,37 @@
     font-weight: 700;
   }
 
-  .fg-intro p {
+  .re-intro p {
     margin: 0;
-    color: var(--fg-copy);
+    color: var(--re-copy);
     font-size: 14px;
     line-height: 1.95;
   }
 
-  .fg-intro-highlights {
+  .re-intro-highlights {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
-  .fg-intro-card {
+  .re-intro-card {
     min-height: 125px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px;
-    border: 1px solid var(--fg-border);
-    background: var(--fg-soft);
+    border: 1px solid var(--re-border);
+    background: var(--re-soft);
   }
 
-  .fg-intro-card strong {
-    color: var(--fg-green);
+  .re-intro-card strong {
+    color: var(--re-green);
     font-family: "Montserrat", sans-serif;
-    font-size: 22px;
-    line-height: 1.15;
+    font-size: 23px;
+    line-height: 1.1;
   }
 
-  .fg-intro-card span {
+  .re-intro-card span {
     margin-top: 8px;
     color: #566159;
     font-size: 11px;
@@ -270,16 +270,16 @@
      SERVICE SECTIONS
   ========================= */
 
-  .fg-section {
+  .re-section {
     padding: 104px 0;
     scroll-margin-top: 120px;
   }
 
-  .fg-section-soft {
-    background: var(--fg-soft);
+  .re-section-soft {
+    background: var(--re-soft);
   }
 
-  .fg-section-grid {
+  .re-section-grid {
     display: grid;
     grid-template-columns:
       minmax(0, 1.18fr)
@@ -289,21 +289,21 @@
     align-items: center;
   }
 
-  .fg-section-grid.fg-reverse {
+  .re-section-grid.re-reverse {
     grid-template-columns:
       minmax(350px, 0.82fr)
       minmax(0, 1.18fr);
   }
 
-  .fg-section-grid.fg-reverse .fg-copy {
+  .re-section-grid.re-reverse .re-copy {
     order: 2;
   }
 
-  .fg-section-grid.fg-reverse .fg-visual {
+  .re-section-grid.re-reverse .re-visual {
     order: 1;
   }
 
-  .fg-copy h2 {
+  .re-copy h2 {
     margin: 0 0 22px;
     font-family: "Montserrat", sans-serif;
     font-size: clamp(27px, 3.1vw, 41px);
@@ -312,19 +312,19 @@
     font-weight: 700;
   }
 
-  .fg-copy p {
+  .re-copy p {
     margin: 0;
-    color: var(--fg-copy);
+    color: var(--re-copy);
     font-size: 13px;
     line-height: 1.95;
     text-align: justify;
   }
 
-  .fg-copy p + p {
+  .re-copy p + p {
     margin-top: 17px;
   }
 
-  .fg-service-list {
+  .re-service-list {
     display: grid;
     gap: 11px;
     margin: 22px 0 0;
@@ -332,7 +332,7 @@
     list-style: none;
   }
 
-  .fg-service-list li {
+  .re-service-list li {
     display: flex;
     align-items: flex-start;
     gap: 11px;
@@ -341,7 +341,7 @@
     line-height: 1.7;
   }
 
-  .fg-service-list li::before {
+  .re-service-list li::before {
     content: "✓";
     width: 19px;
     height: 19px;
@@ -349,46 +349,37 @@
     display: grid;
     place-items: center;
     margin-top: 2px;
-    border: 1.5px solid var(--fg-green);
+    border: 1.5px solid var(--re-green);
     border-radius: 50%;
-    color: var(--fg-green);
+    color: var(--re-green);
     font-size: 12px;
     font-weight: 700;
-  }
-
-  .fg-note {
-    margin-top: 22px !important;
-    padding: 17px 19px;
-    border-left: 4px solid var(--fg-green);
-    background: #eaf5ee;
-    color: #304039 !important;
-    text-align: left !important;
   }
 
   /* =========================
      IMAGE FRAMES
   ========================= */
 
-  .fg-image-frame {
+  .re-image-frame {
     position: relative;
     padding: 28px 0 0 28px;
   }
 
-  .fg-image-frame::before {
+  .re-image-frame::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 58%;
     height: 45%;
-    background: var(--fg-green);
+    background: var(--re-green);
   }
 
-  .fg-section-soft .fg-image-frame::before {
+  .re-section-soft .re-image-frame::before {
     background: #b8c3bc;
   }
 
-  .fg-image-frame img {
+  .re-image-frame img {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -400,20 +391,20 @@
   }
 
   /* =========================
-     CAPABILITIES
+     BENEFITS
   ========================= */
 
-  .fg-capabilities {
+  .re-benefits {
     padding: 100px 0 80px;
     background: #ffffff;
   }
 
-  .fg-capabilities-heading {
+  .re-benefits-heading {
     max-width: 790px;
     margin-bottom: 46px;
   }
 
-  .fg-capabilities-heading h2 {
+  .re-benefits-heading h2 {
     margin: 0 0 14px;
     font-family: "Montserrat", sans-serif;
     font-size: clamp(28px, 3vw, 42px);
@@ -421,102 +412,77 @@
     font-weight: 700;
   }
 
-  .fg-capabilities-heading p {
+  .re-benefits-heading p {
     margin: 0;
-    color: var(--fg-copy);
+    color: var(--re-copy);
     font-size: 14px;
     line-height: 1.8;
   }
 
-  .fg-capabilities-grid {
+  .re-benefits-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--re-border);
+    border-bottom: 1px solid var(--re-border);
   }
 
-  .fg-capability-card {
-    position: relative;
-    overflow: hidden;
-    min-height: 290px;
-    padding: 30px;
-    border: 1px solid var(--fg-border);
-    background: var(--fg-soft);
-
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
+  .re-benefit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 34px 45px 34px 0;
   }
 
-  .fg-capability-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 40px rgba(9, 52, 27, 0.12);
+  .re-benefit-column + .re-benefit-column {
+    padding-right: 0;
+    padding-left: 48px;
+    border-left: 1px solid var(--re-border);
   }
 
-  .fg-capability-card::after {
-    content: "";
-    position: absolute;
-    right: -48px;
-    bottom: -48px;
-    width: 140px;
-    height: 140px;
-    border: 28px solid rgba(0, 122, 51, 0.09);
-    border-radius: 50%;
+  .re-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #182019;
+    font-size: 14px;
+    line-height: 1.65;
   }
 
-  .fg-capability-icon {
-    width: 60px;
-    height: 60px;
+  .re-benefit-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
     display: grid;
     place-items: center;
-    margin-bottom: 24px;
-    background: var(--fg-green);
-    color: #ffffff;
-  }
-
-  .fg-capability-icon .material-symbols-outlined {
-    font-size: 32px;
-  }
-
-  .fg-capability-card h3 {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 14px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 19px;
-    line-height: 1.35;
-    font-weight: 700;
-  }
-
-  .fg-capability-card p {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    color: var(--fg-copy);
+    margin-top: 2px;
+    border: 1.5px solid var(--re-green);
+    border-radius: 50%;
+    color: var(--re-green);
     font-size: 13px;
-    line-height: 1.8;
+    font-weight: 700;
   }
 
   /* =========================
      FINAL CTA
   ========================= */
 
-  .fg-final-cta {
+  .re-final-cta {
     padding: 0 0 105px;
     background: #ffffff;
   }
 
-  .fg-final-cta-box {
+  .re-final-cta-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 35px;
     padding: 34px 38px;
-    background: var(--fg-green);
+    background: var(--re-green);
     border-radius: 12px;
     box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
   }
 
-  .fg-final-cta-box h2 {
+  .re-final-cta-box h2 {
     margin: 0;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
@@ -525,7 +491,7 @@
     font-weight: 700;
   }
 
-  .fg-contact-button {
+  .re-contact-button {
     min-height: 56px;
     display: inline-flex;
     align-items: center;
@@ -533,7 +499,7 @@
     gap: 9px;
     padding: 14px 24px;
     border-radius: 8px;
-    background: var(--fg-green-dark);
+    background: var(--re-green-dark);
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
@@ -545,7 +511,7 @@
       box-shadow 0.25s ease;
   }
 
-  .fg-contact-button:hover {
+  .re-contact-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
   }
@@ -555,157 +521,154 @@
   ========================= */
 
   @media (max-width: 1050px) {
-    .fg-section-grid,
-    .fg-section-grid.fg-reverse {
+    .re-section-grid,
+    .re-section-grid.re-reverse {
       grid-template-columns:
         minmax(0, 1.08fr)
         minmax(315px, 0.92fr);
 
       gap: 42px;
     }
-
-    .fg-capabilities-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .fg-capability-card:last-child {
-      grid-column: 1 / -1;
-    }
   }
 
   @media (max-width: 820px) {
-    .fg-shell {
+    .re-shell {
       width: min(100% - 32px, 680px);
     }
 
-    .fg-hero {
+    .re-hero {
       min-height: auto;
       background-position: 60% center;
     }
 
-    .fg-hero-content {
+    .re-hero-content {
       padding: 112px 0 85px;
     }
 
-    .fg-quick-nav {
+    .re-quick-nav {
       margin-top: -28px;
     }
 
-    .fg-quick-grid {
+    .re-quick-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .fg-quick-link {
-      border-bottom: 1px solid var(--fg-border);
+    .re-quick-link {
+      border-bottom: 1px solid var(--re-border);
     }
 
-    .fg-quick-link:nth-child(2n) {
+    .re-quick-link:nth-child(2n) {
       border-right: 0;
     }
 
-    .fg-quick-link:nth-last-child(-n + 2) {
+    .re-quick-link:nth-last-child(-n + 2) {
       border-bottom: 0;
     }
 
-    .fg-intro {
+    .re-intro {
       padding: 76px 0 55px;
     }
 
-    .fg-intro-grid {
+    .re-intro-grid {
       grid-template-columns: 1fr;
       gap: 38px;
     }
 
-    .fg-section {
+    .re-section {
       padding: 76px 0;
     }
 
-    .fg-section-grid,
-    .fg-section-grid.fg-reverse {
+    .re-section-grid,
+    .re-section-grid.re-reverse {
       grid-template-columns: 1fr;
       gap: 38px;
     }
 
-    .fg-section-grid.fg-reverse .fg-copy,
-    .fg-section-grid.fg-reverse .fg-visual {
+    .re-section-grid.re-reverse .re-copy,
+    .re-section-grid.re-reverse .re-visual {
       order: initial;
     }
 
-    .fg-copy p {
+    .re-copy p {
       text-align: left;
     }
 
-    .fg-image-frame img {
+    .re-image-frame img {
       height: 370px;
     }
 
-    .fg-capabilities-grid {
+    .re-benefits {
+      padding-top: 76px;
+    }
+
+    .re-benefits-grid {
       grid-template-columns: 1fr;
     }
 
-    .fg-capability-card:last-child {
-      grid-column: auto;
+    .re-benefit-column,
+    .re-benefit-column + .re-benefit-column {
+      padding: 28px 0;
+      border-left: 0;
     }
 
-    .fg-final-cta-box {
+    .re-benefit-column + .re-benefit-column {
+      border-top: 1px solid var(--re-border);
+    }
+
+    .re-final-cta-box {
       flex-direction: column;
       align-items: flex-start;
     }
   }
 
   @media (max-width: 560px) {
-    .fg-shell {
+    .re-shell {
       width: calc(100% - 24px);
     }
 
-    .fg-hero h1 {
+    .re-hero h1 {
       font-size: 37px;
     }
 
-    .fg-hero-content {
+    .re-hero-content {
       padding: 100px 0 75px;
     }
 
-    .fg-quick-grid {
+    .re-quick-grid {
       grid-template-columns: 1fr;
     }
 
-    .fg-quick-link,
-    .fg-quick-link:nth-child(2n) {
+    .re-quick-link,
+    .re-quick-link:nth-child(2n) {
       border-right: 0;
-      border-bottom: 1px solid var(--fg-border);
+      border-bottom: 1px solid var(--re-border);
     }
 
-    .fg-quick-link:last-child {
+    .re-quick-link:last-child {
       border-bottom: 0;
     }
 
-    .fg-intro-highlights {
+    .re-intro-highlights {
       grid-template-columns: 1fr;
     }
 
-    .fg-copy h2 {
+    .re-copy h2 {
       font-size: 28px;
     }
 
-    .fg-image-frame {
+    .re-image-frame {
       padding: 18px 0 0 18px;
     }
 
-    .fg-image-frame img {
+    .re-image-frame img {
       height: 300px;
     }
 
-    .fg-capability-card {
-      min-height: auto;
-      padding: 27px 23px;
-    }
-
-    .fg-final-cta {
+    .re-final-cta {
       padding-bottom: 75px;
     }
 
-    .fg-contact-button {
+    .re-contact-button {
       width: 100%;
     }
   }
@@ -716,29 +679,29 @@
 
    <div style="height: 120px;"></div>
 
-   <main class="fg-page">
+   <main class="re-page">
 
   <!-- HERO -->
-  <section class="fg-hero">
-    <div class="fg-shell">
+  <section class="re-hero">
+    <div class="re-shell">
 
-      <div class="fg-hero-content">
+      <div class="re-hero-content">
 
-        <div class="fg-eyebrow bouncein">
-          Early detection and emergency protection
+        <div class="re-eyebrow bouncein">
+          Packaged equipment solutions
         </div>
 
         <h1 class="bouncein">
-          Fire &amp; Gas Systems
+          Rotating Equipment
         </h1>
 
-        <p class="fg-hero-copy bouncein">
-          AOS Orwell provides integrated fire and gas detection,
-          alarm, control and suppression solutions designed to protect
-          personnel, facilities, critical equipment and the environment.
-          Our solutions combine reliable field detection, intelligent
-          safety-system integration and appropriate emergency-response
-          functions for industrial and hazardous-area applications.
+        <p class="re-hero-copy bouncein">
+          AOS Orwell packages, supplies and supports rotating equipment
+          for upstream, gas-processing and power applications. Our
+          solutions are engineered, assembled and commissioned to OEM
+          and API standards and backed by in-country repair, spare-parts
+          support and reliability services that keep equipment operating
+          long after start-up.
         </p>
 
       </div>
@@ -748,98 +711,98 @@
 
   <!-- QUICK NAVIGATION -->
   <nav
-    class="fg-quick-nav"
-    aria-label="Fire and Gas services"
+    class="re-quick-nav"
+    aria-label="Rotating Equipment services"
   >
-    <div class="fg-shell fg-quick-grid">
+    <div class="re-shell re-quick-grid">
 
       <a
-        class="fg-quick-link"
-        href="#flame-detectors"
+        class="re-quick-link"
+        href="#air-compression"
       >
-        Flame Detectors
+        Air Compression Package
       </a>
 
       <a
-        class="fg-quick-link"
-        href="#gas-detectors"
+        class="re-quick-link"
+        href="#gas-compression"
       >
-        Gas Detectors
+        Gas Compression Package
       </a>
 
       <a
-        class="fg-quick-link"
-        href="#fire-gas-systems"
+        class="re-quick-link"
+        href="#api-pumps"
       >
-        Fire &amp; Gas Detection and Suppression Systems
+        API Pumps
       </a>
 
       <a
-        class="fg-quick-link"
-        href="#vesda"
+        class="re-quick-link"
+        href="#gas-generators"
       >
-        Smoke Detection VESDA
+        Gas Generators / Engines
       </a>
 
     </div>
   </nav>
 
   <!-- INTRODUCTION -->
-  <section class="fg-intro">
-    <div class="fg-shell fg-intro-grid bouncein">
+  <section class="re-intro">
+    <div class="re-shell re-intro-grid bouncein">
 
       <div>
 
-        <div class="fg-label">
-          Integrated hazard detection
+        <div class="re-label">
+          Engineered package delivery
         </div>
 
         <h2>
-          Protection from initial detection to emergency response
+          Complete rotating-equipment packages with in-country support
         </h2>
 
         <p>
-          Our Fire &amp; Gas solutions are designed around the hazards,
-          operating conditions and emergency-response requirements of
-          each facility. We integrate detectors, alarm devices, safety
-          control panels, shutdown interfaces and suppression equipment
-          into a coordinated protection system that supports early
-          warning and rapid response.
+          We provide more than equipment supply. Each package is
+          engineered around the application, assembled to specification,
+          commissioned at the client’s facility and supported throughout
+          its operating lifecycle. Our in-country service capability
+          reduces overseas lead times and provides faster access to
+          maintenance, repairs, spare parts and reliability upgrades.
         </p>
 
       </div>
 
-      <div class="fg-intro-highlights">
+      <div class="re-intro-highlights">
 
-        <div class="fg-intro-card">
-          <strong>Detect</strong>
+        <div class="re-intro-card">
+          <strong>OEM</strong>
 
           <span>
-            Rapid identification of flame, gas and smoke hazards
+            Equipment and repairs aligned with manufacturer standards
           </span>
         </div>
 
-        <div class="fg-intro-card">
-          <strong>Alarm</strong>
+        <div class="re-intro-card">
+          <strong>API</strong>
 
           <span>
-            Clear audible, visual and control-room notification
+            Packages engineered to applicable API requirements
           </span>
         </div>
 
-        <div class="fg-intro-card">
-          <strong>Isolate</strong>
+        <div class="re-intro-card">
+          <strong>Local</strong>
 
           <span>
-            Integration with shutdown and emergency-control functions
+            In-country commissioning, servicing and spare-parts support
           </span>
         </div>
 
-        <div class="fg-intro-card">
-          <strong>Suppress</strong>
+        <div class="re-intro-card">
+          <strong>Lifecycle</strong>
 
           <span>
-            Appropriate fire-control solutions for identified hazards
+            Support from initial design through reliability upgrades
           </span>
         </div>
 
@@ -848,74 +811,65 @@
     </div>
   </section>
 
-  <!-- FLAME DETECTORS -->
+  <!-- AIR COMPRESSION -->
   <section
-    id="flame-detectors"
-    class="fg-section fg-section-soft"
+    id="air-compression"
+    class="re-section re-section-soft"
   >
-    <div class="fg-shell fg-section-grid slidein">
+    <div class="re-shell re-section-grid slidein">
 
-      <article class="fg-copy">
+      <article class="re-copy">
 
-        <div class="fg-label">
-          01 / Optical flame detection
+        <div class="re-label">
+          A.1 / Compressed-air systems
         </div>
 
         <h2>
-          Flame Detectors
+          Air Compression Package
         </h2>
 
         <p>
-          Our flame-detection solutions provide rapid identification of
-          fires by detecting the ultraviolet, infrared or combined
-          radiation signatures produced by an open flame.
+          We provide skid-mounted instrument-air and plant-air packages
+          consisting of compressors, dryers, receivers, filtration
+          systems and controls. Each package is engineered and assembled
+          to the client’s specification for continuous and moisture-free
+          compressed-air supply.
         </p>
 
         <p>
-          Detector technology is selected according to the fuel type,
-          environmental conditions, required detection distance,
-          field of view and potential sources of false alarm. Solutions
-          can be supplied for both general industrial areas and
-          hazardous-area applications.
+          Packages are delivered complete, commissioned on-site and
+          sustained in-country through spare-parts support, servicing and
+          reliability upgrades that reduce dependence on overseas
+          technical support and long international lead times.
         </p>
 
-        <ul class="fg-service-list">
+        <ul class="re-service-list">
 
           <li>
-            Ultraviolet flame detectors
+            Instrument-air and plant-air compressor packages
           </li>
 
           <li>
-            Infrared and multi-spectrum infrared flame detectors
+            Air dryers, receivers and filtration systems
           </li>
 
           <li>
-            Combined ultraviolet and infrared detection
+            Integrated controls and package instrumentation
           </li>
 
           <li>
-            Hazardous-area and weather-resistant detector options
-          </li>
-
-          <li>
-            Integration with fire and gas control panels
+            Local commissioning, servicing and reliability support
           </li>
 
         </ul>
 
-        <p class="fg-note">
-          Detector selection and positioning should be based on the
-          facility’s fire-risk assessment, potential fuel sources,
-          obstructions and required coverage.
-        </p>
-
       </article>
 
-      <div class="fg-visual fg-image-frame">
+      <div class="re-visual re-image-frame">
 
         <img
-          src="./images/flamedetector.jpeg"
-          alt="Industrial flame detectors"
+          src="./images/aircompressor.jpg"
+          alt="Skid-mounted air compression package"
         >
 
       </div>
@@ -923,75 +877,64 @@
     </div>
   </section>
 
-  <!-- GAS DETECTORS -->
+  <!-- GAS COMPRESSION -->
   <section
-    id="gas-detectors"
-    class="fg-section"
+    id="gas-compression"
+    class="re-section"
   >
-    <div class="fg-shell fg-section-grid fg-reverse slidein">
+    <div class="re-shell re-section-grid re-reverse slidein">
 
-      <article class="fg-copy">
+      <article class="re-copy">
 
-        <div class="fg-label">
-          02 / Hazardous gas monitoring
+        <div class="re-label">
+          A.2 / Gas handling
         </div>
 
         <h2>
-          Gas Detectors
+          Gas Compression Package
         </h2>
 
         <p>
-          Our fixed gas-detection solutions continuously monitor
-          industrial environments for combustible gases, toxic gases
-          and oxygen deficiency or enrichment.
+          We provide reciprocating, screw and centrifugal
+          gas-compression packages for gas gathering, boosting, gas
+          lift, reinjection and virtual-pipeline applications.
         </p>
 
         <p>
-          We support point detectors and open-path detection systems
-          using technologies such as catalytic bead, infrared and
-          electrochemical sensing. Detector selection is matched to the
-          target gas, expected concentration range, process environment
-          and required response time.
+          Each package is designed, assembled and commissioned to the
+          relevant API standards. Our in-country service capability and
+          locally available spare-parts support help maintain high
+          equipment availability while reducing maintenance and support
+          lead times.
         </p>
 
-        <ul class="fg-service-list">
+        <ul class="re-service-list">
 
           <li>
-            Combustible and hydrocarbon gas detection
+            Reciprocating gas-compression packages
           </li>
 
           <li>
-            Toxic gas detection for gases such as hydrogen sulphide
-            and carbon monoxide
+            Screw and centrifugal compressor packages
           </li>
 
           <li>
-            Oxygen-deficiency and oxygen-enrichment monitoring
+            Gas gathering, boosting and gas-lift applications
           </li>
 
           <li>
-            Point and open-path gas detection
-          </li>
-
-          <li>
-            Local alarm, control-panel and shutdown integration
+            Reinjection and virtual-pipeline duty
           </li>
 
         </ul>
 
-        <p class="fg-note">
-          Gas-detector location should consider gas density, ventilation,
-          release points, process conditions and the facility’s hazard
-          analysis.
-        </p>
-
       </article>
 
-      <div class="fg-visual fg-image-frame">
+      <div class="re-visual re-image-frame">
 
         <img
-          src="./images/gasdetectors.png"
-          alt="Fixed industrial gas detectors"
+          src="./images/gascompression.jpg"
+          alt="Industrial gas compression package"
         >
 
       </div>
@@ -999,85 +942,64 @@
     </div>
   </section>
 
-  <!-- FIRE AND GAS SYSTEM -->
+  <!-- API PUMPS -->
   <section
-    id="fire-gas-systems"
-    class="fg-section fg-section-soft"
+    id="api-pumps"
+    class="re-section re-section-soft"
   >
-    <div class="fg-shell fg-section-grid slidein">
+    <div class="re-shell re-section-grid slidein">
 
-      <article class="fg-copy">
+      <article class="re-copy">
 
-        <div class="fg-label">
-          03 / Integrated safety response
+        <div class="re-label">
+          A.3 / Fluid handling
         </div>
 
         <h2>
-          Fire &amp; Gas Detection Safety Systems &amp; Suppression Systems
+          API Pumps
         </h2>
 
         <p>
-          We provide integrated Fire &amp; Gas safety systems that receive
-          signals from field detectors, evaluate alarm conditions and
-          initiate predefined responses through an approved
-          cause-and-effect strategy.
+          We supply centrifugal, reciprocating and metering pumps built
+          to applicable API standards for process, transfer, injection
+          and chemical-dosing applications.
         </p>
 
         <p>
-          The system can generate audible and visual alarms, communicate
-          with control-room interfaces, initiate equipment shutdown,
-          close isolation valves, stop ventilation systems and activate
-          the appropriate fire-suppression response.
+          Every pump is correctly sized to match the operating
+          conditions and required duty. Equipment is supported by
+          OEM-approved in-country overhaul, spare-parts services and
+          reliability upgrades that improve availability and extend
+          operating life.
         </p>
 
-        <p>
-          Suppression solutions are selected according to the identified
-          fire hazard, protected area, occupancy and equipment type.
-          Systems may include water-based, foam, gaseous, clean-agent,
-          water-mist, deluge or localized suppression arrangements.
-        </p>
-
-        <ul class="fg-service-list">
+        <ul class="re-service-list">
 
           <li>
-            Fire and gas control panels
+            API 610 centrifugal pumps
           </li>
 
           <li>
-            Safety logic and cause-and-effect programming
+            API 674 reciprocating pumps
           </li>
 
           <li>
-            Audible alarms, beacons and emergency notification
+            API 675 metering pumps
           </li>
 
           <li>
-            Emergency shutdown and ventilation-system interfaces
-          </li>
-
-          <li>
-            Deluge, foam, water-mist and gaseous suppression solutions
-          </li>
-
-          <li>
-            System testing, commissioning and functional verification
+            API 676 rotary positive-displacement pumps
           </li>
 
         </ul>
 
-        <p class="fg-note">
-          Suppression-system selection must be based on the protected
-          hazard and applicable project, fire-safety, environmental and
-          regulatory requirements.
-        </p>
-
       </article>
 
-      <div class="fg-visual fg-image-frame">
+      <div class="re-visual re-image-frame">
 
         <img
-          src="./images/suppressionsystems.png"
-          alt="Fire and gas detection and suppression system"
+          src="./images/apipumps.jpg"
+          alt="API-standard industrial pumps"
         >
 
       </div>
@@ -1085,75 +1007,64 @@
     </div>
   </section>
 
-  <!-- VESDA -->
+  <!-- GAS GENERATORS -->
   <section
-    id="vesda"
-    class="fg-section"
+    id="gas-generators"
+    class="re-section"
   >
-    <div class="fg-shell fg-section-grid fg-reverse slidein">
+    <div class="re-shell re-section-grid re-reverse slidein">
 
-      <article class="fg-copy">
+      <article class="re-copy">
 
-        <div class="fg-label">
-          04 / Very early smoke detection
+        <div class="re-label">
+          A.4 / Power generation
         </div>
 
         <h2>
-          Smoke Detection VESDA
+          Gas Generators / Engines
         </h2>
 
         <p>
-          Very Early Smoke Detection Apparatus systems provide continuous
-          air sampling for the early identification of smoke particles,
-          often before smoke becomes visible or conventional detectors
-          enter alarm.
+          We supply gas-fuelled engines and generator packages for
+          dependable on-site power generation and grid-support
+          applications. Each package is selected and configured to match
+          the site’s fuel-gas quality, operating conditions and load
+          profile.
         </p>
 
         <p>
-          Air is drawn through a network of sampling pipes and analysed
-          by a highly sensitive detector. Multiple alarm levels can be
-          configured to provide early warning, investigation time and
-          staged emergency response.
+          Packages are delivered as complete systems and sustained
+          through resident servicing, planned overhaul programmes and
+          OEM-approved in-country repairs.
         </p>
 
-        <p>
-          Aspirating smoke detection is particularly suitable for
-          critical environments where conventional point detectors may
-          be difficult to access, too slow or affected by high airflow.
-        </p>
-
-        <ul class="fg-service-list">
+        <ul class="re-service-list">
 
           <li>
-            Aspirating smoke-detection systems
+            Gas-engine generator packages
           </li>
 
           <li>
-            Engineered sampling-pipe networks
+            On-site and grid-support power applications
           </li>
 
           <li>
-            Configurable alert, action and fire-alarm thresholds
+            Packages matched to fuel-gas quality and site demand
           </li>
 
           <li>
-            Integration with fire-alarm and building-management systems
-          </li>
-
-          <li>
-            Applications for control rooms, data rooms, electrical
-            rooms and critical equipment areas
+            Resident servicing and planned overhaul support
           </li>
 
         </ul>
 
       </article>
 
-      <div class="fg-visual fg-image-frame">
+      <div class="re-visual re-image-frame">
 
         <img
-          src="./images/vesda.png"
-          alt="VESDA aspirating smoke detection system"
+          src="./images/gasgenerator.jpg"
+          alt="Gas engine and generator package"
         >
 
       </div>
@@ -1161,89 +1072,87 @@
     </div>
   </section>
 
-  <!-- CAPABILITIES -->
-  <section class="fg-capabilities">
-    <div class="fg-shell">
+  <!-- BENEFITS -->
+  <section class="re-benefits">
+    <div class="re-shell">
 
-      <div class="fg-capabilities-heading bouncein">
+      <div class="re-benefits-heading bouncein">
 
-        <div class="fg-label">
-          Our delivery capability
+        <div class="re-label">
+          Why AOS Orwell
         </div>
 
         <h2>
-          Complete lifecycle support for Fire &amp; Gas systems
+          Engineered equipment backed by local lifecycle support
         </h2>
 
         <p>
-          Our support can cover system engineering, equipment supply,
-          integration, commissioning and lifecycle maintenance for both
-          new installations and existing facilities.
+          Our packaged-equipment capability combines application
+          engineering, international OEM technology and dependable
+          in-country support to improve equipment availability and
+          reduce support lead times.
         </p>
 
       </div>
 
-      <div class="fg-capabilities-grid slidein">
+      <div class="re-benefits-grid slidein">
 
-        <article class="fg-capability-card">
+        <div class="re-benefit-column">
 
-          <div class="fg-capability-icon">
-            <span class="material-symbols-outlined">
-              design_services
+          <div class="re-benefit">
+            <span class="re-benefit-icon">✓</span>
+
+            <span>
+              Equipment selected and sized to the operating application
             </span>
           </div>
 
-          <h3>
-            Engineering &amp; System Design
-          </h3>
+          <div class="re-benefit">
+            <span class="re-benefit-icon">✓</span>
 
-          <p>
-            Detector selection, coverage planning, control-system
-            architecture, alarm philosophy and cause-and-effect
-            development based on project requirements.
-          </p>
-
-        </article>
-
-        <article class="fg-capability-card">
-
-          <div class="fg-capability-icon">
-            <span class="material-symbols-outlined">
-              integration_instructions
+            <span>
+              Package engineering aligned with relevant OEM and API
+              requirements
             </span>
           </div>
 
-          <h3>
-            Integration &amp; Commissioning
-          </h3>
+          <div class="re-benefit">
+            <span class="re-benefit-icon">✓</span>
 
-          <p>
-            Integration with control, safety, shutdown, alarm and
-            building-management systems, followed by testing,
-            commissioning and functional verification.
-          </p>
-
-        </article>
-
-        <article class="fg-capability-card">
-
-          <div class="fg-capability-icon">
-            <span class="material-symbols-outlined">
-              build
+            <span>
+              Complete assembly, testing, commissioning and handover
             </span>
           </div>
 
-          <h3>
-            Maintenance &amp; Testing
-          </h3>
+        </div>
 
-          <p>
-            Routine inspection, calibration, detector testing,
-            functional testing, fault diagnosis, spare-parts support
-            and system upgrade services.
-          </p>
+        <div class="re-benefit-column">
 
-        </article>
+          <div class="re-benefit">
+            <span class="re-benefit-icon">✓</span>
+
+            <span>
+              In-country spare-parts, overhaul and repair capability
+            </span>
+          </div>
+
+          <div class="re-benefit">
+            <span class="re-benefit-icon">✓</span>
+
+            <span>
+              Reduced dependence on overseas servicing and shipping
+            </span>
+          </div>
+
+          <div class="re-benefit">
+            <span class="re-benefit-icon">✓</span>
+
+            <span>
+              Reliability upgrades that improve equipment availability
+            </span>
+          </div>
+
+        </div>
 
       </div>
 
@@ -1251,18 +1160,18 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section class="fg-final-cta">
-    <div class="fg-shell">
+  <section class="re-final-cta">
+    <div class="re-shell">
 
-      <div class="fg-final-cta-box bouncein">
+      <div class="re-final-cta-box bouncein">
 
         <h2>
-          Let’s Strengthen the Safety of Your Facility
+          Let’s Engineer the Right Package for Your Operation
         </h2>
 
         <a
           href="./contact-us.html"
-          class="fg-contact-button"
+          class="re-contact-button"
         >
           Contact Us
 
@@ -1277,8 +1186,7 @@
   </section>
 
 </main>
-
-
+    
     <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
       <!-- Logo + Nav -->
       <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">

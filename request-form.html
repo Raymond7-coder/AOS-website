@@ -23,207 +23,653 @@
 	</head>
 	<body class="!bg-white">
 	   <div id="navbar-placeholder"></div>
-	   <div style="height: 120px; width: 100%;"></div>
+     	<main class="help-page">
 
-  <!-- HERO -->
- <section 
-    style="
-    background-color: #019B39; 
-    color: white; 
-    padding: 80px 80px; 
-    min-height: 260px;
-    display: flex;
-    align-items: center;
-  "
- >
-  <div style="max-width: 900px;">
-    <h1 
-      style="
-        color: white; 
-        font-size: 56px; 
-        line-height: 1.1; 
-        font-weight: 700; 
-        margin: 0 0 16px 0;
-      "
-    >
-      How Can We Help You?
-    </h1>
+			<!-- HERO -->
+			<section class="help-hero">
 
-    <p 
-      style="
-        color: rgba(255,255,255,0.9); 
-        font-size: 20px; 
-        line-height: 1.6; 
-        margin: 0;
-      "
-    >
-      Send us your enquiry and the right team will get back to you.
-    </p>
-  </div>
- </section>
+				<div class="help-container help-hero-layout">
 
-  <!-- FORM SECTION -->
-  <section class="px-4 md:px-20 py-16">
-    <div class="form-card max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-md shadow-sm">
+					<!-- Hero copy -->
+					<div class="help-hero-copy">
 
-      <h2 class="text-3xl md:text-4xl font-bold text-black mb-3">
-        We would love to hear from you
-      </h2>
+						<span class="help-eyebrow">
+							Contact AOS Orwell
+						</span>
 
-      <p class="text-gray-700 mb-8">
-        You can reach us anytime via 
-        <a href="mailto:sales@aosorwell.com" class="text-[#019B39] font-semibold">
-          sales@aosorwell.com
-        </a>
-      </p>
+						<h1>How can we help?</h1>
 
-      <form id="requestForm" class="space-y-6">
+						<p>
+							Tell us what you need and we will connect your
+							enquiry with the right AOS Orwell team.
+						</p>
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">Name</label>
-          <input 
-            type="text"
-            name="name"
-            required
-            placeholder="Your Name"
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          />
-        </div>
+						<div class="help-hero-actions">
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">Email</label>
-          <input 
-            type="email"
-            name="email"
-            required
-            placeholder="you@example.com"
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          />
-        </div>
+							<a
+								href="#enquiry-form"
+								class="help-primary-link"
+							>
+								<span>Send an enquiry</span>
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">Phone Number</label>
-          <input 
-            type="tel"
-            name="phone"
-            placeholder="+234..."
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          />
-        </div>
+								<span class="material-symbols-outlined">
+									arrow_forward
+								</span>
+							</a>
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">I am contacting as</label>
-          <select 
-            name="contacting_as"
-            required
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          >
-            <option value="">Select one</option>
-            <option>Individual</option>
-            <option>Company Representative</option>
-            <option>Vendor / Supplier</option>
-            <option>Job Applicant</option>
-            <option>Partner</option>
-            <option>Other</option>
-          </select>
-        </div>
+							<div class="help-email-options">
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">
-            Company / Organization Name
-            <span class="text-gray-500 font-normal">(Optional)</span>
-          </label>
-          <input 
-            type="text"
-            name="organization"
-            placeholder="Company, organization, or leave blank"
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          />
-        </div>
+								<a
+									href="mailto:sales@aosorwell.com"
+									class="help-email-card"
+								>
+									<span class="help-email-icon">
+										<span class="material-symbols-outlined">
+											mail
+										</span>
+									</span>
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">Enquiry Type</label>
-          <select 
-            name="enquiry_type"
-            required
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          >
-            <option value="">Select enquiry type</option>
-            <option>Request for Quote</option>
-            <option>General Enquiry</option>
-            <option>Technical Support</option>
-            <option>Partnership</option>
-            <option>Vendor / Supplier Enquiry</option>
-            <option>Careers</option>
-          </select>
-        </div>
+									<span class="help-email-copy">
+										<small>Sales enquiries</small>
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">
-            Service Area
-            <span class="text-gray-500 font-normal">(Optional)</span>
-          </label>
-          <select 
-            name="service_area"
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          >
-            <option value="">Select service area</option>
-            <option>Well Construction</option>
-            <option>Integrated Project Management</option>
-            <option>Process Management</option>
-            <option>Operations & Maintenance</option>
-            <option>Other</option>
-          </select>
-        </div>
+										<strong>
+											sales@aosorwell.com
+										</strong>
+									</span>
+								</a>
 
-        <div>
-          <label class="block text-sm font-semibold text-gray-900 mb-2">How can we help?</label>
-          <textarea 
-            name="message"
-            rows="5"
-            required
-            placeholder="Tell us a little about how we can help"
-            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#019B39]"
-          ></textarea>
-        </div>
+								<a
+									href="mailto:marketing@aosorwell.com"
+									class="help-email-card"
+								>
+									<span class="help-email-icon">
+										<span class="material-symbols-outlined help-email-card-icon">
+											campaign
+										</span>
+									</span>
 
-        <button 
-          type="submit"
-          class="w-full bg-[#019B39] text-white font-semibold py-3 rounded-md hover:bg-[#016125] transition"
-        >
-          Submit Request
-        </button>
+									<span class="help-email-copy">
+										<small>Marketing enquiries</small>
 
-        <p id="formMessage" class="hidden text-[#019B39] font-semibold text-center">
-          Thank you. Your request has been received.
-        </p>
+										<strong>
+											marketing@aosorwell.com
+										</strong>
+									</span>
+								</a>
 
-      </form>
+							</div>
 
-    </div>
-  </section>
+						</div>
 
-  <script>
-    const form = document.getElementById("requestForm");
-    const formMessage = document.getElementById("formMessage");
+					</div>
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
+					<!-- Hero information card -->
+					<div class="help-response-card">
 
-      formMessage.classList.remove("hidden");
-      form.reset();
-    });
-  </script>
-  <script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
-    })
-    .catch(error => {
-      console.error("Navbar could not load:", error);
-    });
-</script>
-<script src="./navbar.js"></script>
-</body>
+						<div class="help-response-icon">
+							<span class="material-symbols-outlined">
+								support_agent
+							</span>
+						</div>
+
+						<div class="help-response-copy">
+
+							<span class="help-response-label">
+								Your enquiry, routed correctly
+							</span>
+
+							<h2>One form. The right team.</h2>
+
+							<p>
+								Whether you need a quotation, technical
+								support, partnership information or general
+								assistance, we will direct your request
+								appropriately.
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- FORM AND INFORMATION SECTION -->
+			<section class="help-content-section">
+
+				<div class="help-container help-content-layout">
+
+					<!-- LEFT INFORMATION PANEL -->
+					<aside class="help-information-panel">
+
+						<div class="help-information-heading">
+
+							<span class="help-section-label">
+								Before you submit
+							</span>
+
+							<h2>Help us respond faster</h2>
+
+							<p>
+								Providing clear information helps us send
+								your request directly to the most relevant
+								team.
+							</p>
+
+						</div>
+
+						<div class="help-steps">
+
+							<div class="help-step">
+
+								<span class="help-step-number">
+									01
+								</span>
+
+								<div>
+									<h3>Choose your enquiry type</h3>
+
+									<p>
+										Let us know whether you need a
+										quotation, support, partnership
+										information or something else.
+									</p>
+								</div>
+
+							</div>
+
+							<div class="help-step">
+
+								<span class="help-step-number">
+									02
+								</span>
+
+								<div>
+									<h3>Select the relevant service</h3>
+
+									<p>
+										Choose the AOS Orwell service area
+										most closely related to your request.
+									</p>
+								</div>
+
+							</div>
+
+							<div class="help-step">
+
+								<span class="help-step-number">
+									03
+								</span>
+
+								<div>
+									<h3>Tell us what you need</h3>
+
+									<p>
+										Include enough information for our
+										team to understand the scope of your
+										enquiry.
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<!-- Direct email options -->
+						<div class="help-direct-contact-area">
+
+							<p class="help-direct-contact-title">
+								Prefer to send an email directly?
+							</p>
+
+							<div class="help-direct-contact-list">
+
+								<a
+									href="mailto:sales@aosorwell.com"
+									class="help-direct-contact"
+								>
+									<span class="material-symbols-outlined help-direct-contact-icon">
+										mail
+									</span>
+
+									<span class="help-direct-contact-copy">
+										<small>
+											Sales and service enquiries
+										</small>
+
+										<strong>
+											sales@aosorwell.com
+										</strong>
+									</span>
+
+									<span class="material-symbols-outlined help-direct-arrow">
+										arrow_forward
+									</span>
+								</a>
+
+								<a
+									href="mailto:marketing@aosorwell.com"
+									class="help-direct-contact"
+								>
+									<span class="help-direct-contact-icon">
+										<span class="material-symbols-outlined">
+											campaign
+										</span>
+									</span>
+
+									<span class="help-direct-contact-copy">
+										<small>
+											Marketing and communications
+										</small>
+
+										<strong>
+											marketing@aosorwell.com
+										</strong>
+									</span>
+
+									<span class="material-symbols-outlined help-direct-arrow">
+										arrow_forward
+									</span>
+								</a>
+
+							</div>
+
+						</div>
+
+					</aside>
+
+					<!-- FORM -->
+					<div
+						class="help-form-card"
+						id="enquiry-form"
+					>
+
+						<div class="help-form-heading">
+
+							<div>
+								<span class="help-section-label">
+									Enquiry form
+								</span>
+
+								<h2>Tell us how we can help</h2>
+							</div>
+
+							<p>
+								<span aria-hidden="true">*</span>
+								Required fields
+							</p>
+
+						</div>
+
+						<form
+							id="requestForm"
+							class="help-form"
+						>
+
+							<div class="help-form-grid">
+
+								<!-- Name -->
+								<div class="help-field">
+
+									<label for="contact-name">
+										Full name
+										<span>*</span>
+									</label>
+
+									<input
+										id="contact-name"
+										type="text"
+										name="name"
+										autocomplete="name"
+										placeholder="Enter your full name"
+										required
+									/>
+
+								</div>
+
+								<!-- Email -->
+								<div class="help-field">
+
+									<label for="contact-email">
+										Email address
+										<span>*</span>
+									</label>
+
+									<input
+										id="contact-email"
+										type="email"
+										name="email"
+										autocomplete="email"
+										placeholder="you@example.com"
+										required
+									/>
+
+								</div>
+
+								<!-- Phone -->
+								<div class="help-field">
+
+									<label for="contact-phone">
+										Phone number
+									</label>
+
+									<input
+										id="contact-phone"
+										type="tel"
+										name="phone"
+										autocomplete="tel"
+										placeholder="+234..."
+									/>
+
+								</div>
+
+								<!-- Organisation -->
+								<div class="help-field">
+
+									<label for="contact-organisation">
+										Company or organisation
+									</label>
+
+									<input
+										id="contact-organisation"
+										type="text"
+										name="organization"
+										autocomplete="organization"
+										placeholder="Enter organisation name"
+									/>
+
+								</div>
+
+								<!-- Contacting as -->
+								<div class="help-field">
+
+									<label for="contacting-as">
+										I am contacting as
+										<span>*</span>
+									</label>
+
+									<select
+										id="contacting-as"
+										name="contacting_as"
+										required
+									>
+										<option value="">
+											Select one
+										</option>
+
+										<option value="individual">
+											Individual
+										</option>
+
+										<option value="company-representative">
+											Company Representative
+										</option>
+
+										<option value="vendor-supplier">
+											Vendor / Supplier
+										</option>
+
+										<option value="job-applicant">
+											Job Applicant
+										</option>
+
+										<option value="partner">
+											Partner
+										</option>
+
+										<option value="other">
+											Other
+										</option>
+									</select>
+
+								</div>
+
+								<!-- Enquiry type -->
+								<div class="help-field">
+
+									<label for="enquiry-type">
+										Enquiry type
+										<span>*</span>
+									</label>
+
+									<select
+										id="enquiry-type"
+										name="enquiry_type"
+										required
+									>
+										<option value="">
+											Select enquiry type
+										</option>
+
+										<option value="request-for-quote">
+											Request for Quote
+										</option>
+
+										<option value="general-enquiry">
+											General Enquiry
+										</option>
+
+										<option value="technical-support">
+											Technical Support
+										</option>
+
+										<option value="partnership">
+											Partnership
+										</option>
+
+										<option value="vendor-supplier">
+											Vendor / Supplier Enquiry
+										</option>
+
+										<option value="careers">
+											Careers
+										</option>
+									</select>
+
+								</div>
+
+								<!-- Service area -->
+								<div class="help-field help-field-full">
+
+									<label for="service-area">
+										Service area
+									</label>
+
+									<select
+										id="service-area"
+										name="service_area"
+									>
+										<option value="">
+											Select service area
+										</option>
+
+										<option value="well-construction">
+											Well Construction
+										</option>
+
+										<option value="ipm-turnkey">
+											Integrated Project Management
+											&amp; Turnkey
+										</option>
+
+										<option value="process-management">
+											Process Management
+										</option>
+
+										<option value="operations-maintenance">
+											Operations &amp; Maintenance
+										</option>
+
+										<option value="other">
+											Other
+										</option>
+									</select>
+
+								</div>
+
+								<!-- Message -->
+								<div class="help-field help-field-full">
+
+									<label for="contact-message">
+										How can we help?
+										<span>*</span>
+									</label>
+
+									<textarea
+										id="contact-message"
+										name="message"
+										rows="6"
+										placeholder="Describe your request, project, service requirement or enquiry"
+										required
+									></textarea>
+
+								</div>
+
+							</div>
+
+							<div class="help-form-footer">
+
+								<p>
+									By submitting this form, you confirm
+									that the information provided is
+									accurate.
+								</p>
+
+								<button
+									type="submit"
+									class="help-submit-button"
+								>
+									<span>Submit request</span>
+
+									<span class="material-symbols-outlined">
+										arrow_forward
+									</span>
+								</button>
+
+							</div>
+
+							<div
+								id="formMessage"
+								class="help-form-message"
+								role="status"
+								aria-live="polite"
+								hidden
+							>
+								<span class="material-symbols-outlined">
+									check_circle
+								</span>
+
+								<div>
+									<strong>
+										Thank you for contacting us.
+									</strong>
+
+									<p>
+										Your enquiry has been received.
+									</p>
+								</div>
+							</div>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</section>
+
+		</main>
+
+		<!-- FORM SCRIPT -->
+		<script>
+			const requestForm =
+				document.getElementById("requestForm");
+
+			const formMessage =
+				document.getElementById("formMessage");
+
+			const submitButton =
+				requestForm.querySelector(".help-submit-button");
+
+			requestForm.addEventListener(
+				"submit",
+				function (event) {
+					event.preventDefault();
+
+					const originalButtonContent =
+						submitButton.innerHTML;
+
+					submitButton.disabled = true;
+
+					submitButton.innerHTML = `
+						<span>Submitting...</span>
+					`;
+
+					/*
+						This currently displays the success message
+						for front-end testing.
+
+						Connect this form to your backend before
+						launching the website.
+					*/
+
+					setTimeout(function () {
+						formMessage.hidden = false;
+
+						requestForm.reset();
+
+						submitButton.disabled = false;
+
+						submitButton.innerHTML =
+							originalButtonContent;
+
+						formMessage.scrollIntoView({
+							behavior: "smooth",
+							block: "nearest"
+						});
+					}, 700);
+				}
+			);
+		</script>
+
+		<!-- NAVBAR LOADER -->
+		<script>
+			fetch("./navbar.html")
+				.then(function (response) {
+					if (!response.ok) {
+						throw new Error(
+							"Navbar could not be loaded."
+						);
+					}
+
+					return response.text();
+				})
+				.then(function (navbarHTML) {
+					const navbarPlaceholder =
+						document.getElementById(
+							"navbar-placeholder"
+						);
+
+					navbarPlaceholder.innerHTML =
+						navbarHTML;
+
+					const navbarScript =
+						document.createElement("script");
+
+					navbarScript.src = "./navbar.js";
+
+					document.body.appendChild(
+						navbarScript
+					);
+				})
+				.catch(function (error) {
+					console.error(
+						"Navbar could not load:",
+						error
+					);
+				});
+		</script>
+
+	</body>
 </html>
