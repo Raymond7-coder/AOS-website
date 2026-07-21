@@ -21,783 +21,2335 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
 		/>
 		<link rel="stylesheet" href="output.css" />
+    
+    <style>
+    :root {
+      --about-green: #019b39;
+      --about-green-dark: #0c2417;
+      --about-green-soft: #eaf7ee;
+      --about-ink: #111914;
+      --about-copy: #5f6a63;
+      --about-soft: #f3f7f4;
+      --about-border: #dfe7e2;
+    }
 
-<style>
-  #timeline {
-    display: flex;
-    background-color: #023315;
-    /* margin-top: 80px; */
-    margin-bottom: 80px;
-    height: 450px;
-  }
-  #timeline::-webkit-scrollbar {
-    height: 5px;
-    background-color: rgb(214, 214, 214);
-    margin-top: 3px;
-  }
-  #timeline::-webkit-scrollbar-thumb {
-    background-color: #c70f32;
-    height: 5px;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .tl-item {
-    position: relative;
-    flex: 1;
-    display: flex;
-    min-width: 330px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    transition: flex 0.5s ease;
-  }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--about-ink);
+      font-family: "Poppins", sans-serif;
+    }
 
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    transition: background 0.3s;
-  }
-  .arrow:hover { background: rgba(0, 0, 0, 0.8); }
-  .arrow i { font-size: 24px; }
-  #left-arrow { left: 10px; }
-  #right-arrow { right: 10px; }
+    .about-main,
+    .about-main * {
+      box-sizing: border-box;
+    }
 
-  .tl-item:hover { flex: 2; }
+    .about-main {
+      padding-top: 120px;
+      overflow: hidden;
+      background: #ffffff;
+    }
 
-  .tl-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease;
-  }
-  /* nice polish on hover */
-  .tl-item:hover .tl-bg { transform: scale(1.05); }
+    .about-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
 
-  /* NEW: full-cover black overlay that fades in on hover */
-  .tl-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0);
-    transition: background 0.5s ease;
-    z-index: 1;
-  }
-  .tl-item:hover .tl-overlay {
-    background: rgba(0,0,0,0.8);
-  }
+    .about-kicker {
+      display: inline-block;
 
-  .tl-year {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    padding: 0px 20px;
-    z-index: 2; /* ensure above overlay */
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-  }
-  .tl-year p { font-size: 1.6rem; margin: 0; }
+      margin-bottom: 14px;
 
-  /* content appears above overlay, fades/slides in on hover */
-  .tl-content {
-    position: relative;
-    z-index: 2;
-    font-size: 13px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    text-align: left;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 30px 20px 30px; /* inner padding for readability */
-  }
-  .tl-item:hover .tl-content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .tl-content h3 {
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 13px;
-  }
+      color: var(--about-green);
 
-  @media (max-width: 800px) {
-    #timeline { height: 300px; }
-    .tl-item { min-width: 250px; }
-    .tl-content h3 { font-size: 12px; }
-    .tl-year p { font-size: 1.2rem; }
-  }
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
 
-.about-page-wrap {
-  margin-top: 90px;
-  padding: 44px 80px 64px;
-  background: #ffffff;
-}
+    /* ==========================================
+       HERO
+    ========================================== */
 
-.about-intro {
-  max-width: 1050px;
-  margin-bottom: 42px;
-}
+    .about-hero {
+      position: relative;
 
-.about-label {
-  color: #019B39;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
+      overflow: hidden;
 
-.about-main-heading {
-  font-size: 38px;
-  line-height: 1.18;
-  font-weight: 700;
-  color: #000;
-  margin: 0 0 22px;
-  max-width: 980px;
-}
+      padding: 84px 0;
 
-.about-copy {
-  font-size: 16px;
-  line-height: 1.85;
-  color: #4b5563;
-  margin: 0;
-  max-width: 920px;
-}
+      background: var(--about-green-dark);
+      color: #ffffff;
+    }
 
-.about-image-mission-grid {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 56px;
-  align-items: stretch;
-}
+    .about-hero::before {
+      content: "";
 
-.about-image {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 14px;
-}
+      position: absolute;
+      top: -245px;
+      right: -180px;
 
-.about-side-panel {
-  height: 420px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 4px 0;
-}
+      width: 620px;
+      height: 620px;
 
-.about-section-title {
-  font-size: 30px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #000;
-  margin: 0 0 14px;
-}
+      border: 92px solid rgba(1, 155, 57, 0.11);
+      border-radius: 50%;
 
-.about-side-text {
-  font-size: 15px;
-  line-height: 1.85;
-  color: #4b5563;
-  margin: 0;
-}
+      pointer-events: none;
+    }
 
-.about-stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  padding: 22px 0;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-}
+    .about-hero-grid {
+      position: relative;
+      z-index: 2;
 
-.about-stat {
-  position: relative;
-  min-height: 90px;
-  padding-top: 10px;
-}
+      display: grid;
 
-.about-stat-circle {
-  position: absolute;
-  top: 0;
-  left: -8px;
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  opacity: 0.8;
-  z-index: 0;
-}
+      grid-template-columns:
+        minmax(0, 1.04fr)
+        minmax(390px, 0.96fr);
 
-.about-stat-number {
-  position: relative;
-  z-index: 1;
-  font-size: 40px;
-  line-height: 1;
-  font-weight: 800;
-  color: #000;
-  margin: 0 0 8px;
-}
+      align-items: center;
+      gap: 70px;
+    }
 
-.about-stat-label {
-  font-size: 10px;
-  line-height: 1.35;
-  color: #4b5563;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-}
+    .about-hero .about-kicker {
+      color: #6fe196;
+    }
 
-.about-history-section {
-  position: relative;
-  overflow: hidden;
-  padding: 64px 80px 80px;
-  background: #ffffff;
-}
+    .about-hero h1 {
+      max-width: 720px;
 
-.about-history-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 60px;
-  align-items: start;
-}
+      margin: 0 0 24px;
 
-.about-history-heading {
-  font-size: 30px;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #000;
-  margin: 0;
-}
+      color: #ffffff;
 
-.about-history-text-wrap {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 30px;
-  align-items: start;
-}
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(43px, 5vw, 68px);
+      line-height: 1.06;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+    }
 
-.about-history-face {
-  width: 78px;
-  min-width: 78px;
-  height: auto;
-  margin-top: 4px;
-  animation: aboutPulse 2s ease-in-out infinite;
-}
+    .about-hero-copy {
+      max-width: 650px;
 
-.about-dot-pink {
-  position: absolute;
-  top: 90px;
-  left: 18%;
-  width: 13px;
-  height: 13px;
-  background: #D1425C;
-  border-radius: 999px;
-  animation: aboutBounce 1.6s ease-in-out infinite;
-}
+      margin: 0;
 
-.about-dot-green {
-  position: absolute;
-  bottom: 70px;
-  left: 47%;
-  width: 11px;
-  height: 11px;
-  background: #019B39;
-  border-radius: 999px;
-  animation: aboutBounce 1.8s ease-in-out infinite;
-}
+      color: rgba(255, 255, 255, 0.74);
 
-@keyframes aboutPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+      font-size: 14px;
+      line-height: 1.9;
+    }
 
-  50% {
-    transform: scale(1.05);
-    opacity: 0.85;
-  }
-}
+    .about-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
 
-@keyframes aboutBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
+      margin-top: 32px;
+    }
 
-  50% {
-    transform: translateY(-10px);
-  }
-}
+    .about-primary-link,
+    .about-secondary-link {
+      min-height: 52px;
 
-@media (max-width: 1100px) {
-  .about-page-wrap,
-  .about-history-section {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
 
-  .about-image-mission-grid,
-  .about-history-grid {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
+      padding: 0 22px;
 
-  .about-side-panel {
-    height: auto;
-    gap: 32px;
-  }
+      border-radius: 6px;
 
-  .about-main-heading {
-    font-size: 34px;
-  }
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
 
-  .about-section-title {
-    font-size: 28px;
-  }
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
 
-  .about-image {
-    height: 380px;
-  }
-}
+    .about-primary-link {
+      background: var(--about-green);
+      border: 1px solid var(--about-green);
 
-@media (max-width: 640px) {
-  .about-page-wrap {
-    margin-top: 80px;
-    padding-top: 38px;
-  }
+      color: #ffffff;
+    }
 
-  .about-main-heading {
-    font-size: 28px;
-  }
+    .about-secondary-link {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.34);
 
-  .about-copy,
-  .about-side-text {
-    font-size: 15px;
-  }
+      color: #ffffff;
+    }
 
-  .about-stats-row {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
+    .about-primary-link:hover,
+    .about-secondary-link:hover {
+      transform: translateY(-3px);
 
-  .about-stat {
-    min-height: auto;
-    padding-left: 12px;
-  }
+      box-shadow:
+        0 12px 26px
+        rgba(0, 0, 0, 0.2);
+    }
 
-  .about-stat-number {
-    font-size: 40px;
-  }
+    .about-secondary-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-  .about-image {
-    height: 300px;
-  }
+    .about-primary-link .material-symbols-outlined,
+    .about-secondary-link .material-symbols-outlined {
+      font-size: 19px;
+    }
 
-  .about-history-text-wrap {
-    grid-template-columns: 1fr;
-  }
+    .about-hero-image {
+      position: relative;
 
-  .about-history-face,
-  .about-dot-pink,
-  .about-dot-green {
-    display: none;
-  }
-}
-</style>
+      min-height: 515px;
 
-	</head>
-	<body class="!bg-white">
+      overflow: hidden;
 
-	<div id="navbar-placeholder"></div>
+      background: #214632;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
 
-	<div class="hidden lg:block" style="height: 200px;"></div>
+      box-shadow:
+        0 25px 65px
+        rgba(0, 0, 0, 0.27);
+    }
 
-<!-- ABOUT INTRO + IMAGE/MISSION SECTION -->
-<section class="about-page-wrap">
-  <!-- Page Intro -->
-  <div class="about-intro">
-    <h1 class="about-main-heading">
-      Empowering the Oil and Gas Industry with Integrated Products, Innovative Solutions, and Seamless Execution.
-    </h1>
+    .about-hero-image img {
+      position: absolute;
+      inset: 0;
 
-    <p class="about-copy">
-      We are an all-inclusive provider of integrated, specialized oilfield products and solutions across the Oil and Gas value chain.
-      Our total package model allows us to take on sizeable projects from supply chain, all the way through to maintenance.
-    </p>
-  </div>
+      width: 100%;
+      height: 100%;
 
-  <!-- Image and Mission/Vision start on the same line -->
-  <div class="about-image-mission-grid">
-    <img
-      src="./images/aboutus.png"
-      alt="AOS Orwell team"
-      class="about-image"
-    />
+      object-fit: cover;
+      object-position: center;
+    }
 
-    <div class="about-side-panel">
-      <!-- Mission -->
-      <div>
-        <h2 class="about-section-title">Our Mission</h2>
+    .about-hero-image::after {
+      content: "";
 
-        <p class="about-side-text">
-          To be the technical and operational partner of choice for international oil companies, national oil companies and independents operating in Africa.
-        </p>
-      </div>
+      position: absolute;
+      inset: 0;
 
-      <!-- Stats -->
-      <div class="about-stats-row">
-        <div class="about-stat">
-          <span class="about-stat-circle" style="background:#E9A6B2;"></span>
-          <h3 class="counter about-stat-number" data-target="50" data-suffix="+">0+</h3>
-          <p class="about-stat-label">Clients Satisfied</p>
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 35, 14, 0.83),
+          rgba(0, 35, 14, 0.03) 65%
+        );
+    }
+
+    .about-image-badge {
+      position: absolute;
+      left: 23px;
+      right: 23px;
+      bottom: 23px;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      padding: 17px 19px;
+
+      background: rgba(0, 44, 17, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+
+      color: rgba(255, 255, 255, 0.82);
+
+      font-size: 10px;
+      line-height: 1.6;
+
+      backdrop-filter: blur(7px);
+    }
+
+    .about-image-badge strong {
+      flex-shrink: 0;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    /* ==========================================
+       COMPANY OVERVIEW
+    ========================================== */
+
+    .about-overview {
+      padding: 100px 0;
+
+      background: #ffffff;
+    }
+
+    .about-overview-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.88fr)
+        minmax(0, 1.12fr);
+
+      align-items: start;
+      gap: 85px;
+    }
+
+    .about-overview h2,
+    .about-purpose-heading h2,
+    .about-history h2 {
+      margin: 0;
+
+      color: var(--about-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 3.8vw, 47px);
+      line-height: 1.17;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .about-overview-copy {
+      display: grid;
+      gap: 17px;
+
+      padding-top: 29px;
+    }
+
+    .about-overview-copy p,
+    .about-history-copy p {
+      margin: 0;
+
+      color: var(--about-copy);
+
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+
+      margin-top: 62px;
+    }
+
+    .about-stat {
+      min-height: 150px;
+
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      padding: 26px;
+
+      background: #f4f7f5;
+      border: 1px solid var(--about-border);
+      border-radius: 10px;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .about-stat:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 16px 34px
+        rgba(12, 54, 28, 0.1);
+    }
+
+    .about-stat-icon {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--about-green-soft);
+      border-radius: 50%;
+
+      color: var(--about-green);
+    }
+
+    .about-stat-icon .material-symbols-outlined {
+      font-size: 25px;
+    }
+
+    .about-stat h3 {
+      margin: 0 0 7px;
+
+      color: var(--about-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 37px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .about-stat p {
+      margin: 0;
+
+      color: #657068;
+
+      font-size: 9px;
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================
+       MISSION AND VISION
+    ========================================== */
+
+    .about-purpose {
+      padding: 100px 0 110px;
+
+      background: var(--about-soft);
+    }
+
+    .about-purpose-heading {
+      max-width: 800px;
+
+      margin-bottom: 45px;
+    }
+
+    .about-purpose-heading p {
+      max-width: 660px;
+
+      margin: 17px 0 0;
+
+      color: #657068;
+
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .about-purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .about-purpose-card {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 370px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      padding: 40px;
+
+      background: #ffffff;
+      border: 1px solid var(--about-border);
+      border-radius: 13px;
+
+      box-shadow:
+        0 12px 35px
+        rgba(12, 54, 28, 0.07);
+    }
+
+    .about-purpose-card-dark {
+      background: var(--about-green-dark);
+      border-color: var(--about-green-dark);
+
+      color: #ffffff;
+    }
+
+    .about-purpose-number {
+      position: absolute;
+      top: 23px;
+      right: 27px;
+
+      color: rgba(1, 155, 57, 0.13);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 77px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .about-purpose-card-dark .about-purpose-number {
+      color: rgba(255, 255, 255, 0.06);
+    }
+
+    .about-purpose-icon {
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 30px;
+
+      background: var(--about-green-soft);
+      border-radius: 50%;
+
+      color: var(--about-green);
+    }
+
+    .about-purpose-card-dark .about-purpose-icon {
+      background: rgba(103, 223, 145, 0.12);
+
+      color: #67df91;
+    }
+
+    .about-purpose-label {
+      display: block;
+
+      margin-bottom: 11px;
+
+      color: var(--about-green);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .about-purpose-card-dark .about-purpose-label {
+      color: #67df91;
+    }
+
+    .about-purpose-card h3 {
+      max-width: 470px;
+
+      margin: 0 0 17px;
+
+      color: var(--about-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+      line-height: 1.32;
+      font-weight: 700;
+    }
+
+    .about-purpose-card-dark h3 {
+      color: #ffffff;
+    }
+
+    .about-purpose-card p {
+      max-width: 510px;
+
+      margin: auto 0 0;
+
+      color: #657068;
+
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .about-purpose-card-dark p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    /* ==========================================
+       HISTORY
+    ========================================== */
+
+    .about-history {
+      padding: 90px 0 55px;
+
+      background: #ffffff;
+    }
+
+    .about-history-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+      align-items: start;
+      gap: 85px;
+    }
+
+    .about-history-copy {
+      display: grid;
+      gap: 16px;
+
+      padding-top: 29px;
+    }
+
+    /* ==========================================
+       EXISTING MILESTONE SECTION
+    ========================================== */
+
+    #timeline {
+      display: flex;
+
+      height: 450px;
+
+      margin-bottom: 80px;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      background-color: #023315;
+    }
+
+    #timeline::-webkit-scrollbar {
+      height: 5px;
+
+      background-color: rgb(214, 214, 214);
+    }
+
+    #timeline::-webkit-scrollbar-thumb {
+      height: 5px;
+
+      background-color: #c70f32;
+    }
+
+    .tl-item {
+      position: relative;
+
+      min-width: 330px;
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      overflow: hidden;
+
+      color: #ffffff;
+
+      text-align: center;
+
+      transition: flex 0.5s ease;
+    }
+
+    .tl-item:hover {
+      flex: 2;
+    }
+
+    .tl-bg {
+      position: absolute;
+      inset: 0;
+
+      background-size: cover;
+      background-position: center;
+
+      transition: transform 0.5s ease;
+    }
+
+    .tl-item:hover .tl-bg {
+      transform: scale(1.05);
+    }
+
+    .tl-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background: rgba(0, 0, 0, 0);
+
+      transition: background 0.5s ease;
+    }
+
+    .tl-item:hover .tl-overlay {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .tl-year {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      z-index: 2;
+
+      transform: translate(-50%, -50%);
+
+      padding: 0 20px;
+
+      background: rgba(0, 0, 0, 0.4);
+      border-top: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      border-radius: 5px;
+    }
+
+    .tl-year p {
+      margin: 0;
+
+      font-size: 1.6rem;
+    }
+
+    .tl-content {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+
+      padding: 0 30px 20px;
+
+      opacity: 0;
+
+      transform: translateY(10px);
+
+      font-size: 13px;
+      text-align: left;
+
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    }
+
+    .tl-item:hover .tl-content {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    .tl-content h3 {
+      margin-bottom: 10px;
+
+      color: #ffffff;
+
+      font-size: 13px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transform: translateY(-50%);
+
+      padding: 10px;
+
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+
+      color: #ffffff;
+
+      cursor: pointer;
+
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .arrow i {
+      font-size: 24px;
+    }
+
+    #left-arrow {
+      left: 10px;
+    }
+
+    #right-arrow {
+      right: 10px;
+    }
+
+    /* ==========================================
+       CORE VALUES RESPONSIVENESS
+    ========================================== */
+
+    .about-core-values {
+      padding-top: 20px;
+    }
+
+    .about-video-frame {
+      position: relative;
+
+      width: min(430px, 100%);
+      height: 290px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-video-frame::before,
+    .about-video-frame::after {
+      content: "";
+
+      position: absolute;
+
+      width: 80px;
+      height: 220px;
+
+      border-top: 30px solid var(--about-green);
+      border-bottom: 30px solid var(--about-green);
+    }
+
+    .about-video-frame::before {
+      left: 0;
+
+      border-left: 30px solid var(--about-green);
+    }
+
+    .about-video-frame::after {
+      right: 0;
+
+      border-right: 30px solid var(--about-green);
+    }
+
+    .about-video-frame video {
+      position: relative;
+      z-index: 2;
+
+      width: 320px;
+      max-width: calc(100% - 80px);
+      height: 290px;
+
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 960px) {
+      .about-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-hero-image {
+        min-height: 500px;
+      }
+
+      .about-overview-grid,
+      .about-history-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .about-overview-copy,
+      .about-history-copy {
+        padding-top: 0;
+      }
+
+      .about-purpose-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      #timeline {
+        height: 300px;
+      }
+
+      .tl-item {
+        min-width: 250px;
+      }
+
+      .tl-content h3 {
+        font-size: 12px;
+      }
+
+      .tl-year p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-main {
+        padding-top: 92px;
+      }
+
+      .about-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .about-hero {
+        padding: 62px 0 70px;
+      }
+
+      .about-hero::before {
+        top: -120px;
+        right: -130px;
+
+        width: 320px;
+        height: 320px;
+
+        border-width: 48px;
+      }
+
+      .about-hero h1 {
+        font-size: 40px;
+      }
+
+      .about-hero-copy {
+        font-size: 13px;
+      }
+
+      .about-hero-actions {
+        flex-direction: column;
+      }
+
+      .about-primary-link,
+      .about-secondary-link {
+        width: 100%;
+      }
+
+      .about-hero-image {
+        min-height: 390px;
+      }
+
+      .about-image-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .about-overview,
+      .about-purpose {
+        padding: 70px 0;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+
+        margin-top: 43px;
+      }
+
+      .about-stat {
+        min-height: 125px;
+      }
+
+      .about-purpose-card {
+        min-height: 330px;
+
+        padding: 30px 23px;
+      }
+
+      .about-purpose-card h3 {
+        font-size: 21px;
+      }
+
+      .about-history {
+        padding: 70px 0 42px;
+      }
+
+      .about-video-frame {
+        height: 250px;
+      }
+
+      .about-video-frame::before,
+      .about-video-frame::after {
+        width: 55px;
+        height: 185px;
+
+        border-top-width: 22px;
+        border-bottom-width: 22px;
+      }
+
+      .about-video-frame::before {
+        border-left-width: 22px;
+      }
+
+      .about-video-frame::after {
+        border-right-width: 22px;
+      }
+
+      .about-video-frame video {
+        width: calc(100% - 70px);
+        max-width: none;
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body class="!bg-white">
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="about-main">
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="about-hero">
+      <div class="about-shell about-hero-grid">
+
+        <div>
+
+          <span class="about-kicker">
+            About AOS Orwell
+          </span>
+
+          <h1>
+            Indigenous capability. Global standards.
+            Integrated energy solutions.
+          </h1>
+
+          <p class="about-hero-copy">
+            AOS Orwell is one of Africa’s leading indigenous energy
+            service companies, delivering integrated products,
+            engineering solutions and operational support across
+            the oil and gas value chain.
+          </p>
+
+          <div class="about-hero-actions">
+
+            <a
+              href="#ourMilestones"
+              class="about-primary-link"
+            >
+              Explore our journey
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="./services.html"
+              class="about-secondary-link"
+            >
+              Explore our services
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
         </div>
 
-        <div class="about-stat">
-          <span class="about-stat-circle" style="background:#99D7B0;"></span>
-          <h3 class="counter about-stat-number" data-target="40" data-suffix="+">0+</h3>
-          <p class="about-stat-label">Years of Operation</p>
+        <div class="about-hero-image">
+
+          <img
+            src="./images/aboutus.png"
+            alt="AOS Orwell team members"
+          />
+
+          <div class="about-image-badge">
+
+            <strong>1981</strong>
+
+            <span>
+              Delivering energy solutions for over four decades
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="about-stat">
-          <span class="about-stat-circle" style="background:#E9D9C8;"></span>
-          <h3 class="counter about-stat-number" data-target="100" data-suffix="+">0+</h3>
-          <p class="about-stat-label">Projects Completed</p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         COMPANY OVERVIEW
+    ========================================== -->
+
+    <section class="about-overview">
+      <div class="about-shell">
+
+        <div class="about-overview-grid">
+
+          <div>
+
+            <span class="about-kicker">
+              Who we are
+            </span>
+
+            <h2>
+              Empowering the energy industry with integrated expertise
+            </h2>
+
+          </div>
+
+          <div class="about-overview-copy">
+
+            <p>
+              We are an all-inclusive provider of integrated,
+              specialised oilfield products and solutions across
+              the oil and gas value chain.
+            </p>
+
+            <p>
+              Our total-package model enables us to support sizeable
+              projects from planning, procurement and supply-chain
+              coordination through engineering, execution, operations
+              and maintenance.
+            </p>
+
+            <p>
+              With strong local content, experienced personnel,
+              world-class technology partnerships and extensive
+              operational capability, AOS Orwell provides dependable
+              services across Well Construction, Process Management,
+              Electrical and Instrumentation, and Operations and
+              Maintenance.
+            </p>
+
+          </div>
+
         </div>
+
+        <div class="about-stats">
+
+          <article class="about-stat">
+
+            <span class="about-stat-icon">
+              <span class="material-symbols-outlined">
+                handshake
+              </span>
+            </span>
+
+            <div>
+
+              <h3
+                class="counter"
+                data-target="50"
+                data-suffix="+"
+              >
+                0+
+              </h3>
+
+              <p>Clients served</p>
+
+            </div>
+
+          </article>
+
+          <article class="about-stat">
+
+            <span class="about-stat-icon">
+              <span class="material-symbols-outlined">
+                history
+              </span>
+            </span>
+
+            <div>
+
+              <h3
+                class="counter"
+                data-target="40"
+                data-suffix="+"
+              >
+                0+
+              </h3>
+
+              <p>Years of operation</p>
+
+            </div>
+
+          </article>
+
+          <article class="about-stat">
+
+            <span class="about-stat-icon">
+              <span class="material-symbols-outlined">
+                engineering
+              </span>
+            </span>
+
+            <div>
+
+              <h3
+                class="counter"
+                data-target="100"
+                data-suffix="+"
+              >
+                0+
+              </h3>
+
+              <p>Projects delivered</p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MISSION AND VISION
+    ========================================== -->
+
+    <section class="about-purpose">
+      <div class="about-shell">
+
+        <div class="about-purpose-heading">
+
+          <span class="about-kicker">
+            What guides us
+          </span>
+
+          <h2>
+            Built around partnership, performance and long-term value
+          </h2>
+
+          <p>
+            Our mission and vision define how we serve our clients,
+            develop our people and contribute to Africa’s energy
+            industry.
+          </p>
+
+        </div>
+
+        <div class="about-purpose-grid">
+
+          <article class="about-purpose-card">
+
+            <div class="about-purpose-number">
+              01
+            </div>
+
+            <div class="about-purpose-icon">
+              <span class="material-symbols-outlined">
+                flag
+              </span>
+            </div>
+
+            <span class="about-purpose-label">
+              Our Mission
+            </span>
+
+            <h3>
+              To be the technical and operational partner of choice
+            </h3>
+
+            <p>
+              To be the technical and operational partner of choice
+              for international oil companies, national oil companies
+              and independent operators across Africa.
+            </p>
+
+          </article>
+
+          <article
+            class="about-purpose-card about-purpose-card-dark"
+          >
+
+            <div class="about-purpose-number">
+              02
+            </div>
+
+            <div class="about-purpose-icon">
+              <span class="material-symbols-outlined">
+                visibility
+              </span>
+            </div>
+
+            <span class="about-purpose-label">
+              Our Vision
+            </span>
+
+            <h3>
+              Delivering dependable, world-class energy solutions
+            </h3>
+
+            <p>
+              To be a dependable partner, delivering world-class
+              solutions that support safe, efficient and sustainable
+              energy operations.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         HISTORY INTRODUCTION
+    ========================================== -->
+
+    <section
+      id="ourStory"
+      class="about-history"
+    >
+      <div class="about-shell about-history-grid">
+
+        <div>
+
+          <span class="about-kicker">
+            Our history
+          </span>
+
+          <h2>
+            More than four decades of indigenous
+            energy-service excellence
+          </h2>
+
+        </div>
+
+        <div class="about-history-copy">
+
+          <p>
+            From our incorporation in 1981, AOS Orwell has grown
+            through strategic acquisitions, technology partnerships,
+            local-capacity development and continuous investment in
+            specialised facilities and personnel.
+          </p>
+
+          <p>
+            Today, we are one of the foremost indigenous oilfield
+            servicing companies in the country, supporting clients
+            with integrated expertise throughout the asset lifecycle.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EXISTING MILESTONES
+    ========================================== -->
+
+    <div
+      id="ourMilestones"
+      class="relative flex flex-col items-center px-6 md:px-20 mt-20 mb-5 sm:mb-10"
+    >
+
+      <h1 class="text-base sm:text-xl md:text-2xl font-medium">
+        OUR MILESTONES
+      </h1>
+
+      <div
+        id="left-arrow"
+        class="arrow"
+      >
+        <i class="bi bi-chevron-left"></i>
       </div>
 
-      <!-- Vision -->
-      <div>
-        <h2 class="about-section-title">Our Vision</h2>
-
-        <p class="about-side-text">
-          To be a dependable partner, delivering world-class solutions to the energy industry.
-        </p>
+      <div
+        id="right-arrow"
+        class="arrow"
+      >
+        <i class="bi bi-chevron-right"></i>
       </div>
+
     </div>
-  </div>
-</section>
 
-<!-- OUR HISTORY SECTION -->
-<section id="ourStory" class="about-history-section">
-  <div class="about-history-grid">
-    <div class="our-story-left">
-      <p class="about-label">Our History</p>
+    <section
+      id="timeline"
+      aria-label="AOS Orwell company milestones"
+    >
 
-      <h2 class="about-history-heading">
-        We are one of the foremost Indigenous Oilfield Servicing Companies in the country.
-      </h2>
-    </div>
+      <!-- 1981 -->
+      <div class="tl-item">
 
-    <div class="about-history-text-wrap">
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/1981.jpg')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>1981</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Incorporation of Africa Oilfield Services.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 1991 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/1991.jpg')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>1991</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Acquisition of fishing and machine shop
+            business from BP/NSCO.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 2002 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2002.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2002</p>
+        </div>
+
+        <div class="tl-content">
+
+          <h3>
+            &bull; Orwell Nigerian becomes a privately owned
+            indigenous company.
+          </h3>
+
+          <h3>
+            &bull; Acquisition of wireline &amp; pipe recovery
+            business from Weatherford.
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- 2006 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2006.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2006</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Launched pressure control business.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 2007 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2007.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2007</p>
+        </div>
+
+        <div class="tl-content">
+
+          <h3>
+            &bull; First local assembly of PDC bits.
+          </h3>
+
+          <h3>
+            &bull; Fishing training school.
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- 2011 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2011.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2011</p>
+        </div>
+
+        <div class="tl-content">
+
+          <h3>
+            &bull; Acquisition of NOV Fishing business.
+          </h3>
+
+          <h3>
+            &bull; Acquisition of Equipment and Tooling Africa.
+          </h3>
+
+          <h3>
+            &bull; Merger of Africa Oilfield Services Ltd and
+            Orwell International Nigeria Limited.
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- 2012 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2012.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2012</p>
+        </div>
+
+        <div class="tl-content">
+
+          <h3>
+            &bull; Acquisition of Otiotols Africa Limited &amp;
+            Titan Tubulars Nigeria Limited.
+          </h3>
+
+          <h3>
+            &bull; Built the largest conductor casing and welding
+            fabrication shop.
+          </h3>
+
+          <h3>
+            &bull; Nigerian Content Achievement Award
+            (Oil and Gas Council).
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- 2013 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2013.jpg')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2013</p>
+        </div>
+
+        <div class="tl-content">
+
+          <h3>
+            &bull; Deployed ERP system.
+          </h3>
+
+          <h3>
+            &bull; Built first instrumentation cabinet
+            assembly plant.
+          </h3>
+
+          <h3>
+            &bull; Crossed US$100 million revenue mark.
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- 2014 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2014.jpg')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2014</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Launched a valve repair and maintenance centre.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 2015 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2015.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2015</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Launched first metering skid facility.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 2017 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2017.png')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2017</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Completed the world-class home base facility
+            in Port Harcourt.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 2020 -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2020.jpg')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2020</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &bull; Received the contract award for O&amp;M
+            service from NLNG valued at US$63 million.
+          </h3>
+        </div>
+
+      </div>
+
+      <!-- 2023+ -->
+      <div class="tl-item">
+
+        <div
+          class="tl-bg"
+          style="background-image: url('./images/2025.jpg')"
+        ></div>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-year">
+          <p>2023+</p>
+        </div>
+
+        <div class="tl-content">
+          <h3>
+            &rarr; Continued progress
+          </h3>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         EXISTING CORE VALUES AND VIDEO
+    ========================================== -->
+
+    <section
+      class="about-core-values flex flex-col px-6 md:px-20 lg:flex-row items-center gap-y-15 gap-x-20 mb-14 md:mb-24"
+    >
+
+      <div class="flex flex-col gap-y-15 w-full lg:w-1/2">
+
+        <div class="flex flex-col gap-y-4">
+
+          <h1 class="text-xl xsm:text-2xl lg:text-3xl font-semibold">
+            Our Core Values
+          </h1>
+
+          <p class="text-xs sm:text-[13px] text-gray-600">
+            At AOS Orwell, our core values represent a set of guiding
+            principles that pilot our people and business and form the
+            support structure upon which we conduct our work to achieve
+            the goals of this organisation.
+
+            <br />
+            <br />
+
+            We have been able to find strength in our diversity and
+            make people feel welcome in an exceptionally safe
+            environment that allows everyone to thrive.
+          </p>
+
+        </div>
+
+        <div class="about-video-frame">
+
+          <video
+            src="./videos/about.mp4"
+            loop
+            muted
+            autoplay
+            playsinline
+          ></video>
+
+        </div>
+
+      </div>
+
+      <div class="flex flex-col gap-y-5 w-full lg:w-1/2">
+
+        <div class="flex flex-row gap-x-4 items-start">
+
+          <img
+            src="./images/excellence.png"
+            alt="Excellence"
+            class="w-10 xsm:w-15 md:w-20 h-auto"
+          />
+
+          <div class="flex flex-col gap-y-2">
+
+            <h3 class="text-base font-semibold">
+              Excellence
+            </h3>
+
+            <p class="text-xs xsm:text-[13px] text-gray-600">
+              We get it right from the start. We keep our promises
+              to deliver on all projects and commitments in a timely
+              manner. We do this by maintaining very high standards
+              of behaviour and operations that result in a
+              world-class quality workforce, products and service
+              delivery.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="flex flex-row gap-x-4 items-start">
+
+          <img
+            src="./images/integrity.png"
+            alt="Honesty and Integrity"
+            class="w-10 xsm:w-15 md:w-20 h-auto"
+          />
+
+          <div class="flex flex-col gap-y-2">
+
+            <h3 class="text-base font-semibold">
+              Honesty and Integrity
+            </h3>
+
+            <p class="text-xs xsm:text-[13px] text-gray-600">
+              Our business is open and transparent, with high regard
+              for fairness and equality, while we remain committed
+              to maintaining high ethical standards in all our
+              dealings.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="flex flex-row gap-x-4 items-start">
+
+          <img
+            src="./images/focus.png"
+            alt="Customer Focus"
+            class="w-10 xsm:w-15 md:w-20 h-auto"
+          />
+
+          <div class="flex flex-col gap-y-2">
+
+            <h3 class="text-base font-semibold">
+              Customer Focus
+            </h3>
+
+            <p class="text-xs xsm:text-[13px] text-gray-600">
+              We foster quality, strategic and lasting relationships
+              with our customers because we understand their needs
+              and how to meet those needs in a way that transforms
+              them into satisfied, loyal brand advocates.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="flex flex-row gap-x-4 items-start">
+
+          <img
+            src="./images/innovation.png"
+            alt="Innovation"
+            class="w-10 xsm:w-15 md:w-20 h-auto"
+          />
+
+          <div class="flex flex-col gap-y-2">
+
+            <h3 class="text-base font-semibold">
+              Innovation
+            </h3>
+
+            <p class="text-xs xsm:text-[13px] text-gray-600">
+              We have stayed successful over the years by deploying
+              cutting-edge technology and transferring knowledge to
+              create value through our products and services. We
+              reward and recognise innovation in an enabling
+              environment.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
       <img
-         src="./images/about circle design.png"
-         alt=""
-         class="about-history-face"
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
       />
 
-      <p class="about-copy">
-        We source, deliver, monitor and maintain integrated oilfield products and solutions across the Oil and Gas value chain.
-        With strong local content, technical capability and operational experience, AOS Orwell supports clients with dependable services
-        across well construction, process management, electrical and instrumentation, operations and maintenance.
-      </p>
-   </div>
-  </div>
-</section>
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
 
-		<!-- TIMELINE SECTION -->
-		<div
-			class="relative flex flex-col items-center px-6 md:px-20 mt-20 mb-5 sm:mb-10"
-		>
-			<h1 class="text-base sm:text-xl md:text-2xl font-medium"
-				>OUR MILESTONES</h1
-			>
-			<div id="left-arrow" class="arrow"
-				><i class="bi bi-chevron-left"></i
-			></div>
-			<div id="right-arrow" class="arrow"
-				><i class="bi bi-chevron-right"></i
-			></div>
-		</div>
-		<section id="timeline" class="overflow-y-scroll">
-  <!-- 1981 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/1981.jpg')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>1981</p></div>
-    <div class="tl-content">
-      <h3>&bull; Incorporation of Africa Oilfield Services.</h3>
     </div>
-  </div>
 
-  <!-- 1991 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/1991.jpg')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>1991</p></div>
-    <div class="tl-content">
-      <h3>&bull; Acquisition of fishing and machine shop business from BP/NSCO.</h3>
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY INFORMATION -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p class="text-xs sm:text-[13px] font-medium leading-loose">
+            Providing integrated oilfield solutions across Well
+            Construction, Process Automation &amp; Control and
+            Operations &amp; Maintenance, to support the energy
+            industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+
+              <br />
+              <br />
+
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos.
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
     </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
   </div>
 
-  <!-- 2002 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2002.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2002</p></div>
-    <div class="tl-content">
-      <h3>&bull; Orwell Nigerian becomes a privately owned indigenous company.</h3>
-      <h3>&bull; Acquisition of wireline &amp; pipe recovery business from Weatherford.</h3>
-    </div>
-  </div>
+  <!-- ==========================================
+       SCRIPTS
+  ========================================== -->
 
-  <!-- 2006 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2006.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2006</p></div>
-    <div class="tl-content">
-      <h3>&bull; Launched pressure control business.</h3>
-    </div>
-  </div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  ></script>
 
-  <!-- 2007 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2007.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2007</p></div>
-    <div class="tl-content">
-      <h3>&bull; First Local assembly of PDC bits.</h3>
-      <h3>&bull; Fishing training school.</h3>
-    </div>
-  </div>
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        const counters =
+          document.querySelectorAll(".counter");
 
-  <!-- 2011 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2011.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2011</p></div>
-    <div class="tl-content">
-      <h3>&bull; Acquisition of NOV Fishing business.</h3>
-      <h3>&bull; Acquisition of Equipment and Tooling Africa.</h3>
-      <h3>&bull; Merger of Africa Oilfield Services Ltd and Orwell International Nigeria Limited.</h3>
-    </div>
-  </div>
+        const counterObserver =
+          new IntersectionObserver(
+            function (entries, observer) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                  return;
+                }
 
-  <!-- 2012 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2012.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2012</p></div>
-    <div class="tl-content">
-      <h3>&bull; Acquisition of Otiotols Africa Limited &amp; Titan Tubulars Nigeria Limited.</h3>
-      <h3>&bull; Built the Largest conductor casing and welding fabrication shop.</h3>
-      <h3>&bull; Nigerian Content Achievement Award (Oil and Gas Council).</h3>
-    </div>
-  </div>
+                const counter = entry.target;
 
-  <!-- 2013 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2013.jpg')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2013</p></div>
-    <div class="tl-content">
-      <h3>&bull; Deployed ERP system.</h3>
-      <h3>&bull; Built first Instrumentation cabinet assembly plant.</h3>
-      <h3>&bull; Crossed US$100 million revenue mark.</h3>
-    </div>
-  </div>
+                const target =
+                  Number(
+                    counter.getAttribute("data-target")
+                  ) || 0;
 
-  <!-- 2014 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2014.jpg')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2014</p></div>
-    <div class="tl-content">
-      <h3>&bull; Launched a valve repair and maintenance center.</h3>
-    </div>
-  </div>
+                const suffix =
+                  counter.getAttribute("data-suffix") || "";
 
-  <!-- 2015 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2015.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2015</p></div>
-    <div class="tl-content">
-      <h3>&bull; Launched first metering skid facility.</h3>
-    </div>
-  </div>
+                let count = 0;
 
-  <!-- 2017 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2017.png')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2017</p></div>
-    <div class="tl-content">
-      <h3>&bull; Completed the world-class home base facility in PH.</h3>
-    </div>
-  </div>
+                const duration = 1400;
 
-  <!-- 2020 -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2020.jpg')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2020</p></div>
-    <div class="tl-content">
-      <h3>&bull; Received the contract award for O&amp;M service from NLNG valued at US$63 million.</h3>
-    </div>
-  </div>
+                const interval = Math.max(
+                  16,
+                  Math.floor(
+                    duration / Math.max(target, 1)
+                  )
+                );
 
-  <!-- 2023+ -->
-  <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('./images/2025.jpg')"></div>
-    <div class="tl-overlay"></div>
-    <div class="tl-year"><p>2023+</p></div>
-    <div class="tl-content">
-      <h3>&rarr; Continued progress</h3>
-    </div>
-  </div>
-</section>
+                function updateCounter() {
+                  count += 1;
 
-		<section
-			class="flex flex-col px-6 md:px-20 lg:flex-row items-center gap-y-15 gap-x-20 mb-14 md:mb-24"
-		>
-			<div class="flex flex-col gap-y-15 w-full lg:w-1/2">
-				<div class="flex flex-col gap-y-4">
-					<h1 class="text-xl xsm:text-2xl lg:text-3xl font-semibold"
-						>Our Core Values</h1
-					>
-					<p class="text-xs sm:text-[13px] text-gray-600"
-						>At AOS Orwell, our core values represent a set of guiding
-						principles that pilot our people and business & form the support
-						structure upon which we conduct our work to achieve the goals of
-						this organization. <br />
-						<br />
-						We have been able to find strength in our diversity and make people
-						feel welcome in an exceptional safe environment that allows everyone
-						thrive.</p
-					>
-				</div>
-				<div class="relative flex items-center justify-center" style="width: 430px; height: 260px;">
-					<!-- LEFT GREEN BRACKET -->
+                  counter.textContent =
+                    Math.min(count, target) + suffix;
 
-					<div
-		              style="
-			             position: absolute;
-			             left: 0;
-			             width: 80px;
-			             height: 220px;
-			             border-left: 30px solid #019b39;
-			             border-top: 30px solid #019b39;
-			              border-bottom: 30px solid #019b39;
-		                "
-						></div>
+                  if (count < target) {
+                    window.setTimeout(
+                      updateCounter,
+                      interval
+                    );
+                  }
+                }
 
-	                    <!-- RIGHT GREEN BRACKET -->
-	                    <div
-		                    style="
-			                   position: absolute;
-			                   right: 0;
-			                   width: 80px;
-			                   height: 220px;
-			                   border-right: 30px solid #019b39;
-			                   border-top: 30px solid #019b39;
-			                   border-bottom: 30px solid #019b39;
-	              	       "
-	                    ></div>
+                updateCounter();
 
-				     <!-- VIDEO / SLIDESHOW -->
-					<video
-						src="./videos/about.mp4"
-						style="width: 320px; height: 310px; z-index: 2;"
-						class="object-cover object-top"
-						loop
-						muted
-						autoplay
-					></video>
-				</div>
-			</div>
-			<div class="flex flex-col gap-y-5 w-full lg:w-1/2">
-				<div class="flex flex-row gap-x-4 items-start">
-					<img
-						src="./images/excellence.png"
-						alt=""
-						class="w-10 xsm:w-15 md:w-20 h-auto"
-					/>
-					<div class="flex flex-col gap-y-2">
-						<h3 class="text-base font-semibold">Excellence</h3>
-						<p class="text-xs xsm:text-[13px] text-gray-600"
-							>We get it right from the start! We keep our promises to deliver
-							on all projects and commitments in a timely manner. We do this by
-							maintaining very high standards of behavior and operations that
-							result in a world-class quality workforce, products and service
-							delivery.</p
-						>
-					</div>
-				</div>
-				<div class="flex flex-row gap-x-4 items-start">
-					<img
-						src="./images/integrity.png"
-						alt=""
-						class="w-10 xsm:w-15 md:w-20 h-auto"
-					/>
-					<div class="flex flex-col gap-y-2">
-						<h3 class="text-base font-semibold">Honest and Integrity</h3>
-						<p class="text-xs xsm:text-[13px] text-gray-600"
-							>Our business is open and transparent with high regard for
-							fairness and equality while we remain committed to maintaining
-							high ethical standards in all our dealings.</p
-						>
-					</div>
-				</div>
-				<div class="flex flex-row gap-x-4 items-start">
-					<img
-						src="./images/focus.png"
-						alt=""
-						class="w-10 xsm:w-15 md:w-20 h-auto"
-					/>
-					<div class="flex flex-col gap-y-2">
-						<h3 class="text-base font-semibold">Customer Focus</h3>
-						<p class="text-xs xsm:text-[13px] text-gray-600"
-							>We foster quality, strategic and lasting relationships with our
-							customers because we understand their needs and how to meet those
-							needs in a way that transforms them into satisfied, raving brand
-							advocates.</p
-						>
-					</div>
-				</div>
-				<div class="flex flex-row gap-x-4 items-start">
-					<img
-						src="./images/innovation.png"
-						alt=""
-						class="w-10 xsm:w-15 md:w-20 h-auto"
-					/>
-					<div class="flex flex-col gap-y-2">
-						<h3 class="text-base font-semibold">Innovation</h3>
-						<p class="text-xs xsm:text-[13px] text-gray-600"
-							>We have stayed winning over the years by simply deploying
-							cutting-edge technology transfer to create value through our
-							products and services within a saturated eco system. We reward and
-							recognize innovation in an enabled environment like ours.</p
-						>
-					</div>
-				</div>
-			</div>
-		</section>
+                observer.unobserve(counter);
+              });
+            },
+            {
+              threshold: 0.45
+            }
+          );
+
+        counters.forEach(function (counter) {
+          counterObserver.observe(counter);
+        });
+
+        const timeline =
+          document.getElementById("timeline");
+
+        const leftArrow =
+          document.getElementById("left-arrow");
+
+        const rightArrow =
+          document.getElementById("right-arrow");
+
+        if (
+          timeline &&
+          leftArrow &&
+          rightArrow
+        ) {
+          leftArrow.addEventListener(
+            "click",
+            function () {
+              timeline.scrollBy({
+                left: -330,
+                behavior: "smooth"
+              });
+            }
+          );
+
+          rightArrow.addEventListener(
+            "click",
+            function () {
+              timeline.scrollBy({
+                left: 330,
+                behavior: "smooth"
+              });
+            }
+          );
+        }
+
+        if (window.gsap) {
+          document
+            .querySelectorAll(".tl-item")
+            .forEach(function (item) {
+              const content =
+                item.querySelector(".tl-content");
+
+              if (!content) {
+                return;
+              }
+
+              gsap.set(content, {
+                opacity: 0,
+                y: 50
+              });
+
+              item.addEventListener(
+                "mouseenter",
+                function () {
+                  gsap.to(content, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "power3.out"
+                  });
+                }
+              );
+
+              item.addEventListener(
+                "mouseleave",
+                function () {
+                  gsap.to(content, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.6,
+                    ease: "power3.in"
+                  });
+                }
+              );
+            });
+        }
+      }
+    );
+  </script>
+
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
+
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = navbarHTML;
+
+        const navbarScript =
+          document.createElement("script");
+
+        navbarScript.src = "./navbar.js";
+
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
 
 	
 		<footer

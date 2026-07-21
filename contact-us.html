@@ -1,668 +1,2757 @@
+<!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="output.css">
+  <meta charset="UTF-8" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-    <!-- ✅ ANIMATION STYLE -->
-<style>
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-.contact-location-btn.active-location {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.55);
-}
+  <title>Contact Us | AOS Orwell</title>
 
-.contact-map-office-grid {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 28px;
-  align-items: stretch;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-.contact-map-box {
-  height: 430px;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #f3f4f6;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
-.contact-office-panel {
-  min-height: 430px;
-  background: #014E1E;
-  color: white;
-  border-radius: 14px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-.contact-office-label {
-  font-size: 12px;
-  font-weight: 600;
-  opacity: 0.85;
-  margin-bottom: 8px;
-}
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
 
-.contact-office-title {
-  font-size: 25px;
-  line-height: 1.15;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
 
-.contact-office-subtitle {
-  font-size: 12px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.86);
-  margin-bottom: 14px;
-}
+  <link rel="stylesheet" href="./output.css" />
 
-.contact-office-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  <style>
+    :root {
+      --contact-green: #019b39;
+      --contact-green-dark: #0b2818;
+      --contact-green-deep: #061c10;
+      --contact-green-soft: #eaf7ee;
+      --contact-ink: #111914;
+      --contact-copy: #5e6962;
+      --contact-soft: #f3f7f4;
+      --contact-border: #dfe7e2;
+      --contact-white: #ffffff;
+    }
 
-.contact-location-btn {
-  text-align: left;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: transparent;
-  transition: 0.25s ease;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.contact-location-btn:hover,
-.contact-location-btn.active-location {
-  background: rgba(255, 255, 255, 0.13);
-  border-color: rgba(255, 255, 255, 0.55);
-}
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--contact-ink);
+      font-family: "Poppins", sans-serif;
+    }
 
-.contact-location-btn h3 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
+    .contact-page,
+    .contact-page * {
+      box-sizing: border-box;
+    }
 
-.contact-location-btn p {
-  font-size: 11px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.9);
-}
+    .contact-page {
+      padding-top: 120px;
+      overflow: hidden;
+      background: #ffffff;
+    }
 
-.contact-email-grid {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  text-align: center;
-}
+    .contact-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
 
-@media (max-width: 760px) {
-  .contact-map-office-grid {
-    grid-template-columns: 1fr;
-  }
+    .contact-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
 
-  .contact-map-box {
-    height: 340px;
-  }
+      margin-bottom: 15px;
 
-  .contact-office-panel {
-    min-height: auto;
-  }
+      color: var(--contact-green);
 
-  .contact-email-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-.contact-form-social-section {
-  background: #f7f8f7;
-  padding: 70px 80px 55px;
-}
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
 
-.contact-form-social-grid {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 0.95fr;
-  gap: 36px;
-  align-items: start;
-}
+    .contact-kicker::before {
+      content: "";
 
-.contact-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 36px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-}
+      width: 34px;
+      height: 2px;
 
-.contact-card h2,
-.contact-card h3 {
-  margin: 0;
-}
+      background: currentColor;
+    }
 
-.contact-card-title {
-  font-size: 26px;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 10px;
-}
+    .contact-heading {
+      margin: 0;
 
-.contact-card-text {
-  font-size: 14px;
-  color: #4b5563;
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
+      color: var(--contact-ink);
 
-.contact-card-text a {
-  color: #019B39;
-  font-weight: 700;
-}
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 4vw, 49px);
+      line-height: 1.16;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
 
-.contact-form-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+    .contact-section-header {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 430px);
 
-.contact-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+      align-items: end;
+      gap: 65px;
 
-.contact-field label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #1f2937;
-}
+      margin-bottom: 45px;
+    }
 
-.contact-field input,
-.contact-field textarea {
-  width: 100%;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  padding: 12px 14px;
-  font-size: 14px;
-  outline: none;
-  background: #fff;
-}
+    .contact-section-copy {
+      margin: 0;
 
-.contact-field textarea {
-  height: 110px;
-  resize: none;
-}
+      color: var(--contact-copy);
 
-.contact-field input:focus,
-.contact-field textarea:focus {
-  border-color: #019B39;
-  box-shadow: 0 0 0 3px rgba(1, 155, 57, 0.12);
-}
+      font-size: 13px;
+      line-height: 1.85;
+    }
 
-.contact-submit-btn {
-  width: 100%;
-  background: #019B39;
-  color: #ffffff;
-  border: 1px solid #019B39;
-  border-radius: 8px;
-  padding: 13px 18px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
+    /* ==========================================
+       HERO
+    ========================================== */
 
-.contact-submit-btn:hover {
-  background: #007a32;
-  border-color: #007a32;
-}
+    .contact-hero {
+      position: relative;
+      isolation: isolate;
 
-.contact-instagram-box {
-  margin-top: 22px;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  background: #fff;
-  padding: 14px;
-  max-height: 560px;
-  overflow: hidden;
-}
+      overflow: hidden;
 
-.contact-instagram-box .instagram-media {
-  min-width: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-}
+      padding: 92px 0 100px;
 
-@media (max-width: 900px) {
-  .contact-form-social-section {
-    padding: 56px 24px;
-  }
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(1, 155, 57, 0.25),
+          transparent 34%
+        ),
+        linear-gradient(
+          125deg,
+          #061c10 0%,
+          #0b2d1b 58%,
+          #075528 100%
+        );
 
-  .contact-form-social-grid {
-    grid-template-columns: 1fr;
-  }
+      color: #ffffff;
+    }
 
-  .contact-card {
-    padding: 28px;
-  }
-}
-</style>
+    .contact-hero::before {
+      content: "";
+
+      position: absolute;
+      top: -280px;
+      right: -195px;
+      z-index: -1;
+
+      width: 670px;
+      height: 670px;
+
+      border: 98px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .contact-hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(330px, 0.62fr);
+
+      align-items: center;
+      gap: 80px;
+    }
+
+    .contact-hero .contact-kicker {
+      color: #75e39b;
+    }
+
+    .contact-hero h1 {
+      max-width: 820px;
+
+      margin: 0 0 23px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(46px, 6vw, 76px);
+      line-height: 1.04;
+      font-weight: 700;
+      letter-spacing: -0.052em;
+    }
+
+    .contact-hero-copy {
+      max-width: 710px;
+
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.74);
+
+      font-size: 14px;
+      line-height: 1.92;
+    }
+
+    .contact-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+
+      margin-top: 32px;
+    }
+
+    .contact-primary-button,
+    .contact-outline-button {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 22px;
+
+      border-radius: 6px;
+
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .contact-primary-button {
+      background: var(--contact-green);
+      border: 1px solid var(--contact-green);
+      color: #ffffff;
+    }
+
+    .contact-outline-button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+    }
+
+    .contact-primary-button:hover,
+    .contact-outline-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.22);
+    }
+
+    .contact-outline-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero contact summary */
+
+    .contact-hero-summary {
+      overflow: hidden;
+
+      background: rgba(4, 38, 20, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 13px;
+
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-summary-item {
+      min-height: 92px;
+
+      display: grid;
+      grid-template-columns:
+        49px minmax(0, 1fr);
+
+      align-items: center;
+      gap: 15px;
+
+      padding: 17px 20px;
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-summary-item:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-summary-icon {
+      width: 47px;
+      height: 47px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(117, 227, 155, 0.13);
+      border-radius: 50%;
+
+      color: #75e39b;
+    }
+
+    .contact-summary-icon .material-symbols-outlined {
+      font-size: 23px;
+    }
+
+    .contact-summary-item strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .contact-summary-item a,
+    .contact-summary-item p {
+      display: block;
+
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 9px;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    .contact-summary-item a:hover {
+      color: #ffffff;
+    }
+
+    /* ==========================================
+       LOCATIONS AND MAP
+    ========================================== */
+
+    .contact-locations {
+      padding: 105px 0 115px;
+      background: #ffffff;
+    }
+
+    .contact-map-layout {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        380px;
+
+      align-items: stretch;
+      gap: 26px;
+    }
+
+    .contact-map-box {
+      position: relative;
+
+      min-height: 545px;
+
+      overflow: hidden;
+
+      background: #e9efeb;
+      border: 1px solid var(--contact-border);
+      border-radius: 14px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(12, 54, 28, 0.1);
+    }
+
+    .contact-map-box iframe {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+      min-height: 545px;
+
+      border: 0;
+    }
+
+    .contact-map-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 12px 15px;
+
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(17, 25, 20, 0.08);
+      border-radius: 8px;
+
+      color: var(--contact-ink);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      box-shadow:
+        0 9px 22px
+        rgba(0, 0, 0, 0.12);
+
+      backdrop-filter: blur(5px);
+    }
+
+    .contact-map-label .material-symbols-outlined {
+      color: var(--contact-green);
+      font-size: 20px;
+    }
+
+    /* Office selector */
+
+    .contact-office-panel {
+      min-height: 545px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 27px;
+
+      background: var(--contact-green-dark);
+      border-radius: 14px;
+
+      color: #ffffff;
+
+      box-shadow:
+        0 15px 40px
+        rgba(12, 54, 28, 0.14);
+    }
+
+    .contact-office-panel .contact-kicker {
+      margin-bottom: 10px;
+      color: #72e299;
+    }
+
+    .contact-office-panel h2 {
+      margin: 0 0 9px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 29px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .contact-office-panel > p {
+      margin: 0 0 20px;
+
+      color: rgba(255, 255, 255, 0.66);
+
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .contact-office-list {
+      display: grid;
+      gap: 10px;
+
+      margin-top: auto;
+    }
+
+    .contact-location-btn {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns:
+        40px minmax(0, 1fr);
+
+      align-items: center;
+      gap: 12px;
+
+      padding: 13px;
+
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+
+      color: #ffffff;
+
+      font-family: inherit;
+      text-align: left;
+
+      cursor: pointer;
+
+      transition:
+        background-color 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+    }
+
+    .contact-location-btn:hover {
+      transform: translateX(4px);
+
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .contact-location-btn.active-location {
+      background: rgba(117, 227, 155, 0.13);
+      border-color: #72e299;
+    }
+
+    .contact-location-number {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 50%;
+
+      color: #72e299;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .contact-location-btn h3 {
+      margin: 0 0 4px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .contact-location-btn p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 8px;
+      line-height: 1.55;
+    }
+
+    /* ==========================================
+       CONTACT CHANNELS
+    ========================================== */
+
+    .contact-channels {
+      padding: 0 0 105px;
+      background: #ffffff;
+    }
+
+    .contact-channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      border-top: 1px solid var(--contact-border);
+      border-bottom: 1px solid var(--contact-border);
+    }
+
+    .contact-channel-card {
+      min-height: 235px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      padding: 30px 28px;
+
+      border-right: 1px solid var(--contact-border);
+    }
+
+    .contact-channel-card:last-child {
+      border-right: 0;
+    }
+
+    .contact-channel-icon {
+      width: 53px;
+      height: 53px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 22px;
+
+      background: var(--contact-green-soft);
+      border-radius: 50%;
+
+      color: var(--contact-green);
+    }
+
+    .contact-channel-icon .material-symbols-outlined {
+      font-size: 25px;
+    }
+
+    .contact-channel-card h3 {
+      margin: 0 0 9px;
+
+      color: var(--contact-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .contact-channel-card p {
+      margin: 0 0 15px;
+
+      color: var(--contact-copy);
+
+      font-size: 10px;
+      line-height: 1.75;
+    }
+
+    .contact-channel-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin-top: auto;
+
+      color: var(--contact-green);
+
+      font-size: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-channel-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================
+       FORM AND INSTAGRAM
+    ========================================== */
+
+    .contact-form-social {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 105px 0 115px;
+
+      background: var(--contact-soft);
+    }
+
+    .contact-form-social::before {
+      content: "";
+
+      position: absolute;
+      top: -245px;
+      left: -200px;
+
+      width: 530px;
+      height: 530px;
+
+      border: 78px solid rgba(1, 155, 57, 0.035);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .contact-form-social-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(360px, 0.84fr);
+
+      align-items: start;
+      gap: 26px;
+    }
+
+    .contact-card {
+      min-width: 0;
+
+      padding: 37px;
+
+      background: #ffffff;
+      border: 1px solid var(--contact-border);
+      border-radius: 14px;
+
+      box-shadow:
+        0 10px 32px
+        rgba(12, 54, 28, 0.07);
+    }
+
+    .contact-card-header {
+      margin-bottom: 28px;
+    }
+
+    .contact-card-header h2 {
+      margin: 0 0 10px;
+
+      color: var(--contact-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.22;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-card-header p {
+      margin: 0;
+
+      color: var(--contact-copy);
+
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .contact-card-header a {
+      color: var(--contact-green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Form */
+
+    .contact-form {
+      display: grid;
+      gap: 17px;
+    }
+
+    .contact-form-row {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 15px;
+    }
+
+    .contact-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .contact-field label {
+      color: #29342d;
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
+      width: 100%;
+
+      padding: 0 14px;
+
+      background: #ffffff;
+      border: 1px solid #d5ded8;
+      border-radius: 6px;
+
+      color: var(--contact-ink);
+
+      font-family: inherit;
+      font-size: 10px;
+
+      outline: none;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .contact-field input,
+    .contact-field select {
+      min-height: 49px;
+    }
+
+    .contact-field textarea {
+      min-height: 135px;
+      padding-top: 13px;
+      resize: vertical;
+    }
+
+    .contact-field input:focus,
+    .contact-field select:focus,
+    .contact-field textarea:focus {
+      border-color: var(--contact-green);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(1, 155, 57, 0.09);
+    }
+
+    .contact-submit-btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      margin-top: 3px;
+      padding: 0 22px;
+
+      background: var(--contact-green);
+      border: 1px solid var(--contact-green);
+      border-radius: 6px;
+
+      color: #ffffff;
+
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .contact-submit-btn:hover {
+      transform: translateY(-2px);
+
+      background: #007d2f;
+
+      box-shadow:
+        0 11px 25px
+        rgba(1, 155, 57, 0.2);
+    }
+
+    .contact-form-message {
+      display: none;
+
+      margin: 0;
+      padding: 12px 14px;
+
+      background: var(--contact-green-soft);
+      border-radius: 6px;
+
+      color: #00782d;
+
+      font-size: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .contact-form-message.message-visible {
+      display: block;
+    }
+
+    /* Instagram */
+
+    .contact-instagram-card {
+      position: sticky;
+      top: 145px;
+    }
+
+    .contact-instagram-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      margin-bottom: 12px;
+    }
+
+    .contact-instagram-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #833ab4,
+          #fd1d1d,
+          #fcb045
+        );
+
+      border-radius: 50%;
+
+      color: #ffffff;
+
+      font-size: 21px;
+    }
+
+    .contact-instagram-heading h2 {
+      margin: 0 0 3px;
+
+      color: var(--contact-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 22px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .contact-instagram-heading span {
+      color: var(--contact-green);
+
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .contact-instagram-copy {
+      margin: 0 0 21px;
+
+      color: var(--contact-copy);
+
+      font-size: 10px;
+      line-height: 1.75;
+    }
+
+    .contact-instagram-profile-link {
+      min-height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      margin-bottom: 18px;
+      padding: 0 15px;
+
+      background: var(--contact-green-soft);
+      border-radius: 7px;
+
+      color: var(--contact-green);
+
+      font-size: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-instagram-profile-link:hover {
+      background: #dff2e5;
+    }
+
+    .contact-instagram-profile-link
+    .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    .contact-instagram-box {
+      max-height: 540px;
+
+      overflow: hidden;
+
+      padding: 12px;
+
+      background: #ffffff;
+      border: 1px solid var(--contact-border);
+      border-radius: 10px;
+    }
+
+    .contact-instagram-box .instagram-media {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+
+      margin: 0 !important;
+    }
+
+    /* Instagram fallback */
+
+    .contact-instagram-fallback {
+      min-height: 300px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fafafa,
+          #f1f5f2
+        );
+
+      color: var(--contact-copy);
+
+      text-align: center;
+    }
+
+    .contact-instagram-fallback i {
+      margin-bottom: 15px;
+
+      color: var(--contact-green);
+
+      font-size: 35px;
+    }
+
+    .contact-instagram-fallback strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--contact-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+    }
+
+    .contact-instagram-fallback p {
+      margin: 0 0 17px;
+
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .contact-instagram-fallback a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      color: var(--contact-green);
+
+      font-size: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ==========================================
+       FINAL CTA
+    ========================================== */
+
+    .contact-cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 90px 0;
+
+      background:
+        linear-gradient(
+          125deg,
+          #008c35,
+          var(--contact-green)
+        );
+
+      color: #ffffff;
+    }
+
+    .contact-cta::after {
+      content: "";
+
+      position: absolute;
+      top: -225px;
+      right: -175px;
+
+      width: 540px;
+      height: 540px;
+
+      border: 80px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .contact-cta-layout {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .contact-cta-content {
+      max-width: 750px;
+    }
+
+    .contact-cta-content span {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: rgba(255, 255, 255, 0.76);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .contact-cta-content h2 {
+      margin: 0 0 13px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 47px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-cta-content p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.76);
+
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .contact-cta-button {
+      min-height: 55px;
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 24px;
+
+      background: #ffffff;
+      border-radius: 7px;
+
+      color: #007b2e;
+
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      box-shadow:
+        0 12px 28px
+        rgba(0, 65, 24, 0.18);
+    }
+
+    .contact-cta-button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================
+       REVEAL
+    ========================================== */
+
+    .contact-reveal {
+      opacity: 0;
+
+      transform: translateY(27px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .contact-reveal.contact-shown {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       TABLET
+    ========================================== */
+
+    @media (max-width: 1050px) {
+      .contact-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 46px;
+      }
+
+      .contact-hero-summary {
+        display: grid;
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .contact-summary-item {
+        border-bottom: 0;
+        border-right:
+          1px solid
+          rgba(255, 255, 255, 0.12);
+      }
+
+      .contact-summary-item:last-child {
+        border-right: 0;
+      }
+
+      .contact-section-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .contact-map-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-office-panel {
+        min-height: auto;
+      }
+
+      .contact-office-list {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        margin-top: 10px;
+      }
+
+      .contact-form-social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-instagram-card {
+        position: static;
+      }
+
+      .contact-cta-layout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 680px) {
+      .contact-page {
+        padding-top: 92px;
+      }
+
+      .contact-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .contact-hero {
+        padding: 65px 0 73px;
+      }
+
+      .contact-hero::before {
+        top: -125px;
+        right: -140px;
+
+        width: 340px;
+        height: 340px;
+
+        border-width: 50px;
+      }
+
+      .contact-hero h1 {
+        font-size: 43px;
+      }
+
+      .contact-hero-copy {
+        font-size: 13px;
+      }
+
+      .contact-hero-actions {
+        flex-direction: column;
+      }
+
+      .contact-primary-button,
+      .contact-outline-button {
+        width: 100%;
+      }
+
+      .contact-hero-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-summary-item {
+        border-right: 0;
+        border-bottom:
+          1px solid
+          rgba(255, 255, 255, 0.12);
+      }
+
+      .contact-summary-item:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-locations,
+      .contact-form-social {
+        padding: 75px 0 82px;
+      }
+
+      .contact-map-box,
+      .contact-map-box iframe {
+        min-height: 390px;
+      }
+
+      .contact-office-panel {
+        padding: 23px 19px;
+      }
+
+      .contact-office-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-channel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-channel-card {
+        border-right: 0;
+        border-bottom: 1px solid var(--contact-border);
+      }
+
+      .contact-channel-card:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-channels {
+        padding-bottom: 75px;
+      }
+
+      .contact-card {
+        padding: 28px 21px;
+      }
+
+      .contact-form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-cta {
+        padding: 75px 0;
+      }
+
+      .contact-cta::after {
+        top: -110px;
+        right: -135px;
+
+        width: 310px;
+        height: 310px;
+
+        border-width: 46px;
+      }
+
+      .contact-cta-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body>
+
+<body class="!bg-white">
+
+  <!-- NAVBAR -->
   <div id="navbar-placeholder"></div>
 
- <div style="height: 120px;"></div>
+  <main class="contact-page">
 
+    <!-- ==========================================
+         HERO
+    ========================================== -->
 
-<!-- CONTACT HERO + MAP START -->
-<section class="pt-24 pb-14 px-6 md:px-20 bg-white">
-  <div class="text-center max-w-3xl mx-auto mb-10">
-    <small class="text-xs sm:text-[13px] font-semibold text-primary">
-      Contact Us
-    </small>
+    <section class="contact-hero">
+      <div class="contact-shell contact-hero-grid">
 
-    <h1 class="text-2xl md:text-4xl font-bold mt-3 mb-3">
-      Get in Touch with Us
-    </h1>
+        <div>
 
-    <p class="text-xs sm:text-[13px] md:text-sm font-medium text-gray-600">
-      We're here to provide the support and solutions you need—reach out today!
-    </p>
-  </div>
+          <span class="contact-kicker">
+            Contact AOS Orwell
+          </span>
 
-  <div class="contact-map-office-grid">
-    <!-- MAP SIDE -->
-    <div class="contact-map-box">
-      <iframe
-        id="contact-map-frame"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010.3552573945462!2d7.029755375077731!3d4.811511944981281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cc4bc208b26f%3A0x15f94a26792870fd!2sAosorwell%20Ltd!5e0!3m2!1sen!2sng!4v1755688733645!5m2!1sen!2sng"
-        class="border-0 w-full h-full"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
+          <h1>
+            Let’s connect you with the right team.
+          </h1>
 
-    <!-- ADDRESS SIDE -->
-    <div class="contact-office-panel">
-      <small class="contact-office-label">
-        Our Locations
-      </small>
-
-      <h2 class="contact-office-title">
-        Visit our offices
-      </h2>
-
-      <p class="contact-office-subtitle">
-        Click an office below to view its location on the map.
-      </p>
-
-      <div class="contact-office-list">
-        <button
-          type="button"
-          onclick="changeContactMap('head-office', this)"
-          class="contact-location-btn active-location"
-        >
-          <h3>Head Office</h3>
-          <p>
-            Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State
+          <p class="contact-hero-copy">
+            Whether you need technical support, a project quotation,
+            partnership information or general assistance, send us
+            your enquiry and our team will help direct it to the
+            appropriate AOS Orwell division.
           </p>
-        </button>
 
-        <button
-          type="button"
-          onclick="changeContactMap('lagos-office', this)"
-          class="contact-location-btn"
-        >
-          <h3>Lagos Office</h3>
-          <p>
-            3/5, Adeyemo Alakija Street, Victoria Island, Lagos.
-          </p>
-        </button>
+          <div class="contact-hero-actions">
 
-        <button
-          type="button"
-          onclick="changeContactMap('ghana-office', this)"
-          class="contact-location-btn"
-        >
-          <h3>Ghana Office</h3>
-          <p>
-            Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana
-          </p>
-        </button>
+            <a
+              href="#contact-form"
+              class="contact-primary-button"
+            >
+              Send an enquiry
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="#our-offices"
+              class="contact-outline-button"
+            >
+              View our offices
+
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="contact-hero-summary">
+
+          <div class="contact-summary-item">
+
+            <span class="contact-summary-icon">
+              <span class="material-symbols-outlined">
+                campaign
+              </span>
+            </span>
+
+            <div>
+
+              <strong>Marketing</strong>
+
+              <a href="mailto:marketing@aosorwell.com">
+                marketing@aosorwell.com
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="contact-summary-item">
+
+            <span class="contact-summary-icon">
+              <span class="material-symbols-outlined">
+                sell
+              </span>
+            </span>
+
+            <div>
+
+              <strong>Sales</strong>
+
+              <a href="mailto:sales@aosorwell.com">
+                sales@aosorwell.com
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="contact-summary-item">
+
+            <span class="contact-summary-icon">
+              <span class="material-symbols-outlined">
+                schedule
+              </span>
+            </span>
+
+            <div>
+
+              <strong>Office Hours</strong>
+
+              <p>
+                Monday–Friday, 7:30am–4:30pm
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
-<!-- CONTACT HERO + MAP END -->
+    </section>
 
+    <!-- ==========================================
+         LOCATIONS AND MAP
+    ========================================== -->
 
-<!-- EMAILS STARTS -->
-<section class="py-10 px-6 md:px-20 bg-white">
-  <div class="contact-email-grid">
-    <div class="flex flex-col gap-y-3 items-center justify-center">
-      <h3 class="text-base md:text-lg font-semibold">Marketing</h3>
-      <p class="text-gray-600 font-medium text-xs md:text-sm">
-        Our friendly team is here to help
-      </p>
-      <a href="mailto:marketing@aosorwell.com" class="text-primary font-medium text-xs md:text-sm">
-        marketing@aosorwell.com
-      </a>
-    </div>
+    <section
+      id="our-offices"
+      class="contact-locations"
+    >
+      <div class="contact-shell">
 
-    <div class="flex flex-col gap-y-3 items-center justify-center">
-      <h3 class="text-base md:text-lg font-semibold">Sales</h3>
-      <p class="text-gray-600 font-medium text-xs md:text-sm">
-        Question or queries? Get in touch!
-      </p>
-      <a href="mailto:sales@aosorwell.com" class="text-primary font-medium text-xs md:text-sm">
-        sales@aosorwell.com
-      </a>
-    </div>
+        <div class="contact-section-header contact-reveal">
 
-    <div class="flex flex-col gap-y-3 items-center justify-center">
-      <h3 class="text-base md:text-lg font-semibold">Phone</h3>
-      <p class="text-gray-600 font-medium text-xs md:text-sm">
-        Mon-Fri from 7:30am - 4:30pm
-      </p>
-    </div>
-  </div>
-</section>
-<!-- EMAILS ENDS -->
+          <div>
 
+            <span class="contact-kicker">
+              Our locations
+            </span>
 
-   
-<!-- FORM + INSTAGRAM SECTION START -->
-<section class="contact-form-social-section">
-  <div class="contact-form-social-grid">
+            <h2 class="contact-heading">
+              Visit our offices
+            </h2>
 
-    <!-- FORM CARD -->
-    <div class="contact-card">
-      <h2 class="contact-card-title">We would love to hear from you</h2>
+          </div>
 
-      <p class="contact-card-text">
-        You can reach us anytime via
-        <a href="mailto:sales@aosorwell.com">sales@aosorwell.com</a>
-      </p>
+          <p class="contact-section-copy">
+            Select an office to update the map. AOS Orwell operates
+            from strategic locations in Port Harcourt, Lagos and
+            Takoradi to support clients across our markets.
+          </p>
 
-      <form action="" class="contact-form-fields">
-        <div class="contact-field">
-          <label>Name</label>
-          <input type="text" placeholder="Your Name">
         </div>
 
-        <div class="contact-field">
-          <label>Email</label>
-          <input type="email" placeholder="you@untitled.com">
+        <div class="contact-map-layout contact-reveal">
+
+          <!-- MAP -->
+          <div class="contact-map-box">
+
+            <iframe
+              id="contact-map-frame"
+              title="AOS Orwell Head Office map"
+              src="https://www.google.com/maps?q=Plot%2052%2F53%2C%20Trans%20Amadi%20Industrial%20Layout%2C%20Port%20Harcourt%2C%20Rivers%20State&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <div
+              id="contact-map-label"
+              class="contact-map-label"
+            >
+
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+
+              <span>
+                Head Office — Port Harcourt
+              </span>
+
+            </div>
+
+          </div>
+
+          <!-- OFFICE SELECTOR -->
+          <aside class="contact-office-panel">
+
+            <span class="contact-kicker">
+              Office directory
+            </span>
+
+            <h2>
+              Select a location
+            </h2>
+
+            <p>
+              Click any office below to view its address and
+              location on the map.
+            </p>
+
+            <div class="contact-office-list">
+
+              <!-- OFFICE 1 -->
+              <button
+                type="button"
+                class="contact-location-btn active-location"
+                data-location="head-office"
+              >
+
+                <span class="contact-location-number">
+                  01
+                </span>
+
+                <span>
+
+                  <h3>
+                    Head Office
+                  </h3>
+
+                  <p>
+                    Plot 52/53, Trans Amadi Industrial Layout,
+                    Port Harcourt, Rivers State
+                  </p>
+
+                </span>
+
+              </button>
+
+              <!-- OFFICE 2 -->
+              <button
+                type="button"
+                class="contact-location-btn"
+                data-location="port-harcourt-office-2"
+              >
+
+                <span class="contact-location-number">
+                  02
+                </span>
+
+                <span>
+
+                  <h3>
+                    Port Harcourt Office 2
+                  </h3>
+
+                  <p>
+                    Plot 272, Trans Amadi Industrial Layout,
+                    Port Harcourt, Rivers State
+                  </p>
+
+                </span>
+
+              </button>
+
+              <!-- LAGOS -->
+              <button
+                type="button"
+                class="contact-location-btn"
+                data-location="lagos-office"
+              >
+
+                <span class="contact-location-number">
+                  03
+                </span>
+
+                <span>
+
+                  <h3>
+                    Lagos Office
+                  </h3>
+
+                  <p>
+                    3/5, Adeyemo Alakija Street,
+                    Victoria Island, Lagos
+                  </p>
+
+                </span>
+
+              </button>
+
+              <!-- GHANA -->
+              <button
+                type="button"
+                class="contact-location-btn"
+                data-location="ghana-office"
+              >
+
+                <span class="contact-location-number">
+                  04
+                </span>
+
+                <span>
+
+                  <h3>
+                    Ghana Office
+                  </h3>
+
+                  <p>
+                    Plot 53 Apowa Light Industrial Area,
+                    Sankoba, New Amanful, Takoradi, Ghana
+                  </p>
+
+                </span>
+
+              </button>
+
+            </div>
+
+          </aside>
+
         </div>
 
-        <div class="contact-field">
-          <label>Phone Number</label>
-          <input type="text" placeholder="+2348238494850">
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT CHANNELS
+    ========================================== -->
+
+    <section class="contact-channels">
+      <div class="contact-shell">
+
+        <div class="contact-channel-grid contact-reveal">
+
+          <!-- MARKETING -->
+          <article class="contact-channel-card">
+
+            <span class="contact-channel-icon">
+              <span class="material-symbols-outlined">
+                campaign
+              </span>
+            </span>
+
+            <h3>
+              Marketing
+            </h3>
+
+            <p>
+              For media, corporate communication, events,
+              partnerships and marketing-related enquiries.
+            </p>
+
+            <a href="mailto:marketing@aosorwell.com">
+              marketing@aosorwell.com
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </article>
+
+          <!-- SALES -->
+          <article class="contact-channel-card">
+
+            <span class="contact-channel-icon">
+              <span class="material-symbols-outlined">
+                sell
+              </span>
+            </span>
+
+            <h3>
+              Sales
+            </h3>
+
+            <p>
+              For quotations, service enquiries, technical
+              requirements and project-related discussions.
+            </p>
+
+            <a href="mailto:sales@aosorwell.com">
+              sales@aosorwell.com
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </article>
+
+          <!-- HOURS -->
+          <article class="contact-channel-card">
+
+            <span class="contact-channel-icon">
+              <span class="material-symbols-outlined">
+                schedule
+              </span>
+            </span>
+
+            <h3>
+              Office Hours
+            </h3>
+
+            <p>
+              Our offices are open Monday to Friday from
+              7:30am to 4:30pm.
+            </p>
+
+            <a href="#our-offices">
+              View office locations
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </article>
+
         </div>
 
-        <div class="contact-field">
-          <label>How can we help?</label>
-          <textarea placeholder="Tell us a little about how we can help"></textarea>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FORM AND INSTAGRAM
+    ========================================== -->
+
+    <section
+      id="contact-form"
+      class="contact-form-social"
+    >
+      <div class="contact-shell">
+
+        <div class="contact-section-header contact-reveal">
+
+          <div>
+
+            <span class="contact-kicker">
+              Send an enquiry
+            </span>
+
+            <h2 class="contact-heading">
+              How can we help you?
+            </h2>
+
+          </div>
+
+          <p class="contact-section-copy">
+            Provide a few details about your enquiry and we will
+            connect you with the appropriate team.
+          </p>
+
         </div>
 
-        <button type="submit" class="contact-submit-btn">
-          Get Started
-        </button>
-      </form>
-    </div>
+        <div class="contact-form-social-grid">
 
-    <!-- INSTAGRAM CARD -->
-    <div class="contact-card">
-      <h3 class="contact-card-title" style="color:#019B39; font-size:22px;">
-        Follow us on Instagram
-      </h3>
+          <!-- FORM CARD -->
+          <div class="contact-card contact-reveal">
 
-      <p class="contact-card-text">
-        Stay updated with our latest projects, services, and company activities.
-      </p>
+            <div class="contact-card-header">
 
-      <div class="contact-instagram-box">
-        <blockquote
-          class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/aosorwell/"
-          data-instgrm-version="14"
-          style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin:0; max-width:100%; min-width:0; padding:0; width:100%;"
-        >
-          <div style="padding:16px;">
+              <h2>
+                We would love to hear from you
+              </h2>
+
+              <p>
+                You can also contact us directly via
+                <a href="mailto:sales@aosorwell.com">
+                  sales@aosorwell.com
+                </a>
+                or
+                <a href="mailto:marketing@aosorwell.com">
+                  marketing@aosorwell.com
+                </a>.
+              </p>
+
+            </div>
+
+            <form
+              id="mainContactForm"
+              class="contact-form"
+            >
+
+              <div class="contact-form-row">
+
+                <div class="contact-field">
+
+                  <label for="contactName">
+                    Name
+                  </label>
+
+                  <input
+                    id="contactName"
+                    type="text"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                  />
+
+                </div>
+
+                <div class="contact-field">
+
+                  <label for="contactEmail">
+                    Email
+                  </label>
+
+                  <input
+                    id="contactEmail"
+                    type="email"
+                    name="email"
+                    placeholder="you@company.com"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+              <div class="contact-form-row">
+
+                <div class="contact-field">
+
+                  <label for="contactPhone">
+                    Phone number
+                  </label>
+
+                  <input
+                    id="contactPhone"
+                    type="tel"
+                    name="phone"
+                    placeholder="+234..."
+                  />
+
+                </div>
+
+                <div class="contact-field">
+
+                  <label for="contactOrganisation">
+                    Company / Organisation
+                  </label>
+
+                  <input
+                    id="contactOrganisation"
+                    type="text"
+                    name="organisation"
+                    placeholder="Organisation name"
+                  />
+
+                </div>
+
+              </div>
+
+              <div class="contact-form-row">
+
+                <div class="contact-field">
+
+                  <label for="contactType">
+                    Enquiry type
+                  </label>
+
+                  <select
+                    id="contactType"
+                    name="enquiry_type"
+                    required
+                  >
+
+                    <option value="">
+                      Select enquiry type
+                    </option>
+
+                    <option>
+                      Request for Quote
+                    </option>
+
+                    <option>
+                      General Enquiry
+                    </option>
+
+                    <option>
+                      Technical Support
+                    </option>
+
+                    <option>
+                      Partnership
+                    </option>
+
+                    <option>
+                      Vendor / Supplier Enquiry
+                    </option>
+
+                    <option>
+                      Careers
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <div class="contact-field">
+
+                  <label for="contactService">
+                    Service area
+                  </label>
+
+                  <select
+                    id="contactService"
+                    name="service_area"
+                  >
+
+                    <option value="">
+                      Select service area
+                    </option>
+
+                    <option>
+                      Well Construction
+                    </option>
+
+                    <option>
+                      Process Management
+                    </option>
+
+                    <option>
+                      IPM &amp; Turnkey
+                    </option>
+
+                    <option>
+                      Operations &amp; Maintenance
+                    </option>
+
+                    <option>
+                      Other
+                    </option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+              <div class="contact-field">
+
+                <label for="contactMessage">
+                  How can we help?
+                </label>
+
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  placeholder="Tell us about your enquiry, project or support requirement"
+                  required
+                ></textarea>
+
+              </div>
+
+              <button
+                type="submit"
+                class="contact-submit-btn"
+              >
+                Submit enquiry
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </button>
+
+              <p
+                id="contactFormMessage"
+                class="contact-form-message"
+              >
+                Thank you. Your enquiry has been received.
+              </p>
+
+            </form>
+
+          </div>
+
+          <!-- INSTAGRAM CARD -->
+          <aside
+            class="contact-card contact-instagram-card contact-reveal"
+          >
+
+            <div class="contact-instagram-heading">
+
+              <span class="contact-instagram-icon">
+                <i class="bi bi-instagram"></i>
+              </span>
+
+              <div>
+
+                <h2>
+                  Follow us on Instagram
+                </h2>
+
+                <span>
+                  @aosorwell
+                </span>
+
+              </div>
+
+            </div>
+
+            <p class="contact-instagram-copy">
+              Follow our official Instagram page for project
+              highlights, events, technical activities, community
+              initiatives and company updates.
+            </p>
+
             <a
               href="https://www.instagram.com/aosorwell/"
-              style="background:#FFFFFF; line-height:0; padding:0; text-align:center; text-decoration:none; width:100%;"
               target="_blank"
+              rel="noopener noreferrer"
+              class="contact-instagram-profile-link"
             >
-              <div style="display: flex; flex-direction: row; align-items: center;">
-                <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
-                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                  <div style="background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+              Visit the AOS Orwell Instagram profile
+
+              <span class="material-symbols-outlined">
+                arrow_outward
+              </span>
+            </a>
+
+            <div class="contact-instagram-box">
+
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/aosorwell/"
+                data-instgrm-version="14"
+                style="
+                  background: #ffffff;
+                  border: 0;
+                  border-radius: 3px;
+                  box-shadow: none;
+                  margin: 0;
+                  min-width: 0;
+                  max-width: 100%;
+                  padding: 0;
+                  width: 100%;
+                "
+              >
+
+                <div class="contact-instagram-fallback">
+
+                  <i class="bi bi-instagram"></i>
+
+                  <strong>
+                    AOS Orwell on Instagram
+                  </strong>
+
+                  <p>
+                    View our latest projects, events and
+                    company activities.
+                  </p>
+
+                  <a
+                    href="https://www.instagram.com/aosorwell/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open Instagram profile
+
+                    <span class="material-symbols-outlined">
+                      arrow_outward
+                    </span>
+                  </a>
+
                 </div>
-              </div>
 
-              <div style="padding: 19% 0;"></div>
+              </blockquote>
 
-              <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-weight:550; line-height:18px;">
-                View this profile on Instagram
-              </div>
+            </div>
 
-              <div style="padding: 12.5% 0;"></div>
-            </a>
-          </div>
-        </blockquote>
-      </div>
-    </div>
+          </aside>
 
-  </div>
-</section>
-<!-- FORM + INSTAGRAM SECTION END -->
-
-
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">QHSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
         </div>
+
       </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            Providing integrated oilfield solutions across Well Construction, Process Automation & Control and Operations & Maintenance, to support the energy industry's evolving needs
+    </section>
+
+    <!-- ==========================================
+         FINAL CTA
+    ========================================== -->
+
+    <section class="contact-cta">
+      <div class="contact-shell contact-cta-layout">
+
+        <div class="contact-cta-content">
+
+          <span>
+            AOS Orwell support
+          </span>
+
+          <h2>
+            Your enquiry deserves the right expertise.
+          </h2>
+
+          <p>
+            Send us the details and our team will connect you
+            with the relevant technical, commercial or corporate
+            contact.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
-          </div>
+
         </div>
-        </div>
-        
-    
+
+        <a
+          href="#contact-form"
+          class="contact-cta-button"
+        >
+          Send an enquiry
+
+          <span class="material-symbols-outlined">
+            arrow_upward
+          </span>
+        </a>
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State <br><br> Plot 272, Trans Amadi Industrial Layout Port Harcourt,Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
-        </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
-          </div>
-        </form>
-      </div>
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
 
-    <script src="./index.js"></script>
-    <script src="./map.js"></script>
-   <!-- GSAP and ScrollTrigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
 
-<!-- Your animation -->
-<script>
-  gsap.registerPlugin(ScrollTrigger);
+        <div class="w-full">
 
-  gsap.to(".above-map-section", {
-    scrollTrigger: {
-      trigger: ".above-map-section",
-      start: "top 80%",
-      end: "top 30%",
-      scrub: true,
-      markers: false
-    },
-    rotation: 360,
-    duration: 1.5,
-    ease: "power2.out"
-  });
-    
-</script>
-<script async src="//www.instagram.com/embed.js"></script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
 
-<script>
-  const contactMaps = {
-    "head-office": "https://www.google.com/maps?q=Plot%2052%2F53%2C%20Trans%20Amadi%20Industrial%20Layout%2C%20Port%20Harcourt%2C%20Rivers%20State&output=embed",
+          <div class="mt-5 flex flex-col gap-y-2">
 
-    "lagos-office": "https://www.google.com/maps?q=3%2F5%20Adeyemo%20Alakija%20Street%2C%20Victoria%20Island%2C%20Lagos&output=embed",
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
 
-    "ghana-office": "https://www.google.com/maps?q=Plot%2053%20Apowa%20Light%20Industrial%20Area%2C%20Sankoba%2C%20New%20Amanful%20Takoradi%2C%20Ghana&output=embed"
-  };
+            <div class="flex gap-x-3">
 
-  function changeContactMap(locationKey, button) {
-    const mapFrame = document.getElementById("contact-map-frame");
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
 
-    if (mapFrame && contactMaps[locationKey]) {
-      mapFrame.src = contactMaps[locationKey];
-    }
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
 
-    document.querySelectorAll(".contact-location-btn").forEach(btn => {
-      btn.classList.remove("active-location");
-    });
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
 
-    if (button) {
-      button.classList.add("active-location");
-    }
-  }
-</script>
-<script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
-</script>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <!-- ==========================================
+       PAGE SCRIPTS
+  ========================================== -->
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        /* ======================================
+           MAP SWITCHING
+        ====================================== */
+
+        const contactMaps = {
+          "head-office": {
+            url:
+              "https://www.google.com/maps?q=Plot%2052%2F53%2C%20Trans%20Amadi%20Industrial%20Layout%2C%20Port%20Harcourt%2C%20Rivers%20State&output=embed",
+
+            label:
+              "Head Office — Port Harcourt",
+
+            title:
+              "AOS Orwell Head Office map"
+          },
+
+          "port-harcourt-office-2": {
+            url:
+              "https://www.google.com/maps?q=Plot%20272%2C%20Trans%20Amadi%20Industrial%20Layout%2C%20Port%20Harcourt%2C%20Rivers%20State&output=embed",
+
+            label:
+              "Port Harcourt Office 2",
+
+            title:
+              "AOS Orwell Port Harcourt Office 2 map"
+          },
+
+          "lagos-office": {
+            url:
+              "https://www.google.com/maps?q=3%2F5%20Adeyemo%20Alakija%20Street%2C%20Victoria%20Island%2C%20Lagos&output=embed",
+
+            label:
+              "Lagos Office — Victoria Island",
+
+            title:
+              "AOS Orwell Lagos Office map"
+          },
+
+          "ghana-office": {
+            url:
+              "https://www.google.com/maps?q=Plot%2053%20Apowa%20Light%20Industrial%20Area%2C%20Sankoba%2C%20New%20Amanful%2C%20Takoradi%2C%20Ghana&output=embed",
+
+            label:
+              "Ghana Office — Takoradi",
+
+            title:
+              "AOS Orwell Ghana Office map"
+          }
+        };
+
+        const mapFrame =
+          document.getElementById(
+            "contact-map-frame"
+          );
+
+        const mapLabel =
+          document.getElementById(
+            "contact-map-label"
+          );
+
+        const locationButtons =
+          document.querySelectorAll(
+            ".contact-location-btn"
+          );
+
+        locationButtons.forEach(
+          function (button) {
+            button.addEventListener(
+              "click",
+              function () {
+                const locationKey =
+                  button.dataset.location;
+
+                const selectedLocation =
+                  contactMaps[locationKey];
+
+                if (!selectedLocation) {
+                  return;
+                }
+
+                mapFrame.src =
+                  selectedLocation.url;
+
+                mapFrame.title =
+                  selectedLocation.title;
+
+                mapLabel.innerHTML =
+                  '<span class="material-symbols-outlined">' +
+                  "location_on" +
+                  "</span>" +
+                  "<span>" +
+                  selectedLocation.label +
+                  "</span>";
+
+                locationButtons.forEach(
+                  function (locationButton) {
+                    locationButton.classList.remove(
+                      "active-location"
+                    );
+                  }
+                );
+
+                button.classList.add(
+                  "active-location"
+                );
+              }
+            );
+          }
+        );
+
+        /* ======================================
+           MAIN CONTACT FORM
+        ====================================== */
+
+        const contactForm =
+          document.getElementById(
+            "mainContactForm"
+          );
+
+        const formMessage =
+          document.getElementById(
+            "contactFormMessage"
+          );
+
+        contactForm.addEventListener(
+          "submit",
+          function (event) {
+            event.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+              contactForm.reportValidity();
+              return;
+            }
+
+            formMessage.classList.add(
+              "message-visible"
+            );
+
+            contactForm.reset();
+          }
+        );
+
+        /* ======================================
+           REVEAL ANIMATION
+        ====================================== */
+
+        const revealElements =
+          document.querySelectorAll(
+            ".contact-reveal"
+          );
+
+        if (
+          "IntersectionObserver" in window
+        ) {
+          const revealObserver =
+            new IntersectionObserver(
+              function (entries, observer) {
+                entries.forEach(
+                  function (entry) {
+                    if (!entry.isIntersecting) {
+                      return;
+                    }
+
+                    entry.target.classList.add(
+                      "contact-shown"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+                  }
+                );
+              },
+              {
+                threshold: 0.1,
+                rootMargin:
+                  "0px 0px -40px 0px"
+              }
+            );
+
+          revealElements.forEach(
+            function (element) {
+              revealObserver.observe(element);
+            }
+          );
+        } else {
+          revealElements.forEach(
+            function (element) {
+              element.classList.add(
+                "contact-shown"
+              );
+            }
+          );
+        }
+      }
+    );
+  </script>
+
+  <!-- INSTAGRAM EMBED -->
+  <script
+    async
+    src="https://www.instagram.com/embed.js"
+  ></script>
+
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
+
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML =
+          navbarHTML;
+
+        const navbarScript =
+          document.createElement("script");
+
+        navbarScript.src =
+          "./navbar.js";
+
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
+
+  <script src="./index.js"></script>
+
 </body>
 </html>

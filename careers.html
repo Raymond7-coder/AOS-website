@@ -1,502 +1,2982 @@
+<!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../output.css">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Careers | AOS Orwell</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="./output.css" />
+
+  <style>
+    :root {
+      --career-green: #019b39;
+      --career-green-dark: #0b2818;
+      --career-green-deep: #061c10;
+      --career-green-soft: #eaf7ee;
+      --career-red: #bf1738;
+      --career-ink: #111914;
+      --career-copy: #5e6962;
+      --career-soft: #f3f7f4;
+      --career-border: #dfe7e2;
+      --career-white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--career-ink);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .careers-page,
+    .careers-page * {
+      box-sizing: border-box;
+    }
+
+    .careers-page {
+      padding-top: 120px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .careers-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .careers-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 15px;
+      color: var(--career-green);
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .careers-kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .careers-heading {
+      margin: 0;
+      color: var(--career-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 4vw, 49px);
+      line-height: 1.16;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .careers-section-heading {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 430px);
+      align-items: end;
+      gap: 65px;
+      margin-bottom: 46px;
+    }
+
+    .careers-section-copy {
+      margin: 0;
+      color: var(--career-copy);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .careers-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 85px 0;
+      background: var(--career-green-dark);
+      color: #ffffff;
+    }
+
+    .careers-hero::before {
+      content: "";
+      position: absolute;
+      top: -260px;
+      right: -190px;
+      z-index: -1;
+      width: 640px;
+      height: 640px;
+      border: 94px solid rgba(1, 155, 57, 0.11);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .careers-hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.02fr)
+        minmax(410px, 0.98fr);
+      align-items: center;
+      gap: 70px;
+    }
+
+    .careers-hero .careers-kicker {
+      color: #75e39b;
+    }
+
+    .careers-hero h1 {
+      max-width: 760px;
+      margin: 0 0 23px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(45px, 5.5vw, 72px);
+      line-height: 1.04;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .careers-hero-copy {
+      max-width: 680px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.73);
+      font-size: 14px;
+      line-height: 1.92;
+    }
+
+    .careers-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .careers-primary-button,
+    .careers-outline-button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 22px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .careers-primary-button {
+      background: var(--career-green);
+      border: 1px solid var(--career-green);
+      color: #ffffff;
+    }
+
+    .careers-outline-button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+    }
+
+    .careers-primary-button:hover,
+    .careers-outline-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 13px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .careers-outline-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .careers-hero-image {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      background: #244934;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.28);
+    }
+
+    .careers-hero-image > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .careers-hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 35, 14, 0.88),
+          rgba(0, 35, 14, 0.02) 68%
+        );
+    }
+
+    .careers-hero-badge {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 17px 18px;
+      background: rgba(0, 45, 18, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+      backdrop-filter: blur(7px);
+    }
+
+    .careers-hero-badge-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(117, 227, 155, 0.14);
+      border-radius: 50%;
+      color: #75e39b;
+    }
+
+    .careers-hero-badge strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .careers-hero-badge p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.63);
+      font-size: 9px;
+      line-height: 1.55;
+    }
+
+    /* ==========================================
+       WHY WORK WITH US
+    ========================================== */
+
+    .careers-why {
+      padding: 105px 0;
+      background: #ffffff;
+    }
+
+    .careers-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--career-border);
+      border-bottom: 1px solid var(--career-border);
+    }
+
+    .careers-benefit-card {
+      min-width: 0;
+      min-height: 250px;
+      padding: 31px 27px;
+      border-right: 1px solid var(--career-border);
+    }
+
+    .careers-benefit-card:last-child {
+      border-right: 0;
+    }
+
+    .careers-benefit-icon {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 23px;
+      background: var(--career-green-soft);
+      border-radius: 50%;
+      color: var(--career-green);
+    }
+
+    .careers-benefit-icon .material-symbols-outlined {
+      font-size: 26px;
+    }
+
+    .careers-benefit-card h3 {
+      margin: 0 0 10px;
+      color: var(--career-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .careers-benefit-card p {
+      margin: 0;
+      color: var(--career-copy);
+      font-size: 10px;
+      line-height: 1.78;
+    }
+
+    /* ==========================================
+       CAREER DISCIPLINES
+    ========================================== */
+
+    .careers-disciplines {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 115px;
+      background: var(--career-soft);
+    }
+
+    .careers-disciplines::before {
+      content: "";
+      position: absolute;
+      top: -230px;
+      left: -190px;
+      width: 510px;
+      height: 510px;
+      border: 75px solid rgba(1, 155, 57, 0.035);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .careers-discipline-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .careers-discipline-card {
+      min-width: 0;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 27px 25px;
+      background: #ffffff;
+      border: 1px solid var(--career-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 27px rgba(12, 54, 28, 0.06);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .careers-discipline-card:hover {
+      transform: translateY(-6px);
+      border-color: #a5cfb2;
+      box-shadow: 0 18px 40px rgba(12, 54, 28, 0.12);
+    }
+
+    .careers-discipline-top {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 23px;
+    }
+
+    .careers-discipline-icon {
+      width: 53px;
+      height: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--career-green-soft);
+      border-radius: 50%;
+      color: var(--career-green);
+    }
+
+    .careers-discipline-icon img {
+      display: block;
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .careers-discipline-number {
+      color: #c7d1cb;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .careers-discipline-card h3 {
+      margin: 0 0 12px;
+      color: var(--career-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .careers-discipline-card p {
+      margin: 0;
+      color: var(--career-copy);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    /* ==========================================
+       GRADUATE TRAINEE PROGRAMME
+    ========================================== */
+
+    .careers-graduate {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+      background: var(--career-green-dark);
+      color: #ffffff;
+    }
+
+    .careers-graduate::after {
+      content: "";
+      position: absolute;
+      top: -260px;
+      right: -190px;
+      width: 610px;
+      height: 610px;
+      border: 90px solid rgba(1, 155, 57, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .careers-graduate-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 0.88fr)
+        minmax(0, 1.12fr);
+      align-items: center;
+      gap: 80px;
+    }
+
+    .careers-graduate .careers-kicker {
+      color: #75e39b;
+    }
+
+    .careers-graduate h2 {
+      max-width: 610px;
+      margin: 0;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 4vw, 49px);
+      line-height: 1.16;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .careers-graduate-copy p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.69);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .careers-graduate-copy p + p {
+      margin-top: 15px;
+    }
+
+    .careers-graduate-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+      margin-top: 25px;
+    }
+
+    .careers-graduate-point {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.79);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .careers-graduate-point .material-symbols-outlined {
+      color: #75e39b;
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       APPLICATION PROCESS
+    ========================================== */
+
+    .careers-process {
+      padding: 100px 0 110px;
+      background: #ffffff;
+    }
+
+    .careers-process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--career-border);
+      border-bottom: 1px solid var(--career-border);
+    }
+
+    .careers-process-step {
+      position: relative;
+      min-height: 235px;
+      padding: 29px 25px;
+      border-right: 1px solid var(--career-border);
+    }
+
+    .careers-process-step:last-child {
+      border-right: 0;
+    }
+
+    .careers-process-number {
+      display: block;
+      margin-bottom: 21px;
+      color: var(--career-green);
+      font-family: "Montserrat", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .careers-process-step h3 {
+      margin: 0 0 9px;
+      color: var(--career-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .careers-process-step p {
+      margin: 0;
+      color: var(--career-copy);
+      font-size: 9px;
+      line-height: 1.72;
+    }
+
+    /* ==========================================
+       JOB OPPORTUNITIES
+    ========================================== */
+
+    .careers-jobs {
+      padding: 105px 0 115px;
+      background: var(--career-soft);
+    }
+
+    .careers-job-filter {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(180px, 0.7fr)
+        minmax(180px, 0.7fr)
+        auto;
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 30px;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid var(--career-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(12, 54, 28, 0.06);
+    }
+
+    .careers-filter-group {
+      display: grid;
+      gap: 7px;
+    }
+
+    .careers-filter-group label {
+      color: #344038;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .careers-filter-group input,
+    .careers-filter-group select {
+      width: 100%;
+      min-height: 49px;
+      padding: 0 14px;
+      background: #ffffff;
+      border: 1px solid #d8e1db;
+      border-radius: 6px;
+      color: var(--career-ink);
+      font-family: inherit;
+      font-size: 10px;
+      outline: none;
+    }
+
+    .careers-filter-group input:focus,
+    .careers-filter-group select:focus {
+      border-color: var(--career-green);
+      box-shadow: 0 0 0 3px rgba(1, 155, 57, 0.08);
+    }
+
+    .careers-filter-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .careers-search-button,
+    .careers-reset-button {
+      min-height: 49px;
+      padding: 0 20px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .careers-search-button {
+      background: var(--career-green);
+      border: 1px solid var(--career-green);
+      color: #ffffff;
+    }
+
+    .careers-reset-button {
+      background: #ffffff;
+      border: 1px solid #d8e1db;
+      color: #435047;
+    }
+
+    .careers-job-count {
+      margin: 0 0 17px;
+      color: var(--career-copy);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .careers-job-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .careers-job-card {
+      display: grid;
+      grid-template-columns: 62px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 22px;
+      padding: 24px 25px;
+      background: #ffffff;
+      border: 1px solid var(--career-border);
+      border-radius: 11px;
+      box-shadow: 0 7px 24px rgba(12, 54, 28, 0.05);
+
+      transition:
+        transform 0.23s ease,
+        border-color 0.23s ease,
+        box-shadow 0.23s ease;
+    }
+
+    .careers-job-card:hover {
+      transform: translateY(-4px);
+      border-color: #a7d0b4;
+      box-shadow: 0 16px 36px rgba(12, 54, 28, 0.1);
+    }
+
+    .careers-job-number {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--career-green-soft);
+      border-radius: 50%;
+      color: var(--career-green);
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .careers-job-content h3 {
+      margin: 0 0 8px;
+      color: var(--career-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .careers-job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 18px;
+      margin-bottom: 9px;
+      color: #6d7871;
+      font-size: 9px;
+    }
+
+    .careers-job-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .careers-job-description {
+      margin: 0;
+      color: var(--career-copy);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .careers-job-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .careers-job-details,
+    .careers-job-share {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 0 16px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 9px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .careers-job-details {
+      background: var(--career-green);
+      border: 1px solid var(--career-green);
+      color: #ffffff;
+    }
+
+    .careers-job-share {
+      background: #f1f4f2;
+      border: 1px solid #e0e6e2;
+      color: #465149;
+    }
+
+    .careers-job-share .material-symbols-outlined {
+      font-size: 17px;
+    }
+
+    .careers-no-results {
+      display: none;
+      padding: 45px 25px;
+      background: #ffffff;
+      border: 1px dashed #cbd8cf;
+      border-radius: 11px;
+      color: var(--career-copy);
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .careers-no-results.careers-visible {
+      display: block;
+    }
+
+    /* ==========================================
+       FINAL CTA
+    ========================================== */
+
+    .careers-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 95px 0;
+      background:
+        linear-gradient(
+          125deg,
+          #008c35,
+          var(--career-green)
+        );
+      color: #ffffff;
+    }
+
+    .careers-cta::after {
+      content: "";
+      position: absolute;
+      top: -225px;
+      right: -175px;
+      width: 540px;
+      height: 540px;
+      border: 80px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .careers-cta-layout {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .careers-cta-content {
+      max-width: 750px;
+    }
+
+    .careers-cta-content span {
+      display: block;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .careers-cta-content h2 {
+      margin: 0 0 13px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 47px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .careers-cta-content p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .careers-cta-button {
+      min-height: 55px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 24px;
+      background: #ffffff;
+      border-radius: 7px;
+      color: #007b2e;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(0, 65, 24, 0.18);
+    }
+
+    .careers-cta-button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================
+       REVEAL EFFECT
+    ========================================== */
+
+    .careers-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .careers-reveal.careers-shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       TABLET
+    ========================================== */
+
+    @media (max-width: 1050px) {
+      .careers-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .careers-hero-image {
+        min-height: 520px;
+      }
+
+      .careers-section-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .careers-benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .careers-benefit-card:nth-child(2) {
+        border-right: 0;
+      }
+
+      .careers-benefit-card:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--career-border);
+      }
+
+      .careers-discipline-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .careers-graduate-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .careers-process-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .careers-process-step:nth-child(3) {
+        border-right: 0;
+      }
+
+      .careers-process-step:nth-child(-n + 3) {
+        border-bottom: 1px solid var(--career-border);
+      }
+
+      .careers-job-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .careers-filter-buttons {
+        align-self: end;
+      }
+
+      .careers-cta-layout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .careers-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .careers-process-step,
+      .careers-process-step:nth-child(3) {
+        border-right: 1px solid var(--career-border);
+        border-bottom: 1px solid var(--career-border);
+      }
+
+      .careers-process-step:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .careers-process-step:last-child {
+        grid-column: 1 / -1;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .careers-job-card {
+        grid-template-columns: 52px minmax(0, 1fr);
+      }
+
+      .careers-job-actions {
+        grid-column: 2;
+      }
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 640px) {
+      .careers-page {
+        padding-top: 92px;
+      }
+
+      .careers-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .careers-hero {
+        padding: 63px 0 70px;
+      }
+
+      .careers-hero::before {
+        top: -120px;
+        right: -135px;
+        width: 320px;
+        height: 320px;
+        border-width: 48px;
+      }
+
+      .careers-hero h1 {
+        font-size: 41px;
+      }
+
+      .careers-hero-copy {
+        font-size: 13px;
+      }
+
+      .careers-hero-actions {
+        flex-direction: column;
+      }
+
+      .careers-primary-button,
+      .careers-outline-button {
+        width: 100%;
+      }
+
+      .careers-hero-image {
+        min-height: 410px;
+      }
+
+      .careers-hero-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .careers-why,
+      .careers-disciplines,
+      .careers-process,
+      .careers-jobs {
+        padding: 75px 0 82px;
+      }
+
+      .careers-benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .careers-benefit-card,
+      .careers-benefit-card:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--career-border);
+      }
+
+      .careers-benefit-card:last-child {
+        border-bottom: 0;
+      }
+
+      .careers-discipline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .careers-discipline-card {
+        min-height: 285px;
+      }
+
+      .careers-graduate {
+        padding: 75px 0 80px;
+      }
+
+      .careers-graduate::after {
+        top: -120px;
+        right: -135px;
+        width: 320px;
+        height: 320px;
+        border-width: 48px;
+      }
+
+      .careers-graduate-points {
+        grid-template-columns: 1fr;
+      }
+
+      .careers-process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .careers-process-step,
+      .careers-process-step:nth-child(3),
+      .careers-process-step:nth-child(2n),
+      .careers-process-step:last-child {
+        grid-column: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--career-border);
+      }
+
+      .careers-process-step:last-child {
+        border-bottom: 0;
+      }
+
+      .careers-job-filter {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .careers-filter-buttons {
+        width: 100%;
+      }
+
+      .careers-search-button,
+      .careers-reset-button {
+        flex: 1;
+      }
+
+      .careers-job-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 22px 20px;
+      }
+
+      .careers-job-actions {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .careers-job-details,
+      .careers-job-share {
+        flex: 1;
+      }
+
+      .careers-cta {
+        padding: 75px 0;
+      }
+
+      .careers-cta::after {
+        top: -110px;
+        right: -135px;
+        width: 310px;
+        height: 310px;
+        border-width: 46px;
+      }
+
+      .careers-cta-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div id="navbar-placeholder"></div>
 
-   <div style="height: 100px;"></div>
+<body class="!bg-white">
 
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
 
-    <!-- HEADING -->
-     <section class="px-6 md:px-20 flex flex-col items-center pt-20 pb-10">
-        <div class="flex flex-col gap-y-5 text-center items-center">
-            <h1 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-1/3">Join Our Team And <span class="text-primary">Build The Future</span> Together</h1>
-            <p class="text-xs sm:text-sm text-gray-600 leading-loose w-full xl:w-2/3">We are an equal opportunity employer, taking pride in personal and organisational achievement of every employee. We welcome talent across a wide range of disciplines while remaining committed to honing staff skills and interests. Take a look at what we offer to find out where you fit in. We will be happy to have you.</p>
-            <a href="#positions"><button class="mt-3 text-[10px] sm:text-xs px-4 cursor-pointer hover:scale-110 transition py-2 rounded text-white bg-primary">OPEN POSITIONS</button></a>
+  <main class="careers-page">
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="careers-hero">
+      <div class="careers-shell careers-hero-grid">
+
+        <div>
+
+          <span class="careers-kicker">
+            Careers at AOS Orwell
+          </span>
+
+          <h1>
+            Build your career.
+            Shape the future of energy.
+          </h1>
+
+          <p class="careers-hero-copy">
+            Join a diverse team of engineers, specialists, innovators
+            and business professionals working together to deliver
+            dependable solutions across Africa’s energy industry.
+          </p>
+
+          <div class="careers-hero-actions">
+
+            <a
+              href="#positions"
+              class="careers-primary-button"
+            >
+              View open positions
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="#career-disciplines"
+              class="careers-outline-button"
+            >
+              Explore career areas
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
         </div>
-     </section>
 
-     <section class="px-4 md:px-20 rounded-md">
-       <img 
-           src="./images/careers.png" 
-           alt="Careers image" 
-          class="w-full h-[380px] md:h-[320px] lg:h-[380px] object-cover object-top rounded-md"
-        >
-      </section>
+        <div class="careers-hero-image">
 
-     <section class="px-6 md:px-20 py-20">
-        <p class="text-xs sm:text-[15px] text-gray-600 leading-loose">
-            Working with AOS Orwell is more than just a job. It is an opportunity for driven, ambitious people with a pioneering spirit that share a passion for our industry, to build a career with a successful, fast-growing global business. As a learning Organization, we believe and foster continuous learning and development of our employees. We seek out trainings or on-the-job opportunities for developing skills and talents, having identified the learning gaps through our robust Competency assessment system. We recognize that every individual has a deep yearning for growth thus we operate a structured process in a highly organized environment, to ensure that every single individual is not just given the freedom to aspire and to grow, but to take practical steps in moving towards their preferred future. We hone your skills until you hit the apex of your capabilities, aligning your personal goals to the business goals. Once you understand the bigger picture, you are then able to seek new innovative ways of contributing to the overall success of the organization and inevitably, yours as well. Developing our employees’ skills begin with assessing which skills are important for each desired career path. See if your talents and attributes match:
-        </p>
-     </section>
+          <img
+            src="./images/careers.png"
+            alt="AOS Orwell employees and industry professionals"
+          />
 
+          <div class="careers-hero-badge">
 
-     <section class="grid grid-cols-1 xsm:grid-cols-2 gap-5 sm:gap-8 md:grid-cols-3 xl:grid-cols-4 px-6 md:px-20">
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/well.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Well Construction & Engineering</h3>
+            <span class="careers-hero-badge-icon">
+              <span class="material-symbols-outlined">
+                groups
+              </span>
+            </span>
+
+            <div>
+
+              <strong>
+                Grow with an experienced team
+              </strong>
+
+              <p>
+                Learning, mentorship, collaboration and exposure
+                across specialist energy disciplines.
+              </p>
+
             </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are a natural multi-tasker and team motivator. Your experience in construction and the lifecycle of oil wells includes providing remedial and supplementary services throughout the energy value chain. You are logical and even- tempered and you deliver under pressure and in good time.</span>
-        </div>
-        
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/operations.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Operations</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You have what it takes to provide logistics support to an oil service operation safely, efficiently and cost effectively in line with industry and AOS Orwell operational safety standards and procedures.</span>
+
+          </div>
+
         </div>
 
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/mic.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Sales & Marketing</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are a natural choice to spearhead the broadening of sales and marketing in a highly competitive industry or a critical contributor to finding and meeting the unique needs of an ever more diversified and complex customer group.</span>
-        </div>
-
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/mic.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Corporate and Regulatory Affairs</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You must be well versed and can interact with all industry regulatory bodies. You will be tasked to manage Community Relations, Engagements and must be familiar CSR activities.</span>
-        </div>
-        
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/key.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Key / Client Account Management</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You typically are a self-starter. You need little or no encouragement to hunt down new business opportunities. You have natural talent for building open, enduring customer relationships that generate revenue over time. As a key account Manager, you have proven you can help to deliver this growth.</span>
-        </div>
-        
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/finance.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Finance</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You can interpret the business logic and market trends hidden in raw data and are familiar with Financial Accounting.</span>
-        </div>
-        
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/human.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Human Resource and General Support</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are an expert in your field with a professional approach and responsive attitude. You are friendly, transparent and rational. You have the ability to propose pragmatic, credible solutions to a purpose driven, fast-paced business.</span>
-        </div>
-        
-        <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/it.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Information Technology</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You have a flair for the digital, techy side of things. You enjoy playing around with codes and managing networks. You are even-tempered, able to work well with almost anyone, and still deliver promptly, while ensuring that all aspects of the IT process are functioning optimally for improved business operations.</span>
-        </div>
-
-       <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/qhse.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">QHSE</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are passionate about the quality of life and health and the overall safety for yourself and of others around you. You are responsible, deliberate, alert and focused on meeting global Quality and Safety standards no matter what because you understand that they are the key to running a sustainable, successful oilfield service business.</span>
-        </div>
-
-      <div class="flex flex-col gap-y-2 bg-white shadow-md rounded-md py-3 px-4 sm:py-4 sm:px-6">
-            <div class="flex items-center gap-x-1">
-                <img src="./images/customer-support.png" alt="" class="h-10 w-auto">
-                <h3 class="text-sm sm:text-lg md:text-xl font-bold text-center">Customer Support and Order Services</h3>
-            </div>
-            <span class="leading-loose text-xs sm:text-[13px] text-justify text-gray-600">You are probably the first human contact and link between our customers and us – you are the friendly voice on the phone that understands their needs and co-ordinates all services, invoicing, supply and pricing matters to deliver total satisfaction. You understand that high- quality, efficient and friendly customer service are key to planning and achieving scalable growth in any oilfield service business.</span>
-        </div>
-     </section>
-
-
-    <section class="px-6 mt-20 md:px-20 py-16 flex flex-col items-center text-center gap-y-6 bg-primary">
-      <h2 class="text-2xl sm:text-3xl font-bold text-white">AOS Orwell Graduate Trainee Program</h2>
-      <div class="w-16 h-[3px] bg-red-700 mb-6"></div>
-      
-      <p class="max-w-5xl text-gray-300 text-sm sm:text-base leading-relaxed">
-        The AOS Orwell Graduate Trainee Programme is designed to develop exceptional talent and prepare the next generation of industry leaders. 
-        Through intensive training, practical experience, mentorship, and exposure to diverse disciplines, participants are empowered to grow, innovate, and build rewarding careers.
-      </p>
-    
-      <p class="max-w-5xl text-gray-300 text-sm sm:text-base leading-relaxed">
-        By bringing together some of the brightest minds in a culture that encourages continuous learning and collaboration, the programme provides a solid foundation for young professionals 
-        to thrive and make meaningful contributions to the future of the energy industry.
-      </p>
+      </div>
     </section>
 
+    <!-- ==========================================
+         WHY WORK WITH US
+    ========================================== -->
 
+    <section class="careers-why">
+      <div class="careers-shell">
 
-     <section class="px-6 md:px-20 py-20 flex items-center text-center flex-col gap-y-10" id="positions">
-        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl">Opportunities To Grow With Us</h1>
+        <div class="careers-section-heading careers-reveal">
 
-        <!-- SINGLE, CLOSED FILTER FORM -->
-  <form class="w-full flex flex-wrap gap-4 items-end justify-center" onsubmit="return false;">
-    <div class="flex flex-col gap-y-1 items-start w-full md:w-1/4">
-      <label for="role" class="text-sm sm:text-[13px] font-medium">Role</label>
-      <input id="role" type="text" placeholder="Enter the role you are applying for"
-             class="w-full px-4 py-2.5 text-xs sm:text-[13px] border border-gray-200 rounded-md focus:outline-none focus:border-b-primary bg-white">
-    </div>
+          <div>
 
-    <div class="flex flex-col gap-y-1 items-start w-full md:w-1/4">
-      <label for="location" class="text-sm sm:text-[13px] font-medium">Location</label>
-      <select id="location"
-              class="w-full px-4 py-2.5 text-xs sm:text-[13px] border border-gray-200 rounded-md focus:outline-none focus:border-primary bg-white">
-        <option value="" selected disabled>Select location</option>
-        <option value="Port Harcourt">Port Harcourt</option>
-        <option value="Lagos">Lagos</option>
-      </select>
-    </div>
+            <span class="careers-kicker">
+              Life at AOS Orwell
+            </span>
 
-    <div class="flex flex-col gap-y-1 items-start w-full md:w-1/4">
-      <label for="jobtype" class="text-sm sm:text-[13px] font-medium">Job Type</label>
-      <select id="jobtype"
-              class="w-full px-4 py-2.5 text-xs sm:text-[13px] border border-gray-200 rounded-md focus:outline-none focus:border-primary bg-white">
-        <option value="" selected disabled>Select job type</option>
-        <option value="Full-time">Full-time</option>
-        <option value="Part-time">Part-time</option>
-        <option value="Contract">Contract</option>
-        <option value="Temporary">Temporary</option>
-        <option value="Internship">Internship</option>
-      </select>
-    </div>
+            <h2 class="careers-heading">
+              More than a job
+            </h2>
 
-    <div>
-      <button type="submit" class="w-50 bg-primary text-white px-10 py-2.5 rounded-md text-xs sm:text-[13px]">
-        Search Job
-      </button>
-    </div>
-  </form>
+          </div>
 
-  <!-- 1. Executive Accounts Manager -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">1. Executive Accounts Manager</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Build lasting client relationships and drive account growth.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/executive-accounts-manager.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Executive Accounts Manager','./careers/executive-accounts-manager.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Lead, Design Engineer – Instrumentation -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">2. Lead, Design Engineer – Instrumentation</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Lead critical instrumentation design for precision and reliability.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/lead-design-engineer-instrumentation.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Lead, Design Engineer – Instrumentation','./careers/lead-design-engineer-instrumentation.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Revenue to Cash Realization Officer -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">3. Revenue to Cash Realization Officer</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Streamline financial flows from sales to cash collection.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/revenue-to-cash-realization-officer.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Revenue to Cash Realization Officer','./careers/revenue-to-cash-realization-officer.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. Technical Sales Engineer – PMD -->
-  <div class="flex w-full flex-col gap-y-4 border-gray-200 border py-2 pb-4 px-4 rounded-md bg-gray-50">
-    <h3 class="text-base sm:text-lg md:text-xl font-medium w-full text-left">4. Technical Sales Engineer – PMD</h3>
-    <div class="flex justify-between items-end flex-wrap gap-y-4">
-      <div class="flex flex-col gap-y-3 text-gray-600 text-[11px] sm:text-xs">
-        <div class="flex flex-wrap gap-y-1 items-center gap-x-4">
-          <span class="flex items-center gap-x-2"><i class="bi bi-geo-alt"></i> Port Harcourt, Nigeria</span>
-          <span class="flex items-center gap-x-2"><i class="bi bi-calendar"></i>
-            <time class="job-posted" datetime="2025-09-04">posted</time>
-          </span>
-        </div>
-        <span class="text-left">Bridge technical insight with client needs to drive PMD sales.</span>
-      </div>
-      <div class="flex gap-2">
-        <a href="./careers/technical-sales-engineer-pmd.html"
-           class="bg-primary text-white px-7 py-2 rounded-md text-[11px] sm:text-xs inline-block hover:scale-105 transition">
-          More Details
-        </a>
-        <button type="button"
-                onclick="shareJob('Technical Sales Engineer – PMD','./careers/technical-sales-engineer-pmd.html')"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-[11px] sm:text-xs hover:bg-gray-300 transition">
-          Share
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-    
-
-    
-
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">QHSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          <p class="careers-section-copy">
+            We support driven and ambitious professionals with the
+            tools, experience and development opportunities required
+            to build meaningful, long-term careers.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
-          </div>
-        </div>
-        </div>
-        
-    
-      </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
-        </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
-      </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+        </div>
+
+        <div class="careers-benefit-grid careers-reveal">
+
+          <article class="careers-benefit-card">
+
+            <span class="careers-benefit-icon">
+              <span class="material-symbols-outlined">
+                school
+              </span>
+            </span>
+
+            <h3>Continuous learning</h3>
+
+            <p>
+              Build technical and professional capability through
+              structured training, mentorship and practical
+              on-the-job experience.
+            </p>
+
+          </article>
+
+          <article class="careers-benefit-card">
+
+            <span class="careers-benefit-icon">
+              <span class="material-symbols-outlined">
+                trending_up
+              </span>
+            </span>
+
+            <h3>Career development</h3>
+
+            <p>
+              Explore clear development paths supported by competency
+              assessments, performance conversations and growth plans.
+            </p>
+
+          </article>
+
+          <article class="careers-benefit-card">
+
+            <span class="careers-benefit-icon">
+              <span class="material-symbols-outlined">
+                diversity_3
+              </span>
+            </span>
+
+            <h3>Inclusive culture</h3>
+
+            <p>
+              Work in an environment where different perspectives,
+              disciplines and backgrounds are respected and valued.
+            </p>
+
+          </article>
+
+          <article class="careers-benefit-card">
+
+            <span class="careers-benefit-icon">
+              <span class="material-symbols-outlined">
+                engineering
+              </span>
+            </span>
+
+            <h3>Meaningful work</h3>
+
+            <p>
+              Contribute to real projects and services that support
+              clients, communities and the future of the energy
+              industry.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CAREER DISCIPLINES
+    ========================================== -->
+
+    <section
+      id="career-disciplines"
+      class="careers-disciplines"
+    >
+      <div class="careers-shell">
+
+        <div class="careers-section-heading careers-reveal">
+
+          <div>
+
+            <span class="careers-kicker">
+              Where you can grow
+            </span>
+
+            <h2 class="careers-heading">
+              Explore our career disciplines
+            </h2>
+
           </div>
+
+          <p class="careers-section-copy">
+            Our teams span technical, operational, commercial and
+            corporate disciplines. Find the area that best matches
+            your strengths, experience and career goals.
+          </p>
+
+        </div>
+
+        <div class="careers-discipline-grid">
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/well.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                01
+              </span>
+
+            </div>
+
+            <h3>
+              Well Construction &amp; Engineering
+            </h3>
+
+            <p>
+              For engineers and technical professionals supporting
+              well construction, intervention, tubular running,
+              completion, drilling and related services.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/operations.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                02
+              </span>
+
+            </div>
+
+            <h3>Operations</h3>
+
+            <p>
+              Support safe, efficient and cost-effective service
+              delivery through planning, logistics, coordination
+              and operational execution.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/mic.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                03
+              </span>
+
+            </div>
+
+            <h3>Sales &amp; Marketing</h3>
+
+            <p>
+              Develop markets, identify client needs, communicate
+              value and support sustainable commercial growth across
+              our service portfolio.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <span class="material-symbols-outlined">
+                  corporate_fare
+                </span>
+              </span>
+
+              <span class="careers-discipline-number">
+                04
+              </span>
+
+            </div>
+
+            <h3>
+              Corporate &amp; Regulatory Affairs
+            </h3>
+
+            <p>
+              Support regulatory engagement, corporate communication,
+              community relations, stakeholder management and
+              corporate social responsibility.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/key.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                05
+              </span>
+
+            </div>
+
+            <h3>
+              Key &amp; Client Account Management
+            </h3>
+
+            <p>
+              Build trusted client relationships, identify new
+              opportunities and coordinate solutions that deliver
+              measurable customer and business value.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/finance.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                06
+              </span>
+
+            </div>
+
+            <h3>Finance</h3>
+
+            <p>
+              Support financial reporting, commercial analysis,
+              planning, controls, accounting and informed
+              decision-making across the business.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/human.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                07
+              </span>
+
+            </div>
+
+            <h3>
+              Human Resources &amp; General Support
+            </h3>
+
+            <p>
+              Enable people and business performance through talent
+              management, employee support, administration and
+              professional corporate services.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/it.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                08
+              </span>
+
+            </div>
+
+            <h3>
+              Information Technology
+            </h3>
+
+            <p>
+              Support secure and dependable business operations
+              through infrastructure, applications, networks,
+              cybersecurity and digital services.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/qhse.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                09
+              </span>
+
+            </div>
+
+            <h3>QHSE</h3>
+
+            <p>
+              Champion quality, health, safety and environmental
+              standards that protect people, assets, clients and
+              communities.
+            </p>
+
+          </article>
+
+          <article class="careers-discipline-card careers-reveal">
+
+            <div class="careers-discipline-top">
+
+              <span class="careers-discipline-icon">
+                <img
+                  src="./images/customer-support.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="careers-discipline-number">
+                10
+              </span>
+
+            </div>
+
+            <h3>
+              Customer Support &amp; Order Services
+            </h3>
+
+            <p>
+              Coordinate enquiries, orders, invoicing, pricing and
+              service communication while delivering responsive
+              customer support.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         GRADUATE PROGRAMME
+    ========================================== -->
+
+    <section class="careers-graduate">
+      <div class="careers-shell careers-graduate-grid">
+
+        <div class="careers-reveal">
+
+          <span class="careers-kicker">
+            Early-career development
+          </span>
+
+          <h2>
+            AOS Orwell Graduate Trainee Programme
+          </h2>
+
+        </div>
+
+        <div class="careers-graduate-copy careers-reveal">
+
+          <p>
+            The AOS Orwell Graduate Trainee Programme is designed
+            to develop exceptional talent and prepare the next
+            generation of industry leaders.
+          </p>
+
+          <p>
+            Through structured training, practical experience,
+            mentorship and exposure to different disciplines,
+            participants are equipped to grow, innovate and build
+            rewarding careers.
+          </p>
+
+          <div class="careers-graduate-points">
+
+            <div class="careers-graduate-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                Structured technical and professional training
+              </span>
+
+            </div>
+
+            <div class="careers-graduate-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                Practical experience across business functions
+              </span>
+
+            </div>
+
+            <div class="careers-graduate-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                Mentorship from experienced professionals
+              </span>
+
+            </div>
+
+            <div class="careers-graduate-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                A foundation for long-term career growth
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APPLICATION PROCESS
+    ========================================== -->
+
+    <section class="careers-process">
+      <div class="careers-shell">
+
+        <div class="careers-section-heading careers-reveal">
+
+          <div>
+
+            <span class="careers-kicker">
+              Your application journey
+            </span>
+
+            <h2 class="careers-heading">
+              What to expect
+            </h2>
+
+          </div>
+
+          <p class="careers-section-copy">
+            Our recruitment process is designed to help us understand
+            your capability, experience and potential while giving
+            you an opportunity to learn more about AOS Orwell.
+          </p>
+
+        </div>
+
+        <div class="careers-process-grid careers-reveal">
+
+          <article class="careers-process-step">
+
+            <span class="careers-process-number">
+              01
+            </span>
+
+            <h3>Explore</h3>
+
+            <p>
+              Review available roles and identify the opportunity
+              that best fits your experience and aspirations.
+            </p>
+
+          </article>
+
+          <article class="careers-process-step">
+
+            <span class="careers-process-number">
+              02
+            </span>
+
+            <h3>Apply</h3>
+
+            <p>
+              Submit your application and provide the information
+              required for the role.
+            </p>
+
+          </article>
+
+          <article class="careers-process-step">
+
+            <span class="careers-process-number">
+              03
+            </span>
+
+            <h3>Assessment</h3>
+
+            <p>
+              Shortlisted applicants may complete technical,
+              competency or role-specific assessments.
+            </p>
+
+          </article>
+
+          <article class="careers-process-step">
+
+            <span class="careers-process-number">
+              04
+            </span>
+
+            <h3>Interview</h3>
+
+            <p>
+              Meet members of the hiring team and discuss your
+              experience, capability and suitability.
+            </p>
+
+          </article>
+
+          <article class="careers-process-step">
+
+            <span class="careers-process-number">
+              05
+            </span>
+
+            <h3>Onboarding</h3>
+
+            <p>
+              Successful candidates receive an offer and begin
+              their onboarding journey with AOS Orwell.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         OPEN POSITIONS
+    ========================================== -->
+
+    <section
+      id="positions"
+      class="careers-jobs"
+    >
+      <div class="careers-shell">
+
+        <div class="careers-section-heading careers-reveal">
+
+          <div>
+
+            <span class="careers-kicker">
+              Current vacancies
+            </span>
+
+            <h2 class="careers-heading">
+              Opportunities to grow with us
+            </h2>
+
+          </div>
+
+          <p class="careers-section-copy">
+            Search current opportunities by role, location or job
+            type and select a position to view its full details.
+          </p>
+
+        </div>
+
+        <form
+          id="careerFilterForm"
+          class="careers-job-filter careers-reveal"
+          onsubmit="return false;"
+        >
+
+          <div class="careers-filter-group">
+
+            <label for="careerRole">
+              Role
+            </label>
+
+            <input
+              id="careerRole"
+              type="search"
+              placeholder="Search by role or keyword"
+            />
+
+          </div>
+
+          <div class="careers-filter-group">
+
+            <label for="careerLocation">
+              Location
+            </label>
+
+            <select id="careerLocation">
+
+              <option value="">
+                All locations
+              </option>
+
+              <option value="port harcourt">
+                Port Harcourt
+              </option>
+
+              <option value="lagos">
+                Lagos
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="careers-filter-group">
+
+            <label for="careerJobType">
+              Job type
+            </label>
+
+            <select id="careerJobType">
+
+              <option value="">
+                All job types
+              </option>
+
+              <option value="full-time">
+                Full-time
+              </option>
+
+              <option value="contract">
+                Contract
+              </option>
+
+              <option value="internship">
+                Internship
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="careers-filter-buttons">
+
+            <button
+              type="button"
+              id="careerSearchButton"
+              class="careers-search-button"
+            >
+              Search
+            </button>
+
+            <button
+              type="button"
+              id="careerResetButton"
+              class="careers-reset-button"
+            >
+              Reset
+            </button>
+
+          </div>
+
         </form>
+
+        <p
+          id="careerJobCount"
+          class="careers-job-count"
+        >
+          Showing 4 opportunities
+        </p>
+
+        <div
+          id="careerJobList"
+          class="careers-job-list"
+        >
+
+          <!-- JOB 1 -->
+          <article
+            class="careers-job-card careers-reveal"
+            data-title="executive accounts manager account sales client"
+            data-location="port harcourt"
+            data-type="full-time"
+          >
+
+            <span class="careers-job-number">
+              01
+            </span>
+
+            <div class="careers-job-content">
+
+              <h3>
+                Executive Accounts Manager
+              </h3>
+
+              <div class="careers-job-meta">
+
+                <span>
+                  <i class="bi bi-geo-alt"></i>
+                  Port Harcourt, Nigeria
+                </span>
+
+                <span>
+                  <i class="bi bi-briefcase"></i>
+                  Full-time
+                </span>
+
+              </div>
+
+              <p class="careers-job-description">
+                Build lasting client relationships and support
+                sustainable account and revenue growth.
+              </p>
+
+            </div>
+
+            <div class="careers-job-actions">
+
+              <a
+                href="./careers/executive-accounts-manager.html"
+                class="careers-job-details"
+              >
+                More details
+              </a>
+
+              <button
+                type="button"
+                class="careers-job-share"
+                onclick="shareJob(
+                  'Executive Accounts Manager',
+                  './careers/executive-accounts-manager.html'
+                )"
+              >
+                <span class="material-symbols-outlined">
+                  share
+                </span>
+
+                Share
+              </button>
+
+            </div>
+
+          </article>
+
+          <!-- JOB 2 -->
+          <article
+            class="careers-job-card careers-reveal"
+            data-title="lead design engineer instrumentation engineering"
+            data-location="port harcourt"
+            data-type="full-time"
+          >
+
+            <span class="careers-job-number">
+              02
+            </span>
+
+            <div class="careers-job-content">
+
+              <h3>
+                Lead, Design Engineer – Instrumentation
+              </h3>
+
+              <div class="careers-job-meta">
+
+                <span>
+                  <i class="bi bi-geo-alt"></i>
+                  Port Harcourt, Nigeria
+                </span>
+
+                <span>
+                  <i class="bi bi-briefcase"></i>
+                  Full-time
+                </span>
+
+              </div>
+
+              <p class="careers-job-description">
+                Lead critical instrumentation design activities
+                focused on precision, safety and reliability.
+              </p>
+
+            </div>
+
+            <div class="careers-job-actions">
+
+              <a
+                href="./careers/lead-design-engineer-instrumentation.html"
+                class="careers-job-details"
+              >
+                More details
+              </a>
+
+              <button
+                type="button"
+                class="careers-job-share"
+                onclick="shareJob(
+                  'Lead, Design Engineer – Instrumentation',
+                  './careers/lead-design-engineer-instrumentation.html'
+                )"
+              >
+                <span class="material-symbols-outlined">
+                  share
+                </span>
+
+                Share
+              </button>
+
+            </div>
+
+          </article>
+
+          <!-- JOB 3 -->
+          <article
+            class="careers-job-card careers-reveal"
+            data-title="revenue to cash realization officer finance accounting"
+            data-location="port harcourt"
+            data-type="full-time"
+          >
+
+            <span class="careers-job-number">
+              03
+            </span>
+
+            <div class="careers-job-content">
+
+              <h3>
+                Revenue to Cash Realization Officer
+              </h3>
+
+              <div class="careers-job-meta">
+
+                <span>
+                  <i class="bi bi-geo-alt"></i>
+                  Port Harcourt, Nigeria
+                </span>
+
+                <span>
+                  <i class="bi bi-briefcase"></i>
+                  Full-time
+                </span>
+
+              </div>
+
+              <p class="careers-job-description">
+                Support efficient financial processes from sales
+                recognition through invoicing and cash collection.
+              </p>
+
+            </div>
+
+            <div class="careers-job-actions">
+
+              <a
+                href="./careers/revenue-to-cash-realization-officer.html"
+                class="careers-job-details"
+              >
+                More details
+              </a>
+
+              <button
+                type="button"
+                class="careers-job-share"
+                onclick="shareJob(
+                  'Revenue to Cash Realization Officer',
+                  './careers/revenue-to-cash-realization-officer.html'
+                )"
+              >
+                <span class="material-symbols-outlined">
+                  share
+                </span>
+
+                Share
+              </button>
+
+            </div>
+
+          </article>
+
+          <!-- JOB 4 -->
+          <article
+            class="careers-job-card careers-reveal"
+            data-title="technical sales engineer pmd process management sales"
+            data-location="port harcourt"
+            data-type="full-time"
+          >
+
+            <span class="careers-job-number">
+              04
+            </span>
+
+            <div class="careers-job-content">
+
+              <h3>
+                Technical Sales Engineer – PMD
+              </h3>
+
+              <div class="careers-job-meta">
+
+                <span>
+                  <i class="bi bi-geo-alt"></i>
+                  Port Harcourt, Nigeria
+                </span>
+
+                <span>
+                  <i class="bi bi-briefcase"></i>
+                  Full-time
+                </span>
+
+              </div>
+
+              <p class="careers-job-description">
+                Combine technical knowledge with client engagement
+                to support Process Management Division sales.
+              </p>
+
+            </div>
+
+            <div class="careers-job-actions">
+
+              <a
+                href="./careers/technical-sales-engineer-pmd.html"
+                class="careers-job-details"
+              >
+                More details
+              </a>
+
+              <button
+                type="button"
+                class="careers-job-share"
+                onclick="shareJob(
+                  'Technical Sales Engineer – PMD',
+                  './careers/technical-sales-engineer-pmd.html'
+                )"
+              >
+                <span class="material-symbols-outlined">
+                  share
+                </span>
+
+                Share
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div
+          id="careerNoResults"
+          class="careers-no-results"
+        >
+          No opportunities match your current search.
+          Try changing or clearing the filters.
+        </div>
+
       </div>
+    </section>
+
+    <!-- ==========================================
+         FINAL CTA
+    ========================================== -->
+
+    <section class="careers-cta">
+      <div class="careers-shell careers-cta-layout">
+
+        <div class="careers-cta-content">
+
+          <span>
+            Your next opportunity
+          </span>
+
+          <h2>
+            Build a career that creates lasting impact.
+          </h2>
+
+          <p>
+            Explore current opportunities and discover where your
+            experience, ambition and ideas can contribute to the
+            future of AOS Orwell.
+          </p>
+
+        </div>
+
+        <a
+          href="#positions"
+          class="careers-cta-button"
+        >
+          Explore open positions
+
+          <span class="material-symbols-outlined">
+            arrow_upward
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
+
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
-				
 
-     
-<script>
-  function isMobileUA() {
-    const ua = navigator.userAgent || "";
-    return /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(ua);
-  }
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
 
-  async function shareJob(title, path) {
-    const url = new URL(path, window.location.origin).href;
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
 
-    // ---- Mobile: try native share
-    if (isMobileUA() && typeof navigator.share === "function") {
-      try {
-        // If canShare exists, verify it; otherwise try share anyway
-        if (!navigator.canShare || navigator.canShare({ url })) {
-          await navigator.share({
-            title,
-            text: `Check out this job opening at AOS Orwell: ${title}`,
-            url
-          });
-          return; // success
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            We are one of the foremost Indigenous Oilfield
+            Servicing Companies in the country. Our service
+            offerings cover Well Construction, Process Management,
+            IPM &amp; Turnkey, and Operations &amp; Maintenance.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos.
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <!-- ==========================================
+       PAGE SCRIPT
+  ========================================== -->
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        /* Reveal elements */
+
+        const revealElements =
+          document.querySelectorAll(
+            ".careers-reveal"
+          );
+
+        if (
+          "IntersectionObserver" in window
+        ) {
+          const revealObserver =
+            new IntersectionObserver(
+              function (entries, observer) {
+                entries.forEach(
+                  function (entry) {
+                    if (!entry.isIntersecting) {
+                      return;
+                    }
+
+                    entry.target.classList.add(
+                      "careers-shown"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+                  }
+                );
+              },
+              {
+                threshold: 0.1,
+                rootMargin:
+                  "0px 0px -40px 0px"
+              }
+            );
+
+          revealElements.forEach(
+            function (element) {
+              revealObserver.observe(element);
+            }
+          );
+        } else {
+          revealElements.forEach(
+            function (element) {
+              element.classList.add(
+                "careers-shown"
+              );
+            }
+          );
         }
-      } catch (err) {
-        // If the user cancels, just stop; otherwise we'll fall back to copy
-        if (err && (err.name === "AbortError" || err.name === "NotAllowedError")) return;
+
+        /* Job filters */
+
+        const roleInput =
+          document.getElementById(
+            "careerRole"
+          );
+
+        const locationSelect =
+          document.getElementById(
+            "careerLocation"
+          );
+
+        const typeSelect =
+          document.getElementById(
+            "careerJobType"
+          );
+
+        const searchButton =
+          document.getElementById(
+            "careerSearchButton"
+          );
+
+        const resetButton =
+          document.getElementById(
+            "careerResetButton"
+          );
+
+        const jobCards =
+          Array.from(
+            document.querySelectorAll(
+              ".careers-job-card"
+            )
+          );
+
+        const jobCount =
+          document.getElementById(
+            "careerJobCount"
+          );
+
+        const noResults =
+          document.getElementById(
+            "careerNoResults"
+          );
+
+        function filterJobs() {
+          const roleValue =
+            roleInput.value
+              .trim()
+              .toLowerCase();
+
+          const locationValue =
+            locationSelect.value;
+
+          const typeValue =
+            typeSelect.value;
+
+          let visibleCount = 0;
+
+          jobCards.forEach(
+            function (card) {
+              const cardTitle =
+                card.dataset.title || "";
+
+              const cardLocation =
+                card.dataset.location || "";
+
+              const cardType =
+                card.dataset.type || "";
+
+              const matchesRole =
+                !roleValue ||
+                cardTitle.includes(roleValue);
+
+              const matchesLocation =
+                !locationValue ||
+                cardLocation === locationValue;
+
+              const matchesType =
+                !typeValue ||
+                cardType === typeValue;
+
+              const shouldShow =
+                matchesRole &&
+                matchesLocation &&
+                matchesType;
+
+              card.style.display =
+                shouldShow
+                  ? "grid"
+                  : "none";
+
+              if (shouldShow) {
+                visibleCount += 1;
+              }
+            }
+          );
+
+          jobCount.textContent =
+            visibleCount === 1
+              ? "Showing 1 opportunity"
+              : "Showing " +
+                visibleCount +
+                " opportunities";
+
+          noResults.classList.toggle(
+            "careers-visible",
+            visibleCount === 0
+          );
+        }
+
+        searchButton.addEventListener(
+          "click",
+          filterJobs
+        );
+
+        roleInput.addEventListener(
+          "input",
+          filterJobs
+        );
+
+        locationSelect.addEventListener(
+          "change",
+          filterJobs
+        );
+
+        typeSelect.addEventListener(
+          "change",
+          filterJobs
+        );
+
+        resetButton.addEventListener(
+          "click",
+          function () {
+            roleInput.value = "";
+            locationSelect.value = "";
+            typeSelect.value = "";
+
+            filterJobs();
+          }
+        );
       }
-      // fall through to copy if share not supported or failed
-    }
+    );
 
-    // ---- Desktop (and mobile fallback): copy + alert
-    try {
-      if (window.isSecureContext && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(url);
-      } else {
-        const temp = document.createElement("input");
-        temp.value = url;
-        document.body.appendChild(temp);
-        temp.select();
-        document.execCommand("copy");
-        document.body.removeChild(temp);
+    /* Job sharing */
+
+    async function shareJob(
+      title,
+      path
+    ) {
+      const url =
+        new URL(
+          path,
+          window.location.href
+        ).href;
+
+      if (
+        typeof navigator.share ===
+        "function"
+      ) {
+        try {
+          await navigator.share({
+            title: title,
+            text:
+              "View this job opportunity at AOS Orwell: " +
+              title,
+            url: url
+          });
+
+          return;
+        } catch (error) {
+          if (
+            error.name === "AbortError"
+          ) {
+            return;
+          }
+        }
       }
-      alert("Job link copied to clipboard!");
-    } catch {
-      // Last resort
-      prompt("Copy this job link:", url);
+
+      try {
+        if (
+          navigator.clipboard &&
+          window.isSecureContext
+        ) {
+          await navigator.clipboard.writeText(
+            url
+          );
+        } else {
+          const temporaryInput =
+            document.createElement("input");
+
+          temporaryInput.value = url;
+
+          document.body.appendChild(
+            temporaryInput
+          );
+
+          temporaryInput.select();
+
+          document.execCommand("copy");
+
+          temporaryInput.remove();
+        }
+
+        alert(
+          "Job link copied to clipboard."
+        );
+      } catch (error) {
+        window.prompt(
+          "Copy this job link:",
+          url
+        );
+      }
     }
-  }
-</script>
-<script src="../index.js"></script>
-<script>
-(function () {
-  function plural(n, unit) { return n + " " + unit + (n === 1 ? "" : "s") + " ago"; }
-  function relativeFrom(date) {
-    const s = Math.floor((Date.now() - date.getTime()) / 1000);
-    if (s < 45) return "just now";
-    const m = Math.floor(s / 60);
-    if (m < 60) return plural(m, "minute");
-    const h = Math.floor(m / 60);
-    if (h < 24) return plural(h, "hour");
-    const d = Math.floor(h / 24);
-    if (d < 7) return plural(d, "day");
-    const w = Math.floor(d / 7);
-    if (w < 5) return plural(w, "week");
-    const mo = Math.floor(d / 30);
-    if (mo < 12) return plural(mo, "month");
-    const y = Math.floor(d / 365);
-    return plural(y, "year");
-  }
+  </script>
 
-  document.querySelectorAll("time.job-posted").forEach(el => {
-    const dt = new Date(el.getAttribute("datetime"));
-    if (isNaN(dt)) return;
-    el.textContent = "posted " + relativeFrom(dt);
-    el.title = "Posted on " + dt.toLocaleString(); // tooltip with exact date
-  });
-})();
-</script>
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
 
-<script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = navbarHTML;
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
-</script>
+        const navbarScript =
+          document.createElement("script");
+
+        navbarScript.src =
+          "./navbar.js";
+
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
+
+  <script src="./index.js"></script>
+
 </body>
 </html>

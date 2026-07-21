@@ -1,338 +1,2574 @@
+<!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="output.css">
+  <meta charset="UTF-8" />
 
-    <style>
-  .leader-photo {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-  }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  #management .grid {
-    max-width: 980px;
-  }
+  <title>Leadership | AOS Orwell</title>
 
-  #management .grid > a {
-    max-width: 290px;
-    width: 100%;
-    margin: 0 auto;
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-  #board > .flex.flex-wrap > a {
-    max-width: 220px;
-  }
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
-  @media (max-width: 768px) {
-    #management .grid > a {
-      max-width: 240px;
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="./output.css" />
+
+  <style>
+    :root {
+      --leadership-green: #019b39;
+      --leadership-green-dark: #0c2417;
+      --leadership-green-deep: #061c10;
+      --leadership-green-soft: #eaf7ee;
+      --leadership-ink: #111914;
+      --leadership-copy: #5e6962;
+      --leadership-soft: #f3f7f4;
+      --leadership-border: #dfe7e2;
+      --leadership-white: #ffffff;
     }
 
-    #board > .flex.flex-wrap > a {
-      max-width: 220px;
+    html {
+      scroll-behavior: smooth;
     }
-  }
-</style>
+
+    body {
+      margin: 0;
+
+      background: #ffffff;
+      color: var(--leadership-ink);
+
+      font-family: "Poppins", sans-serif;
+    }
+
+    .leadership-page,
+    .leadership-page * {
+      box-sizing: border-box;
+    }
+
+    .leadership-page {
+      padding-top: 120px;
+
+      overflow: hidden;
+
+      background: #ffffff;
+    }
+
+    .leadership-shell {
+      width: min(1180px, calc(100% - 48px));
+
+      margin-inline: auto;
+    }
+
+    .leadership-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+
+      margin-bottom: 15px;
+
+      color: var(--leadership-green);
+
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .leadership-kicker::before {
+      content: "";
+
+      width: 34px;
+      height: 2px;
+
+      background: currentColor;
+    }
+
+    .leadership-heading {
+      margin: 0;
+
+      color: var(--leadership-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .leadership-hero {
+      position: relative;
+      isolation: isolate;
+
+      overflow: hidden;
+
+      padding: 90px 0 98px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 34, 18, 0.96) 0%,
+          rgba(5, 34, 18, 0.84) 55%,
+          rgba(5, 34, 18, 0.6) 100%
+        ),
+        url("./images/countSection.png")
+        center / cover no-repeat;
+
+      color: #ffffff;
+    }
+
+    .leadership-hero::after {
+      content: "";
+
+      position: absolute;
+      top: -270px;
+      right: -195px;
+      z-index: -1;
+
+      width: 650px;
+      height: 650px;
+
+      border: 96px solid rgba(1, 155, 57, 0.13);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .leadership-hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(340px, 0.58fr);
+
+      align-items: center;
+      gap: 80px;
+    }
+
+    .leadership-hero .leadership-kicker {
+      color: #74e39a;
+    }
+
+    .leadership-hero h1 {
+      max-width: 790px;
+
+      margin: 0 0 23px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(45px, 5.7vw, 74px);
+      line-height: 1.04;
+      font-weight: 700;
+      letter-spacing: -0.052em;
+    }
+
+    .leadership-hero-copy {
+      max-width: 700px;
+
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.74);
+
+      font-size: 14px;
+      line-height: 1.92;
+    }
+
+    .leadership-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+
+      margin-top: 32px;
+    }
+
+    .leadership-primary-link,
+    .leadership-outline-link {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 22px;
+
+      border-radius: 6px;
+
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .leadership-primary-link {
+      background: var(--leadership-green);
+      border: 1px solid var(--leadership-green);
+
+      color: #ffffff;
+    }
+
+    .leadership-outline-link {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+
+      color: #ffffff;
+    }
+
+    .leadership-primary-link:hover,
+    .leadership-outline-link:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.22);
+    }
+
+    .leadership-outline-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero summary */
+
+    .leadership-summary {
+      overflow: hidden;
+
+      background: rgba(4, 40, 20, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 13px;
+
+      backdrop-filter: blur(8px);
+    }
+
+    .leadership-summary-item {
+      min-height: 100px;
+
+      display: grid;
+
+      grid-template-columns:
+        54px minmax(0, 1fr);
+
+      align-items: center;
+      gap: 16px;
+
+      padding: 18px 20px;
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+    }
+
+    .leadership-summary-item:last-child {
+      border-bottom: 0;
+    }
+
+    .leadership-summary-icon {
+      width: 49px;
+      height: 49px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(116, 227, 154, 0.13);
+      border-radius: 50%;
+
+      color: #74e39a;
+    }
+
+    .leadership-summary-icon
+    .material-symbols-outlined {
+      font-size: 25px;
+    }
+
+    .leadership-summary-item strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .leadership-summary-item p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.61);
+
+      font-size: 9px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       LEADERSHIP INTRODUCTION
+    ========================================== */
+
+    .leadership-introduction {
+      padding: 100px 0 65px;
+
+      background: #ffffff;
+    }
+
+    .leadership-intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+      align-items: start;
+      gap: 85px;
+    }
+
+    .leadership-intro-copy {
+      display: grid;
+      gap: 17px;
+
+      padding-top: 29px;
+    }
+
+    .leadership-intro-copy p {
+      margin: 0;
+
+      color: var(--leadership-copy);
+
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    /* ==========================================
+       LEADERSHIP TABS
+    ========================================== */
+
+    .leadership-directory {
+      padding: 35px 0 115px;
+
+      background: #ffffff;
+    }
+
+    .leadership-tabs-wrap {
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 50px;
+    }
+
+    .leadership-tabs {
+      display: inline-flex;
+
+      padding: 5px;
+
+      background: #edf3ef;
+      border: 1px solid var(--leadership-border);
+      border-radius: 9px;
+    }
+
+    .leadership-tab {
+      min-width: 190px;
+      min-height: 51px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 21px;
+
+      background: transparent;
+      border: 0;
+      border-radius: 6px;
+
+      color: #445048;
+
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background-color 0.22s ease,
+        color 0.22s ease,
+        box-shadow 0.22s ease;
+    }
+
+    .leadership-tab:hover {
+      color: var(--leadership-green);
+    }
+
+    .leadership-tab.leadership-tab-active {
+      background: var(--leadership-green);
+
+      color: #ffffff;
+
+      box-shadow:
+        0 7px 18px
+        rgba(1, 155, 57, 0.2);
+    }
+
+    .leadership-tab
+    .material-symbols-outlined {
+      font-size: 19px;
+    }
+
+    /* ==========================================
+       PANELS
+    ========================================== */
+
+    .leadership-panel {
+      display: none;
+    }
+
+    .leadership-panel.leadership-panel-active {
+      display: block;
+    }
+
+    .leadership-panel-heading {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(280px, 420px);
+
+      align-items: end;
+      gap: 60px;
+
+      margin-bottom: 39px;
+    }
+
+    .leadership-panel-heading h2 {
+      margin: 0;
+
+      color: var(--leadership-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(27px, 3vw, 39px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .leadership-panel-heading p {
+      margin: 0;
+
+      color: var(--leadership-copy);
+
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* ==========================================
+       LEADERSHIP CARDS
+    ========================================== */
+
+    .leadership-management-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 28px 24px;
+    }
+
+    .leadership-board-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+      gap: 23px 17px;
+    }
+
+    .leadership-card {
+      min-width: 0;
+
+      overflow: hidden;
+
+      background: #ffffff;
+      border: 1px solid var(--leadership-border);
+      border-radius: 12px;
+
+      color: inherit;
+      text-decoration: none;
+
+      box-shadow:
+        0 8px 27px
+        rgba(12, 54, 28, 0.06);
+
+      transition:
+        transform 0.27s ease,
+        border-color 0.27s ease,
+        box-shadow 0.27s ease;
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-7px);
+
+      border-color: #9dcaab;
+
+      box-shadow:
+        0 20px 44px
+        rgba(12, 54, 28, 0.14);
+    }
+
+    .leadership-card-media {
+      position: relative;
+
+      overflow: hidden;
+
+      width: 100%;
+      aspect-ratio: 3 / 4;
+
+      background: #4b5054;
+    }
+
+    .leadership-card-media img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: top center;
+
+      transition: transform 0.5s ease;
+    }
+
+    .leadership-card:hover
+    .leadership-card-media img {
+      transform: scale(1.035);
+    }
+
+    .leadership-card-overlay {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      padding: 17px;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(3, 27, 13, 0.45),
+          transparent 45%
+        );
+
+      opacity: 0;
+
+      transition: opacity 0.27s ease;
+    }
+
+    .leadership-card:hover
+    .leadership-card-overlay {
+      opacity: 1;
+    }
+
+    .leadership-card-arrow {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--leadership-green);
+      border-radius: 50%;
+
+      color: #ffffff;
+    }
+
+    .leadership-card-arrow
+    .material-symbols-outlined {
+      font-size: 20px;
+    }
+
+    .leadership-card-content {
+      min-height: 135px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      padding: 20px 19px 22px;
+    }
+
+    .leadership-card-label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--leadership-green);
+
+      font-size: 8px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .leadership-card h3 {
+      margin: 0 0 7px;
+
+      color: var(--leadership-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .leadership-card-role {
+      margin: 0;
+
+      color: var(--leadership-copy);
+
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* Board cards are slightly more compact */
+
+    .leadership-board-grid
+    .leadership-card-content {
+      min-height: 125px;
+
+      padding: 18px 16px 20px;
+    }
+
+    .leadership-board-grid
+    .leadership-card h3 {
+      font-size: 14px;
+    }
+
+    /* ==========================================
+       GOVERNANCE STRIP
+    ========================================== */
+
+    .leadership-governance {
+      padding: 100px 0;
+
+      background: var(--leadership-soft);
+    }
+
+    .leadership-governance-box {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+      align-items: center;
+      gap: 75px;
+
+      padding: 49px 50px;
+
+      background: var(--leadership-green-dark);
+      border-radius: 15px;
+
+      color: #ffffff;
+
+      box-shadow:
+        0 20px 55px
+        rgba(5, 43, 20, 0.17);
+    }
+
+    .leadership-governance-box
+    .leadership-kicker {
+      color: #74e39a;
+    }
+
+    .leadership-governance-box h2 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 3.5vw, 45px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .leadership-governance-content p {
+      margin: 0 0 23px;
+
+      color: rgba(255, 255, 255, 0.69);
+
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .leadership-governance-points {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 12px 18px;
+    }
+
+    .leadership-governance-point {
+      display: grid;
+
+      grid-template-columns:
+        20px minmax(0, 1fr);
+
+      gap: 8px;
+      align-items: start;
+
+      color: rgba(255, 255, 255, 0.79);
+
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .leadership-governance-point
+    .material-symbols-outlined {
+      color: #74e39a;
+
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       FINAL CTA
+    ========================================== */
+
+    .leadership-cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 95px 0;
+
+      background:
+        linear-gradient(
+          125deg,
+          #008c35,
+          var(--leadership-green)
+        );
+
+      color: #ffffff;
+    }
+
+    .leadership-cta::after {
+      content: "";
+
+      position: absolute;
+      top: -225px;
+      right: -175px;
+
+      width: 540px;
+      height: 540px;
+
+      border: 80px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .leadership-cta-layout {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .leadership-cta-content {
+      max-width: 750px;
+    }
+
+    .leadership-cta-content span {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: rgba(255, 255, 255, 0.76);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .leadership-cta-content h2 {
+      margin: 0 0 13px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 47px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .leadership-cta-content p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.76);
+
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .leadership-cta-button {
+      min-height: 55px;
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 24px;
+
+      background: #ffffff;
+      border-radius: 7px;
+
+      color: #007b2e;
+
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      box-shadow:
+        0 12px 28px
+        rgba(0, 65, 24, 0.18);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .leadership-cta-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 18px 37px
+        rgba(0, 65, 24, 0.24);
+    }
+
+    /* ==========================================
+       REVEAL
+    ========================================== */
+
+    .leadership-reveal {
+      opacity: 0;
+
+      transform: translateY(27px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .leadership-reveal.leadership-shown {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       TABLET
+    ========================================== */
+
+    @media (max-width: 1050px) {
+      .leadership-hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 46px;
+      }
+
+      .leadership-summary {
+        display: grid;
+
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .leadership-summary-item:first-child {
+        border-right:
+          1px solid
+          rgba(255, 255, 255, 0.12);
+
+        border-bottom: 0;
+      }
+
+      .leadership-intro-grid,
+      .leadership-governance-box {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+      }
+
+      .leadership-intro-copy {
+        padding-top: 0;
+      }
+
+      .leadership-panel-heading {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+      }
+
+      .leadership-board-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .leadership-governance-points {
+        max-width: 700px;
+      }
+
+      .leadership-cta-layout {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .leadership-management-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .leadership-board-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 640px) {
+      .leadership-page {
+        padding-top: 92px;
+      }
+
+      .leadership-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .leadership-hero {
+        padding: 63px 0 70px;
+      }
+
+      .leadership-hero::after {
+        top: -120px;
+        right: -135px;
+
+        width: 320px;
+        height: 320px;
+
+        border-width: 48px;
+      }
+
+      .leadership-hero h1 {
+        font-size: 41px;
+      }
+
+      .leadership-hero-copy {
+        font-size: 13px;
+      }
+
+      .leadership-hero-actions {
+        flex-direction: column;
+      }
+
+      .leadership-primary-link,
+      .leadership-outline-link {
+        width: 100%;
+      }
+
+      .leadership-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .leadership-summary-item:first-child {
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          rgba(255, 255, 255, 0.12);
+      }
+
+      .leadership-introduction {
+        padding: 75px 0 45px;
+      }
+
+      .leadership-directory {
+        padding: 30px 0 82px;
+      }
+
+      .leadership-tabs-wrap {
+        margin-bottom: 38px;
+      }
+
+      .leadership-tabs {
+        width: 100%;
+      }
+
+      .leadership-tab {
+        min-width: 0;
+        flex: 1;
+
+        padding: 0 10px;
+
+        font-size: 9px;
+      }
+
+      .leadership-management-grid,
+      .leadership-board-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+      }
+
+      .leadership-card {
+        width: min(100%, 390px);
+
+        justify-self: center;
+      }
+
+      .leadership-card-content,
+      .leadership-board-grid
+      .leadership-card-content {
+        min-height: 120px;
+
+        padding: 19px 18px 21px;
+      }
+
+      .leadership-card h3,
+      .leadership-board-grid
+      .leadership-card h3 {
+        font-size: 16px;
+      }
+
+      .leadership-governance {
+        padding: 75px 0;
+      }
+
+      .leadership-governance-box {
+        padding: 32px 23px;
+      }
+
+      .leadership-governance-points {
+        grid-template-columns: 1fr;
+      }
+
+      .leadership-cta {
+        padding: 75px 0;
+      }
+
+      .leadership-cta::after {
+        top: -110px;
+        right: -135px;
+
+        width: 310px;
+        height: 310px;
+
+        border-width: 46px;
+      }
+
+      .leadership-cta-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div id="navbar-placeholder"></div>
 
-   <div style="height: 100px;"></div>
-    
+<body class="!bg-white">
 
-    <section id="management" class="flex flex-col gap-y-10 items-center py-20 px-6 md:px-20 relative">
-        <img src="./images/countSection.png" alt="" class="w-full fixed top-0 bottom-0 -z-10 opacity-50">
-        <div class="w-full lg:w-2/3 xl:w-1/2 flex flex-col gap-y-4 items-center text-center">
-            <h1 class="text-xl xsm:text-2xl lg:text-3xl font-bold">MEET THE MANAGEMENT</h1>
-            <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">We value and welcome diversity at AOS Orwell. We pride ourselves as an equal opportunity employer with a high-impact mixed team of professionals throughout the company. This has impacted significantly on the various areas of our competencies as well as our overall performance.</p>
-        </div>
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
 
-        <div class="flex">
-            <p id="managementTab" onclick="showManagement()" class="px-4 py-2 sm:px-8 sm:py-3 text-xs cursor-pointer sm:text-sm text-white bg-primary">Management</p>
-            <p id="boardTab" onclick="showBoard()" class="px-4 py-2 sm:px-8 sm:py-3 text-xs cursor-pointer sm:text-sm text-black bg-gray-200 hover:text-white hover:bg-primary">Board of Directors</p>
-        </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-12 w-full max-w-6xl mt-10">
-            <a href="./board/akeem-ariyo.html" class="hover:scale-105 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/akeem.png" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr. Akeem Ariyo</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Managing Director/CEO</p>
-                    </div>
-                </div>
-            </a>
-            <a href="./board/anand-bhatia.html" class="hover:scale-105 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/anand.jpg" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr Anand Bhatia</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Country Director, Process Management Division</p>
-                    </div>
-                </div>
-            </a>
-            <a href="./board/anthony-nwosu.html" class="hover:scale-105 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/tony.jpg" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr. Anthony Nwosu</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Country Director,  Wellbore Construction Division</p>
-                    </div>
-                </div>
-            </a>
-		    <a href="./board/akinyemi.html" class="hover:scale-105 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/Akinyemi.png" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr. Akinyemi Aduwo</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Director Of Sales</p>
-                    </div>
-                </div>
-            </a>
-		    <a href="./board/olumuyiwa.html" class="hover:scale-105 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/Olumuyiwa.png" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr. Olumuyiwa Adebayo</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Director Of Finance</p>
-                    </div>
-                </div>
-            </a>
-            <a href="./board/onochie-onyetenu.html" class="hover:scale-105 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/onochie.jpg" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr Onochie Onyetenu</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Director, Corporate Affairs and Government Relations</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <section id="board" class="hidden flex-col gap-y-10 items-center py-20 px-6 md:px-20 relative">
-        <img src="./images/countSection.png" alt="" class="w-full fixed top-0 bottom-0 -z-10 opacity-50">
-        <div class="w-full lg:w-2/3 xl:w-1/2 flex flex-col gap-y-6 items-center text-center">
-            <h1 class="text-xl xsm:text-2xl lg:text-3xl font-bold">MEET THE BOARD</h1>
-            <p class="text-xs sm:text-[13px] text-gray-600 leading-loose">We value and welcome diversity at AOS Orwell. We pride ourselves as an equal opportunity employer with a high-impact mixed team of professionals throughout the company. This has impacted significantly on the various areas of our competencies as well as our overall performance.</p>
-        </div>
+  <main class="leadership-page">
 
-        <div class="flex">
-            <p id="managementTab" onclick="showManagement()" class="px-4 py-2 sm:px-8 sm:py-3 text-xs cursor-pointer sm:text-sm  text-black bg-gray-200">Management</p>
-            <p id="boardTab" onclick="showBoard()" class="px-4 py-2 sm:px-8 sm:py-3 text-xs cursor-pointer sm:text-sm text-white bg-primary hover:text-white hover:bg-primary">Board of Directors</p>
-        </div>
-        
-        <div class="flex flex-wrap gap-y-4 gap-x-[2%] w-full mt-10 justify-center">
-            <a href="./board/azad-shivdasani.html" class="w-[49%] xsm:w-[32%] md:w-[23.5%] lg:w-[18.4%] hover:scale-110 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/board/azad.png" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr. Azad Shivdasani</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Chiarman</p>
-                    </div>
-                </div>
-            </a>
-            <a href="./board/akeem-ariyo.html" class="w-[49%] xsm:w-[32%] md:w-[23.5%] lg:w-[18.4%] hover:scale-110 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/akeem2.png" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr. Akeem Ariyo</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Managing Director</p>
-                    </div>
-                </div>
-            </a>
-            <a href="./board/femi-omotayo.html" class="w-[49%] xsm:w-[32%] md:w-[23.5%] lg:w-[18.4%] hover:scale-110 cursor-pointer transition">
-                <div class="flex flex-col gap-y-3 ">
-                    <img src="./images/board/Rectangle 5508-6.png" alt="" class="leader-photo bg-[#52525A]">
-                    <div class="flex flex-col gap-y-0 px-3">
-                        <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Mr Femi Omotayo</h3>
-                        <p class="text-xs sm:text-[13px] font-medium text-gray-600">Director</p>
-                    </div>
-                </div>
-            </a>
-            <a href="./board/henry-okolo.html" class="w-[49%] xsm:w-[32%] md:w-[23.5%] lg:w-[18.4%] hover:scale-110 cursor-pointer transition">
-            <div class="flex flex-col gap-y-3 ">
-                <img src="./images/board/henry.png" alt="" class="leader-photo bg-[#52525A]">
-                <div class="flex flex-col gap-y-0 px-3">
-                    <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Chief Henry Okolo</h3>
-                    <p class="text-xs sm:text-[13px] font-medium text-gray-600">Director</p>
-                </div>
-            </div>
-        </a>
-        <a href="./board/bayo-adebiyi.html" class="w-[49%] xsm:w-[32%] md:w-[23.5%] lg:w-[18.4%] hover:scale-110 cursor-pointer transition">
-        <div class="flex flex-col gap-y-3 ">
-            <img src="./images/board/bayo.png" alt="" class="leader-photo bg-[#52525A]">
-            <div class="flex flex-col gap-y-0 px-3">
-                <h3 class="text-[13px] xsm:text-sm md:text-[15px] font-semibold">Bayo Adebiyi</h3>
-                <p class="text-xs sm:text-[13px] font-medium text-gray-600">Director</p>
-            </div>
-        </div>
-    </a>
-            
-        </div>
-    </section>
-    
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">QHSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="leadership-hero">
+      <div class="leadership-shell leadership-hero-grid">
+
+        <div>
+
+          <span class="leadership-kicker">
+            AOS Orwell Leadership
+          </span>
+
+          <h1>
+            Leadership built on experience, accountability and vision.
+          </h1>
+
+          <p class="leadership-hero-copy">
+            Our management team and Board of Directors combine
+            extensive industry knowledge, strong governance and
+            multidisciplinary expertise to guide AOS Orwell’s
+            strategy, operations and long-term growth.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
+
+          <div class="leadership-hero-actions">
+
+            <a
+              href="#leadership-directory"
+              class="leadership-primary-link"
+            >
+              Meet our leadership
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
             </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
+
+            <a
+              href="./about.html"
+              class="leadership-outline-link"
+            >
+              About AOS Orwell
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
             </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
           </div>
+
         </div>
+
+        <div class="leadership-summary">
+
+          <div class="leadership-summary-item">
+
+            <span class="leadership-summary-icon">
+              <span class="material-symbols-outlined">
+                groups
+              </span>
+            </span>
+
+            <div>
+
+              <strong>
+                Management Team
+              </strong>
+
+              <p>
+                Executive leadership responsible for strategy,
+                operations and business performance.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="leadership-summary-item">
+
+            <span class="leadership-summary-icon">
+              <span class="material-symbols-outlined">
+                account_balance
+              </span>
+            </span>
+
+            <div>
+
+              <strong>
+                Board of Directors
+              </strong>
+
+              <p>
+                Governance, oversight and long-term strategic
+                direction for the organisation.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
-        
-    
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
+    </section>
+
+    <!-- ==========================================
+         INTRODUCTION
+    ========================================== -->
+
+    <section class="leadership-introduction">
+      <div class="leadership-shell leadership-intro-grid">
+
+        <div class="leadership-reveal">
+
+          <span class="leadership-kicker">
+            Experienced leadership
+          </span>
+
+          <h2 class="leadership-heading">
+            Guiding our people, performance and future
+          </h2>
+
         </div>
-  
-        
+
+        <div class="leadership-intro-copy leadership-reveal">
+
+          <p>
+            AOS Orwell’s leaders bring together technical,
+            commercial, financial, operational and governance
+            experience developed across the energy industry.
+          </p>
+
+          <p>
+            Together, they provide the direction, oversight and
+            accountability required to serve our clients, develop
+            our people and sustain responsible growth across our
+            operations.
+          </p>
+
+        </div>
+
       </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+    </section>
+
+    <!-- ==========================================
+         LEADERSHIP DIRECTORY
+    ========================================== -->
+
+    <section
+      id="leadership-directory"
+      class="leadership-directory"
+    >
+      <div class="leadership-shell">
+
+        <!-- TABS -->
+        <div
+          class="leadership-tabs-wrap leadership-reveal"
+        >
+
+          <div
+            class="leadership-tabs"
+            role="tablist"
+            aria-label="Leadership groups"
+          >
+
+            <button
+              type="button"
+              id="managementTab"
+              class="leadership-tab leadership-tab-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="managementPanel"
+              data-panel="managementPanel"
+            >
+              <span class="material-symbols-outlined">
+                groups
+              </span>
+
+              Management
+            </button>
+
+            <button
+              type="button"
+              id="boardTab"
+              class="leadership-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="boardPanel"
+              data-panel="boardPanel"
+            >
+              <span class="material-symbols-outlined">
+                account_balance
+              </span>
+
+              Board of Directors
+            </button>
+
+          </div>
+
         </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
+
+        <!-- ======================================
+             MANAGEMENT PANEL
+        ======================================= -->
+
+        <div
+          id="managementPanel"
+          class="leadership-panel leadership-panel-active"
+          role="tabpanel"
+          aria-labelledby="managementTab"
+        >
+
+          <div class="leadership-panel-heading">
+
+            <div>
+
+              <span class="leadership-kicker">
+                Executive leadership
+              </span>
+
+              <h2>
+                Meet the Management Team
+              </h2>
+
+            </div>
+
+            <p>
+              Our management team leads the company’s business
+              divisions and corporate functions, translating
+              strategy into safe and dependable operational
+              performance.
+            </p>
+
+          </div>
+
+          <div class="leadership-management-grid">
+
+            <!-- AKEEM ARIYO -->
+            <a
+              href="./board/akeem-ariyo.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/akeem.png"
+                  alt="Mr. Akeem Ariyo"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Executive Management
+                </span>
+
+                <h3>
+                  Mr. Akeem Ariyo
+                </h3>
+
+                <p class="leadership-card-role">
+                  Managing Director / Chief Executive Officer
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- ANAND BHATIA -->
+            <a
+              href="./board/anand-bhatia.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/anand.jpg"
+                  alt="Mr. Anand Bhatia"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Process Management
+                </span>
+
+                <h3>
+                  Mr. Anand Bhatia
+                </h3>
+
+                <p class="leadership-card-role">
+                  Country Director, Process Management Division
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- ANTHONY NWOSU -->
+            <a
+              href="./board/anthony-nwosu.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/tony.jpg"
+                  alt="Mr. Anthony Nwosu"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Well Construction
+                </span>
+
+                <h3>
+                  Mr. Anthony Nwosu
+                </h3>
+
+                <p class="leadership-card-role">
+                  Country Director, Well Construction Division
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- AKINYEMI ADUWO -->
+            <a
+              href="./board/akinyemi.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/Akinyemi.png"
+                  alt="Mr. Akinyemi Aduwo"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Commercial Leadership
+                </span>
+
+                <h3>
+                  Mr. Akinyemi Aduwo
+                </h3>
+
+                <p class="leadership-card-role">
+                  Director of Sales
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- OLUMUYIWA ADEBAYO -->
+            <a
+              href="./board/olumuyiwa.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/Olumuyiwa.png"
+                  alt="Mr. Olumuyiwa Adebayo"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Corporate Leadership
+                </span>
+
+                <h3>
+                  Mr. Olumuyiwa Adebayo
+                </h3>
+
+                <p class="leadership-card-role">
+                  Director of Finance
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- ONOCHIE ONYETENU -->
+            <a
+              href="./board/onochie-onyetenu.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/onochie.jpg"
+                  alt="Mr. Onochie Onyetenu"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Corporate Affairs
+                </span>
+
+                <h3>
+                  Mr. Onochie Onyetenu
+                </h3>
+
+                <p class="leadership-card-role">
+                  Director, Corporate Affairs and Government Relations
+                </p>
+
+              </div>
+
+            </a>
+
+          </div>
+
         </div>
-    
-        
+
+        <!-- ======================================
+             BOARD PANEL
+        ======================================= -->
+
+        <div
+          id="boardPanel"
+          class="leadership-panel"
+          role="tabpanel"
+          aria-labelledby="boardTab"
+          hidden
+        >
+
+          <div class="leadership-panel-heading">
+
+            <div>
+
+              <span class="leadership-kicker">
+                Corporate governance
+              </span>
+
+              <h2>
+                Meet the Board of Directors
+              </h2>
+
+            </div>
+
+            <p>
+              The Board provides strategic direction, governance
+              and oversight while supporting accountability,
+              responsible growth and sustainable value creation.
+            </p>
+
+          </div>
+
+          <div class="leadership-board-grid">
+
+            <!-- AZAD SHIVDASANI -->
+            <a
+              href="./board/azad-shivdasani.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/board/azad.png"
+                  alt="Mr. Azad Shivdasani"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Board Leadership
+                </span>
+
+                <h3>
+                  Mr. Azad Shivdasani
+                </h3>
+
+                <p class="leadership-card-role">
+                  Chairman
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- AKEEM ARIYO -->
+            <a
+              href="./board/akeem-ariyo.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/akeem2.png"
+                  alt="Mr. Akeem Ariyo"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Board Member
+                </span>
+
+                <h3>
+                  Mr. Akeem Ariyo
+                </h3>
+
+                <p class="leadership-card-role">
+                  Managing Director
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- FEMI OMOTAYO -->
+            <a
+              href="./board/femi-omotayo.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/board/Rectangle 5508-6.png"
+                  alt="Mr. Femi Omotayo"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Board Member
+                </span>
+
+                <h3>
+                  Mr. Femi Omotayo
+                </h3>
+
+                <p class="leadership-card-role">
+                  Director
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- HENRY OKOLO -->
+            <a
+              href="./board/henry-okolo.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/board/henry.png"
+                  alt="Chief Henry Okolo"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Board Member
+                </span>
+
+                <h3>
+                  Chief Henry Okolo
+                </h3>
+
+                <p class="leadership-card-role">
+                  Director
+                </p>
+
+              </div>
+
+            </a>
+
+            <!-- BAYO ADEBIYI -->
+            <a
+              href="./board/bayo-adebiyi.html"
+              class="leadership-card leadership-reveal"
+            >
+
+              <div class="leadership-card-media">
+
+                <img
+                  src="./images/board/bayo.png"
+                  alt="Mr. Bayo Adebiyi"
+                />
+
+                <div class="leadership-card-overlay">
+
+                  <span class="leadership-card-arrow">
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="leadership-card-content">
+
+                <span class="leadership-card-label">
+                  Board Member
+                </span>
+
+                <h3>
+                  Mr. Bayo Adebiyi
+                </h3>
+
+                <p class="leadership-card-role">
+                  Director
+                </p>
+
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         GOVERNANCE
+    ========================================== -->
+
+    <section class="leadership-governance">
+      <div class="leadership-shell">
+
+        <div
+          class="leadership-governance-box leadership-reveal"
+        >
+
+          <div>
+
+            <span class="leadership-kicker">
+              Governance and accountability
+            </span>
+
+            <h2>
+              Responsible leadership at every level
+            </h2>
+
+          </div>
+
+          <div class="leadership-governance-content">
+
+            <p>
+              Our leadership structure combines executive
+              accountability with independent oversight, enabling
+              disciplined decision-making and consistent focus on
+              clients, people, safety and long-term performance.
+            </p>
+
+            <div class="leadership-governance-points">
+
+              <div class="leadership-governance-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Clear strategic direction
+                </span>
+
+              </div>
+
+              <div class="leadership-governance-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Strong operational accountability
+                </span>
+
+              </div>
+
+              <div class="leadership-governance-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Responsible corporate governance
+                </span>
+
+              </div>
+
+              <div class="leadership-governance-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Sustainable long-term value
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FINAL CTA
+    ========================================== -->
+
+    <section class="leadership-cta">
+      <div class="leadership-shell leadership-cta-layout">
+
+        <div class="leadership-cta-content">
+
+          <span>
+            Discover AOS Orwell
+          </span>
+
+          <h2>
+            Learn more about our company and capabilities.
+          </h2>
+
+          <p>
+            Explore our history, service portfolio, values and the
+            integrated expertise that supports clients throughout
+            the energy asset lifecycle.
+          </p>
+
+        </div>
+
+        <a
+          href="./about.html"
+          class="leadership-cta-button"
+        >
+          Discover our story
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
-          </div>
-        </form>
-      </div>
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
-     
-    <script src="./index.js"></script>
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
 
-    <script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
-</script>
+        <div class="w-full">
 
-<script>
-  function showBoard() {
-    const managementSection = document.getElementById("management");
-    const boardSection = document.getElementById("board");
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            We are one of the foremost Indigenous Oilfield
+            Servicing Companies in the country. Our service
+            offerings cover Well Construction, Process Management,
+            IPM &amp; Turnkey, and Operations &amp; Maintenance.
+          </p>
 
-    managementSection.classList.add("hidden");
-    managementSection.classList.remove("flex");
+          <div class="mt-5 flex flex-col gap-y-2">
 
-    boardSection.classList.remove("hidden");
-    boardSection.classList.add("flex");
-  }
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
 
-  function showManagement() {
-    const managementSection = document.getElementById("management");
-    const boardSection = document.getElementById("board");
+            <div class="flex gap-x-3">
 
-    boardSection.classList.add("hidden");
-    boardSection.classList.remove("flex");
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
 
-    managementSection.classList.remove("hidden");
-    managementSection.classList.add("flex");
-  }
-</script>
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos.
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <!-- ==========================================
+       LEADERSHIP SCRIPT
+  ========================================== -->
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        const tabButtons =
+          document.querySelectorAll(
+            ".leadership-tab"
+          );
+
+        const panels =
+          document.querySelectorAll(
+            ".leadership-panel"
+          );
+
+        function activatePanel(
+          panelId,
+          updateHash
+        ) {
+          tabButtons.forEach(
+            function (button) {
+              const isActive =
+                button.dataset.panel ===
+                panelId;
+
+              button.classList.toggle(
+                "leadership-tab-active",
+                isActive
+              );
+
+              button.setAttribute(
+                "aria-selected",
+                String(isActive)
+              );
+
+              button.tabIndex =
+                isActive ? 0 : -1;
+            }
+          );
+
+          panels.forEach(
+            function (panel) {
+              const isActive =
+                panel.id === panelId;
+
+              panel.classList.toggle(
+                "leadership-panel-active",
+                isActive
+              );
+
+              panel.hidden = !isActive;
+            }
+          );
+
+          if (updateHash) {
+            const newHash =
+              panelId === "boardPanel"
+                ? "#board"
+                : "#management";
+
+            history.replaceState(
+              null,
+              "",
+              newHash
+            );
+          }
+
+          window.setTimeout(
+            function () {
+              document
+                .querySelectorAll(
+                  "#" +
+                  panelId +
+                  " .leadership-reveal"
+                )
+                .forEach(
+                  function (element) {
+                    element.classList.add(
+                      "leadership-shown"
+                    );
+                  }
+                );
+            },
+            30
+          );
+        }
+
+        tabButtons.forEach(
+          function (button, index) {
+            button.addEventListener(
+              "click",
+              function () {
+                activatePanel(
+                  button.dataset.panel,
+                  true
+                );
+              }
+            );
+
+            button.addEventListener(
+              "keydown",
+              function (event) {
+                if (
+                  event.key !== "ArrowRight" &&
+                  event.key !== "ArrowLeft"
+                ) {
+                  return;
+                }
+
+                event.preventDefault();
+
+                const direction =
+                  event.key === "ArrowRight"
+                    ? 1
+                    : -1;
+
+                const nextIndex =
+                  (
+                    index +
+                    direction +
+                    tabButtons.length
+                  ) %
+                  tabButtons.length;
+
+                const nextButton =
+                  tabButtons[nextIndex];
+
+                nextButton.focus();
+
+                activatePanel(
+                  nextButton.dataset.panel,
+                  true
+                );
+              }
+            );
+          }
+        );
+
+        const initialPanel =
+          window.location.hash === "#board"
+            ? "boardPanel"
+            : "managementPanel";
+
+        activatePanel(
+          initialPanel,
+          false
+        );
+
+        /* Scroll reveal */
+
+        const revealElements =
+          document.querySelectorAll(
+            ".leadership-reveal"
+          );
+
+        if (
+          "IntersectionObserver" in window
+        ) {
+          const revealObserver =
+            new IntersectionObserver(
+              function (entries, observer) {
+                entries.forEach(
+                  function (entry) {
+                    if (
+                      !entry.isIntersecting
+                    ) {
+                      return;
+                    }
+
+                    entry.target.classList.add(
+                      "leadership-shown"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+                  }
+                );
+              },
+              {
+                threshold: 0.1,
+                rootMargin:
+                  "0px 0px -40px 0px"
+              }
+            );
+
+          revealElements.forEach(
+            function (element) {
+              if (
+                !element.closest(
+                  "[hidden]"
+                )
+              ) {
+                revealObserver.observe(
+                  element
+                );
+              }
+            }
+          );
+        } else {
+          revealElements.forEach(
+            function (element) {
+              element.classList.add(
+                "leadership-shown"
+              );
+            }
+          );
+        }
+      }
+    );
+  </script>
+
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
+
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML =
+          navbarHTML;
+
+        const navbarScript =
+          document.createElement(
+            "script"
+          );
+
+        navbarScript.src =
+          "./navbar.js";
+
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
+
+  <script src="./index.js"></script>
+
 </body>
 </html>

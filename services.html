@@ -1,292 +1,2576 @@
+<!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
-    <link rel="stylesheet" href="output.css">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Our Services | AOS Orwell</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="./output.css" />
+
+  <style>
+    :root {
+      --services-green: #019b39;
+      --services-green-dark: #0c2417;
+      --services-green-deep: #061c10;
+      --services-green-soft: #eaf7ee;
+      --services-ink: #111914;
+      --services-copy: #5e6962;
+      --services-soft: #f3f7f4;
+      --services-border: #dfe7e2;
+      --services-white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--services-ink);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .services-page,
+    .services-page * {
+      box-sizing: border-box;
+    }
+
+    .services-page {
+      padding-top: 120px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .services-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .services-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+
+      margin-bottom: 15px;
+
+      color: var(--services-green);
+
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .services-kicker::before {
+      content: "";
+
+      width: 33px;
+      height: 2px;
+
+      background: currentColor;
+    }
+
+    .services-heading {
+      margin: 0;
+
+      color: var(--services-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .services-section-description {
+      margin: 0;
+
+      color: var(--services-copy);
+
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .services-section-header {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 430px);
+
+      align-items: end;
+      gap: 65px;
+
+      margin-bottom: 46px;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .services-hero {
+      position: relative;
+      isolation: isolate;
+
+      overflow: hidden;
+
+      padding: 92px 0 100px;
+
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(1, 155, 57, 0.25),
+          transparent 33%
+        ),
+        linear-gradient(
+          125deg,
+          #061c10 0%,
+          #0c301d 55%,
+          #075728 100%
+        );
+
+      color: #ffffff;
+    }
+
+    .services-hero::before {
+      content: "";
+
+      position: absolute;
+      top: -280px;
+      right: -200px;
+      z-index: -1;
+
+      width: 670px;
+      height: 670px;
+
+      border: 98px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .services-hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 0.62fr);
+
+      align-items: center;
+      gap: 80px;
+    }
+
+    .services-hero .services-kicker {
+      color: #75e39b;
+    }
+
+    .services-hero h1 {
+      max-width: 850px;
+
+      margin: 0 0 23px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(46px, 6vw, 76px);
+      line-height: 1.04;
+      font-weight: 700;
+      letter-spacing: -0.052em;
+    }
+
+    .services-hero-copy {
+      max-width: 730px;
+
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.74);
+
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .services-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+
+      margin-top: 32px;
+    }
+
+    .services-primary-button,
+    .services-outline-button {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 22px;
+
+      border-radius: 6px;
+
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .services-primary-button {
+      background: var(--services-green);
+      border: 1px solid var(--services-green);
+
+      color: #ffffff;
+    }
+
+    .services-outline-button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+
+      color: #ffffff;
+    }
+
+    .services-primary-button:hover,
+    .services-outline-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.22);
+    }
+
+    .services-outline-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .services-hero-summary {
+      display: grid;
+
+      overflow: hidden;
+
+      background: rgba(4, 36, 19, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 13px;
+
+      backdrop-filter: blur(9px);
+    }
+
+    .services-summary-item {
+      min-height: 79px;
+
+      display: grid;
+
+      grid-template-columns:
+        42px minmax(0, 1fr);
+
+      align-items: center;
+      gap: 14px;
+
+      padding: 14px 19px;
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+    }
+
+    .services-summary-item:last-child {
+      border-bottom: 0;
+    }
+
+    .services-summary-number {
+      color: #72e299;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .services-summary-item strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 650;
+    }
+
+    .services-summary-item span:last-child {
+      display: block;
+
+      color: rgba(255, 255, 255, 0.57);
+
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       FOUR MAIN SERVICE PILLARS
+    ========================================== */
+
+    .services-pillars {
+      padding: 105px 0 115px;
+
+      background: #ffffff;
+    }
+
+    .services-pillar-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 24px;
+    }
+
+    .services-pillar-card {
+      position: relative;
+
+      min-height: 510px;
+
+      overflow: hidden;
+
+      background: #173b27;
+      border-radius: 15px;
+
+      box-shadow:
+        0 16px 45px
+        rgba(11, 50, 26, 0.13);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .services-pillar-card:hover {
+      transform: translateY(-7px);
+
+      box-shadow:
+        0 25px 58px
+        rgba(11, 50, 26, 0.2);
+    }
+
+    .services-pillar-card > img {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.55s ease;
+    }
+
+    .services-pillar-card:hover > img {
+      transform: scale(1.05);
+    }
+
+    .services-pillar-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(3, 25, 12, 0.96) 0%,
+          rgba(3, 25, 12, 0.56) 48%,
+          rgba(3, 25, 12, 0.08) 100%
+        );
+    }
+
+    .services-pillar-content {
+      position: absolute;
+      left: 32px;
+      right: 32px;
+      bottom: 32px;
+      z-index: 2;
+    }
+
+    .services-pillar-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      margin-bottom: 15px;
+    }
+
+    .services-pillar-number {
+      color: #79e6a0;
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .services-pillar-icon {
+      width: 46px;
+      height: 46px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+
+      color: #ffffff;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .services-pillar-icon
+    .material-symbols-outlined {
+      font-size: 23px;
+    }
+
+    .services-pillar-content h2 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 36px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .services-pillar-content p {
+      max-width: 610px;
+
+      margin: 0 0 22px;
+
+      color: rgba(255, 255, 255, 0.69);
+
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .services-pillar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #7ce8a2;
+
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .services-pillar-link:hover {
+      color: #ffffff;
+    }
+
+    .services-pillar-link
+    .material-symbols-outlined {
+      font-size: 18px;
+
+      transition: transform 0.2s ease;
+    }
+
+    .services-pillar-link:hover
+    .material-symbols-outlined {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================
+       SERVICE DIRECTORY
+    ========================================== */
+
+    .services-directory {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 105px 0 115px;
+
+      background: var(--services-soft);
+    }
+
+    .services-directory::before {
+      content: "";
+
+      position: absolute;
+      top: -250px;
+      left: -210px;
+
+      width: 540px;
+      height: 540px;
+
+      border: 80px solid rgba(1, 155, 57, 0.035);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .services-directory-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 22px;
+    }
+
+    .services-directory-card {
+      min-width: 0;
+
+      overflow: hidden;
+
+      background: #ffffff;
+      border: 1px solid var(--services-border);
+      border-radius: 13px;
+
+      box-shadow:
+        0 9px 29px
+        rgba(12, 54, 28, 0.06);
+    }
+
+    .services-directory-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+
+      padding: 25px 26px;
+
+      border-bottom: 1px solid var(--services-border);
+    }
+
+    .services-directory-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .services-directory-icon {
+      width: 49px;
+      height: 49px;
+      flex: 0 0 49px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--services-green-soft);
+      border-radius: 50%;
+
+      color: var(--services-green);
+    }
+
+    .services-directory-icon
+    .material-symbols-outlined {
+      font-size: 24px;
+    }
+
+    .services-directory-heading span {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: var(--services-green);
+
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .services-directory-heading h3 {
+      margin: 0;
+
+      color: var(--services-ink);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .services-directory-overview {
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      color: var(--services-green);
+
+      font-size: 9px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .services-directory-overview:hover {
+      text-decoration: underline;
+    }
+
+    .services-directory-overview
+    .material-symbols-outlined {
+      font-size: 17px;
+    }
+
+    .services-link-list {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .services-link-list li {
+      border-bottom: 1px solid #edf1ee;
+    }
+
+    .services-link-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .services-link-list a {
+      min-height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+
+      padding: 12px 25px;
+
+      color: #344039;
+
+      font-size: 11px;
+      line-height: 1.55;
+      font-weight: 500;
+      text-decoration: none;
+
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    .services-link-list a:hover {
+      padding-left: 30px;
+
+      background: #f0f8f3;
+
+      color: var(--services-green);
+    }
+
+    .services-link-list
+    .material-symbols-outlined {
+      flex: 0 0 auto;
+
+      color: var(--services-green);
+
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       INTEGRATED DELIVERY STRIP
+    ========================================== */
+
+    .services-integrated {
+      padding: 95px 0;
+
+      background: #ffffff;
+    }
+
+    .services-integrated-box {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+      align-items: center;
+      gap: 75px;
+
+      padding: 48px 50px;
+
+      background: var(--services-green-dark);
+      border-radius: 15px;
+
+      color: #ffffff;
+
+      box-shadow:
+        0 20px 55px
+        rgba(5, 43, 20, 0.17);
+    }
+
+    .services-integrated-box
+    .services-kicker {
+      color: #72e299;
+    }
+
+    .services-integrated-box h2 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 3.5vw, 45px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .services-integrated-content p {
+      margin: 0 0 24px;
+
+      color: rgba(255, 255, 255, 0.69);
+
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .services-integrated-points {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 12px 18px;
+    }
+
+    .services-integrated-point {
+      display: grid;
+
+      grid-template-columns:
+        20px minmax(0, 1fr);
+
+      gap: 8px;
+      align-items: start;
+
+      color: rgba(255, 255, 255, 0.78);
+
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .services-integrated-point
+    .material-symbols-outlined {
+      color: #72e299;
+
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       FINAL CTA
+    ========================================== */
+
+    .services-cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 105px 0;
+
+      background:
+        linear-gradient(
+          125deg,
+          #008d35,
+          #019b39
+        );
+
+      color: #ffffff;
+    }
+
+    .services-cta::after {
+      content: "";
+
+      position: absolute;
+      top: -230px;
+      right: -180px;
+
+      width: 550px;
+      height: 550px;
+
+      border: 82px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .services-cta-layout {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 70px;
+    }
+
+    .services-cta-content {
+      max-width: 770px;
+    }
+
+    .services-cta-content span {
+      display: block;
+
+      margin-bottom: 13px;
+
+      color: rgba(255, 255, 255, 0.75);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .services-cta-content h2 {
+      margin: 0 0 14px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .services-cta-content p {
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.76);
+
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .services-cta-button {
+      min-height: 55px;
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 24px;
+
+      background: #ffffff;
+      border-radius: 7px;
+
+      color: #007b2e;
+
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      box-shadow:
+        0 12px 28px
+        rgba(0, 65, 24, 0.18);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .services-cta-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 18px 38px
+        rgba(0, 65, 24, 0.25);
+    }
+
+    /* ==========================================
+       REVEAL ANIMATION
+    ========================================== */
+
+    .services-reveal {
+      opacity: 0;
+
+      transform: translateY(28px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .services-reveal.services-visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       TABLET
+    ========================================== */
+
+    @media (max-width: 1000px) {
+      .services-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .services-hero-summary {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .services-summary-item {
+        border-right:
+          1px solid
+          rgba(255, 255, 255, 0.12);
+      }
+
+      .services-summary-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .services-summary-item:nth-child(3) {
+        border-bottom: 0;
+      }
+
+      .services-section-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .services-pillar-card {
+        min-height: 470px;
+      }
+
+      .services-directory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-integrated-box {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .services-cta-layout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 680px) {
+      .services-page {
+        padding-top: 92px;
+      }
+
+      .services-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .services-hero {
+        padding: 66px 0 74px;
+      }
+
+      .services-hero::before {
+        top: -125px;
+        right: -140px;
+
+        width: 340px;
+        height: 340px;
+
+        border-width: 50px;
+      }
+
+      .services-hero h1 {
+        font-size: 44px;
+      }
+
+      .services-hero-copy {
+        font-size: 13px;
+      }
+
+      .services-hero-actions {
+        flex-direction: column;
+      }
+
+      .services-primary-button,
+      .services-outline-button {
+        width: 100%;
+      }
+
+      .services-hero-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .services-summary-item,
+      .services-summary-item:nth-child(3) {
+        border-right: 0;
+        border-bottom:
+          1px solid
+          rgba(255, 255, 255, 0.12);
+      }
+
+      .services-summary-item:last-child {
+        border-bottom: 0;
+      }
+
+      .services-pillars,
+      .services-directory {
+        padding: 75px 0 82px;
+      }
+
+      .services-pillar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-pillar-card {
+        min-height: 440px;
+      }
+
+      .services-pillar-content {
+        left: 22px;
+        right: 22px;
+        bottom: 23px;
+      }
+
+      .services-pillar-content h2 {
+        font-size: 27px;
+      }
+
+      .services-directory-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 22px 20px;
+      }
+
+      .services-directory-overview {
+        margin-left: 64px;
+      }
+
+      .services-link-list a {
+        min-height: 62px;
+
+        padding: 13px 20px;
+
+        font-size: 10px;
+      }
+
+      .services-link-list a:hover {
+        padding-left: 24px;
+      }
+
+      .services-integrated {
+        padding: 72px 0;
+      }
+
+      .services-integrated-box {
+        padding: 32px 23px;
+      }
+
+      .services-integrated-points {
+        grid-template-columns: 1fr;
+      }
+
+      .services-cta {
+        padding: 75px 0;
+      }
+
+      .services-cta::after {
+        top: -110px;
+        right: -135px;
+
+        width: 310px;
+        height: 310px;
+
+        border-width: 46px;
+      }
+
+      .services-cta-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body>
-   <div id="navbar-placeholder"></div>
 
-   <div style="height: 120px;"></div>
+<body class="!bg-white">
 
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
 
+  <main class="services-page">
 
-    <section id="services" class="flex flex-col gap-y-10 items-center pt-20 px-6 md:px-20 relative">
-        <div class="w-full lg:w-2/3  flex flex-col gap-y-4 items-center text-center">
-            <h1 class="bouncein text-xl xsm:text-2xl lg:text-3xl font-bold">OUR SERVICES</h1>
-            <p class="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed bouncein">We aim to deliver excellent in-country Oilfield Products and Services in Wellbore Construction, Process Automation & Control, Electrical and Instrumentation (E&I) and Operation & Maintenance. We constantly seize opportunities to maximize growth and development across all our product and service offerings.</p>
-        </div>
-    </section>
+    <!-- ==========================================
+         HERO
+    ========================================== -->
 
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/well bore.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+    <section class="services-hero">
+      <div class="services-shell services-hero-grid">
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2 slidein">
-                <img src="./images/white dot.png" alt="" class="fadein w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white ">Well Bore Construction</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose ">During the entire Well Construction process, we provide seamless services that bridge the divide between drilling and completions. Through a series of integrated activities and processes, we combine the right technology, the right people and several years of experience, to provide winning solutions in well construction and management.</p>
-                <a href="well-construction.html" class="flex items-center gap-x-3 font-medium text-gray-300 text-[13px] sm:text-sm mt-3">Learn More <span class="material-symbols-outlined">
-expand_circle_right
-</span></a>
-            </div>
-        </div>
-    </section>
-    <section class="relative bg-transparent flex justify-center items-center h-fit  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row-reverse gap-x-10 justify-between mt-30 md:mt-40 items-center w-full xl:w-5/6 mb-10">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-primary h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/service process image.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+        <div>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2 slidein slidein">
-                <img src="./images/green dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-black">Process Management</h3>
-                <p class="text-xs sm:text-[13px] text-gray-700 leading-loose">At AOS Orwell, we combine Process Engineering, Process Control and Advanced Computer Knowledge that is customized to maximize the Oil and Gas Production Process at operating facilities. All our processes are managed in-country with highly skilled personnel. We leverage experienced Analyzers combined with cutting edge Computer Technology on local and remote oil and gas operating facilities.</p>
-                <a href="process-management.html" class="flex items-center gap-x-3 font-medium text-gray-700 text-[13px] sm:text-sm mt-3">Learn More <span class="material-symbols-outlined">
-expand_circle_right
-</span></a>
-            </div>
-        </div>
-    </section>
-    <section class="relative serviceSection flex justify-center items-center h-fit max-md:pb-20  w-full  px-6 md:px-20">
-        <div class="flex flex-col md:flex-row gap-x-10 justify-between mt-50 md:mt-40 items-center w-full xl:w-5/6 mb-10">
-            <div class="relative w-full md:w-1/2 p-0 max-md:mb-8 md:p-10">
-                <div class="bg-gray-300 h-40 w-60 absolute -top-4 -left-4 md:top-3 md:left-3"></div>
-                <img src="./images/service new services.png" alt="" class="relative z-5 w-full h-50 xsm:h-60 sm:h-70 md:h-80 xl:h-90 object-cover">
-            </div>
+          <span class="services-kicker">
+            AOS Orwell Services
+          </span>
 
-            <div class="flex flex-col gap-y-2 w-full md:w-1/2 slidein">
-                <img src="./images/white dot.png" alt="" class="w-10 h-10 object-cover mb-5">
-                <h3 class="text-base sm:text-lg font-semibold text-white">New Service Business O&M</h3>
-                <p class="text-xs sm:text-[13px] text-gray-300 leading-loose">At AOS Orwell, we are big on Service Operations and Maintenance. Part of our Service Business unit offer Operations & Maintenance Services to various customers. Our Service Business and Operations & Maintenance (O&M) functions include duties and labour associated with the daily operations and normal repairs, replacement of parts and structural components, and other activities needed to preserve an asset so that it continues to provide acceptable service levels and achieves its expected life cycle. Operations & Maintenance (O&M) include routine upkeep as well as corrective repair work.</p>
-                <a href="new-services.html" class="flex items-center gap-x-3 font-medium text-gray-300 text-[13px] sm:text-sm mt-3">Learn More <span class="material-symbols-outlined">
-expand_circle_right
-</span></a>
-            </div>
-        </div>
-    </section>
+          <h1>
+            Integrated expertise across the energy asset lifecycle.
+          </h1>
 
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">QHSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          <p class="services-hero-copy">
+            From well construction and turnkey well delivery to
+            process management, automation and long-term asset
+            maintenance, AOS Orwell provides coordinated solutions
+            supported by experienced personnel, technology partners
+            and strong in-country capability.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
+
+          <div class="services-hero-actions">
+
+            <a
+              href="#major-services"
+              class="services-primary-button"
+            >
+              Explore our services
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
             </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
+
+            <a
+              href="./request-form.html"
+              class="services-outline-button"
+            >
+              Discuss your requirements
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
             </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
           </div>
+
         </div>
+
+        <div class="services-hero-summary">
+
+          <div class="services-summary-item">
+
+            <span class="services-summary-number">
+              01
+            </span>
+
+            <div>
+
+              <strong>
+                Well Construction
+              </strong>
+
+              <span>
+                Well delivery and intervention services
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="services-summary-item">
+
+            <span class="services-summary-number">
+              02
+            </span>
+
+            <div>
+
+              <strong>
+                Process Management
+              </strong>
+
+              <span>
+                Automation, control and engineered systems
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="services-summary-item">
+
+            <span class="services-summary-number">
+              03
+            </span>
+
+            <div>
+
+              <strong>
+                IPM &amp; Turnkey
+              </strong>
+
+              <span>
+                Coordinated end-to-end well delivery
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="services-summary-item">
+
+            <span class="services-summary-number">
+              04
+            </span>
+
+            <div>
+
+              <strong>
+                Operations &amp; Maintenance
+              </strong>
+
+              <span>
+                Asset reliability and lifecycle support
+              </span>
+
+            </div>
+
+          </div>
+
         </div>
-        
-    
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+    </section>
+
+    <!-- ==========================================
+         FOUR MAJOR SERVICES
+    ========================================== -->
+
+    <section
+      id="major-services"
+      class="services-pillars"
+    >
+      <div class="services-shell">
+
+        <div class="services-section-header services-reveal">
+
+          <div>
+
+            <span class="services-kicker">
+              Our major service lines
+            </span>
+
+            <h2 class="services-heading">
+              Four integrated service pillars
+            </h2>
+
           </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
+
+          <p class="services-section-description">
+            Each service division combines specialist expertise,
+            experienced personnel and strong technical partnerships
+            to support clients from project development through
+            operations and long-term asset performance.
+          </p>
+
         </div>
-  
-        
+
+        <div class="services-pillar-grid">
+
+          <!-- WELL CONSTRUCTION -->
+          <article class="services-pillar-card services-reveal">
+
+            <img
+              src="./images/well bore.png"
+              alt="AOS Orwell well construction services"
+            />
+
+            <div class="services-pillar-overlay"></div>
+
+            <div class="services-pillar-content">
+
+              <div class="services-pillar-topline">
+
+                <span class="services-pillar-number">
+                  01 / Well delivery
+                </span>
+
+                <span class="services-pillar-icon">
+                  <span class="material-symbols-outlined">
+                    oil_barrel
+                  </span>
+                </span>
+
+              </div>
+
+              <h2>
+                Well Construction
+              </h2>
+
+              <p>
+                Integrated well-construction and intervention services
+                delivered with experienced personnel, specialist tools
+                and extensive in-country capability.
+              </p>
+
+              <a
+                href="./well-construction.html"
+                class="services-pillar-link"
+              >
+                Explore Well Construction
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- PROCESS MANAGEMENT -->
+          <article class="services-pillar-card services-reveal">
+
+            <img
+              src="./images/service process image.png"
+              alt="AOS Orwell process management services"
+            />
+
+            <div class="services-pillar-overlay"></div>
+
+            <div class="services-pillar-content">
+
+              <div class="services-pillar-topline">
+
+                <span class="services-pillar-number">
+                  02 / Process systems
+                </span>
+
+                <span class="services-pillar-icon">
+                  <span class="material-symbols-outlined">
+                    precision_manufacturing
+                  </span>
+                </span>
+
+              </div>
+
+              <h2>
+                Process Management
+              </h2>
+
+              <p>
+                Automation, electrical, instrumentation, measurement,
+                flow-control, rotating-equipment and safety solutions
+                for industrial and energy facilities.
+              </p>
+
+              <a
+                href="./process-management.html"
+                class="services-pillar-link"
+              >
+                Explore Process Management
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- IPM AND TURNKEY -->
+          <article class="services-pillar-card services-reveal">
+
+            <img
+              src="./images/IPM.png"
+              alt="AOS Orwell IPM and turnkey well-delivery services"
+            />
+
+            <div class="services-pillar-overlay"></div>
+
+            <div class="services-pillar-content">
+
+              <div class="services-pillar-topline">
+
+                <span class="services-pillar-number">
+                  03 / Turnkey delivery
+                </span>
+
+                <span class="services-pillar-icon">
+                  <span class="material-symbols-outlined">
+                    account_tree
+                  </span>
+                </span>
+
+              </div>
+
+              <h2>
+                IPM &amp; Turnkey
+              </h2>
+
+              <p>
+                Integrated project management, bundled services and
+                single-contract turnkey delivery designed to deliver
+                wells safely, efficiently and with clear accountability.
+              </p>
+
+              <a
+                href="./ipm-and-turnkey.html"
+                class="services-pillar-link"
+              >
+                Explore IPM &amp; Turnkey
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- OPERATIONS AND MAINTENANCE -->
+          <article class="services-pillar-card services-reveal">
+
+            <img
+              src="./images/service new services.png"
+              alt="AOS Orwell operations and maintenance services"
+            />
+
+            <div class="services-pillar-overlay"></div>
+
+            <div class="services-pillar-content">
+
+              <div class="services-pillar-topline">
+
+                <span class="services-pillar-number">
+                  04 / Asset lifecycle
+                </span>
+
+                <span class="services-pillar-icon">
+                  <span class="material-symbols-outlined">
+                    engineering
+                  </span>
+                </span>
+
+              </div>
+
+              <h2>
+                Operations &amp; Maintenance
+              </h2>
+
+              <p>
+                Integrated maintenance, asset-integrity, reliability,
+                inspection, automation and technical-support services
+                that help critical facilities perform safely.
+              </p>
+
+              <a
+                href="./operations-and-maintenance.html"
+                class="services-pillar-link"
+              >
+                Explore Operations &amp; Maintenance
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+    </section>
+
+    <!-- ==========================================
+         SERVICE DIRECTORY
+    ========================================== -->
+
+    <section
+      id="service-directory"
+      class="services-directory"
+    >
+      <div class="services-shell">
+
+        <div class="services-section-header services-reveal">
+
+          <div>
+
+            <span class="services-kicker">
+              Explore our capabilities
+            </span>
+
+            <h2 class="services-heading">
+              Service directory
+            </h2>
+
+          </div>
+
+          <p class="services-section-description">
+            Select any capability below to explore the relevant
+            service page. The directory keeps the full portfolio
+            accessible without turning every subservice into a
+            separate large homepage section.
+          </p>
+
         </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
+
+        <div class="services-directory-grid">
+
+          <!-- =====================================
+               WELL CONSTRUCTION DIRECTORY
+          ====================================== -->
+
+          <article class="services-directory-card services-reveal">
+
+            <header class="services-directory-header">
+
+              <div class="services-directory-heading">
+
+                <span class="services-directory-icon">
+                  <span class="material-symbols-outlined">
+                    oil_barrel
+                  </span>
+                </span>
+
+                <div>
+
+                  <span>
+                    Service line 01
+                  </span>
+
+                  <h3>
+                    Well Construction
+                  </h3>
+
+                </div>
+
+              </div>
+
+              <a
+                href="./well-construction.html"
+                class="services-directory-overview"
+              >
+                View overview
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </header>
+
+            <ul class="services-link-list">
+
+              <li>
+                <a href="./well-construction.html">
+                  Fishing
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Casing &amp; Tubular Running Services (CTR)
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Cased Hole Wireline &amp; Slickline Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Plug, Abandonment and Slot Recovery
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Drillpipe Tubular Rentals
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Jar and Downhole Tools
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Completion, Assembly &amp; Hammer Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./well-construction.html">
+                  Directional Drilling &amp; Logging
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./machine-shop.html">
+                  Machine Shop and Fabrication
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- =====================================
+               PROCESS MANAGEMENT DIRECTORY
+          ====================================== -->
+
+          <article class="services-directory-card services-reveal">
+
+            <header class="services-directory-header">
+
+              <div class="services-directory-heading">
+
+                <span class="services-directory-icon">
+                  <span class="material-symbols-outlined">
+                    precision_manufacturing
+                  </span>
+                </span>
+
+                <div>
+
+                  <span>
+                    Service line 02
+                  </span>
+
+                  <h3>
+                    Process Management
+                  </h3>
+
+                </div>
+
+              </div>
+
+              <a
+                href="./process-management.html"
+                class="services-directory-overview"
+              >
+                View overview
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </header>
+
+            <ul class="services-link-list">
+
+              <li>
+                <a href="./process-management.html#automation-control">
+                  Automation &amp; Control
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./electrical-and-instrumentation.html">
+                  Electrical &amp; Instrumentation
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./process-management.html#modular-skids">
+                  Modular Solutions and Process Skid Packages
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./process-management.html#measurement-solutions">
+                  Measurement Solutions
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./valves-and-actuation.html">
+                  Valves &amp; Actuations
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./rotating-equipment.html">
+                  Rotating Equipment
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./fire-and-gas-systems.html">
+                  Fire &amp; Gas Systems
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./process-management.html#design-engineering">
+                  Design &amp; Engineering
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- =====================================
+               IPM DIRECTORY
+          ====================================== -->
+
+          <article class="services-directory-card services-reveal">
+
+            <header class="services-directory-header">
+
+              <div class="services-directory-heading">
+
+                <span class="services-directory-icon">
+                  <span class="material-symbols-outlined">
+                    account_tree
+                  </span>
+                </span>
+
+                <div>
+
+                  <span>
+                    Service line 03
+                  </span>
+
+                  <h3>
+                    IPM &amp; Turnkey
+                  </h3>
+
+                </div>
+
+              </div>
+
+              <a
+                href="./ipm-and-turnkey.html"
+                class="services-directory-overview"
+              >
+                View overview
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </header>
+
+            <ul class="services-link-list">
+
+              <li>
+                <a href="./ipm-and-turnkey.html">
+                  Project Management
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./ipm-and-turnkey.html">
+                  Bundled Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./ipm-and-turnkey.html">
+                  Integrated Project Management
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./ipm-and-turnkey.html">
+                  Turnkey Well Delivery
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- =====================================
+               O&M DIRECTORY
+          ====================================== -->
+
+          <article class="services-directory-card services-reveal">
+
+            <header class="services-directory-header">
+
+              <div class="services-directory-heading">
+
+                <span class="services-directory-icon">
+                  <span class="material-symbols-outlined">
+                    engineering
+                  </span>
+                </span>
+
+                <div>
+
+                  <span>
+                    Service line 04
+                  </span>
+
+                  <h3>
+                    Operations &amp; Maintenance
+                  </h3>
+
+                </div>
+
+              </div>
+
+              <a
+                href="./operations-and-maintenance.html"
+                class="services-directory-overview"
+              >
+                View overview
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </header>
+
+            <ul class="services-link-list">
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  Rotating Equipment Reliability Services &amp; Upgrades
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  Automation &amp; Metering Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  Fabric Maintenance Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  FPSO &amp; Marine Structural Integrity Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  Asset Integrity / Inspection Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  E&amp;I Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="./operations-and-maintenance.html">
+                  Calibration &amp; Recertification Services
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
         </div>
-    
-        
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         INTEGRATED DELIVERY
+    ========================================== -->
+
+    <section class="services-integrated">
+      <div class="services-shell">
+
+        <div class="services-integrated-box services-reveal">
+
+          <div>
+
+            <span class="services-kicker">
+              One accountable partner
+            </span>
+
+            <h2>
+              Integrated capability from project planning
+              through asset operations
+            </h2>
+
+          </div>
+
+          <div class="services-integrated-content">
+
+            <p>
+              Our service divisions can operate independently or
+              together as one coordinated delivery structure,
+              reducing interfaces while improving accountability,
+              communication and project control.
+            </p>
+
+            <div class="services-integrated-points">
+
+              <div class="services-integrated-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Multidisciplinary engineering expertise
+                </span>
+
+              </div>
+
+              <div class="services-integrated-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Experienced in-country personnel
+                </span>
+
+              </div>
+
+              <div class="services-integrated-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Technology and OEM partnerships
+                </span>
+
+              </div>
+
+              <div class="services-integrated-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Project and lifecycle support
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FINAL CTA
+    ========================================== -->
+
+    <section class="services-cta">
+      <div class="services-shell services-cta-layout">
+
+        <div class="services-cta-content">
+
+          <span>
+            How can we support your project?
+          </span>
+
+          <h2>
+            Let’s connect your requirements with the right team.
+          </h2>
+
+          <p>
+            Send us your project, equipment, technical-support or
+            maintenance enquiry and our team will direct it to the
+            appropriate AOS Orwell service division.
+          </p>
+
+        </div>
+
+        <a
+          href="./request-form.html"
+          class="services-cta-button"
+        >
+          How can we help you?
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <!-- LOGO AND NAVIGATION -->
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
-          </div>
-        </form>
-      </div>
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
-     
-    <script src="./index.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Animation functions
-            function slideIn(element) {
-                Motion.animate(element, {
-                    opacity: 1,
-                    transform: "translateX(0)"
-                }, {
-                    duration: 0.8,
-                    easing: "ease-out"
+    <!-- FOOTER CONTENT -->
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY INFORMATION -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            We are one of the foremost Indigenous Oilfield
+            Servicing Companies in the country. Our service
+            offerings cover Well Construction, Process Management,
+            IPM &amp; Turnkey, and Operations &amp; Maintenance.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos.
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <!-- ==========================================
+       PAGE SCRIPT
+  ========================================== -->
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        const revealElements =
+          document.querySelectorAll(
+            ".services-reveal"
+          );
+
+        if (
+          "IntersectionObserver" in window
+        ) {
+          const revealObserver =
+            new IntersectionObserver(
+              function (entries, observer) {
+                entries.forEach(function (entry) {
+                  if (!entry.isIntersecting) {
+                    return;
+                  }
+
+                  entry.target.classList.add(
+                    "services-visible"
+                  );
+
+                  observer.unobserve(
+                    entry.target
+                  );
                 });
+              },
+              {
+                threshold: 0.12,
+                rootMargin:
+                  "0px 0px -45px 0px"
+              }
+            );
+
+          revealElements.forEach(
+            function (element) {
+              revealObserver.observe(element);
             }
-
-            function fadeIn(element) {
-                Motion.animate(element, {
-                    opacity: 1
-                }, {
-                    duration: 1,
-                    easing: "ease-out"
-                });
+          );
+        } else {
+          revealElements.forEach(
+            function (element) {
+              element.classList.add(
+                "services-visible"
+              );
             }
+          );
+        }
+      }
+    );
+  </script>
 
-            function bounceIn(element) {
-                Motion.animate(element, {
-                    opacity: 1,
-                    transform: "scale(1)"
-                }, {
-                    duration: 0.6,
-                    easing: [0.175, 0.885, 0.32, 1.275]
-                });
-            }
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
 
-            function slideInRight(element) {
-                Motion.animate(element, {
-                    opacity: 1,
-                    transform: "translateX(0)"
-                }, {
-                    duration: 0.8,
-                    easing: "ease-out"
-                });
-            }
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = navbarHTML;
 
-            // Set up Intersection Observer
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.classList.contains('slidein')) {
-                            slideIn(entry.target);
-                        }
-                        else if (entry.target.classList.contains('fadein')) {
-                            fadeIn(entry.target);
-                        }
-                        else if (entry.target.classList.contains('bouncein')) {
-                            bounceIn(entry.target);
-                        }
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { 
-                threshold: 0.3,
-                rootMargin: '0px 0px -50px 0px'
-            });
+        const navbarScript =
+          document.createElement("script");
 
-            // Observe all animated elements
-            document.querySelectorAll('.slidein, .fadein, .bouncein').forEach(el => {
-                // Set initial styles
-                if (el.classList.contains('slidein')) {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateX(-50px)';
-                }
-                else if (el.classList.contains('fadein')) {
-                    el.style.opacity = '0';
-                }
-                else if (el.classList.contains('bouncein')) {
-                    el.style.opacity = '0';
-                    el.style.transform = 'scale(0.8)';
-                }
-                
-                observer.observe(el);
-            });
-        });
-    </script>
+        navbarScript.src = "./navbar.js";
 
-    <script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
-</script>
+  <script src="./index.js"></script>
+
 </body>
 </html>

@@ -1,1288 +1,3652 @@
+<!-- @format -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>AOS Orwell</title>
-
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@100..900&display=swap"
-			rel="stylesheet"
-		/>
-
-		<!-- Icons -->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-		/>
-
-		<!-- Tailwind Output -->
-		<link rel="stylesheet" href="output.css" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-		/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-		<!-- GSAP -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-	</head>
-	<script type="text/javascript">
-		/* curator-feed-default-feed-layout */
-		(function(){
-			var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-			i.src="https://cdn.curator.io/published/9e4f6e6a-5f60-42dc-af64-6670974939c9.js";
-			e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-		})();
-	</script>
-	<body class="bg-[#F5F5F5] relative overflow-x-hidden transition">
-	   <div id="navbar-placeholder"></div>
-
-       <div style="height: 100px;"></div>
-
-		<!-- ✅ HERO SECTION -->
-		<style>
-			/* Hero sizing + easy cropping variable */
-			#hero {
-				--hero-pos: center center;
-				height: 25vh;
-				min-height: 160px;
-				background-image: url("./images/med.jpg");
-				background-size: cover;
-				background-position: var(--hero-pos);
-				background-repeat: no-repeat;
-				position: relative;
-				overflow: hidden;
-			}
-
-			/* larger viewports */
-			@media (min-width: 768px) {
-				/* md */
-				#hero {
-					height: 35vh;
-				}
-			}
-			@media (min-width: 1024px) {
-				/* lg */
-				#hero {
-					height: 40vh;
-				}
-			}
-
-			/* overlay and text */
-			#hero .hero-overlay {
-				position: absolute;
-				inset: 0;
-				background: rgba(3, 52, 45, 0.55);
-			}
-			#hero .hero-content {
-				position: relative;
-				z-index: 4;
-				height: 100%;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: flex-start; /* ✅ text aligned left */
-				text-align: left;
-				padding: 0 1rem;
-				color: #fff;
-			}
-
-			
-		</style>
-
-		<section id="hero" class="w-full ">
-			<div class="hero-overlay" aria-hidden="true"></div>
-
-			<div class="hero-content max-w-4xl mx-auto px-4">
-				<h1 class="text-3xl md:text-5xl font-bold mb-3 slidein">Media</h1>
-				<p class="text-base md:text-lg leading-relaxed max-w-2xl slidein">
-					Stay updated with our latest news, stories, and insights.
-				</p>
-			</div>
-		</section>
-
-		<!-- ✅ Blog Section -->
-		<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 slidein">
-			<!-- Header -->
-			<div class="flex justify-between items-center mb-8">
-				<h2 class="text-3xl font-bold text-gray-800 ">Latest Blog Posts</h2>
-				<a href="blog.html" class="text-green-700 font-semibold hover:underline"
-					>View All →</a
-				>
-			</div>
-
-			<!-- Blog Grid -->
-			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 ">
-				<!-- Blog Card 1 -->
-				<div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
-					<img
-						src="images/blog/tubing.jpg"
-						alt="Blog 1"
-						class="w-full h-48 object-cover rounded-md mb-4"
-					/>
-					<h3 class="text-[13px] xsm:text-sm md:text-base font-semibold text-gray-800 mb-2"
-						>Optimizing Casing Running Through Automated Tubular Running
-						Systems.</h3
-					>
-					<p class="text-gray-600 text-xs sm:text-[13px] mb-4"
-						>In many fields, manual tubular running methods are still being
-						deployed. The operations depend heavily on the use of manually
-						operated..</p
-					>
-					<a
-						href="blog/Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html"
-						class="text-green-700 font-medium hover:underline text-xs sm:text-[13px]"
-						>Read More</a
-					>
-				</div>
-
-				<!-- Blog Card 2 -->
-				<div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
-					<img
-						src="images/blog/rentals.jpg"
-						alt="Blog 2"
-						class="w-full h-48 object-cover rounded-md mb-4"
-					/>
-					<h3 class="text-[13px] xsm:text-sm md:text-base font-semibold text-gray-800 mb-2"
-						>Supply Chain Disruptions and Their Impact on Oilfield Equipment
-						Availability.</h3
-					>
-					<p class="text-gray-600 text-xs sm:text-[13px] mb-4"
-						>In the oil and gas industry, every second counts. A well that isn’t
-						drilled on schedule, a maintenance operation that’s delayed, or a
-						missing piece of critical equipment can result in..</p
-					>
-					<a
-						href="blog/Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html"
-						class="text-green-700 font-medium hover:underline text-xs sm:text-[13px]"
-						>Read More</a
-					>
-				</div>
-
-				<!-- Blog Card 3 -->
-				<div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
-					<img
-						src="images/blog/service-7.jpg"
-						alt="Blog 3"
-						class="w-full h-48 object-cover rounded-md mb-4"
-					/>
-					<h3 class="text-[13px] xsm:text-sm md:text-base font-semibold text-gray-800 mb-2"
-						>AOS Orwell Employee Community Service Visits Compassionate Centre
-						for Physically Challenged Children.</h3
-					>
-					<p class="text-gray-600 text-xs sm:text-[13px] mb-4"
-						>As part of our ongoing commitment to community engagement, members
-						of the AOS Orwell Employee Community Service visited the
-						Compassionate Centre for..</p
-					>
-					<a
-						href="blog/AOS-Orwell-Employee-Community-Service-Visits-Compassionate-Centre-for-Physically-Challenged-Children.html"
-						class="text-green-700 font-medium hover:underline text-xs sm:text-[13px]"
-						>Read More</a
-					>
-				</div>
-			</div>
-		</section>
-
-		<!-- ✅ PRESS SECTION -->
-		<section class="relative w-full py-16 bg-secondarybg bouncein">
-			<div class="relative max-w-7xl mx-auto px-6 md:px-12 ">
-				<!-- Header -->
-				<div class="flex justify-between items-center mb-12 ">
-					<h2 class="text-3xl font-bold text-white slideinup">Press Release</h2>
-					<a href="news.html" class="text-red-200 font-semibold hover:underline"
-						>More Press Releases →</a
-					>
-				</div>
-
-				<!-- Grid -->
-				<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 slideinup">
-					<!-- Release Card 1 -->
-					<div
-						class="rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg transition flex flex-col"
-					>
-						<!-- Card Image -->
-						<img
-							src="./images/news/naice2025.jpg"
-							alt="Press Release 1"
-							class="w-full h-40 object-cover"
-						/>
-						<div class="p-6 flex flex-col">
-							<span class="text-sm font-medium text-gray-200 mb-2"
-								>July 2025</span
-							>
-							<h3 class="text-lg font-semibold text-white mb-3"
-								>From Conversations to Connections: AOS Orwell at SPE NAICE
-								2025.</h3
-							>
-							<p class="text-gray-200 text-sm mb-4 flex-grow">
-								Lagos, Nigeria – At this year’s Society of Petroleum Engineers
-								Nigeria Annual International Conference and Exhibition (SPE
-								NAICE 2025), AOS Orwell didn’t just put up a booth, we...
-							</p>
-							<a
-								href="news/spenaice2025.html"
-								class="text-red-200 font-medium hover:underline"
-								>Read More</a
-							>
-						</div>
-					</div>
-
-					<!-- Release Card 2 -->
-					<div
-						class="rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg transition flex flex-col"
-					>
-						<!-- Card Image -->
-						<img
-							src="./images/news/abb.jpg"
-							alt="Press Release 2"
-							class="w-full h-40 object-cover"
-						/>
-						<div class="p-6 flex flex-col">
-							<span class="text-sm font-medium text-gray-200 mb-2"
-								>July 2025</span
-							>
-							<h3 class="text-lg font-semibold text-white mb-3"
-								>ABB President Visits AOS Orwell Office in Lagos to Strengthen
-								Strategic Partnership.</h3
-							>
-							<p class="text-gray-200 text-sm mb-4 flex-grow">
-								AOS Orwell, a leading indigenous oil and gas solutions provider
-								in Nigeria, was honoured to welcome Mr. Kiran Dutt, President –
-								Electrification, ABB..
-							</p>
-							<a href="#" class="text-red-200 font-medium hover:underline"
-								>Read More</a
-							>
-						</div>
-					</div>
-
-					<!-- Release Card 3 -->
-					<div
-						class="rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg transition flex flex-col"
-					>
-						<!-- Card Image -->
-						<img
-							src="./images/news/otc.jpg"
-							alt="Press Release 3"
-							class="w-full h-40 object-cover"
-						/>
-						<div class="p-6 flex flex-col">
-							<span class="text-sm font-medium text-gray-200 mb-2"
-								>May 2025</span
-							>
-							<h3 class="text-lg font-semibold text-white mb-3"
-								>Building Global Bridges: AOS Orwell at OTC 2025</h3
-							>
-							<p class="text-gray-200 text-sm mb-4 flex-grow">
-								Over the course of the week, our team engaged with international
-								prospects, technology partners, and industry stakeholders from
-								across the energy value chain.....
-							</p>
-							<a href="#" class="text-red-200 font-medium hover:underline"
-								>Read More</a
-							>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ✅ GALLERY SECTION -->
-		<section class="w-full bg-[#F5F5F5] py-16 slideinup">
-			<div class="max-w-7xl mx-auto px-6 md:px-12">
-				<!-- Header -->
-				<div class="flex justify-between items-center mb-6">
-					<div>
-						<h2 class="text-2xl font-bold text-gray-800 slideinup">Our Gallery</h2>
-						<p class="text-gray-600 text-sm"
-							>Moments from projects, community events, and our people.</p
-						>
-					</div>
-					<a
-						href="gallery.html"
-						class="text-green-700 font-semibold hover:underline"
-						>View all</a
-					>
-				</div>
-
-				<!-- Gallery Grid -->
-				<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
-						<img
-							src="./images/otc1.jpg"
-							alt=""
-							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
-						/>
-						<a
-							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
-							href="./gallery/offshore-technology-conference.html"
-							rel="noopener noreferrer"
-						>
-							Offshore Technology Conference (OTC) (2025)
-						</a>
-					</div>
-					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
-						<img
-							src="./images/saipec7.jpg"
-							alt=""
-							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
-						/>
-						<a
-							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
-							href="./gallery/saipec-2025.html"
-							rel="noopener noreferrer"
-						>
-							SAIPEC(2025)
-						</a>
-					</div>
-					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
-						<img
-							src="./images/naice2025.jpg"
-							alt=""
-							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
-						/>
-						<a
-							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
-							href="./gallery/spe-naice-2025.html"
-							rel="noopener noreferrer"
-						>
-							SPE NAICE (2025)
-						</a>
-					</div>
-					<div class="h-50 xsm:h-65 relative hover:-translate-y-2 transition">
-						<img
-							src="./images/endress1.jpg"
-							alt=""
-							class="h-full w-full object-cover object-center rounded-tl-4xl rounded-br-4xl"
-						/>
-						<a
-							class="absolute w-full h-full bg-black/40 top-0 rounded-tl-4xl rounded-br-4xl flex items-center justify-center text-white text-center opacity-100 hover:opacity-0 transition px-3 text-sm sm:text-base font-semibold"
-							href="./gallery/AOS-Orwell-host-Flow-Measurement-Seminar-with-Endress-Hauser.html"
-							rel="noopener noreferrer"
-						>
-							AOS Orwell host Flow Measurement Seminar with Endress+Hauser
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ✅ VIDEOS OF EVENTS SECTION -->
-		<section class="w-full bg-[#FFF] py-20 bouncein">
-			<div class="max-w-7xl mx-auto px-6 md:px-12">
-				<!-- Header -->
-				<div class="flex justify-between items-center mb-6">
-					<div>
-						<h2 class="text-2xl font-bold text-gray-800 ">Videos of Events</h2>
-						<p class="text-gray-600 text-sm"
-							>Highlights and recaps from our programmes and operations.</p
-						>
-					</div>
-					<a
-						href="./gallery.html"
-						class="text-green-700 font-semibold hover:underline"
-						>View all</a
-					>
-				</div>
-
-				<!-- Video Grid -->
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-					<div
-						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
-					>
-						<iframe
-							class="w-full h-full rounded-md"
-							src="https://www.youtube.com/embed/jyKwPcb4Ico?si=soRy2Q_xgX2vI1Ep"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen
-						></iframe>
-					</div>
-					<div
-						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
-					>
-						<iframe
-							class="w-full h-full rounded-md"
-							src="https://www.youtube.com/embed/GqTVfdFd_Jg?si=agMNVzs8Uwww5ZeN"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen
-						></iframe>
-					</div>
-					<div
-						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
-					>
-						<iframe
-							class="w-full h-full rounded-md"
-							src="https://www.youtube.com/embed/zC9kw4-KtN4?si=BTuxUHkzb7RufMQV"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen
-						></iframe>
-					</div>
-					<div
-						class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
-					>
-						<iframe
-							class="w-full h-full rounded-md"
-							src="https://www.youtube.com/embed/5_avpifAv-A?si=7CPAzw-ekEIl7V4C"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen
-						></iframe>
-					</div>
-				</div>
-			</div>
-		</section>
-
-<!-- ✅ CORPORATE CATALOGUE DOWNLOAD -->
-<section class="relative w-full py-16 bg-secondarybg slidein"  id="catalogue">
-<div class="relative max-w-7xl mx-auto px-6 md:px-12 ">
-    <!-- Centered header -->
-    <h2 class="text-3xl md:text-4xl font-extrabold text-white text-center slideinup">
-      Download our catalogue
-    </h2>
-
-    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-      <!-- Left: Text -->
-      <div class="space-y-5 max-w-2xl mx-auto lg:mx-0">
-       <h3 class="text-lg md:text-xl font-semibold text-gray-200 mb-3">
-  Download Our Corporate Catalogue
-</h3>
-
-<p class="text-gray-300 text-sm md:text-base leading-relaxed text-justify">
-  Explore our full range of services and solutions in one place. Download the AOS Orwell Corporate
-  Catalogue to learn more about how we deliver excellence across the energy, power, and industrial sectors.
-</p>
-
-        <p class="text-gray-300 text-sm md:text-base leading-relaxed text-justify">
-          Inside, you’ll find detailed information on our capabilities in Well Construction, Process Management,
-          Automation, and Operations &amp; Maintenance. From advanced technologies to proven expertise, the catalogue
-          showcases how AOS Orwell partners with clients to optimize performance, reduce risk, and achieve operational
-          success.
-        </p>
-      </div>
-
-      <!-- Right: Image -->
-<div class="flex flex-col items-center justify-center">
-  <a href="javascript:void(0)" onclick="openDownloadModal()" aria-label="Open download form">
-    <img
-      src="images/cover.png"
-      alt="AOS Orwell Corporate Catalogue"
-      class="w-auto max-h-[400px] rounded-xl shadow-lg object-contain transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-900/50"
-    />
-  </a>
-  
-  <!-- Download Icon -->
-  <a href="images/cover.png" download class="mt-4" aria-label="Download Catalogue">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-700 hover:text-green-900 transition" fill="currentColor" viewBox="0 0 20 20">
-      <path fill-rule="evenodd" d="M3 14a1 1 0 011-1h3v2H5v2h10v-2h-2v-2h3a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4zm7-12a1 1 0 011 1v7h2.586a.5.5 0 01.354.854l-3.586 3.586a.5.5 0 01-.708 0L7.06 11.707A.5.5 0 017.414 11H10V3a1 1 0 011-1z" clip-rule="evenodd"/>
-    </svg>
-  </a>
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ✅ COMPACT SQUARE-STYLE DOWNLOAD MODAL -->
-<div id="downloadModal"
-     class="fixed inset-0 z-10 hidden items-center justify-center bg-black/50 p-4"
-     aria-hidden="true">
-  <div
-    class="max-sm:w-full w-[420px] rounded-2xl bg-white p-6 pt-8 shadow-xl relative text-center"
-    role="dialog" aria-modal="true" aria-labelledby="catalogueTitle"
-  >
-    <!-- Close button -->
-    <button
-      type="button"
-      class="flex w-full align-right justify-end text-red-600 text-gray-400 hover:text-gray-600 text-xl leading-none"
-      aria-label="Close download form"
-      onclick="closeDownloadModal()"
-    >
-      &times;
-    </button>
-
-    <!-- Logo -->
-    <div class="flex justify-center mb-4">
-      <img src="./images/jogo.png" alt="AOS Orwell Logo" class="h-8 object-contain" />
-    </div>
-
-    <!-- Copy -->
-    <h4 id="catalogueTitle" class="text-base font-semibold text-gray-900 mb-1">
-      Before you download
-    </h4>
-    <p class="text-sm text-gray-600 mb-4">
-      Please provide your details to receive the corporate catalogue.
-    </p>
-
-    <!-- Form -->
-    <form id="catalogueForm" onsubmit="handleCatalogueSubmit(event)" class="space-y-3 text-left">
-      <div>
-        <label class="block text-xs font-medium text-gray-700 mb-1">Name</label>
-        <input type="text" name="name" required
-               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
-      </div>
-      <div>
-        <label class="block text-xs font-medium text-gray-700 mb-1">Organisation</label>
-        <input type="text" name="organisation" required
-               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
-      </div>
-      <div>
-        <label class="block text-xs font-medium text-gray-700 mb-1">Designation</label>
-        <input type="text" name="designation" required
-               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
-      </div>
-      <div>
-        <label class="block text-xs font-medium text-gray-700 mb-1">Email</label>
-        <input type="email" name="email" required
-               class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-400 focus:ring-0" />
-      </div>
-
-      <p class="text-[11px] text-gray-500">
-        We respect your privacy. Your details are used only to share the catalogue and related updates.
-      </p>
-
-      <div class="flex items-center justify-center gap-3 pt-1">
-        <button
-          type="submit"
-          class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2"
-          style="background-color:#2e7d32"
-        >
-          Submit &amp; Download
-        </button>
-        <button type="button" onclick="closeDownloadModal()" class="text-sm text-gray-600 hover:underline">
-          Cancel
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
-		<!-- SOCIAL MEDIA SECTION -->
-		<div class="bg-white p-4 bouncein">
-			<h3 class="text-base sm:text-lg font-bold "
-				>Follow us on Social Media</h3
-			>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-				<!-- INSTAGRAM WIDGET -->
-				<div class="w-full">
-					<blockquote
-						class="instagram-media"
-						data-instgrm-permalink="https://www.instagram.com/aosorwell/"
-						data-instgrm-version="14"
-						style="
-							background: #fff;
-							border: 0;
-							border-radius: 3px;
-							box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-								0 1px 10px 0 rgba(0, 0, 0, 0.15);
-							margin: 1px;
-							max-width: 400px;
-							min-width: 326px;
-							padding: 0;
-							width: 100%;
-						"
-					>
-						<div style="padding: 16px">
-							<a
-								href="https://www.instagram.com/aosorwell/"
-								style="
-									background: #ffffff;
-									line-height: 0;
-									padding: 0 0;
-									text-align: center;
-									text-decoration: none;
-									width: 100%;
-								"
-								target="_blank"
-							>
-								<div
-									style="
-										display: flex;
-										flex-direction: row;
-										align-items: center;
-									"
-								>
-									<div
-										style="
-											background-color: #f4f4f4;
-											border-radius: 50%;
-											flex-grow: 0;
-											height: 40px;
-											margin-right: 14px;
-											width: 40px;
-										"
-									></div>
-									<div
-										style="
-											display: flex;
-											flex-direction: column;
-											flex-grow: 1;
-											justify-content: center;
-										"
-									>
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 4px;
-												flex-grow: 0;
-												height: 14px;
-												margin-bottom: 6px;
-												width: 100px;
-											"
-										></div>
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 4px;
-												flex-grow: 0;
-												height: 14px;
-												width: 60px;
-											"
-										></div>
-									</div>
-								</div>
-								<div style="padding: 19% 0"></div>
-								<div
-									style="
-										display: block;
-										height: 50px;
-										margin: 0 auto 12px;
-										width: 50px;
-									"
-								></div>
-								<div style="padding-top: 8px">
-									<div
-										style="
-											color: #3897f0;
-											font-family: Arial, sans-serif;
-											font-size: 14px;
-											font-style: normal;
-											font-weight: 550;
-											line-height: 18px;
-										"
-										>View this profile on Instagram</div
-									>
-								</div>
-								<div style="padding: 12.5% 0"></div>
-								<div
-									style="
-										display: flex;
-										flex-direction: row;
-										margin-bottom: 14px;
-										align-items: center;
-									"
-								>
-									<div>
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 50%;
-												height: 12.5px;
-												width: 12.5px;
-												transform: translateX(0px) translateY(7px);
-											"
-										></div>
-										<div
-											style="
-												background-color: #f4f4f4;
-												height: 12.5px;
-												transform: rotate(-45deg) translateX(3px)
-													translateY(1px);
-												width: 12.5px;
-												flex-grow: 0;
-												margin-right: 14px;
-												margin-left: 2px;
-											"
-										></div>
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 50%;
-												height: 12.5px;
-												width: 12.5px;
-												transform: translateX(9px) translateY(-18px);
-											"
-										></div>
-									</div>
-									<div style="margin-left: 8px">
-										<div
-											style="
-												background-color: #f4f4f4;
-												border-radius: 50%;
-												flex-grow: 0;
-												height: 20px;
-												width: 20px;
-											"
-										></div>
-										<div
-											style="
-												width: 0;
-												height: 0;
-												border-top: 2px solid transparent;
-												border-left: 6px solid #f4f4f4;
-												border-bottom: 2px solid transparent;
-												transform: translateX(16px) translateY(-4px)
-													rotate(30deg);
-											"
-										></div>
-									</div>
-									<div style="margin-left: auto">
-										<div
-											style="
-												width: 0px;
-												border-top: 8px solid #f4f4f4;
-												border-right: 8px solid transparent;
-												transform: translateY(16px);
-											"
-										></div>
-										<div
-											style="
-												background-color: #f4f4f4;
-												flex-grow: 0;
-												height: 12px;
-												width: 16px;
-												transform: translateY(-4px);
-											"
-										></div>
-										<div
-											style="
-												width: 0;
-												height: 0;
-												border-top: 8px solid #f4f4f4;
-												border-left: 8px solid transparent;
-												transform: translateY(-4px) translateX(8px);
-											"
-										></div>
-									</div>
-								</div>
-								<div
-									style="
-										display: flex;
-										flex-direction: column;
-										flex-grow: 1;
-										justify-content: center;
-										margin-bottom: 24px;
-									"
-								>
-									<div
-										style="
-											background-color: #f4f4f4;
-											border-radius: 4px;
-											flex-grow: 0;
-											height: 14px;
-											margin-bottom: 6px;
-											width: 224px;
-										"
-									></div>
-									<div
-										style="
-											background-color: #f4f4f4;
-											border-radius: 4px;
-											flex-grow: 0;
-											height: 14px;
-											width: 144px;
-										"
-									></div>
-								</div>
-							</a>
-						</div>
-					</blockquote>
-				</div>
-				<!-- INSTAGRAM WIDGET END -->
-
-				<!-- TWITTER -->
-				<div class="w-full">
-					<div class="tagembed-widget" style="width:100%;height:95%;overflow:none;" data-widget-id="300515" data-website="1"></div>
-				</div>
-				<!-- LINKEDIN WIDGET -->
-				<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag"></a></div>
-				<!-- LINKEDIN WIDGET END -->
-			</div>
-		</div>
-
-		<!-- NEWSLETTER SECTION -->
-		<section class="newsletter py-16">
-			<div class="max-w-4xl mx-auto px-6">
-				<div
-					class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl shadow border border-dashed border-gray-300 p-8 text-center"
-				>
-					<h2 class="text-2xl font-bold mb-2 slideinup"
-						>Subscribe to our Quarterly Newsletter</h2
-					>
-					<p class="text-gray-600 mb-6"
-						>Get curated stories, case studies, and press updates—once per
-						quarter.</p
-					>
-
-					<form
-						class="flex flex-col md:flex-row items-center gap-4 justify-center"
-					>
-						<input
-							type="text"
-							placeholder="Full name"
-							class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none"
-						/>
-						<input
-							type="email"
-							placeholder="Work email"
-							class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none"
-						/>
-						<button
-							type="submit"
-							class="px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition"
-						>
-							Subscribe
-						</button>
-					</form>
-				</div>
-			</div>
-		</section>
-
-		<footer
-			class="w-full flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
-		>
-			<!-- Logo + Nav -->
-			<div
-				class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
-			>
-				<img
-					src="./images/jogo.png"
-					alt=""
-					class="h-15 sm:h-20 w-auto object-cover"
-				/>
-				<div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-					<a href="about.html">About Us</a>
-					<a href="services.html">Services</a>
-					<a href="hse.html">QHSE</a>
-					<a href="media.html">Media</a>
-					<a href="careers.html">Careers</a>
-					<a href="contact-us.html">Contact Us</a>
-				</div>
-			</div>
-
-			<!-- Footer Content -->
-			<div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-				<!-- Company Info -->
-				<div
-					class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
-				>
-					<div class="w-full">
-						<p class="text-xs sm:text-[13px] font-medium leading-loose">
-							We are one of the foremost Indigenous Oilfield Servicing Companies
-							in the country. Our service offerings cover Wellbore Construction,
-							Process Automation & Control, New Services/Operations &
-							Maintenance and Oilfield Tubular & Accessories Manufacturing &
-							Repair.
-						</p>
-						<!-- Social -->
-						<div class="mt-5 flex flex-col gap-y-2">
-							<h3 class="text-base font-medium">Stay Connected</h3>
-							<div class="flex gap-x-3">
-								<!-- Facebook -->
-								<a
-									href="https://www.youtube.com/@aosorwell8369"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
-								>
-									<i class="bi bi-youtube text-white text-lg"></i>
-								</a>
-								<!-- Instagram -->
-								<a
-									href="https://www.instagram.com/aosorwell/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
-								>
-									<i class="bi bi-instagram text-white text-lg"></i>
-								</a>
-								<!-- X (Twitter) -->
-								<a
-									href="https://x.com/AOSOrwell"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
-								>
-									<i class="bi bi-twitter-x text-white text-lg"></i>
-								</a>
-								<!-- LinkedIn -->
-								<a
-									href="https://ng.linkedin.com/company/aosorwell"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
-								>
-									<i class="bi bi-linkedin text-white text-lg"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Locations + Email -->
-				<div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-					<h4 class="font-medium text-sm sm:text-base">Locations</h4>
-					<div class="flex flex-col gap-y-3">
-						<div class="flex flex-col gap-y-1.5">
-							<p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-								>Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt,
-								Rivers State</p
-							>
-						</div>
-						<div class="flex flex-col gap-y-1.5">
-							<p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-								>3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p
-							>
-						</div>
-						<div class="flex flex-col gap-y-1.5">
-							<p class="font-medium text-sm">Ghana Office</p>
-							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-								>Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful
-								Takoradi, Ghana</p
-							>
-						</div>
-					</div>
-				</div>
-
-				<!-- Links + Social -->
-				<div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-					<h4 class="font-medium text-sm sm:text-base">Links</h4>
-					<div class="flex flex-col gap-y-2">
-						<a
-							href="about.html"
-							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
-							>Our Story</a
-						>
-						<a
-							href="management.html"
-							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
-							>Management</a
-						>
-						<a
-							href="media.html"
-							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
-							>Media</a
-						>
-						<a
-							href="policies-index.html"
-							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
-							>Policy Statement</a
-						>
-						<a
-							href="whistle-blower.html"
-							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
-							>Whistle Blower</a
-						>
-						<a
-							href="downloadables.html"
-							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
-							>Downloadables</a
-						>
-					</div>
-					<h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-					<div class="flex flex-col gap-y-1">
-						<p class="text-xs sm:text-[13px] text-gray-200"
-							>marketing@aosorwell.com</p
-						>
-						<p class="text-xs sm:text-[13px] text-gray-200"
-							>sales@aosorwell.com</p
-						>
-					</div>
-				</div>
-
-				<!-- Contact -->
-				<div class="w-full lg:w-2/5">
-					<h4 class="font-medium text-base">Contact Us</h4>
-					<form class="flex flex-col gap-y-5 mt-2">
-						<input
-							type="text"
-							placeholder="Company Name"
-							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
-						/>
-						<input
-							type="text"
-							placeholder="Your Name"
-							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
-						/>
-						<input
-							type="email"
-							placeholder="Email Address"
-							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
-						/>
-						<textarea
-							placeholder="Your Message"
-							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
-						></textarea>
-						<div class="w-full flex justify-end">
-							<button
-								type="submit"
-								class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
-								>SEND</button
-							>
-						</div>
-					</form>
-				</div>
-			</div>
-		</footer>
-		<div
-			class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
-			>&copy; 2025 AOS Orwell. All rights reserved.</div
-		>
-
-		<!-- ✅ SCRIPTS -->
-		<script src="./index.js"></script>
-
-		<script async src="//www.instagram.com/embed.js"></script>
-
-		<script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const container = document.getElementById("nav-link"); // Fixed ID typo
-				const links = container.querySelectorAll("a");
-				const highlight = document.getElementById("nav-highlight");
-
-				// Highlight under link on hover
-				links.forEach((link) => {
-					link.addEventListener("mouseenter", () => {
-						const left = link.offsetLeft; // relative to container
-						const width = link.offsetWidth;
-						highlight.style.left = left + "px";
-						highlight.style.width = width + "px";
-					});
-				});
-
-				// Hide highlight when leaving nav
-				container.addEventListener("mouseleave", () => {
-					highlight.style.width = 0;
-				});
-
-				// Change highlight color on scroll
-				window.addEventListener("scroll", () => {
-					if (window.scrollY > 50) {
-						highlight.style.background = "#0B5850"; // dark green
-					} else {
-						highlight.style.background = "white"; // default when navbar is transparent
-					}
-				});
-			});
-		</script>
-
-		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
-
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				// Function to handle counter animation
-				function animateCounter(elementId, targetValue, duration) {
-					const counterElement = document.getElementById(elementId);
-					if (!counterElement) return;
-
-					Motion.animate(0, targetValue, {
-						duration: duration,
-						onUpdate: (latest) => {
-							counterElement.textContent = Math.floor(latest);
-						},
-						onComplete: () => {
-							counterElement.textContent += "+";
-						},
-					});
-				}
-
-				// Animation functions
-				function slideIn(element) {
-					Motion.animate(
-						element,
-						{
-							opacity: 1,
-							transform: "translateX(0)",
-						},
-						{
-							duration: 0.4,
-							easing: "ease-out",
-						},
-					);
-				}
-
-				// Animation functions
-				function slideInup(element) {
-					Motion.animate(
-						element,
-						{
-							opacity: 1,
-							transform: "translateY(0)",
-						},
-						{
-							duration: 0.4,
-							easing: "ease-out",
-						},
-					);
-				}
-
-				function fadeIn(element) {
-					Motion.animate(
-						element,
-						{
-							opacity: 1,
-						},
-						{
-							duration: 0.4,
-							easing: "ease-out",
-						},
-					);
-				}
-
-				function bounceIn(element) {
-					Motion.animate(
-						element,
-						{
-							opacity: 1,
-							transform: "scale(1)",
-						},
-						{
-							duration: 0.6,
-							easing: [0.175, 0.885, 0.32, 1.275], // Bounce easing
-						},
-					);
-				}
-
-				function slideInRight(element) {
-					Motion.animate(
-						element,
-						{
-							opacity: 1,
-							transform: "translateX(0)",
-						},
-						{
-							duration: 0.4,
-							easing: "ease-out",
-						},
-					);
-				}
-
-				// Set up Intersection Observer
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								// Handle class-based animations
-								if (entry.target.classList.contains("slidein")) {
-									slideIn(entry.target);
-								} else if (entry.target.classList.contains("fadein")) {
-									fadeIn(entry.target);
-								} else if (entry.target.classList.contains("bouncein")) {
-									bounceIn(entry.target);
-								}
-								else if (entry.target.classList.contains("slideinup")) {
-									slideInup(entry.target);
-								}
-								// Handle ID-based animations
-								else if (entry.target.id === "count") {
-									animateCounter("count", 1000, 2);
-								} else if (entry.target.id === "count2") {
-									animateCounter("count2", 5000, 4);
-								} else if (entry.target.id === "slider-text") {
-									slideInRight(entry.target);
-								}
-
-								observer.unobserve(entry.target);
-							}
-						});
-					},
-					{
-						threshold: 0.3,
-						rootMargin: "0px 0px -50px 0px",
-					},
-				);
-
-				// Observe all animated elements
-				document
-					.querySelectorAll(
-						".slidein, .fadein, .bouncein, .slideinup, #count, #count2, #slider-text",
-					)
-					.forEach((el) => {
-						observer.observe(el);
-					});
-			});
-		</script>
-
-<script>
-  // ✅ Correct PDF path
-  const CATALOGUE_PDF_URL = './docs/ipmupdate.pdf';
-
-  const modal = document.getElementById('downloadModal');
-
-  function openDownloadModal() {
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    const firstInput = document.querySelector('#catalogueForm input[name="name"]');
-    if (firstInput) firstInput.focus();
-    document.addEventListener('keydown', escClose);
-  }
-  function closeDownloadModal() {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    document.removeEventListener('keydown', escClose);
-  }
-  function escClose(e) { if (e.key === 'Escape') closeDownloadModal(); }
-  modal && modal.addEventListener('click', (e) => { if (e.target === modal) closeDownloadModal(); });
-
-  async function handleCatalogueSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = Object.fromEntries(new FormData(form).entries());
-    if (!data.name || !data.organisation || !data.designation || !data.email) {
-      alert('Please fill in all fields.');
-      return;
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Media Centre | AOS Orwell</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link rel="stylesheet" href="./output.css" />
+
+  <style>
+    :root {
+      --media-green: #019b39;
+      --media-green-dark: #0b2818;
+      --media-green-deep: #061d11;
+      --media-green-soft: #eaf7ee;
+      --media-red: #8f1731;
+      --media-red-dark: #6f1025;
+      --media-ink: #111914;
+      --media-copy: #5e6962;
+      --media-soft: #f3f7f4;
+      --media-border: #dfe7e2;
+      --media-white: #ffffff;
     }
 
-    // TODO: send data to EmailJS/backend if desired
+    html {
+      scroll-behavior: smooth;
+    }
 
-    // Download PDF
-    const a = document.createElement('a');
-    a.href = CATALOGUE_PDF_URL;
-    a.download = '';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--media-ink);
+      font-family: "Poppins", sans-serif;
+    }
 
-    closeDownloadModal();
-    form.reset();
-  }
-</script>
+    body.media-modal-open {
+      overflow: hidden;
+    }
 
-<script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+    .media-page,
+    .media-page * {
+      box-sizing: border-box;
+    }
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
-</script>
+    .media-page {
+      padding-top: 120px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .media-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .media-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 14px;
+      color: var(--media-green);
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .media-kicker::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .media-heading {
+      margin: 0;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 3.8vw, 48px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .media-section-copy {
+      margin: 0;
+      color: var(--media-copy);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .media-section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 410px;
+      align-items: end;
+      gap: 60px;
+      margin-bottom: 42px;
+    }
+
+    .media-view-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--media-green);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .media-view-link:hover {
+      text-decoration: underline;
+    }
+
+    .media-view-link .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .media-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 86px 0 92px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 31, 17, 0.96) 0%,
+          rgba(5, 31, 17, 0.84) 52%,
+          rgba(5, 31, 17, 0.46) 100%
+        ),
+        url("./images/med.jpg") center / cover no-repeat;
+
+      color: #ffffff;
+    }
+
+    .media-hero::after {
+      content: "";
+      position: absolute;
+      top: -255px;
+      right: -175px;
+      z-index: -1;
+
+      width: 620px;
+      height: 620px;
+
+      border: 92px solid rgba(1, 155, 57, 0.17);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .media-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .media-hero .media-kicker {
+      color: #78e59e;
+    }
+
+    .media-hero h1 {
+      max-width: 760px;
+      margin: 0 0 22px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(46px, 6vw, 76px);
+      line-height: 1.03;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .media-hero-copy {
+      max-width: 680px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .media-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 31px;
+    }
+
+    .media-primary-button,
+    .media-outline-button {
+      min-height: 51px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 21px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .media-primary-button {
+      background: var(--media-green);
+      border: 1px solid var(--media-green);
+      color: #ffffff;
+    }
+
+    .media-outline-button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: #ffffff;
+    }
+
+    .media-primary-button:hover,
+    .media-outline-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .media-outline-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .media-hero-nav {
+      display: grid;
+      overflow: hidden;
+      background: rgba(4, 31, 17, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+
+    .media-hero-nav a {
+      min-height: 67px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 0 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    .media-hero-nav a:last-child {
+      border-bottom: 0;
+    }
+
+    .media-hero-nav a:hover {
+      padding-left: 24px;
+      background: rgba(1, 155, 57, 0.28);
+      color: #ffffff;
+    }
+
+    .media-hero-nav .material-symbols-outlined {
+      color: #78e59e;
+      font-size: 19px;
+    }
+
+    /* ==========================================
+       FEATURED STORIES
+    ========================================== */
+
+    .media-featured {
+      padding: 100px 0 105px;
+      background: #ffffff;
+    }
+
+    .media-featured-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+      gap: 24px;
+    }
+
+    .media-feature-main {
+      position: relative;
+      min-height: 570px;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #183b27;
+      box-shadow: 0 18px 45px rgba(15, 54, 28, 0.13);
+    }
+
+    .media-feature-main > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .media-feature-main:hover > img {
+      transform: scale(1.045);
+    }
+
+    .media-feature-main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(4, 24, 13, 0.94) 0%,
+          rgba(4, 24, 13, 0.2) 72%
+        );
+    }
+
+    .media-feature-main-content {
+      position: absolute;
+      left: 35px;
+      right: 35px;
+      bottom: 34px;
+      z-index: 2;
+      max-width: 710px;
+    }
+
+    .media-content-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      margin-bottom: 13px;
+      padding: 0 10px;
+      background: var(--media-green);
+      border-radius: 50px;
+      color: #ffffff;
+      font-size: 8px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .media-feature-main h3 {
+      margin: 0 0 13px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 37px);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .media-feature-main p {
+      max-width: 650px;
+      margin: 0 0 21px;
+      color: rgba(255, 255, 255, 0.71);
+      font-size: 11px;
+      line-height: 1.78;
+    }
+
+    .media-feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #7ce7a1;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .media-feature-link:hover {
+      color: #ffffff;
+    }
+
+    .media-feature-link .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    .media-feature-side {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .media-side-story {
+      min-height: 273px;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--media-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(15, 54, 28, 0.07);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .media-side-story:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 17px 38px rgba(15, 54, 28, 0.13);
+    }
+
+    .media-side-story-image {
+      overflow: hidden;
+      background: #dce6df;
+    }
+
+    .media-side-story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .media-side-story:hover img {
+      transform: scale(1.045);
+    }
+
+    .media-side-story-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px 20px;
+    }
+
+    .media-story-type {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--media-green);
+      font-size: 8px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .media-side-story h3 {
+      margin: 0 0 10px;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      line-height: 1.43;
+      font-weight: 700;
+    }
+
+    .media-side-story p {
+      margin: 0 0 17px;
+      color: var(--media-copy);
+      font-size: 9px;
+      line-height: 1.7;
+    }
+
+    .media-side-story a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      color: var(--media-green);
+      font-size: 9px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .media-side-story a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================
+       BLOG ARTICLES
+    ========================================== */
+
+    .media-articles {
+      padding: 95px 0 105px;
+      background: var(--media-soft);
+    }
+
+    .media-article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .media-article-card {
+      min-width: 0;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--media-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 26px rgba(15, 54, 28, 0.06);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .media-article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15, 54, 28, 0.12);
+    }
+
+    .media-article-image {
+      position: relative;
+      height: 235px;
+      overflow: hidden;
+      background: #dce6df;
+    }
+
+    .media-article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .media-article-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .media-article-category {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+      padding: 7px 10px;
+      background: rgba(255, 255, 255, 0.93);
+      border-radius: 50px;
+      color: var(--media-green);
+      font-size: 8px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .media-article-content {
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px 23px 27px;
+    }
+
+    .media-article-date {
+      margin-bottom: 9px;
+      color: #8a948e;
+      font-size: 9px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .media-article-card h3 {
+      margin: 0 0 11px;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .media-article-card p {
+      margin: 0 0 19px;
+      color: var(--media-copy);
+      font-size: 10px;
+      line-height: 1.78;
+    }
+
+    .media-article-card .media-view-link {
+      margin-top: auto;
+      font-size: 10px;
+    }
+
+    /* ==========================================
+       PRESS RELEASES
+    ========================================== */
+
+    .media-press {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 110px;
+      background:
+        linear-gradient(
+          125deg,
+          var(--media-red-dark),
+          var(--media-red)
+        );
+      color: #ffffff;
+    }
+
+    .media-press::before {
+      content: "";
+      position: absolute;
+      top: -260px;
+      right: -190px;
+      width: 610px;
+      height: 610px;
+      border: 90px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .media-press .media-section-head {
+      position: relative;
+      z-index: 2;
+    }
+
+    .media-press .media-kicker {
+      color: #f6b3c2;
+    }
+
+    .media-press .media-heading {
+      color: #ffffff;
+    }
+
+    .media-press .media-section-copy {
+      color: rgba(255, 255, 255, 0.67);
+    }
+
+    .media-press .media-view-link {
+      color: #ffd3dc;
+    }
+
+    .media-press-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .media-press-card {
+      min-width: 0;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 12px;
+      backdrop-filter: blur(7px);
+
+      transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .media-press-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.13);
+      box-shadow: 0 20px 42px rgba(55, 0, 15, 0.25);
+    }
+
+    .media-press-image {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .media-press-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .media-press-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .media-press-content {
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px 23px 27px;
+    }
+
+    .media-press-date {
+      display: block;
+      margin-bottom: 9px;
+      color: #ffc4d0;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .media-press-card h3 {
+      margin: 0 0 11px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.42;
+      font-weight: 700;
+    }
+
+    .media-press-card p {
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 10px;
+      line-height: 1.78;
+    }
+
+    .media-press-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      color: #ffd3dc;
+      font-size: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .media-press-card a:hover {
+      color: #ffffff;
+    }
+
+    /* ==========================================
+       GALLERY
+    ========================================== */
+
+    .media-gallery {
+      padding: 100px 0 110px;
+      background: #ffffff;
+    }
+
+    .media-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-rows: 230px;
+      gap: 17px;
+    }
+
+    .media-gallery-card {
+      position: relative;
+      grid-column: span 3;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #dce6df;
+    }
+
+    .media-gallery-card:first-child {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
+
+    .media-gallery-card:nth-child(2),
+    .media-gallery-card:nth-child(3) {
+      grid-column: span 3;
+    }
+
+    .media-gallery-card:nth-child(4) {
+      grid-column: span 6;
+    }
+
+    .media-gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .media-gallery-card:hover img {
+      transform: scale(1.055);
+    }
+
+    .media-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      background:
+        linear-gradient(
+          to top,
+          rgba(2, 24, 12, 0.88),
+          transparent 62%
+        );
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .media-gallery-overlay span {
+      margin-bottom: 6px;
+      color: #79e49f;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .media-gallery-overlay strong {
+      max-width: 450px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .media-gallery-card:first-child
+    .media-gallery-overlay strong {
+      font-size: 25px;
+    }
+
+    /* ==========================================
+       VIDEOS
+    ========================================== */
+
+    .media-videos {
+      padding: 100px 0 110px;
+      background: var(--media-soft);
+    }
+
+    .media-video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .media-video-card {
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--media-border);
+      border-radius: 12px;
+      box-shadow: 0 8px 26px rgba(15, 54, 28, 0.06);
+    }
+
+    .media-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #111914;
+    }
+
+    .media-video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .media-video-content {
+      padding: 20px 21px 22px;
+    }
+
+    .media-video-content span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--media-green);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .media-video-content h3 {
+      margin: 0;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    /* ==========================================
+       CATALOGUE
+    ========================================== */
+
+    .media-catalogue {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+      background: var(--media-green-deep);
+      color: #ffffff;
+    }
+
+    .media-catalogue::after {
+      content: "";
+      position: absolute;
+      top: -270px;
+      right: -190px;
+      width: 620px;
+      height: 620px;
+      border: 92px solid rgba(1, 155, 57, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .media-catalogue-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(330px, 0.9fr);
+      align-items: center;
+      gap: 80px;
+    }
+
+    .media-catalogue .media-kicker {
+      color: #72e299;
+    }
+
+    .media-catalogue h2 {
+      max-width: 620px;
+      margin: 0 0 20px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(33px, 4vw, 51px);
+      line-height: 1.16;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .media-catalogue-copy {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.69);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .media-catalogue-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 20px;
+      margin-top: 25px;
+    }
+
+    .media-catalogue-point {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .media-catalogue-point
+    .material-symbols-outlined {
+      color: #72e299;
+      font-size: 18px;
+    }
+
+    .media-catalogue-button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 30px;
+      padding: 0 22px;
+      background: var(--media-green);
+      border: 0;
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .media-catalogue-button:hover {
+      transform: translateY(-3px);
+      background: #00ad40;
+      box-shadow: 0 13px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .media-catalogue-cover {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 490px;
+    }
+
+    .media-catalogue-cover::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 390px;
+      background: rgba(1, 155, 57, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      transform: rotate(7deg);
+    }
+
+    .media-catalogue-cover img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: auto;
+      max-width: 320px;
+      max-height: 460px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.4);
+      transform: rotate(-3deg);
+      transition: transform 0.3s ease;
+    }
+
+    .media-catalogue-cover:hover img {
+      transform: rotate(0deg) translateY(-5px);
+    }
+
+    /* ==========================================
+       SOCIAL CHANNELS
+    ========================================== */
+
+    .media-social {
+      padding: 95px 0 100px;
+      background: #ffffff;
+    }
+
+    .media-social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .media-social-card {
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 26px 23px;
+      background: #ffffff;
+      border: 1px solid var(--media-border);
+      border-radius: 12px;
+      color: var(--media-ink);
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(15, 54, 28, 0.06);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .media-social-card:hover {
+      transform: translateY(-6px);
+      border-color: #a7cfb4;
+      box-shadow: 0 18px 40px rgba(15, 54, 28, 0.12);
+    }
+
+    .media-social-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      background: var(--media-green-soft);
+      border-radius: 50%;
+      color: var(--media-green);
+      font-size: 22px;
+    }
+
+    .media-social-card span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--media-green);
+      font-size: 8px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .media-social-card h3 {
+      margin: 0 0 9px;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .media-social-card p {
+      margin: 0 0 20px;
+      color: var(--media-copy);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .media-social-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      color: var(--media-green);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    /* ==========================================
+       NEWSLETTER
+    ========================================== */
+
+    .media-newsletter {
+      padding: 0 0 105px;
+      background: #ffffff;
+    }
+
+    .media-newsletter-box {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 65px;
+      padding: 50px;
+      background: var(--media-soft);
+      border: 1px solid var(--media-border);
+      border-radius: 15px;
+    }
+
+    .media-newsletter-box::after {
+      content: "";
+      position: absolute;
+      top: -160px;
+      left: -155px;
+      width: 330px;
+      height: 330px;
+      border: 52px solid rgba(1, 155, 57, 0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .media-newsletter-content,
+    .media-newsletter-form {
+      position: relative;
+      z-index: 2;
+    }
+
+    .media-newsletter-content h2 {
+      margin: 0 0 13px;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(27px, 3vw, 39px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .media-newsletter-content p {
+      margin: 0;
+      color: var(--media-copy);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .media-newsletter-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+      gap: 11px;
+    }
+
+    .media-newsletter-form input {
+      min-width: 0;
+      min-height: 51px;
+      padding: 0 15px;
+      background: #ffffff;
+      border: 1px solid #d6dfd9;
+      border-radius: 6px;
+      color: var(--media-ink);
+      font-family: inherit;
+      font-size: 11px;
+      outline: none;
+    }
+
+    .media-newsletter-form input:focus {
+      border-color: var(--media-green);
+      box-shadow: 0 0 0 3px rgba(1, 155, 57, 0.09);
+    }
+
+    .media-newsletter-form button {
+      min-height: 51px;
+      padding: 0 20px;
+      background: var(--media-green);
+      border: 0;
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .media-newsletter-form button:hover {
+      background: #007b2e;
+    }
+
+    .media-newsletter-message {
+      grid-column: 1 / -1;
+      display: none;
+      margin: 4px 0 0;
+      color: var(--media-green);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .media-newsletter-message.media-message-visible {
+      display: block;
+    }
+
+    /* ==========================================
+       CATALOGUE MODAL
+    ========================================== */
+
+    .media-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .media-modal.media-modal-open {
+      display: flex;
+    }
+
+    .media-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.76);
+      backdrop-filter: blur(5px);
+    }
+
+    .media-modal-card {
+      position: relative;
+      z-index: 2;
+      width: min(500px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      padding: 34px;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+    }
+
+    .media-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #edf3ef;
+      border: 0;
+      border-radius: 50%;
+      color: var(--media-ink);
+      cursor: pointer;
+    }
+
+    .media-modal-close:hover {
+      background: var(--media-green);
+      color: #ffffff;
+    }
+
+    .media-modal-logo {
+      display: block;
+      height: 55px;
+      width: auto;
+      margin: 0 0 25px;
+      object-fit: contain;
+    }
+
+    .media-modal-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--media-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .media-modal-card h2 {
+      margin: 0 0 10px;
+      padding-right: 45px;
+      color: var(--media-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 26px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .media-modal-intro {
+      margin: 0 0 25px;
+      color: var(--media-copy);
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .media-catalogue-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .media-form-group {
+      display: grid;
+      gap: 6px;
+    }
+
+    .media-form-group label {
+      color: #253028;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .media-form-group input {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      background: #ffffff;
+      border: 1px solid #d8e1db;
+      border-radius: 6px;
+      color: var(--media-ink);
+      font-family: inherit;
+      font-size: 11px;
+      outline: none;
+    }
+
+    .media-form-group input:focus {
+      border-color: var(--media-green);
+      box-shadow: 0 0 0 3px rgba(1, 155, 57, 0.08);
+    }
+
+    .media-privacy-note {
+      margin: 2px 0 0;
+      color: #778179;
+      font-size: 9px;
+      line-height: 1.65;
+    }
+
+    .media-form-submit {
+      min-height: 50px;
+      margin-top: 4px;
+      background: var(--media-green);
+      border: 0;
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .media-form-submit:hover {
+      background: #007a2d;
+    }
+
+    /* ==========================================
+       REVEAL ANIMATION
+    ========================================== */
+
+    .media-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .media-reveal.media-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       TABLET
+    ========================================== */
+
+    @media (max-width: 1050px) {
+      .media-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .media-hero-nav {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .media-hero-nav a {
+        min-height: 90px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        border-bottom: 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .media-hero-nav a:last-child {
+        border-right: 0;
+      }
+
+      .media-featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-feature-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+      }
+
+      .media-article-grid,
+      .media-press-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-article-card:last-child,
+      .media-press-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 11px);
+        justify-self: center;
+      }
+
+      .media-gallery-card {
+        grid-column: span 6;
+      }
+
+      .media-gallery-card:first-child {
+        grid-column: span 12;
+      }
+
+      .media-gallery-card:nth-child(2),
+      .media-gallery-card:nth-child(3),
+      .media-gallery-card:nth-child(4) {
+        grid-column: span 6;
+      }
+
+      .media-catalogue-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .media-catalogue-cover {
+        min-height: 450px;
+      }
+
+      .media-social-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-newsletter-box {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* ==========================================
+       SMALL TABLET
+    ========================================== */
+
+    @media (max-width: 800px) {
+      .media-section-head {
+        grid-template-columns: 1fr;
+        gap: 19px;
+      }
+
+      .media-feature-main {
+        min-height: 500px;
+      }
+
+      .media-side-story {
+        grid-template-columns: 1fr;
+      }
+
+      .media-side-story-image {
+        height: 190px;
+      }
+
+      .media-video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-newsletter-form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 640px) {
+      .media-page {
+        padding-top: 92px;
+      }
+
+      .media-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .media-hero {
+        padding: 65px 0 72px;
+      }
+
+      .media-hero::after {
+        top: -120px;
+        right: -135px;
+        width: 320px;
+        height: 320px;
+        border-width: 48px;
+      }
+
+      .media-hero h1 {
+        font-size: 45px;
+      }
+
+      .media-hero-copy {
+        font-size: 13px;
+      }
+
+      .media-hero-actions {
+        flex-direction: column;
+      }
+
+      .media-primary-button,
+      .media-outline-button {
+        width: 100%;
+      }
+
+      .media-hero-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .media-hero-nav a {
+        min-height: 59px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .media-hero-nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .media-featured,
+      .media-articles,
+      .media-press,
+      .media-gallery,
+      .media-videos,
+      .media-social {
+        padding: 72px 0 78px;
+      }
+
+      .media-feature-main {
+        min-height: 440px;
+      }
+
+      .media-feature-main-content {
+        left: 21px;
+        right: 21px;
+        bottom: 22px;
+      }
+
+      .media-feature-main h3 {
+        font-size: 23px;
+      }
+
+      .media-feature-side {
+        grid-template-columns: 1fr;
+      }
+
+      .media-side-story {
+        grid-template-columns: 40% 60%;
+        min-height: 245px;
+      }
+
+      .media-side-story-image {
+        height: auto;
+      }
+
+      .media-article-grid,
+      .media-press-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-article-card:last-child,
+      .media-press-card:last-child {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .media-article-image,
+      .media-press-image {
+        height: 250px;
+      }
+
+      .media-gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 280px;
+      }
+
+      .media-gallery-card,
+      .media-gallery-card:first-child,
+      .media-gallery-card:nth-child(2),
+      .media-gallery-card:nth-child(3),
+      .media-gallery-card:nth-child(4) {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .media-gallery-card:first-child
+      .media-gallery-overlay strong {
+        font-size: 18px;
+      }
+
+      .media-catalogue {
+        padding: 72px 0 80px;
+      }
+
+      .media-catalogue::after {
+        top: -120px;
+        right: -135px;
+        width: 320px;
+        height: 320px;
+        border-width: 48px;
+      }
+
+      .media-catalogue-points {
+        grid-template-columns: 1fr;
+      }
+
+      .media-catalogue-button {
+        width: 100%;
+      }
+
+      .media-catalogue-cover {
+        min-height: 390px;
+      }
+
+      .media-catalogue-cover::before {
+        width: 245px;
+        height: 330px;
+      }
+
+      .media-catalogue-cover img {
+        max-width: 245px;
+        max-height: 360px;
+      }
+
+      .media-social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-social-card {
+        min-height: 205px;
+      }
+
+      .media-newsletter {
+        padding-bottom: 75px;
+      }
+
+      .media-newsletter-box {
+        padding: 31px 22px;
+      }
+
+      .media-modal {
+        padding: 12px;
+      }
+
+      .media-modal-card {
+        padding: 28px 20px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .media-side-story {
+        grid-template-columns: 1fr;
+      }
+
+      .media-side-story-image {
+        height: 205px;
+      }
+    }
+  </style>
+</head>
+
+<body class="!bg-white">
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="media-page">
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="media-hero">
+      <div class="media-shell media-hero-grid">
+
+        <div>
+
+          <span class="media-kicker">
+            AOS Orwell Media Centre
+          </span>
+
+          <h1>
+            News, stories and insights from across our business.
+          </h1>
+
+          <p class="media-hero-copy">
+            Explore company news, technical articles, press releases,
+            project highlights, industry events and stories from our
+            people and communities.
+          </p>
+
+          <div class="media-hero-actions">
+
+            <a
+              href="#latest-stories"
+              class="media-primary-button"
+            >
+              Explore latest stories
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="./gallery.html"
+              class="media-outline-button"
+            >
+              View gallery
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <nav
+          class="media-hero-nav"
+          aria-label="Media page sections"
+        >
+
+          <a href="#latest-stories">
+            Latest stories
+
+            <span class="material-symbols-outlined">
+              article
+            </span>
+          </a>
+
+          <a href="#press-releases">
+            Press releases
+
+            <span class="material-symbols-outlined">
+              newspaper
+            </span>
+          </a>
+
+          <a href="#media-gallery">
+            Photo gallery
+
+            <span class="material-symbols-outlined">
+              photo_library
+            </span>
+          </a>
+
+          <a href="#media-videos">
+            Event videos
+
+            <span class="material-symbols-outlined">
+              play_circle
+            </span>
+          </a>
+
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED STORIES
+    ========================================== -->
+
+    <section
+      id="latest-stories"
+      class="media-featured"
+    >
+      <div class="media-shell">
+
+        <div class="media-section-head media-reveal">
+
+          <div>
+
+            <span class="media-kicker">
+              Featured stories
+            </span>
+
+            <h2 class="media-heading">
+              From the field, our people and the industry
+            </h2>
+
+          </div>
+
+          <p class="media-section-copy">
+            Read our latest perspectives on technology, operations,
+            supply-chain performance, community impact and developments
+            across the energy sector.
+          </p>
+
+        </div>
+
+        <div class="media-featured-grid media-reveal">
+
+          <!-- MAIN FEATURED STORY -->
+          <article class="media-feature-main">
+
+            <img
+              src="./images/blog/tubing.jpg"
+              alt="Automated tubular running system"
+            />
+
+            <div class="media-feature-main-content">
+
+              <span class="media-content-tag">
+                Technical insight
+              </span>
+
+              <h3>
+                Optimizing Casing Running Through Automated
+                Tubular Running Systems
+              </h3>
+
+              <p>
+                Automated tubular-running technologies help reduce
+                manual handling, enhance operational consistency and
+                support safer, more efficient well-construction
+                activities.
+              </p>
+
+              <a
+                href="./blog/Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html"
+                class="media-feature-link"
+              >
+                Read full article
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <div class="media-feature-side">
+
+            <!-- SIDE STORY 1 -->
+            <article class="media-side-story">
+
+              <div class="media-side-story-image">
+
+                <img
+                  src="./images/blog/rentals.jpg"
+                  alt="Oilfield equipment supply chain"
+                />
+
+              </div>
+
+              <div class="media-side-story-content">
+
+                <span class="media-story-type">
+                  Supply chain
+                </span>
+
+                <h3>
+                  Supply Chain Disruptions and Their Impact on
+                  Oilfield Equipment Availability
+                </h3>
+
+                <p>
+                  How equipment delays can affect drilling,
+                  maintenance and project execution.
+                </p>
+
+                <a
+                  href="./blog/Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html"
+                >
+                  Read article
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+
+              </div>
+
+            </article>
+
+            <!-- SIDE STORY 2 -->
+            <article class="media-side-story">
+
+              <div class="media-side-story-image">
+
+                <img
+                  src="./images/blog/service-7.jpg"
+                  alt="AOS Orwell employee community service"
+                />
+
+              </div>
+
+              <div class="media-side-story-content">
+
+                <span class="media-story-type">
+                  Community impact
+                </span>
+
+                <h3>
+                  Employee Community Service Visit to the
+                  Compassionate Centre
+                </h3>
+
+                <p>
+                  A community-service initiative supporting children
+                  with physical challenges.
+                </p>
+
+                <a
+                  href="./blog/AOS-Orwell-Employee-Community-Service-Visits-Compassionate-Centre-for-Physically-Challenged-Children.html"
+                >
+                  Read story
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LATEST BLOG POSTS
+    ========================================== -->
+
+    <section class="media-articles">
+      <div class="media-shell">
+
+        <div class="media-section-head media-reveal">
+
+          <div>
+
+            <span class="media-kicker">
+              Technical and corporate insights
+            </span>
+
+            <h2 class="media-heading">
+              Latest blog posts
+            </h2>
+
+          </div>
+
+          <div>
+
+            <p class="media-section-copy">
+              Explore practical insights, technical perspectives
+              and stories from across AOS Orwell.
+            </p>
+
+            <a
+              href="./blog.html"
+              class="media-view-link"
+              style="margin-top: 16px"
+            >
+              View all articles
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="media-article-grid media-reveal">
+
+          <!-- ARTICLE 1 -->
+          <article class="media-article-card">
+
+            <div class="media-article-image">
+
+              <img
+                src="./images/blog/tubing.jpg"
+                alt="Automated tubular running system"
+              />
+
+              <span class="media-article-category">
+                Well construction
+              </span>
+
+            </div>
+
+            <div class="media-article-content">
+
+              <span class="media-article-date">
+                Technical article
+              </span>
+
+              <h3>
+                Optimizing Casing Running Through Automated
+                Tubular Running Systems
+              </h3>
+
+              <p>
+                In many fields, manual tubular-running methods are
+                still deployed. Explore how automation can support
+                improved consistency, safety and efficiency.
+              </p>
+
+              <a
+                href="./blog/Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html"
+                class="media-view-link"
+              >
+                Read more
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- ARTICLE 2 -->
+          <article class="media-article-card">
+
+            <div class="media-article-image">
+
+              <img
+                src="./images/blog/rentals.jpg"
+                alt="Oilfield rental equipment"
+              />
+
+              <span class="media-article-category">
+                Supply chain
+              </span>
+
+            </div>
+
+            <div class="media-article-content">
+
+              <span class="media-article-date">
+                Industry insight
+              </span>
+
+              <h3>
+                Supply Chain Disruptions and Their Impact on
+                Oilfield Equipment Availability
+              </h3>
+
+              <p>
+                In the oil and gas industry, project schedules can
+                be affected when critical tools, rentals and
+                equipment are not available when required.
+              </p>
+
+              <a
+                href="./blog/Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html"
+                class="media-view-link"
+              >
+                Read more
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- ARTICLE 3 -->
+          <article class="media-article-card">
+
+            <div class="media-article-image">
+
+              <img
+                src="./images/blog/service-7.jpg"
+                alt="AOS Orwell community-service visit"
+              />
+
+              <span class="media-article-category">
+                CSR
+              </span>
+
+            </div>
+
+            <div class="media-article-content">
+
+              <span class="media-article-date">
+                Community story
+              </span>
+
+              <h3>
+                AOS Orwell Employee Community Service Visits
+                Compassionate Centre
+              </h3>
+
+              <p>
+                Members of the AOS Orwell Employee Community Service
+                team visited the Compassionate Centre for physically
+                challenged children.
+              </p>
+
+              <a
+                href="./blog/AOS-Orwell-Employee-Community-Service-Visits-Compassionate-Centre-for-Physically-Challenged-Children.html"
+                class="media-view-link"
+              >
+                Read more
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PRESS RELEASES
+    ========================================== -->
+
+    <section
+      id="press-releases"
+      class="media-press"
+    >
+      <div class="media-shell">
+
+        <div class="media-section-head media-reveal">
+
+          <div>
+
+            <span class="media-kicker">
+              Company news
+            </span>
+
+            <h2 class="media-heading">
+              Press releases
+            </h2>
+
+          </div>
+
+          <div>
+
+            <p class="media-section-copy">
+              Company announcements, partnerships, exhibitions,
+              project updates and important developments from
+              across AOS Orwell.
+            </p>
+
+            <a
+              href="./news.html"
+              class="media-view-link"
+              style="margin-top: 16px"
+            >
+              View all press releases
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="media-press-grid media-reveal">
+
+          <!-- PRESS 1 -->
+          <article class="media-press-card">
+
+            <div class="media-press-image">
+
+              <img
+                src="./images/news/naice2025.jpg"
+                alt="AOS Orwell at SPE NAICE 2025"
+              />
+
+            </div>
+
+            <div class="media-press-content">
+
+              <span class="media-press-date">
+                July 2025
+              </span>
+
+              <h3>
+                From Conversations to Connections:
+                AOS Orwell at SPE NAICE 2025
+              </h3>
+
+              <p>
+                At the Society of Petroleum Engineers Nigeria Annual
+                International Conference and Exhibition, AOS Orwell
+                connected with clients, partners and industry
+                stakeholders.
+              </p>
+
+              <a href="./news/spenaice2025.html">
+                Read press release
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- PRESS 2 -->
+          <article class="media-press-card">
+
+            <div class="media-press-image">
+
+              <img
+                src="./images/news/abb.jpg"
+                alt="ABB President visits AOS Orwell"
+              />
+
+            </div>
+
+            <div class="media-press-content">
+
+              <span class="media-press-date">
+                July 2025
+              </span>
+
+              <h3>
+                ABB President Visits AOS Orwell Office in Lagos
+                to Strengthen Strategic Partnership
+              </h3>
+
+              <p>
+                AOS Orwell welcomed the President of ABB
+                Electrification as both organisations discussed
+                opportunities to deepen their strategic relationship.
+              </p>
+
+              <a href="./news.html">
+                Read press release
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- PRESS 3 -->
+          <article class="media-press-card">
+
+            <div class="media-press-image">
+
+              <img
+                src="./images/news/otc.jpg"
+                alt="AOS Orwell at OTC 2025"
+              />
+
+            </div>
+
+            <div class="media-press-content">
+
+              <span class="media-press-date">
+                May 2025
+              </span>
+
+              <h3>
+                Building Global Bridges:
+                AOS Orwell at OTC 2025
+              </h3>
+
+              <p>
+                Our team engaged with international prospects,
+                technology partners and industry stakeholders from
+                across the global energy value chain.
+              </p>
+
+              <a href="./news.html">
+                Read press release
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         GALLERY
+    ========================================== -->
+
+    <section
+      id="media-gallery"
+      class="media-gallery"
+    >
+      <div class="media-shell">
+
+        <div class="media-section-head media-reveal">
+
+          <div>
+
+            <span class="media-kicker">
+              Moments and events
+            </span>
+
+            <h2 class="media-heading">
+              Our gallery
+            </h2>
+
+          </div>
+
+          <div>
+
+            <p class="media-section-copy">
+              Explore photographs from conferences, exhibitions,
+              technical sessions, community initiatives and
+              corporate events.
+            </p>
+
+            <a
+              href="./gallery.html"
+              class="media-view-link"
+              style="margin-top: 16px"
+            >
+              View complete gallery
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="media-gallery-grid media-reveal">
+
+          <!-- GALLERY 1 -->
+          <article class="media-gallery-card">
+
+            <img
+              src="./images/otc1.jpg"
+              alt="Offshore Technology Conference 2025"
+            />
+
+            <a
+              href="./gallery/offshore-technology-conference.html"
+              class="media-gallery-overlay"
+            >
+              <span>Industry event</span>
+
+              <strong>
+                Offshore Technology Conference (OTC) 2025
+              </strong>
+            </a>
+
+          </article>
+
+          <!-- GALLERY 2 -->
+          <article class="media-gallery-card">
+
+            <img
+              src="./images/saipec7.jpg"
+              alt="SAIPEC 2025"
+            />
+
+            <a
+              href="./gallery/saipec-2025.html"
+              class="media-gallery-overlay"
+            >
+              <span>Conference</span>
+
+              <strong>
+                SAIPEC 2025
+              </strong>
+            </a>
+
+          </article>
+
+          <!-- GALLERY 3 -->
+          <article class="media-gallery-card">
+
+            <img
+              src="./images/naice2025.jpg"
+              alt="SPE NAICE 2025"
+            />
+
+            <a
+              href="./gallery/spe-naice-2025.html"
+              class="media-gallery-overlay"
+            >
+              <span>Exhibition</span>
+
+              <strong>
+                SPE NAICE 2025
+              </strong>
+            </a>
+
+          </article>
+
+          <!-- GALLERY 4 -->
+          <article class="media-gallery-card">
+
+            <img
+              src="./images/endress1.jpg"
+              alt="AOS Orwell Flow Measurement Seminar"
+            />
+
+            <a
+              href="./gallery/AOS-Orwell-host-Flow-Measurement-Seminar-with-Endress-Hauser.html"
+              class="media-gallery-overlay"
+            >
+              <span>Technical seminar</span>
+
+              <strong>
+                Flow Measurement Seminar with Endress+Hauser
+              </strong>
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EVENT VIDEOS
+    ========================================== -->
+
+    <section
+      id="media-videos"
+      class="media-videos"
+    >
+      <div class="media-shell">
+
+        <div class="media-section-head media-reveal">
+
+          <div>
+
+            <span class="media-kicker">
+              Watch and discover
+            </span>
+
+            <h2 class="media-heading">
+              Videos of events
+            </h2>
+
+          </div>
+
+          <p class="media-section-copy">
+            Watch highlights, recaps and conversations from our
+            programmes, exhibitions, operations and industry events.
+          </p>
+
+        </div>
+
+        <div class="media-video-grid media-reveal">
+
+          <!-- VIDEO 1 -->
+          <article class="media-video-card">
+
+            <div class="media-video-frame">
+
+              <iframe
+                src="https://www.youtube.com/embed/jyKwPcb4Ico?si=soRy2Q_xgX2vI1Ep"
+                title="AOS Orwell video one"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+
+            <div class="media-video-content">
+
+              <span>AOS Orwell video</span>
+
+              <h3>
+                Corporate and operational highlights
+              </h3>
+
+            </div>
+
+          </article>
+
+          <!-- VIDEO 2 -->
+          <article class="media-video-card">
+
+            <div class="media-video-frame">
+
+              <iframe
+                src="https://www.youtube.com/embed/GqTVfdFd_Jg?si=agMNVzs8Uwww5ZeN"
+                title="AOS Orwell video two"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+
+            <div class="media-video-content">
+
+              <span>Industry event</span>
+
+              <h3>
+                Event highlights and engagements
+              </h3>
+
+            </div>
+
+          </article>
+
+          <!-- VIDEO 3 -->
+          <article class="media-video-card">
+
+            <div class="media-video-frame">
+
+              <iframe
+                src="https://www.youtube.com/embed/zC9kw4-KtN4?si=BTuxUHkzb7RufMQV"
+                title="AOS Orwell video three"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+
+            <div class="media-video-content">
+
+              <span>Company story</span>
+
+              <h3>
+                Our people, expertise and capabilities
+              </h3>
+
+            </div>
+
+          </article>
+
+          <!-- VIDEO 4 -->
+          <article class="media-video-card">
+
+            <div class="media-video-frame">
+
+              <iframe
+                src="https://www.youtube.com/embed/5_avpifAv-A?si=7CPAzw-ekEIl7V4C"
+                title="AOS Orwell video four"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+
+            <div class="media-video-content">
+
+              <span>Event recap</span>
+
+              <h3>
+                Programmes and business engagements
+              </h3>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CORPORATE CATALOGUE
+    ========================================== -->
+
+    <section
+      id="catalogue"
+      class="media-catalogue"
+    >
+      <div class="media-shell media-catalogue-grid">
+
+        <div class="media-reveal">
+
+          <span class="media-kicker">
+            Corporate resource
+          </span>
+
+          <h2>
+            Discover our full range of services and solutions
+          </h2>
+
+          <p class="media-catalogue-copy">
+            Download the AOS Orwell Corporate Catalogue to learn
+            more about our capabilities across Well Construction,
+            Process Management, Automation, Electrical and
+            Instrumentation, and Operations and Maintenance.
+          </p>
+
+          <div class="media-catalogue-points">
+
+            <div class="media-catalogue-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                Integrated service capabilities
+              </span>
+
+            </div>
+
+            <div class="media-catalogue-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                Technology and partner solutions
+              </span>
+
+            </div>
+
+            <div class="media-catalogue-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                In-country engineering expertise
+              </span>
+
+            </div>
+
+            <div class="media-catalogue-point">
+
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+
+              <span>
+                Project and lifecycle support
+              </span>
+
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            id="openCatalogueModal"
+            class="media-catalogue-button"
+          >
+            Download corporate catalogue
+
+            <span class="material-symbols-outlined">
+              download
+            </span>
+          </button>
+
+        </div>
+
+        <div class="media-catalogue-cover media-reveal">
+
+          <img
+            src="./images/cover.png"
+            alt="AOS Orwell Corporate Catalogue"
+          />
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SOCIAL CHANNELS
+    ========================================== -->
+
+    <section class="media-social">
+      <div class="media-shell">
+
+        <div class="media-section-head media-reveal">
+
+          <div>
+
+            <span class="media-kicker">
+              Stay connected
+            </span>
+
+            <h2 class="media-heading">
+              Follow AOS Orwell
+            </h2>
+
+          </div>
+
+          <p class="media-section-copy">
+            Connect with us across our official channels for
+            company news, technical content, event coverage and
+            career updates.
+          </p>
+
+        </div>
+
+        <div class="media-social-grid media-reveal">
+
+          <!-- INSTAGRAM -->
+          <a
+            href="https://www.instagram.com/aosorwell/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="media-social-card"
+          >
+
+            <div class="media-social-icon">
+              <i class="bi bi-instagram"></i>
+            </div>
+
+            <span>Instagram</span>
+
+            <h3>
+              Behind the scenes
+            </h3>
+
+            <p>
+              Follow our events, people, project activities and
+              community initiatives.
+            </p>
+
+            <div class="media-social-action">
+              Follow on Instagram
+
+              <span class="material-symbols-outlined">
+                arrow_outward
+              </span>
+            </div>
+
+          </a>
+
+          <!-- YOUTUBE -->
+          <a
+            href="https://www.youtube.com/@aosorwell8369"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="media-social-card"
+          >
+
+            <div class="media-social-icon">
+              <i class="bi bi-youtube"></i>
+            </div>
+
+            <span>YouTube</span>
+
+            <h3>
+              Watch our stories
+            </h3>
+
+            <p>
+              Explore company videos, event highlights and
+              operational content.
+            </p>
+
+            <div class="media-social-action">
+              Visit YouTube
+
+              <span class="material-symbols-outlined">
+                arrow_outward
+              </span>
+            </div>
+
+          </a>
+
+          <!-- X -->
+          <a
+            href="https://x.com/AOSOrwell"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="media-social-card"
+          >
+
+            <div class="media-social-icon">
+              <i class="bi bi-twitter-x"></i>
+            </div>
+
+            <span>X</span>
+
+            <h3>
+              Latest updates
+            </h3>
+
+            <p>
+              Receive timely updates, announcements and live
+              event coverage.
+            </p>
+
+            <div class="media-social-action">
+              Follow on X
+
+              <span class="material-symbols-outlined">
+                arrow_outward
+              </span>
+            </div>
+
+          </a>
+
+          <!-- LINKEDIN -->
+          <a
+            href="https://ng.linkedin.com/company/aosorwell"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="media-social-card"
+          >
+
+            <div class="media-social-icon">
+              <i class="bi bi-linkedin"></i>
+            </div>
+
+            <span>LinkedIn</span>
+
+            <h3>
+              Business and careers
+            </h3>
+
+            <p>
+              Follow our corporate developments, partnerships
+              and career opportunities.
+            </p>
+
+            <div class="media-social-action">
+              Visit LinkedIn
+
+              <span class="material-symbols-outlined">
+                arrow_outward
+              </span>
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         NEWSLETTER
+    ========================================== -->
+
+    <section class="media-newsletter">
+      <div class="media-shell">
+
+        <div class="media-newsletter-box media-reveal">
+
+          <div class="media-newsletter-content">
+
+            <span class="media-kicker">
+              Quarterly newsletter
+            </span>
+
+            <h2>
+              Stay informed with AOS Orwell
+            </h2>
+
+            <p>
+              Receive selected company news, technical insights,
+              project stories and press updates once every quarter.
+            </p>
+
+          </div>
+
+          <form
+            id="mediaNewsletterForm"
+            class="media-newsletter-form"
+          >
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Full name"
+              aria-label="Full name"
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Work email"
+              aria-label="Work email"
+              required
+            />
+
+            <button type="submit">
+              Subscribe
+            </button>
+
+            <p
+              id="mediaNewsletterMessage"
+              class="media-newsletter-message"
+            >
+              Thank you. Your subscription request has been received.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       CATALOGUE DOWNLOAD MODAL
+  ========================================== -->
+
+  <div
+    id="catalogueModal"
+    class="media-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="catalogueModalTitle"
+    aria-hidden="true"
+  >
+
+    <div class="media-modal-backdrop"></div>
+
+    <div class="media-modal-card">
+
+      <button
+        type="button"
+        id="closeCatalogueModal"
+        class="media-modal-close"
+        aria-label="Close catalogue form"
+      >
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="media-modal-logo"
+      />
+
+      <span class="media-modal-label">
+        Corporate catalogue
+      </span>
+
+      <h2 id="catalogueModalTitle">
+        Tell us a little about yourself
+      </h2>
+
+      <p class="media-modal-intro">
+        Complete the form below and the catalogue will download
+        automatically.
+      </p>
+
+      <form
+        id="catalogueForm"
+        class="media-catalogue-form"
+      >
+
+        <div class="media-form-group">
+
+          <label for="catalogueName">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="catalogueName"
+            name="name"
+            required
+          />
+
+        </div>
+
+        <div class="media-form-group">
+
+          <label for="catalogueOrganisation">
+            Organisation
+          </label>
+
+          <input
+            type="text"
+            id="catalogueOrganisation"
+            name="organisation"
+            required
+          />
+
+        </div>
+
+        <div class="media-form-group">
+
+          <label for="catalogueDesignation">
+            Designation
+          </label>
+
+          <input
+            type="text"
+            id="catalogueDesignation"
+            name="designation"
+            required
+          />
+
+        </div>
+
+        <div class="media-form-group">
+
+          <label for="catalogueEmail">
+            Work email
+          </label>
+
+          <input
+            type="email"
+            id="catalogueEmail"
+            name="email"
+            required
+          />
+
+        </div>
+
+        <p class="media-privacy-note">
+          We respect your privacy. Your information will be used
+          only for catalogue delivery and related communication.
+        </p>
+
+        <button
+          type="submit"
+          class="media-form-submit"
+        >
+          Submit and download
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="w-full flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <!-- LOGO AND NAVIGATION -->
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
+
+    </div>
+
+    <!-- FOOTER CONTENT -->
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY INFORMATION -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p class="text-xs sm:text-[13px] font-medium leading-loose">
+            We are one of the foremost Indigenous Oilfield Servicing
+            Companies in the country. Our service offerings cover
+            Well Construction, Process Management, Automation,
+            Electrical and Instrumentation, and Operations and
+            Maintenance.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos.
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <!-- ==========================================
+       SCRIPTS
+  ========================================== -->
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        /* Reveal animations */
+
+        const revealElements =
+          document.querySelectorAll(".media-reveal");
+
+        const revealObserver =
+          new IntersectionObserver(
+            function (entries, observer) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                  return;
+                }
+
+                entry.target.classList.add(
+                  "media-visible"
+                );
+
+                observer.unobserve(entry.target);
+              });
+            },
+            {
+              threshold: 0.12,
+              rootMargin: "0px 0px -40px 0px"
+            }
+          );
+
+        revealElements.forEach(function (element) {
+          revealObserver.observe(element);
+        });
+
+        /* Catalogue modal */
+
+        const catalogueModal =
+          document.getElementById("catalogueModal");
+
+        const openCatalogueModalButton =
+          document.getElementById(
+            "openCatalogueModal"
+          );
+
+        const closeCatalogueModalButton =
+          document.getElementById(
+            "closeCatalogueModal"
+          );
+
+        const catalogueBackdrop =
+          catalogueModal.querySelector(
+            ".media-modal-backdrop"
+          );
+
+        const catalogueForm =
+          document.getElementById(
+            "catalogueForm"
+          );
+
+        const cataloguePDF =
+          "./docs/ipmupdate.pdf";
+
+        function openCatalogueModal() {
+          catalogueModal.classList.add(
+            "media-modal-open"
+          );
+
+          catalogueModal.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+          document.body.classList.add(
+            "media-modal-open"
+          );
+
+          const firstInput =
+            catalogueForm.querySelector("input");
+
+          if (firstInput) {
+            firstInput.focus();
+          }
+        }
+
+        function closeCatalogueModal() {
+          catalogueModal.classList.remove(
+            "media-modal-open"
+          );
+
+          catalogueModal.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+          document.body.classList.remove(
+            "media-modal-open"
+          );
+        }
+
+        openCatalogueModalButton.addEventListener(
+          "click",
+          openCatalogueModal
+        );
+
+        closeCatalogueModalButton.addEventListener(
+          "click",
+          closeCatalogueModal
+        );
+
+        catalogueBackdrop.addEventListener(
+          "click",
+          closeCatalogueModal
+        );
+
+        document.addEventListener(
+          "keydown",
+          function (event) {
+            if (
+              event.key === "Escape" &&
+              catalogueModal.classList.contains(
+                "media-modal-open"
+              )
+            ) {
+              closeCatalogueModal();
+            }
+          }
+        );
+
+        catalogueForm.addEventListener(
+          "submit",
+          function (event) {
+            event.preventDefault();
+
+            if (!catalogueForm.checkValidity()) {
+              catalogueForm.reportValidity();
+              return;
+            }
+
+            const downloadLink =
+              document.createElement("a");
+
+            downloadLink.href = cataloguePDF;
+            downloadLink.download = "";
+
+            document.body.appendChild(
+              downloadLink
+            );
+
+            downloadLink.click();
+            downloadLink.remove();
+
+            catalogueForm.reset();
+            closeCatalogueModal();
+          }
+        );
+
+        /* Newsletter */
+
+        const newsletterForm =
+          document.getElementById(
+            "mediaNewsletterForm"
+          );
+
+        const newsletterMessage =
+          document.getElementById(
+            "mediaNewsletterMessage"
+          );
+
+        newsletterForm.addEventListener(
+          "submit",
+          function (event) {
+            event.preventDefault();
+
+            if (!newsletterForm.checkValidity()) {
+              newsletterForm.reportValidity();
+              return;
+            }
+
+            newsletterMessage.classList.add(
+              "media-message-visible"
+            );
+
+            newsletterForm.reset();
+          }
+        );
+      }
+    );
+  </script>
+
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
+
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = navbarHTML;
+
+        const navbarScript =
+          document.createElement("script");
+
+        navbarScript.src = "./navbar.js";
+
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
+
+  <script src="./index.js"></script>
+
 </body>
 </html>
