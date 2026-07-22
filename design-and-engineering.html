@@ -1,0 +1,3041 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Engineering Design | AOS Orwell</title>
+
+  <meta
+    name="description"
+    content="AOS Orwell provides multi-discipline engineering design from feasibility and concept selection through FEED, detailed engineering, construction support and as-built handover."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="./output.css" />
+
+  <style>
+    :root {
+      --engineering-green: #019b39;
+      --engineering-green-dark: #0b2818;
+      --engineering-green-deep: #061c10;
+      --engineering-green-soft: #eaf7ee;
+      --engineering-ink: #111914;
+      --engineering-copy: #5e6962;
+      --engineering-soft: #f3f7f4;
+      --engineering-border: #dfe7e2;
+      --engineering-white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--engineering-ink);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .engineering-page,
+    .engineering-page * {
+      box-sizing: border-box;
+    }
+
+    .engineering-page {
+      padding-top: 120px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .engineering-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .engineering-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 15px;
+      color: var(--engineering-green);
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .engineering-kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .engineering-heading {
+      margin: 0;
+      color: var(--engineering-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .engineering-section-header {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 430px);
+      align-items: end;
+      gap: 65px;
+      margin-bottom: 46px;
+    }
+
+    .engineering-section-copy {
+      margin: 0;
+      color: var(--engineering-copy);
+      font-size: 13px;
+      line-height: 1.88;
+    }
+
+    /* ==========================================
+       IMAGE PLACEHOLDERS
+    ========================================== */
+
+    .engineering-photo {
+      position: relative;
+      overflow: hidden;
+      background: #dce7df;
+      border-radius: 14px;
+    }
+
+    .engineering-photo img {
+       position: absolute;
+       inset: 0;
+
+        display: block;
+
+       width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+       object-position: center;
+
+        border-radius: inherit;
+    }
+    .engineering-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background:
+        linear-gradient(
+          135deg,
+          #dbe8df,
+          #edf4ef
+        );
+      color: #607067;
+      text-align: center;
+    }
+
+    .engineering-photo-placeholder-content {
+      max-width: 380px;
+    }
+
+    .engineering-photo-placeholder
+    .material-symbols-outlined {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--engineering-green);
+      font-size: 36px;
+    }
+
+    .engineering-photo-placeholder strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #334039;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .engineering-photo-placeholder p {
+      margin: 0;
+      color: #6d7972;
+      font-size: 9px;
+      line-height: 1.65;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .engineering-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 83px 0 90px;
+      background:
+        radial-gradient(
+          circle at 90% 5%,
+          rgba(1, 155, 57, 0.24),
+          transparent 33%
+        ),
+        linear-gradient(
+          125deg,
+          #061c10 0%,
+          #0a2d1a 57%,
+          #075226 100%
+        );
+      color: #ffffff;
+    }
+
+    .engineering-hero::before {
+      content: "";
+      position: absolute;
+      top: -280px;
+      right: -200px;
+      z-index: -1;
+      width: 670px;
+      height: 670px;
+      border: 98px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .engineering-hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(390px, 0.88fr);
+      align-items: center;
+      gap: 72px;
+    }
+
+    .engineering-hero .engineering-kicker {
+      color: #77e49d;
+    }
+
+    .engineering-hero h1 {
+      max-width: 810px;
+      margin: 0 0 13px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.03;
+      font-weight: 700;
+      letter-spacing: -0.055em;
+    }
+
+    .engineering-hero-subheadline {
+      margin: 0 0 22px;
+      color: #7be5a1;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(19px, 2.2vw, 28px);
+      line-height: 1.35;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .engineering-hero-copy {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.73);
+      font-size: 13px;
+      line-height: 1.92;
+    }
+
+    .engineering-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 31px;
+    }
+
+    .engineering-primary-button,
+    .engineering-outline-button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 22px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .engineering-primary-button {
+      background: var(--engineering-green);
+      border: 1px solid var(--engineering-green);
+      color: #ffffff;
+    }
+
+    .engineering-outline-button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+    }
+
+    .engineering-primary-button:hover,
+    .engineering-outline-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 13px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .engineering-outline-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .engineering-hero-photo {
+      position: relative;
+
+       width: 100%;
+      height: 520px;
+       min-height: 520px;
+
+       overflow: hidden;
+
+       border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+
+       box-shadow: 0 28px 65px rgba(0, 0, 0, 0.27);
+    }
+
+    .engineering-hero-photo > img {
+      position: absolute;
+       inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+       object-position: center center;
+    }
+
+    .engineering-hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(2, 31, 14, 0.77),
+          rgba(2, 31, 14, 0.02) 66%
+        );
+      pointer-events: none;
+    }
+
+    .engineering-hero-photo-label {
+      position: absolute;
+      left: 21px;
+      right: 21px;
+      bottom: 21px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 47px minmax(0, 1fr);
+      gap: 13px;
+      align-items: center;
+      padding: 16px 17px;
+      background: rgba(3, 41, 19, 0.73);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+      backdrop-filter: blur(7px);
+    }
+
+    .engineering-hero-photo-icon {
+      width: 47px;
+      height: 47px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(117, 227, 155, 0.14);
+      border-radius: 50%;
+      color: #75e39b;
+    }
+
+    .engineering-hero-photo-label strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .engineering-hero-photo-label p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.63);
+      font-size: 8px;
+      line-height: 1.55;
+    }
+
+    /* ==========================================
+       INTRODUCTION
+    ========================================== */
+
+    .engineering-introduction {
+      padding: 105px 0 110px;
+      background: #ffffff;
+    }
+
+    .engineering-introduction-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 0.86fr)
+        minmax(0, 1.14fr);
+      align-items: start;
+      gap: 86px;
+    }
+
+    .engineering-introduction-copy {
+      padding-top: 29px;
+    }
+
+    .engineering-introduction-copy p {
+      margin: 0;
+      color: var(--engineering-copy);
+      font-size: 13px;
+      line-height: 1.93;
+    }
+
+    .engineering-introduction-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 58px;
+      border-top: 1px solid var(--engineering-border);
+      border-bottom: 1px solid var(--engineering-border);
+    }
+
+    .engineering-introduction-point {
+      min-height: 230px;
+      padding: 30px 27px;
+      border-right: 1px solid var(--engineering-border);
+    }
+
+    .engineering-introduction-point:last-child {
+      border-right: 0;
+    }
+
+    .engineering-introduction-icon {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 23px;
+      background: var(--engineering-green-soft);
+      border-radius: 50%;
+      color: var(--engineering-green);
+    }
+
+    .engineering-introduction-icon
+    .material-symbols-outlined {
+      font-size: 26px;
+    }
+
+    .engineering-introduction-point h3 {
+      margin: 0 0 10px;
+      color: var(--engineering-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .engineering-introduction-point p {
+      margin: 0;
+      color: var(--engineering-copy);
+      font-size: 13px;
+      line-height: 1.78;
+    }
+
+    /* ==========================================
+       DESIGN AND ENGINEERING
+    ========================================== */
+
+    .engineering-design {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 115px;
+      background: var(--engineering-soft);
+    }
+
+    .engineering-design::before {
+      content: "";
+      position: absolute;
+      top: -235px;
+      left: -205px;
+      width: 530px;
+      height: 530px;
+      border: 78px solid rgba(1, 155, 57, 0.035);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .engineering-design-feature {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(390px, 0.86fr);
+      align-items: stretch;
+      gap: 27px;
+      margin-bottom: 31px;
+    }
+
+    .engineering-design-copy {
+      padding: 37px;
+      background: #ffffff;
+      border: 1px solid var(--engineering-border);
+      border-radius: 14px;
+      box-shadow: 0 10px 32px rgba(12, 54, 28, 0.07);
+    }
+
+    .engineering-design-copy p {
+      margin: 0;
+      color: var(--engineering-copy);
+      font-size: 13x;
+      line-height: 1.9;
+    }
+
+    .engineering-model-review-photo {
+      min-height: 440px;
+      box-shadow: 0 13px 36px rgba(12, 54, 28, 0.1);
+    }
+
+    .engineering-capability-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--engineering-border);
+      border-radius: 13px;
+      box-shadow: 0 9px 29px rgba(12, 54, 28, 0.06);
+    }
+
+    .engineering-capability-item {
+      min-height: 83px;
+      display: grid;
+      grid-template-columns: 35px minmax(0, 1fr);
+      align-items: center;
+      gap: 13px;
+      padding: 15px 24px;
+      border-bottom: 1px solid #edf1ee;
+      color: #344039;
+      font-size: 13px;
+      line-height: 1.55;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    .engineering-capability-item:nth-child(odd) {
+      border-right: 1px solid #edf1ee;
+    }
+
+    .engineering-capability-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .engineering-capability-item:hover {
+      padding-left: 29px;
+      background: #f0f8f3;
+      color: var(--engineering-green);
+    }
+
+    .engineering-capability-icon {
+      width: 31px;
+      height: 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--engineering-green-soft);
+      border-radius: 50%;
+      color: var(--engineering-green);
+    }
+
+    .engineering-capability-icon
+    .material-symbols-outlined {
+      font-size: 17px;
+    }
+
+    /* ==========================================
+       FEED AND FEASIBILITY
+    ========================================== */
+
+    .engineering-feed {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 115px;
+      background: var(--engineering-green-dark);
+      color: #ffffff;
+    }
+
+    .engineering-feed::after {
+      content: "";
+      position: absolute;
+      top: -275px;
+      right: -200px;
+      width: 650px;
+      height: 650px;
+      border: 96px solid rgba(1, 155, 57, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .engineering-feed .engineering-section-header {
+      position: relative;
+      z-index: 2;
+    }
+
+    .engineering-feed .engineering-kicker {
+      color: #75e39b;
+    }
+
+    .engineering-feed .engineering-heading {
+      color: #ffffff;
+    }
+
+    .engineering-feed .engineering-section-copy {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .engineering-feed-intro {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(380px, 0.78fr);
+      gap: 28px;
+      margin-bottom: 29px;
+    }
+
+    .engineering-feed-lead {
+      display: flex;
+      align-items: center;
+      padding: 35px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 13px;
+      backdrop-filter: blur(6px);
+    }
+
+    .engineering-feed-lead p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 15px;
+      line-height: 1.94;
+    }
+
+    .engineering-hazop-photo {
+      min-height: 405px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .engineering-feed-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .engineering-feed-card {
+      overflow: hidden;
+      background: #ffffff;
+      border-radius: 13px;
+      box-shadow: 0 17px 40px rgba(0, 0, 0, 0.14);
+    }
+
+    .engineering-feed-card-header {
+      min-height: 180px;
+      padding: 28px;
+      background:
+        linear-gradient(
+          125deg,
+          #0d3521,
+          #075527
+        );
+    }
+
+    .engineering-feed-card:nth-child(2)
+    .engineering-feed-card-header {
+      background:
+        linear-gradient(
+          125deg,
+          #008331,
+          var(--engineering-green)
+        );
+    }
+
+    .engineering-feed-number {
+      display: block;
+      margin-bottom: 13px;
+      color: #75e39b;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .engineering-feed-card:nth-child(2)
+    .engineering-feed-number {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .engineering-feed-card-header h3 {
+      margin: 0 0 9px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 26px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .engineering-feed-card-header p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .engineering-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .engineering-list li {
+      border-bottom: 1px solid #edf1ee;
+    }
+
+    .engineering-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .engineering-list-item {
+      min-height: 67px;
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      padding: 13px 24px;
+      color: #344039;
+      font-size: 13px;
+      line-height: 1.58;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    .engineering-list-item:hover {
+      padding-left: 29px;
+      background: #f0f8f3;
+      color: var(--engineering-green);
+    }
+
+    .engineering-list-check {
+      width: 23px;
+      height: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--engineering-green-soft);
+      border-radius: 50%;
+      color: var(--engineering-green);
+    }
+
+    .engineering-list-check
+    .material-symbols-outlined {
+      font-size: 15px;
+    }
+
+    /* ==========================================
+       DETAILED ENGINEERING
+    ========================================== */
+
+    .engineering-detailed {
+      padding: 105px 0 115px;
+      background: #ffffff;
+    }
+
+    .engineering-detailed-lead {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 0.86fr)
+        minmax(0, 1.14fr);
+      align-items: start;
+      gap: 85px;
+      margin-bottom: 45px;
+    }
+
+    .engineering-detailed-copy {
+      padding-top: 28px;
+    }
+
+    .engineering-detailed-copy p {
+      margin: 0;
+      color: var(--engineering-copy);
+      font-size: 12px;
+      line-height: 1.92;
+    }
+
+    .engineering-before-after {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 19px;
+      margin-bottom: 32px;
+    }
+
+    .engineering-comparison-card {
+      overflow: hidden;
+      background: var(--engineering-soft);
+      border: 1px solid var(--engineering-border);
+      border-radius: 13px;
+      box-shadow: 0 9px 28px rgba(12, 54, 28, 0.06);
+    }
+
+    .engineering-comparison-photo {
+      height: 390px;
+      border-radius: 0;
+    }
+
+    .engineering-comparison-label {
+      padding: 19px 21px 21px;
+    }
+
+    .engineering-comparison-label span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--engineering-green);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .engineering-comparison-label h3 {
+      margin: 0;
+      color: var(--engineering-ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .engineering-detailed-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      background: var(--engineering-soft);
+      border: 1px solid var(--engineering-border);
+      border-radius: 13px;
+    }
+
+    .engineering-detailed-item {
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: 35px minmax(0, 1fr);
+      align-items: center;
+      gap: 13px;
+      padding: 15px 24px;
+      border-bottom: 1px solid #e4ebe6;
+      color: #344039;
+      font-size: 13px;
+      line-height: 1.58;
+    }
+
+    .engineering-detailed-item:nth-child(odd) {
+      border-right: 1px solid #e4ebe6;
+    }
+
+    .engineering-detailed-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    /* ==========================================
+       WHY AOS ORWELL
+    ========================================== */
+
+    .engineering-why {
+      padding: 100px 0;
+      background: var(--engineering-soft);
+    }
+
+    .engineering-why-box {
+      display: grid;
+      grid-template-columns:
+        minmax(380px, 0.82fr)
+        minmax(0, 1.18fr);
+      overflow: hidden;
+      background: var(--engineering-green-dark);
+      border-radius: 15px;
+      box-shadow: 0 20px 55px rgba(5, 43, 20, 0.17);
+    }
+
+    .engineering-site-photo {
+      min-height: 570px;
+      border-radius: 0;
+    }
+
+    .engineering-why-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 54px;
+      color: #ffffff;
+    }
+
+    .engineering-why-content .engineering-kicker {
+      color: #75e39b;
+    }
+
+    .engineering-why-content h2 {
+      margin: 0 0 20px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 3.7vw, 47px);
+      line-height: 1.16;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .engineering-why-content > p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.69);
+      font-size: 12px;
+      line-height: 1.92;
+    }
+
+    .engineering-why-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px 18px;
+      margin-top: 26px;
+    }
+
+    .engineering-why-point {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      color: rgba(255, 255, 255, 0.79);
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .engineering-why-point
+    .material-symbols-outlined {
+      color: #75e39b;
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       CTA
+    ========================================== */
+
+    .engineering-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+      background:
+        linear-gradient(
+          125deg,
+          #008c35,
+          var(--engineering-green)
+        );
+      color: #ffffff;
+    }
+
+    .engineering-cta::after {
+      content: "";
+      position: absolute;
+      top: -225px;
+      right: -175px;
+      width: 540px;
+      height: 540px;
+      border: 80px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .engineering-cta-layout {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .engineering-cta-content {
+      max-width: 770px;
+    }
+
+    .engineering-cta-content span {
+      display: block;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .engineering-cta-content h2 {
+      margin: 0 0 14px;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .engineering-cta-content p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 12px;
+      line-height: 1.82;
+    }
+
+    .engineering-cta-button {
+      min-height: 55px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 24px;
+      background: #ffffff;
+      border-radius: 7px;
+      color: #007b2e;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(0, 65, 24, 0.18);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .engineering-cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 37px rgba(0, 65, 24, 0.24);
+    }
+
+    /* ==========================================
+       REVEAL
+    ========================================== */
+
+    .engineering-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .engineering-reveal.engineering-shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       TABLET
+    ========================================== */
+
+    @media (max-width: 1050px) {
+      .engineering-hero-grid,
+      .engineering-introduction-grid,
+      .engineering-design-feature,
+      .engineering-feed-intro,
+      .engineering-detailed-lead {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .engineering-hero-photo {
+        min-height: 530px;
+      }
+
+      .engineering-introduction-copy,
+      .engineering-detailed-copy {
+        padding-top: 0;
+      }
+
+      .engineering-section-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .engineering-design-copy {
+        order: 2;
+      }
+
+      .engineering-model-review-photo {
+        order: 1;
+        min-height: 500px;
+      }
+
+      .engineering-feed-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .engineering-hazop-photo {
+        min-height: 470px;
+      }
+
+      .engineering-why-box {
+        grid-template-columns: 1fr;
+      }
+
+      .engineering-site-photo {
+        min-height: 520px;
+      }
+
+      .engineering-cta-layout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .engineering-introduction-points {
+        grid-template-columns: 1fr;
+      }
+
+      .engineering-introduction-point {
+        border-right: 0;
+        border-bottom: 1px solid var(--engineering-border);
+      }
+
+      .engineering-introduction-point:last-child {
+        border-bottom: 0;
+      }
+
+      .engineering-capability-grid,
+      .engineering-feed-grid,
+      .engineering-detailed-list {
+        grid-template-columns: 1fr;
+      }
+
+      .engineering-capability-item,
+      .engineering-capability-item:nth-child(odd),
+      .engineering-detailed-item,
+      .engineering-detailed-item:nth-child(odd) {
+        border-right: 0;
+        border-bottom: 1px solid #edf1ee;
+      }
+
+      .engineering-capability-item:last-child,
+      .engineering-detailed-item:last-child {
+        border-bottom: 0;
+      }
+
+      .engineering-before-after {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 680px) {
+      .engineering-page {
+        padding-top: 92px;
+      }
+
+      .engineering-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .engineering-hero {
+        padding: 65px 0 73px;
+      }
+
+      .engineering-hero::before {
+        top: -125px;
+        right: -140px;
+        width: 340px;
+        height: 340px;
+        border-width: 50px;
+      }
+
+      .engineering-hero h1 {
+        font-size: 43px;
+      }
+
+      .engineering-hero-subheadline {
+        font-size: 20px;
+      }
+
+      .engineering-hero-copy {
+        font-size: 12px;
+      }
+
+      .engineering-hero-actions {
+        flex-direction: column;
+      }
+
+      .engineering-primary-button,
+      .engineering-outline-button {
+        width: 100%;
+      }
+
+      .engineering-hero-photo {
+        min-height: 410px;
+      }
+
+      .engineering-hero-photo-label {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .engineering-introduction,
+      .engineering-design,
+      .engineering-feed,
+      .engineering-detailed {
+        padding: 75px 0 82px;
+      }
+
+      .engineering-introduction-points {
+        margin-top: 42px;
+      }
+
+      .engineering-design-copy,
+      .engineering-feed-lead {
+        padding: 26px 21px;
+      }
+
+      .engineering-model-review-photo,
+      .engineering-hazop-photo {
+        min-height: 360px;
+      }
+
+      .engineering-capability-item,
+      .engineering-detailed-item {
+        min-height: 73px;
+        padding: 13px 18px;
+        font-size: 9px;
+      }
+
+      .engineering-feed-card-header {
+        min-height: 165px;
+        padding: 24px 21px;
+      }
+
+      .engineering-feed-card-header h3 {
+        font-size: 23px;
+      }
+
+      .engineering-list-item {
+        padding: 13px 19px;
+        font-size: 9px;
+      }
+
+      .engineering-list-item:hover {
+        padding-left: 23px;
+      }
+
+      .engineering-comparison-photo {
+        height: 310px;
+      }
+
+      .engineering-why {
+        padding: 75px 0;
+      }
+
+      .engineering-site-photo {
+        min-height: 400px;
+      }
+
+      .engineering-why-content {
+        padding: 33px 22px;
+      }
+
+      .engineering-why-points {
+        grid-template-columns: 1fr;
+      }
+
+      .engineering-cta {
+        padding: 75px 0;
+      }
+
+      .engineering-cta::after {
+        top: -110px;
+        right: -135px;
+        width: 310px;
+        height: 310px;
+        border-width: 46px;
+      }
+
+      .engineering-cta-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="!bg-white">
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="engineering-page">
+
+    <!-- ==========================================
+         PAGE HERO
+    ========================================== -->
+
+    <section class="engineering-hero">
+      <div class="engineering-shell engineering-hero-grid">
+
+        <div>
+
+          <span class="engineering-kicker">
+            Process Management
+          </span>
+
+          <h1>
+            Engineering Design
+          </h1>
+
+          <p class="engineering-hero-subheadline">
+            Concept to construction. Engineered in Nigeria.
+          </p>
+
+          <p class="engineering-hero-copy">
+            Decisions taken at the design stage govern what a
+            facility costs to build and what it costs to run for
+            the next twenty years. AOS Orwell provides
+            multi-discipline engineering design across the full
+            project lifecycle, from feasibility and concept
+            selection through FEED to issued-for-construction
+            deliverables—supported by an operations and
+            maintenance business that keeps our designs grounded
+            in how plants actually run.
+          </p>
+
+          <div class="engineering-hero-actions">
+
+            <a
+              href="#design-engineering"
+              class="engineering-primary-button"
+            >
+              Explore our capability
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="./contact-us.html"
+              class="engineering-outline-button"
+            >
+              Discuss your project
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Replace with an original AOS Orwell image -->
+        <figure class="engineering-photo engineering-hero-photo">
+
+          <img
+            src="./images/engineering-floor.jpg"
+            alt="AOS Orwell engineers working at CAD workstations"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='flex';
+            "
+          />
+
+          <div class="engineering-photo-placeholder">
+
+            <div class="engineering-photo-placeholder-content">
+
+              <span class="material-symbols-outlined">
+                image
+              </span>
+
+              <strong>
+                Add engineering-floor photograph
+              </strong>
+
+              <p>
+                Wide shot of AOS Orwell engineers at multi-monitor
+                CAD workstations, photographed from behind at a
+                low angle.
+              </p>
+
+            </div>
+
+          </div>
+
+          <figcaption class="engineering-hero-photo-label">
+
+            <span class="engineering-hero-photo-icon">
+              <span class="material-symbols-outlined">
+                architecture
+              </span>
+            </span>
+
+            <div>
+
+              <strong>
+                In-country engineering capability
+              </strong>
+
+              <p>
+                Multi-discipline engineering supported by
+                operational experience.
+              </p>
+
+            </div>
+
+          </figcaption>
+
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         INTRODUCTION
+    ========================================== -->
+
+    <section class="engineering-introduction">
+      <div class="engineering-shell">
+
+        <div class="engineering-introduction-grid">
+
+          <div class="engineering-reveal">
+
+            <span class="engineering-kicker">
+              Project lifecycle expertise
+            </span>
+
+            <h2 class="engineering-heading">
+              Engineering that considers how the facility will
+              actually be built, operated and maintained
+            </h2>
+
+          </div>
+
+          <div class="engineering-introduction-copy engineering-reveal">
+
+            <p>
+              Our engineering teams support projects from the
+              earliest investment and development decisions through
+              design, procurement, fabrication, construction,
+              commissioning and as-built handover. The result is a
+              coordinated design that responds to technical,
+              commercial, construction and whole-life operating
+              requirements.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="engineering-introduction-points engineering-reveal">
+
+          <article class="engineering-introduction-point">
+
+            <span class="engineering-introduction-icon">
+              <span class="material-symbols-outlined">
+                account_tree
+              </span>
+            </span>
+
+            <h3>
+              Full project lifecycle
+            </h3>
+
+            <p>
+              Support from feasibility and concept selection
+              through FEED, detailed design, construction and
+              as-built documentation.
+            </p>
+
+          </article>
+
+          <article class="engineering-introduction-point">
+
+            <span class="engineering-introduction-icon">
+              <span class="material-symbols-outlined">
+                hub
+              </span>
+            </span>
+
+            <h3>
+              Multi-discipline delivery
+            </h3>
+
+            <p>
+              Coordinated process, mechanical, piping, civil,
+              structural, electrical, instrumentation and safety
+              engineering.
+            </p>
+
+          </article>
+
+          <article class="engineering-introduction-point">
+
+            <span class="engineering-introduction-icon">
+              <span class="material-symbols-outlined">
+                engineering
+              </span>
+            </span>
+
+            <h3>
+              Operationally informed
+            </h3>
+
+            <p>
+              Designs informed by real maintenance, access,
+              sparing, isolation and equipment-performance
+              experience.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 1 — DESIGN AND ENGINEERING
+    ========================================== -->
+
+    <section
+      id="design-engineering"
+      class="engineering-design"
+    >
+      <div class="engineering-shell">
+
+        <div class="engineering-section-header engineering-reveal">
+
+          <div>
+
+            <span class="engineering-kicker">
+              01 / Design and engineering
+            </span>
+
+            <h2 class="engineering-heading">
+              Multi-discipline engineering from concept to construction
+            </h2>
+
+          </div>
+
+          <p class="engineering-section-copy">
+            Coordinated engineering disciplines, industry-standard
+            platforms and controlled review processes support
+            designs that are technically sound, constructable and
+            maintainable.
+          </p>
+
+        </div>
+
+        <div class="engineering-design-feature">
+
+          <div class="engineering-design-copy engineering-reveal">
+
+            <p>
+              Our engineering design capability spans the
+              disciplines required to take a facility from concept
+              to construction: process, mechanical, piping, civil
+              and structural, electrical, instrumentation and
+              control, and safety engineering. Teams work to client
+              specifications and recognised international codes,
+              with deliverables produced on industry-standard
+              engineering platforms and controlled through a formal
+              review and approval process. Because AOS Orwell also
+              operates and maintains producing assets, our designs
+              are tested against the discipline most engineering
+              houses never see—the maintainability, sparing and
+              access realities that determine whole-life cost.
+            </p>
+
+          </div>
+
+          <figure
+            class="engineering-photo engineering-model-review-photo engineering-reveal"
+          >
+
+            <img
+              src="./images/design-engineering/model-review.jpg"
+              alt="AOS Orwell engineers conducting a 3D model review"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='flex';
+              "
+            />
+
+            <div class="engineering-photo-placeholder">
+
+              <div class="engineering-photo-placeholder-content">
+
+                <span class="material-symbols-outlined">
+                  image
+                </span>
+
+                <strong>
+                  Add 3D model-review photograph
+                </strong>
+
+                <p>
+                  Two or three AOS Orwell engineers around a large
+                  screen during a collaborative 3D model review.
+                </p>
+
+              </div>
+
+            </div>
+
+          </figure>
+
+        </div>
+
+        <div class="engineering-capability-grid engineering-reveal">
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Process and process safety engineering
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Mechanical and rotating equipment engineering
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Piping design, stress analysis and material specification
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Civil and structural engineering
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Electrical power systems and distribution design
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Instrumentation, control and ICSS design
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Pipeline and flow assurance engineering
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Materials, corrosion and integrity engineering
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              3D modelling, clash detection and model reviews
+            </span>
+
+          </div>
+
+          <div class="engineering-capability-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Engineering studies, design reviews and technical assurance
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2 — FEED AND FEASIBILITY
+    ========================================== -->
+
+    <section class="engineering-feed">
+      <div class="engineering-shell">
+
+        <div class="engineering-section-header engineering-reveal">
+
+          <div>
+
+            <span class="engineering-kicker">
+              02 / Front-end definition
+            </span>
+
+            <h2 class="engineering-heading">
+              FEED and Feasibility Studies
+            </h2>
+
+          </div>
+
+          <p class="engineering-section-copy">
+            Define the opportunity, test the options and understand
+            the technical and commercial risk before major project
+            commitments are made.
+          </p>
+
+        </div>
+
+        <div class="engineering-feed-intro">
+
+          <div class="engineering-feed-lead engineering-reveal">
+
+            <p>
+              The cheapest place to change a project is on paper.
+              Feasibility and FEED are where scope is defined,
+              options are tested and the cost of the entire
+              development is effectively set—and where the greatest
+              value is either captured or lost. AOS Orwell delivers
+              feasibility studies that screen technical and
+              commercial options against a client’s investment
+              criteria, and Front End Engineering Design that
+              converts a selected concept into a frozen, costed and
+              executable scope. The output is a design basis robust
+              enough to support a final investment decision and
+              clear enough to tender competitively, with technical
+              risk understood and priced before commitment.
+            </p>
+
+          </div>
+
+          <figure
+            class="engineering-photo engineering-hazop-photo engineering-reveal"
+          >
+
+            <img
+              src="./images/design-engineering/hazop-session.jpg"
+              alt="AOS Orwell engineering design review or HAZOP session"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='flex';
+              "
+            />
+
+            <div class="engineering-photo-placeholder">
+
+              <div class="engineering-photo-placeholder-content">
+
+                <span class="material-symbols-outlined">
+                  image
+                </span>
+
+                <strong>
+                  Add design-review or HAZOP photograph
+                </strong>
+
+                <p>
+                  Participants engaged around P&amp;IDs during a
+                  formal design review or HAZOP session.
+                </p>
+
+              </div>
+
+            </div>
+
+          </figure>
+
+        </div>
+
+        <div class="engineering-feed-grid">
+
+          <!-- FEASIBILITY -->
+          <article class="engineering-feed-card engineering-reveal">
+
+            <header class="engineering-feed-card-header">
+
+              <span class="engineering-feed-number">
+                02A / Options and investment screening
+              </span>
+
+              <h3>
+                Feasibility &amp; Concept Select
+              </h3>
+
+              <p>
+                Evaluate development options and identify the
+                concept that best satisfies technical, commercial
+                and operational requirements.
+              </p>
+
+            </header>
+
+            <ul class="engineering-list">
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Technical and economic screening of development options
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Concept selection studies and option ranking
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Field development and debottlenecking studies
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Brownfield modification and tie-in feasibility
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Order-of-magnitude cost estimating to support screening decisions
+                  </span>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- FEED -->
+          <article class="engineering-feed-card engineering-reveal">
+
+            <header class="engineering-feed-card-header">
+
+              <span class="engineering-feed-number">
+                02B / Scope definition
+              </span>
+
+              <h3>
+                Front End Engineering Design
+              </h3>
+
+              <p>
+                Convert the selected concept into a coordinated,
+                costed and executable scope suitable for investment
+                approval and competitive tendering.
+              </p>
+
+            </header>
+
+            <ul class="engineering-list">
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Design basis, philosophies and specifications
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Process flow diagrams, heat and material balances, and P&amp;IDs
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Equipment sizing, datasheets and technical requisitions
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Plot plans, layouts and preliminary 3D models
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    HAZID, HAZOP and design safety studies
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Definitive cost estimate to support final investment decision
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Project execution strategy, schedule and contracting plan
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="engineering-list-item">
+
+                  <span class="engineering-list-check">
+                    <span class="material-symbols-outlined">
+                      check
+                    </span>
+                  </span>
+
+                  <span>
+                    Long-lead item identification and procurement definition
+                  </span>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3 — DETAILED ENGINEERING
+    ========================================== -->
+
+    <section class="engineering-detailed">
+      <div class="engineering-shell">
+
+        <div class="engineering-detailed-lead">
+
+          <div class="engineering-reveal">
+
+            <span class="engineering-kicker">
+              03 / Detailed design
+            </span>
+
+            <h2 class="engineering-heading">
+              Detailed Engineering Design
+            </h2>
+
+          </div>
+
+          <div class="engineering-detailed-copy engineering-reveal">
+
+            <p>
+              Detailed design is where a frozen scope becomes
+              something a contractor can build. AOS Orwell produces
+              the full issued-for-construction deliverable set—
+              drawings, models, specifications, datasheets and
+              material take-offs—engineered to be constructable,
+              procurable and maintainable. Multi-discipline work is
+              coordinated through a controlled 3D model with clash
+              resolution, and vendor data is integrated as equipment
+              is purchased so the design reflects what is actually
+              being installed. We carry the design through
+              procurement, fabrication and construction support to
+              as-built handover, which means the team that specified
+              the plant remains accountable for it through
+              commissioning.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- BEFORE AND AFTER -->
+        <div class="engineering-before-after">
+
+          <article class="engineering-comparison-card engineering-reveal">
+
+            <figure class="engineering-photo engineering-comparison-photo">
+
+              <img
+                src="./images/design-engineering/3d-model.jpg"
+                alt="Engineering 3D model"
+                onerror="
+                  this.style.display='none';
+                  this.nextElementSibling.style.display='flex';
+                "
+              />
+
+              <div class="engineering-photo-placeholder">
+
+                <div class="engineering-photo-placeholder-content">
+
+                  <span class="material-symbols-outlined">
+                    view_in_ar
+                  </span>
+
+                  <strong>
+                    Add project 3D model
+                  </strong>
+
+                  <p>
+                    Use an original project model or approved
+                    engineering-model screenshot.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </figure>
+
+            <div class="engineering-comparison-label">
+
+              <span>
+                Design
+              </span>
+
+              <h3>
+                Coordinated 3D engineering model
+              </h3>
+
+            </div>
+
+          </article>
+
+          <article class="engineering-comparison-card engineering-reveal">
+
+            <figure class="engineering-photo engineering-comparison-photo">
+
+              <img
+                src="./images/design-engineering/as-built-installation.jpg"
+                alt="Completed as-built facility installation"
+                onerror="
+                  this.style.display='none';
+                  this.nextElementSibling.style.display='flex';
+                "
+              />
+
+              <div class="engineering-photo-placeholder">
+
+                <div class="engineering-photo-placeholder-content">
+
+                  <span class="material-symbols-outlined">
+                    factory
+                  </span>
+
+                  <strong>
+                    Add matching as-built installation
+                  </strong>
+
+                  <p>
+                    Use the completed installation corresponding
+                    with the adjacent 3D engineering model.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </figure>
+
+            <div class="engineering-comparison-label">
+
+              <span>
+                Delivery
+              </span>
+
+              <h3>
+                Constructed and commissioned installation
+              </h3>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="engineering-detailed-list engineering-reveal">
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Issued-for-construction drawings across all disciplines
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Detailed 3D modelling, clash detection and model review
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Piping isometrics, line lists and stress analysis
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Equipment and instrument datasheets and specifications
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Electrical single-line diagrams, cable schedules and load lists
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Control-system architecture, loop diagrams and cause-and-effect charts
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Structural detailing and fabrication drawings
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Material take-offs and procurement support
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Vendor-document review and technical-bid evaluation
+            </span>
+
+          </div>
+
+          <div class="engineering-detailed-item">
+
+            <span class="engineering-capability-icon">
+              <span class="material-symbols-outlined">
+                check
+              </span>
+            </span>
+
+            <span>
+              Construction support, field engineering and as-built documentation
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4 — WHY AOS ORWELL
+    ========================================== -->
+
+    <section class="engineering-why">
+      <div class="engineering-shell">
+
+        <div class="engineering-why-box engineering-reveal">
+
+          <figure class="engineering-photo engineering-site-photo">
+
+            <img
+              src="./images/design-engineering/engineer-on-site.jpg"
+              alt="AOS Orwell engineer working at an operational facility"
+              onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='flex';
+              "
+            />
+
+            <div class="engineering-photo-placeholder">
+
+              <div class="engineering-photo-placeholder-content">
+
+                <span class="material-symbols-outlined">
+                  image
+                </span>
+
+                <strong>
+                  Add AOS Orwell engineer-on-site photograph
+                </strong>
+
+                <p>
+                  An engineer in AOS Orwell PPE at a live facility,
+                  preferably one of the company’s operations and
+                  maintenance assets.
+                </p>
+
+              </div>
+
+            </div>
+
+          </figure>
+
+          <div class="engineering-why-content">
+
+            <span class="engineering-kicker">
+              04 / Why AOS Orwell
+            </span>
+
+            <h2>
+              The designers remain accountable for how the plant performs
+            </h2>
+
+            <p>
+              Most engineering houses hand over at the end of
+              detailed design. We do not. AOS Orwell operates and
+              maintains producing facilities, which means our
+              designers are held to account by colleagues who will
+              later have to maintain what they specified. That
+              feedback loop shows up in access, sparing, isolation
+              philosophy and equipment selection—the details that
+              separate a plant that runs from a plant that is merely
+              technically correct. Our capability is resourced
+              in-country and engineered to the standards our clients
+              answer to.
+            </p>
+
+            <div class="engineering-why-points">
+
+              <div class="engineering-why-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Operations-informed design decisions
+                </span>
+
+              </div>
+
+              <div class="engineering-why-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  In-country engineering resources
+                </span>
+
+              </div>
+
+              <div class="engineering-why-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Whole-life cost and maintainability focus
+                </span>
+
+              </div>
+
+              <div class="engineering-why-point">
+
+                <span class="material-symbols-outlined">
+                  check_circle
+                </span>
+
+                <span>
+                  Support through construction and commissioning
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FINAL CTA
+    ========================================== -->
+
+    <section class="engineering-cta">
+      <div class="engineering-shell engineering-cta-layout">
+
+        <div class="engineering-cta-content">
+
+          <span>
+            Engineering design enquiries
+          </span>
+
+          <h2>
+            Let’s define your project before the cost of change increases.
+          </h2>
+
+          <p>
+            Share your feasibility, FEED, detailed-engineering,
+            brownfield-modification or technical-assurance
+            requirements with our engineering team.
+          </p>
+
+        </div>
+
+        <a
+          href="./contact-us.html"
+          class="engineering-cta-button"
+        >
+          Discuss your project
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+ <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
+
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+
+  <!-- ==========================================
+       PAGE SCRIPT
+  ========================================== -->
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        const revealElements =
+          document.querySelectorAll(
+            ".engineering-reveal"
+          );
+
+        if (
+          "IntersectionObserver" in window
+        ) {
+          const revealObserver =
+            new IntersectionObserver(
+              function (entries, observer) {
+                entries.forEach(
+                  function (entry) {
+                    if (!entry.isIntersecting) {
+                      return;
+                    }
+
+                    entry.target.classList.add(
+                      "engineering-shown"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+                  }
+                );
+              },
+              {
+                threshold: 0.1,
+                rootMargin:
+                  "0px 0px -40px 0px"
+              }
+            );
+
+          revealElements.forEach(
+            function (element) {
+              revealObserver.observe(element);
+            }
+          );
+        } else {
+          revealElements.forEach(
+            function (element) {
+              element.classList.add(
+                "engineering-shown"
+              );
+            }
+          );
+        }
+      }
+    );
+  </script>
+
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("./navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error(
+            "Navbar could not be loaded."
+          );
+        }
+
+        return response.text();
+      })
+      .then(function (navbarHTML) {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = navbarHTML;
+
+        const navbarScript =
+          document.createElement("script");
+
+        navbarScript.src = "./navbar.js";
+
+        document.body.appendChild(
+          navbarScript
+        );
+      })
+      .catch(function (error) {
+        console.error(
+          "Navbar could not load:",
+          error
+        );
+      });
+  </script>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
