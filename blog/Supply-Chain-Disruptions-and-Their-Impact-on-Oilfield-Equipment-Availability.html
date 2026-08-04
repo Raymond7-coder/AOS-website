@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
+    <title>Supply Chain Disruptions and Oilfield Equipment Availability | AOS Orwell</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -11,260 +11,1311 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../output.css">
 </head>
+<!-- ==========================================
+     BLOG ARTICLE REDESIGN
+========================================== -->
+
+<style>
+  :root {
+    --article-green: #009b3a;
+    --article-dark: #062b19;
+    --article-deep: #031d10;
+    --article-soft: #f2f7f4;
+    --article-border: #dfe8e2;
+    --article-text: #172019;
+    --article-copy: #5f6c64;
+  }
+
+  .article-page,
+  .article-page * {
+    box-sizing: border-box;
+  }
+
+  .article-page {
+  padding-top: 120px;
+  background: #ffffff;
+  color: var(--article-text);
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 680px) {
+  .article-page {
+    padding-top: 92px;
+  }
+}
+
+  .article-shell {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  /* ==========================================
+     ARTICLE HERO
+  ========================================== */
+
+  .article-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 78px 0 90px;
+    background:
+      radial-gradient(
+        circle at 92% 6%,
+        rgba(0, 181, 67, 0.24),
+        transparent 34%
+      ),
+      linear-gradient(
+        125deg,
+        #031d10 0%,
+        #07331d 58%,
+        #075a28 100%
+      );
+    color: #ffffff;
+  }
+
+  .article-hero::after {
+    content: "";
+    position: absolute;
+    top: -270px;
+    right: -180px;
+    width: 620px;
+    height: 620px;
+    border: 90px solid rgba(255, 255, 255, 0.045);
+    border-radius: 50%;
+  }
+
+  .article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+  }
+
+  .article-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 26px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .article-back-link:hover {
+    color: #ffffff;
+  }
+
+  .article-back-link .material-symbols-outlined {
+    font-size: 17px;
+  }
+
+  .article-category {
+    display: inline-flex;
+    padding: 7px 11px;
+    background: rgba(123, 229, 161, 0.13);
+    border-radius: 30px;
+    color: #7be5a1;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .article-hero h1 {
+    max-width: 920px;
+    margin: 20px 0 23px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(39px, 5.6vw, 67px);
+    line-height: 1.09;
+    font-weight: 700;
+    letter-spacing: -0.052em;
+  }
+
+  .article-hero-summary {
+    max-width: 750px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.86;
+  }
+
+  .article-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 29px;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 10px;
+  }
+
+  .article-meta-dot {
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+  }
+
+  /* ==========================================
+     HERO IMAGE
+  ========================================== */
+
+.article-featured-image {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(3, 46, 21, 0.14);
+}
+
+.article-featured-image img {
+  width: 100%;
+  height: 360px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.article-image-caption {
+  margin: 11px 0 38px;
+  color: #7a867f;
+  font-size: 10px;
+  line-height: 1.6;
+}
+  /* ==========================================
+     BODY LAYOUT
+  ========================================== */
+
+  .article-main {
+    padding: 55px 0 105px;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(285px, 340px);
+    align-items: start;
+    gap: 70px;
+  }
+
+  .article-content {
+    max-width: 760px;
+  }
+
+  .article-intro {
+    margin: 0 0 38px;
+    padding-left: 23px;
+    border-left: 4px solid var(--article-green);
+    color: #26322b;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(19px, 2.2vw, 25px);
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .article-content h2 {
+    margin: 51px 0 17px;
+    color: var(--article-text);
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(25px, 3vw, 35px);
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+
+  .article-content h3 {
+    margin: 38px 0 14px;
+    color: var(--article-text);
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+  .article-content p {
+    margin: 0 0 22px;
+    color: var(--article-copy);
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .article-highlight {
+    margin: 40px 0;
+    padding: 31px;
+    background: var(--article-soft);
+    border: 1px solid var(--article-border);
+    border-radius: 13px;
+  }
+
+  .article-highlight span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--article-green);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .article-highlight p {
+    margin: 0;
+    color: #334038;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 1.65;
+    font-weight: 600;
+  }
+
+  .article-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    margin: 33px 0 43px;
+    background: var(--article-soft);
+    border: 1px solid var(--article-border);
+    border-radius: 13px;
+  }
+
+  .article-benefit {
+    min-height: 113px;
+    display: grid;
+    grid-template-columns: 39px minmax(0, 1fr);
+    align-items: start;
+    gap: 13px;
+    padding: 24px;
+    border-bottom: 1px solid var(--article-border);
+  }
+
+  .article-benefit:nth-child(odd) {
+    border-right: 1px solid var(--article-border);
+  }
+
+  .article-benefit:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .article-benefit-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2f4e8;
+    border-radius: 50%;
+    color: var(--article-green);
+  }
+
+  .article-benefit-icon .material-symbols-outlined {
+    font-size: 20px;
+  }
+
+  .article-benefit h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+  }
+
+  .article-benefit p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  .article-supporting-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 40px 0 8px;
+  }
+
+  .article-supporting-images figure { margin: 0; }
+
+  .article-supporting-images img {
+    width: 100%;
+    height: 270px;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(3, 46, 21, 0.1);
+  }
+
+  .article-supporting-images figcaption {
+    margin-top: 9px;
+    color: #7a867f;
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  /* ==========================================
+     ARTICLE CTA
+  ========================================== */
+
+  .article-inline-cta {
+    position: relative;
+    overflow: hidden;
+    margin-top: 53px;
+    padding: 40px;
+    background:
+      linear-gradient(
+        125deg,
+        #07331d,
+        #009b3a
+      );
+    border-radius: 14px;
+    color: #ffffff;
+  }
+
+  .article-inline-cta::after {
+    content: "";
+    position: absolute;
+    top: -130px;
+    right: -100px;
+    width: 310px;
+    height: 310px;
+    border: 49px solid rgba(255, 255, 255, 0.075);
+    border-radius: 50%;
+  }
+
+  .article-inline-cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 590px;
+  }
+
+  .article-inline-cta span {
+    display: block;
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .article-inline-cta h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 35px);
+  }
+
+  .article-inline-cta p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .article-inline-cta a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 0 19px;
+    background: #ffffff;
+    border-radius: 6px;
+    color: #007d30;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* ==========================================
+     SIDEBAR
+  ========================================== */
+
+  .article-sidebar {
+    position: sticky;
+    top: 115px;
+  }
+
+  .article-sidebar-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--article-border);
+    border-radius: 13px;
+    box-shadow: 0 11px 31px rgba(8, 55, 27, 0.075);
+  }
+
+  .article-sidebar-header {
+    padding: 24px;
+    background: var(--article-dark);
+    color: #ffffff;
+  }
+
+  .article-sidebar-header span {
+    display: block;
+    margin-bottom: 7px;
+    color: #7be5a1;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .article-sidebar-header h3 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    line-height: 1.35;
+  }
+
+  .article-related-post {
+    display: grid;
+    grid-template-columns: 94px minmax(0, 1fr);
+    gap: 14px;
+    padding: 20px;
+    border-bottom: 1px solid var(--article-border);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .article-related-post:last-child {
+    border-bottom: 0;
+  }
+
+  .article-related-post:hover {
+    background: var(--article-soft);
+  }
+
+  .article-related-post img {
+    width: 94px;
+    height: 78px;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .article-related-meta {
+    margin-bottom: 6px;
+    color: var(--article-green);
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .article-related-post h4 {
+    margin: 0 0 7px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 700;
+  }
+
+  .article-related-link {
+    color: #69766e;
+    font-size: 9px;
+    font-weight: 600;
+  }
+
+  /* SHARE */
+
+  .article-share {
+    margin-top: 23px;
+    padding: 23px;
+    background: var(--article-soft);
+    border: 1px solid var(--article-border);
+    border-radius: 13px;
+  }
+
+  .article-share h3 {
+    margin: 0 0 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+  }
+
+  .article-share-links {
+    display: flex;
+    gap: 9px;
+  }
+
+  .article-share-links a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid var(--article-border);
+    border-radius: 50%;
+    color: var(--article-dark);
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .article-share-links a:hover {
+    background: var(--article-green);
+    border-color: var(--article-green);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 980px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .article-content {
+      max-width: none;
+    }
+
+    .article-sidebar {
+      position: static;
+    }
+
+    .article-sidebar-card {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .article-sidebar-header {
+      grid-column: 1 / -1;
+    }
+
+    .article-related-post:nth-child(2) {
+      border-right: 1px solid var(--article-border);
+    }
+  }
+
+  @media (max-width: 680px) {
+    .article-shell {
+      width: min(100% - 28px, 1180px);
+    }
+
+    .article-hero {
+      padding: 61px 0 72px;
+    }
+
+    .article-hero h1 {
+      font-size: 40px;
+    }
+
+    .article-featured-image img {
+      height: 280px;
+    }
+
+    .article-main {
+      padding: 60px 0 75px;
+    }
+
+    .article-layout {
+      gap: 47px;
+    }
+
+    .article-content p {
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .article-benefits,
+    .article-supporting-images {
+      grid-template-columns: 1fr;
+    }
+
+    .article-benefit,
+    .article-benefit:nth-child(odd) {
+      border-right: 0;
+      border-bottom: 1px solid var(--article-border);
+    }
+
+    .article-benefit:last-child {
+      border-bottom: 0;
+    }
+
+    .article-inline-cta {
+      padding: 31px 23px;
+    }
+
+    .article-sidebar-card {
+      grid-template-columns: 1fr;
+    }
+
+    .article-related-post:nth-child(2) {
+      border-right: 0;
+    }
+  }
+</style>
+</head>
+
 <body class="!bg-white">
-      <div id="navbar-placeholder"></div>
 
-     <div style="height: 120px;"></div>
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
 
-    <div class="flex flex-col md:flex-row gap-x-8 pt-7 pb-17 sm:pb-20 px-6 md:px-20 lg:px-20">
-        <div class="w-full md:w-2/3">
-            
-            
-        <!-- heading image -->
-        <img src="../images/blog/rentals.jpg" alt="" class="w-full h-auto object-cover max-h-[50vh] object-top ">
+ <main class="article-page">
 
-        <!-- HEADING -->
-        <section class="flex flex-col gap-y-5 pb-5 sm:pt-10  items-start ">
-            <!-- <a href="../blog.html" class="text-gray-600 font-semibold text-[11px] sm:text-xs flex gap-x-2 items-center px-2">
-                <span class="arrowBack material-symbols-outlined">
-                    arrow_back
-                </span>
-                Back to blogs
-            </a> -->
-    
-            <div class="flex flex-col gap-y-4 xsm:gap-y-6 items-start text-left w-full">
-                <h1 class="text-lg xsm:text-xl sm:text-2xl  font-semibold leading-normal">Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability.</h1>
-                <div class="flex justify-between items-center w-full flex-wrap gap-y-1">
-                    <div class="flex items-center gap-x-3 flex-wrap gap-y-2 justify-center">
-                        <div class="flex items-center gap-x-3 text-gray-600 font-medium">
-                            <small>AosOrwell</small>
-                            <div class="h-1 w-1 bg-gray-500 rounded-full"></div>
-                            <small>27th February 2025</small>
-                        </div>
-                        
-                        <small class="text-[11px] sm:text-xs font-semibold text-primary">15 Mins Read</small>
-                    </div>
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="article-shell">
 
-                    <div class="flex gap-x-4 cursor-pointer text-sm sm:text-lg">
-                        <a href="https://www.youtube.com/@aosorwell8369" target="_blank"><i class="bi bi-youtube hover:scale-110  text-red-600"></i></a>
-                        <i class="bi bi-instagram hover:scale-110 text-[#E4405F]"></i>
-                        <i class="bi bi-twitter-x hover:scale-110 text-black"></i>
-                        <i class="bi bi-linkedin hover:scale-110 text-[#0A66C2]"></i>
-                    </div>
-                </div>
-            </div>
-                    
-        </section>
-        <!-- HEADING ENDS -->
-            
-            <!-- BLOG DETAISLS -->
-            <div class="flex flex-col gap-y-4 text-[13px] sm:text-sm  font-medium text-gray-800 leading-loose  text-justify ">
-                <h2 style="font-weight:bold; margin-top:25px; margin-bottom:15px;">
-                    Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability
-                </h2>
-                <p>
-                In the oil and gas industry, every second counts. A well that isn’t drilled on schedule, a maintenance operation that’s delayed, or a missing piece of critical equipment can result in huge financial setbacks. The smooth flow of operations depends on a reliable supply chain. This makes sourcing tools to improve operational efficiency very key for operators. For businesses that operate in the sector, these challenges are more than just inconveniences; they threaten efficiency, project timelines, and bottom lines. A routine well intervention could suddenly be halted because an important downhole tool isn't available, or a drilling project could be pushed back due to delayed tubular delivery. The question is no longer if supply chain disruptions will occur but rather when and how prepared companies are to navigate them when they do.
-                </p>
+      <div class="article-hero-content">
 
-                <h2 style="font-weight:bold; margin-top:25px; margin-bottom:15px;">
-                    The Growing Complexity of Oilfield Supply Chains
-                </h2>
-                <p>
-               The oilfield supply chain is intricate and global. Most equipment used in well construction, maintenance, and interventions are manufactured across different continents. Drill pipes may originate in Asia, Casing accessories in Europe, and Control Systems in North America—all before making their way to oilfields in West Africa or the Middle East. With so many moving parts, even the slightest disruption can cause a ripple effect. Geopolitical tensions, economic instability, trade restrictions, and raw material shortages have all played a role in recent years, creating bottlenecks for operators. Added to this are the rising costs of shipping, port congestion, and workforce shortages, and it becomes clear why companies are experiencing longer lead times and unexpected price hikes for essential equipment. For many operators, these delays mean difficult choices: wait indefinitely for the equipment to arrive, pay a premium for urgent sourcing, or look for alternative solutions such as rentals or refurbished tools. This is usually the case.               </p>
+        <a
+          href="../blog.html"
+          class="article-back-link"
+        >
+          <span class="material-symbols-outlined">
+            arrow_back
+          </span>
 
-               <h2> <h2 style="font-weight:bold; margin-top:25px; margin-bottom:15px;">
-                   The Real Impact on Operations
-               </h2>
-<p>
-A disruption in the availability of oilfield equipment can have serious operational consequences. Drilling teams might be forced to modify well plans due to the unavailability of specific tubular sizes, while intervention crews may have to rely on outdated tools because newer, more efficient options are stuck in transit. The impact doesn’t just stop at delays—it also increases operational risks. When companies are forced to improvise, efficiency takes a hit, safety margins shrink, and unplanned costs pile up. In response, most operators are taking a more strategic approach to managing their supply chains. Some are diversifying their supplier base to avoid over-reliance on a single region or source, while others are investing in local manufacturing capabilities to reduce dependency on imports. Others have turned to rental services as a flexible solution and answer to equipment shortages—an option that provides immediate access to the tools they need without the uncertainties of procurement delays.
-</p>
-<p>
-At AOS Orwell, we've seen firsthand how oilfield operators are adjusting their strategies. Many are prioritizing rentals for downhole and fishing tools, as well as tubulars, to keep projects moving despite supply chain disruptions. Rentals not only eliminate long wait times but also provide cost-effective flexibility, ensuring that the right equipment is available when needed. While supply chain disruptions are events that will likely occur in operations, companies that adapt and embrace new strategies will be better positioned to maintain efficiency and competitiveness. The key is being able to anticipate possible disruptions, secure reliable alternatives, and make smarter procurement decisions. After all, in an industry where time is money, the ability to act swiftly can mean the difference between a successful operation and a costly delay.
-</p>
-<p>
-At AOS Orwell, we provide a reliable supply of high-performance tubulars, downhole tools, and fishing tools for rental, ensuring that operators have what they need and when they need them. Contact us today to secure your oilfield equipment and keep your operations running smoothly!
-</p>
+          Back to all insights
+        </a>
 
-            </div>
+        <span class="article-category">
+          Industry &amp; Supply Chain
+        </span>
 
+        <h1>
+          Optimizing Casing Running Through Automated Tubular Running Systems
+        </h1>
 
-           <!-- BLOG IMAGES -->
-<section class="pt-10 pb-20">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <img src="../images/blog/rentals5.jpg" 
-         alt="Oilfield equipment" 
-         class="w-full h-80 object-cover rounded-lg shadow-md">
-         
-    <img src="../images/blog/rentals4.jpg" 
-         alt="Tubular storage" 
-         class="w-full h-80 object-cover rounded-lg shadow-md">
-  </div>
-</section>
+        <p class="article-hero-summary">
+          How global supply constraints, longer lead times and equipment shortages
+          affect oilfield operations—and how flexible sourcing strategies can keep
+          projects moving.
+        </p>
+
+        <div class="article-hero-meta">
+
+          <span>AOS Orwell</span>
+
+          <span class="article-meta-dot"></span>
+
+          <span>27 February 2025</span>
+
+          <span class="article-meta-dot"></span>
+
+          <span>15 min read</span>
 
         </div>
 
-        <div class="w-full md:w-1/3 h-fit  rounded-sm sticky bg-primarybg top-25 flex flex-col gap-y-4 px-5 py-6 border border-gray-300">
-            <h3 class="text-[15px]  sm:text-base md:text-lg text-white font-semibold">Latest Blog</h3>
-
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/blog/tubing.jpg" alt="" class="w-25 h-20 object-cover">
-
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>12th May 2025</small>
-                    </div>
-                    <h3 class="text-[13px] sm:text-sm md:text-[15px] text-white font-medium ">Optimizing Casing Running Through Automated Tubular Running Systems.</h3>
-                    <a href="Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div>            
-            <hr class="border border-gray-400 my-3">
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/blog/blog2.png" alt="" class="w-25 h-20 object-cover">
-
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>8th March 2022</small>
-                    </div>
-                    <h3 class="text-[13px] sm:text-sm md:text-[15px] text-white font-medium ">Welcome To Women’s Month IWD 2022</h3>
-                    <a href="Welcome-To-Womens-Month-IWD-2022.html" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div>
-            
-            
-        </div>
-    </div>
-
-
-    <!-- FOOTER STARTS -->
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">HSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
-        </div>
       </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+
+    </div>
+  </section>
+
+  
+  <!-- ARTICLE BODY -->
+  <section class="article-main">
+  <div class="article-shell article-layout">
+
+    <article class="article-content">
+
+      <figure class="article-featured-image">
+
+        <img
+          src="../images/blog/rentals.jpg"
+          alt="Oilfield drilling and downhole equipment"
+        />
+
+      </figure>
+
+      <p class="article-image-caption">
+        Oilfield projects depend on timely access to specialised equipment,
+        tubulars and intervention tools.
+      </p>
+
+        <p class="article-intro">
+          In the oil and gas industry, equipment availability can determine whether
+          an operation proceeds as planned or becomes an expensive delay.
+        </p>
+
+        <p>
+          A well that is not drilled on schedule, a maintenance operation that is
+          delayed or a missing piece of critical equipment can result in significant
+          financial setbacks. The smooth flow of oilfield operations depends on a
+          reliable supply chain and timely access to the correct tools.
+        </p>
+
+        <p>
+          For operators, supply-chain challenges are more than inconveniences. They
+          can threaten efficiency, project timelines and overall cost. A routine well
+          intervention may be halted because an essential downhole tool is unavailable,
+          while a drilling programme may be delayed by late tubular delivery.
+        </p>
+
+        <div class="article-highlight">
+          <span>The central question</span>
+          <p>
+            The question is no longer whether supply-chain disruptions will occur,
+            but how prepared operators are to respond when they do.
           </p>
         </div>
-    
-      </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
-        </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        <!-- Social -->
-        <div class="mt-3 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
-          </div>
-        </div>
-      </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+        <h2>The growing complexity of oilfield supply chains</h2>
+
+        <p>
+          The oilfield supply chain is intricate and global. Equipment used in well
+          construction, maintenance and intervention is often manufactured across
+          several continents. Drill pipe may originate in Asia, casing accessories in
+          Europe and control systems in North America before reaching an operating
+          location in West Africa or the Middle East.
+        </p>
+
+        <p>
+          With so many moving parts, even a small disruption can create a wider
+          operational impact. Geopolitical tensions, economic instability, trade
+          restrictions and raw-material shortages can create bottlenecks. Rising
+          shipping costs, port congestion and workforce shortages can further extend
+          lead times and increase the cost of essential equipment.
+        </p>
+
+        <div class="article-benefits">
+          <div class="article-benefit">
+            <span class="article-benefit-icon"><span class="material-symbols-outlined">schedule</span></span>
+            <div><h3>Longer lead times</h3><p>International sourcing delays can disrupt project schedules and planned maintenance windows.</p></div>
           </div>
-        </form>
-      </div>
+          <div class="article-benefit">
+            <span class="article-benefit-icon"><span class="material-symbols-outlined">payments</span></span>
+            <div><h3>Higher costs</h3><p>Urgent sourcing, logistics constraints and limited availability can increase procurement expenditure.</p></div>
+          </div>
+          <div class="article-benefit">
+            <span class="article-benefit-icon"><span class="material-symbols-outlined">warning</span></span>
+            <div><h3>Operational risk</h3><p>Teams may be forced to improvise or use less suitable equipment when critical tools are unavailable.</p></div>
+          </div>
+          <div class="article-benefit">
+            <span class="article-benefit-icon"><span class="material-symbols-outlined">inventory_2</span></span>
+            <div><h3>Equipment shortages</h3><p>Limited stock can delay drilling, intervention and maintenance activities.</p></div>
+          </div>
+        </div>
+
+        <h2>The real impact on operations</h2>
+
+        <p>
+          A disruption in oilfield-equipment availability can have serious operational
+          consequences. Drilling teams may need to revise well plans because specific
+          tubular sizes are unavailable. Intervention crews may also have to rely on
+          older tools while newer and more efficient options remain delayed in transit.
+        </p>
+
+        <p>
+          The effect goes beyond schedule delay. When companies are forced to improvise,
+          operational efficiency can decline, safety margins may shrink and unplanned
+          costs can increase.
+        </p>
+
+        <p>
+          Many operators are therefore taking a more strategic approach. Some are
+          diversifying their supplier base to avoid over-reliance on one region or
+          manufacturer. Others are investing in local manufacturing and service
+          capability to reduce dependency on imports.
+        </p>
+
+        <h2>Rentals provide flexibility when procurement is delayed</h2>
+
+        <p>
+          Equipment rental offers operators immediate access to critical tools without
+          the uncertainty of extended procurement lead times. This can be particularly
+          valuable for downhole tools, fishing tools and tubulars required for
+          time-sensitive operations.
+        </p>
+
+        <p>
+          At AOS Orwell, we have seen operators prioritise rental solutions to keep
+          projects moving during periods of supply-chain disruption. Rentals can reduce
+          waiting time, provide cost-effective flexibility and ensure that the required
+          equipment is available when needed.
+        </p>
+
+        <div class="article-supporting-images">
+          <figure>
+            <img src="../images/blog/rentals5.jpg" alt="Oilfield tubulars stored and ready for deployment" />
+            <figcaption>Locally available tubular inventory can reduce delays caused by international procurement.</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/blog/rentals4.jpg" alt="Tubular inventory at an oilfield equipment facility" />
+            <figcaption>Flexible equipment access supports faster mobilisation and improved project continuity.</figcaption>
+          </figure>
+        </div>
+
+        <h2>Building a more resilient sourcing strategy</h2>
+
+        <p>
+          Supply-chain disruption will remain a possibility in oilfield operations.
+          Companies that anticipate risk, secure reliable alternatives and make timely
+          procurement decisions will be better positioned to protect project schedules
+          and maintain competitiveness.
+        </p>
+
+        <p>
+          In an industry where time directly affects cost, the ability to respond
+          quickly can mean the difference between a successful operation and a costly
+          delay.
+        </p>
+
+        <p>
+          AOS Orwell provides high-performance tubulars, downhole tools and fishing
+          tools for rental, helping operators secure the equipment they require when
+          they require it.
+        </p>
+
+        <div class="article-inline-cta">
+          <div class="article-inline-cta-content">
+            <span>Keep your operation moving</span>
+            <h2>Secure reliable oilfield equipment without unnecessary delays</h2>
+            <p>
+              Speak with AOS Orwell about tubulars, downhole tools, fishing tools
+              and flexible rental support for your next operation.
+            </p>
+            <a href="../contact-us.html">
+              Discuss your requirement
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar">
+
+        <div class="article-sidebar-card">
+
+          <div class="article-sidebar-header">
+
+            <span>
+              Continue reading
+            </span>
+
+            <h3>
+              Related insights
+            </h3>
+
+          </div>
+
+          <a
+            href="Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html"
+            class="article-related-post"
+          >
+
+            <img
+              src="../images/blog/tubing.jpg"
+              alt="Automated casing-running equipment"
+            />
+
+            <div>
+
+              <div class="article-related-meta">
+                Well Construction · May 2025
+              </div>
+
+              <h4>
+                Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability
+              </h4>
+
+              <span class="article-related-link">
+                Read article →
+              </span>
+
+            </div>
+
+          </a>
+
+          <a
+            href="Welcome-To-Womens-Month-IWD-2022.html"
+            class="article-related-post"
+          >
+
+            <img
+              src="../images/blog/blog2.png"
+              alt="International Women's Day"
+            />
+
+            <div>
+
+              <div class="article-related-meta">
+                Community · March 2022
+              </div>
+
+              <h4>
+                Welcome to Women’s Month: International Women’s Day 2022
+              </h4>
+
+              <span class="article-related-link">
+                Read article →
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div class="article-share">
+
+          <h3>
+            Share this insight
+          </h3>
+
+          <div class="article-share-links">
+
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://aosorwell.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on LinkedIn"
+            >
+              <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a
+              href="https://twitter.com/intent/tweet?url=https://aosorwell.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on X"
+            >
+              <i class="bi bi-twitter-x"></i>
+            </a>
+
+            <a
+              href="mailto:?subject=Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability"
+              aria-label="Share by email"
+            >
+              <i class="bi bi-envelope"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </aside>
+
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
+  </section>
 
+</main>
+<!-- ==========================================
+       FOOTER
+  ========================================== -->
 
-    <script src="../index.js"></script>
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
 
-   <script>
-   fetch("../navbar.html")
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="../images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="../about.html">About Us</a>
+        <a href="../services.html">Services</a>
+        <a href="../hse.html">QHSE</a>
+        <a href="../media.html">Media</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../contact-us.html">Contact Us</a>
+      </div>
+
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+ <script src="../index.js"></script>
+ <script>
+  fetch("../navbar.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("navbar-placeholder").innerHTML = data;
 
       const script = document.createElement("script");
-      script.src = "./navbar.js";
+      script.src = "../navbar.js";
       document.body.appendChild(script);
+    })
+    .catch(error => {
+      console.error("Navbar failed to load:", error);
     });
-   </script>
+</script>
 </body>
 </html>

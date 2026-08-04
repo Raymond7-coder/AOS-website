@@ -1,355 +1,1432 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../output.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Welcome to Women’s Month: International Women’s Day 2022 | AOS Orwell
+  </title>
+
+  <meta
+    name="description"
+    content="AOS Orwell celebrates International Women’s Day 2022, recognises the achievements of women and reinforces its commitment to challenging workplace bias and supporting inclusion."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="../output.css" />
+
+  <style>
+    :root {
+      --article-green: #009b3a;
+      --article-dark: #062b19;
+      --article-deep: #031d10;
+      --article-soft: #f2f7f4;
+      --article-border: #dfe8e2;
+      --article-text: #172019;
+      --article-copy: #5f6c64;
+    }
+
+    .article-page,
+    .article-page * {
+      box-sizing: border-box;
+    }
+
+    .article-page {
+      padding-top: 120px;
+      background: #ffffff;
+      color: var(--article-text);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .article-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================
+       ARTICLE HERO
+    ========================================== */
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 0 90px;
+      background:
+        radial-gradient(
+          circle at 92% 6%,
+          rgba(0, 181, 67, 0.24),
+          transparent 34%
+        ),
+        linear-gradient(
+          125deg,
+          #031d10 0%,
+          #07331d 58%,
+          #075a28 100%
+        );
+      color: #ffffff;
+    }
+
+    .article-hero::after {
+      content: "";
+      position: absolute;
+      top: -270px;
+      right: -180px;
+      width: 620px;
+      height: 620px;
+      border: 90px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+    }
+
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 26px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .article-back-link:hover {
+      color: #ffffff;
+    }
+
+    .article-back-link .material-symbols-outlined {
+      font-size: 17px;
+    }
+
+    .article-category {
+      display: inline-flex;
+      padding: 7px 11px;
+      background: rgba(123, 229, 161, 0.13);
+      border-radius: 30px;
+      color: #7be5a1;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 960px;
+      margin: 20px 0 23px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(39px, 5.4vw, 66px);
+      line-height: 1.09;
+      font-weight: 700;
+      letter-spacing: -0.052em;
+    }
+
+    .article-hero-summary {
+      max-width: 780px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.86;
+    }
+
+    .article-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 29px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 10px;
+    }
+
+    .article-meta-dot {
+      width: 4px;
+      height: 4px;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    /* ==========================================
+       ARTICLE BODY
+    ========================================== */
+
+    .article-main {
+      padding: 55px 0 105px;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(285px, 340px);
+      align-items: start;
+      gap: 70px;
+    }
+
+    .article-content {
+      max-width: 760px;
+    }
+
+    .article-featured-image {
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 18px 45px rgba(3, 46, 21, 0.14);
+    }
+
+    .article-featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-image-caption {
+      margin: 11px 0 38px;
+      color: #7a867f;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .article-intro {
+      margin: 0 0 38px;
+      padding-left: 23px;
+      border-left: 4px solid var(--article-green);
+      color: #26322b;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(19px, 2.2vw, 25px);
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      margin: 51px 0 17px;
+      color: var(--article-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .article-content h3 {
+      margin: 38px 0 14px;
+      color: var(--article-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: 21px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      margin: 0 0 22px;
+      color: var(--article-copy);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .article-highlight {
+      margin: 40px 0;
+      padding: 31px;
+      background: var(--article-soft);
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+    }
+
+    .article-highlight span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--article-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-highlight p {
+      margin: 0;
+      color: #334038;
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .article-benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      margin: 33px 0 43px;
+      background: var(--article-soft);
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+    }
+
+    .article-benefit {
+      min-height: 113px;
+      display: grid;
+      grid-template-columns: 39px minmax(0, 1fr);
+      align-items: start;
+      gap: 13px;
+      padding: 24px;
+      border-bottom: 1px solid var(--article-border);
+    }
+
+    .article-benefit:nth-child(odd) {
+      border-right: 1px solid var(--article-border);
+    }
+
+    .article-benefit:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .article-benefit-icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e2f4e8;
+      border-radius: 50%;
+      color: var(--article-green);
+    }
+
+    .article-benefit-icon .material-symbols-outlined {
+      font-size: 20px;
+    }
+
+    .article-benefit h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    .article-benefit p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* ==========================================
+       ARTICLE CTA
+    ========================================== */
+
+    .article-inline-cta {
+      position: relative;
+      overflow: hidden;
+      margin-top: 53px;
+      padding: 40px;
+      background:
+        linear-gradient(
+          125deg,
+          #07331d,
+          #009b3a
+        );
+      border-radius: 14px;
+      color: #ffffff;
+    }
+
+    .article-inline-cta::after {
+      content: "";
+      position: absolute;
+      top: -130px;
+      right: -100px;
+      width: 310px;
+      height: 310px;
+      border: 49px solid rgba(255, 255, 255, 0.075);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .article-inline-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 590px;
+    }
+
+    .article-inline-cta span {
+      display: block;
+      margin-bottom: 9px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-inline-cta h2 {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: clamp(25px, 3vw, 35px);
+    }
+
+    .article-inline-cta p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .article-inline-cta a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 0 19px;
+      background: #ffffff;
+      border-radius: 6px;
+      color: #007d30;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ==========================================
+       SIDEBAR
+    ========================================== */
+
+    .article-sidebar {
+      position: sticky;
+      top: 115px;
+    }
+
+    .article-sidebar-card {
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+      box-shadow: 0 11px 31px rgba(8, 55, 27, 0.075);
+    }
+
+    .article-sidebar-header {
+      padding: 24px;
+      background: var(--article-dark);
+      color: #ffffff;
+    }
+
+    .article-sidebar-header span {
+      display: block;
+      margin-bottom: 7px;
+      color: #7be5a1;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .article-sidebar-header h3 {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .article-related-post {
+      display: grid;
+      grid-template-columns: 94px minmax(0, 1fr);
+      gap: 14px;
+      padding: 20px;
+      border-bottom: 1px solid var(--article-border);
+      color: inherit;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .article-related-post:last-child {
+      border-bottom: 0;
+    }
+
+    .article-related-post:hover {
+      background: var(--article-soft);
+    }
+
+    .article-related-post img {
+      width: 94px;
+      height: 78px;
+      display: block;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .article-related-meta {
+      margin-bottom: 6px;
+      color: var(--article-green);
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .article-related-post h4 {
+      margin: 0 0 7px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .article-related-link {
+      color: #69766e;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       SHARE
+    ========================================== */
+
+    .article-share {
+      margin-top: 23px;
+      padding: 23px;
+      background: var(--article-soft);
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+    }
+
+    .article-share h3 {
+      margin: 0 0 14px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+    }
+
+    .article-share-links {
+      display: flex;
+      gap: 9px;
+    }
+
+    .article-share-links a {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid var(--article-border);
+      border-radius: 50%;
+      color: var(--article-dark);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .article-share-links a:hover {
+      background: var(--article-green);
+      border-color: var(--article-green);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 980px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .article-content {
+        max-width: none;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .article-sidebar-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .article-sidebar-header {
+        grid-column: 1 / -1;
+      }
+
+      .article-related-post:nth-child(2) {
+        border-right: 1px solid var(--article-border);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .article-page {
+        padding-top: 92px;
+      }
+
+      .article-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .article-hero {
+        padding: 61px 0 72px;
+      }
+
+      .article-hero h1 {
+        font-size: 39px;
+      }
+
+      .article-main {
+        padding: 45px 0 75px;
+      }
+
+      .article-layout {
+        gap: 47px;
+      }
+
+      .article-content p {
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .article-benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .article-benefit,
+      .article-benefit:nth-child(odd) {
+        border-right: 0;
+        border-bottom: 1px solid var(--article-border);
+      }
+
+      .article-benefit:last-child {
+        border-bottom: 0;
+      }
+
+      .article-inline-cta {
+        padding: 31px 23px;
+      }
+
+      .article-sidebar-card {
+        grid-template-columns: 1fr;
+      }
+
+      .article-related-post:nth-child(2) {
+        border-right: 0;
+      }
+    }
+  </style>
 </head>
+
 <body class="!bg-white">
-      <!-- NAV STARTS -->
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="../index.html"><img src="../images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="../about.html"  onmouseenter="showAboutLinks()" >About Us</a>
-            <a href="../services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="../hse.html">QHSE</a>
-            <a href="../media.html"  onmouseenter="showMediaLinks()" class="text-primary ">Media</a>
-            <a href="../careers.html">Careers</a>
-            <a href="../contact-us.html">Contact Us</a>
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="article-page">
+
+    <!-- ARTICLE HERO -->
+    <section class="article-hero">
+      <div class="article-shell">
+
+        <div class="article-hero-content">
+
+          <a
+            href="../blog.html"
+            class="article-back-link"
+          >
+            <span class="material-symbols-outlined">
+              arrow_back
+            </span>
+
+            Back to all insights
+          </a>
+
+          <span class="article-category">
+            People &amp; Community
+          </span>
+
+          <h1>
+            Welcome to Women’s Month: International Women’s Day 2022
+          </h1>
+
+          <p class="article-hero-summary">
+            Celebrating women’s achievements, confronting workplace bias
+            and supporting greater inclusion across organisations and society.
+          </p>
+
+          <div class="article-hero-meta">
+
+            <span>AOS Orwell</span>
+
+            <span class="article-meta-dot"></span>
+
+            <span>8 March 2022</span>
+
+            <span class="article-meta-dot"></span>
+
+            <span>15 min read</span>
+
+          </div>
+
         </div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+      </div>
+    </section>
 
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../about.html" class="hover:text-secondary">Our Story</a>
-                <a href="../management.html" class="hover:text-secondary">Management</a>
-                <a href="../board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
+    <!-- ARTICLE BODY -->
+    <section class="article-main">
+      <div class="article-shell article-layout">
 
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="../images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="../gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="../news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="../blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="../process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="../new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
+        <!-- LEFT ARTICLE COLUMN -->
+        <article class="article-content">
 
+          <figure class="article-featured-image">
 
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../about.html" class="hover:text-primary">Our Story</a>
-							<a href="../management.html" class="hover:text-primary">Management</a>
-							<a href="../board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
+            <img
+              src="../images/blog/blog2.png"
+              alt="AOS Orwell International Women's Day 2022"
+            />
 
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="../process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="../new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
+          </figure>
 
-				<!-- QHSE (no dropdown) -->
-				<a href="../hse.html" class="hover:text-primary transition py-2">QHSE</a>
+          <p class="article-image-caption">
+            AOS Orwell joins women around the world in marking
+            International Women’s Day 2022.
+          </p>
 
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="../gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="../news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="../blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
+          <p class="article-intro">
+            March is Women’s Month—a time to celebrate women’s
+            achievements while drawing attention to issues that
+            continue to affect equality, inclusion and opportunity.
+          </p>
 
-				<!-- Careers (no dropdown) -->
-				<a href="../careers.html" class="hover:text-primary transition py-2">Careers</a>
+          <p>
+            Welcome to the month of March and to Women’s Month:
+            a period set aside to celebrate, highlight and discuss
+            important issues that may have been overlooked in the
+            continued fight for women’s rights.
+          </p>
 
-				<!-- Contact Us (no dropdown) -->
-				<a href="../contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
-    <!-- NAV ENDS -->
+          <p>
+            In 1975, the United Nations began celebrating
+            International Women’s Day and invited member states
+            to recognise 8 March as a day dedicated to women’s
+            rights and world peace.
+          </p>
 
-    <div class="flex flex-col md:flex-row gap-x-8 pt-7 pb-17 sm:pb-20 px-6 md:px-20 lg:px-20">
-        <div class="w-full md:w-2/3">
-            
-            
-        <!-- heading image -->
-        <img src="../images/blog/blog2.png" alt="" class="w-full h-auto object-cover max-h-[50vh] object-bottom ">
+          <div class="article-highlight">
 
-        <!-- HEADING -->
-        <section class="flex flex-col gap-y-5 pb-5 sm:pt-10  items-start ">
-            <!-- <a href="../blog.html" class="text-gray-600 font-semibold text-[11px] sm:text-xs flex gap-x-2 items-center px-2">
-                <span class="arrowBack material-symbols-outlined">
-                    arrow_back
+            <span>
+              International Women’s Day 2022
+            </span>
+
+            <p>
+              The theme, “Break the Bias,” calls attention to the
+              visible and less-visible forms of bias women experience
+              within workplaces and across society.
+            </p>
+
+          </div>
+
+          <h2>
+            Recognising the realities of workplace bias
+          </h2>
+
+          <p>
+            Women continue to experience different forms of bias
+            within and outside the workplace in Nigeria and around
+            the world.
+          </p>
+
+          <p>
+            These challenges include gender inequality, persistent
+            glass ceilings, income disparities, limited workplace
+            inclusion and inadequate support for expectant and
+            nursing mothers.
+          </p>
+
+          <p>
+            Addressing these issues requires more than awareness.
+            It requires organisations and individuals to examine
+            workplace culture, decision-making processes and the
+            opportunities available to women.
+          </p>
+
+          <div class="article-benefits">
+
+            <div class="article-benefit">
+
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  equalizer
                 </span>
-                Back to blogs
-            </a> -->
-    
-            <div class="flex flex-col gap-y-4 xsm:gap-y-6 items-start text-left w-full">
-                <h1 class="text-lg xsm:text-xl sm:text-2xl  font-semibold leading-normal">Welcome to Women's Month - IWD 2022</h1>
-                <div class="flex justify-between items-center w-full flex-wrap gap-y-1">
-                    <div class="flex items-center gap-x-3 flex-wrap gap-y-2 justify-center">
-                        <div class="flex items-center gap-x-3 text-gray-600 font-medium">
-                            <small>AosOrwell</small>
-                            <div class="h-1 w-1 bg-gray-500 rounded-full"></div>
-                            <small>8th March 2022</small>
-                        </div>
-                        
-                        <small class="text-[11px] sm:text-xs font-semibold text-primary">15 Mins Read</small>
-                    </div>
+              </span>
 
-                    <div class="flex gap-x-4 cursor-pointer text-sm sm:text-lg">
-                        <a href="https://www.youtube.com/@aosorwell8369" target="_blank"><i class="bi bi-youtube hover:scale-110  text-red-600"></i></a>
-                        <i class="bi bi-instagram hover:scale-110 text-[#E4405F]"></i>
-                        <i class="bi bi-twitter-x hover:scale-110 text-black"></i>
-                        <i class="bi bi-linkedin hover:scale-110 text-[#0A66C2]"></i>
-                    </div>
-                </div>
-            </div>
-                    
-        </section>
-        <!-- HEADING ENDS -->
-            
-            <!-- BLOG DETAISLS -->
-            <div class="flex flex-col gap-y-4 text-[13px] sm:text-sm  font-medium text-gray-800 leading-loose  text-justify ">
+              <div>
+
+                <h3>
+                  Gender equality
+                </h3>
+
                 <p>
-                    Welcome to the month of March, welcome to Women’s month; a month set aside to celebrate, highlight and discuss pertinent issues that have been swept under the carpet or have been overlooked in the course of fighting for women’s right.
-                    <br>
-                    In 1975, the United Nations (UN) began celebrating International Women’s Day and invited member states to proclaim March 8th as an official holiday for women’s rights and world peace.
-                    <br>
-                    This year, the theme #BreakTheBias shed light on the different but obvious forms of bias experienced both within and outside the work place by women in Nigeria and indeed all over the world; from issues bothering on the obvious elephants such as Gender inequality, Existing glass ceilings, Income gaps between genders, zero tolerance for expectant and nursing mothers, zero percent inclusion in the work place, etc.
-                    <br>
-                    It is however exciting that despite these challenges, more women are rising up to the occasion and are beginning to take their rightful seats at the table, chairing boards of companies including Fortune 500 companies, taking up more senior management roles and shattering existing glass ceilings.
-                    <br>
-                    In commemoration of this year’s International Women’s Day, AOS Orwell will be hosting a virtual event for its Ladies where they will have the opportunity to listen, learn and network with seasoned and successful Women who have broken the bias in their chosen fields.
-                    <br>
-                    As an organization, we remain committed to the continued drive for women’s rights in the work place and pledge our support for the actualization of Women breaking barriers of existing bias in the work place and in their chosen fields.
-                    <br>
-                    AOS Orwell Limited heartily congratulates Women all over the world on the successful celebration of this year’s International Women’s Day celebration and wish women more success as they attain greater heights in their chosen endeavors.
+                  Creating equitable opportunities for women across
+                  roles and levels of responsibility.
                 </p>
 
+              </div>
+
             </div>
 
+            <div class="article-benefit">
 
-        </div>
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  trending_up
+                </span>
+              </span>
 
-        <div class="w-full md:w-1/3 h-fit  rounded-sm sticky bg-primarybg top-25 flex flex-col gap-y-4 px-5 py-6 border border-gray-300">
-            <h3 class="text-[15px]  sm:text-base md:text-lg text-white font-semibold">Latest Blogs</h3>
+              <div>
 
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/blog/rentals.jpg" alt="" class="w-25 h-20 object-cover">
+                <h3>
+                  Career progression
+                </h3>
 
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>May 2025</small>
-                    </div>
-                    <h3 class="text-[13px] sm:text-sm md:text-[15px] text-white font-medium ">Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability.</h3>
-                    <a href="Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
+                <p>
+                  Supporting women as they move into leadership and
+                  senior-management positions.
+                </p>
+
+              </div>
+
             </div>
-            
-            <hr class="border border-gray-400 my-3">
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/blog/tubing.jpg" alt="" class="w-25 h-20 object-cover">
 
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>12th May 2025</small>
-                    </div>
-                    <h3 class="text-[13px] sm:text-sm md:text-[15px] text-white font-medium ">Optimizing Casing Running Through Automated Tubular Running Systems.</h3>
-                    <a href="Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div>                 
-            
-        </div>
-    </div>
+            <div class="article-benefit">
 
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  diversity_3
+                </span>
+              </span>
 
-    <!-- FOOTER STARTS -->
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">HSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+              <div>
+
+                <h3>
+                  Workplace inclusion
+                </h3>
+
+                <p>
+                  Building working environments where women are
+                  represented, respected and heard.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="article-benefit">
+
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  balance
+                </span>
+              </span>
+
+              <div>
+
+                <h3>
+                  Fair opportunity
+                </h3>
+
+                <p>
+                  Challenging structures and practices that restrict
+                  equal access and participation.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <h2>
+            Women are taking their seats at the table
+          </h2>
+
+          <p>
+            Despite the challenges, more women are rising to the
+            occasion and taking their rightful seats at the table.
           </p>
-        </div>
-    
+
+          <p>
+            Women are chairing company boards, including within
+            Fortune 500 organisations, taking on more senior
+            management roles and breaking through long-standing
+            glass ceilings.
+          </p>
+
+          <p>
+            These achievements demonstrate the importance of
+            visibility, opportunity, support and representation.
+            They also show what becomes possible when barriers are
+            recognised and actively challenged.
+          </p>
+
+          <h2>
+            AOS Orwell’s International Women’s Day event
+          </h2>
+
+          <p>
+            In commemoration of International Women’s Day 2022,
+            AOS Orwell will host a virtual event for its women.
+          </p>
+
+          <p>
+            The event will provide an opportunity for participants
+            to listen, learn and network with seasoned and successful
+            women who have challenged bias and broken barriers in
+            their respective fields.
+          </p>
+
+          <div class="article-highlight">
+
+            <span>
+              Listen. Learn. Connect.
+            </span>
+
+            <p>
+              Meaningful conversations and professional networks can
+              help more women develop confidence, access opportunity
+              and pursue leadership.
+            </p>
+
+          </div>
+
+          <h2>
+            Our commitment to supporting women
+          </h2>
+
+          <p>
+            As an organisation, AOS Orwell remains committed to the
+            continued advancement of women’s rights in the workplace.
+          </p>
+
+          <p>
+            We support efforts aimed at helping women challenge
+            existing bias, break barriers and achieve success in
+            their chosen careers and fields of endeavour.
+          </p>
+
+          <p>
+            AOS Orwell Limited congratulates women around the world
+            on the celebration of International Women’s Day and
+            wishes them continued success as they attain greater
+            heights.
+          </p>
+
+          <!-- CTA -->
+          <div class="article-inline-cta">
+
+            <div class="article-inline-cta-content">
+
+              <span>
+                International Women’s Day
+              </span>
+
+              <h2>
+                Together, we can challenge bias and create greater opportunity
+              </h2>
+
+              <p>
+                AOS Orwell remains committed to supporting inclusion,
+                professional development and meaningful opportunities
+                for women.
+              </p>
+
+              <a href="../contact-us.html">
+
+                Contact AOS Orwell
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="article-sidebar">
+
+          <div class="article-sidebar-card">
+
+            <div class="article-sidebar-header">
+
+              <span>
+                Continue reading
+              </span>
+
+              <h3>
+                Related insights
+              </h3>
+
+            </div>
+
+            <!-- SUPPLY CHAIN -->
+            <a
+              href="Supply-Chain-Disruptions-and-Their-Impact-on-Oilfield-Equipment-Availability.html"
+              class="article-related-post"
+            >
+
+              <img
+                src="../images/blog/rentals.jpg"
+                alt="Oilfield equipment and tubular components"
+              />
+
+              <div>
+
+                <div class="article-related-meta">
+                  Industry · February 2025
+                </div>
+
+                <h4>
+                  Supply Chain Disruptions and Their Impact on Oilfield Equipment Availability
+                </h4>
+
+                <span class="article-related-link">
+                  Read article →
+                </span>
+
+              </div>
+
+            </a>
+
+            <!-- VOLANT -->
+            <a
+              href="Optimizing-Casing-Running-Through-Automated-Tubular-Running-Systems.html"
+              class="article-related-post"
+            >
+
+              <img
+                src="../images/blog/tubing.jpg"
+                alt="Automated casing-running equipment"
+              />
+
+              <div>
+
+                <div class="article-related-meta">
+                  Well Construction · May 2025
+                </div>
+
+                <h4>
+                  Optimizing Casing Running Through Automated Tubular Running Systems
+                </h4>
+
+                <span class="article-related-link">
+                  Read article →
+                </span>
+
+              </div>
+
+            </a>
+
+          </div>
+
+          <!-- SHARE -->
+          <div class="article-share">
+
+            <h3>
+              Share this insight
+            </h3>
+
+            <div class="article-share-links">
+
+              <a
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://aosorwell.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on LinkedIn"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+
+              <a
+                href="https://twitter.com/intent/tweet?url=https://aosorwell.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on X"
+              >
+                <i class="bi bi-twitter-x"></i>
+              </a>
+
+              <a
+                href="mailto:?subject=Welcome to Women’s Month: International Women’s Day 2022"
+                aria-label="Share by email"
+              >
+                <i class="bi bi-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </aside>
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
-        </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        <!-- Social -->
-        <div class="mt-3 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
-          </div>
-        </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="../images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="../about.html">About Us</a>
+        <a href="../services.html">Services</a>
+        <a href="../hse.html">QHSE</a>
+        <a href="../media.html">Media</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../contact-us.html">Contact Us</a>
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
-          </div>
-        </form>
-      </div>
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
 
-    <script src="../index.js"></script>
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="../about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="../management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="../media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="../policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="../whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="../downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <script src="../index.js"></script>
+
+  <script>
+    fetch("../navbar.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
+
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+
+        const script = document.createElement("script");
+        script.src = "../navbar.js";
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Navbar failed to load:", error);
+      });
+  </script>
+
 </body>
 </html>

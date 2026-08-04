@@ -1,394 +1,1645 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../output.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    AOS Orwell Hosts 2025 Sales &amp; Marketing Retreat to Drive Strategic Growth
+  </title>
+
+  <meta
+    name="description"
+    content="AOS Orwell hosts its 2025 Sales and Marketing Retreat in Lagos, aligning teams around customer engagement, market growth, innovation and service excellence."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="../output.css" />
+
+  <style>
+    :root {
+      --article-green: #009b3a;
+      --article-dark: #062b19;
+      --article-deep: #031d10;
+      --article-soft: #f2f7f4;
+      --article-border: #dfe8e2;
+      --article-text: #172019;
+      --article-copy: #5f6c64;
+    }
+
+    .article-page,
+    .article-page * {
+      box-sizing: border-box;
+    }
+
+    .article-page {
+      padding-top: 120px;
+      background: #ffffff;
+      color: var(--article-text);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .article-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 0 90px;
+      background:
+        radial-gradient(
+          circle at 92% 6%,
+          rgba(0, 181, 67, 0.24),
+          transparent 34%
+        ),
+        linear-gradient(
+          125deg,
+          #031d10 0%,
+          #07331d 58%,
+          #075a28 100%
+        );
+      color: #ffffff;
+    }
+
+    .article-hero::after {
+      content: "";
+      position: absolute;
+      top: -270px;
+      right: -180px;
+      width: 620px;
+      height: 620px;
+      border: 90px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+    }
+
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 26px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .article-back-link:hover {
+      color: #ffffff;
+    }
+
+    .article-back-link .material-symbols-outlined {
+      font-size: 17px;
+    }
+
+    .article-category {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 11px;
+      background: rgba(123, 229, 161, 0.13);
+      border-radius: 30px;
+      color: #7be5a1;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 980px;
+      margin: 20px 0 23px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(39px, 5.2vw, 64px);
+      line-height: 1.09;
+      font-weight: 700;
+      letter-spacing: -0.052em;
+    }
+
+    .article-hero-summary {
+      max-width: 800px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.86;
+    }
+
+    .article-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 29px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 10px;
+    }
+
+    .article-meta-dot {
+      width: 4px;
+      height: 4px;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    /* ==========================================
+       ARTICLE BODY
+    ========================================== */
+
+    .article-main {
+      padding: 55px 0 105px;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(285px, 340px);
+      align-items: start;
+      gap: 70px;
+    }
+
+    .article-content {
+      max-width: 760px;
+    }
+
+    .article-featured-image {
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 18px 45px rgba(3, 46, 21, 0.14);
+    }
+
+    .article-featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-image-caption {
+      margin: 11px 0 38px;
+      color: #7a867f;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .article-intro {
+      margin: 0 0 38px;
+      padding-left: 23px;
+      border-left: 4px solid var(--article-green);
+      color: #26322b;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(19px, 2.2vw, 25px);
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      margin: 51px 0 17px;
+      color: var(--article-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .article-content h3 {
+      margin: 38px 0 14px;
+      color: var(--article-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: 21px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      margin: 0 0 22px;
+      color: var(--article-copy);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    /* ==========================================
+       HIGHLIGHT
+    ========================================== */
+
+    .article-highlight {
+      margin: 40px 0;
+      padding: 31px;
+      background: var(--article-soft);
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+    }
+
+    .article-highlight span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--article-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-highlight p {
+      margin: 0;
+      color: #334038;
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       STRATEGY CARDS
+    ========================================== */
+
+    .article-benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      margin: 33px 0 43px;
+      background: var(--article-soft);
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+    }
+
+    .article-benefit {
+      min-height: 113px;
+      display: grid;
+      grid-template-columns: 39px minmax(0, 1fr);
+      align-items: start;
+      gap: 13px;
+      padding: 24px;
+      border-bottom: 1px solid var(--article-border);
+    }
+
+    .article-benefit:nth-child(odd) {
+      border-right: 1px solid var(--article-border);
+    }
+
+    .article-benefit:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .article-benefit-icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e2f4e8;
+      border-radius: 50%;
+      color: var(--article-green);
+    }
+
+    .article-benefit-icon .material-symbols-outlined {
+      font-size: 20px;
+    }
+
+    .article-benefit h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    .article-benefit p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* ==========================================
+       SECONDARY IMAGE
+    ========================================== */
+
+    .article-secondary-image {
+      margin: 40px 0;
+    }
+
+    .article-secondary-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 13px;
+      box-shadow: 0 15px 38px rgba(3, 46, 21, 0.12);
+    }
+
+    .article-secondary-image figcaption {
+      margin-top: 10px;
+      color: #7a867f;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       QUOTE
+    ========================================== */
+
+    .article-quote {
+      position: relative;
+      margin: 40px 0;
+      padding: 34px 34px 34px 42px;
+      background: var(--article-dark);
+      border-radius: 13px;
+      color: #ffffff;
+    }
+
+    .article-quote::before {
+      content: "“";
+      position: absolute;
+      top: 12px;
+      left: 18px;
+      color: #7be5a1;
+      font-family: Georgia, serif;
+      font-size: 50px;
+      line-height: 1;
+    }
+
+    .article-quote blockquote {
+      margin: 0;
+      padding-left: 20px;
+      color: rgba(255, 255, 255, 0.86);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.72;
+      font-weight: 600;
+    }
+
+    .article-quote cite {
+      display: block;
+      margin-top: 17px;
+      padding-left: 20px;
+      color: #7be5a1;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       CTA
+    ========================================== */
+
+    .article-inline-cta {
+      position: relative;
+      overflow: hidden;
+      margin-top: 53px;
+      padding: 40px;
+      background:
+        linear-gradient(
+          125deg,
+          #07331d,
+          #009b3a
+        );
+      border-radius: 14px;
+      color: #ffffff;
+    }
+
+    .article-inline-cta::after {
+      content: "";
+      position: absolute;
+      top: -130px;
+      right: -100px;
+      width: 310px;
+      height: 310px;
+      border: 49px solid rgba(255, 255, 255, 0.075);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .article-inline-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 590px;
+    }
+
+    .article-inline-cta span {
+      display: block;
+      margin-bottom: 9px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-inline-cta h2 {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: clamp(25px, 3vw, 35px);
+    }
+
+    .article-inline-cta p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .article-inline-cta a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 0 19px;
+      background: #ffffff;
+      border-radius: 6px;
+      color: #007d30;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ==========================================
+       SIDEBAR
+    ========================================== */
+
+    .article-sidebar {
+      position: sticky;
+      top: 115px;
+    }
+
+    .article-sidebar-card {
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+      box-shadow: 0 11px 31px rgba(8, 55, 27, 0.075);
+    }
+
+    .article-sidebar-header {
+      padding: 24px;
+      background: var(--article-dark);
+      color: #ffffff;
+    }
+
+    .article-sidebar-header span {
+      display: block;
+      margin-bottom: 7px;
+      color: #7be5a1;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .article-sidebar-header h3 {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .article-related-post {
+      display: grid;
+      grid-template-columns: 94px minmax(0, 1fr);
+      gap: 14px;
+      padding: 20px;
+      border-bottom: 1px solid var(--article-border);
+      color: inherit;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .article-related-post:last-child {
+      border-bottom: 0;
+    }
+
+    .article-related-post:hover {
+      background: var(--article-soft);
+    }
+
+    .article-related-post img {
+      width: 94px;
+      height: 78px;
+      display: block;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .article-related-meta {
+      margin-bottom: 6px;
+      color: var(--article-green);
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .article-related-post h4 {
+      margin: 0 0 7px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .article-related-link {
+      color: #69766e;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       SHARE
+    ========================================== */
+
+    .article-share {
+      margin-top: 23px;
+      padding: 23px;
+      background: var(--article-soft);
+      border: 1px solid var(--article-border);
+      border-radius: 13px;
+    }
+
+    .article-share h3 {
+      margin: 0 0 14px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+    }
+
+    .article-share-links {
+      display: flex;
+      gap: 9px;
+    }
+
+    .article-share-links a {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid var(--article-border);
+      border-radius: 50%;
+      color: var(--article-dark);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .article-share-links a:hover {
+      background: var(--article-green);
+      border-color: var(--article-green);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 980px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .article-content {
+        max-width: none;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .article-sidebar-card {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .article-sidebar-header {
+        grid-column: 1 / -1;
+      }
+
+      .article-related-post {
+        grid-template-columns: 1fr;
+      }
+
+      .article-related-post img {
+        width: 100%;
+        height: 150px;
+      }
+
+      .article-related-post:not(:last-child) {
+        border-right: 1px solid var(--article-border);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .article-page {
+        padding-top: 92px;
+      }
+
+      .article-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .article-hero {
+        padding: 61px 0 72px;
+      }
+
+      .article-hero h1 {
+        font-size: 38px;
+      }
+
+      .article-main {
+        padding: 45px 0 75px;
+      }
+
+      .article-layout {
+        gap: 47px;
+      }
+
+      .article-content p {
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .article-benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .article-benefit,
+      .article-benefit:nth-child(odd) {
+        border-right: 0;
+        border-bottom: 1px solid var(--article-border);
+      }
+
+      .article-benefit:last-child {
+        border-bottom: 0;
+      }
+
+      .article-inline-cta {
+        padding: 31px 23px;
+      }
+
+      .article-sidebar-card {
+        grid-template-columns: 1fr;
+      }
+
+      .article-related-post {
+        grid-template-columns: 94px minmax(0, 1fr);
+      }
+
+      .article-related-post img {
+        width: 94px;
+        height: 78px;
+      }
+
+      .article-related-post:not(:last-child) {
+        border-right: 0;
+      }
+    }
+  </style>
 </head>
+
 <body class="!bg-white">
-      <!-- NAV STARTS -->
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="../index.html"><img src="../images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="../about.html"  onmouseenter="showAboutLinks()" >About Us</a>
-            <a href="../services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="../hse.html">QHSE</a>
-            <a href="../media.html" class="text-primary " onmouseenter="showMediaLinks()">Media</a>
-            <a href="../careers.html">Careers</a>
-            <a href="../contact-us.html">Contact Us</a>
-        </div>
+  <!-- DYNAMIC NAVBAR -->
+  <div id="navbar-placeholder"></div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+  <main class="article-page">
 
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../about.html" class="hover:text-secondary">Our Story</a>
-                <a href="../management.html" class="hover:text-secondary">Management</a>
-                <a href="../board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
+    <!-- ==========================================
+         HERO
+    ========================================== -->
 
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="../images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="../gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="../news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="../blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="../process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="../new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
+    <section class="article-hero">
+      <div class="article-shell">
 
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../about.html" class="hover:text-primary">Our Story</a>
-							<a href="../management.html" class="hover:text-primary">Management</a>
-							<a href="../board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
+        <div class="article-hero-content">
 
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="../process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="../new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
+          <a
+            href="../news.html"
+            class="article-back-link"
+          >
+            <span class="material-symbols-outlined">
+              arrow_back
+            </span>
 
-				<!-- QHSE (no dropdown) -->
-				<a href="../hse.html" class="hover:text-primary transition py-2">QHSE</a>
+            Back to all news
+          </a>
 
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="../gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="../news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="../blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
+          <span class="article-category">
+            Company Strategy
+          </span>
 
-				<!-- Careers (no dropdown) -->
-				<a href="../careers.html" class="hover:text-primary transition py-2">Careers</a>
+          <h1>
+            AOS Orwell Hosts 2025 Sales &amp; Marketing Retreat to Drive Strategic Growth
+          </h1>
 
-				<!-- Contact Us (no dropdown) -->
-				<a href="../contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
-    <!-- NAV ENDS -->
-
-    
-    
-    <!-- HEADING -->
-    <section class="flex flex-col gap-y-5 pt-10 pb-10 sm:pt-10  items-center px-6 md:px-20 lg:px-20">
-        <!-- <a href="../news.html" class="text-gray-600 font-semibold text-[11px] sm:text-xs flex gap-x-2 items-center px-2">
-                <span class="arrowBack material-symbols-outlined">
-                    arrow_back
-                </span>
-                Back to blogs
-            </a> -->
-            
-            <div class="flex flex-col gap-y-4 xsm:gap-y-6 items-center w-full text-center">
-                <div class="flex flex-col justify-between items-center w-full flex-wrap gap-y-1">
-                    <div class="flex items-center gap-x-3 flex-wrap gap-y-2 justify-center">
-                        <div class="flex items-center gap-x-3 text-gray-600 font-medium">
-                            <small>Aos Orwell</small>
-                            <div class="h-1 w-1 bg-gray-500 rounded-full"></div>
-                            <small>February, 2025</small>
-                        </div>
-                        
-                        <small class="text-[11px] sm:text-xs font-semibold text-primary">15 Mins Read</small>
-                    </div>
-                    
-                </div>
-                <h1 class="text-lg xsm:text-xl sm:text-2xl  md:text-3xl font-semibold leading-normal">AOS Orwell Hosts 2025 Sales & Marketing Retreat to Drive Strategic Growth</h1>
-                <div class="flex gap-x-4 cursor-pointer text-sm sm:text-lg">
-                    <a href="https://www.youtube.com/@aosorwell8369" target="_blank"><i class="bi bi-youtube hover:scale-110 text-lg sm:text-2xl text-red-600"></i></a>
-                    <a href="../" target="_blank"><i class="bi bi-instagram hover:scale-110 text-[#E4405F]"></i></a>
-                    <a href="../" target="_blank"><i class="bi bi-twitter-x hover:scale-110 text-black"></i></a>
-                    <a href="../" target="_blank"><i class="bi bi-linkedin hover:scale-110 text-[#0A66C2]"></i></a>
-                </div>
-            </div>
-            
-        </section>
-        <!-- HEADING ENDS -->
-        
-        <!-- heading image -->
-        <img src="../images/news/retreat.jpg" alt="" class="w-full object-cover h-auto pb-10 object-top px-6 md:px-20 lg:px-20">           
-        <div class="flex flex-col md:flex-row gap-x-8 pt-7 pb-17 sm:pb-20 px-6 md:px-20 lg:px-20">
-            <div class="w-full md:w-2/3">
-                
-            <!-- BLOG DETAISLS -->
-            <div class="flex flex-col gap-y-4 text-[13px] sm:text-sm  font-medium text-gray-800 leading-loose  text-justify ">
-                <p>AOS Orwell, a leading oilfield services company, successfully held its 2025 Sales & Marketing Retreat, a two-day strategic session at Radisson Blu, Lagos.The retreat provided a platform to review the achievements and challenges of 2024 while outlining a comprehensive roadmap for 2025.</p>
-                
-                
-                <p>The event brought together key members of the Sales and Marketing teams to engage in insightful discussions, collaborative brainstorming, and forward-thinking strategy development. With a clear focus on enhancing market impact, the sessions covered critical areas such as business growth opportunities, competitive positioning, client engagement strategies, and service excellence.</p>
-                <section class="py-3">
-                    <div class="space-y-4  columns-1 xs:columns-2   [&>div:not(:first-child)]:mt-4 gap-y-4">
-                        <img src="../images/news/retreat33.jpg">
-                    </div>
-                </section>
-                <p>Speaking at the retreat, the Managing Director, Akeem Ariyo, emphasized the importance of innovation, adaptability, and customer-centric solutions in driving AOS Orwell’s continued leadership in the oilfield services sector.</p>
-                <p>"Our goal for 2025 is clear—strengthen our market presence, deepen client relationships, and reinforce our reputation for excellence. This retreat has set the foundation for aligning our efforts toward achieving these objectives."</p>
-                <p>The retreat also served as a platform to analyze market trends, explore new business opportunities, and refine approaches to delivering cutting-edge solutions in well construction, process automation, and oilfield equipment rentals. Through shared insights and collective goal-setting, the team is stepping into the new year with a renewed sense of purpose and a clear vision for sustainable growth.</p>
-                <p>As AOS Orwell embarks on this journey into 2025, the company remains committed to powering possibilities, fostering innovation, and delivering world-class services to the oil and gas industry.</p>
-                
-                
-               
-            </div>
-
-
-            <!-- BLOG IMAGES
-            <section class="pt-10 pb-20">
-                <div class="space-y-4  columns-1 xs:columns-2 md:columns-3  [&>div:not(:first-child)]:mt-4 gap-y-4">
-                    <img src="../images/blog/portrait-engineers-work-hours-job-site-3.png" alt="" class="break-inside-avoid w-full h-auto">
-                    <img src="../images/blog/portrait-engineers-work-hours-job-site-4.png" alt="" class="break-inside-avoid w-full h-auto">
-                    <img src="../images/blog/portrait-engineers-work-hours-job-site-5.png" alt="" class="break-inside-avoid w-full h-auto">
-                    <img src="../images/blog/portrait-engineers-work-hours-job-site.png" alt="" class="break-inside-avoid w-full h-auto">
-                </div>
-            </section> -->
-
-        </div>
-
-        <div class="w-full md:w-1/3 h-fit  rounded-sm sticky bg-primarybg top-25 flex flex-col gap-y-4 px-5 py-6 border border-gray-300">
-            <h3 class="text-[15px]  sm:text-base md:text-lg text-white font-semibold">Latest News</h3>
-
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/news/abb.jpg" alt="" class="w-25 h-20 object-cover">
-
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>July 2025</small>
-                    </div>
-                    <h3 class="text-sm sm:text-[15px] md:text-base text-white font-medium ">ABB President Visits AOS Orwell Office in Lagos to Strengthen Strategic Partnership</h3>
-                    <a href="../" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div>
-            <hr class="border border-gray-400 my-3">
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/news/otc.jpg" alt="" class="w-25 h-20 object-cover">
-
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>May 2025</small>
-                    </div>
-                    <h3 class="text-sm sm:text-[15px] md:text-base text-white font-medium ">Building Global Bridges: AOS Orwell at OTC 2025</h3>
-                    <a href="../" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div>
-            <hr class="border border-gray-400 my-3">
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/news/saipec8.jpg" alt="" class="w-25 h-20 object-cover">
-
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>February 2025</small>
-                    </div>
-                    <h3 class="text-sm sm:text-[15px] md:text-base text-white font-medium ">AOS Orwell Showcases Industry Leadership at SAIPEC 2025</h3>
-                    <a href="../" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div>
-            <!-- <hr class="border border-gray-400 my-3">
-            <div class="flex gap-x-2 items-center px-2">
-                <img src="../images/news/abb.jpg" alt="" class="w-25 h-20 object-cover">
-
-                <div class="flex flex-col gap-y-1">
-                    <div class="flex items-center gap-x-3 text-gray-300 font-medium text-[11px] sm:text-xs">
-                        <small>AosOrwell</small>
-                        <div class="h-1 w-1 bg-gray-400 rounded-full"></div>
-                        <small>February 2025</small>
-                    </div>
-                    <h3 class="text-sm sm:text-[15px] md:text-base text-white font-medium ">AOS Orwell Hosts 2025 Sales & Marketing Retreat to Drive Strategic Growths</h3>
-                    <a href="../" class="text-[11px] sm:text-xs font-medium text-gray-300 underline hover:text-green-500 transition cursor-pointer">Learn More</a>
-                </div>
-            </div> -->
-            
-            
-        </div>
-    </div>
-
-
-    <!-- FOOTER STARTS -->
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="../about.html">About Us</a>
-          <a href="../services.html">Services</a>
-          <a href="../hse.html">QHSE</a>
-          <a href="../media.html">Media</a>
-          <a href="../careers.html">Careers</a>
-          <a href="../contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          <p class="article-hero-summary">
+            The two-day retreat brought AOS Orwell’s Sales and
+            Marketing teams together to evaluate performance,
+            strengthen customer engagement and align priorities
+            for sustainable growth in 2025.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
+          <div class="article-hero-meta">
+
+            <span>AOS Orwell</span>
+
+            <span class="article-meta-dot"></span>
+
+            <span>February 2025</span>
+
+            <span class="article-meta-dot"></span>
+
+            <span>15 min read</span>
+
           </div>
+
         </div>
-        </div>
-        
-    
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+    </section>
+
+    <!-- ==========================================
+         ARTICLE BODY
+    ========================================== -->
+
+    <section class="article-main">
+      <div class="article-shell article-layout">
+
+        <!-- LEFT COLUMN -->
+        <article class="article-content">
+
+          <figure class="article-featured-image">
+
+            <img
+              src="../images/news/retreat.jpg"
+              alt="AOS Orwell Sales and Marketing team at the 2025 retreat"
+            />
+
+          </figure>
+
+          <p class="article-image-caption">
+            Members of AOS Orwell’s Sales and Marketing teams
+            during the company’s 2025 strategic retreat in Lagos.
+          </p>
+
+          <p class="article-intro">
+            The retreat created a focused environment for reviewing
+            performance, sharing insights and aligning the company’s
+            commercial teams around a clear roadmap for 2025.
+          </p>
+
+          <p>
+            AOS Orwell successfully held its 2025 Sales and Marketing
+            Retreat, a two-day strategic session at Radisson Blu
+            in Lagos.
+          </p>
+
+          <p>
+            The retreat provided an opportunity to review the
+            achievements and challenges of 2024 while developing
+            a comprehensive roadmap for the year ahead.
+          </p>
+
+          <p>
+            Key members of the Sales and Marketing teams participated
+            in discussions, collaborative brainstorming and
+            forward-looking strategy development.
+          </p>
+
+          <div class="article-highlight">
+
+            <span>
+              Strategic alignment
+            </span>
+
+            <p>
+              The retreat helped connect commercial objectives,
+              customer priorities and service-delivery capabilities
+              around one coordinated growth strategy.
+            </p>
+
           </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
+
+          <h2>
+            Reviewing performance and preparing for growth
+          </h2>
+
+          <p>
+            A central objective of the retreat was to evaluate the
+            company’s commercial performance during 2024.
+          </p>
+
+          <p>
+            The teams reviewed successes, challenges, changing
+            customer expectations and the factors influencing
+            demand across AOS Orwell’s markets.
+          </p>
+
+          <p>
+            These discussions helped participants identify areas
+            where stronger coordination, improved market intelligence
+            and more deliberate customer engagement could support
+            future growth.
+          </p>
+
+          <div class="article-benefits">
+
+            <div class="article-benefit">
+
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  monitoring
+                </span>
+              </span>
+
+              <div>
+
+                <h3>
+                  Business growth
+                </h3>
+
+                <p>
+                  Identifying opportunities across existing markets,
+                  services and customer segments.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="article-benefit">
+
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  groups
+                </span>
+              </span>
+
+              <div>
+
+                <h3>
+                  Client engagement
+                </h3>
+
+                <p>
+                  Strengthening relationships through better
+                  communication and customer understanding.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="article-benefit">
+
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  workspace_premium
+                </span>
+              </span>
+
+              <div>
+
+                <h3>
+                  Competitive positioning
+                </h3>
+
+                <p>
+                  Communicating the value of AOS Orwell’s technical
+                  capability and integrated services.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="article-benefit">
+
+              <span class="article-benefit-icon">
+                <span class="material-symbols-outlined">
+                  verified
+                </span>
+              </span>
+
+              <div>
+
+                <h3>
+                  Service excellence
+                </h3>
+
+                <p>
+                  Aligning commercial commitments with dependable
+                  project and service delivery.
+                </p>
+
+              </div>
+
+            </div>
+
           </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
+
+          <h2>
+            Building stronger collaboration across teams
+          </h2>
+
+          <p>
+            The retreat brought the Sales and Marketing teams into
+            one shared strategy-development process.
+          </p>
+
+          <p>
+            This created space for both teams to exchange insights,
+            compare customer feedback and identify opportunities
+            for more coordinated execution.
+          </p>
+
+          <p>
+            Strong alignment between Sales and Marketing supports
+            clearer communication, better opportunity management
+            and a more consistent customer experience.
+          </p>
+
+          <figure class="article-secondary-image">
+
+            <img
+              src="../images/news/retreat33.jpg"
+              alt="AOS Orwell team members participating in a retreat strategy session"
+            />
+
+            <figcaption>
+              Team discussions focused on customer needs,
+              commercial opportunities and strategic execution.
+            </figcaption>
+
+          </figure>
+
+          <h2>
+            Innovation, adaptability and customer focus
+          </h2>
+
+          <p>
+            During the retreat, Managing Director Akeem Ariyo
+            emphasised the importance of innovation, adaptability
+            and customer-centred solutions.
+          </p>
+
+          <p>
+            These principles remain important as the oilfield
+            services industry responds to changing customer needs,
+            new technologies and evolving market conditions.
+          </p>
+
+          <div class="article-quote">
+
+            <blockquote>
+              Our goal for 2025 is clear—strengthen our market
+              presence, deepen client relationships and reinforce
+              our reputation for excellence. This retreat has set
+              the foundation for aligning our efforts toward
+              achieving these objectives.
+            </blockquote>
+
+            <cite>
+              Akeem Ariyo, Managing Director, AOS Orwell
+            </cite>
+
           </div>
-        </div>
-  
-        
+
+          <p>
+            The message reinforced the importance of ensuring that
+            growth remains connected to real customer value and
+            dependable service delivery.
+          </p>
+
+          <h2>
+            Responding to market trends and new opportunities
+          </h2>
+
+          <p>
+            The retreat also provided an opportunity to analyse
+            market trends and explore new areas of business growth.
+          </p>
+
+          <p>
+            Participants considered how changing industry priorities,
+            customer investment plans and technology requirements
+            could influence demand for AOS Orwell’s services.
+          </p>
+
+          <p>
+            These discussions helped the team refine its approach
+            to presenting solutions across well construction,
+            process automation and oilfield-equipment rental.
+          </p>
+
+          <div class="article-highlight">
+
+            <span>
+              Customer-centred planning
+            </span>
+
+            <p>
+              Market growth depends on understanding the customer’s
+              operational challenge before presenting the most
+              appropriate technical or commercial solution.
+            </p>
+
+          </div>
+
+          <h2>
+            Supporting AOS Orwell’s integrated service portfolio
+          </h2>
+
+          <p>
+            AOS Orwell’s range of services creates opportunities
+            to support customers across different stages of their
+            projects and operations.
+          </p>
+
+          <p>
+            The retreat encouraged teams to consider how individual
+            service offerings can be connected into broader,
+            integrated solutions.
+          </p>
+
+          <p>
+            This approach allows the company to respond more
+            effectively to customer needs while improving the
+            visibility of its wider capabilities.
+          </p>
+
+          <h2>
+            Entering 2025 with renewed purpose
+          </h2>
+
+          <p>
+            Through shared insight and collective goal-setting,
+            the Sales and Marketing teams concluded the retreat
+            with renewed purpose and clearer strategic direction.
+          </p>
+
+          <p>
+            The company enters 2025 with an increased focus on
+            disciplined execution, customer relationships,
+            innovation and sustainable commercial growth.
+          </p>
+
+          <p>
+            AOS Orwell remains committed to powering possibilities
+            and delivering world-class services to the oil and gas
+            industry.
+          </p>
+
+          <!-- CTA -->
+          <div class="article-inline-cta">
+
+            <div class="article-inline-cta-content">
+
+              <span>
+                Work with AOS Orwell
+              </span>
+
+              <h2>
+                Discuss your operational needs with an experienced solutions team
+              </h2>
+
+              <p>
+                Speak with AOS Orwell about well construction,
+                process automation, oilfield-equipment rentals
+                and integrated project support.
+              </p>
+
+              <a href="../contact-us.html">
+
+                Contact our team
+
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- ==========================================
+             RIGHT SIDEBAR
+        ========================================== -->
+
+        <aside class="article-sidebar">
+
+          <div class="article-sidebar-card">
+
+            <div class="article-sidebar-header">
+
+              <span>
+                Continue reading
+              </span>
+
+              <h3>
+                Related news
+              </h3>
+
+            </div>
+
+            <!-- NAICE -->
+            <a
+              href="spenaice2025.html"
+              class="article-related-post"
+            >
+
+              <img
+                src="../images/news/naice2025.jpg"
+                alt="AOS Orwell at SPE NAICE 2025"
+              />
+
+              <div>
+
+                <div class="article-related-meta">
+                  Industry Events · July 2025
+                </div>
+
+                <h4>
+                  From Conversations to Connections: AOS Orwell at SPE NAICE 2025
+                </h4>
+
+                <span class="article-related-link">
+                  Read story →
+                </span>
+
+              </div>
+
+            </a>
+
+            <!-- ABB -->
+            <a
+              href="ABB-President-Visits-AOS-Orwell-Office-in-Lagos-to-Strengthen-Strategic-Partnership.html"
+              class="article-related-post"
+            >
+
+              <img
+                src="../images/news/abb.jpg"
+                alt="ABB President visits AOS Orwell"
+              />
+
+              <div>
+
+                <div class="article-related-meta">
+                  Partnerships · July 2025
+                </div>
+
+                <h4>
+                  ABB President Visits AOS Orwell Office in Lagos
+                </h4>
+
+                <span class="article-related-link">
+                  Read story →
+                </span>
+
+              </div>
+
+            </a>
+
+            <!-- SAIPEC -->
+            <a
+              href="AOS-Orwell-Showcases-Industry-Leadership-at-SAIPEC-2025.html"
+              class="article-related-post"
+            >
+
+              <img
+                src="../images/news/saipec8.jpg"
+                alt="AOS Orwell at SAIPEC 2025"
+              />
+
+              <div>
+
+                <div class="article-related-meta">
+                  Industry Leadership · February 2025
+                </div>
+
+                <h4>
+                  AOS Orwell Showcases Industry Leadership at SAIPEC 2025
+                </h4>
+
+                <span class="article-related-link">
+                  Read story →
+                </span>
+
+              </div>
+
+            </a>
+
+          </div>
+
+          <!-- SHARE -->
+          <div class="article-share">
+
+            <h3>
+              Share this news
+            </h3>
+
+            <div class="article-share-links">
+
+              <a
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https://aosorwell.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on LinkedIn"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+
+              <a
+                href="https://twitter.com/intent/tweet?url=https://aosorwell.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on X"
+              >
+                <i class="bi bi-twitter-x"></i>
+              </a>
+
+              <a
+                href="mailto:?subject=AOS Orwell Hosts 2025 Sales and Marketing Retreat"
+                aria-label="Share by email"
+              >
+                <i class="bi bi-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </aside>
+
       </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="../about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="../management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="../media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="../policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="../whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="../downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="../images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="../about.html">About Us</a>
+        <a href="../services.html">Services</a>
+        <a href="../hse.html">QHSE</a>
+        <a href="../media.html">Media</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../contact-us.html">Contact Us</a>
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
-          </div>
-        </form>
-      </div>
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
 
-    <script src="../index.js"></script>
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="../about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="../management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="../media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="../policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="../whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="../downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2025 AOS Orwell. All rights reserved.
+  </div>
+
+  <script src="../index.js"></script>
+
+  <script>
+    fetch("../navbar.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
+
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+
+        const navbarScript = document.createElement("script");
+        navbarScript.src = "../navbar.js";
+        document.body.appendChild(navbarScript);
+      })
+      .catch(error => {
+        console.error("Navbar failed to load:", error);
+      });
+  </script>
+
 </body>
 </html>
