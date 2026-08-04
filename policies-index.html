@@ -1,309 +1,1982 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="output.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Policy Statements | AOS Orwell</title>
+
+  <meta
+    name="description"
+    content="View and download AOS Orwell’s corporate, QHSE, environmental and workplace policy statements."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="output.css" />
+
+  <style>
+    :root {
+      --policy-green: #009b3a;
+      --policy-green-dark: #05602d;
+      --policy-deep: #031e11;
+      --policy-dark: #062b19;
+      --policy-soft: #f3f7f4;
+      --policy-soft-green: #e8f5ec;
+      --policy-border: #dce8df;
+      --policy-text: #172019;
+      --policy-copy: #617068;
+      --policy-white: #ffffff;
+    }
+
+    .policy-page,
+    .policy-page * {
+      box-sizing: border-box;
+    }
+
+    .policy-page {
+      padding-top: 120px;
+      background: #ffffff;
+      color: var(--policy-text);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .policy-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .policy-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 550px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 30, 17, 0.94) 0%,
+          rgba(3, 39, 21, 0.87) 48%,
+          rgba(4, 41, 22, 0.64) 100%
+        ),
+        url("./images/pol-bg.jpeg") center / cover no-repeat;
+      color: #ffffff;
+    }
+
+    .policy-hero::before {
+      content: "";
+      position: absolute;
+      top: -170px;
+      right: -110px;
+      width: 500px;
+      height: 500px;
+      border: 70px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .policy-hero::after {
+      content: "";
+      position: absolute;
+      right: 12%;
+      bottom: -80px;
+      width: 190px;
+      height: 190px;
+      background: rgba(0, 155, 58, 0.25);
+      border-radius: 50%;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .policy-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      padding: 85px 0;
+    }
+
+    .policy-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #97e9b4;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .policy-eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+
+    .policy-hero h1 {
+      max-width: 780px;
+      margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(43px, 6vw, 76px);
+      line-height: 1.03;
+      font-weight: 700;
+      letter-spacing: -0.055em;
+    }
+
+    .policy-hero-description {
+      max-width: 710px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    .policy-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .policy-hero-actions a {
+      min-height: 49px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 19px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .policy-primary-button {
+      background: var(--policy-green);
+      color: #ffffff;
+    }
+
+    .policy-primary-button:hover {
+      background: #00af44;
+      transform: translateY(-2px);
+    }
+
+    .policy-secondary-button {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      backdrop-filter: blur(7px);
+    }
+
+    .policy-secondary-button:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    /* ==========================================
+       INTRODUCTION
+    ========================================== */
+
+    .policy-introduction {
+      position: relative;
+      z-index: 3;
+      margin-top: -55px;
+    }
+
+    .policy-intro-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--policy-border);
+      border-radius: 20px;
+      box-shadow: 0 22px 60px rgba(3, 45, 22, 0.12);
+    }
+
+    .policy-intro-copy {
+      padding: 35px;
+    }
+
+    .policy-intro-copy span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--policy-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .policy-intro-copy h2 {
+      margin: 0 0 13px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 36px);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .policy-intro-copy p {
+      margin: 0;
+      color: var(--policy-copy);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .policy-intro-stat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 35px;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(255, 255, 255, 0.08),
+          transparent 35%
+        ),
+        var(--policy-dark);
+      color: #ffffff;
+    }
+
+    .policy-intro-stat strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .policy-intro-stat span {
+      color: #98e5b2;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .policy-intro-stat p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    /* ==========================================
+       POLICY LIBRARY
+    ========================================== */
+
+    .policy-library {
+      padding: 90px 0 105px;
+    }
+
+    .policy-library-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+
+    .policy-section-heading span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--policy-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .policy-section-heading h2 {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 47px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+    }
+
+    .policy-library-header p {
+      max-width: 460px;
+      margin: 0;
+      color: var(--policy-copy);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .policy-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: var(--policy-soft);
+      border: 1px solid var(--policy-border);
+      border-radius: 14px;
+    }
+
+    .policy-search {
+      position: relative;
+      width: min(100%, 430px);
+    }
+
+    .policy-search .material-symbols-outlined {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      color: #748079;
+      font-size: 20px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .policy-search input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0 15px 0 43px;
+      background: #ffffff;
+      border: 1px solid var(--policy-border);
+      border-radius: 9px;
+      color: var(--policy-text);
+      font: inherit;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .policy-search input:focus {
+      border-color: var(--policy-green);
+      box-shadow: 0 0 0 3px rgba(0, 155, 58, 0.08);
+    }
+
+    .policy-document-count {
+      color: var(--policy-copy);
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .policy-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid var(--policy-border);
+      border-radius: 18px;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 10px 32px rgba(5, 44, 24, 0.055);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .policy-card::before {
+      content: "";
+      position: absolute;
+      right: -70px;
+      bottom: -90px;
+      width: 190px;
+      height: 190px;
+      background: var(--policy-soft-green);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .policy-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0, 155, 58, 0.4);
+      box-shadow: 0 22px 50px rgba(5, 44, 24, 0.12);
+    }
+
+    .policy-card:hover::before {
+      transform: scale(1.18);
+    }
+
+    .policy-card-top,
+    .policy-card-content,
+    .policy-card-footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    .policy-card-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .policy-icon {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--policy-soft-green);
+      border-radius: 14px;
+      color: var(--policy-green);
+    }
+
+    .policy-icon .material-symbols-outlined {
+      font-size: 27px;
+    }
+
+    .policy-file-type {
+      padding: 7px 10px;
+      background: #f4f6f5;
+      border: 1px solid var(--policy-border);
+      border-radius: 999px;
+      color: #6f7a73;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .policy-card-content {
+      flex: 1;
+      padding-top: 42px;
+    }
+
+    .policy-card-content span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--policy-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .policy-card-content h3 {
+      margin: 0 0 12px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      line-height: 1.38;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .policy-card-content p {
+      margin: 0;
+      color: var(--policy-copy);
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .policy-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--policy-border);
+    }
+
+    .policy-card-footer span {
+      color: var(--policy-green-dark);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .policy-download-icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--policy-dark);
+      border-radius: 50%;
+      color: #ffffff;
+      transition: background-color 0.2s ease;
+    }
+
+    .policy-card:hover .policy-download-icon {
+      background: var(--policy-green);
+    }
+
+    .policy-download-icon .material-symbols-outlined {
+      font-size: 19px;
+    }
+
+    .policy-empty-state {
+      display: none;
+      padding: 45px 25px;
+      background: var(--policy-soft);
+      border: 1px dashed #bdcbc1;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .policy-empty-state .material-symbols-outlined {
+      color: var(--policy-green);
+      font-size: 40px;
+    }
+
+    .policy-empty-state h3 {
+      margin: 10px 0 7px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+    }
+
+    .policy-empty-state p {
+      margin: 0;
+      color: var(--policy-copy);
+      font-size: 12px;
+    }
+
+    /* ==========================================
+       INFORMATION SECTION
+    ========================================== */
+
+    .policy-information {
+      padding: 75px 0;
+      background: var(--policy-soft);
+      border-top: 1px solid var(--policy-border);
+    }
+
+    .policy-information-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 45px;
+      align-items: center;
+    }
+
+    .policy-information-copy span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--policy-green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .policy-information-copy h2 {
+      margin: 0 0 15px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(28px, 3.6vw, 43px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .policy-information-copy p {
+      margin: 0;
+      color: var(--policy-copy);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .policy-information-items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--policy-border);
+      border-radius: 17px;
+    }
+
+    .policy-information-item {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      padding: 24px;
+      border-bottom: 1px solid var(--policy-border);
+    }
+
+    .policy-information-item:nth-child(odd) {
+      border-right: 1px solid var(--policy-border);
+    }
+
+    .policy-information-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .policy-information-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--policy-soft-green);
+      border-radius: 50%;
+      color: var(--policy-green);
+    }
+
+    .policy-information-icon .material-symbols-outlined {
+      font-size: 20px;
+    }
+
+    .policy-information-item h3 {
+      margin: 0 0 6px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .policy-information-item p {
+      margin: 0;
+      color: var(--policy-copy);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    /* ==========================================
+       CTA
+    ========================================== */
+
+    .policy-cta {
+      padding: 75px 0 95px;
+      background: #ffffff;
+    }
+
+    .policy-cta-card {
+      position: relative;
+      overflow: hidden;
+      padding: 43px;
+      background:
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(255, 255, 255, 0.08),
+          transparent 28%
+        ),
+        linear-gradient(
+          125deg,
+          var(--policy-deep),
+          var(--policy-green)
+        );
+      border-radius: 21px;
+      color: #ffffff;
+    }
+
+    .policy-cta-card::after {
+      content: "";
+      position: absolute;
+      top: -145px;
+      right: -90px;
+      width: 340px;
+      height: 340px;
+      border: 52px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .policy-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+    }
+
+    .policy-cta-content span {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .policy-cta-content h2 {
+      margin: 0 0 13px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(29px, 4vw, 45px);
+      line-height: 1.17;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .policy-cta-content p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .policy-cta-content a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 0 18px;
+      background: #ffffff;
+      border-radius: 8px;
+      color: var(--policy-green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 980px) {
+      .policy-intro-card,
+      .policy-information-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-intro-stat {
+        min-height: 220px;
+      }
+
+      .policy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .policy-page {
+        padding-top: 92px;
+      }
+
+      .policy-shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .policy-hero {
+        min-height: 530px;
+      }
+
+      .policy-hero-content {
+        padding: 70px 0 105px;
+      }
+
+      .policy-hero h1 {
+        font-size: 43px;
+      }
+
+      .policy-introduction {
+        margin-top: -38px;
+      }
+
+      .policy-intro-copy,
+      .policy-intro-stat {
+        padding: 27px 22px;
+      }
+
+      .policy-library {
+        padding: 70px 0 75px;
+      }
+
+      .policy-library-header {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .policy-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .policy-search {
+        width: 100%;
+      }
+
+      .policy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card {
+        min-height: 315px;
+      }
+
+      .policy-information {
+        padding: 60px 0;
+      }
+
+      .policy-information-items {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-information-item,
+      .policy-information-item:nth-child(odd) {
+        border-right: 0;
+        border-bottom: 1px solid var(--policy-border);
+      }
+
+      .policy-information-item:last-child {
+        border-bottom: 0;
+      }
+
+      .policy-cta {
+        padding: 60px 0 75px;
+      }
+
+      .policy-cta-card {
+        padding: 31px 22px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-[#F5F5F5] relative overflow-x-hidden">
-   <div id="navbar-placeholder"></div>
 
-   <div style="height: 100px;"></div>
+<body class="!bg-white">
 
-  <!-- HERO -->
-  <section class="relative w-full h-[400px] bg-cover bg-center flex items-center justify-center" 
-             style="background-image: url('./images/pol-bg.jpeg');">
-      <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/60"></div>
-    
-      <!-- Content -->
-      <div class="relative z-2 text-center text-white px-6 lg:px-12">
-        <h1 class="text-lg sm:text-xl xsm:text-2xl lg:text-3xl font-bold">POLICY STATEMENTS</h1>
-        <p class="mt-4 max-w-2xl mx-auto text-xs sm:text-[13px] text-gray-200 leading-loose">
-          To ensure clarity, fairness, and accountability in all our dealings, AOS Orwell has put in place 
-          comprehensive policy statements. These documents reflect the principles and standards that guide 
-          our business and operations.
-        </p>
+  <!-- DYNAMIC NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="policy-page">
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="policy-hero">
+      <div class="policy-shell">
+
+        <div class="policy-hero-content">
+
+          <span class="policy-eyebrow">
+            Governance and accountability
+          </span>
+
+          <h1>
+            Policy statements that guide how we operate
+          </h1>
+
+          <p class="policy-hero-description">
+            To ensure clarity, fairness and accountability in all our
+            dealings, AOS Orwell has established policy statements that
+            reflect the principles and standards guiding our business
+            and operations.
+          </p>
+
+          <div class="policy-hero-actions">
+
+            <a
+              href="#policy-library"
+              class="policy-primary-button"
+            >
+              View policies
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="./contact-us.html"
+              class="policy-secondary-button"
+            >
+              Contact AOS Orwell
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
 
+    <!-- ==========================================
+         INTRODUCTION CARD
+    ========================================== -->
 
-    
-   <!-- Policy Downloads Section -->
-   <!-- ✅ Policy Downloads Section -->
-<section class="py-12 px-6 md:px-20 bg-primary" 
-  style="background-image: url('./images/services%20frame.png'); background-size: cover; background-position: center;">
-  
-  <div class="">
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- QHSE Policy -->
-      <a href="./docs/qhse-pol.pdf"  target="_blank"
-         class="bg-white text-[#11694F] rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-shield-lock text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">QHSE Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+    <section class="policy-introduction">
+      <div class="policy-shell">
 
-      <!-- Human Trafficking Policy -->
-      <a href="./docs/human-trafficking.pdf" target="_blank"  
-         class="bg-white text-[#11694F] rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Human Trafficking Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+        <div class="policy-intro-card">
 
-      <a href="./docs/Alcohol and Drug Use Policy.pdf" target="_blank"  
-         class="bg-white text-[#11694F] rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Alcohol and Drug Use Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+          <div class="policy-intro-copy">
 
-		 <!-- Carbon Footprint-->
-      <a href="./docs/Carbon Footprint Reduction Policy.pdf" target="_blank"  
-         class="bg-white text-primary rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Carbon Footprint Reduction Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+            <span>
+              Corporate document library
+            </span>
 
-		 <!-- Environmental Policy -->
-      <a href="./docs/Environmental Policy.pdf" target="_blank"  
-         class="bg-white text-primary rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Environmental Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+            <h2>
+              Clear policies. Consistent standards. Responsible operations.
+            </h2>
 
-		<!-- Carbon Footprint-->
-      <a href="./docs/Carbon Footprint Reduction Policy.pdf" target="_blank"  
-         class="bg-white text-primary rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Carbon Footprint Reduction Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+            <p>
+              Browse the official policy documents currently available
+              on the AOS Orwell website. Each document opens as a PDF
+              that can be viewed or downloaded.
+            </p>
 
-		<!-- Environmental Policy -->
-      <a href="./docs/Environmental Policy.pdf" target="_blank"  
-         class="bg-white text-primary rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Environmental Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+          </div>
 
-		 <!-- OHS Policy -->
-      <a href="./docs/OHS and Environmental Policy.pdf" target="_blank"  
-         class="bg-white text-[#11694F] rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">OHS and Environmental Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
+          <div class="policy-intro-stat">
 
-		      <!-- OHS Policy -->
-      <a href="./docs/Stop Work Policy.pdf" target="_blank"  
-         class="bg-white text-primary rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-                hover:shadow-2xl transition duration-500">
-        <i class="bi bi-people text-2xl md:text-4xl mb-3"></i>
-        <h3 class="text-sm sm:text-base font-semibold underline">Stop Work Policy</h3>
-        <i class="bi bi-download text-lg sm:text-xl mt-2"></i>
-      </a>
-    </div>
-  </div>
-</section>
+            <strong>7</strong>
 
+            <span>
+              Policy documents
+            </span>
 
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">QHSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
+            <p>
+              Covering QHSE, environmental, workplace and operational
+              standards.
+            </p>
+
+          </div>
+
         </div>
+
       </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+    </section>
+
+    <!-- ==========================================
+         POLICY LIBRARY
+    ========================================== -->
+
+    <section
+      class="policy-library"
+      id="policy-library"
+    >
+      <div class="policy-shell">
+
+        <div class="policy-library-header">
+
+          <div class="policy-section-heading">
+
+            <span>
+              Official documents
+            </span>
+
+            <h2>
+              Policy library
+            </h2>
+
+          </div>
+
+          <p>
+            Select any policy below to open the official PDF document
+            in a new browser tab.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-sm sm:text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
+        </div>
+
+        <div class="policy-toolbar">
+
+          <div class="policy-search">
+
+            <span class="material-symbols-outlined">
+              search
+            </span>
+
+            <input
+              type="search"
+              id="policy-search-input"
+              placeholder="Search policy documents..."
+              aria-label="Search policy documents"
+            />
+
           </div>
+
+          <span
+            class="policy-document-count"
+            id="policy-document-count"
+          >
+            Showing 7 policy documents
+          </span>
+
         </div>
+
+        <div
+          class="policy-grid"
+          id="policy-grid"
+        >
+
+          <!-- QHSE POLICY -->
+          <a
+            href="./docs/qhse-pol.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="QHSE Policy quality health safety environment"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  health_and_safety
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                QHSE
+              </span>
+
+              <h3>
+                QHSE Policy
+              </h3>
+
+              <p>
+                View the official AOS Orwell Quality, Health, Safety
+                and Environment policy document.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- HUMAN TRAFFICKING -->
+          <a
+            href="./docs/human-trafficking.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="Human Trafficking Policy people workplace"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  diversity_3
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                Workplace standards
+              </span>
+
+              <h3>
+                Human Trafficking Policy
+              </h3>
+
+              <p>
+                View the official AOS Orwell Human Trafficking
+                policy statement.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- ALCOHOL AND DRUG USE -->
+          <a
+            href="./docs/Alcohol and Drug Use Policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="Alcohol and Drug Use Policy workplace health safety"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  no_drinks
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                Workplace standards
+              </span>
+
+              <h3>
+                Alcohol and Drug Use Policy
+              </h3>
+
+              <p>
+                View the official AOS Orwell Alcohol and Drug Use
+                policy document.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- CARBON FOOTPRINT -->
+          <a
+            href="./docs/Carbon Footprint Reduction Policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="Carbon Footprint Reduction Policy environment sustainability"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  energy_savings_leaf
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                Environmental standards
+              </span>
+
+              <h3>
+                Carbon Footprint Reduction Policy
+              </h3>
+
+              <p>
+                View the official AOS Orwell Carbon Footprint
+                Reduction policy document.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- ENVIRONMENTAL POLICY -->
+          <a
+            href="./docs/Environmental Policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="Environmental Policy environment sustainability"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  eco
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                Environmental standards
+              </span>
+
+              <h3>
+                Environmental Policy
+              </h3>
+
+              <p>
+                View the official AOS Orwell Environmental
+                policy statement.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- OHS AND ENVIRONMENTAL -->
+          <a
+            href="./docs/OHS and Environmental Policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="OHS and Environmental Policy occupational health safety environment"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  engineering
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                Health and environment
+              </span>
+
+              <h3>
+                OHS and Environmental Policy
+              </h3>
+
+              <p>
+                View the official Occupational Health, Safety
+                and Environmental policy document.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+          <!-- STOP WORK -->
+          <a
+            href="./docs/Stop Work Policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="policy-card"
+            data-policy-name="Stop Work Policy safety operations"
+          >
+
+            <div class="policy-card-top">
+
+              <div class="policy-icon">
+                <span class="material-symbols-outlined">
+                  front_hand
+                </span>
+              </div>
+
+              <span class="policy-file-type">
+                PDF
+              </span>
+
+            </div>
+
+            <div class="policy-card-content">
+
+              <span>
+                Operational safety
+              </span>
+
+              <h3>
+                Stop Work Policy
+              </h3>
+
+              <p>
+                View the official AOS Orwell Stop Work
+                policy document.
+              </p>
+
+            </div>
+
+            <div class="policy-card-footer">
+
+              <span>
+                Open document
+              </span>
+
+              <div class="policy-download-icon">
+                <span class="material-symbols-outlined">
+                  download
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
         </div>
-        
-    
+
+        <div
+          class="policy-empty-state"
+          id="policy-empty-state"
+        >
+
+          <span class="material-symbols-outlined">
+            search_off
+          </span>
+
+          <h3>
+            No policy found
+          </h3>
+
+          <p>
+            Try searching with another policy name or keyword.
+          </p>
+
+        </div>
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
+    </section>
+
+    <!-- ==========================================
+         INFORMATION
+    ========================================== -->
+
+    <section class="policy-information">
+      <div class="policy-shell policy-information-grid">
+
+        <div class="policy-information-copy">
+
+          <span>
+            Document access
+          </span>
+
+          <h2>
+            Simple access to important company standards
+          </h2>
+
+          <p>
+            The documents on this page are provided in PDF format.
+            Select a policy to open it in a new browser tab, where it
+            can be read, saved or printed.
+          </p>
+
         </div>
-  
-        
+
+        <div class="policy-information-items">
+
+          <div class="policy-information-item">
+
+            <div class="policy-information-icon">
+              <span class="material-symbols-outlined">
+                picture_as_pdf
+              </span>
+            </div>
+
+            <div>
+
+              <h3>
+                PDF format
+              </h3>
+
+              <p>
+                Policy documents open in a standard PDF viewer.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="policy-information-item">
+
+            <div class="policy-information-icon">
+              <span class="material-symbols-outlined">
+                open_in_new
+              </span>
+            </div>
+
+            <div>
+
+              <h3>
+                New browser tab
+              </h3>
+
+              <p>
+                Each document opens without closing this page.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="policy-information-item">
+
+            <div class="policy-information-icon">
+              <span class="material-symbols-outlined">
+                download
+              </span>
+            </div>
+
+            <div>
+
+              <h3>
+                Downloadable
+              </h3>
+
+              <p>
+                Save a copy directly from your browser’s PDF viewer.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="policy-information-item">
+
+            <div class="policy-information-icon">
+              <span class="material-symbols-outlined">
+                search
+              </span>
+            </div>
+
+            <div>
+
+              <h3>
+                Searchable library
+              </h3>
+
+              <p>
+                Use the search box to quickly locate a policy.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+    </section>
+
+    <!-- ==========================================
+         CTA
+    ========================================== -->
+
+    <section class="policy-cta">
+      <div class="policy-shell">
+
+        <div class="policy-cta-card">
+
+          <div class="policy-cta-content">
+
+            <span>
+              Need more information?
+            </span>
+
+            <h2>
+              Contact AOS Orwell for policy-related enquiries
+            </h2>
+
+            <p>
+              Reach out to our team for further information regarding
+              any document listed in the policy library.
+            </p>
+
+            <a href="./contact-us.html">
+
+              Contact our team
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+
+            </a>
+
+          </div>
+
         </div>
-        <h4 class="font-medium text-[13px] sm:text-sm sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-sm sm:text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-white text-primary text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
-          </div>
-        </form>
-      </div>
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
-      <!-- ✅ SCRIPTS -->
-       <script src="./index.js"></script>
-<script>
-  // ✅ Navbar highlight + color change
-  document.addEventListener('DOMContentLoaded', function () {
-    const nav = document.getElementById('main-nav');
-    const navContainer = document.getElementById('navlink');
-    const links = navContainer.querySelectorAll('a');
-    const highlight = document.getElementById('nav-highlight');
-    const mobileBtn = document.getElementById('mobile-menu-button');
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
 
-    // Highlight effect
-    links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        const left = link.offsetLeft;
-        const width = link.offsetWidth;
-        highlight.style.left = left + 'px';
-        highlight.style.width = width + 'px';
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2026 AOS Orwell. All rights reserved.
+  </div>
+
+  <script src="./index.js"></script>
+
+  <!-- POLICY SEARCH -->
+  <script>
+    const policySearchInput =
+      document.getElementById("policy-search-input");
+
+    const policyCards =
+      Array.from(document.querySelectorAll(".policy-card"));
+
+    const policyDocumentCount =
+      document.getElementById("policy-document-count");
+
+    const policyEmptyState =
+      document.getElementById("policy-empty-state");
+
+    function filterPolicies() {
+      const searchValue =
+        policySearchInput.value.trim().toLowerCase();
+
+      let visiblePolicies = 0;
+
+      policyCards.forEach(card => {
+        const policyName =
+          card.dataset.policyName.toLowerCase();
+
+        const shouldShow =
+          policyName.includes(searchValue);
+
+        card.style.display =
+          shouldShow ? "flex" : "none";
+
+        if (shouldShow) {
+          visiblePolicies += 1;
+        }
       });
-    });
-    navContainer.addEventListener('mouseleave', () => {
-      highlight.style.width = 0;
-    });
 
-    // Scroll behavior
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        nav.classList.add('bg-white', 'border-b', 'border-gray-300');
-        nav.classList.remove('bg-transparent');
-        navContainer.classList.replace('text-white', 'text-black');
-        mobileBtn.classList.replace('text-white', 'text-black');
-        highlight.style.background = '#0B5850';
-      } else {
-        nav.classList.add('bg-transparent');
-        nav.classList.remove('bg-white', 'border-b', 'border-gray-300');
-        navContainer.classList.replace('text-black', 'text-white');
-        mobileBtn.classList.replace('text-black', 'text-white');
-        highlight.style.background = 'white';
-      }
-    });
-  });
+      policyDocumentCount.textContent =
+        `Showing ${visiblePolicies} ${
+          visiblePolicies === 1
+            ? "policy document"
+            : "policy documents"
+        }`;
 
-  // ✅ Mobile Menu Toggle
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
-<script>
+      policyEmptyState.style.display =
+        visiblePolicies === 0 ? "block" : "none";
+    }
+
+    policySearchInput.addEventListener(
+      "input",
+      filterPolicies
+    );
+  </script>
+
+  <!-- DYNAMIC NAVBAR -->
+  <script>
     fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
- </script>
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = data;
+
+        const navbarScript =
+          document.createElement("script");
+
+        navbarScript.src = "./navbar.js";
+
+        document.body.appendChild(navbarScript);
+      })
+      .catch(error => {
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+      });
+  </script>
+
 </body>
 </html>
