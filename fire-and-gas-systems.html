@@ -369,35 +369,58 @@
      IMAGE FRAMES
   ========================= */
 
-  .fg-image-frame {
-    position: relative;
-    padding: 28px 0 0 28px;
-  }
+.fg-image-frame {
+  position: relative;
 
-  .fg-image-frame::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 58%;
-    height: 45%;
-    background: var(--fg-green);
-  }
+  width: 100%;
 
-  .fg-section-soft .fg-image-frame::before {
-    background: #b8c3bc;
-  }
+  padding: 28px 0 0 28px;
 
-  .fg-image-frame img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 430px;
-    object-fit: cover;
-    object-position: center;
-    background: #e8ece9;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.fg-image-frame::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 58%;
+  height: 45%;
+
+  background: var(--fg-green);
+}
+
+
+.fg-section-soft .fg-image-frame::before {
+  background: #b8c3bc;
+}
+
+
+.fg-image-frame img {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-height: 520px;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.16);
+}
 
   /* =========================
      CAPABILITIES
@@ -635,10 +658,6 @@
       text-align: left;
     }
 
-    .fg-image-frame img {
-      height: 370px;
-    }
-
     .fg-capabilities-grid {
       grid-template-columns: 1fr;
     }
@@ -690,10 +709,6 @@
 
     .fg-image-frame {
       padding: 18px 0 0 18px;
-    }
-
-    .fg-image-frame img {
-      height: 300px;
     }
 
     .fg-capability-card {
@@ -778,7 +793,7 @@
         class="fg-quick-link"
         href="#vesda"
       >
-        Smoke Detection VESDA
+        Smoke Detection (VESDA)
       </a>
 
     </div>
@@ -990,7 +1005,7 @@
       <div class="fg-visual fg-image-frame">
 
         <img
-          src="./images/gasdetectors.png"
+          src="./images/gdetector.png"
           alt="Fixed industrial gas detectors"
         >
 
@@ -1076,7 +1091,7 @@
       <div class="fg-visual fg-image-frame">
 
         <img
-          src="./images/firegass.jpg"
+          src="./images/suppression.png"
           alt="Fire and gas detection and suppression system"
         >
 
@@ -1099,7 +1114,7 @@
         </div>
 
         <h2>
-          Smoke Detection VESDA
+          Smoke Detection (VESDA)
         </h2>
 
         <p>

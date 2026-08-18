@@ -147,14 +147,21 @@
 
 <!-- DESKTOP COMPANY MEGA MENU -->
 <div id="desktop-mega-menu" style="top: 120px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-120px)] min-h-[400px]">
-	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
+	<div class="w-[340px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
 		<button onclick="switchMegaTab('aosorwell')" id="tab-aosorwell" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
 			AOS Orwell <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		</button>
 
-		<button onclick="switchMegaTab('csr')" id="tab-csr" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			CSR <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
+		<a
+          href="/corporate-social-responsibility.html"
+          class="flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 hover:text-[#4CAF50] transition-colors border-l-4 border-transparent whitespace-nowrap"
+        >
+          CSR
+
+          <span class="material-symbols-outlined text-[18px]">
+           north_east
+          </span>
+       </a>
 
 		<button onclick="switchMegaTab('media')" id="tab-media" class="mega-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
 			Media & Resources <span class="material-symbols-outlined text-[18px]">chevron_right</span>
@@ -186,29 +193,128 @@
             </span>
 		</button>
 
-		<div id="content-aosorwell" class="mega-content flex w-full h-full">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="/about.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">About Us</a>
-				<a href="/management.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Company Leadership</a>
-				<a href="/careers.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Careers</a>
-				<a href="/contact-us.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block">Contact Us</a>
-			</div>
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
-		</div>
+		<!-- ==========================================
+     AOS ORWELL CONTENT
+========================================== -->
 
-		<div id="content-csr" class="mega-content hidden w-full h-full animate-fadeIn">
-			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="/corporate-social-responsibility.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Employee Community Service</a>
-				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Healthcare</a>
-				<a href="#" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Education</a>
-			</div>
-			<div class="w-1/2 lg:w-3/5 pl-8 relative"></div>
-		</div>
+<div
+  id="content-aosorwell"
+  class="mega-content flex w-full h-full"
+>
+
+  <!-- LEFT SIDE LINKS -->
+  <div
+    class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5"
+  >
+
+    <!-- ABOUT US -->
+    <a
+      href="/about.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="
+        document.getElementById('about-core-values-preview').style.display='block';
+      "
+    >
+      About Us
+    </a>
+
+
+    <!-- COMPANY LEADERSHIP -->
+    <a
+      href="/management.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="
+        document.getElementById('about-core-values-preview').style.display='none';
+      "
+    >
+      Company Leadership
+    </a>
+
+
+    <!-- CAREERS -->
+    <a
+      href="/careers.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="
+        document.getElementById('about-core-values-preview').style.display='none';
+      "
+    >
+      Careers
+    </a>
+
+
+    <!-- CONTACT US -->
+    <a
+      href="/contact-us.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="
+        document.getElementById('about-core-values-preview').style.display='none';
+      "
+    >
+      Contact Us
+    </a>
+
+  </div>
+
+
+  <!-- RIGHT SIDE -->
+  <div
+    class="w-1/2 lg:w-3/5 pl-10 pr-8 relative"
+  >
+
+    <!-- CORE VALUES PREVIEW -->
+    <div
+      id="about-core-values-preview"
+      style="display: none;"
+      class="w-full"
+    >
+
+      <div class="mb-4">
+
+        <p
+          class="text-[11px] uppercase tracking-[0.16em] text-[#009b3a] font-semibold mb-2"
+        >
+          Who we are
+        </p>
+
+        <h3
+          class="text-[24px] font-semibold text-gray-800"
+        >
+          Our Core Values
+        </h3>
+
+      </div>
+
+
+      <!-- CORE VALUES IMAGE -->
+      <div
+        class="w-full max-w-[720px] h-[300px] bg-[#f3f7f4] border border-gray-200 rounded-md overflow-hidden shadow-sm flex items-center justify-center"
+      >
+
+        <img
+          src="./images/corevalues.png"
+          alt="AOS Orwell Core Values"
+          class="w-full h-full object-contain"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 
 		<div id="content-media" class="mega-content hidden w-full h-full animate-fadeIn">
 			<div class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5">
-				<a href="/gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Photo Gallery</a>
-				<a href="/gallery.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Video Gallery</a>
+				<a
+                   href="/gallery.html"
+                   class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block"
+                >
+                    Gallery
+                </a>
 				<a href="/news.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">News & Press Releases</a>
 				<a href="/blog.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Case Study</a>
 				<a href="/policies-index.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Resources & Policies</a>
@@ -229,7 +335,7 @@
 
 <!-- DESKTOP SERVICES MEGA MENU -->
 <div id="desktop-services-menu" style="top: 120px; z-index: 9997;" class="hidden fixed left-0 right-0 bg-white shadow-2xl h-[calc(100vh-120px)] min-h-[400px]">
-	<div class="w-[280px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
+	<div class="w-[340px] shrink-0 bg-[#2a2b2e] text-gray-300 py-8 flex flex-col gap-2">
 		<button onclick="showServicesContent('well construction')" id="services-tab-wcd" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors text-[#4CAF50] font-semibold border-l-4 border-[#4CAF50] whitespace-nowrap">
 			Well Construction <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		</button>
@@ -238,9 +344,19 @@
 			Process Management <span class="material-symbols-outlined text-[18px]">chevron_right</span>
 		</button>
 
-		<button onclick="showServicesContent('IPM')" id="services-tab-ipm" class="services-tab-btn flex items-center justify-between px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent whitespace-nowrap">
-			IPM & Turnkey  <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-		</button>
+    <button
+      onclick="showServicesContent('IPM')"
+      id="services-tab-ipm"
+      class="services-tab-btn flex items-center justify-between gap-4 px-8 py-3 text-left w-full hover:bg-white/5 transition-colors border-l-4 border-transparent"
+    >
+      <span class="leading-snug">
+        Integrated Project Management
+      </span>
+
+      <span class="material-symbols-outlined text-[18px] shrink-0">
+        chevron_right
+      </span>
+    </button>
 
 		<button
 		  hidden
@@ -390,7 +506,7 @@
 
 		       <div id="process-subcontent-ei" class="process-subcontent hidden flex-col gap-4">
 			      <a href="automation-and-control.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">SCADA</a>
-			      <a href="automation-and-control.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">ICSS</a>
+			      <a href="automation-and-control.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Integrated Control and Safety System</a>
 			      <a href="automation-and-control.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">PLC</a>
 			      <a href="automation-and-control.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Digital Solutions</a>
 			      <a href="automation-and-control.html" class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block">Greenhouse Emissions Monitoring</a>
@@ -630,8 +746,12 @@
 
           <div id="mobile-media-menu" class="hidden pl-4 pt-1 text-[13px] text-gray-500">
             <div class="flex flex-col gap-y-3">
-              <a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Photo Gallery</a>
-              <a href="gallery.html" class="hover:text-[#4CAF50] transition-colors block">Video Gallery</a>
+              <a
+                 href="/gallery.html"
+                  class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block"
+                >
+                  Gallery
+                </a>
               <a href="news.html" class="hover:text-[#4CAF50] transition-colors block">News & Press Releases</a>
               <a href="blog.html" class="hover:text-[#4CAF50] transition-colors block">Case Study</a>
               <a href="policies-index.html" class="hover:text-[#4CAF50] transition-colors block">Resources & Policies</a>
@@ -679,7 +799,7 @@
           </div>
 
           <a href="ipm-index.html" class="hover:text-[#4CAF50] transition-colors block">
-            IPM & Turnkey
+            Integrated Project Management 
           </a>
 
           <!-- Process Management -->
@@ -766,6 +886,7 @@
 
   </div>
 </div>
+
 
 <!-- ######################################################## -->
 <!-- #################### NAVBAR ENDS #######################-->

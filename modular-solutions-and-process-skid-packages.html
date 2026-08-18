@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modular Solutions & Process Skid Packages | AOS Orwell</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#009b3a",
+            secondary: "#004225"
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="output.css">
+
+  <style>
+    :root {
+      --ms-green: #009b3a;
+      --ms-green-dark: #004225;
+      --ms-deep: #031d10;
+      --ms-ink: #101712;
+      --ms-copy: #536058;
+      --ms-soft: #f3f7f4;
+      --ms-border: #dfe9e2;
+      --ms-white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ms-ink);
+      background: #ffffff;
+      font-family: "Poppins", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .ms-shell {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .ms-page {
+      overflow: hidden;
+    }
+
+
+    /* ==========================================
+       HERO
+    ========================================== */
+
+    .ms-hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(2, 21, 11, 0.96) 0%,
+          rgba(2, 21, 11, 0.84) 48%,
+          rgba(2, 21, 11, 0.33) 100%
+        ),
+        url("./images/modular/gas-processing-equipment-1.png")
+        center / cover no-repeat;
+    }
+
+    .ms-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      background:
+        radial-gradient(
+          circle at 88% 22%,
+          rgba(0, 155, 58, 0.22),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          transparent 60%,
+          rgba(0, 155, 58, 0.14) 60%
+        );
+    }
+
+    .ms-hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -180px;
+      width: 460px;
+      height: 460px;
+      border: 72px solid rgba(0, 155, 58, 0.30);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .ms-hero-inner {
+      padding: 150px 0 110px;
+      color: #ffffff;
+      max-width: 920px;
+    }
+
+    .ms-eyebrow,
+    .ms-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .ms-eyebrow {
+      color: #8ce8ad;
+      margin-bottom: 20px;
+    }
+
+    .ms-eyebrow::before,
+    .ms-label::after {
+      content: "";
+      width: 44px;
+      height: 2px;
+      background: var(--ms-green);
+    }
+
+    .ms-hero h1 {
+      max-width: 930px;
+      margin: 0 0 24px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(42px, 5.6vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .ms-hero p {
+      max-width: 790px;
+      margin: 0;
+      color: #e9f2ec;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .ms-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .ms-btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .ms-btn-primary {
+      background: #ffffff;
+      color: var(--ms-green-dark);
+    }
+
+    .ms-btn-secondary {
+      border-color: rgba(255, 255, 255, 0.36);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .ms-btn:hover {
+      transform: translateY(-2px);
+    }
+
+
+    /* ==========================================
+       QUICK NAVIGATION
+    ========================================== */
+
+    .ms-quick {
+      position: relative;
+      z-index: 4;
+      margin-top: -42px;
+    }
+
+    .ms-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #ffffff;
+      border: 1px solid var(--ms-border);
+      box-shadow: 0 20px 55px rgba(6, 46, 22, 0.12);
+    }
+
+    .ms-quick a {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 18px;
+      border-right: 1px solid var(--ms-border);
+      border-bottom: 1px solid var(--ms-border);
+      color: #2b372f;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .ms-quick a:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .ms-quick a:nth-last-child(-n + 4) {
+      border-bottom: 0;
+    }
+
+    .ms-quick a:hover {
+      background: var(--ms-green);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+
+    /* ==========================================
+       INTRODUCTION
+    ========================================== */
+
+    .ms-intro {
+      padding: 110px 0 75px;
+    }
+
+    .ms-intro-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .ms-intro h2 {
+      margin: 0;
+      max-width: 430px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .ms-intro-copy p {
+      margin: 0;
+      color: var(--ms-copy);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .ms-intro-copy p + p {
+      margin-top: 18px;
+    }
+
+    .ms-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 34px;
+      border-top: 1px solid var(--ms-border);
+    }
+
+    .ms-stat {
+      padding: 24px 20px 0 0;
+    }
+
+    .ms-stat strong {
+      display: block;
+      color: var(--ms-green-dark);
+      font-family: "Montserrat", sans-serif;
+      font-size: 24px;
+      margin-bottom: 7px;
+    }
+
+    .ms-stat span {
+      color: #667168;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+
+    /* ==========================================
+       SERVICE SECTIONS
+    ========================================== */
+
+    .ms-section {
+      padding: 100px 0;
+      scroll-margin-top: 120px;
+    }
+
+    .ms-section-soft {
+      background: var(--ms-soft);
+    }
+
+    .ms-service-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 68px;
+      align-items: center;
+    }
+
+    .ms-service-grid.reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .ms-service-grid.reverse .ms-copy {
+      order: 2;
+    }
+
+    .ms-service-grid.reverse .ms-visual {
+      order: 1;
+    }
+
+    .ms-label {
+      color: var(--ms-green);
+      margin-bottom: 16px;
+    }
+
+    .ms-copy h2 {
+      margin: 0 0 20px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(28px, 3.2vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .ms-copy p {
+      margin: 0;
+      color: var(--ms-copy);
+      font-size: 13px;
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    .ms-copy p + p {
+      margin-top: 16px;
+    }
+
+    .ms-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin-top: 23px;
+    }
+
+    .ms-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--ms-border);
+      color: #28342d;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .ms-list-item .material-symbols-outlined {
+      color: var(--ms-green);
+      font-size: 18px;
+      margin-top: 1px;
+    }
+
+
+    /* ==========================================
+       IMAGE FRAMES
+    ========================================== */
+
+    .ms-image-frame {
+      position: relative;
+      padding: 26px 0 0 26px;
+    }
+
+    .ms-image-frame::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 58%;
+      height: 44%;
+      background: var(--ms-green);
+    }
+
+    .ms-image-frame img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 440px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ==========================================
+   WIDE TECHNICAL IMAGE LAYOUT
+========================================== */
+
+.ms-dual-images {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  min-height: auto;
+}
+
+.ms-dual-images .img-main,
+.ms-dual-images .img-small {
+  position: static;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid var(--ms-border);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+}
+
+.ms-dual-images .img-main {
+  max-height: none;
+}
+
+.ms-dual-images .img-small {
+  max-height: none;
+  border: 1px solid var(--ms-border);
+}
+
+    /* ==========================================
+       PROJECT GALLERIES
+    ========================================== */
+
+.ms-gallery {
+  margin-top: 42px;
+  display: grid;
+  gap: 20px;
+}
+
+/* WHCP gallery */
+.ms-gallery.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+/* Let WHCP images keep their real proportions */
+.ms-gallery.two img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #f4f7f5;
+  border: 1px solid var(--ms-border);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Chemical Injection gallery */
+.ms-gallery.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* These can remain thumbnail-style */
+.ms-gallery.five img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--ms-border);
+  background: #ffffff;
+}
+
+    /* ==========================================
+       PROCESS FEATURE
+    ========================================== */
+
+    .ms-process-feature {
+      padding: 95px 0;
+      background: var(--ms-deep);
+      color: #ffffff;
+    }
+
+    .ms-process-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .ms-process-feature h2 {
+      margin: 0 0 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+    }
+
+    .ms-process-feature p {
+      margin: 0;
+      color: #cbd9cf;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .ms-process-image {
+      padding: 14px;
+      background: #ffffff;
+    }
+
+    .ms-process-image img {
+      display: block;
+      width: 100%;
+      max-height: 390px;
+      object-fit: contain;
+    }
+
+
+    /* ==========================================
+       OTHER PACKAGES
+    ========================================== */
+
+    .ms-packages {
+      padding: 100px 0;
+      background: #ffffff;
+    }
+
+    .ms-packages-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .ms-packages-head h2 {
+      margin: 0;
+      max-width: 650px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.15;
+    }
+
+    .ms-packages-head p {
+      max-width: 430px;
+      margin: 0;
+      color: var(--ms-copy);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .ms-package-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      border: 1px solid var(--ms-border);
+    }
+
+    .ms-package-img {
+      min-height: 440px;
+      background: var(--ms-soft);
+    }
+
+    .ms-package-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: contain;
+      display: block;
+      padding: 24px;
+    }
+
+    .ms-package-list {
+      padding: 46px;
+      background: var(--ms-deep);
+      color: #ffffff;
+    }
+
+    .ms-package-list h3 {
+      margin: 0 0 24px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 26px;
+    }
+
+    .ms-package-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ms-package-list li {
+      display: flex;
+      gap: 11px;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      color: #dce8df;
+      font-size: 13px;
+    }
+
+    .ms-package-list li::before {
+      content: "↗";
+      color: #77e19e;
+      font-weight: 700;
+    }
+
+
+    /* ==========================================
+       CTA
+    ========================================== */
+
+    .ms-cta {
+      padding: 0 0 100px;
+    }
+
+    .ms-cta-box {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 35px;
+      align-items: center;
+      padding: 48px 52px;
+      background:
+        linear-gradient(
+          110deg,
+          var(--ms-green-dark),
+          var(--ms-green)
+        );
+      color: #ffffff;
+      border-radius: 10px;
+    }
+
+    .ms-cta-box::after {
+      content: "";
+      position: absolute;
+      right: 140px;
+      top: -120px;
+      width: 260px;
+      height: 260px;
+      border: 55px solid rgba(255, 255, 255, 0.10);
+      border-radius: 50%;
+    }
+
+    .ms-cta-box h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 9px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(26px, 3vw, 38px);
+    }
+
+    .ms-cta-box p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 720px;
+      color: #eafff1;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .ms-cta-box .ms-btn {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 1000px) {
+
+      .ms-quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ms-quick a:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .ms-quick a:nth-last-child(-n + 4) {
+        border-bottom: 1px solid var(--ms-border);
+      }
+
+      .ms-quick a:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .ms-service-grid,
+      .ms-service-grid.reverse {
+        gap: 42px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ms-gallery.five {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+
+    @media (max-width: 820px) {
+
+      .ms-shell {
+        width: min(100% - 32px, 680px);
+      }
+
+      .ms-hero {
+        min-height: auto;
+        background-position: 65% center;
+      }
+
+      .ms-hero-inner {
+        padding: 120px 0 90px;
+      }
+
+      .ms-intro-grid,
+      .ms-service-grid,
+      .ms-service-grid.reverse,
+      .ms-process-grid,
+      .ms-package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ms-service-grid.reverse .ms-copy,
+      .ms-service-grid.reverse .ms-visual {
+        order: initial;
+      }
+
+      .ms-section {
+        padding: 78px 0;
+      }
+
+      .ms-copy p {
+        text-align: left;
+      }
+
+      .ms-image-frame img {
+        height: 360px;
+      }
+
+      .ms-dual-images {
+        min-height: 430px;
+      }
+
+      .ms-gallery.five {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ms-packages-head {
+        display: block;
+      }
+
+      .ms-packages-head p {
+        margin-top: 16px;
+      }
+
+      .ms-cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .ms-cta-box .ms-btn {
+        width: fit-content;
+      }
+    }
+
+
+    @media (max-width: 560px) {
+
+      .ms-shell {
+        width: calc(100% - 24px);
+      }
+
+      .ms-hero h1 {
+        font-size: 39px;
+      }
+
+      .ms-quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ms-quick a {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--ms-border) !important;
+      }
+
+      .ms-quick a:last-child {
+        border-bottom: 0 !important;
+      }
+
+      .ms-stat-row {
+        grid-template-columns: 1fr;
+      }
+
+      .ms-list {
+        grid-template-columns: 1fr;
+      }
+
+      .ms-image-frame {
+        padding: 18px 0 0 18px;
+      }
+
+      .ms-image-frame img {
+        height: 300px;
+      }
+
+      .ms-dual-images {
+        min-height: auto;
+      }
+
+      .ms-dual-images .img-main,
+      .ms-dual-images .img-small {
+        position: static;
+        width: 100%;
+        height: 280px;
+        border: 0;
+      }
+
+      .ms-dual-images .img-small {
+        margin-top: 14px;
+      }
+
+      .ms-gallery,
+      .ms-gallery.two,
+      .ms-gallery.five {
+        grid-template-columns: 1fr;
+      }
+
+      .ms-gallery img,
+      .ms-gallery.five img {
+        height: 240px;
+      }
+
+      .ms-package-list {
+        padding: 34px 26px;
+      }
+
+      .ms-cta-box {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==========================================
+       NAVBAR
+  ========================================== -->
+
+  <div id="navbar-placeholder"></div>
+
+  <div style="height: 100px;"></div>
+
+
+  <main class="ms-page">
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="ms-hero">
+
+      <div class="ms-shell">
+
+        <div class="ms-hero-inner">
+
+          <div class="ms-eyebrow">
+            Engineered modular process systems
+          </div>
+
+          <h1>
+            Modular Solutions &amp; Process Skid Packages
+          </h1>
+
+          <p>
+            Integrated, skid-based and modular process solutions engineered
+            to shorten project schedules, simplify field installation and
+            support reliable oil and gas production from early production
+            through treatment, control and chemical injection.
+          </p>
+
+          <div class="ms-hero-actions">
+
+            <a
+              href="#solutions"
+              class="ms-btn ms-btn-primary"
+            >
+              Explore our solutions
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+            </a>
+
+            <a
+              href="./contact-us.html"
+              class="ms-btn ms-btn-secondary"
+            >
+              Discuss your project
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         QUICK NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="ms-quick"
+      id="solutions"
+      aria-label="Modular solutions"
+    >
+
+      <div class="ms-shell ms-quick-grid">
+
+        <a href="#epf">
+          Early Production Facility
+        </a>
+
+        <a href="#produced-water">
+          Produced Water Treatment
+        </a>
+
+        <a href="#oil-processing">
+          Oil Processing Equipment
+        </a>
+
+        <a href="#gas-processing">
+          Gas Processing Equipment
+        </a>
+
+        <a href="#sea-water">
+          Sea Water Treatment
+        </a>
+
+        <a href="#whcp">
+          Wellhead Control Panels
+        </a>
+
+        <a href="#chemical-injection">
+          Chemical Injection Systems
+        </a>
+
+        <a href="#dosing-skid">
+          Dosing Skids
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- ==========================================
+         INTRODUCTION
+    ========================================== -->
+
+    <section class="ms-intro">
+
+      <div class="ms-shell ms-intro-grid">
+
+        <div>
+
+          <div class="ms-label">
+            Integrated process capability
+          </div>
+
+          <h2>
+            Built as modules.
+            Engineered as complete systems.
+          </h2>
+
+        </div>
+
+
+        <div class="ms-intro-copy">
+
+          <p>
+            AOS Orwell's modular process solutions bring process engineering,
+            fabrication, assembly, testing and commissioning together in
+            skid-based packages that can be deployed as individual systems
+            or integrated modules.
+          </p>
+
+          <p>
+            The portfolio spans early production, produced-water and
+            sea-water treatment, oil and gas processing, wellhead control,
+            chemical injection and other modular wellsite packages.
+          </p>
+
+
+          <div class="ms-stat-row">
+
+            <div class="ms-stat">
+
+              <strong>
+                Skid-based
+              </strong>
+
+              <span>
+                Compact systems designed for efficient installation
+                and deployment.
+              </span>
+
+            </div>
+
+
+            <div class="ms-stat">
+
+              <strong>
+                Integrated
+              </strong>
+
+              <span>
+                Engineering, fabrication, testing and commissioning
+                in one delivery model.
+              </span>
+
+            </div>
+
+
+            <div class="ms-stat">
+
+              <strong>
+                Flexible
+              </strong>
+
+              <span>
+                Individual packages or complete modules for
+                project-specific requirements.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         EARLY PRODUCTION FACILITY
+    ========================================== -->
+
+    <section
+  class="ms-section ms-section-soft"
+  id="epf"
+>
+  <div class="ms-shell">
+
+    <article class="ms-copy ms-wide-copy">
+
+      <div class="ms-label">
+        01 / Fast-track production
+      </div>
+
+      <h2>
+        Early Production Facility
+      </h2>
+
+      <p>
+        Early Production Facilities (EPFs) are temporary modular
+        units designed to bring oil and gas production online quickly
+        while full-field development is still in progress.
+      </p>
+
+      <p>
+        They enable operators to begin monetizing hydrocarbon reserves
+        rapidly, gather valuable reservoir data and optimize future
+        field development strategies.
+      </p>
+
+    </article>
+
+    <div class="ms-wide-gallery">
+
+      <img
+        src="./images/mod1.png"
+        alt="Early Production Facility process arrangement"
+      >
+
+      <img
+        src="./images/mod2.png"
+        alt="Early Production Facility strengths and process flow"
+      >
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- ==========================================
+         PRODUCED WATER TREATMENT
+    ========================================== -->
+
+    <section
+      class="ms-section"
+      id="produced-water"
+    >
+
+      <div class="ms-shell ms-service-grid reverse">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            02 / Water management
+          </div>
+
+          <h2>
+            Produced Water Treatment
+          </h2>
+
+          <p>
+            Treatment of produced water is an effective option for
+            produced water handling, with several technologies available
+            for the removal of hydrocarbons and suspended solids.
+          </p>
+
+
+          <div class="ms-list">
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Induced Gas Flotation
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Deoiling hydrocyclones
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Desanding hydrocyclones
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Corrugated plate interceptors
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Compact flotation units
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Integrated skid or module delivery
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <div class="ms-visual ms-dual-images">
+
+          <img
+            class="img-main"
+            src="./images/mod3.png"
+            alt="Produced water treatment module"
+          >
+
+          <img
+            class="img-small"
+            src="./images/mod4.png"
+            alt="Produced water treatment process"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         OIL PROCESSING
+    ========================================== -->
+
+    <section
+      class="ms-section ms-section-soft"
+      id="oil-processing"
+    >
+
+      <div class="ms-shell ms-service-grid">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            03 / Oil treatment
+          </div>
+
+          <h2>
+            Oil Processing Equipment
+          </h2>
+
+          <p>
+            AOS Orwell provides skid-based oil processing equipment
+            and process engineering support for separation, treatment,
+            dehydration and stabilization requirements.
+          </p>
+
+
+          <div class="ms-list">
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              CFD and Process Studies
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              2/3 Phase Separators, Treaters &amp; FWKO
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Electrostatic Desalting / Dehydration
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Crude Stabilization &amp; Sweetening
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Internals and Optimisation Studies
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Skid-based Delivery
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <div class="ms-visual ms-dual-images">
+
+          <img
+            class="img-main"
+            src="./images/mod5.png"
+            alt="Oil processing equipment"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         GAS PROCESSING
+    ========================================== -->
+
+    <section
+      class="ms-section"
+      id="gas-processing"
+    >
+
+      <div class="ms-shell ms-service-grid reverse">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            04 / Gas treatment
+          </div>
+
+          <h2>
+            Gas Processing Equipment
+          </h2>
+
+          <p>
+            AOS Orwell has an extensive portfolio of gas treatment
+            technologies supporting conditioning, treatment, recovery
+            and utility requirements across gas processing facilities.
+          </p>
+
+
+          <div class="ms-list">
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Gas Compression
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Gas Sweetening
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Gas Dehydration
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Sulphur Recovery
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              LNG / LPG
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Gas Turbine Generator Utilities
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              HC Dew Pointing
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Nitrogen Generation
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Fuel Gas Conditioning
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Flare Gas Recovery
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <div class="ms-visual ms-dual-images">
+
+          <img
+            class="img-main"
+            src="./images/mod7.png"
+            alt="Gas processing equipment"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         SEA WATER TREATMENT
+    ========================================== -->
+
+    <section
+      class="ms-section ms-section-soft"
+      id="sea-water"
+    >
+
+      <div class="ms-shell ms-service-grid">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            05 / Water injection quality
+          </div>
+
+          <h2>
+            Sea Water Treatment
+          </h2>
+
+          <p>
+            Sea Water Treatment technologies are designed to achieve
+            treated water quality suitable for water injection wells.
+            Systems can be supplied as individual skids or as a single
+            complete module for offshore installation.
+          </p>
+
+
+          <div class="ms-list">
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Electro Chlorination Package
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Coarse Filtration System
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Multimedia / Ultra / Cartridge Filtration
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Sulphate Removal Unit
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Deaerator System
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Chemical Injection Auxiliaries
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <div class="ms-visual ms-dual-images">
+
+          <img
+            class="img-main"
+            src="./images/mod8.png"
+            alt="Sea water treatment offshore module"
+          >
+
+          <img
+            class="img-small"
+            src="./images/mod8.1.png"
+            alt="Sea water treatment package"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PROCESS FLOW FEATURE
+    ========================================== -->
+
+    <section class="ms-process-feature">
+
+      <div class="ms-shell ms-process-grid">
+
+        <div>
+
+          <div class="ms-eyebrow">
+            Process configuration
+          </div>
+
+          <h2>
+            Engineered around the required treatment train.
+          </h2>
+
+          <p>
+            Modular treatment systems can combine multiple processing
+            stages, filtration technologies and auxiliary systems in a
+            compact, project-specific arrangement.
+          </p>
+
+        </div>
+
+
+        <div class="ms-process-image">
+
+          <img
+            src="./images/mod9.png"
+            alt="Sea water treatment process flow"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         WELLHEAD CONTROL PANELS
+    ========================================== -->
+
+    <section
+      class="ms-section"
+      id="whcp"
+    >
+
+      <div class="ms-shell ms-service-grid reverse">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            06 / Wellhead automation
+          </div>
+
+          <h2>
+            Wellhead Control Panels
+          </h2>
+
+          <p>
+            Single and multi-well control systems support the control,
+            protection, remote operation, startup and shutdown functions
+            required at the wellhead.
+          </p>
+
+
+          <div class="ms-list">
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              WV Control
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              MV Control
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              SCSSV Control
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Choke Control
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Gas Lift Control
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Fire Protection
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Flow Line PSL / PSH
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Remote Control / Stations
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Remote Start-up &amp; Shutdown
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <div class="ms-visual ms-image-frame">
+
+          <img
+            src="./images/mod9.png"
+            alt="Wellhead control panel assembly facility"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJECT IMAGES -->
+
+      <div class="ms-shell ms-whcp-gallery">
+
+
+        <div class="ms-whcp-project ms-whcp-wide">
+           <img
+             src="./images/mod10.png"
+             alt="Past wellhead control panel project"
+            >
+        </div>
+
+        <div class="ms-whcp-project ms-whcp-portrait">
+          <img
+            src="./images/mod10.1.png"
+            alt="Past wellhead control panel project"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         CHEMICAL INJECTION SYSTEMS
+    ========================================== -->
+
+    <section
+      class="ms-section ms-section-soft"
+      id="chemical-injection"
+    >
+
+      <div class="ms-shell ms-service-grid">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            07 / Chemical treatment
+          </div>
+
+          <h2>
+            Chemical Injection Systems
+          </h2>
+
+          <p>
+            Chemical Injection Systems are supplied fully assembled
+            and tested to customer specifications from concept
+            to completion.
+          </p>
+
+
+          <div class="ms-list">
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Corrosion Inhibitors
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Methanol Injection
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Scale Inhibitors
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Wax Inhibitors
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Demulsifiers
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Glycol
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Odorization
+            </div>
+
+            <div class="ms-list-item">
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
+              Pour Point Depression
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <div class="ms-visual ms-image-frame">
+
+          <img
+            src="./images/mod11.png"
+            alt="Chemical injection system facility"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- CHEMICAL INJECTION PROJECTS -->
+
+      <div class="ms-shell ms-gallery five">
+
+        <img
+          src="./images/mod12.png"
+          alt="Corrosion inhibitor dosing package"
+        >
+
+        <img
+          src="./images/mod13.png"
+          alt="Coagulant and flocculent injection package"
+        >
+
+        <img
+          src="./images/mod14.png"
+          alt="Corrosion inhibitor package"
+        >
+
+        <img
+          src="./images/mod15.png"
+          alt="Demulsifier chemical injection skid"
+        >
+
+        <img
+          src="./images/mod16.png"
+          alt="Corrosion inhibitor package project"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         DOSING SKID
+    ========================================== -->
+
+    <section
+      class="ms-section"
+      id="dosing-skid"
+    >
+
+      <div class="ms-shell ms-service-grid reverse">
+
+        <article class="ms-copy">
+
+          <div class="ms-label">
+            08 / Precision dosing
+          </div>
+
+          <h2>
+            Dosing Skid
+          </h2>
+
+          <p>
+            Dosing Skid Systems are designed to feed liquid chemicals
+            from a supply source, usually a tank or drum, to an injection
+            point. The injector is a small-dose individually fabricated
+            pump that can be regulated to dispense chemicals at a
+            specified rate.
+          </p>
+
+          <p>
+            Applications include controlling hydration in oil and gas
+            pipelines and wastewater treatment by injecting treatment
+            chemicals directly into boilers without losing the effect
+            of water under pressure.
+          </p>
+
+          <p>
+            AOS Orwell provides turnkey design and engineering together
+            with fabrication, testing and commissioning.
+          </p>
+
+        </article>
+
+
+        <div class="ms-visual ms-dual-images">
+
+          <img
+            class="img-main"
+            src="./images/mod17.png"
+            alt="Dosing skid system"
+          >
+
+          <img
+            class="img-small"
+            src="./images/mod18.png"
+            alt="Industrial dosing skid package"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         OTHER MODULAR PROCESS PACKAGES
+    ========================================== -->
+
+    <section class="ms-packages">
+
+      <div class="ms-shell">
+
+        <div class="ms-packages-head">
+
+          <div>
+
+            <div class="ms-label">
+              Additional modular capability
+            </div>
+
+            <h2>
+              Modular and Other Process Packages
+            </h2>
+
+          </div>
+
+
+          <p>
+            A modular wellsite package is an integrated skid-based
+            unit containing the equipment and components required
+            between the X-mas tree and the main flow line.
+          </p>
+
+        </div>
+
+
+        <div class="ms-package-grid">
+
+          <div class="ms-package-img">
+
+            <img
+              src="./images/mod19.png"
+              alt="Integrated modular process skid package"
+            >
+
+          </div>
+
+
+          <div class="ms-package-list">
+
+            <h3>
+              Package capabilities
+            </h3>
+
+            <ul>
+
+              <li>
+                Pressure Reduction Stations
+              </li>
+
+              <li>
+                Modular, skid-mounted MEG Reclamation Packages
+              </li>
+
+              <li>
+                N2 Generator System
+              </li>
+
+              <li>
+                Lube Oil Systems
+              </li>
+
+              <li>
+                Dry Gas Seal Panels
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         CTA
+    ========================================== -->
+
+    <section class="ms-cta">
+
+      <div class="ms-shell">
+
+        <div class="ms-cta-box">
+
+          <div>
+
+            <h2>
+              Need a modular package engineered around your process?
+            </h2>
+
+            <p>
+              Talk to AOS Orwell about integrated modular systems,
+              skid-based equipment, process packages and
+              project-specific engineering.
+            </p>
+
+          </div>
+
+
+          <a
+            href="./contact-us.html"
+            class="ms-btn ms-btn-primary"
+          >
+            Contact our team
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+   <!-- ==========================================
+       FOOTER
+  ========================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="hse.html">QHSE</a>
+        <a href="media.html">Media</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
+
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LOCATIONS -->
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS -->
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER CONTACT FORM -->
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==========================================
+       DYNAMIC NAVBAR
+  ========================================== -->
+
+  <script>
+
+    fetch("./navbar.html")
+
+      .then(response => response.text())
+
+      .then(data => {
+
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = data;
+
+
+        const script =
+          document.createElement("script");
+
+        script.src = "./navbar.js";
+
+        document.body.appendChild(script);
+
+      })
+
+      .catch(error => {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,4041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Measurement Solutions | AOS Orwell
+  </title>
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- MATERIAL SYMBOLS -->
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  >
+
+
+  <!-- BOOTSTRAP ICONS -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#009b3a",
+            secondary: "#004225"
+          }
+        }
+      }
+    };
+  </script>
+
+
+  <!-- EXISTING SITE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="output.css"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       ROOT
+    ===================================================== */
+
+    :root {
+      --me-green: #009b3a;
+      --me-green-dark: #004225;
+      --me-deep: #031d10;
+      --me-deep-2: #062b19;
+
+      --me-ink: #101712;
+      --me-copy: #536058;
+
+      --me-soft: #f3f7f4;
+      --me-soft-2: #eaf3ed;
+
+      --me-border: #dce8df;
+
+      --me-white: #ffffff;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--me-ink);
+      font-family: "Poppins", sans-serif;
+    }
+
+
+    .me-page {
+      overflow: hidden;
+    }
+
+
+    .me-shell {
+      width: min(
+        1180px,
+        calc(100% - 40px)
+      );
+
+      margin-inline: auto;
+    }
+
+
+
+    /* =====================================================
+       COMMON TYPOGRAPHY
+    ===================================================== */
+
+    .me-label,
+    .me-eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      font-size: 11px;
+
+      line-height: 1.4;
+
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+    }
+
+
+    .me-label {
+      margin-bottom: 16px;
+      color: var(--me-green);
+    }
+
+
+    .me-label::after {
+
+      content: "";
+
+      width: 48px;
+
+      height: 2px;
+
+      background: var(--me-green);
+    }
+
+
+    .me-eyebrow {
+
+      margin-bottom: 18px;
+
+      color: #8ce8ad;
+    }
+
+
+    .me-eyebrow::before {
+
+      content: "";
+
+      width: 42px;
+
+      height: 2px;
+
+      background: var(--me-green);
+    }
+
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .me-hero {
+
+      position: relative;
+
+      isolation: isolate;
+
+      min-height: 640px;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(2, 20, 10, 0.96) 0%,
+          rgba(2, 20, 10, 0.86) 48%,
+          rgba(2, 20, 10, 0.38) 100%
+        ),
+
+        url("./images/measurement/image17.png")
+        center / cover
+        no-repeat;
+    }
+
+
+    .me-hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -1;
+
+      background:
+
+        radial-gradient(
+          circle at 89% 22%,
+          rgba(0, 155, 58, 0.28),
+          transparent 29%
+        );
+    }
+
+
+    .me-hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: -120px;
+
+      bottom: -180px;
+
+      width: 455px;
+
+      height: 455px;
+
+      border: 72px solid
+        rgba(0, 155, 58, 0.30);
+
+      border-radius: 50%;
+
+      z-index: -1;
+    }
+
+
+    .me-hero-content {
+
+      max-width: 900px;
+
+      padding: 145px 0 110px;
+
+      color: #ffffff;
+    }
+
+
+    .me-hero h1 {
+
+      max-width: 840px;
+
+      margin: 0 0 23px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size:
+        clamp(
+          45px,
+          5.7vw,
+          74px
+        );
+
+      line-height: 1.03;
+
+      letter-spacing: -0.04em;
+
+      font-weight: 700;
+    }
+
+
+    .me-hero-copy {
+
+      max-width: 790px;
+
+      margin: 0;
+
+      color: #edf5f0;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+    }
+
+
+    .me-hero-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 32px;
+    }
+
+
+    .me-hero-btn {
+
+      min-height: 50px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 13px 20px;
+
+      border-radius: 5px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+
+    .me-hero-btn-primary {
+
+      background: #ffffff;
+
+      color: var(--me-green-dark);
+    }
+
+
+    .me-hero-btn-secondary {
+
+      border: 1px solid
+        rgba(255, 255, 255, 0.35);
+
+      background:
+        rgba(255, 255, 255, 0.06);
+
+      color: #ffffff;
+    }
+
+
+    .me-hero-btn:hover {
+
+      transform:
+        translateY(-2px);
+    }
+
+
+
+    /* =====================================================
+       QUICK NAVIGATION
+    ===================================================== */
+
+    .me-quick {
+
+      position: relative;
+
+      z-index: 5;
+
+      margin-top: -42px;
+    }
+
+
+    .me-quick-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          5,
+          minmax(0, 1fr)
+        );
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 20px 55px
+        rgba(5, 45, 21, 0.13);
+    }
+
+
+    .me-quick-link {
+
+      min-height: 85px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 15px 12px;
+
+      border-right:
+        1px solid
+        var(--me-border);
+
+      border-bottom:
+        1px solid
+        var(--me-border);
+
+      color: #26332b;
+
+      font-size: 11px;
+
+      line-height: 1.45;
+
+      font-weight: 600;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+
+    .me-quick-link:nth-child(5n) {
+      border-right: 0;
+    }
+
+
+    .me-quick-link:hover {
+
+      background:
+        var(--me-green);
+
+      color: #ffffff;
+
+      transform:
+        translateY(-3px);
+    }
+
+
+
+    /* =====================================================
+       INTRODUCTION
+    ===================================================== */
+
+    .me-intro {
+
+      padding:
+        110px 0 85px;
+
+      background: #ffffff;
+    }
+
+
+    .me-intro-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        0.78fr 1.22fr;
+
+      gap: 75px;
+
+      align-items: start;
+    }
+
+
+    .me-intro h2 {
+
+      max-width: 470px;
+
+      margin: 0;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size:
+        clamp(
+          35px,
+          4vw,
+          50px
+        );
+
+      line-height: 1.08;
+
+      letter-spacing:
+        -0.035em;
+
+      font-weight: 600;
+    }
+
+
+    .me-intro-copy p {
+
+      margin: 0;
+
+      color: var(--me-copy);
+
+      font-size: 13px;
+
+      line-height: 1.95;
+    }
+
+
+    .me-intro-copy p + p {
+
+      margin-top: 16px;
+    }
+
+
+    .me-intro-points {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      margin-top: 33px;
+
+      border-top:
+        1px solid
+        var(--me-border);
+    }
+
+
+    .me-intro-point {
+
+      padding:
+        24px 18px
+        0 0;
+    }
+
+
+    .me-intro-point strong {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color:
+        var(--me-green-dark);
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 18px;
+    }
+
+
+    .me-intro-point span {
+
+      color: #6a746d;
+
+      font-size: 11px;
+
+      line-height: 1.6;
+    }
+
+
+
+    /* =====================================================
+       STANDARD SECTION
+    ===================================================== */
+
+    .me-section {
+
+      padding: 100px 0;
+
+      scroll-margin-top: 120px;
+    }
+
+
+    .me-section-soft {
+
+      background:
+        var(--me-soft);
+    }
+
+
+    .me-section-dark {
+
+      background:
+        var(--me-deep);
+
+      color: #ffffff;
+    }
+
+
+    .me-copy {
+
+      max-width: 920px;
+    }
+
+
+    .me-copy h2 {
+
+      margin: 0 0 10px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size:
+        clamp(
+          29px,
+          3.4vw,
+          43px
+        );
+
+      line-height: 1.14;
+
+      letter-spacing:
+        -0.03em;
+
+      font-weight: 500;
+    }
+
+
+    .me-copy .me-subtitle {
+
+      margin:
+        0 0 21px;
+
+      color:
+        var(--me-green-dark);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      font-weight: 600;
+    }
+
+
+    .me-copy p {
+
+      margin: 0;
+
+      color: var(--me-copy);
+
+      font-size: 13px;
+
+      line-height: 1.95;
+    }
+
+
+    .me-copy p + p {
+
+      margin-top: 16px;
+    }
+
+
+
+    /* =====================================================
+       SOURCE IMAGE RULES
+
+       IMPORTANT:
+       NO FIXED HEIGHTS FOR COMPOSITE SOURCE GRAPHICS.
+    ===================================================== */
+
+    .me-source-img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-source-panel {
+
+      overflow: hidden;
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 34px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-large-sheet {
+
+      width: 100%;
+
+      margin-top: 36px;
+    }
+
+
+    .me-large-sheet img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+    }
+
+
+    .me-section-description {
+
+      max-width: 920px;
+
+      margin-bottom: 42px;
+    }
+
+
+
+    /* =====================================================
+       LEVEL
+    ===================================================== */
+
+    .me-level-architecture {
+
+      margin-top: 45px;
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 14px 36px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-level-architecture img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-level-sheets {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 22px;
+
+      margin-top: 24px;
+    }
+
+
+    .me-level-sheet {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.05);
+    }
+
+
+    .me-level-sheet img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+
+    /* =====================================================
+       PRESSURE
+    ===================================================== */
+
+    .me-pressure-main {
+
+      margin-top: 43px;
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+    }
+
+
+    .me-pressure-main img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-pressure-feature {
+
+      display: grid;
+
+      grid-template-columns:
+        0.85fr
+        1.15fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+      margin-top: 65px;
+
+      padding-top: 55px;
+
+      border-top:
+        1px solid
+        var(--me-border);
+    }
+
+
+    .me-pressure-feature h3 {
+
+      margin:
+        0 0 16px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size:
+        clamp(
+          24px,
+          2.6vw,
+          34px
+        );
+
+      line-height: 1.2;
+
+      letter-spacing:
+        -0.025em;
+    }
+
+
+    .me-pressure-feature p {
+
+      margin: 0;
+
+      color: var(--me-copy);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+    }
+
+
+    .me-pressure-photo {
+
+      justify-self: end;
+
+      width: min(
+        100%,
+        530px
+      );
+    }
+
+
+    .me-pressure-photo img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+
+      box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.10);
+    }
+
+
+
+    /* =====================================================
+       FLOW
+    ===================================================== */
+
+    .me-flow-gallery {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 24px;
+
+      margin-top: 43px;
+    }
+
+
+    .me-flow-wide {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 32px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-flow-wide img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-flow-support {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(
+          0,
+          0.78fr
+        )
+        minmax(
+          0,
+          1.22fr
+        );
+
+      gap: 24px;
+
+      align-items: start;
+    }
+
+
+    .me-flow-photo {
+
+      width: 100%;
+
+      max-width: 500px;
+    }
+
+
+    .me-flow-photo img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+
+      box-shadow:
+        0 14px 35px
+        rgba(0, 0, 0, 0.08);
+    }
+
+
+
+    /* =====================================================
+       TEMPERATURE
+    ===================================================== */
+
+    .me-temperature-top {
+
+      display: grid;
+
+      grid-template-columns:
+        1.1fr
+        0.9fr;
+
+      gap: 65px;
+
+      align-items: center;
+    }
+
+
+    .me-temperature-photo {
+
+      width: 100%;
+
+      max-width: 560px;
+
+      justify-self: end;
+    }
+
+
+    .me-temperature-photo img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+
+      box-shadow:
+        0 16px 42px
+        rgba(0, 0, 0, 0.09);
+    }
+
+
+    .me-temperature-sheets {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 23px;
+
+      margin-top: 52px;
+    }
+
+
+    .me-temperature-sheet {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.05);
+    }
+
+
+    .me-temperature-sheet img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+
+    /* =====================================================
+       METERING SKIDS / LACT
+    ===================================================== */
+
+    .me-metering-gallery {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 25px;
+
+      margin-top: 42px;
+    }
+
+
+    .me-metering-wide {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 34px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-metering-wide img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+
+    /* =====================================================
+       PRESSURE REDUCTION SKID
+    ===================================================== */
+
+    .me-prms-layout {
+
+      display: grid;
+
+      grid-template-columns:
+        0.82fr
+        1.18fr;
+
+      gap: 24px;
+
+      align-items: center;
+
+      margin-top: 43px;
+    }
+
+
+    .me-prms-item {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 34px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-prms-item img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+
+    /* =====================================================
+       GAS ANALYZERS
+    ===================================================== */
+
+    .me-analyzer-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(
+            0,
+            1fr
+          )
+        );
+
+      gap: 24px;
+
+      margin-top: 43px;
+    }
+
+
+    .me-analyzer-sheet {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 32px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-analyzer-sheet img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-analyzer-cabinet {
+
+      grid-column:
+        1 / -1;
+
+      width: min(
+        100%,
+        420px
+      );
+
+      justify-self: center;
+
+      margin-top: 10px;
+    }
+
+
+    .me-analyzer-cabinet img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+
+    /* =====================================================
+       GAS CHROMATOGRAPH
+    ===================================================== */
+
+    .me-gc-layout {
+
+      display: grid;
+
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
+      gap: 65px;
+
+      align-items: start;
+    }
+
+
+    .me-gc-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(
+            0,
+            1fr
+          )
+        );
+
+      gap: 16px;
+    }
+
+
+    .me-gc-card {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 10px 28px
+        rgba(0, 0, 0, 0.05);
+    }
+
+
+    .me-gc-card img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-gc-wide {
+
+      grid-column:
+        1 / -1;
+    }
+
+
+
+    /* =====================================================
+       CAPABILITY STRIP
+    ===================================================== */
+
+    .me-capability {
+
+      padding:
+        90px 0;
+
+      background:
+        var(--me-deep);
+
+      color: #ffffff;
+    }
+
+
+    .me-capability-head {
+
+      max-width: 780px;
+
+      margin-bottom: 43px;
+    }
+
+
+    .me-capability h2 {
+
+      margin:
+        0 0 14px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          47px
+        );
+
+      line-height: 1.1;
+
+      letter-spacing:
+        -0.03em;
+    }
+
+
+    .me-capability-head p {
+
+      margin: 0;
+
+      color: #cbd9cf;
+
+      font-size: 13px;
+
+      line-height: 1.85;
+    }
+
+
+    .me-cap-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          1fr
+        );
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.12
+        );
+    }
+
+
+    .me-cap-item {
+
+      padding: 27px;
+
+      border-right:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.12
+        );
+    }
+
+
+    .me-cap-item:last-child {
+
+      border-right: 0;
+    }
+
+
+    .me-cap-item
+    .material-symbols-outlined {
+
+      display: block;
+
+      margin-bottom: 13px;
+
+      color: #78e49f;
+
+      font-size: 30px;
+    }
+
+
+    .me-cap-item h3 {
+
+      margin:
+        0 0 7px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 15px;
+    }
+
+
+    .me-cap-item p {
+
+      margin: 0;
+
+      color: #bdccc1;
+
+      font-size: 11px;
+
+      line-height: 1.7;
+    }
+
+
+
+    /* =====================================================
+       FLARE GAS
+    ===================================================== */
+
+    .me-flare-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.22fr
+        0.78fr;
+
+      gap: 26px;
+
+      align-items: center;
+
+      margin-top: 43px;
+    }
+
+
+    .me-flare-wide,
+    .me-flare-photo {
+
+      width: 100%;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--me-border);
+
+      box-shadow:
+        0 12px 34px
+        rgba(0, 0, 0, 0.06);
+    }
+
+
+    .me-flare-wide img,
+    .me-flare-photo img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .me-cta {
+
+      padding:
+        95px 0;
+
+      background: #ffffff;
+    }
+
+
+    .me-cta-box {
+
+      position: relative;
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto;
+
+      gap: 35px;
+
+      align-items: center;
+
+      padding:
+        48px 52px;
+
+      border-radius: 10px;
+
+      color: #ffffff;
+
+      background:
+
+        linear-gradient(
+          110deg,
+          var(--me-green-dark),
+          var(--me-green)
+        );
+    }
+
+
+    .me-cta-box::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: 135px;
+
+      top: -125px;
+
+      width: 270px;
+
+      height: 270px;
+
+      border:
+        55px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.10
+        );
+
+      border-radius: 50%;
+    }
+
+
+    .me-cta-copy {
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .me-cta h2 {
+
+      margin:
+        0 0 9px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size:
+        clamp(
+          26px,
+          3vw,
+          38px
+        );
+
+      line-height: 1.18;
+    }
+
+
+    .me-cta p {
+
+      max-width: 720px;
+
+      margin: 0;
+
+      color: #eafff1;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+
+    .me-cta-btn {
+
+      position: relative;
+
+      z-index: 1;
+
+      min-height: 50px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      padding:
+        13px 21px;
+
+      border-radius: 6px;
+
+      background: #ffffff;
+
+      color:
+        var(--me-green-dark);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media
+    (max-width: 1000px) {
+
+
+      .me-quick-grid {
+
+        grid-template-columns:
+          repeat(
+            3,
+            1fr
+          );
+      }
+
+
+      .me-intro-grid {
+
+        gap: 45px;
+      }
+
+
+      .me-cap-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+      }
+
+
+      .me-cap-item {
+
+        border-bottom:
+          1px solid
+          rgba(
+            255,
+            255,
+            255,
+            0.12
+          );
+      }
+
+    }
+
+
+
+    /* =====================================================
+       MOBILE / TABLET
+    ===================================================== */
+
+    @media
+    (max-width: 820px) {
+
+
+      .me-shell {
+
+        width:
+          min(
+            100% - 32px,
+            680px
+          );
+      }
+
+
+      .me-hero {
+
+        min-height: auto;
+
+        background-position:
+          60% center;
+      }
+
+
+      .me-hero-content {
+
+        padding:
+          115px 0 88px;
+      }
+
+
+      .me-intro-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 32px;
+      }
+
+
+      .me-intro-points {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .me-section {
+
+        padding:
+          78px 0;
+      }
+
+
+      .me-pressure-feature,
+
+      .me-temperature-top,
+
+      .me-flow-support,
+
+      .me-prms-layout,
+
+      .me-gc-layout,
+
+      .me-flare-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 32px;
+      }
+
+
+      .me-pressure-photo,
+
+      .me-temperature-photo {
+
+        justify-self: start;
+
+        max-width: 100%;
+      }
+
+
+      .me-analyzer-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .me-analyzer-cabinet {
+
+        grid-column: auto;
+      }
+
+
+      .me-gc-grid {
+
+        margin-top: 10px;
+      }
+
+
+      .me-cta-box {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .me-cta-btn {
+
+        width: fit-content;
+      }
+
+    }
+
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
+    @media
+    (max-width: 560px) {
+
+
+      .me-shell {
+
+        width:
+          calc(
+            100% - 24px
+          );
+      }
+
+
+      .me-hero h1 {
+
+        font-size: 39px;
+      }
+
+
+      .me-quick-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .me-quick-link {
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          var(--me-border);
+      }
+
+
+      .me-gc-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .me-cap-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .me-cap-item {
+
+        border-right: 0;
+      }
+
+
+      .me-cta-box {
+
+        padding:
+          36px 24px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ===================================================== -->
+
+  <div
+    id="navbar-placeholder"
+  ></div>
+
+
+  <div
+    style="height: 100px;"
+  ></div>
+
+
+
+  <main class="me-page">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="me-hero">
+
+      <div class="me-shell">
+
+        <div class="me-hero-content">
+
+          <div class="me-eyebrow">
+            Precision instrumentation &amp; process intelligence
+          </div>
+
+
+          <h1>
+            Measurement Solutions
+          </h1>
+
+
+          <p class="me-hero-copy">
+
+            Reliable measurement technologies for level,
+            pressure, flow, temperature, custody transfer,
+            process analysis and flare gas monitoring across
+            demanding industrial applications.
+
+          </p>
+
+
+          <div class="me-hero-actions">
+
+            <a
+              href="#measurement-solutions"
+              class="
+                me-hero-btn
+                me-hero-btn-primary
+              "
+            >
+
+              Explore solutions
+
+              <span class="material-symbols-outlined">
+                arrow_downward
+              </span>
+
+            </a>
+
+
+            <a
+              href="./contact-us.html"
+              class="
+                me-hero-btn
+                me-hero-btn-secondary
+              "
+            >
+
+              Talk to our team
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK NAVIGATION
+    ================================================== -->
+
+    <nav
+      class="me-quick"
+      id="measurement-solutions"
+      aria-label="Measurement Solutions"
+    >
+
+      <div class="me-shell me-quick-grid">
+
+        <a
+          href="#level"
+          class="me-quick-link"
+        >
+          Level
+        </a>
+
+
+        <a
+          href="#pressure"
+          class="me-quick-link"
+        >
+          Pressure Transmitters
+        </a>
+
+
+        <a
+          href="#flow"
+          class="me-quick-link"
+        >
+          Flow Meters
+        </a>
+
+
+        <a
+          href="#temperature"
+          class="me-quick-link"
+        >
+          Temperature
+        </a>
+
+
+        <a
+          href="#metering"
+          class="me-quick-link"
+        >
+          Metering Skids / LACT
+        </a>
+
+
+        <a
+          href="#pressure-reduction"
+          class="me-quick-link"
+        >
+          Pressure Reduction Skid
+        </a>
+
+
+        <a
+          href="#gas-analyzers"
+          class="me-quick-link"
+        >
+          Gas Analyzers
+        </a>
+
+
+        <a
+          href="#gas-chromatograph"
+          class="me-quick-link"
+        >
+          Gas Chromatograph
+        </a>
+
+
+        <a
+          href="#flare-gas"
+          class="me-quick-link"
+        >
+          Flare Gas Metering
+        </a>
+
+      </div>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         INTRO
+    ================================================== -->
+
+    <section class="me-intro">
+
+      <div class="me-shell me-intro-grid">
+
+
+        <div>
+
+          <div class="me-label">
+            Process measurement
+          </div>
+
+
+          <h2>
+            Accurate data.
+            Better process
+            decisions.
+          </h2>
+
+        </div>
+
+
+
+        <div class="me-intro-copy">
+
+          <p>
+
+            Measurement is central to safe,
+            efficient and reliable process operations.
+            AOS Orwell provides instrumentation and
+            packaged measurement solutions across
+            critical industrial process variables.
+
+          </p>
+
+
+          <p>
+
+            The portfolio supports process visibility,
+            operational safety, custody transfer,
+            plant optimization and environmental
+            monitoring across oil and gas and other
+            industrial applications.
+
+          </p>
+
+
+
+          <div class="me-intro-points">
+
+
+            <div class="me-intro-point">
+
+              <strong>
+                Precision
+              </strong>
+
+              <span>
+                Measurement technologies for critical process variables.
+              </span>
+
+            </div>
+
+
+            <div class="me-intro-point">
+
+              <strong>
+                Integration
+              </strong>
+
+              <span>
+                Field instrumentation through complete packaged systems.
+              </span>
+
+            </div>
+
+
+            <div class="me-intro-point">
+
+              <strong>
+                Visibility
+              </strong>
+
+              <span>
+                Reliable process and diagnostic data for operations.
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         LEVEL
+    ================================================== -->
+
+    <section
+      class="
+        me-section
+        me-section-soft
+      "
+      id="level"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            01 / Level Measurement
+          </div>
+
+
+          <h2>
+            Level
+          </h2>
+
+
+          <p class="me-subtitle">
+
+            Continuous level measurement and
+            point level detection in fluids
+            and bulk solids.
+
+          </p>
+
+
+          <p>
+
+            Constant product quality,
+            plant safety,
+            economic efficiency and
+            digitalization are important
+            aspects for any level measuring point.
+
+          </p>
+
+
+          <p>
+
+            Our complete level instrument
+            portfolio provides extensive
+            configuration possibilities
+            for specific process requirements.
+
+          </p>
+
+
+          <p>
+
+            Instruments are available with
+            trade-specific and safety-relevant
+            certificates and approvals.
+            Tank gauging solutions can also
+            be configured for storage tanks
+            and stilling wells.
+
+          </p>
+
+        </article>
+
+
+
+        <!-- STORAGE TANK ARCHITECTURE -->
+
+        <div class="me-level-architecture">
+
+          <img
+            src="./images/meas1.png"
+            alt="Storage tank control and tank gauging architecture"
+          >
+
+        </div>
+
+
+
+        <!-- LEVEL PRODUCT SHEETS -->
+
+        <div class="me-level-sheets">
+
+
+          <div class="me-level-sheet">
+
+            <img
+              src="./images/meas2.png"
+              alt="Radar ultrasonic guided radar and radiometry level instruments"
+            >
+
+          </div>
+
+
+          <div class="me-level-sheet">
+
+            <img
+              src="./images/meas3.png"
+              alt="Vibronics hydrostatic and differential pressure level instrumentation"
+            >
+
+          </div>
+
+
+          <div class="me-level-sheet">
+
+            <img
+              src="./images/meas4.png"
+              alt="Capacitance conductive paddle and electromechanical level instrumentation"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRESSURE TRANSMITTERS
+    ================================================== -->
+
+    <section
+      class="me-section"
+      id="pressure"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            02 / Pressure Measurement
+          </div>
+
+
+          <h2>
+            Pressure Transmitters
+          </h2>
+
+
+          <p class="me-subtitle">
+
+            Process and differential pressure
+            measurement in acids,
+            sludges,
+            gases or vapors.
+
+          </p>
+
+
+          <p>
+
+            Pressure is one of the most important
+            measured variables in process automation.
+
+          </p>
+
+
+          <p>
+
+            Digital functions make diagnostic
+            and process information available
+            in real time and can enable guided
+            device verification and documentation
+            without interrupting the process.
+
+          </p>
+
+
+          <p>
+
+            Sensors must satisfy the specific
+            requirements of each application
+            from development through final
+            production.
+
+          </p>
+
+        </article>
+
+
+
+        <!-- FULL WIDTH PRODUCT RANGE -->
+
+        <div class="me-pressure-main">
+
+          <img
+            src="./images/meas5.png"
+            alt="Pressure transmitter product portfolio"
+          >
+
+        </div>
+
+
+
+        <!-- APPLICATION PHOTO -->
+
+        <div class="me-pressure-feature">
+
+
+          <div>
+
+            <div class="me-label">
+              Process application
+            </div>
+
+
+            <h3>
+
+              Measurement where
+              the process happens.
+
+            </h3>
+
+
+            <p>
+
+              Pressure instrumentation is
+              deployed directly within demanding
+              process environments where accurate,
+              continuous and reliable measurement
+              is required.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="me-pressure-photo">
+
+            <img
+              src="./images/meas6.png"
+              alt="Pressure transmitters installed in an industrial process"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FLOW METERS
+    ================================================== -->
+
+    <section
+      class="
+        me-section
+        me-section-soft
+      "
+      id="flow"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            03 / Flow Measurement
+          </div>
+
+
+          <h2>
+            Flow Meters
+          </h2>
+
+
+          <p class="me-subtitle">
+
+            High-performance flowmeters
+            for liquids,
+            gases and steam.
+
+          </p>
+
+
+          <p>
+
+            Consistent product quality,
+            safety,
+            process optimization and
+            environmental protection are among
+            the reasons industrial flow measurement
+            continues to grow in importance.
+
+          </p>
+
+
+          <p>
+
+            Applications include wastewater,
+            water,
+            beverages,
+            mineral oil,
+            chemicals,
+            natural gas and steam.
+
+          </p>
+
+
+          <p>
+
+            The Proline product family provides
+            digital capabilities including WLAN
+            or Bluetooth,
+            web-server and touchscreen operation,
+            HistoROM data management and
+            Heartbeat Technology.
+
+          </p>
+
+
+          <p>
+
+            FLOWSIC ultrasonic technology supports
+            applications including custody transfer,
+            flare gas measurement,
+            tunnel monitoring and emissions monitoring.
+
+          </p>
+
+        </article>
+
+
+
+        <div class="me-flow-gallery">
+
+
+          <!-- FLOWSIC -->
+
+          <div class="me-flow-wide">
+
+            <img
+              src="./images/meas7.png"
+              alt="FLOWSIC ultrasonic flowmeter portfolio"
+            >
+
+          </div>
+
+
+
+          <!-- FLOW PRODUCT PORTFOLIO -->
+
+          <div class="me-flow-wide">
+
+            <img
+              src="./images/meas8.png"
+              alt="Electromagnetic Coriolis and ultrasonic flowmeters"
+            >
+
+          </div>
+
+
+
+          <!-- SUPPORT ROW -->
+
+          <div class="me-flow-support">
+
+
+            <div class="me-flow-photo">
+
+              <img
+                src="./images/meas9.png"
+                alt="Promass X Coriolis flowmeter"
+              >
+
+            </div>
+
+
+
+            <div class="me-flow-wide">
+
+              <img
+                src="./images/meas10.png"
+                alt="Thermal vortex and differential pressure flow measurement technologies"
+              >
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TEMPERATURE
+    ================================================== -->
+
+    <section
+      class="me-section"
+      id="temperature"
+    >
+
+      <div class="me-shell">
+
+
+        <div class="me-temperature-top">
+
+
+          <article class="me-copy">
+
+            <div class="me-label">
+              04 / Temperature Measurement
+            </div>
+
+
+            <h2>
+              Temperature Transmitters
+            </h2>
+
+
+            <p class="me-subtitle">
+
+              Thermometers and transmitters
+              for the process industry.
+
+            </p>
+
+
+            <p>
+
+              Temperature is the most frequently
+              measured variable in process engineering.
+
+            </p>
+
+
+            <p>
+
+              The product portfolio complies with
+              international standards and specifications
+              including ATEX,
+              FM,
+              CSA,
+              IEC,
+              NEPSI,
+              SIL,
+              NAMUR,
+              DNV GL,
+              3-A,
+              EHEDG,
+              ASME BPE,
+              FDA,
+              EAC and INMETRO.
+
+            </p>
+
+
+            <p>
+
+              The instrumentation is suitable
+              for use across industrial sectors.
+
+            </p>
+
+          </article>
+
+
+
+          <div class="me-temperature-photo">
+
+            <img
+              src="./images/meas11.png"
+              alt="Industrial temperature measurement application"
+            >
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- PRODUCT SHEETS FULL WIDTH -->
+
+        <div class="me-temperature-sheets">
+
+
+          <div class="me-temperature-sheet">
+
+            <img
+              src="./images/meas12.png"
+              alt="Temperature transmitter product portfolio"
+            >
+
+          </div>
+
+
+          <div class="me-temperature-sheet">
+
+            <img
+              src="./images/meas13.png"
+              alt="Industrial thermometer product portfolio"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         METERING SKIDS / LACT
+    ================================================== -->
+
+    <section
+      class="
+        me-section
+        me-section-soft
+      "
+      id="metering"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            05 / Custody Transfer
+          </div>
+
+
+          <h2>
+            Metering Skids / LACT Unit
+          </h2>
+
+
+          <p>
+
+            We offer Coriolis and ultrasonic-based
+            custody transfer metering,
+            loading,
+            unloading and LACT units with
+            mass or volume output.
+
+          </p>
+
+
+          <p>
+
+            Applications include custody transfers,
+            asset transfers,
+            terminals,
+            depots,
+            refineries,
+            pipelines and process plants.
+
+          </p>
+
+
+          <p>
+
+            These systems are designed to
+            minimize downtime,
+            increase availability,
+            support accurate measurement
+            and improve operational efficiency.
+
+          </p>
+
+        </article>
+
+
+
+        <div class="me-metering-gallery">
+
+
+          <div class="me-metering-wide">
+
+            <img
+              src="./images/meas14.png"
+              alt="Metering skid truck loading offloading and pipeline metering solution"
+            >
+
+          </div>
+
+
+          <div class="me-metering-wide">
+
+            <img
+              src="./images/meas15.png"
+              alt="Metering solution package"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRESSURE REDUCTION METERING SKID
+    ================================================== -->
+
+    <section
+      class="me-section"
+      id="pressure-reduction"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            06 / Pressure Regulation
+          </div>
+
+
+          <h2>
+            Pressure Reduction Metering Skid
+          </h2>
+
+
+          <p>
+
+            In modern industrial process control,
+            accurate and stable pressure measurement
+            is essential for safe and efficient operation.
+
+          </p>
+
+
+          <p>
+
+            AOS Orwell pressure reduction systems
+            combine robust design with advanced
+            sensor technologies to deliver reliable
+            and precise pressure reduction and
+            measurement in demanding environments.
+
+          </p>
+
+
+          <p>
+
+            For differential pressure measurement,
+            two sensor modules can be integrated
+            with a single transmitter.
+
+          </p>
+
+
+          <p>
+
+            In hydrostatic level measurement,
+            the transmitter digitally calculates
+            differential pressure using process
+            pressure and headspace pressure,
+            supporting accurate and continuous
+            measurement under changing process conditions.
+
+          </p>
+
+        </article>
+
+
+
+        <div class="me-prms-layout">
+
+
+          <div class="me-prms-item">
+
+            <img
+              src="./images/meas16.png"
+              alt="Pressure reduction metering skid package"
+            >
+
+          </div>
+
+
+          <div class="me-prms-item">
+
+            <img
+              src="./images/meas17.png"
+              alt="Pressure reduction and metering skid installation"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         GAS ANALYZERS
+    ================================================== -->
+
+    <section
+      class="
+        me-section
+        me-section-soft
+      "
+      id="gas-analyzers"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            07 / Process Analysis
+          </div>
+
+
+          <h2>
+            Gas Analyzers
+          </h2>
+
+        </article>
+
+
+
+        <div class="me-analyzer-grid">
+
+
+          <div class="me-analyzer-sheet">
+
+            <img
+              src="./images/meas18.png"
+              alt="Gas analyzer technologies"
+            >
+
+          </div>
+
+
+          <div class="me-analyzer-sheet">
+
+            <img
+              src="./images/meas19.png"
+              alt="Industrial gas monitoring and analyzer technologies"
+            >
+
+          </div>
+
+
+          <div class="me-analyzer-cabinet">
+
+            <img
+              src="./images/meas20.png"
+              alt="Integrated process gas analyzer cabinet"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         GAS CHROMATOGRAPH
+    ================================================== -->
+
+    <section
+      class="me-section"
+      id="gas-chromatograph"
+    >
+
+      <div class="me-shell">
+
+
+        <div class="me-gc-layout">
+
+
+          <article class="me-copy">
+
+
+            <div class="me-label">
+              08 / Gas Composition Analysis
+            </div>
+
+
+            <h2>
+              Gas Chromatograph
+            </h2>
+
+
+            <p>
+
+              Our Gas Chromatograph is an
+              advanced online process analyzer
+              designed to provide continuous,
+              real-time analysis of the composition
+              and quality of natural gas and
+              hydrocarbon streams.
+
+            </p>
+
+
+            <p>
+
+              Applications include custody transfer,
+              fiscal metering,
+              process optimization and
+              quality control across oil and gas,
+              petrochemical,
+              refining and LNG facilities.
+
+            </p>
+
+
+            <p>
+
+              Chromatographic separation technology
+              measures individual gas components
+              and enables calculation of properties
+              such as heating value,
+              Wobbe Index,
+              relative density,
+              compressibility,
+              molecular weight and energy content.
+
+            </p>
+
+
+            <p>
+
+              The analyzers are designed for
+              harsh industrial environments with
+              high analytical accuracy,
+              long-term stability and modular
+              architecture for simplified servicing.
+
+            </p>
+
+          </article>
+
+
+
+          <div class="me-gc-grid">
+
+
+            <div class="me-gc-card">
+
+              <img
+                src="./images/meas21.png"
+                alt="First Gas Chromatograph"
+              >
+
+            </div>
+
+
+            <div class="me-gc-card">
+
+              <img
+                src="./images/meas22.png"
+                alt="Process gas chromatograph"
+              >
+
+            </div>
+
+
+            <div class="me-gc-card">
+
+              <img
+                src="./images/meas23.png"
+                alt="Natural gas chromatograph"
+              >
+
+            </div>
+
+
+            <div class="me-gc-card me-gc-wide">
+
+              <img
+                src="./images/meas24.png"
+                alt="Process gas analyzer and gas chromatograph"
+              >
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CAPABILITY STRIP
+    ================================================== -->
+
+    <section class="me-capability">
+
+      <div class="me-shell">
+
+
+        <div class="me-capability-head">
+
+
+          <div class="me-eyebrow">
+            Measurement that connects
+          </div>
+
+
+          <h2>
+
+            From field instruments
+            to operational intelligence.
+
+          </h2>
+
+
+          <p>
+
+            Measurement technologies provide
+            the process data required to
+            improve safety,
+            reliability,
+            efficiency and environmental performance.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="me-cap-grid">
+
+
+          <div class="me-cap-item">
+
+            <span class="material-symbols-outlined">
+              speed
+            </span>
+
+            <h3>
+              Precision
+            </h3>
+
+            <p>
+              Reliable measurement across critical process variables.
+            </p>
+
+          </div>
+
+
+          <div class="me-cap-item">
+
+            <span class="material-symbols-outlined">
+              monitoring
+            </span>
+
+            <h3>
+              Visibility
+            </h3>
+
+            <p>
+              Real-time process and diagnostic information.
+            </p>
+
+          </div>
+
+
+          <div class="me-cap-item">
+
+            <span class="material-symbols-outlined">
+              verified
+            </span>
+
+            <h3>
+              Compliance
+            </h3>
+
+            <p>
+              Instrumentation aligned with applicable industrial standards.
+            </p>
+
+          </div>
+
+
+          <div class="me-cap-item">
+
+            <span class="material-symbols-outlined">
+              settings_input_component
+            </span>
+
+            <h3>
+              Integration
+            </h3>
+
+            <p>
+              Field devices and packaged measurement systems.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FLARE GAS METERING
+    ================================================== -->
+
+    <section
+      class="
+        me-section
+        me-section-soft
+      "
+      id="flare-gas"
+    >
+
+      <div class="me-shell">
+
+
+        <article
+          class="
+            me-copy
+            me-section-description
+          "
+        >
+
+          <div class="me-label">
+            09 / Flare Measurement
+          </div>
+
+
+          <h2>
+            Flare Gas Metering
+          </h2>
+
+
+          <p>
+
+            The AOS Orwell-Endress+Hauser /
+            SICK Flare Gas Metering Solution
+            is an ultrasonic flow measurement
+            system designed for continuous
+            monitoring and quantification
+            of flare gas.
+
+          </p>
+
+
+          <p>
+
+            Applications span upstream,
+            midstream,
+            downstream,
+            LNG and petrochemical facilities.
+
+          </p>
+
+
+          <p>
+
+            The system is designed to measure
+            highly variable flare gas flows,
+            ranging from low purge flows
+            to high-velocity emergency flaring conditions.
+
+          </p>
+
+
+          <p>
+
+            It enables operators to quantify
+            flare gas emissions,
+            optimize plant performance,
+            reduce hydrocarbon losses
+            and support environmental reporting.
+
+          </p>
+
+
+          <p>
+
+            Ultrasonic transit-time technology
+            provides non-intrusive measurement
+            with no moving parts,
+            supporting minimal maintenance,
+            reliability and long service life.
+
+          </p>
+
+        </article>
+
+
+
+        <div class="me-flare-grid">
+
+
+          <div class="me-flare-wide">
+
+            <img
+              src="./images/meas25.png"
+              alt="FLOWSIC flare ultrasonic flow measurement instrument"
+            >
+
+          </div>
+
+
+          <div class="me-flare-photo">
+
+            <img
+              src="./images/meas26.png"
+              alt="Flare gas flowmeter installation"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CTA
+    ================================================== -->
+
+    <section class="me-cta">
+
+      <div class="me-shell">
+
+
+        <div class="me-cta-box">
+
+
+          <div class="me-cta-copy">
+
+            <h2>
+
+              Need the right measurement
+              solution for your process?
+
+            </h2>
+
+
+            <p>
+
+              Talk to AOS Orwell about
+              instrumentation,
+              metering systems,
+              process analyzers and
+              integrated measurement packages.
+
+            </p>
+
+          </div>
+
+
+
+          <a
+            href="./contact-us.html"
+            class="me-cta-btn"
+          >
+
+            Contact our team
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       STANDARD AOS ORWELL FOOTER
+  ====================================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="./images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="about.html">
+          About Us
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="hse.html">
+          QHSE
+        </a>
+
+        <a href="media.html">
+          Media
+        </a>
+
+        <a href="careers.html">
+          Careers
+        </a>
+
+        <a href="contact-us.html">
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+
+      <!-- COMPANY -->
+
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+
+          </p>
+
+
+
+          <div
+            class="mt-5 flex flex-col gap-y-2"
+          >
+
+            <h3
+              class="text-base font-medium"
+            >
+              Stay Connected
+            </h3>
+
+
+            <div class="flex gap-x-3">
+
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+
+                <i
+                  class="bi bi-youtube text-white text-lg"
+                ></i>
+
+              </a>
+
+
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+
+                <i
+                  class="bi bi-instagram text-white text-lg"
+                ></i>
+
+              </a>
+
+
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+
+                <i
+                  class="bi bi-twitter-x text-white text-lg"
+                ></i>
+
+              </a>
+
+
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+
+                <i
+                  class="bi bi-linkedin text-white text-lg"
+                ></i>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- LOCATIONS -->
+
+      <div
+        class="w-full sm:w-[35%] flex flex-col gap-y-4"
+      >
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Locations
+        </h4>
+
+
+        <div
+          class="flex flex-col gap-y-3"
+        >
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Head Office
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+
+            </p>
+
+          </div>
+
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Port Harcourt Office 2
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+
+            </p>
+
+          </div>
+
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Lagos Office
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+
+            </p>
+
+          </div>
+
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-sm"
+            >
+              Ghana Office
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- LINKS -->
+
+      <div
+        class="w-full lg:w-1/4 flex flex-col gap-y-4"
+      >
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Links
+        </h4>
+
+
+        <div
+          class="flex flex-col gap-y-2"
+        >
+
+
+          <a
+            href="about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+
+          <a
+            href="management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+
+          <a
+            href="media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+
+          <a
+            href="policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+
+          <a
+            href="whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+
+          <a
+            href="downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+
+        </div>
+
+
+
+        <h4
+          class="font-medium text-[13px] sm:text-base"
+        >
+          Email Us
+        </h4>
+
+
+        <div
+          class="flex flex-col gap-y-1"
+        >
+
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- FOOTER CONTACT FORM -->
+
+      <div
+        class="w-full lg:w-2/5"
+      >
+
+        <h4
+          class="font-medium text-base"
+        >
+          Contact Us
+        </h4>
+
+
+        <form
+          class="flex flex-col gap-y-5 mt-2"
+        >
+
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+
+          <div
+            class="w-full flex justify-end"
+          >
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+
+              SEND
+
+            </button>
+
+          </div>
+
+
+        </form>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- COPYRIGHT -->
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+
+    &copy; 2026 AOS Orwell.
+    All rights reserved.
+
+  </div>
+
+
+
+  <!-- =====================================================
+       DYNAMIC NAVBAR
+  ====================================================== -->
+
+  <script>
+
+    fetch("./navbar.html")
+
+      .then(response => {
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Navbar file not found"
+          );
+
+        }
+
+        return response.text();
+
+      })
+
+
+      .then(data => {
+
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = data;
+
+
+        const script =
+          document.createElement("script");
+
+
+        script.src =
+          "./navbar.js";
+
+
+        document.body.appendChild(
+          script
+        );
+
+      })
+
+
+      .catch(error => {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
+
+</body>
+
+</html>
