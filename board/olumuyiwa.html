@@ -1,302 +1,1551 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../output.css">
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Dr. Olumuyiwa Adebayo | Director of Finance | AOS Orwell
+  </title>
+
+  <meta
+    name="description"
+    content="Meet Dr. Olumuyiwa Adebayo, Director of Finance at AOS Orwell."
+  >
+
+
+  <!-- GOOGLE FONTS -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- MATERIAL SYMBOLS -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  >
+
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#007A33",
+            secondary: "#004225"
+          }
+        }
+      }
+    };
+  </script>
+
+
+  <!-- SITE CSS -->
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       ROOT
+    ===================================================== */
+
+    :root {
+      --exec-green: #009b3a;
+      --exec-deep: #031d10;
+      --exec-ink: #111a14;
+      --exec-copy: #556159;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      color: var(--exec-ink);
+
+      background: #ffffff;
+
+      font-family: "Poppins", sans-serif;
+    }
+
+
+    .exec-page {
+      overflow: hidden;
+    }
+
+
+    .exec-shell {
+      width: min(1180px, calc(100% - 40px));
+
+      margin-inline: auto;
+    }
+
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .exec-hero {
+      position: relative;
+
+      isolation: isolate;
+
+      min-height: 650px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          110deg,
+          #02190d 0%,
+          #042817 55%,
+          #006b2f 100%
+        );
+    }
+
+
+    .exec-hero::before {
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      right: -150px;
+      top: -170px;
+
+      width: 550px;
+      height: 550px;
+
+      border:
+        90px solid rgba(0, 155, 58, 0.19);
+
+      border-radius: 50%;
+    }
+
+
+    .exec-hero::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      left: 42%;
+      bottom: -240px;
+
+      width: 470px;
+      height: 470px;
+
+      border:
+        75px solid rgba(255,255,255,0.035);
+
+      border-radius: 50%;
+    }
+
+
+    .exec-hero-grid {
+      min-height: 650px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(360px, 0.9fr);
+
+      gap: 70px;
+
+      align-items: end;
+    }
+
+
+
+    /* =====================================================
+       HERO COPY
+    ===================================================== */
+
+    .exec-hero-copy {
+      align-self: center;
+
+      padding: 140px 0 95px;
+
+      color: #ffffff;
+    }
+
+
+    .exec-hero-eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 21px;
+
+      color: #89e5aa;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+
+      text-transform: uppercase;
+    }
+
+
+    .exec-hero-eyebrow::before {
+      content: "";
+
+      width: 42px;
+
+      height: 2px;
+
+      background: #29c566;
+    }
+
+
+    .exec-hero h1 {
+      margin: 0 0 10px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          48px,
+          5.5vw,
+          74px
+        );
+
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      font-weight: 700;
+    }
+
+
+    .exec-role {
+      margin: 0;
+
+      color: #d5e5da;
+
+      font-size:
+        clamp(
+          16px,
+          1.6vw,
+          21px
+        );
+
+      font-weight: 500;
+    }
+
+
+    .exec-hero-intro {
+      max-width: 700px;
+
+      margin: 31px 0 0;
+
+      color: #c9d8ce;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+    }
+
+
+
+    /* =====================================================
+       HERO STATS
+    ===================================================== */
+
+    .exec-hero-stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      max-width: 680px;
+
+      margin-top: 42px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.16);
+    }
+
+
+    .exec-hero-stat {
+      padding: 23px 24px 0 0;
+    }
+
+
+    .exec-hero-stat strong {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 24px;
+
+      line-height: 1.1;
+    }
+
+
+    .exec-hero-stat span {
+      color: #aebfb4;
+
+      font-size: 10px;
+
+      line-height: 1.55;
+    }
+
+
+
+    /* =====================================================
+       PORTRAIT
+    ===================================================== */
+
+    .exec-portrait-wrap {
+      position: relative;
+
+      min-height: 570px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-end;
+    }
+
+
+    .exec-portrait-accent {
+      position: absolute;
+
+      right: 0;
+
+      bottom: 55px;
+
+      width: 86%;
+
+      height: 73%;
+
+      border:
+        1px solid rgba(255,255,255,0.13);
+
+      background:
+        rgba(255,255,255,0.045);
+    }
+
+
+    .exec-portrait-accent::before {
+      content: "";
+
+      position: absolute;
+
+      top: -24px;
+
+      left: -24px;
+
+      width: 160px;
+
+      height: 7px;
+
+      background:
+        var(--exec-green);
+    }
+
+
+    .exec-portrait-frame {
+      position: relative;
+
+      z-index: 2;
+
+      width: 430px;
+
+      height: 510px;
+
+      overflow: hidden;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 20px 32px rgba(0,0,0,0.25);
+    }
+
+
+    .exec-portrait {
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center top;
+    }
+
+
+
+    /* =====================================================
+       PROFILE
+    ===================================================== */
+
+    .exec-profile {
+      padding: 95px 0 105px;
+
+      background: #ffffff;
+    }
+
+
+    .exec-profile-head {
+      max-width: 850px;
+
+      margin-bottom: 42px;
+    }
+
+
+    .exec-label {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+
+      color: var(--exec-green);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+
+      text-transform: uppercase;
+    }
+
+
+    .exec-label::before {
+      content: "";
+
+      width: 42px;
+
+      height: 2px;
+
+      background:
+        var(--exec-green);
+    }
+
+
+    .exec-profile-head h2 {
+      margin: 0;
+
+      color: var(--exec-ink);
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          30px,
+          3.5vw,
+          43px
+        );
+
+      line-height: 1.16;
+
+      letter-spacing: -0.03em;
+
+      font-weight: 600;
+    }
+
+
+    .exec-profile-copy {
+      max-width: 1080px;
+    }
+
+
+    .exec-profile-copy p {
+      margin: 0;
+
+      color: var(--exec-copy);
+
+      font-size: 14px;
+
+      line-height: 2;
+    }
+
+
+    .exec-profile-copy p + p {
+      margin-top: 24px;
+    }
+
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 1000px) {
+
+      .exec-hero-grid {
+        grid-template-columns:
+          1fr 0.8fr;
+
+        gap: 35px;
+      }
+
+
+      .exec-portrait-frame {
+        width: 380px;
+
+        height: 470px;
+      }
+
+    }
+
+
+
+    @media (max-width: 820px) {
+
+      .exec-shell {
+        width:
+          min(
+            calc(100% - 30px),
+            680px
+          );
+      }
+
+
+      .exec-hero {
+        min-height: auto;
+      }
+
+
+      .exec-hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+      }
+
+
+      .exec-hero-copy {
+        padding:
+          115px 0 40px;
+      }
+
+
+      .exec-portrait-wrap {
+        min-height: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 55px;
+      }
+
+
+      .exec-portrait-accent {
+        width: 65%;
+
+        left: 55px;
+
+        right: auto;
+
+        bottom: 30px;
+      }
+
+
+      .exec-portrait-frame {
+        width: 350px;
+
+        height: 430px;
+      }
+
+
+      .exec-profile {
+        padding:
+          75px 0 85px;
+      }
+
+    }
+
+
+
+    @media (max-width: 600px) {
+
+      .exec-shell {
+        width:
+          calc(100% - 24px);
+      }
+
+
+      .exec-hero h1 {
+        font-size: 40px;
+      }
+
+
+      .exec-hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+
+      .exec-hero-stat {
+        padding: 17px 0;
+
+        border-bottom:
+          1px solid rgba(255,255,255,0.11);
+      }
+
+
+      .exec-portrait-frame {
+        width:
+          min(
+            100%,
+            320px
+          );
+
+        height: 400px;
+      }
+
+
+      .exec-profile-copy p {
+        font-size: 13px;
+
+        line-height: 1.9;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
+
 <body>
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="../index.html"><img src="../images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="../about.html"  onmouseenter="showAboutLinks()" class="text-primary ">About Us</a>
-            <a href="../services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="../hse.html">QHSE</a>
-            <a href="../media.html"  onmouseenter="showMediaLinks()">Media</a>
-            <a href="../careers.html">Careers</a>
-            <a href="../contact-us.html">Contact Us</a>
-        </div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+  <!-- =====================================================
+       SHARED NAVBAR
+  ====================================================== -->
 
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../about.html" class="hover:text-secondary">Our Story</a>
-                <a href="../management.html" class="hover:text-secondary">Management</a>
-                <a href="../board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
+  <div id="navbar-placeholder"></div>
 
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="../images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="../gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="../news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="../blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="../process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="../new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../about.html" class="hover:text-primary">Our Story</a>
-							<a href="../management.html" class="hover:text-primary">Management</a>
-							<a href="../board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
+  <div style="height:120px;"></div>
 
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="../process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="../new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- QHSE (no dropdown) -->
-				<a href="../hse.html" class="hover:text-primary transition py-2">QHSE</a>
 
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="../gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="../news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="../blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
+  <main class="exec-page">
 
-				<!-- Careers (no dropdown) -->
-				<a href="../careers.html" class="hover:text-primary transition py-2">Careers</a>
 
-				<!-- Contact Us (no dropdown) -->
-				<a href="../contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-    <!-- BACKGROUND -->
-    <img src="../images/board/profimg.png" alt="" class="w-full h-[35vh] xsm:h-[45vh] object-cover">
+    <section class="exec-hero">
 
-    <!-- DETAILS -->
-    <section class="akeem-section flex items-end gap-x-5 sm:gap-x-10 pb-10 border-b border-b-gray-200 px-4 flex-wrap gap-y-6 md:px-20 -mt-25 sm:-mt-30 lg:-mt-40 xl:-mt-50 shadow-sm">
-        <img src="../images/muyiwa.jpeg" alt="" class="akeem-img h-45 w-45 sm:h-50 sm:w-50 lg:h-66 lg:w-66 xl:h-80 xl:w-80 object-contain">
 
-        <div class="akeem-text flex flex-col gap-y-1 sm:gap-y-2 ">
-            <h1 class="text-xl sm:text-2xl lg:text-3xl xl:text-5xl font-bold text-primary">Dr. Olumuyiwa Adebayo</h1>
-            <p class="text-xs sm:text-sm text-gray-600">Director Of Finance</p>
-        </div>
-    </section>
+      <div
+        class="exec-shell exec-hero-grid"
+      >
 
-    <!-- BOARD INFOMRATION -->
-    <section class="px-4 md:px-20 pt-10 pb-20">
-        <p class="text-xs sm:text-sm leading-loose font-medium text-gray-600">
-            Adebayo is a distinguished finance executive and strategic leader with over 18 years of progressive experience spanning banking, professional services, oil & gas, energy, power, and infrastructure sectors.<br/><br/>He holds a Doctorate in Finance, an MBA, and a BSc (Hons) in Actuarial Science (Second Class Upper), complemented by multiple postgraduate qualifications in Data Science, Transfer Pricing, and Sustainable Finance from globally renowned institutions including the University of Oxford, Harvard University, Columbia Business School, the University of Cambridge, and the University of Texas at Austin.<br/><br/>He is a CFA Charter holder and a Certified Financial Risk Manager (FRM), as well as a Fellow of the Institute of Chartered Accountants of Nigeria (FCA), Chartered Institute of Taxation of Nigeria (FCTI), Institute of Credit Administration (FICA), and a CGMA/ACMA of CIMA (UK), among other professional affiliations.<br/><br/>Mr. Adebayo has served in senior leadership roles including General Manager, Group Finance and Group Head, Tax, Transfer Pricing & Financial Controls at Sahara Group, and Chief Finance Officer at RAK Unity Petroleum Plc. In these capacities, he provided strategic oversight for corporate finance, capital structuring, tax optimization, financial controls, procurement strategy, regulatory compliance, and enterprise risk management across multiple jurisdictions. His leadership has consistently driven financial turnaround initiatives, strengthened governance frameworks, enhanced cost optimization, and improved stakeholder confidence.<br/><br/>Earlier in his career, he was a Senior Consultant with Deloitte, where he led IFRS implementation and advisory engagements across diverse industries, and held key control and relationship management roles within Intercontinental Bank Plc.In 2026, Adebayo joined AOS Orwell as the Director of Finance.
-        </p>
-    </section>
-    
 
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="../about.html">About Us</a>
-          <a href="../services.html">Services</a>
-          <a href="../hse.html">QHSE</a>
-          <a href="../media.html">Media</a>
-          <a href="../careers.html">Careers</a>
-          <a href="../contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+        <!-- LEFT COPY -->
+
+        <div class="exec-hero-copy">
+
+
+          <div class="exec-hero-eyebrow">
+            Executive Leadership
+          </div>
+
+
+          <h1>
+            Dr. Olumuyiwa Adebayo
+          </h1>
+
+
+          <p class="exec-role">
+            Director of Finance
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
+
+          <p class="exec-hero-intro">
+
+            A finance executive and strategic leader with
+            more than eighteen years of experience spanning
+            banking, professional services, oil and gas,
+            energy, power and infrastructure.
+
+          </p>
+
+
+
+          <div class="exec-hero-stats">
+
+
+            <div class="exec-hero-stat">
+
+              <strong>
+                18+
+              </strong>
+
+              <span>
+                Years of progressive finance experience
+              </span>
+
+            </div>
+
+
+
+            <div class="exec-hero-stat">
+
+              <strong>
+                CFA
+              </strong>
+
+              <span>
+                Chartered financial and risk expertise
+              </span>
+
+            </div>
+
+
+
+            <div class="exec-hero-stat">
+
+              <strong>
+                Finance
+              </strong>
+
+              <span>
+                Corporate finance and strategic leadership
+              </span>
+
+            </div>
+
+
           </div>
+
+
         </div>
-        </div>
-        
-    
-      </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+
+
+
+        <!-- RIGHT PORTRAIT -->
+
+        <div class="exec-portrait-wrap">
+
+
+          <div
+            class="exec-portrait-accent"
+          ></div>
+
+
+          <div
+            class="exec-portrait-frame"
+          >
+
+            <img
+              src="../images/muyiwa.jpeg"
+              alt="Dr. Olumuyiwa Adebayo, Director of Finance at AOS Orwell"
+              class="exec-portrait"
+            >
+
           </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
+
+
         </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="../about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="../management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="../media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="../policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="../whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="../downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
+
+
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROFILE
+    ====================================================== -->
+
+    <section class="exec-profile">
+
+
+      <div class="exec-shell">
+
+
+        <div class="exec-profile-head">
+
+
+          <div class="exec-label">
+            Profile
           </div>
-        </form>
+
+
+          <h2>
+            Strategic finance leadership across
+            energy, infrastructure and professional services.
+          </h2>
+
+
+        </div>
+
+
+
+        <div class="exec-profile-copy">
+
+
+          <p>
+
+            Dr. Olumuyiwa Adebayo is a finance executive
+            and strategic leader with over 18 years of
+            progressive experience spanning banking,
+            professional services, oil and gas, energy,
+            power and infrastructure sectors.
+
+          </p>
+
+
+
+          <p>
+
+            He holds a Doctorate in Finance, an MBA,
+            and a Bachelor of Science degree in Actuarial
+            Science with Second Class Upper honours.
+            His academic and professional development also
+            includes postgraduate qualifications in Data
+            Science, Transfer Pricing and Sustainable Finance
+            from institutions including the University of
+            Oxford, Harvard University, Columbia Business
+            School, the University of Cambridge and the
+            University of Texas at Austin.
+
+          </p>
+
+
+
+          <p>
+
+            He is a CFA Charterholder and Certified
+            Financial Risk Manager. He is also a Fellow of
+            the Institute of Chartered Accountants of Nigeria,
+            the Chartered Institute of Taxation of Nigeria
+            and the Institute of Credit Administration,
+            and holds CGMA and ACMA designations from CIMA
+            in the United Kingdom.
+
+          </p>
+
+
+
+          <p>
+
+            Dr. Adebayo has held senior leadership positions
+            including General Manager, Group Finance and
+            Group Head, Tax, Transfer Pricing and Financial
+            Controls at Sahara Group, as well as Chief
+            Finance Officer at RAK Unity Petroleum Plc.
+
+          </p>
+
+
+
+          <p>
+
+            In these roles, he provided strategic oversight
+            across corporate finance, capital structuring,
+            tax optimisation, financial controls, procurement
+            strategy, regulatory compliance and enterprise
+            risk management across multiple jurisdictions.
+
+          </p>
+
+
+
+          <p>
+
+            His leadership experience includes driving
+            financial turnaround initiatives, strengthening
+            governance frameworks, improving cost optimisation
+            and supporting stronger stakeholder confidence.
+
+          </p>
+
+
+
+          <p>
+
+            Earlier in his career, he worked as a Senior
+            Consultant with Deloitte, where he led IFRS
+            implementation and advisory engagements across
+            a range of industries. He also held control
+            and relationship management roles with
+            Intercontinental Bank Plc.
+
+          </p>
+
+
+
+          <p>
+
+            In 2026, Dr. Olumuyiwa Adebayo joined
+            AOS Orwell as Director of Finance.
+
+          </p>
+
+
+        </div>
+
+
       </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       STANDARD FOOTER
+  ====================================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+
+    <!-- LOGO + NAV -->
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+
+      <img
+        src="../images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      >
+
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="/about.html">
+          About Us
+        </a>
+
+        <a href="/services.html">
+          Services
+        </a>
+
+        <a href="/hse.html">
+          QHSE
+        </a>
+
+        <a href="/media.html">
+          Media
+        </a>
+
+        <a href="/careers.html">
+          Careers
+        </a>
+
+        <a href="/contact-us.html">
+          Contact Us
+        </a>
+
+      </div>
+
+
     </div>
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
 
-     
-    <script src="../index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <script>
-  gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".akeem-img", {
-    y: -100,
-    opacity: 0,
-    duration: 0.6,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".akeem-section",
-      start: "top 80%",
-    }
-  });
+    <!-- FOOTER CONTENT -->
 
-  gsap.from(".akeem-text", {
-    x: -100,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power2.out",
-    delay: 0.2, // wait a bit after image
-    scrollTrigger: {
-      trigger: ".akeem-section",
-      start: "top 80%",
-    }
-  });
-</script>
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+
+      <!-- COMPANY -->
+
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+
+            Providing integrated oilfield solutions across
+            Well Construction, Process Management,
+            IPM &amp; Turnkey, and Operations &amp; Maintenance
+            to support the energy industry's evolving needs.
+
+          </p>
+
+
+
+          <div
+            class="mt-5 flex flex-col gap-y-2"
+          >
+
+
+            <h3
+              class="text-base font-medium"
+            >
+              Stay Connected
+            </h3>
+
+
+
+            <div class="flex gap-x-3">
+
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i
+                  class="bi bi-youtube text-white text-lg"
+                ></i>
+              </a>
+
+
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i
+                  class="bi bi-instagram text-white text-lg"
+                ></i>
+              </a>
+
+
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i
+                  class="bi bi-twitter-x text-white text-lg"
+                ></i>
+              </a>
+
+
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i
+                  class="bi bi-linkedin text-white text-lg"
+                ></i>
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- LOCATIONS -->
+
+      <div
+        class="w-full sm:w-[35%] flex flex-col gap-y-4"
+      >
+
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Locations
+        </h4>
+
+
+
+        <div
+          class="flex flex-col gap-y-3"
+        >
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Head Office
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+
+            </p>
+
+          </div>
+
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Lagos Office
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+
+            </p>
+
+          </div>
+
+
+
+          <div
+            class="flex flex-col gap-y-1.5"
+          >
+
+            <p
+              class="font-medium text-sm"
+            >
+              Ghana Office
+            </p>
+
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- LINKS -->
+
+      <div
+        class="w-full lg:w-1/4 flex flex-col gap-y-4"
+      >
+
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Links
+        </h4>
+
+
+
+        <div
+          class="flex flex-col gap-y-2"
+        >
+
+
+          <a
+            href="/about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+
+          <a
+            href="/management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+
+          <a
+            href="/media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+
+          <a
+            href="/policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+
+          <a
+            href="/whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+
+          <a
+            href="/downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+
+        </div>
+
+
+
+        <h4
+          class="font-medium text-[13px] sm:text-base"
+        >
+          Email Us
+        </h4>
+
+
+
+        <div
+          class="flex flex-col gap-y-1"
+        >
+
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- CONTACT FORM -->
+
+      <div
+        class="w-full lg:w-2/5"
+      >
+
+
+        <h4
+          class="font-medium text-base"
+        >
+          Contact Us
+        </h4>
+
+
+
+        <form
+          class="flex flex-col gap-y-5 mt-2"
+        >
+
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400 resize-y"
+          ></textarea>
+
+
+
+          <div
+            class="w-full flex justify-end"
+          >
+
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+
+          </div>
+
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- COPYRIGHT -->
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+
+    &copy; 2026 AOS Orwell.
+    All rights reserved.
+
+  </div>
+
+
+
+  <!-- =====================================================
+       SHARED NAVBAR LOADER
+  ====================================================== -->
+
+  <script>
+
+    fetch("../navbar.html")
+
+      .then(response => {
+
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
+
+        return response.text();
+
+      })
+
+      .then(data => {
+
+
+        const navbar =
+          document.getElementById(
+            "navbar-placeholder"
+          );
+
+
+        navbar.innerHTML = data;
+
+
+
+        /* ==================================================
+           FIX RELATIVE INTERNAL LINKS FOR SUBFOLDER
+        ================================================== */
+
+        navbar
+          .querySelectorAll("a[href]")
+          .forEach(link => {
+
+
+            const href =
+              link.getAttribute("href");
+
+
+            if (!href) {
+              return;
+            }
+
+
+            if (
+              href.startsWith("/") ||
+              href.startsWith("http://") ||
+              href.startsWith("https://") ||
+              href.startsWith("mailto:") ||
+              href.startsWith("tel:") ||
+              href.startsWith("#") ||
+              href.startsWith("javascript:")
+            ) {
+
+              return;
+
+            }
+
+
+            const cleanHref =
+              href
+                .replace(/^\.\//, "")
+                .replace(/^\.\.\//, "");
+
+
+            link.setAttribute(
+              "href",
+              "/" + cleanHref
+            );
+
+
+          });
+
+
+
+        /* ==================================================
+           LOAD NAVBAR JAVASCRIPT
+        ================================================== */
+
+        const script =
+          document.createElement(
+            "script"
+          );
+
+
+        script.src =
+          "../navbar.js";
+
+
+        script.onerror =
+          function () {
+
+            console.error(
+              "navbar.js could not be loaded"
+            );
+
+          };
+
+
+        document.body.appendChild(
+          script
+        );
+
+
+      })
+
+      .catch(error => {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
 
 </body>
+
 </html>
