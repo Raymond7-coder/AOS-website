@@ -192,42 +192,68 @@
   border-top: 1px solid #dbe7df;
 }
 
+/* =====================================================
+   PARTNERS / CLIENTS HEADINGS
+===================================================== */
+
 .ecosystem-block-heading {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
+
   gap: 30px;
-  margin-bottom: 28px;
+
+  margin-bottom: 32px;
 }
 
-.ecosystem-block-heading > div {
+
+.ecosystem-heading-copy {
   display: flex;
   align-items: center;
+
   gap: 18px;
 }
 
-.ecosystem-number {
-  min-width: 38px;
-  color: #009b3a;
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+
+.ecosystem-heading-line {
+  width: 4px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  background: #009b3a;
+
+  border-radius: 10px;
 }
 
+
 .ecosystem-block-heading h3 {
-  margin: 0 0 4px;
-  color: #162019;
+  margin: 0 0 6px;
+
+  color: #101712;
+
   font-family: "Montserrat", sans-serif;
-  font-size: 23px;
-  line-height: 1.2;
-  font-weight: 600;
+
+  font-size: 25px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
 }
+
 
 .ecosystem-block-heading p {
   margin: 0;
-  color: #758078;
+
+  color: #718078;
+
   font-size: 11px;
+
+  line-height: 1.6;
+
+  font-weight: 400;
 }
 
 .ecosystem-link {
@@ -303,13 +329,15 @@
 }
 
 @keyframes ecosystem-scroll {
-  from {
+
+  0% {
     transform: translate3d(0, 0, 0);
   }
 
-  to {
+  100% {
     transform: translate3d(-50%, 0, 0);
   }
+
 }
 
 
@@ -2343,37 +2371,37 @@
 
       <div class="ecosystem-block-heading">
 
-        <div>
+  <div class="ecosystem-heading-copy">
 
-          <span class="ecosystem-number">
-            01
-          </span>
+    <span class="ecosystem-heading-line"></span>
 
-          <div>
-            <h3>
-              Technology Partners
-            </h3>
+    <div>
 
-            <p>
-              Global expertise. Local execution.
-            </p>
-          </div>
+      <h3>
+        Technology Partners
+      </h3>
 
-        </div>
+      <p>
+        Global expertise. Local execution.
+      </p>
+
+    </div>
+
+  </div>
 
 
-        <a
-          href="./partners.html"
-          class="ecosystem-link"
-        >
-          View all partners
+  <a
+    href="./partners.html"
+    class="ecosystem-link"
+  >
+    View all partners
 
-          <span class="material-symbols-outlined">
-            arrow_forward
-          </span>
-        </a>
+    <span class="material-symbols-outlined">
+      arrow_forward
+    </span>
+  </a>
 
-      </div>
+</div>
 
 
       <!-- PARTNER CAROUSEL -->
@@ -2669,27 +2697,25 @@
 
       <div class="ecosystem-block-heading">
 
-        <div>
+  <div class="ecosystem-heading-copy">
 
-          <span class="ecosystem-number">
-            02
-          </span>
+    <span class="ecosystem-heading-line"></span>
 
-          <div>
+    <div>
 
-            <h3>
-              Organisations We Serve
-            </h3>
+      <h3>
+        Organisations We Serve
+      </h3>
 
-            <p>
-              Trusted across the energy industry.
-            </p>
+      <p>
+        Trusted across the energy industry.
+      </p>
 
-          </div>
+    </div>
 
-        </div>
+  </div>
 
-      </div>
+</div>
 
 
       <!-- CLIENT CAROUSEL -->
@@ -3759,5 +3785,65 @@
           document.body.appendChild(script);
        });
     </script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const marquees =
+      document.querySelectorAll("[data-logo-marquee]");
+
+
+    marquees.forEach(function (track) {
+
+      /* Prevent duplicate setup */
+      if (track.dataset.marqueeReady === "true") {
+        return;
+      }
+
+
+      const originalGroup =
+        track.querySelector(".ecosystem-group");
+
+
+      if (!originalGroup) {
+        return;
+      }
+
+
+      /* Duplicate the entire logo group */
+      const duplicateGroup =
+        originalGroup.cloneNode(true);
+
+
+      duplicateGroup.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      track.appendChild(
+        duplicateGroup
+      );
+
+
+      /* Mark as initialized */
+      track.dataset.marqueeReady =
+        "true";
+
+
+      /* Use data-speed from HTML */
+      const speed =
+        track.dataset.speed;
+
+
+      if (speed) {
+        track.style.animationDuration =
+          speed + "s";
+      }
+
+    });
+
+  });
+</script>
 	</body>
 </html>

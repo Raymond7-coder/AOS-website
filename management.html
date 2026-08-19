@@ -295,6 +295,68 @@
       border-bottom: 0;
     }
 
+    /* CLICKABLE HERO LEADERSHIP CARDS */
+
+.leadership-summary-link {
+  position: relative;
+
+  color: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  padding-right: 58px;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.leadership-summary-link:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+
+.leadership-summary-link:hover
+.leadership-summary-icon {
+  background: rgba(116, 227, 154, 0.22);
+}
+
+
+.leadership-summary-content {
+  min-width: 0;
+}
+
+
+.leadership-summary-arrow {
+  position: absolute;
+
+  right: 22px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #74e39a;
+
+  font-size: 20px;
+
+  opacity: 0.65;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+.leadership-summary-link:hover
+.leadership-summary-arrow {
+  transform:
+    translate(4px, -50%);
+
+  opacity: 1;
+}
+
     .leadership-summary-icon {
       width: 49px;
       height: 49px;
@@ -1185,55 +1247,72 @@
 
         <div class="leadership-summary">
 
-          <div class="leadership-summary-item">
+          <!-- MANAGEMENT -->
+  <a
+    href="#management"
+    class="leadership-summary-item leadership-summary-link"
+    data-leadership-panel="managementPanel"
+  >
 
-            <span class="leadership-summary-icon">
-              <span class="material-symbols-outlined">
-                groups
-              </span>
-            </span>
+    <span class="leadership-summary-icon">
+      <span class="material-symbols-outlined">
+        groups
+      </span>
+    </span>
 
-            <div>
+    <div class="leadership-summary-content">
 
-              <strong>
-                Management Team
-              </strong>
+      <strong>
+        Management Team
+      </strong>
 
-              <p>
-                Executive leadership responsible for strategy,
-                operations and business performance.
-              </p>
+      <p>
+        Executive leadership responsible for strategy,
+        operations and business performance.
+      </p>
 
-            </div>
+    </div>
 
-          </div>
+    <span class="material-symbols-outlined leadership-summary-arrow">
+      arrow_forward
+    </span>
 
-          <div class="leadership-summary-item">
+  </a>
 
-            <span class="leadership-summary-icon">
-              <span class="material-symbols-outlined">
-                account_balance
-              </span>
-            </span>
 
-            <div>
+  <!-- BOARD -->
+  <a
+    href="#board"
+    class="leadership-summary-item leadership-summary-link"
+    data-leadership-panel="boardPanel"
+  >
 
-              <strong>
-                Board of Directors
-              </strong>
+    <span class="leadership-summary-icon">
+      <span class="material-symbols-outlined">
+        account_balance
+      </span>
+    </span>
 
-              <p>
-                Governance, oversight and long-term strategic
-                direction for the organisation.
-              </p>
+    <div class="leadership-summary-content">
 
-            </div>
+      <strong>
+        Board of Directors
+      </strong>
 
-          </div>
+      <p>
+        Governance, oversight and long-term strategic
+        direction for the organisation.
+      </p>
 
-        </div>
+    </div>
 
-      </div>
+    <span class="material-symbols-outlined leadership-summary-arrow">
+      arrow_forward
+    </span>
+
+  </a>
+
+</div>
     </section>
 
     <!-- ==========================================
@@ -1416,7 +1495,7 @@
               <div class="leadership-card-media">
 
                 <img
-                  src="./images/anand.jpeg"
+                  src="./images/ananddd.jpeg"
                   alt="Mr. Anand Bhatia"
                 />
 
@@ -2302,6 +2381,11 @@
           document.querySelectorAll(
             ".leadership-panel"
           );
+          
+          const summaryLinks =
+            document.querySelectorAll(
+              "[data-leadership-panel]"
+           );
 
         function activatePanel(
           panelId,
@@ -2374,6 +2458,61 @@
             30
           );
         }
+
+        /* =====================================================
+   HERO MANAGEMENT / BOARD LINKS
+===================================================== */
+
+summaryLinks.forEach(function (link) {
+
+  link.addEventListener("click", function (event) {
+
+    event.preventDefault();
+
+    const panelId =
+      link.dataset.leadershipPanel;
+
+
+    /* SWITCH TO THE CORRECT PANEL */
+
+    activatePanel(
+      panelId,
+      true
+    );
+
+
+    /* WAIT FOR PANEL TO BECOME VISIBLE,
+       THEN SCROLL TO THAT EXACT SECTION */
+
+    setTimeout(function () {
+
+      const target =
+        document.getElementById(panelId);
+
+      if (!target) {
+        return;
+      }
+
+
+      const navbarOffset = 150;
+
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        navbarOffset;
+
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+    }, 100);
+
+  });
+
+});
 
         tabButtons.forEach(
           function (button, index) {
