@@ -1,276 +1,2722 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../output.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Offshore Technology Conference 2025 | AOS Orwell
+  </title>
+
+  <meta
+    name="description"
+    content="Highlights from AOS Orwell at the Offshore Technology Conference 2025."
+  >
+
+
+  <!-- FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- MATERIAL SYMBOLS -->
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  >
+
+
+  <!-- BOOTSTRAP ICONS -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+
+    tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          colors: {
+
+            primary: "#009b3a",
+            secondary: "#004225"
+
+          }
+
+        }
+
+      }
+
+    };
+
+  </script>
+
+
+  <!-- SITE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="/output.css"
+  >
+
+
+
+  <style>
+
+    :root {
+
+      --otc-green: #009b3a;
+      --otc-green-dark: #006b2d;
+
+      --otc-deep: #031d10;
+      --otc-deep-2: #062b19;
+
+      --otc-ink: #111913;
+      --otc-copy: #68756d;
+
+      --otc-soft: #f2f7f4;
+      --otc-border: #dce7df;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: #ffffff;
+
+      color: var(--otc-ink);
+
+      font-family: "Poppins", sans-serif;
+
+    }
+
+
+    .otc-page {
+      overflow: hidden;
+    }
+
+
+    .otc-shell {
+
+      width: min(
+        1180px,
+        calc(100% - 40px)
+      );
+
+      margin-inline: auto;
+
+    }
+
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .otc-hero {
+
+      position: relative;
+
+      min-height: 560px;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      isolation: isolate;
+
+      background:
+        linear-gradient(
+          110deg,
+          #02190d 0%,
+          #052b18 56%,
+          #00823a 100%
+        );
+
+    }
+
+
+    .otc-hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      right: -150px;
+      top: -200px;
+
+      z-index: -1;
+
+      width: 550px;
+      height: 550px;
+
+      border:
+        88px solid rgba(255,255,255,0.055);
+
+      border-radius: 50%;
+
+    }
+
+
+    .otc-hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: 145px;
+      bottom: -250px;
+
+      z-index: -1;
+
+      width: 430px;
+      height: 430px;
+
+      border:
+        67px solid rgba(0,155,58,0.18);
+
+      border-radius: 50%;
+
+    }
+
+
+    .otc-hero-inner {
+
+      padding:
+        105px
+        0
+        92px;
+
+    }
+
+
+    .otc-back {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 42px;
+
+      color: #bed5c7;
+
+      font-size: 11px;
+
+      text-decoration: none;
+
+    }
+
+
+    .otc-back:hover {
+      color: #ffffff;
+    }
+
+
+    .otc-back
+    .material-symbols-outlined {
+
+      font-size: 17px;
+
+    }
+
+
+    .otc-eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+
+      color: #87e5a9;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .otc-eyebrow::before {
+
+      content: "";
+
+      width: 42px;
+      height: 2px;
+
+      background:
+        var(--otc-green);
+
+    }
+
+
+    .otc-hero h1 {
+
+      max-width: 980px;
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          42px,
+          5.5vw,
+          70px
+        );
+
+      line-height: 1.04;
+
+      letter-spacing: -0.045em;
+
+      font-weight: 700;
+
+    }
+
+
+    .otc-hero-copy {
+
+      max-width: 720px;
+
+      margin: 26px 0 0;
+
+      color: #d6e5dc;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+    }
+
+
+    .otc-meta {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 28px;
+
+      margin-top: 38px;
+
+      padding-top: 27px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.14);
+
+    }
+
+
+    .otc-meta-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: #dbe9e0;
+
+      font-size: 11px;
+
+    }
+
+
+    .otc-meta-item
+    .material-symbols-outlined {
+
+      color: #78df9b;
+
+      font-size: 20px;
+
+    }
+
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .otc-intro {
+
+      padding:
+        92px
+        0
+        82px;
+
+      background: #ffffff;
+
+    }
+
+
+    .otc-intro-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+      gap: 95px;
+
+      align-items: start;
+
+    }
+
+
+    .otc-label {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      margin-bottom: 17px;
+
+      color:
+        var(--otc-green);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .otc-label::after {
+
+      content: "";
+
+      width: 44px;
+      height: 2px;
+
+      background:
+        var(--otc-green);
+
+    }
+
+
+    .otc-intro h2 {
+
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          47px
+        );
+
+      line-height: 1.12;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 600;
+
+    }
+
+
+    .otc-intro-copy p {
+
+      margin: 0;
+
+      color:
+        var(--otc-copy);
+
+      font-size: 13px;
+
+      line-height: 1.95;
+
+    }
+
+
+    .otc-intro-copy p + p {
+
+      margin-top: 18px;
+
+    }
+
+
+
+    /* =====================================================
+       FOCUS STRIP
+    ====================================================== */
+
+    .otc-focus {
+
+      padding:
+        0
+        0
+        92px;
+
+      background: #ffffff;
+
+    }
+
+
+    .otc-focus-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      border:
+        1px solid
+        var(--otc-border);
+
+    }
+
+
+    .otc-focus-card {
+
+      min-height: 175px;
+
+      padding: 30px;
+
+      border-right:
+        1px solid
+        var(--otc-border);
+
+      background: #ffffff;
+
+    }
+
+
+    .otc-focus-card:last-child {
+
+      border-right: 0;
+
+    }
+
+
+    .otc-focus-icon {
+
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-bottom: 18px;
+
+      background:
+        var(--otc-soft);
+
+      color:
+        var(--otc-green);
+
+    }
+
+
+    .otc-focus-icon
+    .material-symbols-outlined {
+
+      font-size: 23px;
+
+    }
+
+
+    .otc-focus-card h3 {
+
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 16px;
+
+      line-height: 1.4;
+
+      font-weight: 600;
+
+    }
+
+
+    .otc-focus-card p {
+
+      margin: 9px 0 0;
+
+      color:
+        var(--otc-copy);
+
+      font-size: 10px;
+
+      line-height: 1.7;
+
+    }
+
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .otc-gallery {
+
+      padding:
+        92px
+        0
+        115px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f4f8f5 0%,
+          #eef5f1 100%
+        );
+
+    }
+
+
+    .otc-gallery-head {
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 50px;
+
+      margin-bottom: 44px;
+
+    }
+
+
+    .otc-gallery-head h2 {
+
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          29px,
+          3.5vw,
+          43px
+        );
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 600;
+
+    }
+
+
+    .otc-gallery-head p {
+
+      max-width: 430px;
+
+      margin: 0;
+
+      color:
+        var(--otc-copy);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+
+    /* =====================================================
+       GALLERY GRID
+    ====================================================== */
+
+    .otc-gallery-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          12,
+          minmax(0, 1fr)
+        );
+
+      grid-auto-rows: 105px;
+
+      gap: 14px;
+
+    }
+
+
+    .otc-photo {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 5px;
+
+      background: #dfe7e2;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 10px 30px
+        rgba(13,53,29,0.08);
+
+    }
+
+
+    .otc-photo img {
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.5s ease;
+
+    }
+
+
+    .otc-photo::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 45%,
+          rgba(2,27,14,0.66) 100%
+        );
+
+      opacity: 0;
+
+      transition:
+        opacity 0.3s ease;
+
+    }
+
+
+    .otc-photo:hover img {
+
+      transform:
+        scale(1.05);
+
+    }
+
+
+    .otc-photo:hover::after {
+
+      opacity: 1;
+
+    }
+
+
+    .otc-open {
+
+      position: absolute;
+
+      z-index: 3;
+
+      right: 16px;
+      bottom: 16px;
+
+      width: 39px;
+      height: 39px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.96);
+
+      color:
+        var(--otc-green);
+
+      opacity: 0;
+
+      transform:
+        translateY(8px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    }
+
+
+    .otc-photo:hover
+    .otc-open {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+    .otc-open
+    .material-symbols-outlined {
+
+      font-size: 18px;
+
+    }
+
+
+
+    /* PHOTO COMPOSITION */
+
+    .otc-photo-1 {
+
+      grid-column: span 7;
+      grid-row: span 5;
+
+    }
+
+
+    .otc-photo-2 {
+
+      grid-column: span 5;
+      grid-row: span 5;
+
+    }
+
+
+    .otc-photo-3 {
+
+      grid-column: span 4;
+      grid-row: span 4;
+
+    }
+
+
+    .otc-photo-4 {
+
+      grid-column: span 8;
+      grid-row: span 4;
+
+    }
+
+
+    .otc-photo-5 {
+
+      grid-column: span 6;
+      grid-row: span 5;
+
+    }
+
+
+    .otc-photo-6 {
+
+      grid-column: span 6;
+      grid-row: span 5;
+
+    }
+
+
+
+    /* =====================================================
+       LIGHTBOX
+    ====================================================== */
+
+    .otc-lightbox {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 99999;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 30px;
+
+      background:
+        rgba(0,0,0,0.93);
+
+    }
+
+
+    .otc-lightbox.is-open {
+
+      display: flex;
+
+    }
+
+
+    .otc-lightbox img {
+
+      display: block;
+
+      max-width:
+        min(
+          1180px,
+          92vw
+        );
+
+      max-height: 86vh;
+
+      object-fit: contain;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.48);
+
+    }
+
+
+    .otc-lightbox-close {
+
+      position: absolute;
+
+      top: 24px;
+      right: 28px;
+
+      width: 46px;
+      height: 46px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.12);
+
+      color: #ffffff;
+
+      cursor: pointer;
+
+    }
+
+
+    .otc-lightbox-close:hover {
+
+      background:
+        var(--otc-green);
+
+    }
+
+
+
+    /* =====================================================
+       SUMMARY
+    ====================================================== */
+
+    .otc-summary {
+
+      padding:
+        95px
+        0;
+
+      background: #ffffff;
+
+    }
+
+
+    .otc-summary-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      border:
+        1px solid
+        var(--otc-border);
+
+    }
+
+
+    .otc-summary-card {
+
+      min-height: 160px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      padding: 30px;
+
+      border-right:
+        1px solid
+        var(--otc-border);
+
+    }
+
+
+    .otc-summary-card:last-child {
+
+      border-right: 0;
+
+    }
+
+
+    .otc-summary-card strong {
+
+      color:
+        var(--otc-green);
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 28px;
+
+      line-height: 1;
+
+      font-weight: 700;
+
+    }
+
+
+    .otc-summary-card span {
+
+      margin-top: 10px;
+
+      color:
+        var(--otc-copy);
+
+      font-size: 10px;
+
+      line-height: 1.6;
+
+    }
+
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .otc-cta {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        85px
+        0;
+
+      background:
+        linear-gradient(
+          110deg,
+          #06321c,
+          #009b3a
+        );
+
+      color: #ffffff;
+
+    }
+
+
+    .otc-cta::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: -120px;
+      top: -180px;
+
+      width: 390px;
+      height: 390px;
+
+      border:
+        58px solid rgba(255,255,255,0.06);
+
+      border-radius: 50%;
+
+    }
+
+
+    .otc-cta-inner {
+
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 55px;
+
+    }
+
+
+    .otc-cta h2 {
+
+      max-width: 700px;
+
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          28px,
+          4vw,
+          43px
+        );
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 600;
+
+    }
+
+
+    .otc-cta p {
+
+      max-width: 660px;
+
+      margin: 15px 0 0;
+
+      color: #dcefe3;
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .otc-cta-button {
+
+      min-height: 48px;
+
+      flex-shrink: 0;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding:
+        0
+        20px;
+
+      border-radius: 5px;
+
+      background: #ffffff;
+
+      color: #006d2e;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease;
+
+    }
+
+
+    .otc-cta-button:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 1000px) {
+
+      .otc-intro-grid {
+
+        gap: 55px;
+
+      }
+
+
+      .otc-gallery-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        grid-auto-rows: 280px;
+
+      }
+
+
+      .otc-photo-1,
+      .otc-photo-2,
+      .otc-photo-3,
+      .otc-photo-4,
+      .otc-photo-5,
+      .otc-photo-6 {
+
+        grid-column: span 1;
+        grid-row: span 1;
+
+      }
+
+
+      .otc-photo-1,
+      .otc-photo-4 {
+
+        grid-column: 1 / -1;
+
+      }
+
+    }
+
+
+
+    @media (max-width: 760px) {
+
+      .otc-shell {
+
+        width:
+          calc(100% - 28px);
+
+      }
+
+
+      .otc-hero {
+
+        min-height: 480px;
+
+      }
+
+
+      .otc-hero-inner {
+
+        padding:
+          95px
+          0
+          75px;
+
+      }
+
+
+      .otc-intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+      }
+
+
+      .otc-focus-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .otc-focus-card {
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          var(--otc-border);
+
+      }
+
+
+      .otc-focus-card:last-child {
+
+        border-bottom: 0;
+
+      }
+
+
+      .otc-gallery-head {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+      }
+
+
+      .otc-summary-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .otc-summary-card {
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid
+          var(--otc-border);
+
+      }
+
+
+      .otc-summary-card:last-child {
+
+        border-bottom: 0;
+
+      }
+
+
+      .otc-cta-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+    }
+
+
+
+    @media (max-width: 560px) {
+
+      .otc-hero h1 {
+
+        font-size: 36px;
+
+      }
+
+
+      .otc-gallery-grid {
+
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 260px;
+
+      }
+
+
+      .otc-photo-1,
+      .otc-photo-4 {
+
+        grid-column: auto;
+
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
+
 <body>
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="../index.html"><img src="../images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="../about.html"  onmouseenter="showAboutLinks()" >About Us</a>
-            <a href="../services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="../hse.html">QHSE</a>
-            <a href="../media.html" class="text-primary " onmouseenter="showMediaLinks()">Media</a>
-            <a href="../careers.html">Careers</a>
-            <a href="../contact-us.html">Contact Us</a>
-        </div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
 
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../about.html" class="hover:text-secondary">Our Story</a>
-                <a href="../management.html" class="hover:text-secondary">Management</a>
-                <a href="../board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
+  <div id="navbar-placeholder"></div>
 
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="../images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="../gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="../news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="../blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="../process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="../new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
+  <div style="height: 120px;"></div>
 
-    <div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../about.html" class="hover:text-primary">Our Story</a>
-							<a href="../management.html" class="hover:text-primary">Management</a>
-							<a href="../board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="../process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="../new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- QHSE (no dropdown) -->
-				<a href="../hse.html" class="hover:text-primary transition py-2">QHSE</a>
+  <main class="otc-page">
 
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="../gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="../news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="../blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- Careers (no dropdown) -->
-				<a href="../careers.html" class="hover:text-primary transition py-2">Careers</a>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-				<!-- Contact Us (no dropdown) -->
-				<a href="../contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
+    <section class="otc-hero">
 
-    <section class="px-6 md:px-20 py-20 flex flex-col items-center gap-y-10">
-        <div class="w-full flex flex-col gap-y-2 items-center text-center">
-            <small class="text-[11px] sm:text-xs text-gray-600">Our Gallery</small>
-            <h1 class="text-lg xsm:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">Offshore Technology Conference (OTC) (2025)</h1>
-        </div>
+      <div class="otc-shell">
 
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-2">
-            <img src="../images/otc2.jpeg" alt="Career 1" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/otc3.jpg" alt="Career 2" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/otc4.jpg" alt="Career 3" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/otc5.jpg" alt="Career 4" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/otc6.jpg" alt="Career 5" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/otc7.jpg" alt="Career 3" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-        </div>
+        <div class="otc-hero-inner">
 
-    </section> 
 
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="../about.html">About Us</a>
-          <a href="../services.html">Services</a>
-          <a href="../hse.html">QHSE</a>
-          <a href="../media.html">Media</a>
-          <a href="../careers.html">Careers</a>
-          <a href="../contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          <a
+            href="/gallery.html"
+            class="otc-back"
+          >
+
+            <span class="material-symbols-outlined">
+              arrow_back
+            </span>
+
+            Back to Gallery
+
+          </a>
+
+
+
+          <div class="otc-eyebrow">
+
+            Event Gallery
+
+          </div>
+
+
+
+          <h1>
+
+            Offshore Technology Conference 2025
+
+          </h1>
+
+
+
+          <p class="otc-hero-copy">
+
+            Selected moments from AOS Orwell's
+            participation at the Offshore Technology
+            Conference 2025, bringing together
+            industry professionals, technology leaders
+            and energy-sector stakeholders.
+
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
+
+
+          <div class="otc-meta">
+
+
+            <div class="otc-meta-item">
+
+              <span class="material-symbols-outlined">
+                calendar_month
+              </span>
+
+              <span>
+                2025
+              </span>
+
+            </div>
+
+
+            <div class="otc-meta-item">
+
+              <span class="material-symbols-outlined">
+                public
+              </span>
+
+              <span>
+                Offshore Technology Conference
+              </span>
+
+            </div>
+
+
+            <div class="otc-meta-item">
+
+              <span class="material-symbols-outlined">
+                photo_library
+              </span>
+
+              <span>
+                Event Gallery
+              </span>
+
+            </div>
+
+
           </div>
+
+
         </div>
-        </div>
-        
-    
-      </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
-        </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="../about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="../management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="../media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="../policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="../whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="../downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
+
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="otc-intro">
+
+      <div class="otc-shell otc-intro-grid">
+
+
+        <div>
+
+          <div class="otc-label">
+
+            OTC 2025
+
           </div>
-        </form>
+
+
+          <h2>
+
+            Connecting with the global offshore energy community.
+
+          </h2>
+
+        </div>
+
+
+
+        <div class="otc-intro-copy">
+
+
+          <p>
+
+            AOS Orwell participated at the Offshore
+            Technology Conference 2025, engaging
+            with industry professionals and exploring
+            conversations around technology, operations
+            and the evolving energy sector.
+
+          </p>
+
+
+          <p>
+
+            This gallery captures selected moments
+            from the event, including interactions,
+            networking and industry engagement.
+
+          </p>
+
+
+        </div>
+
+
       </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EVENT FOCUS
+    ====================================================== -->
+
+    <section class="otc-focus">
+
+      <div class="otc-shell">
+
+
+        <div class="otc-focus-grid">
+
+
+          <article class="otc-focus-card">
+
+
+            <div class="otc-focus-icon">
+
+              <span class="material-symbols-outlined">
+                public
+              </span>
+
+            </div>
+
+
+            <h3>
+              Global Energy Engagement
+            </h3>
+
+
+            <p>
+
+              Connecting with professionals and
+              organisations across the offshore
+              energy industry.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="otc-focus-card">
+
+
+            <div class="otc-focus-icon">
+
+              <span class="material-symbols-outlined">
+                lightbulb
+              </span>
+
+            </div>
+
+
+            <h3>
+              Technology &amp; Innovation
+            </h3>
+
+
+            <p>
+
+              Exploring industry conversations around
+              technology, operations and future
+              energy solutions.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="otc-focus-card">
+
+
+            <div class="otc-focus-icon">
+
+              <span class="material-symbols-outlined">
+                handshake
+              </span>
+
+            </div>
+
+
+            <h3>
+              Industry Connections
+            </h3>
+
+
+            <p>
+
+              Building relationships and strengthening
+              collaboration across the sector.
+
+            </p>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <section class="otc-gallery">
+
+      <div class="otc-shell">
+
+
+        <div class="otc-gallery-head">
+
+
+          <div>
+
+            <div class="otc-label">
+
+              Event Moments
+
+            </div>
+
+
+            <h2>
+
+              OTC 2025 Highlights
+
+            </h2>
+
+          </div>
+
+
+
+          <p>
+
+            Browse selected photographs from
+            AOS Orwell's participation at the
+            Offshore Technology Conference 2025.
+
+          </p>
+
+
+        </div>
+
+
+
+        <div class="otc-gallery-grid">
+
+
+          <!-- IMAGE 01 -->
+
+          <div
+            class="otc-photo otc-photo-1"
+            data-image="/images/otc2.jpeg"
+          >
+
+            <img
+              src="/images/otc2.jpeg"
+              alt="AOS Orwell at Offshore Technology Conference 2025"
+            >
+
+            <span class="otc-open">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 02 -->
+
+          <div
+            class="otc-photo otc-photo-2"
+            data-image="/images/otc3.jpg"
+          >
+
+            <img
+              src="/images/otc3.jpg"
+              alt="OTC 2025 event highlight"
+            >
+
+            <span class="otc-open">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 03 -->
+
+          <div
+            class="otc-photo otc-photo-3"
+            data-image="/images/otc4.jpg"
+          >
+
+            <img
+              src="/images/otc4.jpg"
+              alt="AOS Orwell OTC 2025 engagement"
+            >
+
+            <span class="otc-open">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 04 -->
+
+          <div
+            class="otc-photo otc-photo-4"
+            data-image="/images/otc5.jpg"
+          >
+
+            <img
+              src="/images/otc5.jpg"
+              alt="Offshore Technology Conference 2025"
+            >
+
+            <span class="otc-open">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 05 -->
+
+          <div
+            class="otc-photo otc-photo-5"
+            data-image="/images/otc6.jpg"
+          >
+
+            <img
+              src="/images/otc6.jpg"
+              alt="AOS Orwell at OTC"
+            >
+
+            <span class="otc-open">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 06 -->
+
+          <div
+            class="otc-photo otc-photo-6"
+            data-image="/images/otc7.jpg"
+          >
+
+            <img
+              src="/images/otc7.jpg"
+              alt="AOS Orwell OTC 2025 gallery"
+            >
+
+            <span class="otc-open">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SUMMARY
+    ====================================================== -->
+
+    <section class="otc-summary">
+
+      <div class="otc-shell">
+
+
+        <div class="otc-summary-grid">
+
+
+          <div class="otc-summary-card">
+
+            <strong>
+              2025
+            </strong>
+
+            <span>
+              Offshore Technology Conference
+            </span>
+
+          </div>
+
+
+
+          <div class="otc-summary-card">
+
+            <strong>
+              06
+            </strong>
+
+            <span>
+              Featured gallery photographs
+            </span>
+
+          </div>
+
+
+
+          <div class="otc-summary-card">
+
+            <strong>
+              OTC
+            </strong>
+
+            <span>
+              Global offshore energy engagement
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="otc-cta">
+
+      <div class="otc-shell otc-cta-inner">
+
+
+        <div>
+
+          <h2>
+
+            Explore more moments from AOS Orwell.
+
+          </h2>
+
+
+          <p>
+
+            Discover more photographs, videos and
+            highlights from our global industry events,
+            technical sessions and corporate activities.
+
+          </p>
+
+        </div>
+
+
+
+        <a
+          href="/gallery.html"
+          class="otc-cta-button"
+        >
+
+          Explore Gallery
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       LIGHTBOX
+  ====================================================== -->
+
+  <div
+    id="otc-lightbox"
+    class="otc-lightbox"
+    aria-hidden="true"
+  >
+
+
+    <button
+      id="otc-lightbox-close"
+      class="otc-lightbox-close"
+      type="button"
+      aria-label="Close image"
+    >
+
+      <span class="material-symbols-outlined">
+        close
+      </span>
+
+    </button>
+
+
+    <img
+      id="otc-lightbox-image"
+      src=""
+      alt="Expanded OTC gallery image"
+    >
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       LATEST FOOTER
+  ====================================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+
+      <a
+        href="/index.html"
+        aria-label="Go to AOS Orwell homepage"
+      >
+
+        <img
+          src="/images/jogo.png"
+          alt="AOS Orwell"
+          class="h-15 sm:h-20 w-auto object-cover cursor-pointer"
+        >
+
+      </a>
+
+
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="/about.html">
+          About Us
+        </a>
+
+        <a href="/services.html">
+          Services
+        </a>
+
+        <a href="/hse.html">
+          QHSE
+        </a>
+
+        <a href="/media.html">
+          Media
+        </a>
+
+        <a href="/careers.html">
+          Careers
+        </a>
+
+        <a href="/contact-us.html">
+          Contact Us
+        </a>
+
+      </div>
+
+
     </div>
 
 
-    
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
-    <script src="../index.js"></script>
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+
+      <!-- COMPANY -->
+
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+
+            Providing integrated oilfield solutions across
+            Well Construction, Process Management,
+            IPM &amp; Turnkey, and Operations &amp; Maintenance
+            to support the energy industry's evolving needs.
+
+          </p>
+
+
+
+          <div
+            class="mt-5 flex flex-col gap-y-2"
+          >
+
+
+            <h3
+              class="text-base font-medium"
+            >
+              Stay Connected
+            </h3>
+
+
+
+            <div
+              class="flex gap-x-3"
+            >
+
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+
+                <i class="bi bi-youtube text-white text-lg"></i>
+
+              </a>
+
+
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+
+                <i class="bi bi-instagram text-white text-lg"></i>
+
+              </a>
+
+
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+
+              </a>
+
+
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+              >
+
+                <i class="bi bi-linkedin text-white text-lg"></i>
+
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- LOCATIONS -->
+
+      <div
+        class="w-full sm:w-[35%] flex flex-col gap-y-4"
+      >
+
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Locations
+        </h4>
+
+
+
+        <div class="flex flex-col gap-y-3">
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-sm"
+            >
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- LINKS -->
+
+      <div
+        class="w-full lg:w-1/4 flex flex-col gap-y-4"
+      >
+
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Links
+        </h4>
+
+
+
+        <div
+          class="flex flex-col gap-y-2"
+        >
+
+          <a
+            href="/about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+
+          <a
+            href="/management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+
+          <a
+            href="/media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+
+          <a
+            href="/policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+
+          <a
+            href="/whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+
+          <a
+            href="/downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+
+
+        <h4
+          class="font-medium text-[13px] sm:text-base"
+        >
+          Email Us
+        </h4>
+
+
+
+        <div
+          class="flex flex-col gap-y-1"
+        >
+
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- CONTACT -->
+
+      <div
+        class="w-full lg:w-2/5"
+      >
+
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+
+
+        <form
+          class="flex flex-col gap-y-5 mt-2"
+        >
+
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400 resize-y"
+          ></textarea>
+
+
+
+          <div class="w-full flex justify-end">
+
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+
+          </div>
+
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- COPYRIGHT -->
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2026 AOS Orwell. All rights reserved.
+  </div>
+
+
+
+  <!-- =====================================================
+       LIGHTBOX SCRIPT
+  ====================================================== -->
+
+  <script>
+
+    const otcLightbox =
+      document.getElementById(
+        "otc-lightbox"
+      );
+
+
+    const otcLightboxImage =
+      document.getElementById(
+        "otc-lightbox-image"
+      );
+
+
+    const otcLightboxClose =
+      document.getElementById(
+        "otc-lightbox-close"
+      );
+
+
+
+    document
+      .querySelectorAll(
+        ".otc-photo"
+      )
+      .forEach(photo => {
+
+
+        photo.addEventListener(
+          "click",
+          function () {
+
+
+            otcLightboxImage.src =
+              this.dataset.image;
+
+
+            otcLightbox.classList.add(
+              "is-open"
+            );
+
+
+            otcLightbox.setAttribute(
+              "aria-hidden",
+              "false"
+            );
+
+
+            document.body.style.overflow =
+              "hidden";
+
+
+          }
+        );
+
+
+      });
+
+
+
+    function closeOtcLightbox() {
+
+
+      otcLightbox.classList.remove(
+        "is-open"
+      );
+
+
+      otcLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      otcLightboxImage.src = "";
+
+
+      document.body.style.overflow =
+        "";
+
+
+    }
+
+
+
+    otcLightboxClose.addEventListener(
+      "click",
+      closeOtcLightbox
+    );
+
+
+
+    otcLightbox.addEventListener(
+      "click",
+      function (event) {
+
+
+        if (
+          event.target === otcLightbox
+        ) {
+
+          closeOtcLightbox();
+
+        }
+
+
+      }
+    );
+
+
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+
+        if (
+          event.key === "Escape" &&
+          otcLightbox.classList.contains(
+            "is-open"
+          )
+        ) {
+
+          closeOtcLightbox();
+
+        }
+
+
+      }
+    );
+
+  </script>
+
+
+
+  <!-- =====================================================
+       SHARED NAVBAR LOADER
+  ====================================================== -->
+
+  <script>
+
+    fetch("/navbar.html")
+
+      .then(response => {
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Navbar file not found"
+          );
+
+        }
+
+        return response.text();
+
+      })
+
+      .then(data => {
+
+
+        document
+          .getElementById(
+            "navbar-placeholder"
+          )
+          .innerHTML = data;
+
+
+        const script =
+          document.createElement(
+            "script"
+          );
+
+
+        script.src =
+          "/navbar.js";
+
+
+        document.body.appendChild(
+          script
+        );
+
+
+      })
+
+      .catch(error => {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
+
 </body>
+
 </html>

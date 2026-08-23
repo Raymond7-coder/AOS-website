@@ -1,277 +1,2255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../output.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Endress+Hauser Measurement Training in Lagos | AOS Orwell Gallery
+  </title>
+
+  <meta
+    name="description"
+    content="Highlights from the AOS Orwell and Endress+Hauser Measurement Training in Lagos."
+  >
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- MATERIAL SYMBOLS -->
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  >
+
+
+  <!-- BOOTSTRAP ICONS -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#009b3a",
+            secondary: "#004225"
+          }
+        }
+      }
+    };
+  </script>
+
+
+  <!-- SITE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       ROOT
+    ====================================================== */
+
+    :root {
+      --eh-green: #009b3a;
+      --eh-green-dark: #006d2d;
+      --eh-deep: #031d10;
+
+      --eh-ink: #111a14;
+      --eh-copy: #68756d;
+
+      --eh-soft: #f3f7f4;
+      --eh-border: #dce7df;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      background: #ffffff;
+
+      color: var(--eh-ink);
+
+      font-family: "Poppins", sans-serif;
+    }
+
+
+    .eh-page {
+      overflow: hidden;
+    }
+
+
+    .eh-shell {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .eh-hero {
+      position: relative;
+
+      min-height: 560px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+      isolation: isolate;
+
+      background:
+        linear-gradient(
+          110deg,
+          #02190d 0%,
+          #052a18 54%,
+          #007936 100%
+        );
+    }
+
+
+    .eh-hero::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+
+      right: -150px;
+      top: -200px;
+
+      width: 560px;
+      height: 560px;
+
+      border:
+        90px solid rgba(255,255,255,0.055);
+
+      border-radius: 50%;
+    }
+
+
+    .eh-hero::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+
+      right: 140px;
+      bottom: -260px;
+
+      width: 440px;
+      height: 440px;
+
+      border:
+        70px solid rgba(0,155,58,0.18);
+
+      border-radius: 50%;
+    }
+
+
+    .eh-hero-inner {
+      padding: 110px 0 95px;
+    }
+
+
+    .eh-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 44px;
+
+      color: #bdd4c6;
+
+      font-size: 11px;
+
+      text-decoration: none;
+    }
+
+
+    .eh-breadcrumb:hover {
+      color: #ffffff;
+    }
+
+
+    .eh-breadcrumb
+    .material-symbols-outlined {
+      font-size: 17px;
+    }
+
+
+    .eh-eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+
+      color: #86e5a8;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+
+    .eh-eyebrow::before {
+      content: "";
+
+      width: 42px;
+      height: 2px;
+
+      background:
+        var(--eh-green);
+    }
+
+
+    .eh-hero h1 {
+      max-width: 980px;
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          40px,
+          5.2vw,
+          68px
+        );
+
+      line-height: 1.05;
+
+      letter-spacing: -0.043em;
+
+      font-weight: 700;
+    }
+
+
+    .eh-hero-copy {
+      max-width: 710px;
+
+      margin: 26px 0 0;
+
+      color: #d3e2d8;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+    }
+
+
+    .eh-meta {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 28px;
+
+      margin-top: 38px;
+      padding-top: 27px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.14);
+    }
+
+
+    .eh-meta-item {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      color: #d9e8de;
+
+      font-size: 11px;
+    }
+
+
+    .eh-meta-item
+    .material-symbols-outlined {
+      color: #75df99;
+      font-size: 20px;
+    }
+
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .eh-intro {
+      padding: 92px 0 72px;
+
+      background: #ffffff;
+    }
+
+
+    .eh-intro-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.85fr
+        1.15fr;
+
+      gap: 95px;
+
+      align-items: start;
+    }
+
+
+    .eh-label {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 11px;
+
+      margin-bottom: 17px;
+
+      color: var(--eh-green);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+
+    .eh-label::after {
+      content: "";
+
+      width: 44px;
+      height: 2px;
+
+      background:
+        var(--eh-green);
+    }
+
+
+    .eh-intro h2 {
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          47px
+        );
+
+      line-height: 1.12;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 600;
+    }
+
+
+    .eh-intro-copy p {
+      margin: 0;
+
+      color: var(--eh-copy);
+
+      font-size: 13px;
+
+      line-height: 1.95;
+    }
+
+
+    .eh-intro-copy p + p {
+      margin-top: 18px;
+    }
+
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .eh-gallery {
+      padding: 88px 0 110px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f4f8f5 0%,
+          #eef5f1 100%
+        );
+    }
+
+
+    .eh-gallery-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 50px;
+
+      margin-bottom: 42px;
+    }
+
+
+    .eh-gallery-heading h2 {
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          29px,
+          3.5vw,
+          43px
+        );
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 600;
+    }
+
+
+    .eh-gallery-heading p {
+      max-width: 440px;
+
+      margin: 0;
+
+      color: var(--eh-copy);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+    }
+
+
+    .eh-gallery-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(12, minmax(0, 1fr));
+
+      grid-auto-rows: 100px;
+
+      gap: 14px;
+    }
+
+
+    .eh-photo {
+      position: relative;
+
+      overflow: hidden;
+
+      background: #dfe8e2;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 10px 30px
+        rgba(14, 53, 29, 0.08);
+    }
+
+
+    .eh-photo img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.5s ease;
+    }
+
+
+    .eh-photo::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 50%,
+          rgba(2, 26, 13, 0.55) 100%
+        );
+
+      opacity: 0;
+
+      transition:
+        opacity 0.3s ease;
+    }
+
+
+    .eh-photo:hover img {
+      transform:
+        scale(1.045);
+    }
+
+
+    .eh-photo:hover::after {
+      opacity: 1;
+    }
+
+
+    .eh-photo-icon {
+      position: absolute;
+
+      z-index: 3;
+
+      right: 17px;
+      bottom: 17px;
+
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.95);
+
+      color:
+        var(--eh-green);
+
+      opacity: 0;
+
+      transform:
+        translateY(8px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .eh-photo:hover
+    .eh-photo-icon {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    .eh-photo-icon
+    .material-symbols-outlined {
+      font-size: 19px;
+    }
+
+
+
+    /* GALLERY COMPOSITION */
+
+    .eh-photo-1 {
+      grid-column: span 7;
+      grid-row: span 4;
+    }
+
+
+    .eh-photo-2 {
+      grid-column: span 5;
+      grid-row: span 4;
+    }
+
+
+    .eh-photo-3 {
+      grid-column: span 4;
+      grid-row: span 3;
+    }
+
+
+    .eh-photo-4 {
+      grid-column: span 4;
+      grid-row: span 3;
+    }
+
+
+    .eh-photo-5 {
+      grid-column: span 4;
+      grid-row: span 3;
+    }
+
+
+    .eh-photo-6 {
+      grid-column: span 5;
+      grid-row: span 4;
+    }
+
+
+    .eh-photo-7 {
+      grid-column: span 7;
+      grid-row: span 4;
+    }
+
+
+
+    /* =====================================================
+       LIGHTBOX
+    ====================================================== */
+
+    .eh-lightbox {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 99999;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      background:
+        rgba(0,0,0,0.92);
+    }
+
+
+    .eh-lightbox.is-open {
+      display: flex;
+    }
+
+
+    .eh-lightbox img {
+      display: block;
+
+      max-width:
+        min(1150px, 92vw);
+
+      max-height: 86vh;
+
+      object-fit: contain;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.45);
+    }
+
+
+    .eh-lightbox-close {
+      position: absolute;
+
+      top: 25px;
+      right: 28px;
+
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.12);
+
+      color: #ffffff;
+
+      cursor: pointer;
+    }
+
+
+    .eh-lightbox-close:hover {
+      background:
+        var(--eh-green);
+    }
+
+
+
+    /* =====================================================
+       EVENT STRIP
+    ====================================================== */
+
+    .eh-event-strip {
+      padding: 95px 0;
+
+      background: #ffffff;
+    }
+
+
+    .eh-event-strip-box {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--eh-border);
+
+      background: #ffffff;
+    }
+
+
+    .eh-stat {
+      min-height: 160px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 30px;
+
+      border-right:
+        1px solid var(--eh-border);
+    }
+
+
+    .eh-stat:last-child {
+      border-right: 0;
+    }
+
+
+    .eh-stat strong {
+      color:
+        var(--eh-green);
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 29px;
+
+      line-height: 1;
+
+      font-weight: 700;
+    }
+
+
+    .eh-stat span {
+      margin-top: 10px;
+
+      color:
+        var(--eh-copy);
+
+      font-size: 10px;
+
+      line-height: 1.6;
+    }
+
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .eh-cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 84px 0;
+
+      background:
+        linear-gradient(
+          110deg,
+          #06321c,
+          #009b3a
+        );
+
+      color: #ffffff;
+    }
+
+
+    .eh-cta::after {
+      content: "";
+
+      position: absolute;
+
+      right: -120px;
+      top: -180px;
+
+      width: 390px;
+      height: 390px;
+
+      border:
+        58px solid rgba(255,255,255,0.06);
+
+      border-radius: 50%;
+    }
+
+
+    .eh-cta-inner {
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 55px;
+    }
+
+
+    .eh-cta h2 {
+      max-width: 690px;
+
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          28px,
+          4vw,
+          43px
+        );
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 600;
+    }
+
+
+    .eh-cta p {
+      max-width: 670px;
+
+      margin: 15px 0 0;
+
+      color: #dcefe3;
+
+      font-size: 11px;
+
+      line-height: 1.8;
+    }
+
+
+    .eh-cta-button {
+      min-height: 48px;
+
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 0 20px;
+
+      border-radius: 5px;
+
+      background: #ffffff;
+
+      color: #006d2e;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease;
+    }
+
+
+    .eh-cta-button:hover {
+      transform:
+        translateY(-2px);
+    }
+
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 1000px) {
+
+      .eh-intro-grid {
+        gap: 55px;
+      }
+
+
+      .eh-gallery-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        grid-auto-rows: 280px;
+      }
+
+
+      .eh-photo-1,
+      .eh-photo-2,
+      .eh-photo-3,
+      .eh-photo-4,
+      .eh-photo-5,
+      .eh-photo-6,
+      .eh-photo-7 {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+
+      .eh-photo-1,
+      .eh-photo-7 {
+        grid-column: 1 / -1;
+      }
+
+    }
+
+
+    @media (max-width: 760px) {
+
+      .eh-shell {
+        width:
+          calc(100% - 28px);
+      }
+
+
+      .eh-hero {
+        min-height: 480px;
+      }
+
+
+      .eh-hero-inner {
+        padding:
+          95px
+          0
+          75px;
+      }
+
+
+      .eh-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+
+      .eh-gallery-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+
+      .eh-event-strip-box {
+        grid-template-columns: 1fr;
+      }
+
+
+      .eh-stat {
+        border-right: 0;
+
+        border-bottom:
+          1px solid var(--eh-border);
+      }
+
+
+      .eh-stat:last-child {
+        border-bottom: 0;
+      }
+
+
+      .eh-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+
+    @media (max-width: 560px) {
+
+      .eh-hero h1 {
+        font-size: 36px;
+      }
+
+
+      .eh-gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 260px;
+      }
+
+
+      .eh-photo-1,
+      .eh-photo-7 {
+        grid-column: auto;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
+
 <body>
-    <nav class="bg-white sticky z-10 top-0 flex justify-between items-center md:px-20 px-4 py-3 md:py-4 border-b border-b-gray-300" onmouseleave="hideAboutLinks(); hideServiceLinks(); hideMediaLinks()">
-        <a href="../index.html"><img src="../images/logo.png" alt="" class="h-8 xsm:h-10 w-auto"></a> 
 
-        <div id="nav-link" class="hidden lg:flex font-semibold text-[13px] text-black gap-x-14 items-center relative">
-          <span
-					id="nav-highlight"
-					class="pointer-events-none absolute -bottom-1 h-1 rounded-md"
-					style="
-						background: white;
-						transition: left 0.25s ease, width 0.25s ease, background 0.25s ease;
-					"
-				></span>
-            <a href="../about.html"  onmouseenter="showAboutLinks()" >About Us</a>
-            <a href="../services.html"  onmouseenter="showServiceLinks()">Services</a>
-            <a href="../hse.html">QHSE</a>
-            <a href="../media.html" class="text-primary" onmouseenter="showMediaLinks()">Media</a>
-            <a href="../careers.html">Careers</a>
-            <a href="../contact-us.html">Contact Us</a>
-        </div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-black focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+  <!-- =====================================================
+       LATEST SHARED NAVBAR
+  ====================================================== -->
 
-        <div id="aboutLinks"  onmouseleave="hideAboutLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/12 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/group12.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../about.html" class="hover:text-secondary">Our Story</a>
-                <a href="../management.html" class="hover:text-secondary">Management</a>
-                <a href="../board-of-directors.html" class="hover:text-secondary">Board of Directors</a>
-            </div>
-        </div>
+  <div id="navbar-placeholder"></div>
 
-        <div id="mediaLinks"  onmouseleave="hideMediaLinks()" class="cursor-pointer fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/3 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-[55%]">
-            <img src="../images/medianav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../corporate-social-responsibility.html" class="hover:text-secondary">Corporate Social Responsibility</a>
-                <a href="../gallery.html" class="hover:text-secondary">Our Gallery</a>
-                <a href="../news.html" class="hover:text-secondary">News/Press Releases</a>
-                <a href="../blog.html" class="hover:text-secondary">Blog</a>
-            </div>
-        </div>
-    
-        <div id="serviceLinks"  onmouseleave="hideServiceLinks()" class="fixed z-50 top-12 sm:top-13 md:top-18 mt-[1px] border-b border-b-gray-200 border-r border-r-gray-200 gap-x-8 p-10 left-1/6 bg-white hidden items-center max-lg:hidden w-2/3  xl:w-1/2">
-            <img src="../images/serviceNav.png" alt="" class=" w-60 lg:w-60 xl:w-80 h-auto">
-            <div class="text-primary flex flex-col gap-y-4 text-base font-semibold ">
-                <a href="../well-construction.html" class="hover:text-secondary">Well Construction</a>
-                <a href="../process-management.html" class="hover:text-secondary">Process Management</a>
-                <a href="../new-services.html" class="hover:text-secondary">New Services / O&M</a>
-            </div>
-        </div>
-    </nav>
+  <div style="height: 120px;"></div>
 
-    <<div id="mobile-menu" class="fixed z-50 top-14 mt-[0.5px] border-b border-b-gray-400 lg:hidden hidden bg-white bg-opacity-90 w-full py-4 px-4">
-			<div class="flex flex-col space-y-4 text-black text-sm">
-				<!-- About Us with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('about-submenu', this)">
-						<span>About Us</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="about-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../about.html" class="hover:text-primary">Our Story</a>
-							<a href="../management.html" class="hover:text-primary">Management</a>
-							<a href="../board-of-directors.html" class="hover:text-primary">Board of Directors</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- Services with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('services-submenu', this)">
-						<span>Services</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="services-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="../well-construction.html" class="hover:text-primary">Well Construction</a>
-							<a href="../process-management.html" class="hover:text-primary">Process Management</a>
-							<a href="../new-services.html" class="hover:text-primary">New Services / O&M</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- QHSE (no dropdown) -->
-				<a href="../hse.html" class="hover:text-primary transition py-2">QHSE</a>
+  <main class="eh-page">
 
-				<!-- Media with dropdown -->
-				<div class="menu-item">
-					<div class="flex justify-between items-center cursor-pointer hover:text-primary transition" onclick="toggleSubmenu('media-submenu', this)">
-						<span>Media</span>
-						<svg class="w-4 h-4 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
-					<div id="media-submenu" class="submenu pl-6">
-						<div class="flex flex-col space-y-3 py-2">
-							<a href="corporate-social-responsibility.html" class="hover:text-primary">Corporate Social Responsibility</a>
-							<a href="../gallery.html" class="hover:text-primary">Our Gallery</a>
-							<a href="../news.html" class="hover:text-primary">News/Press Releases</a>
-							<a href="../blog.html" class="hover:text-primary">Blog</a>
-						</div>
-					</div>
-				</div>
 
-				<!-- Careers (no dropdown) -->
-				<a href="../careers.html" class="hover:text-primary transition py-2">Careers</a>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-				<!-- Contact Us (no dropdown) -->
-				<a href="../contact-us.html" class="hover:text-primary transition py-2">Contact Us</a>
-			</div>
-		</div>
+    <section class="eh-hero">
 
-    <section class="px-6 md:px-20 py-20 flex flex-col items-center gap-y-10">
-        <div class="w-full flex flex-col gap-y-2 items-center text-center">
-            <small class="text-[11px] sm:text-xs text-gray-600">Our Gallery</small>
-            <h1 class="text-lg xsm:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">AOS Orwell Host Endress+Hauser Measurement Training in Lagos</h1>
-        </div>
+      <div class="eh-shell">
 
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-2">
-            <img src="../images/hauser2.jpg" alt="Career 1" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/hauser3.jpg" alt="Career 2" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/hauser4.jpg" alt="Career 3" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/hauser5.jpg" alt="Career 4" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/hauser6.jpg" alt="Career 5" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/hauser7.jpg" alt="Career 3" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-            <img src="../images/hauser8.jpg" alt="Career 4" class="mb-2 break-inside-avoid  transition hover:-translate-1 cursor-pointer rounded-sm">
-        </div>
+        <div class="eh-hero-inner">
 
-    </section> 
 
-    <footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="../images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="../about.html">About Us</a>
-          <a href="../services.html">Services</a>
-          <a href="../hse.html">QHSE</a>
-          <a href="../media.html">Media</a>
-          <a href="../careers.html">Careers</a>
-          <a href="../contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
-        <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+          <a
+            href="../gallery.html"
+            class="eh-breadcrumb"
+          >
+
+            <span class="material-symbols-outlined">
+              arrow_back
+            </span>
+
+            Back to Gallery
+
+          </a>
+
+
+          <div class="eh-eyebrow">
+            Training Gallery
+          </div>
+
+
+          <h1>
+            AOS Orwell Hosts Endress+Hauser Measurement Training in Lagos
+          </h1>
+
+
+          <p class="eh-hero-copy">
+
+            Highlights from the measurement training
+            hosted by AOS Orwell in Lagos with
+            Endress+Hauser.
+
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
+
+
+          <div class="eh-meta">
+
+
+            <div class="eh-meta-item">
+
+              <span class="material-symbols-outlined">
+                school
+              </span>
+
+              <span>
+                Technical Training
+              </span>
+
+            </div>
+
+
+            <div class="eh-meta-item">
+
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+
+              <span>
+                Lagos
+              </span>
+
+            </div>
+
+
+            <div class="eh-meta-item">
+
+              <span class="material-symbols-outlined">
+                photo_library
+              </span>
+
+              <span>
+                Event Gallery
+              </span>
+
+            </div>
+
+
           </div>
+
+
         </div>
-        </div>
-        
-    
-      </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
-        <div class="flex flex-col gap-y-3">
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
-          </div>
-          <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
-          </div>
-        </div>
-  
-        
-      </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
-        <div class="flex flex-col gap-y-2">
-          <a href="../about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="../management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="../media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="../policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="../whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="../downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
-        </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
-        <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
-        </div>
-    
-        
+
       </div>
 
-    
-      <!-- Contact -->
-      <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
-        <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
-          <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="eh-intro">
+
+      <div class="eh-shell eh-intro-grid">
+
+
+        <div>
+
+          <div class="eh-label">
+            Measurement Training
           </div>
-        </form>
+
+
+          <h2>
+            Building knowledge through technical collaboration.
+          </h2>
+
+        </div>
+
+
+
+        <div class="eh-intro-copy">
+
+
+          <p>
+
+            This gallery captures selected moments from
+            the Endress+Hauser Measurement Training
+            hosted by AOS Orwell in Lagos.
+
+          </p>
+
+
+          <p>
+
+            The session brought participants together
+            around technical learning, knowledge sharing
+            and practical engagement in measurement
+            solutions.
+
+          </p>
+
+
+        </div>
+
+
       </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PHOTO GALLERY
+    ====================================================== -->
+
+    <section class="eh-gallery">
+
+      <div class="eh-shell">
+
+
+        <div class="eh-gallery-heading">
+
+
+          <div>
+
+            <div class="eh-label">
+              Training Moments
+            </div>
+
+
+            <h2>
+              Endress+Hauser Training Highlights
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            Browse selected photographs from the
+            measurement training session in Lagos.
+
+          </p>
+
+
+        </div>
+
+
+
+        <div class="eh-gallery-grid">
+
+
+          <!-- IMAGE 01 -->
+
+          <div
+            class="eh-photo eh-photo-1"
+            data-image="../images/hauser2.jpg"
+          >
+
+            <img
+              src="../images/hauser2.jpg"
+              alt="Endress+Hauser measurement training in Lagos"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 02 -->
+
+          <div
+            class="eh-photo eh-photo-2"
+            data-image="../images/hauser3.jpg"
+          >
+
+            <img
+              src="../images/hauser3.jpg"
+              alt="AOS Orwell measurement training session"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 03 -->
+
+          <div
+            class="eh-photo eh-photo-3"
+            data-image="../images/hauser4.jpg"
+          >
+
+            <img
+              src="../images/hauser4.jpg"
+              alt="Technical measurement training"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 04 -->
+
+          <div
+            class="eh-photo eh-photo-4"
+            data-image="../images/hauser5.jpg"
+          >
+
+            <img
+              src="../images/hauser5.jpg"
+              alt="Endress+Hauser training participants"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 05 -->
+
+          <div
+            class="eh-photo eh-photo-5"
+            data-image="../images/hauser6.jpg"
+          >
+
+            <img
+              src="../images/hauser6.jpg"
+              alt="Measurement training in Lagos"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 06 -->
+
+          <div
+            class="eh-photo eh-photo-6"
+            data-image="../images/hauser7.jpg"
+          >
+
+            <img
+              src="../images/hauser7.jpg"
+              alt="AOS Orwell technical training"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+
+          <!-- IMAGE 07 -->
+
+          <div
+            class="eh-photo eh-photo-7"
+            data-image="../images/hauser8.jpg"
+          >
+
+            <img
+              src="../images/hauser8.jpg"
+              alt="Endress+Hauser measurement training gallery"
+            >
+
+
+            <span class="eh-photo-icon">
+
+              <span class="material-symbols-outlined">
+                open_in_full
+              </span>
+
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EVENT SUMMARY
+    ====================================================== -->
+
+    <section class="eh-event-strip">
+
+      <div class="eh-shell">
+
+
+        <div class="eh-event-strip-box">
+
+
+          <div class="eh-stat">
+
+            <strong>
+              Lagos
+            </strong>
+
+            <span>
+              Training location
+            </span>
+
+          </div>
+
+
+          <div class="eh-stat">
+
+            <strong>
+              07
+            </strong>
+
+            <span>
+              Featured gallery images
+            </span>
+
+          </div>
+
+
+          <div class="eh-stat">
+
+            <strong>
+              E+H
+            </strong>
+
+            <span>
+              Measurement training collaboration
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="eh-cta">
+
+      <div class="eh-shell eh-cta-inner">
+
+
+        <div>
+
+          <h2>
+            Explore more AOS Orwell events and activities.
+          </h2>
+
+
+          <p>
+
+            Discover more photographs, videos and
+            event highlights from our technical,
+            industry and corporate engagements.
+
+          </p>
+
+        </div>
+
+
+        <a
+          href="../gallery.html"
+          class="eh-cta-button"
+        >
+
+          Explore Gallery
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       LIGHTBOX
+  ====================================================== -->
+
+  <div
+    id="eh-lightbox"
+    class="eh-lightbox"
+    aria-hidden="true"
+  >
+
+
+    <button
+      id="eh-lightbox-close"
+      class="eh-lightbox-close"
+      type="button"
+      aria-label="Close image"
+    >
+
+      <span class="material-symbols-outlined">
+        close
+      </span>
+
+    </button>
+
+
+    <img
+      id="eh-lightbox-image"
+      src=""
+      alt="Expanded training gallery image"
+    >
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       LATEST FOOTER
+  ====================================================== -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+
+    <!-- LOGO + NAV -->
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+
+      <a
+        href="../index.html"
+        aria-label="Go to AOS Orwell homepage"
+      >
+
+        <img
+          src="../images/jogo.png"
+          alt="AOS Orwell"
+          class="h-15 sm:h-20 w-auto object-cover cursor-pointer"
+        >
+
+      </a>
+
+
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="../about.html">
+          About Us
+        </a>
+
+        <a href="../services.html">
+          Services
+        </a>
+
+        <a href="../hse.html">
+          QHSE
+        </a>
+
+        <a href="../media.html">
+          Media
+        </a>
+
+        <a href="../careers.html">
+          Careers
+        </a>
+
+        <a href="../contact-us.html">
+          Contact Us
+        </a>
+
+      </div>
+
+
     </div>
 
 
-    
-    
-    </footer>
-    <div class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
-    <script src="../index.js"></script>
+
+    <!-- FOOTER BODY -->
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+
+      <!-- COMPANY -->
+
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+
+            Providing integrated oilfield solutions across
+            Well Construction, Process Management,
+            IPM &amp; Turnkey, and Operations &amp; Maintenance
+            to support the energy industry's evolving needs.
+
+          </p>
+
+
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+
+
+            <div class="flex gap-x-3">
+
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+
+                <i class="bi bi-youtube text-white text-lg"></i>
+
+              </a>
+
+
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+
+                <i class="bi bi-instagram text-white text-lg"></i>
+
+              </a>
+
+
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+
+              </a>
+
+
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+
+                <i class="bi bi-linkedin text-white text-lg"></i>
+
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- LOCATIONS -->
+
+      <div
+        class="w-full sm:w-[35%] flex flex-col gap-y-4"
+      >
+
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Locations
+        </h4>
+
+
+
+        <div class="flex flex-col gap-y-3">
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-[13px] sm:text-sm"
+            >
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p
+              class="font-medium text-sm"
+            >
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- LINKS -->
+
+      <div
+        class="w-full lg:w-1/4 flex flex-col gap-y-4"
+      >
+
+
+        <h4
+          class="font-medium text-sm sm:text-base"
+        >
+          Links
+        </h4>
+
+
+
+        <div class="flex flex-col gap-y-2">
+
+
+          <a
+            href="../about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+
+          <a
+            href="../management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+
+          <a
+            href="../media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+
+          <a
+            href="../policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+
+          <a
+            href="../whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+
+          <a
+            href="../downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+
+        </div>
+
+
+
+        <h4
+          class="font-medium text-[13px] sm:text-base"
+        >
+          Email Us
+        </h4>
+
+
+
+        <div class="flex flex-col gap-y-1">
+
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- CONTACT -->
+
+      <div
+        class="w-full lg:w-2/5"
+      >
+
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+
+
+        <form
+          class="flex flex-col gap-y-5 mt-2"
+        >
+
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400"
+          >
+
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm text-white bg-transparent border-b border-b-gray-300 focus:outline-none focus:border-b-primary placeholder:text-gray-400 resize-y"
+          ></textarea>
+
+
+
+          <div class="w-full flex justify-end">
+
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+
+          </div>
+
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- COPYRIGHT -->
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+
+    &copy; 2026 AOS Orwell.
+    All rights reserved.
+
+  </div>
+
+
+
+  <!-- =====================================================
+       LIGHTBOX
+  ====================================================== -->
+
+  <script>
+
+    const ehLightbox =
+      document.getElementById(
+        "eh-lightbox"
+      );
+
+
+    const ehLightboxImage =
+      document.getElementById(
+        "eh-lightbox-image"
+      );
+
+
+    const ehLightboxClose =
+      document.getElementById(
+        "eh-lightbox-close"
+      );
+
+
+    document
+      .querySelectorAll(
+        ".eh-photo"
+      )
+      .forEach(photo => {
+
+
+        photo.addEventListener(
+          "click",
+          function () {
+
+
+            ehLightboxImage.src =
+              this.dataset.image;
+
+
+            ehLightbox.classList.add(
+              "is-open"
+            );
+
+
+            ehLightbox.setAttribute(
+              "aria-hidden",
+              "false"
+            );
+
+
+            document.body.style.overflow =
+              "hidden";
+
+
+          }
+        );
+
+
+      });
+
+
+
+    function closeEhLightbox() {
+
+
+      ehLightbox.classList.remove(
+        "is-open"
+      );
+
+
+      ehLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      ehLightboxImage.src = "";
+
+
+      document.body.style.overflow =
+        "";
+
+
+    }
+
+
+
+    ehLightboxClose.addEventListener(
+      "click",
+      closeEhLightbox
+    );
+
+
+
+    ehLightbox.addEventListener(
+      "click",
+      function (event) {
+
+
+        if (
+          event.target === ehLightbox
+        ) {
+
+          closeEhLightbox();
+
+        }
+
+
+      }
+    );
+
+
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+
+        if (
+          event.key === "Escape" &&
+          ehLightbox.classList.contains(
+            "is-open"
+          )
+        ) {
+
+          closeEhLightbox();
+
+        }
+
+
+      }
+    );
+
+  </script>
+
+
+
+  <!-- =====================================================
+       SHARED NAVBAR LOADER
+  ====================================================== -->
+
+  <script>
+
+    fetch("../navbar.html")
+
+      .then(response => {
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Navbar file not found"
+          );
+
+        }
+
+        return response.text();
+
+      })
+
+      .then(data => {
+
+
+        document
+          .getElementById(
+            "navbar-placeholder"
+          )
+          .innerHTML = data;
+
+
+        const script =
+          document.createElement(
+            "script"
+          );
+
+
+        script.src =
+          "../navbar.js";
+
+
+        document.body.appendChild(
+          script
+        );
+
+
+      })
+
+      .catch(error => {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
+
 </body>
+
 </html>

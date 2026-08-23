@@ -1,230 +1,1782 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search | AOS Orwell</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Search | AOS Orwell
+  </title>
+
+
+  <!-- GOOGLE FONTS -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-  />
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-<link rel="stylesheet" href="./output.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- MATERIAL SYMBOLS -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  >
+
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#009b3a",
+            secondary: "#004225"
+          }
+        }
+      }
+    };
+  </script>
+
+
+  <!-- SITE CSS -->
+  <link
+    rel="stylesheet"
+    href="./output.css"
+  >
+
 
   <style>
+
+    /* =====================================================
+       ROOT
+    ===================================================== */
+
+    :root {
+      --search-green: #009b3a;
+      --search-green-dark: #006f2d;
+      --search-deep: #031d10;
+      --search-ink: #111b14;
+      --search-copy: #66736a;
+      --search-soft: #f4f8f5;
+      --search-border: #dce7df;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+
+      font-family: "Poppins", sans-serif;
+
+      color: var(--search-ink);
+
       background: #ffffff;
-      color: #111827;
     }
+
+
+    .search-page {
+      overflow: hidden;
+    }
+
+
+    .search-shell {
+      width: min(1180px, calc(100% - 40px));
+
+      margin-inline: auto;
+    }
+
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .search-hero {
-      background: #019B39;
-      color: white;
-      padding: 20px 8%;
+      position: relative;
+
+      min-height: 390px;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      isolation: isolate;
+
+      background:
+        linear-gradient(
+          110deg,
+          #02190d 0%,
+          #04311b 56%,
+          #009b3a 100%
+        );
     }
+
+
+    .search-hero::before {
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      right: -150px;
+      top: -210px;
+
+      width: 520px;
+      height: 520px;
+
+      border:
+        85px solid rgba(255,255,255,0.06);
+
+      border-radius: 50%;
+    }
+
+
+    .search-hero::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      left: 46%;
+      bottom: -230px;
+
+      width: 420px;
+      height: 420px;
+
+      border:
+        65px solid rgba(255,255,255,0.035);
+
+      border-radius: 50%;
+    }
+
+
+    .search-hero-content {
+      padding: 105px 0 80px;
+
+      color: #ffffff;
+    }
+
+
+    .search-eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 17px;
+
+      color: #8ce5ac;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.17em;
+
+      text-transform: uppercase;
+    }
+
+
+    .search-eyebrow::before {
+      content: "";
+
+      width: 40px;
+      height: 2px;
+
+      background: #39cf71;
+    }
+
 
     .search-hero h1 {
-      font-size: 48px;
-      font-weight: 500;
       margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          44px,
+          6vw,
+          70px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+
+      font-weight: 700;
     }
 
-    .search-area {
-      padding: 50px 8%;
-      max-width: 1100px;
+
+    .search-hero p {
+      max-width: 650px;
+
+      margin: 22px 0 0;
+
+      color: #d2e1d7;
+
+      font-size: 13px;
+
+      line-height: 1.85;
     }
+
+
+
+    /* =====================================================
+       SEARCH AREA
+    ===================================================== */
+
+    .search-content {
+      padding: 80px 0 110px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f7faf8 0%,
+          #ffffff 100%
+        );
+    }
+
+
+    .search-panel {
+      margin-top: -130px;
+
+      position: relative;
+
+      z-index: 10;
+
+      padding: 38px;
+
+      background: #ffffff;
+
+      border:
+        1px solid var(--search-border);
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 20px 55px
+        rgba(19, 55, 32, 0.10);
+    }
+
+
+    .search-panel-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 35px;
+
+      margin-bottom: 30px;
+    }
+
+
+    .search-panel-header h2 {
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          25px,
+          3vw,
+          34px
+        );
+
+      line-height: 1.15;
+
+      letter-spacing: -0.03em;
+
+      font-weight: 600;
+    }
+
+
+    .search-panel-header p {
+      max-width: 430px;
+
+      margin: 0;
+
+      color: var(--search-copy);
+
+      font-size: 11px;
+
+      line-height: 1.75;
+    }
+
+
+
+    /* =====================================================
+       SEARCH BOX
+    ===================================================== */
 
     .search-box {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 30px;
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+      gap: 12px;
     }
+
+
+    .search-input-wrap {
+      position: relative;
+    }
+
+
+    .search-input-wrap
+    .material-symbols-outlined {
+      position: absolute;
+
+      left: 18px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #7d8981;
+
+      font-size: 22px;
+    }
+
 
     .search-box input {
-      flex: 1;
-      padding: 16px;
-      font-size: 16px;
-      border: 1px solid #9ca3af;
+      width: 100%;
+
+      height: 56px;
+
+      padding:
+        0
+        20px
+        0
+        52px;
+
+      border:
+        1px solid #cfdcd4;
+
+      border-radius: 5px;
+
+      background: #ffffff;
+
+      color: #172018;
+
+      font-family: "Poppins", sans-serif;
+
+      font-size: 13px;
+
       outline: none;
+
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
+
+
+    .search-box input::placeholder {
+      color: #9aa49e;
+    }
+
+
+    .search-box input:focus {
+      border-color:
+        var(--search-green);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(0, 155, 58, 0.08);
+    }
+
 
     .search-box button {
-      padding: 16px 36px;
-      background: #019B39;
-      color: white;
-      border: none;
-      font-size: 16px;
+      min-width: 135px;
+
+      height: 56px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 0 25px;
+
+      border: 0;
+
+      border-radius: 5px;
+
+      background:
+        var(--search-green);
+
+      color: #ffffff;
+
+      font-family: "Poppins", sans-serif;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
       cursor: pointer;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
     }
+
+
+    .search-box button:hover {
+      background:
+        var(--search-green-dark);
+
+      transform: translateY(-1px);
+    }
+
+
+
+    /* =====================================================
+       SEARCH BODY
+    ===================================================== */
+
+    .search-results-area {
+      padding-top: 55px;
+    }
+
 
     .result-count {
-      margin-bottom: 30px;
-      font-size: 15px;
-      color: #374151;
+      min-height: 24px;
+
+      margin-bottom: 20px;
+
+      color: #6d7971;
+
+      font-size: 11px;
+
+      font-weight: 500;
     }
+
+
+    .search-results-list {
+      display: flex;
+
+      flex-direction: column;
+    }
+
+
+
+    /* RESULT CARD */
 
     .result-item {
-      border-bottom: 1px solid #e5e7eb;
-      padding: 24px 0;
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        58px
+        minmax(0, 1fr)
+        36px;
+
+      gap: 22px;
+
+      align-items: start;
+
+      padding: 30px 0;
+
+      border-bottom:
+        1px solid var(--search-border);
+
+      transition:
+        padding-left 0.25s ease;
     }
+
+
+    .result-item:first-child {
+      border-top:
+        1px solid var(--search-border);
+    }
+
+
+    .result-item:hover {
+      padding-left: 8px;
+    }
+
+
+    .result-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        #edf7f0;
+
+      color:
+        var(--search-green);
+    }
+
+
+    .result-icon
+    .material-symbols-outlined {
+      font-size: 22px;
+    }
+
 
     .result-type {
-      font-size: 14px;
-      font-weight: 600;
-      color: #6b7280;
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
       margin-bottom: 8px;
+
+      color: var(--search-green);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
     }
+
 
     .result-title {
-      font-size: 26px;
-      margin-bottom: 12px;
+      margin: 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size:
+        clamp(
+          20px,
+          2.3vw,
+          27px
+        );
+
+      line-height: 1.25;
+
+      letter-spacing: -0.025em;
+
+      font-weight: 600;
     }
 
+
     .result-title a {
-      color: #111827;
+      color: #172018;
+
+      text-decoration: none;
+
+      transition:
+        color 0.25s ease;
+    }
+
+
+    .result-title a:hover {
+      color:
+        var(--search-green);
+    }
+
+
+    .result-excerpt {
+      max-width: 900px;
+
+      margin: 11px 0 0;
+
+      color: var(--search-copy);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+
+    .result-arrow {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color:
+        var(--search-green);
+
+      padding-top: 10px;
+    }
+
+
+    .result-arrow
+    .material-symbols-outlined {
+      font-size: 20px;
+
+      transition:
+        transform 0.25s ease;
+    }
+
+
+    .result-item:hover
+    .result-arrow
+    .material-symbols-outlined {
+      transform:
+        translateX(4px);
+    }
+
+
+
+    /* =====================================================
+       EMPTY STATE
+    ===================================================== */
+
+    .empty-state {
+      min-height: 260px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 45px 20px;
+
+      border:
+        1px dashed #cad9cf;
+
+      border-radius: 8px;
+
+      background:
+        rgba(247, 250, 248, 0.75);
+    }
+
+
+    .empty-state-icon {
+      width: 70px;
+      height: 70px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-bottom: 20px;
+
+      border-radius: 50%;
+
+      background:
+        #eaf6ee;
+
+      color:
+        var(--search-green);
+    }
+
+
+    .empty-state-icon
+    .material-symbols-outlined {
+      font-size: 31px;
+    }
+
+
+    .empty-state h3 {
+      margin: 0 0 8px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 21px;
+
+      font-weight: 600;
+    }
+
+
+    .empty-state p {
+      max-width: 480px;
+
+      margin: 0;
+
+      color: var(--search-copy);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+    }
+
+
+
+    /* =====================================================
+       HELP STRIP
+    ===================================================== */
+
+    .search-help {
+      margin-top: 65px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      padding: 30px 32px;
+
+      border-radius: 7px;
+
+      background:
+        linear-gradient(
+          100deg,
+          #eef7f1,
+          #f8fbf9
+        );
+
+      border:
+        1px solid #dce8df;
+    }
+
+
+    .search-help h3 {
+      margin: 0 0 5px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 17px;
+
+      font-weight: 600;
+    }
+
+
+    .search-help p {
+      margin: 0;
+
+      color: var(--search-copy);
+
+      font-size: 10px;
+
+      line-height: 1.7;
+    }
+
+
+    .search-help a {
+      flex-shrink: 0;
+
+      min-height: 42px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 0 17px;
+
+      border-radius: 4px;
+
+      background:
+        var(--search-green);
+
+      color: #ffffff;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
       text-decoration: none;
     }
 
-    .result-title a:hover {
-      color: #019B39;
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 800px) {
+
+      .search-shell {
+        width:
+          calc(100% - 28px);
+      }
+
+
+      .search-hero {
+        min-height: 350px;
+      }
+
+
+      .search-panel {
+        margin-top: -90px;
+
+        padding: 28px;
+      }
+
+
+      .search-panel-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 14px;
+      }
+
+
+      .result-item {
+        grid-template-columns:
+          48px
+          minmax(0, 1fr);
+
+        gap: 16px;
+      }
+
+
+      .result-arrow {
+        display: none;
+      }
+
     }
 
-    .result-excerpt {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #374151;
+
+
+    @media (max-width: 560px) {
+
+      .search-hero h1 {
+        font-size: 42px;
+      }
+
+
+      .search-box {
+        grid-template-columns: 1fr;
+      }
+
+
+      .search-box button {
+        width: 100%;
+      }
+
+
+      .search-panel {
+        padding: 22px;
+      }
+
+
+      .result-item {
+        grid-template-columns: 1fr;
+
+        padding: 25px 0;
+      }
+
+
+      .result-icon {
+        width: 42px;
+        height: 42px;
+      }
+
+
+      .search-help {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
     }
 
-    .empty-state {
-      font-size: 18px;
-      color: #6b7280;
-      margin-top: 20px;
-    }
-    .search-navbar-spacer {
-      height: 82px;
-    }
-    @media (min-width: 1024px) {
-     .search-navbar-spacer {
-      height: 120px;
-    }
-   }
   </style>
+
 </head>
 
+
+
 <body>
+
+
+  <!-- =====================================================
+       SHARED NAVBAR
+  ====================================================== -->
+
   <div id="navbar-placeholder"></div>
-  <div class="search-navbar-spacer"></div>
 
-  <section class="search-hero">
-   <h1>Search</h1>
-  </section>
+  <div style="height:120px;"></div>
 
-  <section class="search-hero"></section>
 
-  <main class="search-area">
-    <div class="search-box">
-      <input id="search-input" type="text" placeholder="Search AOS Orwell..." />
-      <button id="search-button">Search</button>
-    </div>
 
-    <div id="result-count" class="result-count"></div>
-    <div id="search-results"></div>
+  <main class="search-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="search-hero">
+
+      <div class="search-shell">
+
+        <div class="search-hero-content">
+
+
+          <span class="search-eyebrow">
+            Site Search
+          </span>
+
+
+          <h1>
+            Find what you need.
+          </h1>
+
+
+          <p>
+
+            Search across AOS Orwell services, solutions,
+            company information, news, insights and resources.
+
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SEARCH CONTENT
+    ====================================================== -->
+
+    <section class="search-content">
+
+      <div class="search-shell">
+
+
+        <!-- SEARCH PANEL -->
+
+        <div class="search-panel">
+
+
+          <div class="search-panel-header">
+
+
+            <div>
+
+              <h2>
+                Search AOS Orwell
+              </h2>
+
+            </div>
+
+
+            <p>
+
+              Enter a keyword, service, solution or topic
+              to find relevant pages across the website.
+
+            </p>
+
+
+          </div>
+
+
+
+          <div class="search-box">
+
+
+            <div class="search-input-wrap">
+
+              <span class="material-symbols-outlined">
+                search
+              </span>
+
+
+              <input
+                id="search-input"
+                type="search"
+                placeholder="Search services, solutions, news..."
+                autocomplete="off"
+                aria-label="Search AOS Orwell"
+              >
+
+            </div>
+
+
+            <button
+              id="search-button"
+              type="button"
+            >
+
+              Search
+
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- RESULTS -->
+
+        <div class="search-results-area">
+
+
+          <div
+            id="result-count"
+            class="result-count"
+          ></div>
+
+
+          <div
+            id="search-results"
+            class="search-results-list"
+          ></div>
+
+
+        </div>
+
+
+
+        <!-- HELP -->
+
+        <div class="search-help">
+
+
+          <div>
+
+            <h3>
+              Still can’t find what you’re looking for?
+            </h3>
+
+
+            <p>
+
+              Our team can help direct you to the
+              right service, solution or information.
+
+            </p>
+
+          </div>
+
+
+          <a href="./contact-us.html">
+
+            Contact Us
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
   </main>
 
+  	<footer
+			class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+		>
+			<!-- Logo + Nav -->
+			<div
+				class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+        
+			> 
+        <a
+          href="./index.html"
+           aria-label="Go to AOS Orwell homepage"
+        >
+				<img
+					src="./images/jogo.png"
+					alt=""
+					class="h-15 sm:h-20 w-auto object-cover"
+				/>
+				<div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
+					<a href="about.html">About Us</a>
+					<a href="services.html">Services</a>
+					<a href="hse.html">QHSE</a>
+					<a href="media.html">Media</a>
+					<a href="careers.html">Careers</a>
+					<a href="contact-us.html">Contact Us</a>
+				</div>
+			</div>
+
+			<!-- Footer Content -->
+			<div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
+				<!-- Company Info -->
+				<div
+					class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+				>
+					<div class="w-full">
+						<p class="text-xs sm:text-[13px] font-medium leading-loose">
+							Providing integrated oilfield solutions across Well Construction, Process Automation & Control and Operations & Maintenance, to support the energy industry's evolving needs.
+						</p>
+						<!-- Social -->
+						<div class="mt-5 flex flex-col gap-y-2">
+							<h3 class="text-base font-medium">Stay Connected</h3>
+							<div class="flex gap-x-3">
+								<!-- Facebook -->
+								<a
+									href="https://www.youtube.com/@aosorwellonline"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-youtube text-white text-lg"></i>
+								</a>
+								<!-- Instagram -->
+								<a
+									href="https://www.instagram.com/aosorwell/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-instagram text-white text-lg"></i>
+								</a>
+								<!-- X (Twitter) -->
+								<a
+									href="https://x.com/AOSOrwell"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-twitter-x text-white text-lg"></i>
+								</a>
+								<!-- LinkedIn -->
+								<a
+									href="https://ng.linkedin.com/company/aosorwell"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+								>
+									<i class="bi bi-linkedin text-white text-lg"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Locations + Email -->
+				<div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+					<h4 class="font-medium text-sm sm:text-base">Locations</h4>
+					<div class="flex flex-col gap-y-3">
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-[13px] sm:text-sm">Head Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt,
+								Rivers State
+
+                <p class="font-medium text-[13px] sm:text-sm">Portharcourt Office 2</p>
+                <p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+                 >Plot 272, Trans Amadi Industrial Layout Port Harcourt,
+								Rivers State.
+						</div>
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p
+							>
+						</div>
+						<div class="flex flex-col gap-y-1.5">
+							<p class="font-medium text-sm">Ghana Office</p>
+							<p class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+								>Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful
+								Takoradi, Ghana</p
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Links + Social -->
+				<div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+					<h4 class="font-medium text-sm sm:text-base">Links</h4>
+					<div class="flex flex-col gap-y-2">
+						<a
+							href="about.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Our Story</a
+						>
+						<a
+							href="management.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Management</a
+						>
+						<a
+							href="media.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Media</a
+						>
+						<a
+							href="policies-index.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Policy Statement</a
+						>
+						<a
+							href="whistle-blower.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Whistle Blower</a
+						>
+						<a
+							href="downloadables.html"
+							class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+							>Downloadables</a
+						>
+					</div>
+					<h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+					<div class="flex flex-col gap-y-1">
+						<p class="text-xs sm:text-[13px] text-gray-200"
+							>marketing@aosorwell.com</p
+						>
+						<p class="text-xs sm:text-[13px] text-gray-200"
+							>sales@aosorwell.com</p
+						>
+					</div>
+				</div>
+
+				<!-- Contact -->
+				<div class="w-full lg:w-2/5">
+					<h4 class="font-medium text-base">Contact Us</h4>
+					<form class="flex flex-col gap-y-5 mt-2">
+						<input
+							type="text"
+							placeholder="Company Name"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<input
+							type="text"
+							placeholder="Your Name"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<input
+							type="email"
+							placeholder="Email Address"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+						/>
+						<textarea
+							placeholder="Your Message"
+							class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+						></textarea>
+						<div class="w-full flex justify-end">
+							<button
+								type="submit"
+								class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+								>SEND</button
+							>
+						</div>
+					</form>
+				</div>
+			</div>
+		</footer>
+		<div
+			class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+			>&copy; 2025 AOS Orwell. All rights reserved.
+		</div>
+
+
+
+<!-- =====================================================
+     COPYRIGHT
+====================================================== -->
+
+<div
+  class="bg-black border-t border-gray-800 px-4 md:px-20 py-6"
+>
+
+  <div
+    class="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] sm:text-xs text-gray-400"
+  >
+
+
+    <p>
+      &copy; 2026 AOS Orwell. All rights reserved.
+    </p>
+
+
+    <div
+      class="flex items-center gap-x-4"
+    >
+
+      <a
+        href="./privacy-policy.html"
+        class="hover:text-white transition"
+      >
+        Privacy Policy
+      </a>
+
+
+      <span class="text-gray-700">
+        |
+      </span>
+
+
+      <a
+        href="./terms.html"
+        class="hover:text-white transition"
+      >
+        Terms of Use
+      </a>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+  <!-- =====================================================
+       SEARCH SCRIPT
+  ====================================================== -->
+
   <script>
-    const searchInput = document.getElementById("search-input");
-    const searchButton = document.getElementById("search-button");
-    const resultCount = document.getElementById("result-count");
-    const resultsContainer = document.getElementById("search-results");
 
-    const params = new URLSearchParams(window.location.search);
-    const queryFromUrl = params.get("q") || "";
+    const searchInput =
+      document.getElementById(
+        "search-input"
+      );
 
-    searchInput.value = queryFromUrl;
 
-    async function runSearch(query) {
-      if (!query.trim()) {
-        resultCount.textContent = "";
-        resultsContainer.innerHTML = `<p class="empty-state">Type something to search the website.</p>`;
-        return;
-      }
+    const searchButton =
+      document.getElementById(
+        "search-button"
+      );
 
-      resultCount.textContent = "Searching...";
-      resultsContainer.innerHTML = "";
 
-      try {
-        const pagefind = await import("/pagefind/pagefind.js");
-        const search = await pagefind.search(query);
+    const resultCount =
+      document.getElementById(
+        "result-count"
+      );
 
-        const results = await Promise.all(
-          search.results.map(result => result.data())
-        );
 
-        resultCount.textContent = `Results 1-${results.length} for "${query}"`;
+    const resultsContainer =
+      document.getElementById(
+        "search-results"
+      );
 
-        if (results.length === 0) {
-          resultsContainer.innerHTML = `<p class="empty-state">No results found for "${query}".</p>`;
-          return;
-        }
 
-        resultsContainer.innerHTML = results.map(result => `
-          <article class="result-item">
-            <div class="result-type">Page</div>
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
 
-            <h2 class="result-title">
-              <a href="${result.url}">${result.meta.title || result.title || "Untitled page"}</a>
-            </h2>
 
-            <p class="result-excerpt">
-              ${result.excerpt || ""}
-            </p>
-          </article>
-        `).join("");
+    const queryFromUrl =
+      params.get("q") || "";
 
-      } catch (error) {
-        resultCount.textContent = "";
-        resultsContainer.innerHTML = `
-          <p class="empty-state">
-            Search is being prepared. Please use the navigation menu or contact us if you need help finding something.
+
+    searchInput.value =
+      queryFromUrl;
+
+
+
+    /* ==================================================
+       EMPTY STATE
+    ================================================== */
+
+    function showEmptyState(
+      title,
+      message,
+      icon = "search"
+    ) {
+
+      resultsContainer.innerHTML = `
+
+        <div class="empty-state">
+
+          <div class="empty-state-icon">
+
+            <span class="material-symbols-outlined">
+              ${icon}
+            </span>
+
+          </div>
+
+          <h3>
+            ${title}
+          </h3>
+
+          <p>
+            ${message}
           </p>
-        `;
-      }
+
+        </div>
+
+      `;
+
     }
 
-    searchButton.addEventListener("click", function () {
-      const query = searchInput.value.trim();
 
-      if (!query) return;
 
-      window.history.pushState({}, "", `search.html?q=${encodeURIComponent(query)}`);
-      runSearch(query);
-    });
+    /* ==================================================
+       SEARCH
+    ================================================== */
 
-    searchInput.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        searchButton.click();
+    async function runSearch(query) {
+
+
+      const cleanQuery =
+        query.trim();
+
+
+      if (!cleanQuery) {
+
+        resultCount.textContent = "";
+
+
+        showEmptyState(
+          "Start your search",
+          "Enter a service, solution, topic or keyword above to search the AOS Orwell website.",
+          "search"
+        );
+
+
+        return;
+
       }
-    });
 
-    runSearch(queryFromUrl);
+
+      resultCount.textContent =
+        "Searching...";
+
+
+      resultsContainer.innerHTML = "";
+
+
+      try {
+
+
+        const pagefind =
+          await import(
+            "/pagefind/pagefind.js"
+          );
+
+
+        const search =
+          await pagefind.search(
+            cleanQuery
+          );
+
+
+        const results =
+          await Promise.all(
+
+            search.results.map(
+              result => result.data()
+            )
+
+          );
+
+
+        if (
+          results.length === 0
+        ) {
+
+
+          resultCount.textContent =
+            `0 results for "${cleanQuery}"`;
+
+
+          showEmptyState(
+            "No results found",
+            `We couldn't find anything matching "${cleanQuery}". Try a different keyword or browse the navigation menu.`,
+            "search_off"
+          );
+
+
+          return;
+
+        }
+
+
+        resultCount.textContent =
+          `${results.length} result${results.length === 1 ? "" : "s"} for "${cleanQuery}"`;
+
+
+        resultsContainer.innerHTML =
+          results
+            .map(
+              result => `
+
+                <article class="result-item">
+
+
+                  <div class="result-icon">
+
+                    <span class="material-symbols-outlined">
+                      description
+                    </span>
+
+                  </div>
+
+
+
+                  <div>
+
+
+                    <div class="result-type">
+                      Page
+                    </div>
+
+
+                    <h2 class="result-title">
+
+                      <a
+                        href="${result.url}"
+                      >
+
+                        ${
+                          result.meta.title ||
+                          result.title ||
+                          "Untitled page"
+                        }
+
+                      </a>
+
+                    </h2>
+
+
+                    <div class="result-excerpt">
+
+                      ${
+                        result.excerpt ||
+                        "Explore this page on the AOS Orwell website."
+                      }
+
+                    </div>
+
+
+                  </div>
+
+
+
+                  <a
+                    href="${result.url}"
+                    class="result-arrow"
+                    aria-label="Open result"
+                  >
+
+                    <span class="material-symbols-outlined">
+                      arrow_forward
+                    </span>
+
+                  </a>
+
+
+                </article>
+
+              `
+            )
+            .join("");
+
+
+      } catch (error) {
+
+
+        console.error(
+          "Search error:",
+          error
+        );
+
+
+        resultCount.textContent = "";
+
+
+        showEmptyState(
+          "Search is being prepared",
+          "The website search index is currently unavailable. Please use the navigation menu or contact us for assistance.",
+          "manage_search"
+        );
+
+
+      }
+
+    }
+
+
+
+    /* ==================================================
+       BUTTON
+    ================================================== */
+
+    searchButton.addEventListener(
+      "click",
+      function () {
+
+
+        const query =
+          searchInput.value.trim();
+
+
+        if (!query) {
+
+          runSearch("");
+
+          return;
+
+        }
+
+
+        window.history.pushState(
+          {},
+          "",
+          `search.html?q=${encodeURIComponent(query)}`
+        );
+
+
+        runSearch(query);
+
+
+      }
+    );
+
+
+
+    /* ==================================================
+       ENTER KEY
+    ================================================== */
+
+    searchInput.addEventListener(
+      "keydown",
+      function (event) {
+
+
+        if (
+          event.key === "Enter"
+        ) {
+
+          searchButton.click();
+
+        }
+
+
+      }
+    );
+
+
+
+    /* INITIAL SEARCH */
+
+    runSearch(
+      queryFromUrl
+    );
+
   </script>
 
-  <script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
 
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
-    });
-</script>
+
+  <!-- =====================================================
+       SHARED NAVBAR LOADER
+  ====================================================== -->
+
+  <script>
+
+    fetch("./navbar.html")
+
+      .then(response => {
+
+        if (!response.ok) {
+          throw new Error(
+            "Navbar file not found"
+          );
+        }
+
+        return response.text();
+
+      })
+
+      .then(data => {
+
+
+        document
+          .getElementById(
+            "navbar-placeholder"
+          )
+          .innerHTML = data;
+
+
+        const script =
+          document.createElement(
+            "script"
+          );
+
+
+        script.src =
+          "./navbar.js";
+
+
+        document.body.appendChild(
+          script
+        );
+
+
+      })
+
+      .catch(error => {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
+
 </body>
+
 </html>

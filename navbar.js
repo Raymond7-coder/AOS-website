@@ -309,7 +309,7 @@ window.submitTopSearch = function () {
 
   if (searchValue === "") return;
 
-  window.location.href = "./search.html?q=" + encodeURIComponent(searchValue);
+  window.location.href = "/search.html?q=" + encodeURIComponent(searchValue);
 };
 
 // MOBILE MENU

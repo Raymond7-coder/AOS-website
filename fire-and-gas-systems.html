@@ -147,7 +147,7 @@
 
   .fg-quick-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     background: #ffffff;
     border: 1px solid var(--fg-border);
     box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
@@ -421,6 +421,131 @@
   box-shadow:
     0 18px 45px rgba(0, 0, 0, 0.16);
 }
+  /* ==========================================
+     MULTI-IMAGE / GALLERY LAYOUTS
+  ========================================== */
+
+  .fg-visual-stack {
+    display: grid;
+    gap: 18px;
+  }
+
+  .fg-visual-stack--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fg-image-card {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Second flame detector image needs tighter framing */
+.fg-image-card--zoom {
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+.fg-image-card--zoom img {
+  box-shadow: none;
+  transform: scale(1.15);
+  transform-origin: center;
+}
+.fg-image-card img {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 280px;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #ffffff;
+
+  padding: 6px;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+  .fg-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .fg-gallery-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .fg-gallery-card {
+    background: #ffffff;
+    border: 1px solid var(--fg-border);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 170px;
+    padding: 14px;
+  }
+
+  .fg-gallery-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+
+  .fg-gallery-card--large {
+    grid-column: span 2;
+    min-height: 220px;
+  }
+
+  .fg-gallery-card--large img {
+    height: 190px;
+  }
+
+  @media (max-width: 1050px) {
+    .fg-gallery-grid--three {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 820px) {
+    .fg-visual-stack--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fg-gallery-grid,
+    .fg-gallery-grid--three {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .fg-visual-stack--two,
+    .fg-gallery-grid,
+    .fg-gallery-grid--three {
+      grid-template-columns: 1fr;
+    }
+
+    .fg-gallery-card--large {
+      grid-column: auto;
+    }
+
+    .fg-image-card img {
+      height: 240px;
+    }
+
+    .fg-gallery-card img {
+      height: 180px;
+    }
+  }
 
   /* =========================
      CAPABILITIES
@@ -784,6 +909,13 @@
 
       <a
         class="fg-quick-link"
+        href="#fgs-alarming-accessories"
+      >
+        FGS Alarming Accessories
+      </a>
+
+      <a
+        class="fg-quick-link"
         href="#fire-gas-systems"
       >
         Fire &amp; Gas Detection and Suppression Systems
@@ -881,39 +1013,29 @@
         </h2>
 
         <p>
-          Our flame-detection solutions provide rapid identification of
-          fires by detecting the ultraviolet, infrared or combined
-          radiation signatures produced by an open flame.
+          Our Flame detectors are certified solutions (such as SIL 2/FM/CSA/ATEX/IECEx) for hazardous industrial fire and safety environments for over four decades.   
         </p>
 
         <p>
-          Detector technology is selected according to the fuel type,
-          environmental conditions, required detection distance,
-          field of view and potential sources of false alarm. Solutions
-          can be supplied for both general industrial areas and
-          hazardous-area applications.
+          Our optical flame detectors combine sophisticated algorithms with detection technologies such as ultraviolet (UV), infrared (IR), UVIR, dual IR and multispectrum IR, to boost detection while minimizing false alarms. 
         </p>
 
         <ul class="fg-service-list">
 
           <li>
-            Ultraviolet flame detectors
+            Ultraviolet flame detectors, Single frequency & Multi-spectrum
           </li>
 
           <li>
-            Infrared and multi-spectrum infrared flame detectors
+            Single Frequency and Multi-spectrum infrared flame detectors 
           </li>
 
           <li>
-            Combined ultraviolet and infrared detection
+            Multi-spectrum infrared Hydrogen Flame Detectors 
           </li>
 
           <li>
-            Hazardous-area and weather-resistant detector options
-          </li>
-
-          <li>
-            Integration with fire and gas control panels
+            Available as Conventional (mA) and Addressable (EQP) models 
           </li>
 
         </ul>
@@ -926,17 +1048,32 @@
 
       </article>
 
-      <div class="fg-visual fg-image-frame">
+      <div class="fg-visual">
 
-        <img
-          src="./images/flamedetectorr.jpeg"
-          alt="Industrial flame detectors"
-        >
+        <div class="fg-visual-stack fg-visual-stack--two">
 
+          <div class="fg-image-card">
+
+           <img
+             src="./images/flamedetectorr.jpeg"
+             alt="Industrial flame detectors"
+            />
+
+          </div>
+
+
+          <div class="fg-image-card fg-image-card--zoom">
+
+           <img
+             src="./images/uvir.png"
+             alt="Industrial flame detectors"
+            />
+
+          </div>
+        </div>
       </div>
-
-    </div>
-  </section>
+</div>
+</section>
 
   <!-- GAS DETECTORS -->
   <section
@@ -948,7 +1085,7 @@
       <article class="fg-copy">
 
         <div class="fg-label">
-          02 / Hazardous gas monitoring
+          Hazardous gas monitoring
         </div>
 
         <h2>
@@ -956,17 +1093,11 @@
         </h2>
 
         <p>
-          Our fixed gas-detection solutions continuously monitor
-          industrial environments for combustible gases, toxic gases
-          and oxygen deficiency or enrichment.
+          We offer Combustible, toxic, gas leak and oxygen depletion detectors for personnel, process and asset protection Our OEM products has designed and manufactured certified gas detection solutions for hazardous industrial environments for over 30 years.  
         </p>
 
         <p>
-          We support point detectors and open-path detection systems
-          using technologies such as catalytic bead, infrared and
-          electrochemical sensing. Detector selection is matched to the
-          target gas, expected concentration range, process environment
-          and required response time.
+          During this time, we have developed a broad line of innovative and reliable gas detectors, with our acoustic and line-of-sight models winning exida safety awards.
         </p>
 
         <ul class="fg-service-list">
@@ -976,12 +1107,11 @@
           </li>
 
           <li>
-            Toxic gas detection for gases such as hydrogen sulphide
-            and carbon monoxide
+            Toxic gas detection for gases such as hydrogen sulphide, carbon monoxide, chlorine, hydrogen, nitrogen etc 
           </li>
 
           <li>
-            Oxygen-deficiency and oxygen-enrichment monitoring
+            Oxygen-deficiency and oxygen-enrichment monitoring 
           </li>
 
           <li>
@@ -989,7 +1119,11 @@
           </li>
 
           <li>
-            Local alarm, control-panel and shutdown integration
+            Acoustic Leak Detector
+          </li>
+
+          <li>
+            Available with Conventional (mA) and Addressable (EQP) models 
           </li>
 
         </ul>
@@ -1002,22 +1136,193 @@
 
       </article>
 
-      <div class="fg-visual fg-image-frame">
+      <div class="fg-visual">
+        <div class="fg-gallery-grid">
 
-        <img
-          src="./images/gdetector.png"
-          alt="Fixed industrial gas detectors"
-        >
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss1.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
 
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss2.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
+
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss3.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
+
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss4.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
+
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss5.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
+
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss6.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
+
+          <div class="fg-gallery-card">
+            <img
+              src="./images/fgss7.png"
+              alt="Fixed industrial gas detectors"
+           />
+          </div>
+
+        </div>
       </div>
-
     </div>
   </section>
+
+  <!-- FGS ALARMING ACCESSORIES -->
+<section
+  id="fgs-alarming-accessories"
+  class="fg-section fg-section-soft"
+>
+  <div class="fg-shell fg-section-grid slidein">
+
+    <article class="fg-copy">
+
+      <div class="fg-label">
+        Alarm and notification devices
+      </div>
+
+      <h2>
+        FGS Alarming Accessories
+      </h2>
+
+      <p>
+        Our fire and gas alarming accessories support
+        effective notification, manual activation and
+        emergency response across industrial and
+        hazardous-area environments.
+      </p>
+
+      <p>
+        These accessories are selected to complement
+        field-detection systems and provide reliable
+        warning, signalling and local response support.
+      </p>
+
+      <ul class="fg-service-list">
+
+        <li>
+          Beacons designed for use in potentially
+          explosive atmospheres and harsh environmental
+          conditions
+        </li>
+
+        <li>
+          Manual fire alarm call points designed for use
+          in flammable atmospheres and harsh environmental
+          conditions
+        </li>
+
+        <li>
+          High-power explosion-proof sounders certified
+          for use across a wide temperature range
+        </li>
+
+        <li>
+          Combined audio/visual units with certified
+          beacon and sounder configurations
+        </li>
+
+        <li>
+          Loudspeakers intended for use in potentially
+          explosive atmospheres
+        </li>
+
+        <li>
+          Smoke, heat and multi-sensor photoelectric
+          detector options with LED indication and
+          polycarbonate housing
+        </li>
+
+      </ul>
+
+      <p class="fg-note">
+        Accessories should be selected in line with the
+        site hazard classification, notification
+        requirements and emergency-response philosophy.
+      </p>
+
+    </article>
+
+    <div class="fg-visual">
+      <div class="fg-gallery-grid fg-gallery-grid--three">
+
+        <div class="fg-gallery-card">
+          <img
+            src="./images/alarm1.png"
+            alt="FGS accessory image 1"
+          />
+        </div>
+
+        <div class="fg-gallery-card">
+          <img
+            src="./images/alarm2.png"
+            alt="FGS accessory image 2"
+          />
+        </div>
+
+        <div class="fg-gallery-card">
+          <img
+            src="./images/alarm3.png"
+            alt="FGS accessory image 3"
+          />
+        </div>
+
+        <div class="fg-gallery-card">
+          <img
+            src="./images/alarm4.png"
+            alt="FGS accessory image 4"
+          />
+        </div>
+
+        <div class="fg-gallery-card">
+          <img
+            src="./images/alarm5.png"
+            alt="FGS accessory image 5"
+          />
+        </div>
+
+        <div class="fg-gallery-card">
+          <img
+            src="./images/alarm6.png"
+            alt="FGS accessory image 6"
+          />
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- FIRE AND GAS SYSTEM -->
   <section
     id="fire-gas-systems"
-    class="fg-section fg-section-soft"
+    class="fg-section"
   >
     <div class="fg-shell fg-section-grid slidein">
 
@@ -1103,7 +1408,7 @@
   <!-- VESDA -->
   <section
     id="vesda"
-    class="fg-section"
+    class="fg-section fg-section-soft"
   >
     <div class="fg-shell fg-section-grid fg-reverse slidein">
 
