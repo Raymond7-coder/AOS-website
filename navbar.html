@@ -1678,8 +1678,6 @@
 
 </div>
 
-
-
 <!-- =====================================================
      MOBILE MENU
 ====================================================== -->
@@ -1690,7 +1688,7 @@
     top: 82px;
     max-height: calc(100vh - 82px);
   "
-  class="fixed z-50 left-0 right-0 border-b border-b-gray-300 lg:hidden hidden bg-white w-full py-4 px-5 shadow-lg overflow-y-auto"
+  class="fixed z-50 left-0 right-0 border-b border-gray-300 lg:hidden hidden bg-white w-full py-4 px-5 shadow-lg overflow-y-auto"
 >
 
 
@@ -1703,12 +1701,11 @@
          COMPANY
     ====================================================== -->
 
-    <div
-      class="border-b border-gray-100"
-    >
+    <div class="border-b border-gray-100">
 
 
       <button
+        type="button"
         class="w-full flex justify-between items-center py-4 hover:text-[#4CAF50] transition focus:outline-none bg-white"
         onclick="toggleSubmenu('mobile-company-menu', this)"
       >
@@ -1718,7 +1715,7 @@
         </span>
 
         <span
-          class="material-symbols-outlined transition-transform duration-300"
+          class="material-symbols-outlined text-[20px] transition-transform duration-300"
         >
           expand_more
         </span>
@@ -1729,175 +1726,225 @@
 
       <div
         id="mobile-company-menu"
-        class="hidden pb-4 pl-4 text-[14px] text-gray-600"
+        class="hidden pb-5 pl-3"
       >
 
-        <div
-          class="flex flex-col gap-y-4"
+
+        <!-- AOS ORWELL -->
+
+        <button
+          type="button"
+          class="w-full flex justify-between items-center py-3 text-left text-gray-700 hover:text-[#4CAF50] transition bg-white"
+          onclick="toggleSubmenu('mobile-aos-menu', this)"
         >
 
+          <span>
+            AOS Orwell
+          </span>
 
-          <!-- AOS ORWELL -->
-
-          <button
-            class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-aos-menu', this)"
+          <span
+            class="material-symbols-outlined text-[18px] transition-transform duration-300"
           >
+            expand_more
+          </span>
 
-            <span>
-              AOS Orwell
-            </span>
+        </button>
 
-            <span
-              class="material-symbols-outlined text-[18px] transition-transform duration-300"
+
+        <div
+          id="mobile-aos-menu"
+          class="hidden pl-4 pt-1 pb-3 text-[13px] text-gray-500"
+        >
+
+          <div class="flex flex-col gap-y-3">
+
+            <a
+              href="/about.html"
+              class="hover:text-[#4CAF50] transition-colors block"
             >
-              expand_more
-            </span>
+              About Us
+            </a>
 
-          </button>
-
-
-
-          <div
-            id="mobile-aos-menu"
-            class="hidden pl-4 pt-1 text-[13px] text-gray-500"
-          >
-
-            <div
-              class="flex flex-col gap-y-3"
+            <a
+              href="/management.html"
+              class="hover:text-[#4CAF50] transition-colors block"
             >
+              Company Leadership
+            </a>
 
-              <a
-                href="/about.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                About Us
-              </a>
+            <a
+              href="/careers.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Careers
+            </a>
 
-
-              <a
-                href="/management.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Company Leadership
-              </a>
-
-
-              <a
-                href="/careers.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Careers
-              </a>
-
-
-              <a
-                href="/contact-us.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Contact Us
-              </a>
-
-            </div>
+            <a
+              href="/contact-us.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Contact Us
+            </a>
 
           </div>
-
-
-
-          <a
-            href="/corporate-social-responsibility.html"
-            class="hover:text-[#4CAF50] transition-colors block"
-          >
-            CSR
-          </a>
-
-
-
-          <a
-            href="/partners.html"
-            class="hover:text-[#4CAF50] transition-colors block"
-          >
-            Partners
-          </a>
-
-
-
-          <!-- MEDIA -->
-
-          <button
-            class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-media-menu', this)"
-          >
-
-            <span>
-              Media &amp; Resources
-            </span>
-
-            <span
-              class="material-symbols-outlined text-[18px] transition-transform duration-300"
-            >
-              expand_more
-            </span>
-
-          </button>
-
-
-
-          <div
-            id="mobile-media-menu"
-            class="hidden pl-4 pt-1 text-[13px] text-gray-500"
-          >
-
-            <div
-              class="flex flex-col gap-y-3"
-            >
-
-              <a
-                href="/gallery.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Gallery
-              </a>
-
-
-              <a
-                href="/news.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                News &amp; Press Releases
-              </a>
-
-
-              <a
-                href="/blog.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Case Study
-              </a>
-
-
-              <a
-                href="/policies-index.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Resources &amp; Policies
-              </a>
-
-            </div>
-
-          </div>
-
-
-
-          <a
-            href="/hse.html"
-            class="hover:text-[#4CAF50] transition-colors block"
-          >
-            QHSE
-          </a>
-
 
         </div>
+
+
+
+        <!-- MEDIA -->
+
+        <button
+          type="button"
+          class="w-full flex justify-between items-center py-3 text-left text-gray-700 hover:text-[#4CAF50] transition bg-white"
+          onclick="toggleSubmenu('mobile-media-menu', this)"
+        >
+
+          <span>
+            Media &amp; Resources
+          </span>
+
+          <span
+            class="material-symbols-outlined text-[18px] transition-transform duration-300"
+          >
+            expand_more
+          </span>
+
+        </button>
+
+
+        <div
+          id="mobile-media-menu"
+          class="hidden pl-4 pt-1 pb-3 text-[13px] text-gray-500"
+        >
+
+          <div class="flex flex-col gap-y-3">
+
+            <a
+              href="/gallery.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Gallery
+            </a>
+
+            <a
+              href="/news.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              News &amp; Press Releases
+            </a>
+
+            <a
+              href="/blog.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Case Study
+            </a>
+
+            <a
+              href="/policies-index.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Resources &amp; Policies
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- QHSE -->
+
+        <button
+          type="button"
+          class="w-full flex justify-between items-center py-3 text-left text-gray-700 hover:text-[#4CAF50] transition bg-white"
+          onclick="toggleSubmenu('mobile-qhse-menu', this)"
+        >
+
+          <span>
+            QHSE
+          </span>
+
+          <span
+            class="material-symbols-outlined text-[18px] transition-transform duration-300"
+          >
+            expand_more
+          </span>
+
+        </button>
+
+
+        <div
+          id="mobile-qhse-menu"
+          class="hidden pl-4 pt-1 pb-3 text-[13px] text-gray-500"
+        >
+
+          <div class="flex flex-col gap-y-3">
+
+            <a
+              href="/hse.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Quality Policy
+            </a>
+
+            <a
+              href="/hse.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Health &amp; Safety
+            </a>
+
+            <a
+              href="/hse.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Environmental Standards
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- CSR -->
+
+        <a
+          href="/corporate-social-responsibility.html"
+          class="flex justify-between items-center py-3 text-gray-700 hover:text-[#4CAF50] transition-colors"
+        >
+
+          <span>
+            CSR
+          </span>
+
+          <span class="material-symbols-outlined text-[18px]">
+            north_east
+          </span>
+
+        </a>
+
+
+
+        <!-- PARTNERS -->
+
+        <a
+          href="/partners.html"
+          class="flex justify-between items-center py-3 text-gray-700 hover:text-[#4CAF50] transition-colors"
+        >
+
+          <span>
+            Partners
+          </span>
+
+          <span class="material-symbols-outlined text-[18px]">
+            north_east
+          </span>
+
+        </a>
+
 
       </div>
 
@@ -1909,12 +1956,11 @@
          SERVICES
     ====================================================== -->
 
-    <div
-      class="border-b border-gray-100"
-    >
+    <div class="border-b border-gray-100">
 
 
       <button
+        type="button"
         class="w-full flex justify-between items-center py-4 hover:text-[#4CAF50] transition focus:outline-none bg-white"
         onclick="toggleSubmenu('mobile-services-menu', this)"
       >
@@ -1924,7 +1970,7 @@
         </span>
 
         <span
-          class="material-symbols-outlined transition-transform duration-300"
+          class="material-symbols-outlined text-[20px] transition-transform duration-300"
         >
           expand_more
         </span>
@@ -1935,206 +1981,241 @@
 
       <div
         id="mobile-services-menu"
-        class="hidden pb-4 pl-4 text-[14px] text-gray-600"
+        class="hidden pb-5 pl-3"
       >
 
-        <div
-          class="flex flex-col gap-y-4"
+
+        <!-- WELL CONSTRUCTION -->
+
+        <button
+          type="button"
+          class="w-full flex justify-between items-center py-3 text-left text-gray-700 hover:text-[#4CAF50] transition bg-white"
+          onclick="toggleSubmenu('mobile-well-construction-menu', this)"
         >
 
+          <span>
+            Well Construction
+          </span>
 
-          <!-- WELL -->
-
-          <button
-            class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-well-construction-menu', this)"
+          <span
+            class="material-symbols-outlined text-[18px] transition-transform duration-300"
           >
+            expand_more
+          </span>
 
-            <span>
-              Well Construction
-            </span>
+        </button>
 
-            <span
-              class="material-symbols-outlined text-[18px] transition-transform duration-300"
+
+        <div
+          id="mobile-well-construction-menu"
+          class="hidden pl-4 pt-1 pb-4 text-[13px] text-gray-500"
+        >
+
+          <div class="flex flex-col gap-y-3">
+
+
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
             >
-              expand_more
-            </span>
-
-          </button>
+              Fishing
+            </a>
 
 
-
-          <div
-            id="mobile-well-construction-menu"
-            class="hidden pl-4 pt-1 text-[13px] text-gray-500"
-          >
-
-            <div
-              class="flex flex-col gap-y-3"
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
             >
+              Casing &amp; Tubular Running Services (CTR)
+            </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Fishing
-              </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Casing &amp; Tubular Running Services (CTR)
-              </a>
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Cased Hole Wireline &amp; Slickline Services
+            </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Cased Hole Wireline &amp; Slickline Services
-              </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Plug, Abandonment and Slot Recovery
-              </a>
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Plug, Abandonment and Slot Recovery
+            </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Drillpipe Tubular Rentals
-              </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Jar and Downhole Tools
-              </a>
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Drillpipe Tubular Rentals
+            </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Completion, Assembly &amp; Hammer Services
-              </a>
 
-              <a href="/well-construction.html" class="hover:text-[#4CAF50] transition-colors block">
-                Directional Drilling &amp; Logging
-              </a>
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Jar and Downhole Tools
+            </a>
 
-              <a href="/machine-shop.html" class="hover:text-[#4CAF50] transition-colors block">
-                Machine Shop and Fabrication
-              </a>
 
-            </div>
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Completion, Assembly &amp; Hammer Services
+            </a>
+
+
+            <a
+              href="/well-construction.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Directional Drilling &amp; Logging
+            </a>
+
+
+            <a
+              href="/machine-shop.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Machine Shop and Fabrication
+            </a>
+
 
           </div>
-
-
-
-          <!-- IPM -->
-
-          <a
-            href="/ipm-and-turnkey.html"
-            class="hover:text-[#4CAF50] transition-colors block"
-          >
-            Integrated Project Management
-          </a>
-
-
-
-          <!-- PROCESS MANAGEMENT -->
-
-          <button
-            class="w-full flex justify-between items-center text-left hover:text-[#4CAF50] transition focus:outline-none bg-white"
-            onclick="toggleSubmenu('mobile-process-management-menu', this)"
-          >
-
-            <span>
-              Process Management
-            </span>
-
-            <span
-              class="material-symbols-outlined text-[18px] transition-transform duration-300"
-            >
-              expand_more
-            </span>
-
-          </button>
-
-
-
-          <div
-            id="mobile-process-management-menu"
-            class="hidden pl-4 pt-1 text-[13px] text-gray-500"
-          >
-
-            <div
-              class="flex flex-col gap-y-4"
-            >
-
-
-              <a
-                href="/automation-and-control.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Automation &amp; Control
-              </a>
-
-
-              <a
-                href="/electrical-and-instrumentation.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Electrical &amp; Instrumentation
-              </a>
-
-
-              <a
-                href="/modular-solutions-and-process-skid-packages.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Modular Solutions and Process Skid Packages
-              </a>
-
-
-              <a
-                href="/measurement-solutions.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Measurement Solutions
-              </a>
-
-
-              <a
-                href="/valves-and-actuations.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Valves &amp; Actuations
-              </a>
-
-
-              <a
-                href="/rotating-equipment.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Rotating Equipment
-              </a>
-
-
-              <a
-                href="/fire-and-gas-systems.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Fire &amp; Gas Systems
-              </a>
-
-
-              <a
-                href="/operations-and-maintenance.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Operations &amp; Maintenance
-              </a>
-
-
-              <a
-                href="/design-and-engineering.html"
-                class="hover:text-[#4CAF50] transition-colors block"
-              >
-                Design &amp; Engineering
-              </a>
-
-
-            </div>
-
-          </div>
-
 
         </div>
+
+
+
+        <!-- PROCESS MANAGEMENT -->
+
+        <button
+          type="button"
+          class="w-full flex justify-between items-center py-3 text-left text-gray-700 hover:text-[#4CAF50] transition bg-white"
+          onclick="toggleSubmenu('mobile-process-management-menu', this)"
+        >
+
+          <span>
+            Process Management
+          </span>
+
+          <span
+            class="material-symbols-outlined text-[18px] transition-transform duration-300"
+          >
+            expand_more
+          </span>
+
+        </button>
+
+
+        <div
+          id="mobile-process-management-menu"
+          class="hidden pl-4 pt-1 pb-4 text-[13px] text-gray-500"
+        >
+
+          <div class="flex flex-col gap-y-4">
+
+
+            <a
+              href="/automation-and-control.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Automation &amp; Control
+            </a>
+
+
+            <a
+              href="/electrical-and-instrumentation.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Electrical &amp; Instrumentation
+            </a>
+
+
+            <a
+              href="/modular-solutions-and-process-skid-packages.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Modular Solutions and Process Skid Packages
+            </a>
+
+
+            <a
+              href="/measurement-solutions.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Measurement Solutions
+            </a>
+
+
+            <a
+              href="/valves-and-actuations.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Valves &amp; Actuations
+            </a>
+
+
+            <a
+              href="/rotating-equipment.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Rotating Equipment
+            </a>
+
+
+            <a
+              href="/fire-and-gas-systems.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Fire &amp; Gas Systems
+            </a>
+
+
+            <a
+              href="/operations-and-maintenance.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Operation &amp; Maintenance
+            </a>
+
+
+            <a
+              href="/design-and-engineering.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Design &amp; Engineering
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IPM -->
+
+        <a
+          href="/ipm-and-turnkey.html"
+          class="flex justify-between items-center py-3 text-gray-700 hover:text-[#4CAF50] transition-colors"
+        >
+
+          <span>
+            Integrated Project Management
+          </span>
+
+          <span class="material-symbols-outlined text-[18px]">
+            north_east
+          </span>
+
+        </a>
+
 
       </div>
 
@@ -2149,6 +2230,7 @@
     <div
       class="border-b border-gray-100 py-4 flex flex-col gap-y-4 text-[14px] text-gray-600"
     >
+
 
       <a
         href="/hse.html"
@@ -2173,6 +2255,7 @@
         Contact Us
       </a>
 
+
     </div>
 
 
@@ -2183,12 +2266,14 @@
 
     <div class="pt-5">
 
+
       <a
         href="/request-form.html"
         class="w-full flex justify-center items-center bg-[#007a32] text-white py-3 rounded-[4px] font-semibold hover:bg-[#006428] transition"
       >
         How can we help you?
       </a>
+
 
     </div>
 
