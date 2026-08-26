@@ -220,12 +220,35 @@ if (subName === "design") {
 };
 
 window.changeServiceImage = function (imageSrc, title) {
-  const previewImage = document.getElementById("service-preview-image");
 
-  if (previewImage) {
-    previewImage.src = imageSrc;
-    previewImage.alt = title || "";
+  const previewImage =
+    document.getElementById("service-preview-image");
+
+  if (!previewImage) return;
+
+
+  previewImage.src = imageSrc;
+  previewImage.alt = title || "";
+
+
+  // Special treatment ONLY for Hammer.jpg
+  if (
+    imageSrc.toLowerCase().includes("hammer.jpg")
+  ) {
+
+    previewImage.style.objectFit = "contain";
+    previewImage.style.objectPosition = "center";
+    previewImage.style.backgroundColor = "#d9d9db";
+
+  } else {
+
+    // All other service images stay exactly as before
+    previewImage.style.objectFit = "cover";
+    previewImage.style.objectPosition = "center";
+    previewImage.style.backgroundColor = "transparent";
+
   }
+
 };
 
 window.changeIPMImage = function (imageSrc, title) {
@@ -245,6 +268,30 @@ window.changeOperationsImage = function (imageSrc, title) {
     previewImage.src = imageSrc;
     previewImage.alt = title || "";
   }
+};
+window.showCoreValuePreview = function (imageSrc, title) {
+
+  const preview =
+    document.getElementById(
+      "about-core-values-preview"
+    );
+
+  const image =
+    document.getElementById(
+      "core-value-preview-image"
+    );
+
+
+  if (!preview || !image) return;
+
+
+  preview.style.display = "block";
+
+  image.src = imageSrc;
+
+  image.alt =
+    title || "AOS Orwell Core Value";
+
 };
 
 // SEARCH

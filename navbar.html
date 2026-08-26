@@ -525,7 +525,7 @@
 
     <button
       onclick="toggleMegaMenu()"
-      class="absolute top-6 right-8 z-10"
+      class="absolute top-2 right-4 z-20"
       aria-label="Close menu"
     >
 
@@ -542,121 +542,149 @@
 
     </button>
 
-
-
     <!-- =====================================================
-         AOS ORWELL CONTENT
-    ====================================================== -->
+     AOS ORWELL CONTENT
+====================================================== -->
+
+<div
+  id="content-aosorwell"
+  class="mega-content flex w-full h-full"
+>
+
+
+  <!-- LINKS -->
+
+  <div
+    class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5"
+  >
+
+
+    <!-- ABOUT US = EXCELLENCE -->
+
+    <a
+      href="/about.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="showCoreValuePreview(
+        '/images/excellencee.png',
+        'Excellence'
+      )"
+    >
+      About Us
+    </a>
+
+
+    <!-- LEADERSHIP = CUSTOMER FOCUS -->
+
+    <a
+      href="/management.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="showCoreValuePreview(
+        '/images/customerfocuss.png',
+        'Customer-Focus'
+      )"
+    >
+      Company Leadership
+    </a>
+
+
+    <!-- CAREERS = HONESTY & INTEGRITY -->
+
+    <a
+      href="/careers.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="showCoreValuePreview(
+        '/images/honesty.png',
+        'Honesty & Integrity'
+      )"
+    >
+      Careers
+    </a>
+
+
+    <!-- CONTACT = INNOVATION -->
+
+    <a
+      href="/contact-us.html"
+      class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
+      onmouseenter="showCoreValuePreview(
+        '/images/innovations.png',
+        'Innovation'
+      )"
+    >
+      Contact Us
+    </a>
+
+
+  </div>
+
+
+
+  <!-- CORE VALUE PREVIEW -->
+
+  <div
+    class="w-1/2 lg:w-3/5 pl-10 pr-8 relative flex flex-col items-start"
+
+  >
+
 
     <div
-      id="content-aosorwell"
-      class="mega-content flex w-full h-full"
+      id="about-core-values-preview"
+      style="display: none;"
+      class="w-full"
     >
 
 
-      <!-- LINKS -->
+      <div class="mb-3">
 
-      <div
-        class="w-1/2 lg:w-2/5 pr-8 border-r border-gray-200 flex flex-col gap-5"
-      >
-
-
-        <a
-          href="/about.html"
-          class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
-          onmouseenter="
-            document.getElementById('about-core-values-preview').style.display='block';
-          "
+        <p
+          class="text-[11px] uppercase tracking-[0.16em] text-[#009b3a] font-semibold mb-2"
         >
-          About Us
-        </a>
+          Who we are
+        </p>
 
 
-        <a
-          href="/management.html"
-          class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
-          onmouseenter="
-            document.getElementById('about-core-values-preview').style.display='none';
-          "
+        <h3
+          id="core-value-preview-title"
+          class="text-[24px] font-semibold text-gray-800"
         >
-          Company Leadership
-        </a>
-
-
-        <a
-          href="/careers.html"
-          class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
-          onmouseenter="
-            document.getElementById('about-core-values-preview').style.display='none';
-          "
-        >
-          Careers
-        </a>
-
-
-        <a
-          href="/contact-us.html"
-          class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] whitespace-nowrap block"
-          onmouseenter="
-            document.getElementById('about-core-values-preview').style.display='none';
-          "
-        >
-          Contact Us
-        </a>
+          Our Core Values
+        </h3>
 
       </div>
 
 
 
-      <!-- CORE VALUES PREVIEW -->
-
       <div
-        class="w-1/2 lg:w-3/5 pl-10 pr-8 relative"
+        class="w-full flex items-start justify-center overflow-hidden"
       >
-
-        <div
-          id="about-core-values-preview"
-          style="display: none;"
-          class="w-full"
+        <img
+          id="core-value-preview-image"
+          src=""
+          alt=""
+          style="
+            height: 425px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+           "
+          class="transition-opacity duration-200"
         >
 
 
-          <div class="mb-4">
-
-            <p
-              class="text-[11px] uppercase tracking-[0.16em] text-[#009b3a] font-semibold mb-2"
-            >
-              Who we are
-            </p>
-
-
-            <h3
-              class="text-[24px] font-semibold text-gray-800"
-            >
-              Our Core Values
-            </h3>
-
-          </div>
-
-
-
-          <div
-            class="w-full max-w-[720px] h-[300px] bg-[#f3f7f4] border border-gray-200 rounded-md overflow-hidden shadow-sm flex items-center justify-center"
-          >
-
-            <img
-              src="/images/corevalues.png"
-              alt="AOS Orwell Core Values"
-              class="w-full h-full object-contain"
-            >
-
-          </div>
-
-        </div>
-
       </div>
+
 
     </div>
+
+
+  </div>
+
+
+</div>
+
+
 
 
 
@@ -866,7 +894,7 @@
 
     <button
       onclick="toggleServicesMenu()"
-      class="absolute top-6 right-8 z-10"
+      class="absolute top-2 right-4 z-20"
       aria-label="Close services menu"
     >
 
@@ -938,7 +966,7 @@
 
         <a
           href="/well-construction.html"
-          onmouseenter="changeServiceImage('/images/well-drillpipe.png', 'Drillpipe')"
+          onmouseenter="changeServiceImage('/images/drillpiperent.jpeg', 'Drillpipe')"
           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block"
         >
           Drillpipe Tubular Rentals
@@ -956,16 +984,15 @@
 
         <a
           href="/well-construction.html"
-          onmouseenter="changeServiceImage('/images/assembly.png', 'Completion, Assembly & Hammer Services')"
+          onmouseenter="changeServiceImage('/images/Hammer.jpg', 'Completion, Assembly & Hammer Services')"
           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block"
         >
           Completion, Assembly &amp; Hammer Services
         </a>
 
-
         <a
           href="/well-construction.html"
-          onmouseenter="changeServiceImage('/images/drill.png', 'Drilling')"
+          onmouseenter="changeServiceImage('/images/directionaldrilll.jpeg', 'Drilling')"
           class="text-gray-600 hover:text-[#4CAF50] transition-colors text-[15px] block"
         >
           Directional Drilling &amp; Logging
@@ -1000,7 +1027,7 @@
             id="service-preview-image"
             src="/images/well-fishing.png"
             alt="Fishing"
-            class="w-full h-full object-cover transition-all duration-300"
+            class="w-full h-full object-cover transition-opacity duration-200"
           >
 
         </div>

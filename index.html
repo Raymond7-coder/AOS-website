@@ -631,6 +631,606 @@
 
     line-height: 1.8;
 }
+/* =====================================================
+   HOME INTRO / WHO WE ARE
+===================================================== */
+
+.home-intro-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 100px 0 90px;
+
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(0, 155, 58, 0.06),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #f8faf8 0%,
+      #ffffff 100%
+    );
+}
+
+
+.home-intro-section::before {
+  content: "";
+
+  position: absolute;
+
+  left: -170px;
+  bottom: -210px;
+
+  width: 340px;
+  height: 340px;
+
+  border: 55px solid rgba(0, 155, 58, 0.04);
+
+  border-radius: 50%;
+}
+
+
+.home-intro-shell {
+  position: relative;
+  z-index: 1;
+
+  width:
+    min(
+      1180px,
+      calc(100% - 48px)
+    );
+
+  margin: 0 auto;
+}
+
+
+/* TOP */
+
+.home-intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 0.82fr);
+
+  gap: 85px;
+
+  align-items: center;
+}
+
+
+.home-intro-copy {
+  max-width: 650px;
+}
+
+
+.home-intro-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 17px;
+
+  color: #009b3a;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+
+.home-intro-eyebrow::before {
+  content: "";
+
+  width: 38px;
+  height: 2px;
+
+  background: #009b3a;
+}
+
+
+.home-intro-copy h2 {
+  margin: 0 0 27px;
+
+  color: #102016;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size:
+    clamp(
+      37px,
+      4.5vw,
+      57px
+    );
+
+  line-height: 1.08;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 650;
+}
+
+
+.home-intro-copy p {
+  max-width: 610px;
+
+  margin: 0 0 18px;
+
+  color: #657168;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+.home-intro-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  color: #007a32;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    gap 0.25s ease;
+}
+
+
+.home-intro-link:hover {
+  gap: 13px;
+}
+
+
+.home-intro-link
+.material-symbols-outlined {
+  font-size: 20px;
+}
+
+
+
+/* VIDEO */
+
+.home-intro-video-wrap {
+  position: relative;
+
+  padding:
+    0
+    0
+    22px
+    22px;
+}
+
+
+.home-intro-video-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 72%;
+  height: 70%;
+
+  background: #06321d;
+
+  border-radius: 7px;
+}
+
+
+.home-intro-video {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background: #111;
+
+  box-shadow:
+    0 22px 50px
+    rgba(13, 48, 26, 0.15);
+}
+
+
+.home-intro-video iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+}
+
+
+.home-intro-video-caption {
+  position: absolute;
+  z-index: 3;
+
+  left: 0;
+  bottom: 0;
+
+  width: 220px;
+
+  padding: 17px 20px;
+
+  background: #009b3a;
+  color: white;
+}
+
+
+.home-intro-video-caption span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+
+.home-intro-video-caption strong {
+  display: block;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  font-weight: 600;
+}
+
+
+
+/* WHAT WE DO */
+
+.home-what-we-do {
+  margin-top: 95px;
+
+  padding-top: 55px;
+
+  border-top:
+    1px solid #dce5df;
+}
+
+
+.home-what-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(350px, 0.8fr);
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 38px;
+}
+
+
+.home-what-header h3 {
+  margin: 0;
+
+  max-width: 620px;
+
+  color: #102016;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size:
+    clamp(
+      27px,
+      3vw,
+      38px
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 600;
+}
+
+
+.home-what-header > p {
+  margin: 0;
+
+  max-width: 500px;
+
+  color: #68746c;
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+
+/* CARDS */
+
+.home-what-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border-top:
+    1px solid #dce5df;
+
+  border-bottom:
+    1px solid #dce5df;
+}
+
+
+.home-what-card {
+  position: relative;
+
+  min-height: 220px;
+
+  padding: 30px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-right:
+    1px solid #dce5df;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.home-what-card:last-child {
+  border-right: 0;
+}
+
+
+.home-what-number {
+  display: block;
+
+  margin-bottom: 38px;
+
+  color: #009b3a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+
+.home-what-card h4 {
+  margin: 0 0 10px;
+
+  color: #142119;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 19px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+
+.home-what-card p {
+  margin: 0;
+
+  max-width: 220px;
+
+  color: #738077;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+.home-what-arrow {
+  position: absolute;
+
+  top: 28px;
+  right: 25px;
+
+  color: #009b3a;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.home-what-card:hover {
+  background: #062b19;
+}
+
+
+.home-what-card:hover h4,
+.home-what-card:hover p {
+  color: #ffffff;
+}
+
+
+.home-what-card:hover
+.home-what-number {
+  color: #79d89a;
+}
+
+
+.home-what-card:hover
+.home-what-arrow {
+  color: #ffffff;
+
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media
+(max-width: 1000px) {
+
+  .home-intro-grid {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 45px;
+  }
+
+
+  .home-what-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .home-what-card:nth-child(2) {
+    border-right: 0;
+  }
+
+
+  .home-what-card:nth-child(-n+2) {
+    border-bottom:
+      1px solid #dce5df;
+  }
+
+}
+
+
+
+@media
+(max-width: 760px) {
+
+  .home-intro-section {
+    padding: 70px 0 65px;
+  }
+
+
+  .home-intro-shell {
+    width:
+      calc(100% - 30px);
+  }
+
+
+  .home-intro-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 50px;
+  }
+
+
+  .home-intro-copy h2 {
+    font-size: 38px;
+  }
+
+
+  .home-intro-video-wrap {
+    padding:
+      0
+      0
+      18px
+      16px;
+  }
+
+
+  .home-what-we-do {
+    margin-top: 70px;
+  }
+
+
+  .home-what-header {
+    grid-template-columns:
+      1fr;
+
+    gap: 18px;
+  }
+
+}
+
+
+
+@media
+(max-width: 560px) {
+
+  .home-what-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .home-what-card {
+    border-right: 0;
+
+    border-bottom:
+      1px solid #dce5df;
+  }
+
+
+  .home-what-card:last-child {
+    border-bottom: 0;
+  }
+
+
+  .home-what-card:nth-child(2) {
+    border-right: 0;
+  }
+
+
+  .home-intro-video-caption {
+    width: 190px;
+  }
+
+}
 
 
 
@@ -1330,50 +1930,228 @@
 </section>
 <!-- SECTION BELOW HERO ENDS -->
 
+<!-- =====================================================
+     WHO WE ARE / WHAT WE DO
+====================================================== -->
 
-		<!-- WHO WE ARE AND WHAT WE DO -->
-		<section class="flex flex-col gap-y-20 pb-20 pt-20 md:pt-30 xl:pt-35 px-8 sm:px-20 xl:px-30">
-			<div class="flex flex-col w-full md:flex-row gap-10  lg:gap-16 items-center">
-				<div class="flex flex-col md:w-3/5 items-start text-left">
-					<div class="w-10 h-1 bg-green-500 mb-5"></div>
-					<h3 class="font-semibold text-2xl sm:text-3xl 2xl:text-4xl text-[#1a3b32] mb-6">
-						Who we are
-					</h3>
-					<p class="leading-relaxed font-normal text-gray-600 text-[13px] sm:text-sm xl:text-base mb-8">
-						We are Nigeria’s leading oilfield servicing company delivering integrated solutions to the oil and gas, power, and industrial sectors. Combining strong local expertise with world-class technologies through strategic OEM partnerships, we help clients achieve safe, efficient, and reliable operations.
-					</p>
-					<a href="/about.html" class="text-[#4CAF50] font-medium text-[13px] md:text-sm tracking-widest uppercase flex items-center gap-2 hover:opacity-80 transition-opacity">
-						Discover More
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</a>
-				</div>
-				
-				<div class="w-full md:w-2/5 max-w-[416px] lg:ml-auto">
-                  <div class="relative w-full overflow-hidden shadow-md" style="aspect-ratio: 16 / 9;">
-                    <iframe
-                      class="absolute inset-0 w-full h-full"
-                      src="https://www.youtube.com/embed/2MwwOaRBEmc?rel=0"
-                      title="AOS Orwell Video"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                </div>
-			</div>
+<section class="home-intro-section">
 
-			<div class="flex flex-col  items-start text-left w-full max-lg:pt-10 lg:mt-4">
-				<div class="w-10 h-1 bg-green-500 mb-4"></div>
-				<h3 class="font-semibold text-2xl sm:text-3xl 2xl:text-4xl text-[#1a3b32] mb-6">
-					What we do
-				</h3>
-				<p class="leading-relaxed font-normal text-gray-600 text-[13px] sm:text-sm xl:text-base w-full lg:max-w-[90%]">
-					We provide well construction, process management, engineering, automation, and operations support services. From drilling and wireline to metering skids, EPIC projects, and maintenance solutions, we deliver fit-for-purpose technologies and technical expertise that enhance performance and operational excellence.
-				</p>
-			</div>
-		</section>
+  <div class="home-intro-shell">
+
+
+    <!-- TOP GRID -->
+
+    <div class="home-intro-grid">
+
+
+      <!-- LEFT COPY -->
+
+      <div class="home-intro-copy">
+
+        <div class="home-intro-eyebrow">
+          About AOS Orwell
+        </div>
+
+        <h2>
+          Built on local expertise.<br>
+          Driven by global standards.
+        </h2>
+
+        <p>
+          We are Nigeria’s leading oilfield servicing company,
+          delivering integrated solutions to the oil and gas,
+          power and industrial sectors.
+        </p>
+
+        <p>
+          By combining strong local expertise with world-class
+          technologies through strategic OEM partnerships,
+          we help our clients achieve safer, more efficient
+          and more reliable operations.
+        </p>
+
+        <a
+          href="/about.html"
+          class="home-intro-link"
+        >
+          Discover our company
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </a>
+
+      </div>
+
+
+
+      <!-- VIDEO -->
+
+      <div class="home-intro-video-wrap">
+
+        <div class="home-intro-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/2MwwOaRBEmc?rel=0"
+            title="AOS Orwell Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+
+        <div class="home-intro-video-caption">
+
+          <span>
+            Inside AOS Orwell
+          </span>
+
+          <strong>
+            Local Strength. Global Standards.
+          </strong>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- WHAT WE DO -->
+
+    <div class="home-what-we-do">
+
+
+      <div class="home-what-header">
+
+        <div>
+
+          <div class="home-intro-eyebrow">
+            What we do
+          </div>
+
+          <h3>
+            Integrated solutions across the asset lifecycle.
+          </h3>
+
+        </div>
+
+
+        <p>
+          From well construction and process management to
+          project delivery, engineering and maintenance,
+          we combine technology, technical expertise and
+          execution capability to improve operational performance.
+        </p>
+
+      </div>
+
+
+
+      <!-- PILLARS -->
+
+      <div class="home-what-grid">
+
+
+        <a
+          href="/well-construction.html"
+          class="home-what-card"
+        >
+          <h4>
+            Well Construction
+          </h4>
+
+          <p>
+            Drilling, wireline, tubular,
+            completion and intervention support.
+          </p>
+
+          <span class="material-symbols-outlined home-what-arrow">
+            north_east
+          </span>
+
+        </a>
+
+
+
+        <a
+          href="/process-management.html"
+          class="home-what-card"
+        >
+
+          <h4>
+            Process Management
+          </h4>
+
+          <p>
+            Automation, instrumentation,
+            measurement and engineered process solutions.
+          </p>
+
+          <span class="material-symbols-outlined home-what-arrow">
+            north_east
+          </span>
+
+        </a>
+
+
+
+        <a
+          href="/ipm-and-turnkey.html"
+          class="home-what-card"
+        >
+
+          <h4>
+            Integrated Project Management
+          </h4>
+
+          <p>
+            End-to-end project coordination
+            and turnkey well delivery.
+          </p>
+
+          <span class="material-symbols-outlined home-what-arrow">
+            north_east
+          </span>
+
+        </a>
+
+
+
+        <a
+          href="/operations-and-maintenance.html"
+          class="home-what-card"
+        >
+
+          <h4>
+            Operations &amp; Maintenance
+          </h4>
+
+          <p>
+            Asset reliability, maintenance
+            and lifecycle performance support.
+          </p>
+
+          <span class="material-symbols-outlined home-what-arrow">
+            north_east
+          </span>
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
 
 <!-- SERVICES SECTION BEGINS -->
 <section class="aos-solutions-section home-dark-solutions">
