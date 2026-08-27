@@ -10517,3 +10517,15 @@ body.modal-active {
     }
   }
 }
+
+/* =====================================================
+   GLOBAL FOOTER LOGO SIZE
+===================================================== */
+
+footer img[src*="jogo.png"] {
+  width: auto !important;
+  height: 64px !important;
+  max-width: 150px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
