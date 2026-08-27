@@ -525,7 +525,41 @@
 
     <button
       onclick="toggleMegaMenu()"
-      class="absolute top-2 right-4 z-20"
+
+
+      onmouseenter="
+        this.style.backgroundColor='#FDECEC';
+        this.style.transform='scale(1.08)';
+      "
+
+      onmouseleave="
+        this.style.backgroundColor='transparent';
+        this.style.transform='scale(1)';
+      "
+
+      style="
+        position: fixed;
+        top: 132px;
+        right: 22px;
+        z-index: 9999;
+
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: transparent;
+        border: 0;
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease;
+      "
       aria-label="Close menu"
     >
 
@@ -533,7 +567,8 @@
         class="material-symbols-outlined"
         style="
           color: red;
-          font-size: 27px;
+          font-size: 25px;
+          line-height: 1;
           font-variation-settings: 'wght' 500;
         "
       >
@@ -894,15 +929,50 @@
 
     <button
       onclick="toggleServicesMenu()"
-      class="absolute top-2 right-4 z-20"
-      aria-label="Close services menu"
+
+      onmouseenter="
+       this.style.backgroundColor='#FDECEC';
+       this.style.transform='scale(1.08)';
+      "
+
+      onmouseleave="
+       this.style.backgroundColor='transparent';
+       this.style.transform='scale(1)';
+      "
+
+      style="
+        position: fixed;
+        top: 132px;
+        right: 22px;
+        z-index: 9999;
+
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: transparent;
+        border: 0;
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease;
+     "
+
+     aria-label="Close services menu"
     >
 
       <span
         class="material-symbols-outlined"
         style="
           color: red;
-          font-size: 27px;
+          font-size: 25px;
+          line-height: 1;
           font-variation-settings: 'wght' 500;
         "
       >
@@ -1012,7 +1082,7 @@
 
 
       <div
-        class="w-1/2 lg:w-3/5 pl-10 relative flex justify-center items-start"
+        class="w-1/2 lg:w-3/5 pl-10 pr-12 relative flex justify-center items-start"
       >
 
         <div
@@ -1567,7 +1637,7 @@
 
 
       <div
-        class="w-1/2 lg:w-3/5 pl-10 relative flex justify-center items-start"
+        class="w-1/2 lg:w-3/5 pl-10 pr-12 relative flex justify-center items-start"
       >
 
         <div
@@ -1676,7 +1746,7 @@
 
 
       <div
-        class="w-1/2 lg:w-3/5 pl-10 relative flex justify-center items-start"
+        class="w-1/2 lg:w-3/5 pl-10 pr-12 relative flex justify-center items-start"
       >
 
         <div
@@ -2228,26 +2298,60 @@
 
         <!-- IPM -->
 
-        <a
-          href="/ipm-and-turnkey.html"
-          class="flex justify-between items-center py-3 text-gray-700 hover:text-[#4CAF50] transition-colors"
+        <button
+          type="button"
+          class="w-full flex justify-between items-center py-3 text-left text-gray-700 hover:text-[#4CAF50] transition bg-white"
+          onclick="toggleSubmenu('mobile-ipm-menu', this)"
         >
 
           <span>
             Integrated Project Management
-          </span>
+         </span>
 
-          <span class="material-symbols-outlined text-[18px]">
-            north_east
-          </span>
+         <span
+           class="material-symbols-outlined text-[18px] transition-transform duration-300"
+          >
+           expand_more
+         </span>
+        </button>
 
-        </a>
+        <div
+          id="mobile-ipm-menu"
+          class="hidden pl-4 pt-1 pb-4 text-[13px] text-gray-500"
+        >
 
+          <div class="flex flex-col gap-y-3">
 
+            <a
+              href="/ipm-and-turnkey.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Project Management
+           </a>
+
+           <a
+             href="/ipm-and-turnkey.html"
+             class="hover:text-[#4CAF50] transition-colors block"
+            >
+             Bundled Services
+           </a>
+
+           <a
+             href="/ipm-and-turnkey.html"
+             class="hover:text-[#4CAF50] transition-colors block"
+            >
+              Integrated Project Management
+           </a>
+
+           <a
+              href="/ipm-and-turnkey.html"
+              class="hover:text-[#4CAF50] transition-colors block"
+            >
+             Turnkey Well Delivery
+            </a>
+         </div>
+        </div>
       </div>
-
-    </div>
-
 
 
     <!-- =====================================================
