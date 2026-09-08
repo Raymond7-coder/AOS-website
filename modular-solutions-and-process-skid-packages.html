@@ -20,7 +20,6 @@
   </title>
 
 
-
   <!-- =====================================================
        FONTS
   ====================================================== -->
@@ -42,7 +41,6 @@
   >
 
 
-
   <!-- =====================================================
        ICONS
   ====================================================== -->
@@ -58,7 +56,6 @@
   >
 
 
-
   <!-- =====================================================
        MAIN SITE CSS
   ====================================================== -->
@@ -69,7 +66,6 @@
   >
 
 
-
   <!-- =====================================================
        PAGE STYLES
   ====================================================== -->
@@ -77,27 +73,16 @@
   <style>
 
     :root {
-
       --ms-green: #009b3a;
-
       --ms-green-dark: #004225;
-
       --ms-deep: #031d10;
-
       --ms-ink: #101712;
-
       --ms-copy: #59655e;
-
       --ms-soft: #f3f7f4;
-
       --ms-soft-2: #edf4ef;
-
       --ms-border: #dce7df;
-
       --ms-white: #ffffff;
-
     }
-
 
 
     * {
@@ -105,29 +90,18 @@
     }
 
 
-
     html {
       scroll-behavior: smooth;
     }
 
 
-
     body {
-
       margin: 0;
-
       overflow-x: hidden;
-
       background: #ffffff;
-
       color: var(--ms-ink);
-
-      font-family:
-        "Poppins",
-        sans-serif;
-
+      font-family: "Poppins", sans-serif;
     }
-
 
 
     img {
@@ -135,26 +109,19 @@
     }
 
 
-
     .ms-page {
       overflow: hidden;
     }
 
 
-
     .ms-shell {
-
-      width:
-        min(
-          1180px,
-          calc(100% - 40px)
-        );
+      width: min(
+        1180px,
+        calc(100% - 40px)
+      );
 
       margin-inline: auto;
-
     }
-
-
 
 
 
@@ -163,72 +130,57 @@
     ====================================================== */
 
     .ms-hero {
-
       position: relative;
 
       min-height: 640px;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
-
       isolation: isolate;
 
       color: #ffffff;
 
       background:
-
         linear-gradient(
           90deg,
-          rgba(2, 21, 11, .97) 0%,
-          rgba(2, 21, 11, .86) 48%,
-          rgba(2, 21, 11, .35) 100%
+          rgba(2,21,11,.97) 0%,
+          rgba(2,21,11,.86) 48%,
+          rgba(2,21,11,.35) 100%
         ),
-
         url("/images/modular/gas-processing-equipment-1.png")
         center / cover
         no-repeat;
-
     }
 
 
-
     .ms-hero::before {
-
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       z-index: -1;
 
       background:
-
         radial-gradient(
           circle at 86% 20%,
           rgba(0,155,58,.23),
           transparent 30%
         ),
-
         linear-gradient(
           135deg,
           transparent 62%,
           rgba(0,155,58,.13) 62%
         );
-
     }
 
 
-
     .ms-hero::after {
-
       content: "";
 
       position: absolute;
-
       z-index: -1;
 
       width: 450px;
@@ -242,25 +194,17 @@
         rgba(0,155,58,.28);
 
       border-radius: 50%;
-
     }
-
 
 
     .ms-hero-inner {
-
       max-width: 900px;
-
-      padding:
-        145px 0 115px;
-
+      padding: 145px 0 115px;
     }
-
 
 
     .ms-eyebrow,
     .ms-label {
-
       display: inline-flex;
 
       align-items: center;
@@ -270,71 +214,53 @@
       color: var(--ms-green);
 
       font-size: 10px;
-
       font-weight: 700;
 
       letter-spacing: .16em;
 
       text-transform: uppercase;
-
     }
-
 
 
     .ms-eyebrow {
-
       margin-bottom: 20px;
-
       color: #8ce8ad;
-
     }
-
 
 
     .ms-eyebrow::before,
     .ms-label::after {
-
       content: "";
 
       width: 42px;
       height: 2px;
 
       background: var(--ms-green);
-
     }
 
 
-
     .ms-hero h1 {
-
       max-width: 900px;
 
-      margin:
-        0 0 22px;
+      margin: 0 0 22px;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
-      font-size:
-        clamp(
-          43px,
-          5.6vw,
-          72px
-        );
+      font-size: clamp(
+        43px,
+        5.6vw,
+        72px
+      );
 
       line-height: 1.04;
 
       letter-spacing: -.04em;
 
       font-weight: 700;
-
     }
 
 
-
     .ms-hero p {
-
       max-width: 770px;
 
       margin: 0;
@@ -344,27 +270,20 @@
       font-size: 14px;
 
       line-height: 1.9;
-
     }
 
 
-
     .ms-hero-actions {
-
       display: flex;
-
       flex-wrap: wrap;
 
       gap: 13px;
 
       margin-top: 32px;
-
     }
 
 
-
     .ms-btn {
-
       min-height: 50px;
 
       display: inline-flex;
@@ -374,16 +293,13 @@
 
       gap: 9px;
 
-      padding:
-        12px 20px;
+      padding: 12px 20px;
 
-      border:
-        1px solid transparent;
+      border: 1px solid transparent;
 
       border-radius: 5px;
 
       font-size: 12px;
-
       font-weight: 700;
 
       text-decoration: none;
@@ -391,44 +307,27 @@
       transition:
         transform .22s ease,
         background .22s ease;
-
     }
-
 
 
     .ms-btn:hover {
-
-      transform:
-        translateY(-2px);
-
+      transform: translateY(-2px);
     }
-
 
 
     .ms-btn-primary {
-
       background: #ffffff;
-
-      color:
-        var(--ms-green-dark);
-
+      color: var(--ms-green-dark);
     }
-
 
 
     .ms-btn-secondary {
+      border-color: rgba(255,255,255,.35);
 
-      border-color:
-        rgba(255,255,255,.35);
-
-      background:
-        rgba(255,255,255,.06);
+      background: rgba(255,255,255,.06);
 
       color: #ffffff;
-
     }
-
-
 
 
 
@@ -437,26 +336,19 @@
     ====================================================== */
 
     .ms-quick {
-
       position: relative;
 
       z-index: 5;
 
       margin-top: -42px;
-
     }
 
 
-
     .ms-quick-grid {
-
       display: grid;
 
       grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
+        repeat(4, 1fr);
 
       background: #ffffff;
 
@@ -467,13 +359,10 @@
       box-shadow:
         0 20px 55px
         rgba(6,46,22,.12);
-
     }
 
 
-
     .ms-quick a {
-
       min-height: 82px;
 
       display: flex;
@@ -481,8 +370,7 @@
       align-items: center;
       justify-content: center;
 
-      padding:
-        14px 18px;
+      padding: 14px 18px;
 
       border-right:
         1px solid
@@ -495,7 +383,6 @@
       color: #2b372f;
 
       font-size: 11px;
-
       font-weight: 600;
 
       line-height: 1.45;
@@ -507,9 +394,7 @@
       transition:
         background .22s ease,
         color .22s ease;
-
     }
-
 
 
     .ms-quick a:nth-child(4n) {
@@ -517,23 +402,15 @@
     }
 
 
-
     .ms-quick a:nth-last-child(-n+4) {
       border-bottom: 0;
     }
 
 
-
     .ms-quick a:hover {
-
-      background:
-        var(--ms-green);
-
+      background: var(--ms-green);
       color: #ffffff;
-
     }
-
-
 
 
 
@@ -542,16 +419,11 @@
     ====================================================== */
 
     .ms-intro {
-
-      padding:
-        105px 0 90px;
-
+      padding: 105px 0 90px;
     }
 
 
-
     .ms-intro-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -560,130 +432,91 @@
       gap: 75px;
 
       align-items: start;
-
     }
-
 
 
     .ms-label {
-
       margin-bottom: 14px;
-
     }
 
 
-
     .ms-intro h2 {
-
       max-width: 480px;
 
       margin: 0;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
-      font-size:
-        clamp(
-          34px,
-          4vw,
-          50px
-        );
+      font-size: clamp(
+        34px,
+        4vw,
+        50px
+      );
 
       line-height: 1.08;
 
       letter-spacing: -.035em;
 
       font-weight: 600;
-
     }
 
 
-
     .ms-intro-copy p {
-
       margin: 0;
 
-      color:
-        var(--ms-copy);
+      color: var(--ms-copy);
 
       font-size: 13px;
 
       line-height: 1.95;
-
     }
-
 
 
     .ms-intro-copy p + p {
-
       margin-top: 16px;
-
     }
 
 
-
     .ms-stat-row {
-
       display: grid;
 
       grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
+        repeat(3, 1fr);
 
       margin-top: 32px;
 
       border-top:
         1px solid
         var(--ms-border);
-
     }
-
 
 
     .ms-stat {
-
-      padding:
-        23px 18px 0 0;
-
+      padding: 23px 18px 0 0;
     }
 
 
-
     .ms-stat strong {
-
       display: block;
 
       margin-bottom: 7px;
 
-      color:
-        var(--ms-green-dark);
+      color: var(--ms-green-dark);
 
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
       font-size: 18px;
-
       font-weight: 600;
-
     }
 
 
-
     .ms-stat span {
-
       color: #677269;
 
       font-size: 11px;
 
       line-height: 1.65;
-
     }
-
-
 
 
 
@@ -692,28 +525,18 @@
     ====================================================== */
 
     .ms-section {
+      padding: 100px 0;
 
-      padding:
-        100px 0;
-
-      scroll-margin-top:
-        120px;
-
+      scroll-margin-top: 120px;
     }
-
 
 
     .ms-section-soft {
-
-      background:
-        var(--ms-soft);
-
+      background: var(--ms-soft);
     }
 
 
-
     .ms-service-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -722,111 +545,77 @@
       gap: 64px;
 
       align-items: center;
-
     }
 
 
-
-    .ms-service-grid.reverse
-    .ms-copy {
-
+    .ms-service-grid.reverse .ms-copy {
       order: 2;
-
     }
 
 
-
-    .ms-service-grid.reverse
-    .ms-visual {
-
+    .ms-service-grid.reverse .ms-visual {
       order: 1;
-
     }
-
 
 
     .ms-copy h2 {
+      margin: 0 0 18px;
 
-      margin:
-        0 0 18px;
+      font-family: "Montserrat", sans-serif;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          29px,
-          3.2vw,
-          42px
-        );
+      font-size: clamp(
+        29px,
+        3.2vw,
+        42px
+      );
 
       line-height: 1.14;
 
-      letter-spacing:
-        -.03em;
+      letter-spacing: -.03em;
 
       font-weight: 600;
-
     }
 
 
-
     .ms-copy p {
-
       margin: 0;
 
-      color:
-        var(--ms-copy);
+      color: var(--ms-copy);
 
       font-size: 13px;
 
       line-height: 1.9;
-
     }
-
 
 
     .ms-copy p + p {
-
       margin-top: 15px;
-
     }
 
 
-
     .ms-list {
-
       display: grid;
 
       grid-template-columns:
         repeat(
           2,
-          minmax(
-            0,
-            1fr
-          )
+          minmax(0,1fr)
         );
 
-      gap:
-        7px 18px;
+      gap: 7px 18px;
 
       margin-top: 24px;
-
     }
 
 
-
     .ms-list-item {
-
       display: flex;
 
       align-items: flex-start;
 
       gap: 8px;
 
-      padding:
-        10px 0;
+      padding: 10px 0;
 
       border-bottom:
         1px solid
@@ -837,104 +626,88 @@
       font-size: 11px;
 
       line-height: 1.55;
-
     }
-
 
 
     .ms-list-item
     .material-symbols-outlined {
-
       flex-shrink: 0;
 
       margin-top: 1px;
 
-      color:
-        var(--ms-green);
+      color: var(--ms-green);
 
       font-size: 17px;
-
     }
 
 
 
-
-
     /* =====================================================
-       MAIN IMAGE
+       MAIN IMAGES
     ====================================================== */
 
     .ms-main-image {
-
       position: relative;
 
-      min-height: 410px;
+      width: 100%;
+
+      aspect-ratio: 1.32 / 1;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      padding: 24px;
+      padding: 0;
 
       overflow: hidden;
 
-      background:
-        #edf3ef;
+      background: #ffffff;
 
       border:
         1px solid
         var(--ms-border);
-
     }
 
 
-
     .ms-main-image::before {
-
       content: "";
 
       position: absolute;
 
-      width: 115px;
-      height: 9px;
-
       top: 0;
       left: 0;
 
-      background:
-        var(--ms-green);
+      z-index: 4;
 
+      width: 115px;
+      height: 9px;
+
+      background: var(--ms-green);
     }
-
 
 
     .ms-main-image img {
-
       display: block;
 
       width: 100%;
-
       height: 100%;
 
-      max-height: 430px;
+      max-width: none;
+      max-height: none;
 
-      object-fit: contain;
+      object-fit: cover;
 
       object-position: center;
-
     }
-
-
 
 
 
     /* =====================================================
-       EXPANDABLE DETAILS
+       STANDARD DROPDOWNS
     ====================================================== */
 
     .ms-details {
-
       margin-top: 28px;
 
       background: #ffffff;
@@ -942,13 +715,10 @@
       border:
         1px solid
         var(--ms-border);
-
     }
 
 
-
     .ms-details summary {
-
       min-height: 62px;
 
       list-style: none;
@@ -962,21 +732,15 @@
 
       gap: 20px;
 
-      padding:
-        17px 22px;
+      padding: 17px 22px;
 
       color: #162019;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
       font-size: 13px;
-
       font-weight: 600;
-
     }
-
 
 
     .ms-details summary::-webkit-details-marker {
@@ -984,103 +748,141 @@
     }
 
 
-
     .ms-details summary
     .material-symbols-outlined {
-
-      color:
-        var(--ms-green);
+      color: var(--ms-green);
 
       transition:
         transform .2s ease;
-
     }
-
 
 
     .ms-details[open]
     summary
     .material-symbols-outlined {
-
-      transform:
-        rotate(180deg);
-
+      transform: rotate(180deg);
     }
-
 
 
     .ms-details-body {
-
-      padding:
-        0 22px 22px;
-
+      padding: 0 16px 18px;
     }
 
 
-
     .ms-detail-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(
           2,
-          minmax(
-            0,
-            1fr
-          )
+          minmax(0,1fr)
         );
 
-      gap: 18px;
+      gap: 16px;
 
+      width: 100%;
     }
 
 
-
     .ms-detail-image {
-
-      min-height: 240px;
+      width: 100%;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      padding: 18px;
+      padding: 0;
 
-      background:
-        var(--ms-soft);
+      overflow: hidden;
+
+      background: #ffffff;
 
       border:
         1px solid
         var(--ms-border);
-
     }
-
 
 
     .ms-detail-image.wide {
-
-      grid-column:
-        1 / -1;
-
+      grid-column: 1 / -1;
     }
-
 
 
     .ms-detail-image img {
-
       display: block;
 
       width: 100%;
+      height: auto;
 
-      max-height: 470px;
+      max-height: none;
 
       object-fit: contain;
-
     }
 
 
+
+    /* =====================================================
+       FULL-WIDTH TECHNICAL DROPDOWNS
+    ====================================================== */
+
+    .ms-details-technical {
+      margin-top: 34px;
+
+      width: 100%;
+    }
+
+
+    .ms-details-technical
+    .ms-details-body {
+      padding: 0 16px 18px;
+    }
+
+
+    .ms-technical-diagram {
+      position: relative;
+
+      width: 100%;
+
+      padding: 12px;
+
+      overflow: hidden;
+
+      background: #ffffff;
+
+      border:
+        1px solid
+        var(--ms-border);
+    }
+
+
+    .ms-technical-diagram img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      max-width: none;
+      max-height: none;
+
+      object-fit: contain;
+
+      cursor: zoom-in;
+    }
+
+
+    .ms-diagram-hint {
+      margin-top: 10px;
+
+      padding-right: 2px;
+
+      color: #68756d;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      text-align: right;
+    }
 
 
 
@@ -1089,7 +891,6 @@
     ====================================================== */
 
     .ms-epf-head {
-
       display: grid;
 
       grid-template-columns:
@@ -1100,73 +901,58 @@
       align-items: end;
 
       margin-bottom: 42px;
-
     }
 
 
-
     .ms-epf-head h2 {
+      margin: 0 0 16px;
 
-      margin:
-        0 0 16px;
+      font-family: "Montserrat", sans-serif;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          31px,
-          3.5vw,
-          44px
-        );
+      font-size: clamp(
+        31px,
+        3.5vw,
+        44px
+      );
 
       line-height: 1.12;
 
       font-weight: 600;
-
     }
 
 
-
     .ms-epf-head p {
-
       margin: 0;
 
-      color:
-        var(--ms-copy);
+      color: var(--ms-copy);
 
       font-size: 13px;
 
       line-height: 1.9;
-
     }
-
 
 
     .ms-epf-feature {
-
       display: grid;
 
       grid-template-columns:
-        1.12fr .88fr;
+        1.35fr .65fr;
 
       gap: 26px;
 
+      align-items: stretch;
     }
 
 
-
     .ms-epf-visual {
-
-      min-height: 440px;
+      min-height: 460px;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      padding: 22px;
+      padding: 18px;
 
       background: #ffffff;
 
@@ -1174,94 +960,73 @@
         1px solid
         var(--ms-border);
 
+      overflow: hidden;
     }
-
 
 
     .ms-epf-visual img {
+      display: block;
 
       width: 100%;
+      height: auto;
 
-      max-height: 500px;
+      max-height: none;
 
       object-fit: contain;
-
     }
 
 
-
     .ms-epf-capabilities {
-
       display: flex;
 
       flex-direction: column;
 
       justify-content: center;
 
-      padding:
-        38px;
+      padding: 38px;
 
-      background:
-        var(--ms-deep);
+      background: var(--ms-deep);
 
       color: #ffffff;
-
     }
-
 
 
     .ms-epf-capabilities h3 {
+      margin: 0 0 10px;
 
-      margin:
-        0 0 10px;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
       font-size: 24px;
-
       font-weight: 600;
-
     }
 
 
-
     .ms-epf-capabilities p {
-
-      margin:
-        0 0 20px;
+      margin: 0 0 20px;
 
       color: #c9d5cd;
 
       font-size: 12px;
 
       line-height: 1.8;
-
     }
 
 
-
     .ms-epf-capabilities ul {
-
       list-style: none;
 
       margin: 0;
 
       padding: 0;
-
     }
 
 
-
     .ms-epf-capabilities li {
-
       display: flex;
 
       gap: 9px;
 
-      padding:
-        12px 0;
+      padding: 12px 0;
 
       border-bottom:
         1px solid
@@ -1270,20 +1035,14 @@
       color: #dbe6de;
 
       font-size: 12px;
-
     }
-
 
 
     .ms-epf-capabilities li::before {
-
       content: "↗";
 
       color: #79e4a0;
-
     }
-
-
 
 
 
@@ -1292,21 +1051,15 @@
     ====================================================== */
 
     .ms-engineering {
+      padding: 90px 0;
 
-      padding:
-        90px 0;
-
-      background:
-        var(--ms-deep);
+      background: var(--ms-deep);
 
       color: #ffffff;
-
     }
 
 
-
     .ms-engineering-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -1315,37 +1068,27 @@
       gap: 65px;
 
       align-items: center;
-
     }
 
 
-
     .ms-engineering h2 {
+      margin: 0 0 15px;
 
-      margin:
-        0 0 15px;
+      font-family: "Montserrat", sans-serif;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          31px,
-          4vw,
-          47px
-        );
+      font-size: clamp(
+        31px,
+        4vw,
+        47px
+      );
 
       line-height: 1.08;
 
       font-weight: 600;
-
     }
 
 
-
     .ms-engineering p {
-
       margin: 0;
 
       color: #c8d5cc;
@@ -1353,35 +1096,26 @@
       font-size: 13px;
 
       line-height: 1.9;
-
     }
-
 
 
     .ms-engineering-image {
+      padding: 0;
 
-      padding: 15px;
+      overflow: hidden;
 
-      background:
-        #ffffff;
-
+      background: #ffffff;
     }
-
 
 
     .ms-engineering-image img {
-
       display: block;
 
       width: 100%;
-
-      max-height: 410px;
+      height: auto;
 
       object-fit: contain;
-
     }
-
-
 
 
 
@@ -1390,78 +1124,59 @@
     ====================================================== */
 
     .ms-project-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(
           2,
-          minmax(
-            0,
-            1fr
-          )
+          minmax(0,1fr)
         );
 
       gap: 18px;
-
     }
-
 
 
     .ms-project-grid.five {
-
       grid-template-columns:
         repeat(
           3,
-          minmax(
-            0,
-            1fr
-          )
+          minmax(0,1fr)
         );
-
     }
 
 
-
     .ms-project-item {
-
-      min-height: 240px;
+      min-height: 230px;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      padding: 14px;
+      padding: 0;
 
       overflow: hidden;
 
-      background:
-        var(--ms-soft);
+      background: #ffffff;
 
       border:
         1px solid
         var(--ms-border);
-
     }
-
 
 
     .ms-project-item img {
-
       display: block;
 
       width: 100%;
-
       height: 100%;
 
-      max-height: 390px;
+      min-height: 230px;
 
-      object-fit: contain;
+      object-fit: cover;
 
+      object-position: center;
     }
-
-
 
 
 
@@ -1470,16 +1185,11 @@
     ====================================================== */
 
     .ms-packages {
-
-      padding:
-        100px 0;
-
+      padding: 100px 0;
     }
 
 
-
     .ms-packages-head {
-
       display: grid;
 
       grid-template-columns:
@@ -1490,51 +1200,38 @@
       align-items: end;
 
       margin-bottom: 42px;
-
     }
 
 
-
     .ms-packages-head h2 {
-
       margin: 0;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
-      font-size:
-        clamp(
-          31px,
-          4vw,
-          45px
-        );
+      font-size: clamp(
+        31px,
+        4vw,
+        45px
+      );
 
       line-height: 1.12;
 
       font-weight: 600;
-
     }
 
 
-
     .ms-packages-head p {
-
       margin: 0;
 
-      color:
-        var(--ms-copy);
+      color: var(--ms-copy);
 
       font-size: 13px;
 
       line-height: 1.85;
-
     }
 
 
-
     .ms-package-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -1543,13 +1240,10 @@
       border:
         1px solid
         var(--ms-border);
-
     }
 
 
-
     .ms-package-img {
-
       min-height: 430px;
 
       display: flex;
@@ -1557,84 +1251,69 @@
       align-items: center;
       justify-content: center;
 
-      padding: 24px;
+      padding: 0;
 
-      background:
-        var(--ms-soft);
+      overflow: hidden;
 
+      background: #ffffff;
     }
-
 
 
     .ms-package-img img {
+      display: block;
 
       width: 100%;
+      height: 100%;
 
-      max-height: 460px;
+      min-height: 430px;
 
-      object-fit: contain;
+      object-fit: cover;
 
+      object-position: center;
     }
 
 
-
     .ms-package-list {
-
       display: flex;
 
       flex-direction: column;
 
       justify-content: center;
 
-      padding:
-        42px;
+      padding: 42px;
 
-      background:
-        var(--ms-deep);
+      background: var(--ms-deep);
 
       color: #ffffff;
-
     }
 
 
-
     .ms-package-list h3 {
+      margin: 0 0 20px;
 
-      margin:
-        0 0 20px;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
+      font-family: "Montserrat", sans-serif;
 
       font-size: 24px;
 
       font-weight: 600;
-
     }
 
 
-
     .ms-package-list ul {
-
       list-style: none;
 
       margin: 0;
 
       padding: 0;
-
     }
 
 
-
     .ms-package-list li {
-
       display: flex;
 
       gap: 10px;
 
-      padding:
-        13px 0;
+      padding: 13px 0;
 
       border-bottom:
         1px solid
@@ -1643,20 +1322,14 @@
       color: #dce8df;
 
       font-size: 12px;
-
     }
-
 
 
     .ms-package-list li::before {
-
       content: "↗";
 
       color: #77e19e;
-
     }
-
-
 
 
 
@@ -1665,16 +1338,11 @@
     ====================================================== */
 
     .ms-cta {
-
-      padding:
-        0 0 100px;
-
+      padding: 0 0 100px;
     }
 
 
-
     .ms-cta-box {
-
       position: relative;
 
       overflow: hidden;
@@ -1688,27 +1356,22 @@
 
       align-items: center;
 
-      padding:
-        48px 50px;
+      padding: 48px 50px;
 
       border-radius: 10px;
 
       color: #ffffff;
 
       background:
-
         linear-gradient(
           110deg,
           var(--ms-green-dark),
           var(--ms-green)
         );
-
     }
 
 
-
     .ms-cta-box::after {
-
       content: "";
 
       position: absolute;
@@ -1724,45 +1387,32 @@
         rgba(255,255,255,.10);
 
       border-radius: 50%;
-
     }
-
 
 
     .ms-cta-copy {
-
       position: relative;
 
       z-index: 1;
-
     }
-
 
 
     .ms-cta h2 {
+      margin: 0 0 9px;
 
-      margin:
-        0 0 9px;
+      font-family: "Montserrat", sans-serif;
 
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          26px,
-          3vw,
-          38px
-        );
+      font-size: clamp(
+        26px,
+        3vw,
+        38px
+      );
 
       font-weight: 600;
-
     }
 
 
-
     .ms-cta p {
-
       max-width: 720px;
 
       margin: 0;
@@ -1772,20 +1422,115 @@
       font-size: 13px;
 
       line-height: 1.8;
-
     }
-
 
 
     .ms-cta .ms-btn {
-
       position: relative;
 
       z-index: 1;
-
     }
 
 
+
+    /* =====================================================
+       FULLSCREEN DIAGRAM VIEWER
+    ====================================================== */
+
+    .ms-diagram-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 100000;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 32px;
+
+      overflow: auto;
+
+      background:
+        rgba(3,29,16,.94);
+    }
+
+
+    .ms-diagram-modal.open {
+      display: flex;
+    }
+
+
+    .ms-diagram-modal img {
+      display: block;
+
+      width: auto;
+      height: auto;
+
+      max-width: 96vw;
+      max-height: 92vh;
+
+      object-fit: contain;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.35);
+    }
+
+
+    .ms-diagram-close {
+      position: fixed;
+
+      top: 24px;
+      right: 27px;
+
+      z-index: 2;
+
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      color: #d60000;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18);
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+
+    .ms-diagram-close:hover {
+      background: #fff1f1;
+
+      transform: scale(1.05);
+    }
+
+
+    .ms-diagram-close
+    .material-symbols-outlined {
+      font-size: 25px;
+    }
 
 
 
@@ -1793,25 +1538,17 @@
        TABLET
     ====================================================== */
 
-    @media
-    (max-width: 1000px) {
+    @media (max-width: 1000px) {
 
       .ms-quick-grid {
-
         grid-template-columns:
-          repeat(
-            2,
-            1fr
-          );
-
+          repeat(2,1fr);
       }
-
 
 
       .ms-quick a:nth-child(2n) {
         border-right: 0;
       }
-
 
 
       .ms-quick a:nth-last-child(-n+4) {
@@ -1821,34 +1558,22 @@
       }
 
 
-
       .ms-quick a:nth-last-child(-n+2) {
         border-bottom: 0;
       }
 
 
-
       .ms-service-grid {
-
         gap: 40px;
-
       }
-
 
 
       .ms-project-grid.five {
-
         grid-template-columns:
-          repeat(
-            2,
-            1fr
-          );
-
+          repeat(2,1fr);
       }
 
     }
-
-
 
 
 
@@ -1856,39 +1581,27 @@
        MOBILE / SMALL TABLET
     ====================================================== */
 
-    @media
-    (max-width: 820px) {
+    @media (max-width: 820px) {
 
       .ms-shell {
-
-        width:
-          min(
-            calc(100% - 32px),
-            680px
-          );
-
+        width: min(
+          calc(100% - 32px),
+          680px
+        );
       }
 
 
-
       .ms-hero {
-
         min-height: auto;
 
         background-position:
           65% center;
-
       }
-
 
 
       .ms-hero-inner {
-
-        padding:
-          110px 0 90px;
-
+        padding: 110px 0 90px;
       }
-
 
 
       .ms-intro-grid,
@@ -1898,70 +1611,66 @@
       .ms-engineering-grid,
       .ms-packages-head,
       .ms-package-grid {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
 
 
-
-      .ms-service-grid.reverse
-      .ms-copy,
-      .ms-service-grid.reverse
-      .ms-visual {
-
+      .ms-service-grid.reverse .ms-copy,
+      .ms-service-grid.reverse .ms-visual {
         order: initial;
-
       }
-
 
 
       .ms-section {
-
-        padding:
-          75px 0;
-
+        padding: 75px 0;
       }
-
 
 
       .ms-stat-row {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
-
 
 
       .ms-main-image {
-
-        min-height: 320px;
-
+        aspect-ratio: 4 / 3;
       }
 
+
+      .ms-epf-feature {
+        grid-template-columns: 1fr;
+      }
+
+
+      .ms-epf-visual {
+        min-height: auto;
+      }
 
 
       .ms-package-list {
-
-        padding:
-          34px 28px;
-
+        padding: 34px 28px;
       }
 
+
+      .ms-package-img {
+        min-height: 360px;
+      }
+
+
+      .ms-package-img img {
+        min-height: 360px;
+      }
 
 
       .ms-cta-box {
+        grid-template-columns: 1fr;
+      }
 
-        grid-template-columns:
-          1fr;
 
+      .ms-technical-diagram {
+        padding: 8px;
       }
 
     }
-
-
 
 
 
@@ -1969,128 +1678,139 @@
        MOBILE
     ====================================================== */
 
-    @media
-    (max-width: 560px) {
+    @media (max-width: 560px) {
 
       .ms-shell {
-
         width:
           calc(100% - 24px);
-
       }
-
 
 
       .ms-hero h1 {
-
         font-size: 39px;
-
       }
-
 
 
       .ms-hero p {
-
         font-size: 13px;
-
       }
-
 
 
       .ms-quick-grid {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
 
 
-
       .ms-quick a {
-
         border-right: 0 !important;
 
         border-bottom:
           1px solid
           var(--ms-border) !important;
-
       }
-
 
 
       .ms-quick a:last-child {
-
         border-bottom: 0 !important;
-
       }
-
 
 
       .ms-list {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
-
 
 
       .ms-main-image {
-
-        min-height: 260px;
-
-        padding: 13px;
-
+        aspect-ratio: 1 / .82;
       }
-
 
 
       .ms-detail-grid,
       .ms-project-grid,
       .ms-project-grid.five {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
-
 
 
       .ms-detail-image.wide {
-
         grid-column: auto;
-
       }
-
 
 
       .ms-epf-capabilities {
-
-        padding:
-          29px 23px;
-
+        padding: 29px 23px;
       }
 
+
+      .ms-project-item {
+        min-height: 260px;
+      }
+
+
+      .ms-project-item img {
+        min-height: 260px;
+      }
 
 
       .ms-package-list {
-
-        padding:
-          30px 23px;
-
+        padding: 30px 23px;
       }
 
+
+      .ms-package-img {
+        min-height: 300px;
+      }
+
+
+      .ms-package-img img {
+        min-height: 300px;
+      }
 
 
       .ms-cta-box {
+        padding: 35px 24px;
+      }
 
+
+      .ms-details-technical {
+        margin-top: 25px;
+      }
+
+
+      .ms-details-technical
+      .ms-details-body {
         padding:
-          35px 24px;
+          0 7px 8px;
+      }
 
+
+      .ms-technical-diagram {
+        padding: 4px;
+      }
+
+
+      .ms-diagram-hint {
+        padding:
+          3px 7px 4px;
+
+        font-size: 9px;
+      }
+
+
+      .ms-diagram-modal {
+        padding: 12px;
+      }
+
+
+      .ms-diagram-close {
+        top: 15px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
       }
 
     }
-
 
   </style>
 
@@ -2101,25 +1821,17 @@
 <body>
 
 
-
   <!-- =====================================================
        NAVBAR
   ====================================================== -->
 
   <div id="navbar-placeholder"></div>
 
-
-  <div
-    style="
-      height:120px;
-    "
-  ></div>
-
+  <div style="height:120px;"></div>
 
 
 
   <main class="ms-page">
-
 
 
     <!-- =====================================================
@@ -2128,37 +1840,28 @@
 
     <section class="ms-hero">
 
-
       <div class="ms-shell">
 
-
         <div class="ms-hero-inner">
-
 
           <div class="ms-eyebrow">
             Engineered modular process systems
           </div>
 
-
           <h1>
             Modular Solutions &amp; Process Skid Packages
           </h1>
 
-
           <p>
-
             Integrated, skid-based and modular process solutions
             engineered to shorten project schedules, simplify
             field installation and support reliable oil and gas
             production from early production through treatment,
             control and chemical injection.
-
           </p>
 
 
-
           <div class="ms-hero-actions">
-
 
             <a
               href="#solutions"
@@ -2174,7 +1877,6 @@
             </a>
 
 
-
             <a
               href="/contact-us.html"
               class="ms-btn ms-btn-secondary"
@@ -2182,18 +1884,13 @@
               Discuss your project
             </a>
 
-
           </div>
-
 
         </div>
 
-
       </div>
 
-
     </section>
-
 
 
 
@@ -2207,55 +1904,43 @@
       aria-label="Modular solutions"
     >
 
-
       <div class="ms-shell ms-quick-grid">
-
 
         <a href="#epf">
           Early Production Facility
         </a>
 
-
         <a href="#produced-water">
           Produced Water Treatment
         </a>
-
 
         <a href="#oil-processing">
           Oil Processing Equipment
         </a>
 
-
         <a href="#gas-processing">
           Gas Processing Equipment
         </a>
-
 
         <a href="#sea-water">
           Sea Water Treatment
         </a>
 
-
         <a href="#whcp">
           Wellhead Control Panels
         </a>
-
 
         <a href="#chemical-injection">
           Chemical Injection Systems
         </a>
 
-
         <a href="#dosing-skid">
           Dosing Skids
         </a>
 
-
       </div>
 
-
     </nav>
-
 
 
 
@@ -2265,59 +1950,42 @@
 
     <section class="ms-intro">
 
-
       <div class="ms-shell ms-intro-grid">
 
-
         <div>
-
 
           <div class="ms-label">
             Integrated process capability
           </div>
 
-
           <h2>
-
             Built as modules.<br>
-
             Engineered as complete systems.
-
           </h2>
-
 
         </div>
 
 
-
         <div class="ms-intro-copy">
 
-
           <p>
-
             AOS Orwell's modular process solutions bring
             process engineering, fabrication, assembly,
             testing and commissioning together in
             skid-based packages that can be deployed
             as individual systems or integrated modules.
-
           </p>
 
-
           <p>
-
             The portfolio spans early production,
             produced-water and sea-water treatment,
             oil and gas processing, wellhead control,
             chemical injection and other modular
             wellsite packages.
-
           </p>
 
 
-
           <div class="ms-stat-row">
-
 
             <div class="ms-stat">
 
@@ -2326,14 +1994,11 @@
               </strong>
 
               <span>
-
                 Compact systems designed for efficient
                 installation and deployment.
-
               </span>
 
             </div>
-
 
 
             <div class="ms-stat">
@@ -2343,14 +2008,11 @@
               </strong>
 
               <span>
-
                 Engineering, fabrication, testing and
                 commissioning in one delivery model.
-
               </span>
 
             </div>
-
 
 
             <div class="ms-stat">
@@ -2360,26 +2022,19 @@
               </strong>
 
               <span>
-
                 Individual packages or complete modules
                 for project-specific requirements.
-
               </span>
 
             </div>
 
-
           </div>
-
 
         </div>
 
-
       </div>
 
-
     </section>
-
 
 
 
@@ -2392,32 +2047,24 @@
       id="epf"
     >
 
-
       <div class="ms-shell">
-
 
         <div class="ms-epf-head">
 
-
           <div>
-
 
             <div class="ms-label">
               Fast-track production
             </div>
 
-
             <h2>
               Early Production Facility
             </h2>
 
-
           </div>
 
 
-
           <p>
-
             Early Production Facilities (EPFs) are temporary
             modular units designed to bring oil and gas
             production online quickly while full-field
@@ -2427,16 +2074,12 @@
             hydrocarbon reserves rapidly, gather valuable
             reservoir data and optimize future field
             development strategies.
-
           </p>
-
 
         </div>
 
 
-
         <div class="ms-epf-feature">
-
 
           <div class="ms-epf-visual">
 
@@ -2448,21 +2091,16 @@
           </div>
 
 
-
           <div class="ms-epf-capabilities">
-
 
             <h3>
               Fast-track production capability
             </h3>
 
-
             <p>
-
               Modular systems provide an efficient route
               to first production while permanent field
               infrastructure is developed.
-
             </p>
 
 
@@ -2490,64 +2128,49 @@
 
             </ul>
 
-
           </div>
-
 
         </div>
 
 
-
-        <details class="ms-details">
-
+        <details class="ms-details ms-details-technical">
 
           <summary>
-
 
             <span>
               View Early Production Facility process configuration
             </span>
 
-
             <span class="material-symbols-outlined">
               expand_more
             </span>
 
-
           </summary>
-
 
 
           <div class="ms-details-body">
 
+            <div class="ms-technical-diagram">
 
-            <div class="ms-detail-grid">
+              <img
+                src="/images/mod2.png"
+                alt="Early Production Facility strengths and process flow"
+                onclick="openDiagram(this.src, this.alt)"
+              >
 
-
-              <div class="ms-detail-image wide">
-
-                <img
-                  src="/images/mod2.png"
-                  alt="Early Production Facility strengths and process flow"
-                >
-
+              <div class="ms-diagram-hint">
+                Click image to enlarge
               </div>
-
 
             </div>
 
-
           </div>
-
 
         </details>
 
-
       </div>
 
-
     </section>
-
 
 
 
@@ -2560,112 +2183,76 @@
       id="produced-water"
     >
 
-
       <div class="ms-shell ms-service-grid reverse">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Water management
           </div>
 
-
           <h2>
             Produced Water Treatment
           </h2>
 
-
           <p>
-
             Treatment of produced water is an effective option
             for produced water handling, with several
             technologies available for the removal of
             hydrocarbons and suspended solids.
-
           </p>
-
 
 
           <div class="ms-list">
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Induced Gas Flotation
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Deoiling Hydrocyclones
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Desanding Hydrocyclones
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Corrugated Plate Interceptors
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Compact Flotation Units
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Integrated Skid or Module Delivery
-
             </div>
-
 
           </div>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -2676,53 +2263,53 @@
 
           </div>
 
-
-
-          <details class="ms-details">
-
-
-            <summary>
-
-              <span>
-                View treatment process detail
-              </span>
-
-              <span class="material-symbols-outlined">
-                expand_more
-              </span>
-
-            </summary>
-
-
-            <div class="ms-details-body">
-
-              <div class="ms-detail-grid">
-
-                <div class="ms-detail-image wide">
-
-                  <img
-                    src="/images/mod4.png"
-                    alt="Produced water treatment process"
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-          </details>
-
-
         </div>
-
 
       </div>
 
 
-    </section>
+      <!-- FULL WIDTH PRODUCED WATER DIAGRAM -->
 
+      <div class="ms-shell">
+
+        <details class="ms-details ms-details-technical">
+
+          <summary>
+
+            <span>
+              View treatment process detail
+            </span>
+
+            <span class="material-symbols-outlined">
+              expand_more
+            </span>
+
+          </summary>
+
+
+          <div class="ms-details-body">
+
+            <div class="ms-technical-diagram">
+
+              <img
+                src="/images/mod4.png"
+                alt="Produced water treatment process"
+                onclick="openDiagram(this.src, this.alt)"
+              >
+
+              <div class="ms-diagram-hint">
+                Click image to enlarge
+              </div>
+
+            </div>
+
+          </div>
+
+        </details>
+
+      </div>
+
+    </section>
 
 
 
@@ -2735,112 +2322,76 @@
       id="oil-processing"
     >
 
-
       <div class="ms-shell ms-service-grid">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Oil treatment
           </div>
 
-
           <h2>
             Oil Processing Equipment
           </h2>
 
-
           <p>
-
             AOS Orwell provides skid-based oil processing
             equipment and process engineering support for
             separation, treatment, dehydration and
             stabilization requirements.
-
           </p>
-
 
 
           <div class="ms-list">
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               CFD and Process Studies
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               2/3 Phase Separators, Treaters &amp; FWKO
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Electrostatic Desalting / Dehydration
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Crude Stabilization &amp; Sweetening
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Internals and Optimisation Studies
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Skid-based Delivery
-
             </div>
-
 
           </div>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -2851,15 +2402,11 @@
 
           </div>
 
-
         </div>
-
 
       </div>
 
-
     </section>
-
 
 
 
@@ -2872,157 +2419,105 @@
       id="gas-processing"
     >
 
-
       <div class="ms-shell ms-service-grid reverse">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Gas treatment
           </div>
 
-
           <h2>
             Gas Processing Equipment
           </h2>
 
-
           <p>
-
             AOS Orwell has an extensive portfolio of
             gas treatment technologies supporting
             conditioning, treatment, recovery and
             utility requirements across gas
             processing facilities.
-
           </p>
-
 
 
           <div class="ms-list">
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Gas Compression
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Gas Sweetening
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Gas Dehydration
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Sulphur Recovery
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               LNG / LPG
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Gas Turbine Generator Utilities
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               HC Dew Pointing
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Nitrogen Generation
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Fuel Gas Conditioning
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Flare Gas Recovery
-
             </div>
-
 
           </div>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -3033,15 +2528,11 @@
 
           </div>
 
-
         </div>
-
 
       </div>
 
-
     </section>
-
 
 
 
@@ -3054,25 +2545,19 @@
       id="sea-water"
     >
 
-
       <div class="ms-shell ms-service-grid">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Water injection quality
           </div>
 
-
           <h2>
             Sea Water Treatment
           </h2>
 
-
           <p>
-
             Sea Water Treatment technologies are designed
             to achieve treated water quality suitable for
             water injection wells.
@@ -3080,89 +2565,59 @@
             Systems can be supplied as individual skids
             or as a single complete module for
             offshore installation.
-
           </p>
-
 
 
           <div class="ms-list">
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Electro Chlorination Package
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Coarse Filtration System
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Multimedia / Ultra / Cartridge Filtration
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Sulphate Removal Unit
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Deaerator System
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Chemical Injection Auxiliaries
-
             </div>
-
 
           </div>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -3173,57 +2628,53 @@
 
           </div>
 
-
-
-          <details class="ms-details">
-
-
-            <summary>
-
-              <span>
-                View Sea Water Treatment package
-              </span>
-
-              <span class="material-symbols-outlined">
-                expand_more
-              </span>
-
-            </summary>
-
-
-            <div class="ms-details-body">
-
-
-              <div class="ms-detail-grid">
-
-
-                <div class="ms-detail-image wide">
-
-                  <img
-                    src="/images/mod8.1.png"
-                    alt="Sea water treatment package"
-                  >
-
-                </div>
-
-
-              </div>
-
-
-            </div>
-
-
-          </details>
-
-
         </div>
-
 
       </div>
 
 
-    </section>
+      <!-- FULL WIDTH SEA WATER DIAGRAM -->
 
+      <div class="ms-shell">
+
+        <details class="ms-details ms-details-technical">
+
+          <summary>
+
+            <span>
+              View Sea Water Treatment package
+            </span>
+
+            <span class="material-symbols-outlined">
+              expand_more
+            </span>
+
+          </summary>
+
+
+          <div class="ms-details-body">
+
+            <div class="ms-technical-diagram">
+
+              <img
+                src="/images/mod8.1.png"
+                alt="Sea Water Treatment process flow"
+                onclick="openDiagram(this.src, this.alt)"
+              >
+
+              <div class="ms-diagram-hint">
+                Click image to enlarge
+              </div>
+
+            </div>
+
+          </div>
+
+        </details>
+
+      </div>
+
+    </section>
 
 
 
@@ -3233,56 +2684,40 @@
 
     <section class="ms-engineering">
 
-
       <div class="ms-shell ms-engineering-grid">
 
-
         <div>
-
 
           <div class="ms-eyebrow">
             Process configuration
           </div>
 
-
           <h2>
-
             Engineered around the required treatment train.
-
           </h2>
 
-
           <p>
-
             Modular treatment systems can combine multiple
             processing stages, filtration technologies
             and auxiliary systems in a compact,
             project-specific arrangement.
-
           </p>
-
 
         </div>
 
 
-
         <div class="ms-engineering-image">
-
 
           <img
             src="/images/mod9.png"
             alt="Sea water treatment process flow"
           >
 
-
         </div>
-
 
       </div>
 
-
     </section>
-
 
 
 
@@ -3295,145 +2730,97 @@
       id="whcp"
     >
 
-
       <div class="ms-shell ms-service-grid reverse">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Wellhead automation
           </div>
 
-
           <h2>
             Wellhead Control Panels
           </h2>
 
-
           <p>
-
             Single and multi-well control systems support
             the control, protection, remote operation,
             startup and shutdown functions required
             at the wellhead.
-
           </p>
-
 
 
           <div class="ms-list">
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               WV Control
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               MV Control
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               SCSSV Control
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Choke Control
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Gas Lift Control
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Fire Protection
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Flow Line PSL / PSH
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Remote Control / Stations
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Remote Start-up &amp; Shutdown
-
             </div>
-
 
           </div>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -3445,9 +2832,7 @@
           </div>
 
 
-
           <details class="ms-details">
-
 
             <summary>
 
@@ -3464,9 +2849,7 @@
 
             <div class="ms-details-body">
 
-
               <div class="ms-project-grid">
-
 
                 <div class="ms-project-item">
 
@@ -3487,24 +2870,17 @@
 
                 </div>
 
-
               </div>
-
 
             </div>
 
-
           </details>
-
 
         </div>
 
-
       </div>
 
-
     </section>
-
 
 
 
@@ -3517,133 +2893,89 @@
       id="chemical-injection"
     >
 
-
       <div class="ms-shell ms-service-grid">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Chemical treatment
           </div>
 
-
           <h2>
             Chemical Injection Systems
           </h2>
 
-
           <p>
-
             Chemical Injection Systems are supplied fully
             assembled and tested to customer specifications
             from concept to completion.
-
           </p>
-
 
 
           <div class="ms-list">
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Corrosion Inhibitors
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Methanol Injection
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Scale Inhibitors
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Wax Inhibitors
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Demulsifiers
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Glycol
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Odorization
-
             </div>
 
-
             <div class="ms-list-item">
-
               <span class="material-symbols-outlined">
                 check_circle
               </span>
-
               Pour Point Depression
-
             </div>
-
 
           </div>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -3655,9 +2987,7 @@
           </div>
 
 
-
           <details class="ms-details">
-
 
             <summary>
 
@@ -3672,12 +3002,9 @@
             </summary>
 
 
-
             <div class="ms-details-body">
 
-
               <div class="ms-project-grid five">
-
 
                 <div class="ms-project-item">
 
@@ -3728,24 +3055,17 @@
 
                 </div>
 
-
               </div>
-
 
             </div>
 
-
           </details>
-
 
         </div>
 
-
       </div>
 
-
     </section>
-
 
 
 
@@ -3758,25 +3078,19 @@
       id="dosing-skid"
     >
 
-
       <div class="ms-shell ms-service-grid reverse">
 
-
         <article class="ms-copy">
-
 
           <div class="ms-label">
             Precision dosing
           </div>
 
-
           <h2>
             Dosing Skid
           </h2>
 
-
           <p>
-
             Dosing Skid Systems are designed to feed liquid
             chemicals from a supply source, usually a tank
             or drum, to an injection point.
@@ -3784,34 +3098,24 @@
             The injector is a small-dose individually
             fabricated pump that can be regulated to dispense
             chemicals at a specified rate.
-
           </p>
 
-
           <p>
-
             Applications include controlling hydration
             in oil and gas pipelines and wastewater
             treatment by injecting treatment chemicals
             directly into process systems.
-
           </p>
-
 
           <p>
-
             AOS Orwell provides turnkey design and engineering
             together with fabrication, testing and commissioning.
-
           </p>
-
 
         </article>
 
 
-
         <div class="ms-visual">
-
 
           <div class="ms-main-image">
 
@@ -3823,9 +3127,7 @@
           </div>
 
 
-
           <details class="ms-details">
-
 
             <summary>
 
@@ -3840,12 +3142,9 @@
             </summary>
 
 
-
             <div class="ms-details-body">
 
-
               <div class="ms-detail-grid">
-
 
                 <div class="ms-detail-image wide">
 
@@ -3856,24 +3155,17 @@
 
                 </div>
 
-
               </div>
-
 
             </div>
 
-
           </details>
-
 
         </div>
 
-
       </div>
 
-
     </section>
-
 
 
 
@@ -3883,62 +3175,46 @@
 
     <section class="ms-packages">
 
-
       <div class="ms-shell">
-
 
         <div class="ms-packages-head">
 
-
           <div>
-
 
             <div class="ms-label">
               Additional modular capability
             </div>
 
-
             <h2>
               Modular and Other Process Packages
             </h2>
 
-
           </div>
 
 
-
           <p>
-
             A modular wellsite package is an integrated
             skid-based unit containing the equipment
             and components required between the
             X-mas tree and the main flow line.
-
           </p>
-
 
         </div>
 
 
-
         <div class="ms-package-grid">
 
-
           <div class="ms-package-img">
-
 
             <img
               src="/images/mod19.png"
               alt="Integrated modular process skid package"
             >
 
-
           </div>
 
 
-
           <div class="ms-package-list">
-
 
             <h3>
               Package capabilities
@@ -3947,46 +3223,35 @@
 
             <ul>
 
-
               <li>
                 Pressure Reduction Stations
               </li>
-
 
               <li>
                 Modular, skid-mounted MEG Reclamation Packages
               </li>
 
-
               <li>
                 N2 Generator System
               </li>
-
 
               <li>
                 Lube Oil Systems
               </li>
 
-
               <li>
                 Dry Gas Seal Panels
               </li>
 
-
             </ul>
-
 
           </div>
 
-
         </div>
-
 
       </div>
 
-
     </section>
-
 
 
 
@@ -3996,35 +3261,24 @@
 
     <section class="ms-cta">
 
-
       <div class="ms-shell">
-
 
         <div class="ms-cta-box">
 
-
           <div class="ms-cta-copy">
 
-
             <h2>
-
               Need a modular package engineered
               around your process?
-
             </h2>
 
-
             <p>
-
               Talk to AOS Orwell about integrated modular
               systems, skid-based equipment, process packages
               and project-specific engineering.
-
             </p>
 
-
           </div>
-
 
 
           <a
@@ -4040,18 +3294,14 @@
 
           </a>
 
-
         </div>
 
-
       </div>
-
 
     </section>
 
 
   </main>
-
 
 
 
@@ -4063,11 +3313,9 @@
     class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
   >
 
-
     <div
       class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
     >
-
 
       <img
         src="/images/jogo.png"
@@ -4082,48 +3330,37 @@
       >
 
 
-
       <div
         class="hidden md:flex gap-x-10 text-white font-medium text-sm"
       >
-
 
         <a href="/about.html">
           About Us
         </a>
 
-
         <a href="/services.html">
           Services
         </a>
-
 
         <a href="/hse.html">
           QHSE
         </a>
 
-
         <a href="/media.html">
           Media
         </a>
-
 
         <a href="/careers.html">
           Careers
         </a>
 
-
         <a href="/contact-us.html">
           Contact Us
         </a>
 
-
       </div>
 
-
     </div>
-
-
 
 
     <div
@@ -4131,40 +3368,28 @@
     >
 
 
-
       <!-- COMPANY -->
 
-      <div
-        class="w-full lg:w-[45%]"
-      >
-
+      <div class="w-full lg:w-[45%]">
 
         <p
           class="text-xs sm:text-[13px] font-medium leading-loose"
         >
-
           Providing integrated oilfield solutions across
           Well Construction, Process Management,
           IPM &amp; Turnkey, and Operations &amp; Maintenance
           to support the energy industry's evolving needs.
-
         </p>
 
 
-
-        <div
-          class="mt-5 flex flex-col gap-y-2"
-        >
-
+        <div class="mt-5 flex flex-col gap-y-2">
 
           <h3 class="text-base font-medium">
             Stay Connected
           </h3>
 
 
-
           <div class="flex gap-x-3">
-
 
             <a
               href="https://www.youtube.com/@aosorwellonline"
@@ -4173,13 +3398,8 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on YouTube"
             >
-
-              <i
-                class="bi bi-youtube text-white text-lg"
-              ></i>
-
+              <i class="bi bi-youtube text-white text-lg"></i>
             </a>
-
 
 
             <a
@@ -4189,13 +3409,8 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on Instagram"
             >
-
-              <i
-                class="bi bi-instagram text-white text-lg"
-              ></i>
-
+              <i class="bi bi-instagram text-white text-lg"></i>
             </a>
-
 
 
             <a
@@ -4205,13 +3420,8 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on X"
             >
-
-              <i
-                class="bi bi-twitter-x text-white text-lg"
-              ></i>
-
+              <i class="bi bi-twitter-x text-white text-lg"></i>
             </a>
-
 
 
             <a
@@ -4221,22 +3431,14 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on LinkedIn"
             >
-
-              <i
-                class="bi bi-linkedin text-white text-lg"
-              ></i>
-
+              <i class="bi bi-linkedin text-white text-lg"></i>
             </a>
-
 
           </div>
 
-
         </div>
 
-
       </div>
-
 
 
 
@@ -4246,118 +3448,79 @@
         class="w-full sm:w-[35%] flex flex-col gap-y-4"
       >
 
-
-        <h4
-          class="font-medium text-sm sm:text-base"
-        >
+        <h4 class="font-medium text-sm sm:text-base">
           Locations
         </h4>
 
 
-
         <div class="flex flex-col gap-y-3">
-
 
           <div>
 
-
-            <p
-              class="font-medium text-[13px] sm:text-sm"
-            >
+            <p class="font-medium text-[13px] sm:text-sm">
               Head Office
             </p>
 
-
             <p
               class="text-xs sm:text-[13px] text-gray-200 leading-loose"
             >
-
               Plot 52/53, Trans Amadi Industrial Layout,
               Port Harcourt, Rivers State
-
             </p>
-
 
           </div>
 
 
-
           <div>
 
-
-            <p
-              class="font-medium text-[13px] sm:text-sm"
-            >
+            <p class="font-medium text-[13px] sm:text-sm">
               Port Harcourt Office 2
             </p>
 
-
             <p
               class="text-xs sm:text-[13px] text-gray-200 leading-loose"
             >
-
               Plot 272, Trans Amadi Industrial Layout,
               Port Harcourt, Rivers State
-
             </p>
-
 
           </div>
 
 
-
           <div>
 
-
-            <p
-              class="font-medium text-[13px] sm:text-sm"
-            >
+            <p class="font-medium text-[13px] sm:text-sm">
               Lagos Office
             </p>
 
-
             <p
               class="text-xs sm:text-[13px] text-gray-200 leading-loose"
             >
-
               3/5, Adeyemo Alakija Street,
               Victoria Island, Lagos
-
             </p>
 
-
           </div>
-
 
 
           <div>
 
-
-            <p
-              class="font-medium text-sm"
-            >
+            <p class="font-medium text-sm">
               Ghana Office
             </p>
-
 
             <p
               class="text-xs sm:text-[13px] text-gray-200 leading-loose"
             >
-
               Plot 53 Apowa Light Industrial Area,
               Sankoba, New Amanful, Takoradi, Ghana
-
             </p>
-
 
           </div>
 
-
         </div>
 
-
       </div>
-
 
 
 
@@ -4367,17 +3530,12 @@
         class="w-full lg:w-1/4 flex flex-col gap-y-4"
       >
 
-
-        <h4
-          class="font-medium text-sm sm:text-base"
-        >
+        <h4 class="font-medium text-sm sm:text-base">
           Links
         </h4>
 
 
-
         <div class="flex flex-col gap-y-2">
-
 
           <a
             href="/about.html"
@@ -4386,14 +3544,12 @@
             Our Story
           </a>
 
-
           <a
             href="/management.html"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
           >
             Management
           </a>
-
 
           <a
             href="/media.html"
@@ -4402,14 +3558,12 @@
             Media
           </a>
 
-
           <a
             href="/policies-index.html"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
           >
             Policy Statement
           </a>
-
 
           <a
             href="/whistle-blower.html"
@@ -4418,7 +3572,6 @@
             Whistle Blower
           </a>
 
-
           <a
             href="/downloadables.html"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
@@ -4426,21 +3579,15 @@
             Downloadables
           </a>
 
-
         </div>
 
 
-
-        <h4
-          class="font-medium text-[13px] sm:text-base"
-        >
+        <h4 class="font-medium text-[13px] sm:text-base">
           Email Us
         </h4>
 
 
-
         <div class="flex flex-col gap-y-1">
-
 
           <a
             href="mailto:marketing@aosorwell.com"
@@ -4449,7 +3596,6 @@
             marketing@aosorwell.com
           </a>
 
-
           <a
             href="mailto:sales@aosorwell.com"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
@@ -4457,34 +3603,22 @@
             sales@aosorwell.com
           </a>
 
-
         </div>
-
 
       </div>
 
 
 
-
       <!-- CONTACT -->
 
-      <div
-        class="w-full lg:w-2/5"
-      >
+      <div class="w-full lg:w-2/5">
 
-
-        <h4
-          class="font-medium text-base"
-        >
+        <h4 class="font-medium text-base">
           Contact Us
         </h4>
 
 
-
-        <form
-          class="flex flex-col gap-y-5 mt-2"
-        >
-
+        <form class="flex flex-col gap-y-5 mt-2">
 
           <input
             type="text"
@@ -4492,13 +3626,11 @@
             class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
           >
 
-
           <input
             type="text"
             placeholder="Your Name"
             class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
           >
-
 
           <input
             type="email"
@@ -4506,18 +3638,13 @@
             class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
           >
 
-
           <textarea
             placeholder="Your Message"
             class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
           ></textarea>
 
 
-
-          <div
-            class="w-full flex justify-end"
-          >
-
+          <div class="w-full flex justify-end">
 
             <button
               type="submit"
@@ -4526,21 +3653,15 @@
               SEND
             </button>
 
-
           </div>
-
 
         </form>
 
-
       </div>
-
 
     </div>
 
-
   </footer>
-
 
 
 
@@ -4559,6 +3680,38 @@
 
 
 
+  <!-- =====================================================
+       TECHNICAL DIAGRAM VIEWER
+  ====================================================== -->
+
+  <div
+    id="diagram-modal"
+    class="ms-diagram-modal"
+    onclick="closeDiagram(event)"
+  >
+
+    <button
+      class="ms-diagram-close"
+      onclick="closeDiagram()"
+      aria-label="Close diagram"
+    >
+
+      <span class="material-symbols-outlined">
+        close
+      </span>
+
+    </button>
+
+
+    <img
+      id="diagram-modal-image"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
 
   <!-- =====================================================
        NAVBAR LOADER
@@ -4566,37 +3719,27 @@
 
   <script>
 
-
     fetch("/navbar.html")
-
 
       .then(response => {
 
-
         if (!response.ok) {
-
 
           throw new Error(
             "Navbar file not found"
           );
 
-
         }
-
 
         return response.text();
 
-
       })
 
-
       .then(data => {
-
 
         document.getElementById(
           "navbar-placeholder"
         ).innerHTML = data;
-
 
 
         const script =
@@ -4605,31 +3748,129 @@
           );
 
 
-
         script.src =
           "/navbar.js";
-
 
 
         document.body.appendChild(
           script
         );
 
-
       })
 
-
       .catch(error => {
-
 
         console.error(
           "Navbar failed to load:",
           error
         );
 
-
       });
 
+  </script>
+
+
+
+  <!-- =====================================================
+       DIAGRAM VIEWER SCRIPT
+  ====================================================== -->
+
+  <script>
+
+    function openDiagram(
+      src,
+      alt
+    ) {
+
+      const modal =
+        document.getElementById(
+          "diagram-modal"
+        );
+
+
+      const image =
+        document.getElementById(
+          "diagram-modal-image"
+        );
+
+
+      image.src = src;
+
+      image.alt =
+        alt ||
+        "Technical diagram";
+
+
+      modal.classList.add(
+        "open"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+
+    function closeDiagram(event) {
+
+      if (
+        event &&
+        event.target.id !==
+        "diagram-modal"
+      ) {
+
+        return;
+
+      }
+
+
+      const modal =
+        document.getElementById(
+          "diagram-modal"
+        );
+
+
+      modal.classList.remove(
+        "open"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          const modal =
+            document.getElementById(
+              "diagram-modal"
+            );
+
+
+          modal.classList.remove(
+            "open"
+          );
+
+
+          document.body.style.overflow =
+            "";
+
+        }
+
+      }
+    );
 
   </script>
 

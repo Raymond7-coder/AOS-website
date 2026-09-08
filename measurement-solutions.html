@@ -1498,12 +1498,359 @@
 
     }
 
+
+    /* =====================================================
+       IMAGE READABILITY FIXES - MEASUREMENT SOLUTIONS
+       Added to make dropdown diagrams full-width/readable
+       and remove the pale blue/grey image frames.
+    ====================================================== */
+
+    .me-feature-visual {
+      position: relative;
+
+      padding: 0;
+
+      background: #ffffff;
+
+      overflow: hidden;
+    }
+
+
+    .me-feature-visual::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      z-index: 2;
+
+      width: 115px;
+      height: 9px;
+
+      background: var(--green);
+    }
+
+
+    .me-feature-visual img {
+      width: 100%;
+      height: 100%;
+
+      max-width: none;
+      max-height: none;
+
+      object-fit: contain;
+      object-position: center;
+
+      background: #ffffff;
+
+      cursor: zoom-in;
+    }
+
+
+    .me-feature-visual.me-diagram-image {
+      padding: 22px;
+
+      background: #ffffff;
+
+      overflow: visible;
+    }
+
+
+    .me-feature-visual.me-diagram-image img {
+      width: 100%;
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    .me-range-body {
+      padding:
+        0 16px 18px;
+    }
+
+
+    .me-range-grid {
+      grid-template-columns: 1fr;
+
+      gap: 20px;
+    }
+
+
+    .me-range-card,
+    .me-range-card-wide {
+      grid-column: 1 / -1;
+    }
+
+
+    .me-range-card {
+      position: relative;
+
+      min-height: 0;
+
+      padding: 10px;
+
+      background: #ffffff;
+
+      overflow: hidden;
+    }
+
+
+    .me-range-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      z-index: 2;
+
+      width: 95px;
+      height: 7px;
+
+      background: var(--green);
+    }
+
+
+    .me-range-card img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      max-width: none;
+      max-height: none;
+
+      object-fit: contain;
+
+      cursor: zoom-in;
+    }
+
+
+    .me-readable-note {
+      margin-top: 10px;
+
+      color: #6a756e;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      text-align: right;
+    }
+
+    /* =====================================================
+   COMPACT DROPDOWN FOR GAS CHROMATOGRAPH
+   Keeps this range closer to the previous layout
+====================================================== */
+
+.me-range-grid-compact {
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+}
+
+.me-range-grid-compact .me-range-card {
+  min-height: 220px;
+
+  padding: 18px;
+
+  background: #ffffff;
+}
+
+.me-range-grid-compact .me-range-card:not(.me-range-card-wide) {
+  grid-column: auto;
+}
+
+.me-range-grid-compact .me-range-card-wide {
+  grid-column: 1 / -1;
+}
+
+.me-range-grid-compact .me-range-card img {
+  width: 100%;
+  height: 100%;
+
+  max-height: 430px;
+
+  object-fit: contain;
+}
+
+
+    /* =====================================================
+       FULLSCREEN IMAGE VIEWER
+    ====================================================== */
+
+    .me-diagram-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 100000;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 32px;
+
+      overflow: auto;
+
+      background:
+        rgba(3,29,16,.94);
+    }
+
+
+    .me-diagram-modal.open {
+      display: flex;
+    }
+
+
+    .me-diagram-modal img {
+      display: block;
+
+      width: auto;
+      height: auto;
+
+      max-width: 96vw;
+      max-height: 92vh;
+
+      object-fit: contain;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.35);
+    }
+
+
+    .me-diagram-close {
+      position: fixed;
+
+      top: 24px;
+      right: 27px;
+
+      z-index: 2;
+
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      color: #d60000;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18);
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+
+    .me-diagram-close:hover {
+      background: #fff1f1;
+
+      transform: scale(1.05);
+    }
+
+
+    .me-diagram-close
+    .material-symbols-outlined {
+      font-size: 25px;
+    }
+
+
+    @media
+    (max-width: 820px) {
+
+      .me-feature-visual {
+        min-height: 330px;
+      }
+
+
+      .me-feature-visual.me-diagram-image {
+        min-height: auto;
+
+        padding: 14px;
+      }
+
+
+      .me-range-card {
+        padding: 7px;
+      }
+
+    }
+
+
+    @media
+    (max-width: 560px) {
+
+      .me-feature-visual {
+        min-height: 270px;
+      }
+
+
+      .me-feature-visual.me-diagram-image {
+        padding: 8px;
+      }
+
+
+      .me-range-body {
+        padding:
+          0 7px 9px;
+      }
+
+
+      .me-range-card {
+        padding: 4px;
+      }
+
+
+      .me-readable-note {
+        padding-right: 6px;
+
+        font-size: 9px;
+      }
+
+
+      .me-diagram-modal {
+        padding: 12px;
+      }
+
+
+      .me-diagram-close {
+        top: 15px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
+      }
+
+    }
+
   </style>
 
 </head>
-
-
-
 <body>
 
 
@@ -1528,43 +1875,33 @@
 
         <div class="me-hero-content">
 
-
           <div class="me-eyebrow">
             Precision instrumentation &amp; process intelligence
           </div>
-
 
           <h1>
             Measurement Solutions
           </h1>
 
-
           <p>
-
             Reliable measurement technologies for level,
             pressure, flow, temperature, custody transfer,
             process analysis and flare gas monitoring across
             demanding industrial applications.
-
           </p>
 
-
           <div class="me-actions">
-
 
             <a
               href="#measurement-solutions"
               class="me-btn me-btn-light"
             >
-
               Explore solutions
 
               <span class="material-symbols-outlined">
                 arrow_downward
               </span>
-
             </a>
-
 
             <a
               href="/contact-us.html"
@@ -1573,9 +1910,7 @@
               Talk to our team
             </a>
 
-
           </div>
-
 
         </div>
 
@@ -1604,14 +1939,12 @@
           Level
         </a>
 
-
         <a
           href="#pressure"
           class="me-quick-link"
         >
           Pressure
         </a>
-
 
         <a
           href="#flow"
@@ -1620,14 +1953,12 @@
           Flow
         </a>
 
-
         <a
           href="#temperature"
           class="me-quick-link"
         >
           Temperature
         </a>
-
 
         <a
           href="#metering"
@@ -1636,14 +1967,12 @@
           Metering Skids / LACT
         </a>
 
-
         <a
           href="#pressure-reduction"
           class="me-quick-link"
         >
           Pressure Reduction
         </a>
-
 
         <a
           href="#gas-analyzers"
@@ -1652,14 +1981,12 @@
           Gas Analyzers
         </a>
 
-
         <a
           href="#gas-chromatograph"
           class="me-quick-link"
         >
           Gas Chromatograph
         </a>
-
 
         <a
           href="#flare-gas"
@@ -1682,7 +2009,6 @@
 
       <div class="me-shell me-intro-grid">
 
-
         <div>
 
           <div class="me-label">
@@ -1697,32 +2023,24 @@
         </div>
 
 
-
         <div class="me-intro-copy">
 
-
           <p>
-
             Measurement is central to safe, efficient and reliable
             process operations. AOS Orwell provides instrumentation
             and packaged measurement solutions across critical
             industrial process variables.
-
           </p>
 
-
           <p>
-
             The portfolio supports process visibility,
             operational safety, custody transfer, plant optimization
             and environmental monitoring across oil and gas
             and other industrial applications.
-
           </p>
 
 
           <div class="me-intro-points">
-
 
             <div class="me-intro-point">
 
@@ -1736,7 +2054,6 @@
 
             </div>
 
-
             <div class="me-intro-point">
 
               <strong>
@@ -1748,7 +2065,6 @@
               </span>
 
             </div>
-
 
             <div class="me-intro-point">
 
@@ -1762,12 +2078,9 @@
 
             </div>
 
-
           </div>
 
-
         </div>
-
 
       </div>
 
@@ -1786,9 +2099,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -1801,36 +2112,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Continuous level measurement and point level
               detection in fluids and bulk solids.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Constant product quality, plant safety, economic efficiency
               and digitalization are important aspects for any level
               measuring point. Our portfolio provides extensive
               configuration possibilities for specific process requirements.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature">
-
 
           <div class="me-feature-copy">
 
@@ -1843,12 +2146,10 @@
             </h3>
 
             <p>
-
               Integrated level measurement can be configured for
               storage tanks, stilling wells, liquids and bulk solids,
               with instruments selected around application,
               process and safety requirements.
-
             </p>
 
 
@@ -1879,19 +2180,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas1.png"
               alt="Storage tank control and tank gauging architecture"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -1913,12 +2212,12 @@
 
             <div class="me-range-grid">
 
-
               <div class="me-range-card">
 
                 <img
                   src="/images/meas2.png"
                   alt="Radar ultrasonic guided radar and radiometry level instruments"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -1929,6 +2228,7 @@
                 <img
                   src="/images/meas3.png"
                   alt="Vibronics hydrostatic and differential pressure level instrumentation"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -1939,17 +2239,16 @@
                 <img
                   src="/images/meas4.png"
                   alt="Capacitance conductive paddle and electromechanical level instrumentation"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
-
 
             </div>
 
           </div>
 
         </details>
-
 
       </div>
 
@@ -1968,9 +2267,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -1983,36 +2280,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Process and differential pressure measurement
               in acids, sludges, gases or vapors.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Pressure is one of the most important measured
               variables in process automation. Digital functions
               make diagnostic and process information available
               in real time and support efficient device verification.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature me-feature-reverse">
-
 
           <div class="me-feature-copy">
 
@@ -2025,12 +2314,10 @@
             </h3>
 
             <p>
-
               Pressure instrumentation is deployed directly
               within demanding process environments where
               accurate, continuous and reliable measurement
               is required.
-
             </p>
 
 
@@ -2061,19 +2348,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas6.png"
               alt="Pressure transmitters installed in an industrial process"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -2100,6 +2385,7 @@
                 <img
                   src="/images/meas5.png"
                   alt="Pressure transmitter product portfolio"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2109,7 +2395,6 @@
           </div>
 
         </details>
-
 
       </div>
 
@@ -2128,9 +2413,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -2143,37 +2426,29 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               High-performance flowmeters for liquids,
               gases and steam.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Applications include wastewater, water,
               beverages, mineral oil, chemicals, natural gas
               and steam. The portfolio supports process
               optimization, custody transfer, flare measurement
               and emissions monitoring.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature">
-
 
           <div class="me-feature-copy">
 
@@ -2186,11 +2461,9 @@
             </h3>
 
             <p>
-
               Flow measurement technologies support reliable
               measurement from routine process duties through
               custody transfer and flare gas applications.
-
             </p>
 
 
@@ -2221,19 +2494,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas9.png"
               alt="Promass X Coriolis flowmeter"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -2255,12 +2526,12 @@
 
             <div class="me-range-grid">
 
-
               <div class="me-range-card">
 
                 <img
                   src="/images/meas7.png"
                   alt="FLOWSIC ultrasonic flowmeter portfolio"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2271,6 +2542,7 @@
                 <img
                   src="/images/meas8.png"
                   alt="Electromagnetic Coriolis and ultrasonic flowmeters"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2281,10 +2553,10 @@
                 <img
                   src="/images/meas10.png"
                   alt="Thermal vortex and differential pressure flow measurement technologies"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
-
 
             </div>
 
@@ -2292,14 +2564,10 @@
 
         </details>
 
-
       </div>
 
     </section>
-
-
-
-    <!-- =====================================================
+        <!-- =====================================================
          TEMPERATURE
     ====================================================== -->
 
@@ -2310,9 +2578,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -2325,36 +2591,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Thermometers and transmitters
               for the process industry.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Temperature is one of the most frequently measured
               variables in process engineering. The portfolio
               supports a broad range of industrial sectors and
               international standards.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature me-feature-reverse">
-
 
           <div class="me-feature-copy">
 
@@ -2367,11 +2625,9 @@
             </h3>
 
             <p>
-
               Instrumentation is available for process temperature
               measurement, monitoring and transmission across
               demanding industrial operating conditions.
-
             </p>
 
 
@@ -2402,19 +2658,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas11.png"
               alt="Industrial temperature measurement application"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -2436,12 +2690,12 @@
 
             <div class="me-range-grid">
 
-
               <div class="me-range-card">
 
                 <img
                   src="/images/meas12.png"
                   alt="Temperature transmitter product portfolio"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2452,17 +2706,16 @@
                 <img
                   src="/images/meas13.png"
                   alt="Industrial thermometer product portfolio"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
-
 
             </div>
 
           </div>
 
         </details>
-
 
       </div>
 
@@ -2481,9 +2734,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -2496,36 +2747,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Integrated custody transfer, loading,
               unloading and LACT solutions.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Coriolis and ultrasonic-based metering systems
               support custody transfer, asset transfer,
               terminals, depots, refineries, pipelines
               and process plants.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature">
-
 
           <div class="me-feature-copy">
 
@@ -2538,11 +2781,9 @@
             </h3>
 
             <p>
-
               Metering skids are designed to minimize downtime,
               increase availability, support accurate measurement
               and improve operational efficiency.
-
             </p>
 
 
@@ -2573,19 +2814,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas15.png"
               alt="Metering solution package"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -2612,6 +2851,7 @@
                 <img
                   src="/images/meas14.png"
                   alt="Metering skid truck loading offloading and pipeline metering solution"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2621,7 +2861,6 @@
           </div>
 
         </details>
-
 
       </div>
 
@@ -2640,9 +2879,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -2655,36 +2892,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Stable pressure control combined
               with reliable process measurement.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               AOS Orwell pressure reduction systems combine
               robust design with advanced sensor technologies
               for accurate pressure reduction and measurement
               in demanding environments.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature me-feature-reverse">
-
 
           <div class="me-feature-copy">
 
@@ -2697,11 +2926,9 @@
             </h3>
 
             <p>
-
               The solution can combine pressure control,
               process measurement and differential pressure
               monitoring within a single engineered skid package.
-
             </p>
 
 
@@ -2732,19 +2959,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas17.png"
               alt="Pressure reduction and metering skid installation"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -2771,6 +2996,7 @@
                 <img
                   src="/images/meas16.png"
                   alt="Pressure reduction metering skid package"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2780,7 +3006,6 @@
           </div>
 
         </details>
-
 
       </div>
 
@@ -2799,9 +3024,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -2814,35 +3037,27 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Process gas monitoring and analyzer technologies
               for industrial applications.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Analyzer systems support continuous process insight
               and can be integrated into packaged cabinets for
               plant monitoring, control and compliance applications.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature">
-
 
           <div class="me-feature-copy">
 
@@ -2855,12 +3070,10 @@
             </h3>
 
             <p>
-
               Gas analysis can be supplied as individual
               instrumentation or as integrated analyzer
               packages designed around the application
               and process conditions.
-
             </p>
 
 
@@ -2891,19 +3104,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas20.png"
               alt="Integrated process gas analyzer cabinet"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -2925,12 +3136,12 @@
 
             <div class="me-range-grid">
 
-
               <div class="me-range-card">
 
                 <img
                   src="/images/meas18.png"
                   alt="Gas analyzer technologies"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -2941,10 +3152,10 @@
                 <img
                   src="/images/meas19.png"
                   alt="Industrial gas monitoring and analyzer technologies"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
-
 
             </div>
 
@@ -2952,14 +3163,10 @@
 
         </details>
 
-
       </div>
 
     </section>
-
-
-
-    <!-- =====================================================
+        <!-- =====================================================
          GAS CHROMATOGRAPH
     ====================================================== -->
 
@@ -2970,9 +3177,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -2985,36 +3190,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Continuous real-time composition and quality
               analysis of natural gas and hydrocarbon streams.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               Applications include custody transfer,
               fiscal metering, process optimization and
               quality control across oil and gas,
               petrochemical, refining and LNG facilities.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature me-feature-reverse">
-
 
           <div class="me-feature-copy">
 
@@ -3027,12 +3224,10 @@
             </h3>
 
             <p>
-
               Chromatographic separation measures individual gas
               components and supports calculation of properties
               such as heating value, Wobbe Index, relative density,
               molecular weight and energy content.
-
             </p>
 
 
@@ -3063,19 +3258,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas24.png"
               alt="Process gas analyzer and gas chromatograph"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -3095,14 +3288,14 @@
 
           <div class="me-range-body">
 
-            <div class="me-range-grid">
-
+            <div class="me-range-grid me-range-grid-compact">
 
               <div class="me-range-card">
 
                 <img
                   src="/images/meas21.png"
                   alt="Gas chromatograph"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -3113,6 +3306,7 @@
                 <img
                   src="/images/meas22.png"
                   alt="Process gas chromatograph"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -3123,17 +3317,16 @@
                 <img
                   src="/images/meas23.png"
                   alt="Natural gas chromatograph"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
-
 
             </div>
 
           </div>
 
         </details>
-
 
       </div>
 
@@ -3149,29 +3342,22 @@
 
       <div class="me-shell">
 
-
         <div class="me-eyebrow">
           Measurement that connects
         </div>
-
 
         <h2>
           From field instruments to operational intelligence.
         </h2>
 
-
         <p class="me-capability-intro">
-
           Measurement technologies provide the process data
           required to improve safety, reliability, efficiency
           and environmental performance.
-
         </p>
 
 
-
         <div class="me-cap-grid">
-
 
           <div class="me-cap-item">
 
@@ -3188,7 +3374,6 @@
             </p>
 
           </div>
-
 
 
           <div class="me-cap-item">
@@ -3208,7 +3393,6 @@
           </div>
 
 
-
           <div class="me-cap-item">
 
             <span class="material-symbols-outlined">
@@ -3224,7 +3408,6 @@
             </p>
 
           </div>
-
 
 
           <div class="me-cap-item">
@@ -3243,9 +3426,7 @@
 
           </div>
 
-
         </div>
-
 
       </div>
 
@@ -3264,9 +3445,7 @@
 
       <div class="me-shell">
 
-
         <div class="me-family-head">
-
 
           <div class="me-family-copy">
 
@@ -3279,36 +3458,28 @@
             </h2>
 
             <p class="me-family-subtitle">
-
               Continuous ultrasonic monitoring
               and quantification of flare gas.
-
             </p>
 
           </div>
-
 
 
           <div class="me-family-copy">
 
             <p>
-
               The AOS Orwell-Endress+Hauser / SICK Flare Gas
               Metering Solution is designed for highly variable
               flare gas flows, from low purge flows to
               high-velocity emergency flaring conditions.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="me-feature">
-
 
           <div class="me-feature-copy">
 
@@ -3321,13 +3492,11 @@
             </h3>
 
             <p>
-
               Ultrasonic transit-time technology supports
               emissions quantification, plant optimization,
               hydrocarbon-loss reduction and environmental
               reporting with minimal maintenance and long
               service life.
-
             </p>
 
 
@@ -3358,19 +3527,17 @@
           </div>
 
 
-
           <div class="me-feature-visual">
 
             <img
               src="/images/meas26.png"
               alt="Flare gas flowmeter installation"
+              onclick="openMeasurementImage(this.src, this.alt)"
             >
 
           </div>
 
-
         </div>
-
 
 
         <details class="me-range">
@@ -3397,6 +3564,7 @@
                 <img
                   src="/images/meas25.png"
                   alt="FLOWSIC flare ultrasonic flow measurement instrument"
+                  onclick="openMeasurementImage(this.src, this.alt)"
                 >
 
               </div>
@@ -3406,7 +3574,6 @@
           </div>
 
         </details>
-
 
       </div>
 
@@ -3424,7 +3591,6 @@
 
         <div class="me-cta-box">
 
-
           <div class="me-cta-copy">
 
             <h2>
@@ -3432,11 +3598,9 @@
             </h2>
 
             <p>
-
               Talk to AOS Orwell about instrumentation,
               metering systems, process analyzers and
               integrated measurement packages.
-
             </p>
 
           </div>
@@ -3446,15 +3610,12 @@
             href="/contact-us.html"
             class="me-btn me-cta-button"
           >
-
             Contact our team
 
             <span class="material-symbols-outlined">
               arrow_forward
             </span>
-
           </a>
-
 
         </div>
 
@@ -3475,11 +3636,9 @@
     class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
   >
 
-
     <div
       class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
     >
-
 
       <img
         src="/images/jogo.png"
@@ -3524,39 +3683,28 @@
 
       </div>
 
-
     </div>
-
 
 
     <div
       class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
     >
 
-
       <!-- COMPANY -->
 
-      <div
-        class="w-full lg:w-[45%]"
-      >
-
+      <div class="w-full lg:w-[45%]">
 
         <p
           class="text-xs sm:text-[13px] font-medium leading-loose"
         >
-
           Providing integrated oilfield solutions across
           Well Construction, Process Management,
           IPM &amp; Turnkey, and Operations &amp; Maintenance
           to support the energy industry's evolving needs.
-
         </p>
 
 
-
-        <div
-          class="mt-5 flex flex-col gap-y-2"
-        >
+        <div class="mt-5 flex flex-col gap-y-2">
 
           <h3 class="text-base font-medium">
             Stay Connected
@@ -3565,7 +3713,6 @@
 
           <div class="flex gap-x-3">
 
-
             <a
               href="https://www.youtube.com/@aosorwellonline"
               target="_blank"
@@ -3573,11 +3720,8 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on YouTube"
             >
-
               <i class="bi bi-youtube text-white text-lg"></i>
-
             </a>
-
 
 
             <a
@@ -3587,11 +3731,8 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on Instagram"
             >
-
               <i class="bi bi-instagram text-white text-lg"></i>
-
             </a>
-
 
 
             <a
@@ -3601,11 +3742,8 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on X"
             >
-
               <i class="bi bi-twitter-x text-white text-lg"></i>
-
             </a>
-
 
 
             <a
@@ -3615,16 +3753,12 @@
               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
               aria-label="AOS Orwell on LinkedIn"
             >
-
               <i class="bi bi-linkedin text-white text-lg"></i>
-
             </a>
-
 
           </div>
 
         </div>
-
 
       </div>
 
@@ -3643,22 +3777,20 @@
 
         <div class="flex flex-col gap-y-3">
 
-
           <div>
 
             <p class="font-medium text-[13px] sm:text-sm">
               Head Office
             </p>
 
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
-
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
               Plot 52/53, Trans Amadi Industrial Layout,
               Port Harcourt, Rivers State
-
             </p>
 
           </div>
-
 
 
           <div>
@@ -3667,15 +3799,14 @@
               Port Harcourt Office 2
             </p>
 
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
-
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
               Plot 272, Trans Amadi Industrial Layout,
               Port Harcourt, Rivers State
-
             </p>
 
           </div>
-
 
 
           <div>
@@ -3684,15 +3815,14 @@
               Lagos Office
             </p>
 
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
-
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
               3/5, Adeyemo Alakija Street,
               Victoria Island, Lagos
-
             </p>
 
           </div>
-
 
 
           <div>
@@ -3701,18 +3831,16 @@
               Ghana Office
             </p>
 
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
-
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
               Plot 53 Apowa Light Industrial Area,
               Sankoba, New Amanful, Takoradi, Ghana
-
             </p>
 
           </div>
 
-
         </div>
-
 
       </div>
 
@@ -3731,14 +3859,12 @@
 
         <div class="flex flex-col gap-y-2">
 
-
           <a
             href="/about.html"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
           >
             Our Story
           </a>
-
 
           <a
             href="/management.html"
@@ -3747,14 +3873,12 @@
             Management
           </a>
 
-
           <a
             href="/media.html"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
           >
             Media
           </a>
-
 
           <a
             href="/policies-index.html"
@@ -3763,14 +3887,12 @@
             Policy Statement
           </a>
 
-
           <a
             href="/whistle-blower.html"
             class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
           >
             Whistle Blower
           </a>
-
 
           <a
             href="/downloadables.html"
@@ -3779,9 +3901,7 @@
             Downloadables
           </a>
 
-
         </div>
-
 
 
         <h4 class="font-medium text-[13px] sm:text-base">
@@ -3807,25 +3927,20 @@
 
         </div>
 
-
       </div>
 
 
 
       <!-- CONTACT FORM -->
 
-      <div
-        class="w-full lg:w-2/5"
-      >
+      <div class="w-full lg:w-2/5">
 
         <h4 class="font-medium text-base">
           Contact Us
         </h4>
 
 
-        <form
-          class="flex flex-col gap-y-5 mt-2"
-        >
+        <form class="flex flex-col gap-y-5 mt-2">
 
           <input
             type="text"
@@ -3862,15 +3977,11 @@
 
           </div>
 
-
         </form>
-
 
       </div>
 
-
     </div>
-
 
   </footer>
 
@@ -3881,8 +3992,39 @@
   <div
     class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
   >
-
     &copy; 2026 AOS Orwell. All rights reserved.
+  </div>
+
+
+
+  <!-- =====================================================
+       FULLSCREEN IMAGE VIEWER
+  ====================================================== -->
+
+  <div
+    id="me-diagram-modal"
+    class="me-diagram-modal"
+    onclick="closeMeasurementImage(event)"
+  >
+
+    <button
+      class="me-diagram-close"
+      onclick="closeMeasurementImage()"
+      aria-label="Close image"
+    >
+
+      <span class="material-symbols-outlined">
+        close
+      </span>
+
+    </button>
+
+
+    <img
+      id="me-diagram-modal-image"
+      src=""
+      alt=""
+    >
 
   </div>
 
@@ -3941,6 +4083,112 @@
         );
 
       });
+
+  </script>
+
+
+
+  <!-- =====================================================
+       IMAGE VIEWER SCRIPT
+  ====================================================== -->
+
+  <script>
+
+    function openMeasurementImage(src, alt) {
+
+      const modal =
+        document.getElementById(
+          "me-diagram-modal"
+        );
+
+
+      const image =
+        document.getElementById(
+          "me-diagram-modal-image"
+        );
+
+
+      image.src = src;
+
+      image.alt =
+        alt ||
+        "Measurement solution image";
+
+
+      modal.classList.add(
+        "open"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+
+    function closeMeasurementImage(event) {
+
+      if (
+        event &&
+        event.target.id !==
+        "me-diagram-modal"
+      ) {
+
+        return;
+
+      }
+
+
+      const modal =
+        document.getElementById(
+          "me-diagram-modal"
+        );
+
+
+      modal.classList.remove(
+        "open"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          const modal =
+            document.getElementById(
+              "me-diagram-modal"
+            );
+
+
+          if (modal) {
+
+            modal.classList.remove(
+              "open"
+            );
+
+          }
+
+
+          document.body.style.overflow =
+            "";
+
+        }
+
+      }
+    );
 
   </script>
 
