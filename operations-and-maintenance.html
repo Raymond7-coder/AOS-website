@@ -1,1806 +1,1924 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Orwell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#007A33",
-              secondary: "#004225",
-            }
-          }
-        }
-      }
-    </script>
-
-    <link rel="stylesheet" href="output.css">
-    <style>
-  :root {
-    --om-green: #007a33;
-    --om-green-dark: #004225;
-    --om-black: #101411;
-    --om-copy: #505c55;
-    --om-soft: #f3f6f4;
-    --om-border: #dfe7e2;
-    --om-white: #ffffff;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  .om-page,
-  .om-page * {
-    box-sizing: border-box;
-  }
-
-  .om-page {
-    overflow: hidden;
-    background: #ffffff;
-    color: var(--om-black);
-    font-family: "Poppins", sans-serif;
-  }
-
-  .om-shell {
-    width: min(1180px, calc(100% - 40px));
-    margin-inline: auto;
-  }
-
-  /* =========================
-     HERO
-  ========================= */
-
-  .om-hero {
-    position: relative;
-    isolation: isolate;
-    min-height: 620px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.93) 0%,
-        rgba(0, 0, 0, 0.77) 48%,
-        rgba(0, 0, 0, 0.35) 100%
-      ),
-      url("./images/macshop.jpg") center / cover no-repeat;
-  }
-
-  .om-hero::after {
-    content: "";
-    position: absolute;
-    right: -110px;
-    bottom: -165px;
-    width: 440px;
-    height: 440px;
-    border: 70px solid rgba(0, 122, 51, 0.38);
-    border-radius: 50%;
-    z-index: -1;
-  }
-
-  .om-hero-content {
-    max-width: 910px;
-    padding: 130px 0 105px;
-    color: #ffffff;
-  }
-
-  .om-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
-    color: #8fe5b2;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .om-eyebrow::before {
-    content: "";
-    width: 42px;
-    height: 3px;
-    background: var(--om-green);
-  }
-
-  .om-hero h1 {
-    max-width: 900px;
-    margin: 0 0 24px;
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(39px, 5vw, 67px);
-    line-height: 1.08;
-    letter-spacing: -0.035em;
-    font-weight: 700;
-  }
-
-  .om-hero-copy {
-    max-width: 870px;
-    margin: 0;
-    color: #eef4f0;
-    font-size: 14px;
-    line-height: 1.95;
-  }
-
-  /* =========================
-     QUICK NAVIGATION
-  ========================= */
-
-  .om-quick-nav {
-    position: relative;
-    z-index: 5;
-    margin-top: -43px;
-  }
-
-  .om-quick-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    background: #ffffff;
-    border: 1px solid var(--om-border);
-    box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
-  }
-
-  .om-quick-link {
-    min-height: 88px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 12px;
-
-    border-right: 1px solid var(--om-border);
-    border-bottom: 1px solid var(--om-border);
-
-    color: #27322c;
-    font-size: 12px;
-    line-height: 1.45;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-
-    transition:
-      background-color 0.25s ease,
-      color 0.25s ease,
-      transform 0.25s ease;
-  }
-
-  .om-quick-link:nth-child(4n) {
-    border-right: 0;
-  }
-
-  .om-quick-link:nth-last-child(-n + 4) {
-    border-bottom: 0;
-  }
-
-  .om-quick-link:hover,
-  .om-quick-link:focus-visible {
-    background: var(--om-green);
-    color: #ffffff;
-    transform: translateY(-4px);
-    outline: none;
-  }
-
-  /* =========================
-     CATEGORY INTRODUCTION
-  ========================= */
-
-  .om-category {
-    padding: 100px 0 70px;
-    background: #ffffff;
-  }
-
-  .om-category-dark {
-    background:
-      radial-gradient(
-        circle at 90% 12%,
-        rgba(45, 210, 108, 0.23),
-        transparent 34%
-      ),
-      linear-gradient(145deg, #101a14, #031108);
-
-    color: #ffffff;
-  }
-
-  .om-category-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-    gap: 70px;
-    align-items: center;
-  }
-
-  .om-category-number {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    color: var(--om-green);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .om-category-dark .om-category-number {
-    color: #8fe5b2;
-  }
-
-  .om-category-number::after {
-    content: "";
-    width: 52px;
-    height: 2px;
-    background: currentColor;
-  }
-
-  .om-category h2 {
-    margin: 0 0 20px;
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(30px, 3.5vw, 46px);
-    line-height: 1.16;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-  }
-
-  .om-category p {
-    margin: 0;
-    color: var(--om-copy);
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  .om-category-dark p {
-    color: #dce6df;
-  }
-
-  .om-category-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .om-category-stat {
-    min-height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    border: 1px solid var(--om-border);
-    background: var(--om-soft);
-  }
-
-  .om-category-dark .om-category-stat {
-    border-color: rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.07);
-  }
-
-  .om-category-stat strong {
-    color: var(--om-green);
-    font-family: "Montserrat", sans-serif;
-    font-size: 25px;
-    line-height: 1.1;
-  }
-
-  .om-category-dark .om-category-stat strong {
-    color: #8fe5b2;
-  }
-
-  .om-category-stat span {
-    margin-top: 7px;
-    color: #566159;
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .om-category-dark .om-category-stat span {
-    color: #d6e0da;
-  }
-
-  /* =========================
-     SERVICE SECTIONS
-  ========================= */
-
-  .om-section {
-    padding: 104px 0;
-    scroll-margin-top: 120px;
-  }
-
-  .om-section-soft {
-    background: var(--om-soft);
-  }
-
-  .om-section-grid {
-    display: grid;
-    grid-template-columns:
-      minmax(0, 1.18fr)
-      minmax(350px, 0.82fr);
-
-    gap: 66px;
-    align-items: center;
-  }
-
-  .om-section-grid.om-reverse {
-    grid-template-columns:
-      minmax(350px, 0.82fr)
-      minmax(0, 1.18fr);
-  }
-
-  .om-section-grid.om-reverse .om-copy {
-    order: 2;
-  }
-
-  .om-section-grid.om-reverse .om-visual {
-    order: 1;
-  }
-
-  .om-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    color: var(--om-green);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .om-label::after {
-    content: "";
-    width: 52px;
-    height: 2px;
-    background: var(--om-green);
-  }
-
-  .om-copy h2 {
-    margin: 0 0 22px;
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(27px, 3.1vw, 41px);
-    line-height: 1.18;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-  }
-
-  .om-copy p {
-    margin: 0;
-    color: var(--om-copy);
-    font-size: 13px;
-    line-height: 1.95;
-    text-align: justify;
-  }
-
-  .om-copy p + p {
-    margin-top: 17px;
-  }
-
-  .om-highlight {
-    margin-top: 22px !important;
-    padding: 17px 19px;
-    border-left: 4px solid var(--om-green);
-    background: #eaf5ee;
-    color: #304039 !important;
-    text-align: left !important;
-  }
-
-  /* =========================
-     TECHNICAL PANELS
-  ========================= */
-
-  .om-visual-panel {
-    position: relative;
-    min-height: 420px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 38px;
-
-    background:
-      radial-gradient(
-        circle at 88% 10%,
-        rgba(66, 221, 127, 0.28),
-        transparent 34%
-      ),
-      linear-gradient(145deg, #111b15, #031208);
-
-    color: #ffffff;
-    box-shadow: 0 20px 52px rgba(6, 38, 18, 0.18);
-  }
-
-  .om-visual-panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.17;
-    pointer-events: none;
-
-    background-image:
-      linear-gradient(
-        rgba(255, 255, 255, 0.2) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.2) 1px,
-        transparent 1px
-      );
-
-    background-size: 28px 28px;
-  }
-
-  .om-visual-panel::after {
-    content: "";
-    position: absolute;
-    right: -85px;
-    bottom: -85px;
-    width: 230px;
-    height: 230px;
-    border: 45px solid rgba(0, 122, 51, 0.48);
-    border-radius: 50%;
-  }
-
-  .om-panel-top,
-  .om-panel-bottom {
-    position: relative;
-    z-index: 2;
-  }
-
-  .om-panel-icon {
-    width: 76px;
-    height: 76px;
-    display: grid;
-    place-items: center;
-    background: var(--om-green);
-  }
-
-  .om-panel-icon .material-symbols-outlined {
-    font-size: 40px;
-    font-variation-settings:
-      "FILL" 0,
-      "wght" 300,
-      "GRAD" 0,
-      "opsz" 48;
-  }
-
-  .om-panel-kicker {
-    margin-top: 22px;
-    color: #8ce5ad;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .om-panel-title {
-    max-width: 340px;
-    margin-top: 8px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 27px;
-    line-height: 1.25;
-    font-weight: 700;
-  }
-
-  .om-panel-data {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 34px;
-  }
-
-  .om-panel-data span {
-    min-height: 65px;
-    display: grid;
-    place-items: center;
-    padding: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.06);
-    font-size: 11px;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  /* =========================
-     CROSS-CUTTING STRENGTHS
-  ========================= */
-
-  .om-strengths {
-    padding: 100px 0 80px;
-    background: #ffffff;
-  }
-
-  .om-strengths-heading {
-    max-width: 800px;
-    margin-bottom: 46px;
-  }
-
-  .om-strengths-heading h2 {
-    margin: 0 0 14px;
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(28px, 3vw, 42px);
-    line-height: 1.2;
-    font-weight: 700;
-  }
-
-  .om-strengths-heading p {
-    margin: 0;
-    color: var(--om-copy);
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .om-strengths-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .om-strength-card {
-    position: relative;
-    overflow: hidden;
-    min-height: 310px;
-    padding: 32px;
-    border: 1px solid var(--om-border);
-    background: var(--om-soft);
-
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
-  }
-
-  .om-strength-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 40px rgba(9, 52, 27, 0.12);
-  }
-
-  .om-strength-card::after {
-    content: "";
-    position: absolute;
-    right: -50px;
-    bottom: -50px;
-    width: 145px;
-    height: 145px;
-    border: 28px solid rgba(0, 122, 51, 0.09);
-    border-radius: 50%;
-  }
-
-  .om-strength-icon {
-    width: 60px;
-    height: 60px;
-    display: grid;
-    place-items: center;
-    margin-bottom: 24px;
-    background: var(--om-green);
-    color: #ffffff;
-  }
-
-  .om-strength-icon .material-symbols-outlined {
-    font-size: 32px;
-  }
-
-  .om-strength-card h3 {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 14px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    line-height: 1.35;
-    font-weight: 700;
-  }
-
-  .om-strength-card p {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    color: var(--om-copy);
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  /* =========================
-     FINAL CTA
-  ========================= */
-
-  .om-final-cta {
-    padding: 0 0 105px;
-    background: #ffffff;
-  }
-
-  .om-final-cta-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 35px;
-    padding: 34px 38px;
-    background: var(--om-green);
-    border-radius: 12px;
-    box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
-  }
-
-  .om-final-cta-box h2 {
-    margin: 0;
-    color: #ffffff;
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(21px, 2.5vw, 28px);
-    line-height: 1.3;
-    font-weight: 700;
-  }
-
-  .om-contact-button {
-    min-height: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: 14px 24px;
-    border-radius: 8px;
-    background: var(--om-green-dark);
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
-  }
-
-  .om-contact-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
-  }
-
-  /* =========================
-     RESPONSIVE
-  ========================= */
-
-  @media (max-width: 1050px) {
-    .om-section-grid,
-    .om-section-grid.om-reverse {
-      grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(315px, 0.92fr);
-
-      gap: 42px;
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="AOS Orwell Operations and Maintenance services including integrated plant maintenance, fabric maintenance, automation, metering, rotating equipment reliability, FPSO integrity, asset integrity, E&I maintenance, calibration and recertification."
+  >
+
+  <title>
+    Operations &amp; Maintenance | AOS Orwell
+  </title>
+
+  <!-- FONTS -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+  <!-- SITE CSS -->
+  <link
+    rel="stylesheet"
+    href="/output.css"
+  >
+
+  <style>
+    :root {
+      --om-green: #007a33;
+      --om-green-dark: #004225;
+      --om-black: #101411;
+      --om-copy: #505c55;
+      --om-soft: #f3f6f4;
+      --om-border: #dfe7e2;
+      --om-white: #ffffff;
     }
 
-    .om-strengths-grid {
-      grid-template-columns: repeat(2, 1fr);
+    * {
+      box-sizing: border-box;
     }
 
-    .om-strength-card:last-child {
-      grid-column: 1 / -1;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .om-quick-grid {
-      grid-template-columns: repeat(2, 1fr);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .om-quick-link,
-    .om-quick-link:nth-child(4n) {
-      border-right: 1px solid var(--om-border);
-      border-bottom: 1px solid var(--om-border);
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: #ffffff;
+      color: var(--om-black);
+      font-family: "Poppins", sans-serif;
     }
 
-    .om-quick-link:nth-child(2n) {
-      border-right: 0;
+    img {
+      max-width: 100%;
     }
 
-    .om-quick-link:nth-last-child(-n + 2) {
-      border-bottom: 0;
+    .om-page {
+      overflow: hidden;
+      background: #ffffff;
+      color: var(--om-black);
+      font-family: "Poppins", sans-serif;
     }
-  }
 
-  @media (max-width: 820px) {
     .om-shell {
-      width: min(100% - 32px, 680px);
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
     }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .om-hero {
-      min-height: auto;
-      background-position: 60% center;
+      position: relative;
+      isolation: isolate;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.93) 0%,
+          rgba(0, 0, 0, 0.77) 48%,
+          rgba(0, 0, 0, 0.35) 100%
+        ),
+        url("/images/macshop.jpg") center / cover no-repeat;
+    }
+
+    .om-hero::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -165px;
+      width: 440px;
+      height: 440px;
+      border: 70px solid rgba(0, 122, 51, 0.38);
+      border-radius: 50%;
+      z-index: -1;
     }
 
     .om-hero-content {
-      padding: 112px 0 85px;
+      max-width: 910px;
+      padding: 130px 0 105px;
+      color: #ffffff;
     }
 
-    .om-quick-nav {
-      margin-top: -28px;
+    .om-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #8fe5b2;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    .om-category {
-      padding: 76px 0 55px;
-    }
-
-    .om-category-inner {
-      grid-template-columns: 1fr;
-      gap: 38px;
-    }
-
-    .om-section {
-      padding: 76px 0;
-    }
-
-    .om-section-grid,
-    .om-section-grid.om-reverse {
-      grid-template-columns: 1fr;
-      gap: 38px;
-    }
-
-    .om-section-grid.om-reverse .om-copy,
-    .om-section-grid.om-reverse .om-visual {
-      order: initial;
-    }
-
-    .om-copy p {
-      text-align: left;
-    }
-
-    .om-visual-panel {
-      min-height: 360px;
-    }
-
-    .om-strengths-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .om-strength-card:last-child {
-      grid-column: auto;
-    }
-
-    .om-final-cta-box {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
-  @media (max-width: 560px) {
-    .om-shell {
-      width: calc(100% - 24px);
+    .om-eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 3px;
+      background: var(--om-green);
     }
 
     .om-hero h1 {
-      font-size: 37px;
+      max-width: 900px;
+      margin: 0 0 24px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(39px, 5vw, 67px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 700;
     }
 
-    .om-hero-content {
-      padding: 100px 0 75px;
+    .om-hero-copy {
+      max-width: 870px;
+      margin: 0;
+      color: #eef4f0;
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    /* =========================
+       QUICK NAVIGATION
+    ========================= */
+
+    .om-quick-nav {
+      position: relative;
+      z-index: 5;
+      margin-top: -43px;
     }
 
     .om-quick-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      background: #ffffff;
+      border: 1px solid var(--om-border);
+      box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
     }
 
-    .om-quick-link,
-    .om-quick-link:nth-child(2n),
+    .om-quick-link {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 12px;
+      border-right: 1px solid var(--om-border);
+      border-bottom: 1px solid var(--om-border);
+      color: #27322c;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
     .om-quick-link:nth-child(4n) {
       border-right: 0;
-      border-bottom: 1px solid var(--om-border);
     }
 
-    .om-quick-link:last-child {
+    .om-quick-link:nth-last-child(-n + 4) {
       border-bottom: 0;
     }
 
+    .om-quick-link:hover,
+    .om-quick-link:focus-visible {
+      background: var(--om-green);
+      color: #ffffff;
+      transform: translateY(-4px);
+      outline: none;
+    }
+
+    /* =========================
+       CATEGORY INTRODUCTION
+    ========================= */
+
+    .om-category {
+      padding: 100px 0 70px;
+      background: #ffffff;
+    }
+
+    .om-category-dark {
+      background:
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(45, 210, 108, 0.23),
+          transparent 34%
+        ),
+        linear-gradient(145deg, #101a14, #031108);
+      color: #ffffff;
+    }
+
+    .om-category-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+      gap: 70px;
+      align-items: center;
+    }
+
+    .om-category-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--om-green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .om-category-dark .om-category-number {
+      color: #8fe5b2;
+    }
+
+    .om-category-number::after {
+      content: "";
+      width: 52px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .om-category h2 {
+      margin: 0 0 20px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 3.5vw, 46px);
+      line-height: 1.16;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+
+    .om-category p {
+      margin: 0;
+      color: var(--om-copy);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .om-category-dark p {
+      color: #dce6df;
+    }
+
     .om-category-stats {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .om-category-stat {
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .om-category-stat strong {
+      color: #8fe5b2;
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+      line-height: 1.1;
+    }
+
+    .om-category-stat span {
+      margin-top: 7px;
+      color: #d6e0da;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       SERVICE SECTIONS
+    ========================= */
+
+    .om-section {
+      padding: 104px 0;
+      scroll-margin-top: 120px;
+    }
+
+    .om-section-soft {
+      background: var(--om-soft);
+    }
+
+    .om-section-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(390px, 0.92fr);
+      gap: 66px;
+      align-items: center;
+    }
+
+    .om-section-grid.om-reverse {
+      grid-template-columns:
+        minmax(390px, 0.92fr)
+        minmax(0, 1.08fr);
+    }
+
+    .om-section-grid.om-reverse .om-copy {
+      order: 2;
+    }
+
+    .om-section-grid.om-reverse .om-visual {
+      order: 1;
+    }
+
+    .om-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--om-green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .om-label::after {
+      content: "";
+      width: 52px;
+      height: 2px;
+      background: var(--om-green);
     }
 
     .om-copy h2 {
-      font-size: 28px;
+      margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(27px, 3.1vw, 41px);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      font-weight: 700;
     }
 
-    .om-visual-panel {
-      min-height: 345px;
-      padding: 28px 22px;
+    .om-copy p {
+      margin: 0;
+      color: var(--om-copy);
+      font-size: 13px;
+      line-height: 1.95;
+      text-align: justify;
     }
 
-    .om-panel-data {
-      grid-template-columns: 1fr;
+    .om-copy p + p {
+      margin-top: 17px;
     }
 
-    .om-panel-data span {
-      min-height: 47px;
+    .om-highlight {
+      margin-top: 22px !important;
+      padding: 17px 19px;
+      border-left: 4px solid var(--om-green);
+      background: #eaf5ee;
+      color: #304039 !important;
+      text-align: left !important;
+    }
+
+    /* =========================
+       IMAGE PANELS
+       Replaces old dark inscription panels
+    ========================= */
+
+    .om-image-panel {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--om-border);
+      box-shadow: 0 18px 45px rgba(10, 48, 25, 0.08);
+    }
+
+    .om-image-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 115px;
+      height: 9px;
+      background: var(--om-green);
+    }
+
+    .om-image-panel img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: #ffffff;
+    }
+
+    .om-image-panel.img-top img {
+      object-position: center top;
+    }
+
+    .om-image-panel.img-bottom img {
+      object-position: center bottom;
+    }
+
+    /* =========================
+       CROSS-CUTTING STRENGTHS
+    ========================= */
+
+    .om-strengths {
+      padding: 100px 0 80px;
+      background: #ffffff;
+    }
+
+    .om-strengths-heading {
+      max-width: 800px;
+      margin-bottom: 46px;
+    }
+
+    .om-strengths-heading h2 {
+      margin: 0 0 14px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .om-strengths-heading p {
+      margin: 0;
+      color: var(--om-copy);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .om-strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
     }
 
     .om-strength-card {
-      min-height: auto;
-      padding: 27px 23px;
+      position: relative;
+      overflow: hidden;
+      min-height: 310px;
+      padding: 32px;
+      border: 1px solid var(--om-border);
+      background: var(--om-soft);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
+    .om-strength-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(9, 52, 27, 0.12);
+    }
+
+    .om-strength-card::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -50px;
+      width: 145px;
+      height: 145px;
+      border: 28px solid rgba(0, 122, 51, 0.09);
+      border-radius: 50%;
+    }
+
+    .om-strength-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      background: var(--om-green);
+      color: #ffffff;
+    }
+
+    .om-strength-icon .material-symbols-outlined {
+      font-size: 32px;
+    }
+
+    .om-strength-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 14px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .om-strength-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--om-copy);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
     .om-final-cta {
-      padding-bottom: 75px;
+      padding: 0 0 105px;
+      background: #ffffff;
+    }
+
+    .om-final-cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      padding: 34px 38px;
+      background: var(--om-green);
+      border-radius: 12px;
+      box-shadow: 0 13px 28px rgba(0, 73, 33, 0.15);
+    }
+
+    .om-final-cta-box h2 {
+      margin: 0;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(21px, 2.5vw, 28px);
+      line-height: 1.3;
+      font-weight: 700;
     }
 
     .om-contact-button {
-      width: 100%;
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      background: var(--om-green-dark);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
-  }
-</style>
+
+    .om-contact-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+    }
+
+    /* =========================
+       ANIMATION BASE
+    ========================= */
+
+    .slidein,
+    .bouncein {
+      will-change: transform, opacity;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1050px) {
+      .om-section-grid,
+      .om-section-grid.om-reverse {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(315px, 1fr);
+        gap: 42px;
+      }
+
+      .om-strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .om-strength-card:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .om-quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .om-quick-link,
+      .om-quick-link:nth-child(4n) {
+        border-right: 1px solid var(--om-border);
+        border-bottom: 1px solid var(--om-border);
+      }
+
+      .om-quick-link:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .om-quick-link:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .om-shell {
+        width: min(100% - 32px, 680px);
+      }
+
+      .om-hero {
+        min-height: auto;
+        background-position: 60% center;
+      }
+
+      .om-hero-content {
+        padding: 112px 0 85px;
+      }
+
+      .om-quick-nav {
+        margin-top: -28px;
+      }
+
+      .om-category {
+        padding: 76px 0 55px;
+      }
+
+      .om-category-inner {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .om-section {
+        padding: 76px 0;
+      }
+
+      .om-section-grid,
+      .om-section-grid.om-reverse {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .om-section-grid.om-reverse .om-copy,
+      .om-section-grid.om-reverse .om-visual {
+        order: initial;
+      }
+
+      .om-copy p {
+        text-align: left;
+      }
+
+      .om-image-panel {
+        aspect-ratio: 16 / 10;
+      }
+
+      .om-strengths-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .om-strength-card:last-child {
+        grid-column: auto;
+      }
+
+      .om-final-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .om-shell {
+        width: calc(100% - 24px);
+      }
+
+      .om-hero h1 {
+        font-size: 37px;
+      }
+
+      .om-hero-content {
+        padding: 100px 0 75px;
+      }
+
+      .om-quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .om-quick-link,
+      .om-quick-link:nth-child(2n),
+      .om-quick-link:nth-child(4n) {
+        border-right: 0;
+        border-bottom: 1px solid var(--om-border);
+      }
+
+      .om-quick-link:last-child {
+        border-bottom: 0;
+      }
+
+      .om-category-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .om-copy h2 {
+        font-size: 28px;
+      }
+
+      .om-image-panel {
+        aspect-ratio: 4 / 3;
+      }
+
+      .om-strength-card {
+        min-height: auto;
+        padding: 27px 23px;
+      }
+
+      .om-final-cta {
+        padding-bottom: 75px;
+      }
+
+      .om-contact-button {
+        width: 100%;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
-    <div id="navbar-placeholder"></div>
 
-   <div style="height: 120px;"></div>
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+
+  <div style="height: 120px;"></div>
 
 
-   <main class="om-page">
+  <main class="om-page">
 
-  <!-- HERO -->
-  <section class="om-hero">
-    <div class="om-shell">
-      <div class="om-hero-content">
+    <!-- HERO -->
+    <section class="om-hero">
 
-        <div class="om-eyebrow bouncein">
-          Proudly indigenous, delivering world-class solutions
-        </div>
+      <div class="om-shell">
 
-        <h1 class="bouncein">
-          Operations &amp; Maintenance
-        </h1>
+        <div class="om-hero-content">
 
-        <p class="om-hero-copy bouncein">
-          AOS Orwell delivers engineered rotating-equipment packages and
-          comprehensive Operations &amp; Maintenance services for upstream,
-          gas-processing, LNG, power and offshore applications. Our solutions
-          combine OEM-standard engineering, experienced resident teams,
-          in-country repair capability and structured maintenance management
-          to keep critical assets safe, available and productive throughout
-          their lifecycle.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- QUICK NAVIGATION -->
-  <nav
-    class="om-quick-nav"
-    aria-label="Operations and Maintenance services"
-  >
-    <div class="om-shell om-quick-grid">
-
-      <a class="om-quick-link" href="#integrated-maintenance">
-        Integrated Plant Maintenance
-      </a>
-
-      <a class="om-quick-link" href="#fabric-maintenance">
-        Fabric Maintenance
-      </a>
-
-      <a class="om-quick-link" href="#automation-metering">
-        Automation &amp; Metering
-      </a>
-
-      <a class="om-quick-link" href="#rotating-reliability">
-        Rotating Equipment Reliability
-      </a>
-
-      <a class="om-quick-link" href="#fpso-integrity">
-        FPSO &amp; Marine Integrity
-      </a>
-
-      <a class="om-quick-link" href="#asset-integrity">
-        Asset Integrity / Inspection
-      </a>
-
-      <a class="om-quick-link" href="#ei-services">
-        E&I Maintenance Service 
-      </a>
-
-      <a class="om-quick-link" href="#calibration">
-        Calibration &amp; Recertification
-      </a>
-
-    </div>
-  </nav>
-
-  <!-- O&M INTRO -->
-  <section class="om-category om-category-dark">
-    <div class="om-shell om-category-inner bouncein">
-
-      <div>
-
-        <h2>
-          Operations &amp; Maintenance Services
-        </h2>
-
-        <p>
-          AOS Orwell’s Operations &amp; Maintenance Division deploys
-          experienced, OEM-certified workforces to maintain critical
-          assets across upstream, gas-processing, LNG and FPSO
-          operations. Our in-country infrastructure and structured Global
-          Maintenance Center enable complex assets to be maintained to
-          manufacturer standards at local speed and without overseas lead
-          times.
-        </p>
-
-      </div>
-
-      <div class="om-category-stats">
-
-        <div class="om-category-stat">
-          <strong>400+</strong>
-          <span>Staff deployed under the NLNG maintenance contract</span>
-        </div>
-
-        <div class="om-category-stat">
-          <strong>6</strong>
-          <span>NLNG trains supported through integrated maintenance</span>
-        </div>
-
-        <div class="om-category-stat">
-          <strong>15 Years</strong>
-          <span>E&amp;I engagement supporting NAOC operations</span>
-        </div>
-
-        <div class="om-category-stat">
-          <strong>24/7</strong>
-          <span>Resident and call-off engineering support</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- INTEGRATED MAINTENANCE -->
-  <section id="integrated-maintenance" class="om-section">
-    <div class="om-shell om-section-grid slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Facility-wide maintenance
-        </div>
-
-        <h2>
-          Integrated Plant Maintenance Services
-        </h2>
-
-        <p>
-          We provide end-to-end maintenance management for an entire
-          facility under a single accountable contract. The scope can
-          include planned, preventive, predictive and corrective
-          maintenance together with shutdown and turnaround execution.
-        </p>
-
-        <p>
-          Services are delivered by large, OEM-certified workforces and
-          coordinated through our Global Maintenance Center.
-        </p>
-
-        <p class="om-highlight">
-          <strong>Proven at scale:</strong> AOS Orwell supports the NLNG
-          7-year Integrated Maintenance Services Contract with more than
-          400 staff deployed across all six LNG trains.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              engineering
-            </span>
+          <div class="om-eyebrow bouncein">
+            Proudly indigenous, delivering world-class solutions
           </div>
 
-          <div class="om-panel-kicker">
-            Single accountable contract
-          </div>
-
-          <div class="om-panel-title">
-            Complete facility maintenance from planning to execution
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>Preventive</span>
-            <span>Predictive</span>
-            <span>Corrective</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FABRIC MAINTENANCE -->
-  <section id="fabric-maintenance" class="om-section om-section-soft">
-    <div class="om-shell om-section-grid om-reverse slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-         Physical asset preservation
-        </div>
-
-        <h2>
-          Fabric Maintenance Services
-        </h2>
-
-        <p>
-          Our Fabric Maintenance Services cover surface protection and
-          industrial coatings, thermal insulation, passive fire
-          protection, scaffolding and rope-access support.
-        </p>
-
-        <p>
-          These services preserve the structural and physical condition
-          of facilities and are delivered by certified crews under both
-          shutdown and continuous-operation schedules across onshore,
-          swamp and offshore environments.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              format_paint
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Structural preservation
-          </div>
-
-          <div class="om-panel-title">
-            Coatings, insulation and access support for asset protection
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>Coatings</span>
-            <span>Insulation</span>
-            <span>Rope Access</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- AUTOMATION & METERING -->
-  <section id="automation-metering" class="om-section">
-    <div class="om-shell om-section-grid slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Process and measurement systems
-        </div>
-
-        <h2>
-          Automation &amp; Metering Services
-        </h2>
-
-        <p>
-          We provide full-lifecycle maintenance of DCS, SCADA, PLC and
-          ICSS platforms, Emergency Shutdown and Fire &amp; Gas systems,
-          custody-transfer and allocation metering, and field
-          instrumentation.
-        </p>
-
-        <p>
-          Our teams protect the integrity of the process-control, safety
-          and fiscal-measurement systems at the heart of each operating
-          facility.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              hub
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Control and fiscal measurement
-          </div>
-
-          <div class="om-panel-title">
-            Lifecycle support for automation, safety and metering systems
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>DCS / SCADA</span>
-            <span>ESD / F&amp;G</span>
-            <span>Metering</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ROTATING EQUIPMENT RELIABILITY -->
-  <section
-    id="rotating-reliability"
-    class="om-section om-section-soft"
-  >
-    <div class="om-shell om-section-grid om-reverse slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Rotating asset reliability
-        </div>
-
-        <h2>
-          Rotating Equipment Reliability Services &amp; Upgrades
-        </h2>
-
-        <p>
-          We provide condition monitoring, vibration analysis,
-          root-cause failure analysis, major overhaul and OEM-approved
-          in-country repair for compressors, pumps, gas engines and
-          turbines.
-        </p>
-
-        <p>
-          Our services also include re-rates and reliability upgrades
-          that improve equipment availability. Rotating assets are
-          repaired in Nigeria to OEM standards, reducing the cost and
-          delay associated with overseas shipping.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              settings
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Performance and availability
-          </div>
-
-          <div class="om-panel-title">
-            Reliability analysis, overhaul and OEM-approved upgrades
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>Vibration</span>
-            <span>Overhaul</span>
-            <span>Re-Rates</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FPSO -->
-  <section id="fpso-integrity" class="om-section">
-    <div class="om-shell om-section-grid slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Offshore floating assets
-        </div>
-
-        <h2>
-          FPSO &amp; Marine Structural Integrity Services
-        </h2>
-
-        <p>
-          Through our representation of Marine Technical Limits, AOS
-          Orwell delivers hull and marine structural-integrity services
-          for Nigeria’s offshore floating fleet.
-        </p>
-
-        <p>
-          Services include risk-based integrity management, digital
-          inspection workplans and reporting, anomaly management, naval
-          architecture, Class support, repair feasibility studies,
-          on-station repairs, specialist hotwork solutions, composite
-          repairs, coating reinstatement and offshore supervision.
-        </p>
-
-        <p>
-          The resulting integrity strategies reinforce safe operation,
-          support production and extend the service life of FPSO and FSO
-          assets.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              directions_boat
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Marine and hull integrity
-          </div>
-
-          <div class="om-panel-title">
-            FPSO integrity management and on-station repair
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>RBIM</span>
-            <span>Class Support</span>
-            <span>Repairs</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ASSET INTEGRITY -->
-  <section id="asset-integrity" class="om-section om-section-soft">
-    <div class="om-shell om-section-grid om-reverse slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Inspection and assurance
-        </div>
-
-        <h2>
-          Asset Integrity / Inspection Services
-        </h2>
-
-        <p>
-          Our Asset Integrity and Inspection Services include risk-based
-          inspection, non-destructive testing, corrosion management,
-          anomaly management and fitness-for-service assessment across
-          static and structural assets.
-        </p>
-
-        <p>
-          We establish asset-condition baselines, monitor degradation and
-          manage integrity throughout the lifecycle so operators can
-          maintain safe production, avoid unnecessary capital
-          expenditure and demonstrate regulatory compliance.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              verified_user
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Lifecycle integrity assurance
-          </div>
-
-          <div class="om-panel-title">
-            Inspection, corrosion control and fitness-for-service support
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>RBI</span>
-            <span>NDT</span>
-            <span>FFS</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- E&I -->
-  <section id="ei-services" class="om-section">
-    <div class="om-shell om-section-grid slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Electrical and instrumentation
-        </div>
-
-        <h2>
-          E&I Maintenance Service 
-        </h2>
-
-        <p>
-          We provide electrical and instrumentation maintenance,
-          installation and repair covering HV and LV systems, motors,
-          switchgear, cabling, field instruments and process-control
-          loops.
-        </p>
-
-        <p>
-          Services are delivered onshore, in swamp locations and
-          offshore by resident, OEM-certified teams.
-        </p>
-
-        <p class="om-highlight">
-          Our delivery experience is anchored by a consistent
-          <strong>15-year E&amp;I engagement with NAOC.</strong>
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              electrical_services
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Electrical asset support
-          </div>
-
-          <div class="om-panel-title">
-            Maintenance and repair for power and instrumentation systems
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>HV / LV</span>
-            <span>Motors</span>
-            <span>Instruments</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CALIBRATION -->
-  <section id="calibration" class="om-section om-section-soft">
-    <div class="om-shell om-section-grid om-reverse slidein">
-
-      <article class="om-copy">
-
-        <div class="om-label">
-          Compliance and accuracy
-        </div>
-
-        <h2>
-          Calibration &amp; Recertification Services
-        </h2>
-
-        <p>
-          We provide traceable instrument calibration, loop testing and
-          metering proving, together with the recertification of lifting,
-          pressure and safety equipment.
-        </p>
-
-        <p>
-          Services are carried out by qualified technicians to maintain
-          fiscal-measurement accuracy, validate safety devices and keep
-          operating assets compliant, including custody-metering
-          calibration to applicable regulatory requirements.
-        </p>
-
-      </article>
-
-      <div class="om-visual om-visual-panel" aria-hidden="true">
-
-        <div class="om-panel-top">
-
-          <div class="om-panel-icon">
-            <span class="material-symbols-outlined">
-              tune
-            </span>
-          </div>
-
-          <div class="om-panel-kicker">
-            Traceable measurement assurance
-          </div>
-
-          <div class="om-panel-title">
-            Calibration and recertification for accuracy and compliance
-          </div>
-
-        </div>
-
-        <div class="om-panel-bottom">
-          <div class="om-panel-data">
-            <span>Calibration</span>
-            <span>Loop Testing</span>
-            <span>Recertification</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CROSS-CUTTING STRENGTHS -->
-  <section class="om-strengths">
-    <div class="om-shell">
-
-      <div class="om-strengths-heading bouncein">
-
-        <div class="om-label">
-          Why AOS Orwell
-        </div>
-
-        <h2>
-          The infrastructure behind our maintenance delivery
-        </h2>
-
-        <p>
-          These capabilities distinguish our integrated maintenance model
-          from a conventional labour-supply arrangement and enable
-          consistent performance across complex operating contracts.
-        </p>
-
-      </div>
-
-      <div class="om-strengths-grid slidein">
-
-        <article class="om-strength-card">
-
-          <div class="om-strength-icon">
-            <span class="material-symbols-outlined">
-              monitoring
-            </span>
-          </div>
-
-          <h3>
-            Global Maintenance Center
-          </h3>
-
-          <p>
-            Centralized, real-time maintenance management with work-order
-            control, KPI reporting and performance visibility across
-            active contracts. The GMC provides the operational backbone
-            for integrated maintenance delivery.
+          <h1 class="bouncein">
+            Operations &amp; Maintenance
+          </h1>
+
+          <p class="om-hero-copy bouncein">
+            AOS Orwell delivers engineered rotating-equipment packages and
+            comprehensive Operations &amp; Maintenance services for upstream,
+            gas-processing, LNG, power and offshore applications. Our solutions
+            combine OEM-standard engineering, experienced resident teams,
+            in-country repair capability and structured maintenance management
+            to keep critical assets safe, available and productive throughout
+            their lifecycle.
           </p>
 
-        </article>
-
-        <article class="om-strength-card">
-
-          <div class="om-strength-icon">
-            <span class="material-symbols-outlined">
-              factory
-            </span>
-          </div>
-
-          <h3>
-            In-Country Repair Base
-          </h3>
-
-          <p>
-            A 65,000 m² facility in Trans Amadi, Port Harcourt, with six
-            specialist workshops and API Spec Q1 and ISO/TS 29001
-            certification—reducing overseas shipping, currency exposure
-            and international lead times.
-          </p>
-
-        </article>
-
-        <article class="om-strength-card">
-
-          <div class="om-strength-icon">
-            <span class="material-symbols-outlined">
-              support_agent
-            </span>
-          </div>
-
-          <h3>
-            Resident Engineers &amp; Turnaround Support
-          </h3>
-
-          <p>
-            24/7/365 resident and call-off engineering support across
-            onshore, swamp and offshore locations, together with complete
-            turnaround and shutdown planning, mobilization and execution.
-          </p>
-
-        </article>
+        </div>
 
       </div>
 
-    </div>
-  </section>
+    </section>
 
-  <!-- FINAL CTA -->
-  <section class="om-final-cta">
-    <div class="om-shell">
 
-      <div class="om-final-cta-box bouncein">
+    <!-- QUICK NAVIGATION -->
+    <nav
+      class="om-quick-nav"
+      aria-label="Operations and Maintenance services"
+    >
 
-        <h2>
-          Let’s Keep Your Critical Assets Performing
-        </h2>
+      <div class="om-shell om-quick-grid">
 
         <a
-          href="./contact-us.html"
-          class="om-contact-button"
+          class="om-quick-link"
+          href="#integrated-maintenance"
         >
-          Contact Us
+          Integrated Plant Maintenance
+        </a>
 
-          <span class="material-symbols-outlined">
-            arrow_forward
-          </span>
+        <a
+          class="om-quick-link"
+          href="#fabric-maintenance"
+        >
+          Fabric Maintenance
+        </a>
+
+        <a
+          class="om-quick-link"
+          href="#automation-metering"
+        >
+          Automation &amp; Metering
+        </a>
+
+        <a
+          class="om-quick-link"
+          href="#rotating-reliability"
+        >
+          Rotating Equipment Reliability
+        </a>
+
+        <a
+          class="om-quick-link"
+          href="#fpso-integrity"
+        >
+          FPSO &amp; Marine Integrity
+        </a>
+
+        <a
+          class="om-quick-link"
+          href="#asset-integrity"
+        >
+          Asset Integrity / Inspection
+        </a>
+
+        <a
+          class="om-quick-link"
+          href="#ei-services"
+        >
+          E&amp;I Maintenance Service
+        </a>
+
+        <a
+          class="om-quick-link"
+          href="#calibration"
+        >
+          Calibration &amp; Recertification
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- O&M INTRO -->
+    <section class="om-category om-category-dark">
+
+      <div class="om-shell om-category-inner bouncein">
+
+        <div>
+
+          <h2>
+            Operations &amp; Maintenance Services
+          </h2>
+
+          <p>
+            AOS Orwell’s Operations &amp; Maintenance Division deploys
+            experienced, OEM-certified workforces to maintain critical
+            assets across upstream, gas-processing, LNG and FPSO
+            operations. Our in-country infrastructure and structured Global
+            Maintenance Center enable complex assets to be maintained to
+            manufacturer standards at local speed and without overseas lead
+            times.
+          </p>
+
+        </div>
+
+
+        <div class="om-category-stats">
+
+          <div class="om-category-stat">
+            <strong>400+</strong>
+            <span>Staff deployed under the NLNG maintenance contract</span>
+          </div>
+
+          <div class="om-category-stat">
+            <strong>6</strong>
+            <span>NLNG trains supported through integrated maintenance</span>
+          </div>
+
+          <div class="om-category-stat">
+            <strong>15 Years</strong>
+            <span>E&amp;I engagement supporting NAOC operations</span>
+          </div>
+
+          <div class="om-category-stat">
+            <strong>24/7</strong>
+            <span>Resident and call-off engineering support</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTEGRATED MAINTENANCE -->
+    <section
+      id="integrated-maintenance"
+      class="om-section"
+    >
+
+      <div class="om-shell om-section-grid slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Facility-wide maintenance
+          </div>
+
+          <h2>
+            Integrated Plant Maintenance Services
+          </h2>
+
+          <p>
+            We provide end-to-end maintenance management for an entire
+            facility under a single accountable contract. The scope can
+            include planned, preventive, predictive and corrective
+            maintenance together with shutdown and turnaround execution.
+          </p>
+
+          <p>
+            Services are delivered by large, OEM-certified workforces and
+            coordinated through our Global Maintenance Center.
+          </p>
+
+          <p class="om-highlight">
+            <strong>Proven at scale:</strong> AOS Orwell supports the NLNG
+            7-year Integrated Maintenance Services Contract with more than
+            400 staff deployed across all six LNG trains.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om1.png"
+            alt="Integrated plant maintenance services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FABRIC MAINTENANCE -->
+    <section
+      id="fabric-maintenance"
+      class="om-section om-section-soft"
+    >
+
+      <div class="om-shell om-section-grid om-reverse slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Physical asset preservation
+          </div>
+
+          <h2>
+            Fabric Maintenance Services
+          </h2>
+
+          <p>
+            Our Fabric Maintenance Services cover surface protection and
+            industrial coatings, thermal insulation, passive fire
+            protection, scaffolding and rope-access support.
+          </p>
+
+          <p>
+            These services preserve the structural and physical condition
+            of facilities and are delivered by certified crews under both
+            shutdown and continuous-operation schedules across onshore,
+            swamp and offshore environments.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om2.png"
+            alt="Fabric maintenance services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- AUTOMATION & METERING -->
+    <section
+      id="automation-metering"
+      class="om-section"
+    >
+
+      <div class="om-shell om-section-grid slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Process and measurement systems
+          </div>
+
+          <h2>
+            Automation &amp; Metering Services
+          </h2>
+
+          <p>
+            We provide full-lifecycle maintenance of DCS, SCADA, PLC and
+            ICSS platforms, Emergency Shutdown and Fire &amp; Gas systems,
+            custody-transfer and allocation metering, and field
+            instrumentation.
+          </p>
+
+          <p>
+            Our teams protect the integrity of the process-control, safety
+            and fiscal-measurement systems at the heart of each operating
+            facility.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om3.png"
+            alt="Automation and metering services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ROTATING EQUIPMENT RELIABILITY -->
+    <section
+      id="rotating-reliability"
+      class="om-section om-section-soft"
+    >
+
+      <div class="om-shell om-section-grid om-reverse slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Rotating asset reliability
+          </div>
+
+          <h2>
+            Rotating Equipment Reliability Services &amp; Upgrades
+          </h2>
+
+          <p>
+            We provide condition monitoring, vibration analysis,
+            root-cause failure analysis, major overhaul and OEM-approved
+            in-country repair for compressors, pumps, gas engines and
+            turbines.
+          </p>
+
+          <p>
+            Our services also include re-rates and reliability upgrades
+            that improve equipment availability. Rotating assets are
+            repaired in Nigeria to OEM standards, reducing the cost and
+            delay associated with overseas shipping.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om4.jpeg"
+            alt="Rotating equipment reliability services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FPSO -->
+    <section
+      id="fpso-integrity"
+      class="om-section"
+    >
+
+      <div class="om-shell om-section-grid slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Offshore floating assets
+          </div>
+
+          <h2>
+            FPSO &amp; Marine Structural Integrity Services
+          </h2>
+
+          <p>
+            Through our representation of Marine Technical Limits, AOS
+            Orwell delivers hull and marine structural-integrity services
+            for Nigeria’s offshore floating fleet.
+          </p>
+
+          <p>
+            Services include risk-based integrity management, digital
+            inspection workplans and reporting, anomaly management, naval
+            architecture, Class support, repair feasibility studies,
+            on-station repairs, specialist hotwork solutions, composite
+            repairs, coating reinstatement and offshore supervision.
+          </p>
+
+          <p>
+            The resulting integrity strategies reinforce safe operation,
+            support production and extend the service life of FPSO and FSO
+            assets.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om5.png"
+            alt="FPSO and marine structural integrity services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ASSET INTEGRITY -->
+    <section
+      id="asset-integrity"
+      class="om-section om-section-soft"
+    >
+
+      <div class="om-shell om-section-grid om-reverse slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Inspection and assurance
+          </div>
+
+          <h2>
+            Asset Integrity / Inspection Services
+          </h2>
+
+          <p>
+            Our Asset Integrity and Inspection Services include risk-based
+            inspection, non-destructive testing, corrosion management,
+            anomaly management and fitness-for-service assessment across
+            static and structural assets.
+          </p>
+
+          <p>
+            We establish asset-condition baselines, monitor degradation and
+            manage integrity throughout the lifecycle so operators can
+            maintain safe production, avoid unnecessary capital
+            expenditure and demonstrate regulatory compliance.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om6.png"
+            alt="Asset integrity and inspection services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- E&I -->
+    <section
+      id="ei-services"
+      class="om-section"
+    >
+
+      <div class="om-shell om-section-grid slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Electrical and instrumentation
+          </div>
+
+          <h2>
+            E&amp;I Maintenance Service
+          </h2>
+
+          <p>
+            We provide electrical and instrumentation maintenance,
+            installation and repair covering HV and LV systems, motors,
+            switchgear, cabling, field instruments and process-control
+            loops.
+          </p>
+
+          <p>
+            Services are delivered onshore, in swamp locations and
+            offshore by resident, OEM-certified teams.
+          </p>
+
+          <p class="om-highlight">
+            Our delivery experience is anchored by a consistent
+            <strong>15-year E&amp;I engagement with NAOC.</strong>
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om7.png"
+            alt="Electrical and instrumentation maintenance services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CALIBRATION -->
+    <section
+      id="calibration"
+      class="om-section om-section-soft"
+    >
+
+      <div class="om-shell om-section-grid om-reverse slidein">
+
+        <article class="om-copy">
+
+          <div class="om-label">
+            Compliance and accuracy
+          </div>
+
+          <h2>
+            Calibration &amp; Recertification Services
+          </h2>
+
+          <p>
+            We provide traceable instrument calibration, loop testing and
+            metering proving, together with the recertification of lifting,
+            pressure and safety equipment.
+          </p>
+
+          <p>
+            Services are carried out by qualified technicians to maintain
+            fiscal-measurement accuracy, validate safety devices and keep
+            operating assets compliant, including custody-metering
+            calibration to applicable regulatory requirements.
+          </p>
+
+        </article>
+
+
+        <div class="om-visual om-image-panel">
+
+          <img
+            src="/images/om8.png"
+            alt="Calibration and recertification services"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CROSS-CUTTING STRENGTHS -->
+    <section class="om-strengths">
+
+      <div class="om-shell">
+
+        <div class="om-strengths-heading bouncein">
+
+          <div class="om-label">
+            Why AOS Orwell
+          </div>
+
+          <h2>
+            The infrastructure behind our maintenance delivery
+          </h2>
+
+          <p>
+            These capabilities distinguish our integrated maintenance model
+            from a conventional labour-supply arrangement and enable
+            consistent performance across complex operating contracts.
+          </p>
+
+        </div>
+
+
+        <div class="om-strengths-grid slidein">
+
+          <article class="om-strength-card">
+
+            <div class="om-strength-icon">
+              <span class="material-symbols-outlined">
+                monitoring
+              </span>
+            </div>
+
+            <h3>
+              Global Maintenance Center
+            </h3>
+
+            <p>
+              Centralized, real-time maintenance management with work-order
+              control, KPI reporting and performance visibility across
+              active contracts. The GMC provides the operational backbone
+              for integrated maintenance delivery.
+            </p>
+
+          </article>
+
+
+          <article class="om-strength-card">
+
+            <div class="om-strength-icon">
+              <span class="material-symbols-outlined">
+                factory
+              </span>
+            </div>
+
+            <h3>
+              In-Country Repair Base
+            </h3>
+
+            <p>
+              A 65,000 m² facility in Trans Amadi, Port Harcourt, with six
+              specialist workshops and API Spec Q1 and ISO/TS 29001
+              certification—reducing overseas shipping, currency exposure
+              and international lead times.
+            </p>
+
+          </article>
+
+
+          <article class="om-strength-card">
+
+            <div class="om-strength-icon">
+              <span class="material-symbols-outlined">
+                support_agent
+              </span>
+            </div>
+
+            <h3>
+              Resident Engineers &amp; Turnaround Support
+            </h3>
+
+            <p>
+              24/7/365 resident and call-off engineering support across
+              onshore, swamp and offshore locations, together with complete
+              turnaround and shutdown planning, mobilization and execution.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="om-final-cta">
+
+      <div class="om-shell">
+
+        <div class="om-final-cta-box bouncein">
+
+          <h2>
+            Let’s Keep Your Critical Assets Performing
+          </h2>
+
+          <a
+            href="/contact-us.html"
+            class="om-contact-button"
+          >
+            Contact Us
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer
+    class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="/images/jogo.png"
+        alt="AOS Orwell"
+        style="
+          height:64px;
+          width:auto;
+          max-width:150px;
+          object-fit:contain;
+          display:block;
+        "
+      >
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="/about.html">
+          About Us
+        </a>
+
+        <a href="/services.html">
+          Services
+        </a>
+
+        <a href="/hse.html">
+          QHSE
+        </a>
+
+        <a href="/media.html">
+          Media
+        </a>
+
+        <a href="/careers.html">
+          Careers
+        </a>
+
+        <a href="/contact-us.html">
+          Contact Us
         </a>
 
       </div>
 
     </div>
-  </section>
-
-</main>
 
 
-    <footer class="relative z-20 flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
-      <!-- Logo + Nav -->
-      <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
-        <img src="./images/jogo.png" alt="" class="h-15 sm:h-20 w-auto object-cover">
-        <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="hse.html">QHSE</a>
-          <a href="media.html">Media</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact-us.html">Contact Us</a>
-        </div>
-      </div>
-    
-      <!-- Footer Content -->
-    <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
-      <!-- Company Info -->
-      <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <!-- COMPANY -->
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
         <div class="w-full">
-          <p class="text-xs sm:text-[13px] font-medium leading-loose">
-            We are one of the foremost Indigenous Oilfield Servicing Companies in the country. 
-            Our service offerings cover Wellbore Construction, Process Automation & Control, 
-            New Services/Operations & Maintenance and Oilfield Tubular & Accessories Manufacturing & Repair.
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            We are one of the foremost Indigenous Oilfield Servicing Companies
+            in the country. Our service offerings cover Wellbore Construction,
+            Process Automation &amp; Control, New Services/Operations &amp;
+            Maintenance and Oilfield Tubular &amp; Accessories Manufacturing
+            &amp; Repair.
           </p>
-          <!-- Social -->
-        <div class="mt-5 flex flex-col gap-y-2">
-          <h3 class="text-base font-medium">Stay Connected</h3>
-          <div class="flex gap-x-3">
-            <!-- Facebook -->
-            <a href="https://www.youtube.com/@aosorwell8369" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-youtube text-white text-lg"></i>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-instagram text-white text-lg"></i>
-            </a>
-            <!-- X (Twitter) -->
-            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-twitter-x text-white text-lg"></i>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer"
-               class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition">
-              <i class="bi bi-linkedin text-white text-lg"></i>
-            </a>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwell8369"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
           </div>
+
         </div>
-        </div>
-        
-    
+
       </div>
-      <!-- Locations + Email -->
-      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Locations</h4>
+
+
+      <!-- LOCATIONS -->
+      <div
+        class="w-full sm:w-[35%] flex flex-col gap-y-4"
+      >
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
         <div class="flex flex-col gap-y-3">
+
           <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
           </div>
+
           <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos.</p>
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
           </div>
+
           <div class="flex flex-col gap-y-1.5">
-            <p class="font-medium text-sm">Ghana Office</p>
-            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful Takoradi, Ghana</p>
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
           </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p
+              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
+            >
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
         </div>
-  
-        
+
       </div>
-    
-      <!-- Links + Social -->
-      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
-        <h4 class="font-medium text-sm sm:text-base">Links</h4>
+
+
+      <!-- LINKS -->
+      <div
+        class="w-full lg:w-1/4 flex flex-col gap-y-4"
+      >
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
         <div class="flex flex-col gap-y-2">
-          <a href="about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
-          <a href="management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
-          <a href="media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
-          <a href="policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
-          <a href="whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
-          <a href="downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+
+          <a
+            href="/about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="/management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="/media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="/policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="/whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="/downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
         </div>
-        <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
         <div class="flex flex-col gap-y-1">
-          <p class="text-xs sm:text-[13px] text-gray-200">marketing@aosorwell.com</p>
-          <p class="text-xs sm:text-[13px] text-gray-200">sales@aosorwell.com</p>
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
         </div>
-    
-        
+
       </div>
 
-    
-      <!-- Contact -->
+
+      <!-- CONTACT -->
       <div class="w-full lg:w-2/5">
-        <h4 class="font-medium text-base">Contact Us</h4>
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
         <form class="flex flex-col gap-y-5 mt-2">
-          <input type="text" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="text" placeholder="Your Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <input type="email" placeholder="Email Address" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
-          <textarea placeholder="Your Message" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          >
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          >
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          >
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
           <div class="w-full flex justify-end">
-            <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
           </div>
+
         </form>
+
       </div>
+
     </div>
-    
-    </footer>
-    <div class="relative z-20 bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">&copy; 2025 AOS Orwell. All rights reserved.</div>
-    
-     
-    <script src="./index.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Animation functions
-            function slideIn(element) {
-                Motion.animate(element, {
-                    opacity: 1,
-                    transform: "translateX(0)"
-                }, {
-                    duration: 0.8,
-                    easing: "ease-out"
-                });
+
+  </footer>
+
+
+  <div
+    class="relative z-20 bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2026 AOS Orwell. All rights reserved.
+  </div>
+
+
+  <!-- MOTION SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!window.Motion) return;
+
+      function slideIn(element) {
+        Motion.animate(
+          element,
+          {
+            opacity: 1,
+            transform: "translateX(0)"
+          },
+          {
+            duration: 0.8,
+            easing: "ease-out"
+          }
+        );
+      }
+
+      function bounceIn(element) {
+        Motion.animate(
+          element,
+          {
+            opacity: 1,
+            transform: "scale(1)"
+          },
+          {
+            duration: 0.6,
+            easing: [0.175, 0.885, 0.32, 1.275]
+          }
+        );
+      }
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains("slidein")) {
+                slideIn(entry.target);
+              }
+
+              if (entry.target.classList.contains("bouncein")) {
+                bounceIn(entry.target);
+              }
+
+              observer.unobserve(entry.target);
             }
+          });
+        },
+        {
+          threshold: 0.3,
+          rootMargin: "0px 0px -50px 0px"
+        }
+      );
 
-            function fadeIn(element) {
-                Motion.animate(element, {
-                    opacity: 1
-                }, {
-                    duration: 1,
-                    easing: "ease-out"
-                });
-            }
+      document
+        .querySelectorAll(".slidein, .bouncein")
+        .forEach(element => {
+          if (element.classList.contains("slidein")) {
+            element.style.opacity = "0";
+            element.style.transform = "translateX(-50px)";
+          }
 
-            function bounceIn(element) {
-                Motion.animate(element, {
-                    opacity: 1,
-                    transform: "scale(1)"
-                }, {
-                    duration: 0.6,
-                    easing: [0.175, 0.885, 0.32, 1.275]
-                });
-            }
+          if (element.classList.contains("bouncein")) {
+            element.style.opacity = "0";
+            element.style.transform = "scale(0.8)";
+          }
 
-            function slideInRight(element) {
-                Motion.animate(element, {
-                    opacity: 1,
-                    transform: "translateX(0)"
-                }, {
-                    duration: 0.8,
-                    easing: "ease-out"
-                });
-            }
-
-            // Set up Intersection Observer
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.classList.contains('slidein')) {
-                            slideIn(entry.target);
-                        }
-                        else if (entry.target.classList.contains('fadein')) {
-                            fadeIn(entry.target);
-                        }
-                        else if (entry.target.classList.contains('bouncein')) {
-                            bounceIn(entry.target);
-                        }
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { 
-                threshold: 0.3,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            // Observe all animated elements
-            document.querySelectorAll('.slidein, .fadein, .bouncein').forEach(el => {
-                // Set initial styles
-                if (el.classList.contains('slidein')) {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateX(-50px)';
-                }
-                else if (el.classList.contains('fadein')) {
-                    el.style.opacity = '0';
-                }
-                else if (el.classList.contains('bouncein')) {
-                    el.style.opacity = '0';
-                    el.style.transform = 'scale(0.8)';
-                }
-                
-                observer.observe(el);
-            });
+          observer.observe(element);
         });
-    </script>
-    <script>
-  fetch("./navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
-
-      const script = document.createElement("script");
-      script.src = "./navbar.js";
-      document.body.appendChild(script);
     });
-</script>
+  </script>
+
+
+  <!-- NAVBAR LOADER -->
+  <script>
+    fetch("/navbar.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
+
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+
+        const script = document.createElement("script");
+        script.src = "/navbar.js";
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Navbar failed to load:", error);
+      });
+  </script>
+
 </body>
+
 </html>

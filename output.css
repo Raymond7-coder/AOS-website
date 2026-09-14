@@ -10529,3 +10529,14 @@ footer img[src*="jogo.png"] {
   object-fit: contain !important;
   display: block !important;
 }
+
+/* Remove executive hero stats from all board profile pages */
+.exec-hero-stats {
+  display: none !important;
+}
+/* Remove executive hero intro text and hero stats from all board profile pages */
+.exec-hero-intro,
+.exec-hero-stats,
+.exec-hero-copy > p:not(.exec-role) {
+  display: none !important;
+}
