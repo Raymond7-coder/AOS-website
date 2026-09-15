@@ -390,3 +390,87 @@ document.addEventListener("click", function (event) {
 });
 
 // NAVBAR SCRIPT ENDS
+
+/* =====================================================
+   GLOBAL FOOTER LOADER
+   Loads footer.html on every page through navbar.js
+====================================================== */
+
+(function () {
+  function loadSharedFooter() {
+    if (window.__aosFooterLoaded) {
+      return;
+    }
+
+    window.__aosFooterLoaded = true;
+
+    fetch("/footer.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Footer could not be loaded.");
+        }
+
+        return response.text();
+      })
+      .then(function (footerHTML) {
+        let footerPlaceholder =
+          document.getElementById("footer-placeholder");
+
+        const oldFooter =
+          document.querySelector("footer");
+
+        const oldCopyright =
+          oldFooter ? oldFooter.nextElementSibling : null;
+
+        if (!footerPlaceholder) {
+          footerPlaceholder =
+            document.createElement("div");
+
+          footerPlaceholder.id =
+            "footer-placeholder";
+
+          if (oldFooter) {
+            oldFooter.parentNode.insertBefore(
+              footerPlaceholder,
+              oldFooter
+            );
+          } else {
+            document.body.appendChild(
+              footerPlaceholder
+            );
+          }
+        }
+
+        if (oldFooter) {
+          oldFooter.remove();
+        }
+
+        if (
+          oldCopyright &&
+          oldCopyright.textContent &&
+          oldCopyright.textContent.includes("AOS Orwell") &&
+          oldCopyright.textContent.includes("All rights reserved")
+        ) {
+          oldCopyright.remove();
+        }
+
+        footerPlaceholder.innerHTML =
+          footerHTML;
+      })
+      .catch(function (error) {
+        console.error(
+          "Footer could not load:",
+          error
+        );
+      });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      loadSharedFooter
+    );
+  } else {
+    loadSharedFooter();
+  }
+})();
