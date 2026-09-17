@@ -333,6 +333,21 @@
       object-position: center;
       background: #ffffff;
     }
+    /* Turnkey image should show complete without white spacing */
+.ipm-image-panel.img-turnkey {
+  aspect-ratio: auto;
+  height: auto;
+  background: transparent;
+}
+
+.ipm-image-panel.img-turnkey img {
+  width: 100%;
+  height: auto;
+  object-fit: unset;
+  object-position: unset;
+  display: block;
+  background: transparent;
+}
 
     .ipm-image-panel.img-top img {
       object-position: center top;
@@ -897,7 +912,7 @@
         </article>
 
 
-        <div class="ipm-visual ipm-image-panel img-top">
+        <div class="ipm-visual ipm-image-panel img-turnkey">
 
           <img
             src="/images/turnkey2.png"
