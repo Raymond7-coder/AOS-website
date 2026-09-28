@@ -144,17 +144,15 @@
     margin-top: -43px;
   }
 
-.wc-quick-grid {
+  .wc-quick-grid {
   display: grid;
-  grid-template-columns: repeat(20, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   background: #ffffff;
   border: 1px solid var(--wc-border);
   box-shadow: 0 18px 52px rgba(10, 48, 25, 0.13);
 }
 
-/* First five items: 5 equal columns */
 .wc-quick-link {
-  grid-column: span 4;
   min-height: 90px;
   display: flex;
   align-items: center;
@@ -175,16 +173,12 @@
     transform 0.25s ease;
 }
 
-/* Last four items: 4 equal columns filling the whole row */
-.wc-quick-link:nth-child(n + 6) {
-  grid-column: span 5;
-  border-bottom: 0;
+.wc-quick-link:nth-child(4n) {
+  border-right: 0;
 }
 
-/* Remove right border from the final item on each row */
-.wc-quick-link:nth-child(5),
-.wc-quick-link:nth-child(9) {
-  border-right: 0;
+.wc-quick-link:nth-last-child(-n + 4) {
+  border-bottom: 0;
 }
 
   .wc-quick-link:hover,
@@ -674,10 +668,6 @@
         Jar &amp; Downhole Tools
       </a>
 
-      <a class="wc-quick-link" href="#completion">
-        Completion &amp; Hammer Services
-      </a>
-
       <a class="wc-quick-link" href="#drilling">
         Directional Drilling And Logging
       </a>
@@ -937,7 +927,7 @@
     </div>
   </section>
 
-  <!-- COMPLETION -->
+  <!--
   <section id="completion" class="wc-section wc-section-soft">
     <div class="wc-shell wc-section-grid wc-reverse slidein">
 
@@ -983,6 +973,7 @@
 
     </div>
   </section>
+  -->
 
   <!-- DRILLING -->
   <section id="drilling" class="wc-section">

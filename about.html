@@ -1132,7 +1132,7 @@
 
               <h3
                 class="counter"
-                data-target="50"
+                data-target="1000"
                 data-suffix="+"
               >
                 0+
@@ -2184,148 +2184,155 @@
   ></script>
 
   <script>
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-        const counters =
-          document.querySelectorAll(".counter");
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      const counters =
+        document.querySelectorAll(".counter");
 
-        const counterObserver =
-          new IntersectionObserver(
-            function (entries, observer) {
-              entries.forEach(function (entry) {
-                if (!entry.isIntersecting) {
-                  return;
-                }
-
-                const counter = entry.target;
-
-                const target =
-                  Number(
-                    counter.getAttribute("data-target")
-                  ) || 0;
-
-                const suffix =
-                  counter.getAttribute("data-suffix") || "";
-
-                let count = 0;
-
-                const duration = 1400;
-
-                const interval = Math.max(
-                  16,
-                  Math.floor(
-                    duration / Math.max(target, 1)
-                  )
-                );
-
-                function updateCounter() {
-                  count += 1;
-
-                  counter.textContent =
-                    Math.min(count, target) + suffix;
-
-                  if (count < target) {
-                    window.setTimeout(
-                      updateCounter,
-                      interval
-                    );
-                  }
-                }
-
-                updateCounter();
-
-                observer.unobserve(counter);
-              });
-            },
-            {
-              threshold: 0.45
-            }
-          );
-
-        counters.forEach(function (counter) {
-          counterObserver.observe(counter);
-        });
-
-        const timeline =
-          document.getElementById("timeline");
-
-        const leftArrow =
-          document.getElementById("left-arrow");
-
-        const rightArrow =
-          document.getElementById("right-arrow");
-
-        if (
-          timeline &&
-          leftArrow &&
-          rightArrow
-        ) {
-          leftArrow.addEventListener(
-            "click",
-            function () {
-              timeline.scrollBy({
-                left: -330,
-                behavior: "smooth"
-              });
-            }
-          );
-
-          rightArrow.addEventListener(
-            "click",
-            function () {
-              timeline.scrollBy({
-                left: 330,
-                behavior: "smooth"
-              });
-            }
-          );
-        }
-
-        if (window.gsap) {
-          document
-            .querySelectorAll(".tl-item")
-            .forEach(function (item) {
-              const content =
-                item.querySelector(".tl-content");
-
-              if (!content) {
+      const counterObserver =
+        new IntersectionObserver(
+          function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) {
                 return;
               }
 
-              gsap.set(content, {
-                opacity: 0,
-                y: 50
-              });
+              const counter = entry.target;
 
-              item.addEventListener(
-                "mouseenter",
-                function () {
-                  gsap.to(content, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    ease: "power3.out"
-                  });
-                }
-              );
+              const target =
+                Number(
+                  counter.getAttribute("data-target")
+                ) || 0;
 
-              item.addEventListener(
-                "mouseleave",
-                function () {
-                  gsap.to(content, {
-                    opacity: 0,
-                    y: 50,
-                    duration: 0.6,
-                    ease: "power3.in"
-                  });
+              const suffix =
+                counter.getAttribute("data-suffix") || "";
+
+              const duration = 850;
+              const startTime = performance.now();
+
+              function updateCounter(currentTime) {
+                const elapsed =
+                  currentTime - startTime;
+
+                const progress =
+                  Math.min(
+                    elapsed / duration,
+                    1
+                  );
+
+                const value =
+                  Math.floor(
+                    progress * target
+                  );
+
+                counter.textContent =
+                  value + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateCounter);
                 }
-              );
+                else {
+                  counter.textContent =
+                    target + suffix;
+                }
+              }
+
+              requestAnimationFrame(updateCounter);
+
+              observer.unobserve(counter);
             });
-        }
+          },
+          {
+            threshold: 0.35
+          }
+        );
+
+      counters.forEach(function (counter) {
+        counterObserver.observe(counter);
+      });
+
+
+      const timeline =
+        document.getElementById("timeline");
+
+      const leftArrow =
+        document.getElementById("left-arrow");
+
+      const rightArrow =
+        document.getElementById("right-arrow");
+
+      if (
+        timeline &&
+        leftArrow &&
+        rightArrow
+      ) {
+        leftArrow.addEventListener(
+          "click",
+          function () {
+            timeline.scrollBy({
+              left: -330,
+              behavior: "smooth"
+            });
+          }
+        );
+
+        rightArrow.addEventListener(
+          "click",
+          function () {
+            timeline.scrollBy({
+              left: 330,
+              behavior: "smooth"
+            });
+          }
+        );
       }
-    );
-  </script>
+
+
+      if (window.gsap) {
+        document
+          .querySelectorAll(".tl-item")
+          .forEach(function (item) {
+            const content =
+              item.querySelector(".tl-content");
+
+            if (!content) {
+              return;
+            }
+
+            gsap.set(content, {
+              opacity: 0,
+              y: 50
+            });
+
+            item.addEventListener(
+              "mouseenter",
+              function () {
+                gsap.to(content, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.6,
+                  ease: "power3.out"
+                });
+              }
+            );
+
+            item.addEventListener(
+              "mouseleave",
+              function () {
+                gsap.to(content, {
+                  opacity: 0,
+                  y: 50,
+                  duration: 0.6,
+                  ease: "power3.in"
+                });
+              }
+            );
+          });
+      }
+    }
+  );
+</script>
 
   <!-- NAVBAR LOADER -->
   <script>
