@@ -310,6 +310,18 @@
     background: #e8ece9;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
   }
+  /* Directional drilling image should show more of the equipment */
+.wc-drilling-image {
+  overflow: hidden;
+  background: #f3f4f3;
+}
+
+.wc-drilling-image img {
+  object-fit: contain;
+  object-position: center;
+  background: #f3f4f3;
+  padding: 8px;
+}
 
   .wc-section-soft .wc-image-frame::before {
     background: #bcc5bf;
@@ -603,6 +615,14 @@
       width: 100%;
     }
   }
+  /* Directional drilling image: portrait-friendly frame, no blur, no grey filler */
+.wc-drilling-portrait img {
+  height: 500px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
 </style>
 </head>
 <body>
@@ -1013,7 +1033,7 @@
 
       </article>
 
-      <div class="wc-visual wc-image-frame">
+      <div class="wc-visual wc-image-frame wc-drilling-portrait">
         <img
           src="./images/directionaldrilll.jpeg"
           alt="Well drilling operation"

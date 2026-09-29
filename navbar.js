@@ -220,35 +220,73 @@ if (subName === "design") {
 };
 
 window.changeServiceImage = function (imageSrc, title) {
-
   const previewImage =
     document.getElementById("service-preview-image");
 
   if (!previewImage) return;
 
+  const frame = previewImage.parentElement;
 
-  previewImage.src = imageSrc;
-  previewImage.alt = title || "";
+  previewImage.style.opacity = "0";
 
+  setTimeout(function () {
+    previewImage.src = imageSrc;
+    previewImage.alt = title || "";
 
-  // Special treatment ONLY for Hammer.jpg
-  if (
-    imageSrc.toLowerCase().includes("hammer.jpg")
-  ) {
+    /* Directional Drilling image - portrait-friendly frame */
+    if (
+      imageSrc.toLowerCase().includes("directionaldrilll")
+    ) {
+      if (frame) {
+        frame.style.width = "380px";
+        frame.style.height = "450px";
+        frame.style.backgroundColor = "#ffffff";
+        frame.style.marginLeft = "auto";
+        frame.style.marginRight = "auto";
+      }
 
-    previewImage.style.objectFit = "contain";
-    previewImage.style.objectPosition = "center";
-    previewImage.style.backgroundColor = "#d9d9db";
+      previewImage.style.objectFit = "cover";
+      previewImage.style.objectPosition = "center center";
+      previewImage.style.backgroundColor = "transparent";
+      previewImage.style.padding = "0";
+    }
 
-  } else {
+    /* Hammer image */
+    else if (
+      imageSrc.toLowerCase().includes("hammer.jpg")
+    ) {
+      if (frame) {
+        frame.style.width = "520px";
+        frame.style.height = "450px";
+        frame.style.backgroundColor = "#d9d9db";
+        frame.style.marginLeft = "0";
+        frame.style.marginRight = "0";
+      }
 
-    // All other service images stay exactly as before
-    previewImage.style.objectFit = "cover";
-    previewImage.style.objectPosition = "center";
-    previewImage.style.backgroundColor = "transparent";
+      previewImage.style.objectFit = "contain";
+      previewImage.style.objectPosition = "center";
+      previewImage.style.backgroundColor = "#d9d9db";
+      previewImage.style.padding = "0";
+    }
 
-  }
+    /* All other service images */
+    else {
+      if (frame) {
+        frame.style.width = "520px";
+        frame.style.height = "450px";
+        frame.style.backgroundColor = "#f3f4f6";
+        frame.style.marginLeft = "0";
+        frame.style.marginRight = "0";
+      }
 
+      previewImage.style.objectFit = "cover";
+      previewImage.style.objectPosition = "center";
+      previewImage.style.backgroundColor = "transparent";
+      previewImage.style.padding = "0";
+    }
+
+    previewImage.style.opacity = "1";
+  }, 120);
 };
 
 window.changeIPMImage = function (imageSrc, title) {
