@@ -985,7 +985,10 @@
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(3, 1fr);
+
+  max-width: 1040px;
+  margin: 0 auto;
 
   border-top:
     1px solid #dce5df;
@@ -998,13 +1001,13 @@
 .home-what-card {
   position: relative;
 
-  min-height: 220px;
+  min-height: 235px;
 
-  padding: 30px 28px;
+  padding: 34px 32px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 
   color: inherit;
 
@@ -1039,7 +1042,10 @@
 
 
 .home-what-card h4 {
-  margin: 0 0 10px;
+  max-width: 270px;
+  min-height: 58px;
+
+  margin: 34px 0 16px;
 
   color: #142119;
 
@@ -1047,9 +1053,9 @@
     "Montserrat",
     sans-serif;
 
-  font-size: 19px;
+  font-size: 20px;
 
-  line-height: 1.35;
+  line-height: 1.28;
 
   font-weight: 600;
 }
@@ -1058,13 +1064,13 @@
 .home-what-card p {
   margin: 0;
 
-  max-width: 220px;
+  max-width: 285px;
 
   color: #738077;
 
   font-size: 12px;
 
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 
@@ -2062,12 +2068,12 @@
           class="home-what-card"
         >
           <h4>
-            Well Construction
+            Well Construction And Abandonment 
           </h4>
 
           <p>
-            Drilling, wireline, tubular,
-            completion and intervention support.
+            Drilling, Wireline, tubulars,
+            completion and intervention support, Fishing and Plug Abandonment 
           </p>
 
           <span class="material-symbols-outlined home-what-arrow">
@@ -2084,12 +2090,11 @@
         >
 
           <h4>
-            Process Management
+            Process Management and Operations & Maintenance
           </h4>
 
           <p>
-            Automation, instrumentation,
-            measurement and engineered process solutions.
+            Automation, Instrumentation, Measurement & Engineered Process Solutions; Asset Reliability, Maintenance & Lifecycle Performance Support; and Operations & Maintenance Services.
           </p>
 
           <span class="material-symbols-outlined home-what-arrow">
@@ -2119,30 +2124,6 @@
           </span>
 
         </a>
-
-
-
-        <a
-          href="/operations-and-maintenance.html"
-          class="home-what-card"
-        >
-
-          <h4>
-            Operations &amp; Maintenance
-          </h4>
-
-          <p>
-            Asset reliability, maintenance
-            and lifecycle performance support.
-          </p>
-
-          <span class="material-symbols-outlined home-what-arrow">
-            north_east
-          </span>
-
-        </a>
-
-
       </div>
 
 
@@ -2700,13 +2681,20 @@
 
 				<hr class="border border-gray-300" />
 
-				<div class="flex flex-col gap-y-1 px-4 xl:px-20 fade-in-up">
-					<h1 class="text-4xl xsm:text-5xl xl:text-6xl font-semibold aos-counter" data-count="1800" data-suffix="+">0</h1>
-					<p class="text-[11px] leading-loose sm:text-[13px] font-medium">
-						Successful projects completed, showcasing our commitment to quality,
-						safety, and operational excellence across various oil and gas
-						operations.
-					</p>
+        <div class="flex flex-col gap-y-1 px-4 xl:px-20 fade-in-up">
+         <h1
+           class="text-4xl xsm:text-5xl xl:text-6xl font-semibold aos-counter"
+           data-count="1000"
+           data-suffix="+"
+          >
+            0
+         </h1>
+
+          <p class="text-[11px] leading-loose sm:text-[13px] font-medium">
+            Clients served across Nigeria and beyond, reflecting our trusted
+            partnerships, local expertise and commitment to dependable service
+            delivery.
+         </p>
 				</div>
 			</div>
 		</section>

@@ -343,10 +343,11 @@
 
     .about-stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(, minmax(0, 1fr));
       gap: 18px;
 
-      margin-top: 62px;
+      max-width: 820px;
+      margin: 62px auto 0;
     }
 
     .about-stat {
@@ -984,6 +985,204 @@
         height: 250px;
       }
     }
+    /* About page stats: keep the remaining two cards side by side */
+.about-stats {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+
+  max-width: 900px !important;
+  margin: 62px auto 0 !important;
+}
+
+/* On phone only, stack them */
+@media (max-width: 640px) {
+  .about-stats {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    margin-top: 43px !important;
+  }
+}
+/* =====================================================
+   ABOUT OVERVIEW REDESIGN
+====================================================== */
+
+.about-overview-redesign {
+  position: relative;
+  padding: 105px 0 95px;
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(1, 155, 57, 0.07),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f5f9f6 100%
+    );
+}
+
+.about-overview-redesign .about-shell {
+  position: relative;
+}
+
+.about-overview-card {
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+
+  gap: 70px;
+  align-items: start;
+
+  padding: 54px;
+
+  background: #ffffff;
+  border: 1px solid var(--about-border);
+  border-radius: 22px;
+
+  box-shadow:
+    0 24px 70px rgba(12, 54, 28, 0.08);
+}
+
+.about-overview-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 160px;
+  height: 7px;
+
+  background: var(--about-green);
+}
+
+.about-overview-card::after {
+  content: "";
+
+  position: absolute;
+  right: -120px;
+  bottom: -120px;
+
+  width: 280px;
+  height: 280px;
+
+  border: 46px solid rgba(1, 155, 57, 0.06);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.about-overview-left {
+  position: relative;
+  z-index: 2;
+}
+
+.about-overview-left h2 {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--about-ink);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.about-overview-line {
+  width: 86px;
+  height: 4px;
+
+  margin-top: 28px;
+
+  background: var(--about-green);
+  border-radius: 999px;
+}
+
+.about-overview-right {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  gap: 17px;
+
+  padding-top: 8px;
+}
+
+.about-overview-right p {
+  margin: 0;
+
+  color: var(--about-copy);
+
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.about-stats-redesign {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+
+  max-width: 820px !important;
+  margin: -34px auto 0 !important;
+
+  position: relative;
+  z-index: 5;
+}
+
+.about-stats-redesign .about-stat {
+  min-height: 135px;
+
+  background: #ffffff;
+  border: 1px solid rgba(1, 155, 57, 0.14);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 45px rgba(12, 54, 28, 0.09);
+}
+
+.about-stats-redesign .about-stat-icon {
+  background: #eaf7ee;
+}
+
+.about-stats-redesign .about-stat h3 {
+  font-size: 39px;
+}
+
+@media (max-width: 900px) {
+  .about-overview-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 38px 28px;
+  }
+
+  .about-overview-right {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-overview-redesign {
+    padding: 70px 0;
+  }
+
+  .about-stats-redesign {
+    grid-template-columns: 1fr !important;
+    margin-top: 22px !important;
+  }
+
+  .about-overview-left h2 {
+    font-size: 34px;
+  }
+}
   </style>
 </head>
 
@@ -1069,134 +1268,111 @@
       </div>
     </section>
 
+
     <!-- ==========================================
-         COMPANY OVERVIEW
-    ========================================== -->
+     COMPANY OVERVIEW - REDESIGNED
+========================================== -->
 
-    <section class="about-overview">
-      <div class="about-shell">
+<section class="about-overview about-overview-redesign">
+  <div class="about-shell">
 
-        <div class="about-overview-grid">
+    <div class="about-overview-card">
 
-          <div>
+      <div class="about-overview-left">
 
-            <span class="about-kicker">
-              Who we are
-            </span>
+        <span class="about-kicker">
+          Who we are
+        </span>
 
-            <h2>
-              Empowering the energy industry with integrated expertise
-            </h2>
+        <h2>
+          Empowering the energy industry with integrated expertise
+        </h2>
 
-          </div>
-
-          <div class="about-overview-copy">
-
-            <p>
-              We are an all-inclusive provider of integrated,
-              specialised oilfield products and solutions across
-              the oil and gas value chain.
-            </p>
-
-            <p>
-              Our total-package model enables us to support sizeable
-              projects from planning, procurement and supply-chain
-              coordination through engineering, execution, operations
-              and maintenance.
-            </p>
-
-            <p>
-              With strong local content, experienced personnel,
-              world-class technology partnerships and extensive
-              operational capability, AOS Orwell provides dependable
-              services across Well Construction, Process Management,
-              Electrical and Instrumentation, and Operations and
-              Maintenance.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="about-stats">
-
-          <article class="about-stat">
-
-            <span class="about-stat-icon">
-              <span class="material-symbols-outlined">
-                handshake
-              </span>
-            </span>
-
-            <div>
-
-              <h3
-                class="counter"
-                data-target="1000"
-                data-suffix="+"
-              >
-                0+
-              </h3>
-
-              <p>Clients served</p>
-
-            </div>
-
-          </article>
-
-          <article class="about-stat">
-
-            <span class="about-stat-icon">
-              <span class="material-symbols-outlined">
-                history
-              </span>
-            </span>
-
-            <div>
-
-              <h3
-                class="counter"
-                data-target="45"
-                data-suffix="+"
-              >
-                0+
-              </h3>
-
-              <p>Years of operation</p>
-
-            </div>
-
-          </article>
-
-          <article class="about-stat">
-
-            <span class="about-stat-icon">
-              <span class="material-symbols-outlined">
-                engineering
-              </span>
-            </span>
-
-            <div>
-
-              <h3
-                class="counter"
-                data-target="1800"
-                data-suffix="+"
-              >
-                0+
-              </h3>
-
-              <p>Projects delivered</p>
-
-            </div>
-
-          </article>
-
-        </div>
+        <div class="about-overview-line"></div>
 
       </div>
-    </section>
 
+
+      <div class="about-overview-right">
+
+        <p>
+          We are an all-inclusive provider of integrated,
+          specialised oilfield products and solutions across
+          the oil and gas value chain.
+        </p>
+
+        <p>
+          Our total-package model enables us to support sizeable
+          projects from planning, procurement and supply-chain
+          coordination through engineering, execution, operations
+          and maintenance.
+        </p>
+
+        <p>
+          With strong local content, experienced personnel,
+          world-class technology partnerships and extensive
+          operational capability, AOS Orwell provides dependable
+          services across Well Construction, Process Management,
+          Electrical and Instrumentation, and Operations and
+          Maintenance.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="about-stats about-stats-redesign">
+
+      <article class="about-stat">
+
+        <span class="about-stat-icon">
+          <span class="material-symbols-outlined">
+            handshake
+          </span>
+        </span>
+
+        <div>
+          <h3
+            class="counter"
+            data-target="1000"
+            data-suffix="+"
+          >
+            0+
+          </h3>
+
+          <p>Clients served</p>
+        </div>
+
+      </article>
+
+
+      <article class="about-stat">
+
+        <span class="about-stat-icon">
+          <span class="material-symbols-outlined">
+            history
+          </span>
+        </span>
+
+        <div>
+          <h3
+            class="counter"
+            data-target="45"
+            data-suffix="+"
+          >
+            0+
+          </h3>
+
+          <p>Years of operation</p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
     <!-- ==========================================
          MISSION AND VISION
     ========================================== -->
