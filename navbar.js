@@ -220,75 +220,61 @@ if (subName === "design") {
 };
 
 window.changeServiceImage = function (imageSrc, title) {
-  const previewImage =
-    document.getElementById("service-preview-image");
+  const previewImage = document.getElementById("service-preview-image");
 
   if (!previewImage) return;
 
   const frame = previewImage.parentElement;
 
-  previewImage.style.opacity = "0";
+  previewImage.style.opacity = "1";
+  previewImage.src = imageSrc;
+  previewImage.alt = title || "";
 
-  setTimeout(function () {
-    previewImage.src = imageSrc;
-    previewImage.alt = title || "";
-
-    /* Directional Drilling image - portrait-friendly frame */
-    if (
-      imageSrc.toLowerCase().includes("directionaldrilll")
-    ) {
-      if (frame) {
-        frame.style.width = "380px";
-        frame.style.height = "450px";
-        frame.style.backgroundColor = "#ffffff";
-        frame.style.marginLeft = "auto";
-        frame.style.marginRight = "auto";
-      }
-
-      previewImage.style.objectFit = "cover";
-      previewImage.style.objectPosition = "center center";
-      previewImage.style.backgroundColor = "transparent";
-      previewImage.style.padding = "0";
+  if (imageSrc.toLowerCase().includes("directionaldrilll")) {
+    if (frame) {
+      frame.style.width = "380px";
+      frame.style.height = "450px";
+      frame.style.backgroundColor = "#ffffff";
+      frame.style.marginLeft = "auto";
+      frame.style.marginRight = "auto";
     }
 
-    /* Hammer image */
-    else if (
-      imageSrc.toLowerCase().includes("hammer.jpg")
-    ) {
-      if (frame) {
-        frame.style.width = "520px";
-        frame.style.height = "450px";
-        frame.style.backgroundColor = "#d9d9db";
-        frame.style.marginLeft = "0";
-        frame.style.marginRight = "0";
-      }
+    previewImage.style.objectFit = "cover";
+    previewImage.style.objectPosition = "center center";
+    previewImage.style.backgroundColor = "transparent";
+    previewImage.style.padding = "0";
+  }
 
-      previewImage.style.objectFit = "contain";
-      previewImage.style.objectPosition = "center";
-      previewImage.style.backgroundColor = "#d9d9db";
-      previewImage.style.padding = "0";
+  else if (imageSrc.toLowerCase().includes("hammer.jpg")) {
+    if (frame) {
+      frame.style.width = "520px";
+      frame.style.height = "450px";
+      frame.style.backgroundColor = "#d9d9db";
+      frame.style.marginLeft = "0";
+      frame.style.marginRight = "0";
     }
 
-    /* All other service images */
-    else {
-      if (frame) {
-        frame.style.width = "520px";
-        frame.style.height = "450px";
-        frame.style.backgroundColor = "#f3f4f6";
-        frame.style.marginLeft = "0";
-        frame.style.marginRight = "0";
-      }
+    previewImage.style.objectFit = "contain";
+    previewImage.style.objectPosition = "center";
+    previewImage.style.backgroundColor = "#d9d9db";
+    previewImage.style.padding = "0";
+  }
 
-      previewImage.style.objectFit = "cover";
-      previewImage.style.objectPosition = "center";
-      previewImage.style.backgroundColor = "transparent";
-      previewImage.style.padding = "0";
+  else {
+    if (frame) {
+      frame.style.width = "520px";
+      frame.style.height = "450px";
+      frame.style.backgroundColor = "#f3f4f6";
+      frame.style.marginLeft = "0";
+      frame.style.marginRight = "0";
     }
 
-    previewImage.style.opacity = "1";
-  }, 120);
+    previewImage.style.objectFit = "cover";
+    previewImage.style.objectPosition = "center";
+    previewImage.style.backgroundColor = "transparent";
+    previewImage.style.padding = "0";
+  }
 };
-
 window.changeIPMImage = function (imageSrc, title) {
   const previewImage = document.getElementById("ipm-preview-image");
 
@@ -308,28 +294,15 @@ window.changeOperationsImage = function (imageSrc, title) {
   }
 };
 window.showCoreValuePreview = function (imageSrc, title) {
-
-  const preview =
-    document.getElementById(
-      "about-core-values-preview"
-    );
-
-  const image =
-    document.getElementById(
-      "core-value-preview-image"
-    );
-
+  const preview = document.getElementById("about-core-values-preview");
+  const image = document.getElementById("core-value-preview-image");
 
   if (!preview || !image) return;
 
-
   preview.style.display = "block";
-
+  image.style.opacity = "1";
   image.src = imageSrc;
-
-  image.alt =
-    title || "AOS Orwell Core Value";
-
+  image.alt = title || "AOS Orwell Core Value";
 };
 
 // SEARCH
@@ -511,4 +484,51 @@ document.addEventListener("click", function (event) {
   } else {
     loadSharedFooter();
   }
+})();
+/* Preload navbar hover images immediately after navbar.js loads */
+(function preloadNavbarHoverImages() {
+  const imageSet = new Set([
+    "/images/aosorwell-building.png",
+    "/images/csr.jpg",
+    "/images/qhse.png",
+    "/images/media.jpg",
+    "/images/well-fishing.png",
+    "/images/casing.png",
+    "/images/wireline.png",
+    "/images/plug.png",
+    "/images/drillpipe.png",
+    "/images/downhole.png",
+    "/images/directionaldrilll.jpeg",
+    "/images/machine-shop.png",
+    "/images/Hammer.jpg",
+    "/images/pmanagement.png",
+    "/images/bundles.jpeg",
+    "/images/ppm.png",
+    "/images/turnkey2.png"
+  ]);
+
+  document.querySelectorAll("[onmouseenter], [onclick], img").forEach(function (element) {
+    const text = Array.from(element.attributes || [])
+      .map(function (attribute) {
+        return attribute.value || "";
+      })
+      .join(" ");
+
+    const matches = text.match(/\/images\/[^'")\s]+\.(png|jpg|jpeg|webp)/gi);
+
+    if (matches) {
+      matches.forEach(function (src) {
+        imageSet.add(src);
+      });
+    }
+
+    if (element.tagName === "IMG" && element.src) {
+      imageSet.add(element.getAttribute("src"));
+    }
+  });
+
+  imageSet.forEach(function (src) {
+    const img = new Image();
+    img.src = src;
+  });
 })();

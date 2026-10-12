@@ -1810,12 +1810,21 @@
 	<div id="navbar-placeholder"></div>
     <div style="height: 120px;"></div>
 
-<div class="hidden lg:block" style="height: 118px;"></div>
-		<!-- hero sections begins -->
-		<div class="hero h-[90vh] xsm:h-screen relative">
-			<video autoplay muted loop playsinline class="w-full object-cover h-full" id="main-hero-video">
-				<source src="./videos/Hero Section.mp4" type="video/mp4" />
-			</video>
+    <div class="hidden lg:block" style="height: 118px;"></div>
+<!-- hero sections begins -->
+<div class="hero h-[90vh] xsm:h-screen relative">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="/images/thumbnail.jpg"
+    class="w-full object-cover h-full"
+    id="main-hero-video"
+  >
+    <source src="/videos/hero-section-fast.mp4?v=20261005b" type="video/mp4" />
+  </video>
 
 			<div class="absolute inset-0 bg-black/50 pointer-events-none"></div>
 
@@ -2001,6 +2010,8 @@
             src="https://www.youtube.com/embed/2MwwOaRBEmc?rel=0"
             title="AOS Orwell Video"
             frameborder="0"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
@@ -2721,7 +2732,7 @@
 			>
 				<!-- Background image at the very back -->
 				<img
-					src="./images/thumbnail.png"
+					src="./images/thumbnail.jpg"
 					alt="Video Thumbnail"
 					class="absolute inset-0 w-full h-full object-cover object-[center_25%] z-0"
 				/>
@@ -2753,7 +2764,7 @@
              return;
            }
 
-            youtubeVideo.src = "https://www.youtube.com/embed/ID31Ym_BRKM?autoplay=1&rel=0&modestbranding=1";
+            youtubeVideo.src = "https://www.youtube.com/embed/YnAt4__JcNA?autoplay=1&rel=0&modestbranding=1";
 
             placeholder.classList.add("hidden");
             youtubeVideo.classList.remove("hidden");
@@ -3230,6 +3241,19 @@
               >
 
             </div>
+
+            <!-- CHLORIDE -->
+            <div class="ecosystem-logo-card">
+
+              <img
+                src="./images/chloride.jpeg"
+                alt="Chloride"
+                class="logo-chloride"
+                style="--logo-scale: 1.35;"
+              >
+
+            </div>
+
 
 
             <!-- VALVTECH -->
@@ -3870,7 +3894,7 @@
 			>&copy; 2025 AOS Orwell. All rights reserved.
 		</div>
 
-		<script src="./index.js"></script>
+		<!-- <script src="./index.js"></script> -->
 		<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
@@ -3954,37 +3978,40 @@
 			// ... (The rest of your carousel, swiper, and modal logic remains exactly the same below here)
 		</script>
 		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const container = document.getElementById("navlink");
-				const links = container.querySelectorAll("a");
-				const highlight = document.getElementById("nav-highlight");
+  document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("navlink");
+    const highlight = document.getElementById("nav-highlight");
 
-				// Highlight under link on hover
-				links.forEach((link) => {
-					link.addEventListener("mouseenter", () => {
-						const left = link.offsetLeft; // relative to container
-						const width = link.offsetWidth;
-						highlight.style.left = left + "px";
-						highlight.style.width = width + "px";
-					});
-				});
+    if (!container || !highlight) {
+      return;
+    }
 
-				// Hide highlight when leaving nav
-				container.addEventListener("mouseleave", () => {
-					highlight.style.width = 0;
-				});
+    const links = container.querySelectorAll("a");
 
-				// Change highlight color on scroll
-				window.addEventListener("scroll", () => {
-					if (window.scrollY > 50) {
-						// adjust based on when navbar becomes white
-						highlight.style.background = "#0B5850"; // green
-					} else {
-						highlight.style.background = "white"; // default when navbar is transparent
-					}
-				});
-			});
-		</script>
+    links.forEach(function (link) {
+      link.addEventListener("mouseenter", function () {
+        const left = link.offsetLeft;
+        const width = link.offsetWidth;
+
+        highlight.style.left = left + "px";
+        highlight.style.width = width + "px";
+      });
+    });
+
+    container.addEventListener("mouseleave", function () {
+      highlight.style.width = "0";
+    });
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        highlight.style.background = "#0B5850";
+      }
+      else {
+        highlight.style.background = "white";
+      }
+    });
+  });
+</script>
 
 		<!-- privacy policy and cookie script -->
 		<script>
@@ -4544,13 +4571,13 @@
        </script>
 
 	<script>
-      fetch("./navbar.html")
+      fetch("/navbar.html?v=20261005")
         .then(response => response.text())
         .then(data => {
           document.getElementById("navbar-placeholder").innerHTML = data;
 
           const script = document.createElement("script");
-          script.src = "./navbar.js";
+          script.src = "/navbar.js?v=20261005";
           document.body.appendChild(script);
        });
     </script>

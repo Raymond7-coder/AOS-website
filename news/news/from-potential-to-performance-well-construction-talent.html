@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>From Potential to Performance | AOS Orwell</title>
+
+  <meta
+    name="description"
+    content="AOS Orwell's Well Construction Division is building the next generation of technical talent through its Graduate Trainee Programme."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="/output.css" />
+
+  <style>
+    :root {
+      --news-green: #009b3a;
+      --news-dark: #062b19;
+      --news-deep: #031d10;
+      --news-soft: #f2f7f4;
+      --news-border: #dfe8e2;
+      --news-text: #172019;
+      --news-copy: #657168;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--news-text);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .article-page {
+      padding-top: 120px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .article-shell {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 82px 0 90px;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 92% 8%, rgba(0, 185, 70, 0.24), transparent 34%),
+        linear-gradient(125deg, #031d10 0%, #07331d 58%, #075a28 100%);
+    }
+
+    .article-hero::after {
+      content: "";
+      position: absolute;
+      top: -280px;
+      right: -180px;
+      width: 620px;
+      height: 620px;
+      border: 90px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 940px;
+    }
+
+    .article-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #7be5a1;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .article-kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .article-hero h1 {
+      max-width: 960px;
+      margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(39px, 5.5vw, 70px);
+      line-height: 1.06;
+      font-weight: 750;
+      letter-spacing: -0.055em;
+    }
+
+    .article-summary {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 11px;
+    }
+
+    .article-meta-dot {
+      width: 4px;
+      height: 4px;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 34px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .article-back .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    .article-featured-image-section {
+      padding: 70px 0 30px;
+      background: #ffffff;
+    }
+
+    .article-photo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .article-photo-main,
+    .article-photo-side {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--news-border);
+      background: #e6eee9;
+      box-shadow: 0 22px 60px rgba(5, 54, 25, 0.11);
+    }
+
+    .article-photo-main img,
+    .article-photo-side img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .article-photo-side {
+      min-height: 520px;
+    }
+
+    .article-photo-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 19px 20px;
+      background: rgba(3, 29, 16, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: #ffffff;
+      backdrop-filter: blur(8px);
+    }
+
+    .article-photo-caption span {
+      display: block;
+      margin-bottom: 8px;
+      color: #7be5a1;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .article-photo-caption strong {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .article-content-section {
+      padding: 45px 0 90px;
+      background: #ffffff;
+    }
+
+    .article-content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+      gap: 75px;
+      align-items: start;
+    }
+
+    .article-side-card {
+      position: sticky;
+      top: 140px;
+      padding: 26px;
+      background: var(--news-soft);
+      border: 1px solid var(--news-border);
+      border-radius: 14px;
+    }
+
+    .article-side-card span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--news-green);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .article-side-card h3 {
+      margin: 0 0 13px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 22px;
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+    }
+
+    .article-side-card p {
+      margin: 0;
+      color: var(--news-copy);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .article-body {
+      max-width: 780px;
+    }
+
+    .article-body p {
+      margin: 0 0 22px;
+      color: var(--news-copy);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .article-body h2 {
+      margin: 48px 0 17px;
+      color: var(--news-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.2;
+      font-weight: 750;
+      letter-spacing: -0.04em;
+    }
+
+    .article-quote {
+      margin: 34px 0;
+      padding: 30px 33px;
+      background: var(--news-dark);
+      border-left: 5px solid var(--news-green);
+      border-radius: 12px;
+      color: #ffffff;
+    }
+
+    .article-quote p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(19px, 2.5vw, 27px);
+      line-height: 1.55;
+      font-weight: 650;
+      letter-spacing: -0.025em;
+    }
+
+    .article-quote small {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .article-image-break {
+      margin: 48px 0;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--news-border);
+      background: #e6eee9;
+      box-shadow: 0 18px 50px rgba(5, 54, 25, 0.08);
+    }
+
+    .article-image-break img {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .article-image-break figcaption {
+      padding: 15px 18px;
+      color: var(--news-copy);
+      font-size: 11px;
+      line-height: 1.7;
+      background: #ffffff;
+    }
+
+    .article-end-note {
+      margin-top: 45px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at 90% 12%, rgba(0, 155, 58, 0.15), transparent 30%),
+        var(--news-soft);
+      border: 1px solid var(--news-border);
+      border-radius: 16px;
+    }
+
+    .article-end-note p {
+      margin: 0;
+      color: var(--news-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: 22px;
+      line-height: 1.55;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .article-next-section {
+      padding: 72px 0 90px;
+      background: var(--news-soft);
+    }
+
+    .article-next-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      padding: 38px;
+      background: #ffffff;
+      border: 1px solid var(--news-border);
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(5, 54, 25, 0.07);
+    }
+
+    .article-next-card h2 {
+      margin: 0 0 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(26px, 3.6vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .article-next-card p {
+      max-width: 640px;
+      margin: 0;
+      color: var(--news-copy);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .article-next-card a {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      padding: 0 20px;
+      background: var(--news-green);
+      border-radius: 6px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .article-next-card .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .article-content-grid,
+      .article-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-side-card {
+        position: relative;
+        top: auto;
+      }
+
+      .article-photo-main img,
+      .article-photo-side img,
+      .article-photo-side {
+        min-height: 360px;
+      }
+
+      .article-next-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-page {
+        padding-top: 92px;
+      }
+
+      .article-shell {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .article-hero {
+        padding: 62px 0 72px;
+      }
+
+      .article-hero h1 {
+        font-size: 39px;
+      }
+
+      .article-featured-image-section {
+        padding-top: 48px;
+      }
+
+      .article-photo-main img,
+      .article-photo-side img,
+      .article-photo-side {
+        min-height: 300px;
+      }
+
+      .article-photo-caption {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 16px;
+      }
+
+      .article-content-section {
+        padding-bottom: 65px;
+      }
+
+      .article-body p {
+        font-size: 13px;
+      }
+
+      .article-quote {
+        padding: 25px 22px;
+      }
+
+      .article-image-break img {
+        height: 300px;
+      }
+
+      .article-end-note {
+        padding: 25px 22px;
+      }
+
+      .article-end-note p {
+        font-size: 19px;
+      }
+
+      .article-next-card {
+        padding: 28px 22px;
+      }
+
+      .article-next-card a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="!bg-white">
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="article-page">
+
+    <section class="article-hero">
+      <div class="article-shell">
+        <div class="article-hero-content">
+
+          <span class="article-kicker">
+            Company Updates
+          </span>
+
+          <h1>
+            From Potential to Performance: Building the Next Generation of Well Construction Talent
+          </h1>
+
+          <p class="article-summary">
+            AOS Orwell&rsquo;s Well Construction Division is investing in young engineers through its Graduate Trainee Programme, helping transfer technical experience and prepare the next generation of industry professionals.
+          </p>
+
+          <div class="article-meta">
+            <span>AOS Orwell</span>
+            <span class="article-meta-dot"></span>
+            <span>October 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>4 min read</span>
+          </div>
+
+          <a href="/news.html" class="article-back">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Back to news
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="article-featured-image-section">
+      <div class="article-shell">
+
+        <div class="article-photo-grid">
+
+          <div class="article-photo-main">
+            <img
+              src="/images/news/gt.png"
+              alt="AOS Orwell Well Construction Graduate Trainee Programme"
+            />
+          </div>
+
+          <div class="article-photo-side">
+            <img
+              src="/images/news/tw.jpg"
+              alt="AOS Orwell graduate trainees in well construction training"
+            />
+
+            <div class="article-photo-caption">
+              <span>Graduate Trainee Programme</span>
+              <strong>
+                Practical exposure, mentoring and technical development for young engineers.
+              </strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="article-content-section">
+      <div class="article-shell article-content-grid">
+
+        <aside class="article-side-card">
+          <span>Story focus</span>
+          <h3>
+            Developing technical capability for the future
+          </h3>
+          <p>
+            The Graduate Trainee Programme reflects AOS Orwell&rsquo;s long-term commitment to knowledge transfer, mentoring and technical growth within the Well Construction Division.
+          </p>
+        </aside>
+
+
+        <article class="article-body">
+
+          <p>
+            As experienced professionals across the oil and gas industry approach retirement and the sector continues to evolve, developing the next generation of technical talent has become increasingly important.
+          </p>
+
+          <p>
+            For AOS Orwell&rsquo;s Well Construction Division (WCD), this reality led to the creation of its Graduate Trainee Programme&mdash;an initiative designed to bring young engineers into the industry, equip them with practical experience and technical knowledge, and prepare them to take on greater responsibilities.
+          </p>
+
+          <p>
+            Speaking on the motivation behind the programme, <strong>Anthony Nwosu, Country Director, Well Construction Division</strong>, explained that the industry was experiencing a gradual loss of experienced personnel.
+          </p>
+
+          <div class="article-quote">
+            <p>
+              &ldquo;We are losing experience. A lot of experienced people have aged, some are retiring, and they&rsquo;re all going away.&rdquo;
+            </p>
+            <small>
+              Anthony Nwosu, Country Director, Well Construction Division
+            </small>
+          </div>
+
+          <p>
+            He noted that the disruption caused by the COVID-19 pandemic further accelerated the loss of experienced professionals, with some leaving the industry permanently. As industry activities resumed and began to pick up, the impact of that experience gap became increasingly evident.
+          </p>
+
+          <p>
+            For AOS Orwell, the situation presented a clear challenge: how to ensure that the knowledge and experience required to sustain the business are transferred to the next generation.
+          </p>
+
+          <div class="article-quote">
+            <p>
+              &ldquo;We looked internally and made our own assessments, and saw we&rsquo;ve got an ageing population. Over time, most of the experienced people we have today that are working will be retiring in another couple of years.&rdquo;
+            </p>
+            <small>
+              Anthony Nwosu
+            </small>
+          </div>
+
+          <p>
+            The Graduate Trainee Programme was therefore conceived as more than a recruitment initiative. It was a long-term investment in the company&rsquo;s technical capability and future leadership.
+          </p>
+
+          <div class="article-quote">
+            <p>
+              &ldquo;For us to continue to exist, it&rsquo;s not even a question of whether we want to. We have to get on and bring in the young people, train them, develop them, mentor them into experience levels.&rdquo;
+            </p>
+            <small>
+              Anthony Nwosu
+            </small>
+          </div>
+
+
+          <h2>
+            Beyond Training: Building Experience
+          </h2>
+
+          <p>
+            Developing a competent engineer takes time, particularly in a technically demanding environment such as well construction. According to the Country Director, the industry typically requires between three and five years of mentoring and practical exposure before a young engineer can begin operating with greater independence.
+          </p>
+
+          <p>
+            However, the experience at AOS Orwell has been particularly encouraging.
+          </p>
+
+          <p>
+            Asked whether the programme has delivered against its original objectives, he was unequivocal.
+          </p>
+
+          <div class="article-quote">
+            <p>
+              &ldquo;I would say it has over-delivered. It has overachieved what I expected.&rdquo;
+            </p>
+            <small>
+              Anthony Nwosu
+            </small>
+          </div>
+
+          <p>
+            He attributed this progress to the intensity of the programme, particularly the combination of structured training and exposure to real operational environments.
+          </p>
+
+          <p>
+            The result, he explained, is that some of the programme&rsquo;s young engineers are already taking on responsibilities and leading jobs in slightly under three years&mdash;earlier than might traditionally be expected.
+          </p>
+
+          <div class="article-quote">
+            <p>
+              &ldquo;We have seen a few of them that have been there delivering jobs and we are proud of what they&rsquo;ve shown to be able to do today.&rdquo;
+            </p>
+            <small>
+              Anthony Nwosu
+            </small>
+          </div>
+
+          <p>
+            For the Well Construction Division, this represents one of the clearest measures of the programme&rsquo;s success: seeing young engineers progress from trainees into professionals capable of contributing meaningfully to project delivery.
+          </p>
+
+
+          <h2>
+            Investing in the Future
+          </h2>
+
+          <p>
+            Like any investment in people, the programme comes with an inherent risk. Trained professionals may eventually choose to pursue opportunities elsewhere.
+          </p>
+
+          <p>
+            But for WCD, that possibility does not diminish the value of developing talent.
+          </p>
+
+          <div class="article-quote">
+            <p>
+              &ldquo;If you train them, they get experience, they leave. Gen Zs who didn&rsquo;t leave, yes, some of them will. Some will remain, but you know what? We will train more and more.&rdquo;
+            </p>
+            <small>
+              Anthony Nwosu
+            </small>
+          </div>
+
+          <p>
+            That philosophy captures the thinking behind the programme: building talent is not simply about filling today&rsquo;s skills gap, but creating a sustainable pipeline of professionals who can carry the organisation&rsquo;s technical capabilities into the future.
+          </p>
+
+          <p>
+            As the Graduate Trainee Programme continues to evolve, its success will ultimately be measured not only by the number of young engineers it develops, but by the responsibilities they go on to assume and the contribution they make to the organisation and the wider Nigerian energy industry.
+          </p>
+
+          <div class="article-end-note">
+            <p>
+              For AOS Orwell&rsquo;s Well Construction Division, the objective is clear&mdash;develop the talent, transfer the experience and prepare the next generation to lead.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <section class="article-next-section">
+      <div class="article-shell">
+
+        <div class="article-next-card">
+
+          <div>
+            <h2>
+              More from AOS Orwell
+            </h2>
+
+            <p>
+              Explore more corporate updates, industry events, project stories and community initiatives from across AOS Orwell.
+            </p>
+          </div>
+
+          <a href="/news.html">
+            View all news
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="/images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="/about.html">
+          About Us
+        </a>
+
+        <a href="/services.html">
+          Services
+        </a>
+
+        <a href="/hse.html">
+          QHSE
+        </a>
+
+        <a href="/media.html">
+          Media
+        </a>
+
+        <a href="/careers.html">
+          Careers
+        </a>
+
+        <a href="/contact-us.html">
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="/about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="/management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="/media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="/policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="/whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="/downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2026 AOS Orwell. All rights reserved.
+  </div>
+
+
+  <script>
+    fetch("/navbar.html")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
+
+        return response.text();
+      })
+      .then(function (data) {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+
+        const navbarScript = document.createElement("script");
+        navbarScript.src = "/navbar.js?v=20261012";
+        document.body.appendChild(navbarScript);
+      })
+      .catch(function (error) {
+        console.error("Navbar failed to load:", error);
+      });
+  </script>
+
+</body>
+</html>

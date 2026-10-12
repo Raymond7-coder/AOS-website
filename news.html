@@ -59,10 +59,6 @@
       margin-inline: auto;
     }
 
-    /* ==========================================
-       HERO
-    ========================================== */
-
     .news-hero {
       position: relative;
       overflow: hidden;
@@ -177,10 +173,6 @@
       cursor: pointer;
     }
 
-    /* ==========================================
-       SECTION HEADING
-    ========================================== */
-
     .news-section-heading {
       display: flex;
       align-items: end;
@@ -205,10 +197,6 @@
       font-size: 13px;
       line-height: 1.8;
     }
-
-    /* ==========================================
-       FEATURED STORY
-    ========================================== */
 
     .news-featured-section {
       padding: 90px 0 55px;
@@ -316,10 +304,6 @@
       transform: translateX(4px);
     }
 
-    /* ==========================================
-       FILTERS
-    ========================================== */
-
     .news-listing {
       padding: 45px 0 105px;
     }
@@ -350,10 +334,6 @@
       border-color: var(--news-green);
       color: #ffffff;
     }
-
-    /* ==========================================
-       NEWS GRID
-    ========================================== */
 
     .news-grid {
       display: grid;
@@ -453,10 +433,6 @@
       font-size: 13px;
     }
 
-    /* ==========================================
-       CTA
-    ========================================== */
-
     .news-cta {
       position: relative;
       overflow: hidden;
@@ -543,10 +519,6 @@
       text-decoration: none;
     }
 
-    /* ==========================================
-       RESPONSIVE
-    ========================================== */
-
     @media (max-width: 1000px) {
       .news-featured-card {
         grid-template-columns: 1fr;
@@ -632,14 +604,9 @@
 
 <body class="!bg-white">
 
-  <!-- NAVBAR -->
   <div id="navbar-placeholder"></div>
 
   <main class="news-page">
-
-    <!-- ==========================================
-         HERO
-    ========================================== -->
 
     <section class="news-hero">
       <div class="news-shell">
@@ -683,9 +650,6 @@
       </div>
     </section>
 
-    <!-- ==========================================
-         FEATURED NEWS
-    ========================================== -->
 
     <section class="news-featured-section">
       <div class="news-shell">
@@ -704,15 +668,15 @@
         </div>
 
         <a
-          href="./news/spenaice2025.html"
+          href="./news/from-potential-to-performance-well-construction-talent.html"
           class="news-featured-card"
         >
 
           <div class="news-featured-image">
 
             <img
-              src="./images/news/naice2025.jpg"
-              alt="AOS Orwell at SPE NAICE 2025"
+              src="./images/news/gt.png"
+              alt="AOS Orwell Well Construction Graduate Trainee Programme"
             />
 
           </div>
@@ -720,18 +684,15 @@
           <div class="news-featured-content">
 
             <span class="news-category">
-              Industry Events
+              Company Updates
             </span>
 
             <h2>
-              From Conversations to Connections: AOS Orwell at SPE NAICE 2025
+              From Potential to Performance: Building the Next Generation of Well Construction Talent
             </h2>
 
             <p>
-              At the 2025 Society of Petroleum Engineers Nigeria
-              Annual International Conference and Exhibition,
-              AOS Orwell connected with professionals, partners
-              and decision-makers from across the energy industry.
+              AOS Orwell’s Well Construction Division is investing in young engineers through its Graduate Trainee Programme, helping transfer technical experience and prepare the next generation of industry professionals.
             </p>
 
             <div class="news-meta">
@@ -740,11 +701,11 @@
 
               <span class="news-meta-dot"></span>
 
-              <span>July 2025</span>
+              <span>October 2026</span>
 
               <span class="news-meta-dot"></span>
 
-              <span>2 min read</span>
+              <span>4 min read</span>
 
             </div>
 
@@ -765,9 +726,6 @@
       </div>
     </section>
 
-    <!-- ==========================================
-         NEWS LISTING
-    ========================================== -->
 
     <section class="news-listing">
       <div class="news-shell">
@@ -785,7 +743,7 @@
 
         </div>
 
-        <!-- FILTERS -->
+
         <div class="news-filter-row">
 
           <button
@@ -846,7 +804,73 @@
 
         </div>
 
+
         <div class="news-grid" id="newsGrid">
+
+
+          <!-- SPE NAICE 2025 -->
+          <a
+            href="./news/spenaice2025.html"
+            class="news-card"
+            data-category="events"
+            data-year="2025"
+          >
+
+            <div class="news-card-image">
+
+              <img
+                src="./images/news/naice2025.jpg"
+                alt="AOS Orwell at SPE NAICE 2025"
+              />
+
+            </div>
+
+            <div class="news-card-content">
+
+              <span class="news-category">
+                Industry Events
+              </span>
+
+              <h3>
+                From Conversations to Connections: AOS Orwell at SPE NAICE 2025
+              </h3>
+
+              <p class="news-card-description">
+                At the 2025 Society of Petroleum Engineers Nigeria Annual International Conference and Exhibition, AOS Orwell connected with professionals, partners and decision-makers from across the energy industry.
+              </p>
+
+              <div class="news-card-bottom">
+
+                <div class="news-meta">
+
+                  <span>AOS Orwell</span>
+
+                  <span class="news-meta-dot"></span>
+
+                  <span>July 2025</span>
+
+                  <span class="news-meta-dot"></span>
+
+                  <span>2 min read</span>
+
+                </div>
+
+                <span class="news-read-link">
+
+                  Read story
+
+                  <span class="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </a>
+
 
           <!-- ABB PRESIDENT VISIT -->
           <a
@@ -913,6 +937,7 @@
 
           </a>
 
+
           <!-- OTC 2025 -->
           <a
             href="./news/Building-global-bridges.html"
@@ -977,6 +1002,7 @@
             </div>
 
           </a>
+
 
           <!-- SAIPEC 2025 -->
           <a
@@ -1043,6 +1069,7 @@
 
           </a>
 
+
           <!-- SALES AND MARKETING RETREAT -->
           <a
             href="./news/AOS-Orwell-Hosts-2025-Sales-and-Marketing-Retreat.html"
@@ -1107,6 +1134,7 @@
             </div>
 
           </a>
+
 
           <!-- ABB RECOGNITION -->
           <a
@@ -1173,6 +1201,7 @@
 
           </a>
 
+
           <!-- COMPASSIONATE CENTRE -->
           <a
             href="./news/AOS-Orwell-Employee-Community-Service-Visits-Compassionate-Centre-for-Physically-Challenged-Children.html"
@@ -1238,6 +1267,7 @@
 
           </a>
 
+
           <!-- SPE NAICE 2024 -->
           <a
             href="./news/AOS-Orwell-Participates-at-the-2024-SPE-NAICE.html"
@@ -1302,6 +1332,7 @@
             </div>
 
           </a>
+
 
           <!-- EDUCATIONAL MATERIALS -->
           <a
@@ -1377,9 +1408,6 @@
       </div>
     </section>
 
-    <!-- ==========================================
-         CTA
-    ========================================== -->
 
     <section class="news-cta">
       <div class="news-shell">
@@ -1423,9 +1451,6 @@
 
   </main>
 
-  <!-- ==========================================
-       FOOTER
-  ========================================== -->
 
   <footer
     class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
@@ -1444,21 +1469,23 @@
       <div
         class="hidden md:flex gap-x-10 text-white font-medium text-sm"
       >
+
         <a href="./about.html">About Us</a>
         <a href="./services.html">Services</a>
         <a href="./hse.html">QHSE</a>
         <a href="./media.html">Media</a>
         <a href="./careers.html">Careers</a>
         <a href="./contact-us.html">Contact Us</a>
+
       </div>
 
     </div>
+
 
     <div
       class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
     >
 
-      <!-- COMPANY -->
       <div
         class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
       >
@@ -1530,7 +1557,7 @@
 
       </div>
 
-      <!-- LOCATIONS -->
+
       <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
 
         <h4 class="font-medium text-sm sm:text-base">
@@ -1545,9 +1572,7 @@
               Head Office
             </p>
 
-            <p
-              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-            >
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
               Plot 52/53, Trans Amadi Industrial Layout,
               Port Harcourt, Rivers State
             </p>
@@ -1560,9 +1585,7 @@
               Port Harcourt Office 2
             </p>
 
-            <p
-              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-            >
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
               Plot 272, Trans Amadi Industrial Layout,
               Port Harcourt, Rivers State
             </p>
@@ -1575,9 +1598,7 @@
               Lagos Office
             </p>
 
-            <p
-              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-            >
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
               3/5, Adeyemo Alakija Street,
               Victoria Island, Lagos
             </p>
@@ -1590,9 +1611,7 @@
               Ghana Office
             </p>
 
-            <p
-              class="text-xs sm:text-[13px] text-gray-200 leading-loose"
-            >
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
               Plot 53 Apowa Light Industrial Area,
               Sankoba, New Amanful, Takoradi, Ghana
             </p>
@@ -1603,7 +1622,7 @@
 
       </div>
 
-      <!-- LINKS -->
+
       <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
 
         <h4 class="font-medium text-sm sm:text-base">
@@ -1680,7 +1699,7 @@
 
       </div>
 
-      <!-- CONTACT FORM -->
+
       <div class="w-full lg:w-2/5">
 
         <h4 class="font-medium text-base">
@@ -1731,17 +1750,13 @@
 
   </footer>
 
+
   <div
     class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
   >
-    &copy; 2025 AOS Orwell. All rights reserved.
+    &copy; 2026 AOS Orwell. All rights reserved.
   </div>
 
-  <!-- ==========================================
-       JAVASCRIPT
-  ========================================== -->
-
-  <script src="./index.js"></script>
 
   <script>
     const newsSearchForm = document.getElementById("newsSearchForm");
@@ -1802,8 +1817,9 @@
     });
   </script>
 
+
   <script>
-    fetch("./navbar.html")
+    fetch("/navbar.html?v=20261012")
       .then(response => {
         if (!response.ok) {
           throw new Error("Navbar file not found");
@@ -1815,7 +1831,7 @@
         document.getElementById("navbar-placeholder").innerHTML = data;
 
         const navbarScript = document.createElement("script");
-        navbarScript.src = "./navbar.js";
+        navbarScript.src = "/navbar.js?v=20261012";
         document.body.appendChild(navbarScript);
       })
       .catch(error => {
