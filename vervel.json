@@ -1,0 +1,9 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/Terms-and-Conditions-of-Purchase-Order",
+      "destination": "/Terms-and-Conditions-of-Purchase-Order.html"
+    }
+  ]
+}
