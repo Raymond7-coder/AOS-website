@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>General Terms and Conditions of Purchase Order | AOS Orwell</title>
+
+<meta name="description" content="Official General Terms and Conditions of Purchase Order for AOS Orwell Limited.">
+
+<link rel="canonical" href="https://aosorwell.com/Terms-and-Conditions-of-Purchase-Order">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="/output.css">
+
+<style>
+:root {
+  --po-green: #16834a;
+  --po-dark: #063d24;
+  --po-heading: #123b28;
+  --po-text: #46574e;
+  --po-muted: #708178;
+  --po-border: #e2ebe5;
+  --po-light: #f4faf6;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--po-text);
+  font-family: "Poppins", sans-serif;
+}
+
+.po-container {
+  width: min(1220px, calc(100% - 48px));
+  margin: auto;
+}
+
+/* HERO — FULL HEIGHT AND COMFORTABLE SPACING */
+.po-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 510px;
+  padding: 90px 0 105px;
+  background: linear-gradient(
+    112deg,
+    #063b24 0%,
+    #096338 55%,
+    #12864b 100%
+  );
+  color: white;
+  overflow: hidden;
+}
+
+.po-hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 50%;
+  top: -340px;
+  right: -130px;
+  pointer-events: none;
+}
+
+.po-hero::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+  top: -220px;
+  right: -35px;
+  pointer-events: none;
+}
+
+.po-hero .po-container {
+  position: relative;
+  z-index: 1;
+}
+
+.po-breadcrumb {
+  font-size: 12px;
+  color: #c5e8d3;
+  margin-bottom: 42px;
+}
+
+.po-breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+
+.po-eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #bce7cd;
+  margin-bottom: 22px;
+}
+
+.po-hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(35px, 4.3vw, 56px);
+  font-weight: 800;
+  line-height: 1.19;
+  letter-spacing: -.8px;
+  max-width: 900px;
+  margin: 0 0 26px;
+}
+
+.po-hero-description {
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.95;
+  color: #e2f2e8;
+  margin: 0;
+}
+
+.po-hero-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.po-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.po-btn:hover {
+  transform: translateY(-2px);
+}
+
+.po-btn-white {
+  background: white;
+  color: #075b32;
+  border: 1px solid white;
+}
+
+.po-btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,.65);
+}
+
+.po-btn .material-symbols-outlined {
+  font-size: 19px;
+}
+
+/* MAIN CONTENT */
+.po-layout {
+  display: grid;
+  grid-template-columns: 285px minmax(0,1fr);
+  gap: 55px;
+  align-items: start;
+  padding: 85px 0 110px;
+}
+
+/* SIDEBAR */
+.po-sidebar {
+  position: sticky;
+  top: 25px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  border: 1px solid var(--po-border);
+  border-radius: 12px;
+  background: white;
+  padding: 23px;
+  scrollbar-width: thin;
+}
+
+.po-sidebar h2 {
+  font-size: 16px;
+  color: var(--po-heading);
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.po-search {
+  width: 100%;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  border: 1px solid #d7e2db;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  outline-color: var(--po-green);
+}
+
+.po-toc {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.po-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #57685e;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.po-toc a span {
+  font-weight: 700;
+  min-width: 23px;
+  color: var(--po-green);
+}
+
+.po-toc a:hover,
+.po-toc a.active {
+  background: #e9f5ed;
+  color: #086035;
+}
+
+/* CONTENT */
+.po-document {
+  min-width: 0;
+}
+
+.po-document-intro {
+  border-bottom: 2px solid var(--po-green);
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+}
+
+.po-label {
+  color: var(--po-green);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.po-document-intro h2 {
+  color: var(--po-heading);
+  font-family: "Montserrat",sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.35;
+  font-weight: 800;
+  margin: 13px 0 18px;
+}
+
+.po-document-intro p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.po-clause {
+  padding: 34px 0;
+  border-bottom: 1px solid var(--po-border);
+  scroll-margin-top: 40px;
+}
+
+.po-clause-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.po-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  background: #e6f4eb;
+  color: var(--po-green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.po-clause h2 {
+  margin: 7px 0 0;
+  font-family: "Montserrat",sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700;
+  color: var(--po-heading);
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+
+.po-clause-content {
+  padding-left: 62px;
+}
+
+.po-clause-content p {
+  font-size: 13.5px;
+  line-height: 2;
+  margin: 0 0 16px;
+  color: #42554a;
+  overflow-wrap: anywhere;
+}
+
+.po-clause-content p:last-child {
+  margin-bottom: 0;
+}
+
+.po-subclause {
+  border-left: 2px solid #d9e9de;
+  padding-left: 15px;
+}
+
+.po-signature {
+  margin-top: 45px;
+  padding: 32px;
+  border: 1px solid var(--po-border);
+  border-radius: 10px;
+  background: var(--po-light);
+}
+
+.po-signature h3 {
+  color: var(--po-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 45px;
+}
+
+.po-signature-line {
+  width: 270px;
+  max-width: 100%;
+  border-bottom: 1px solid #85988a;
+}
+
+.po-signature p {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.po-back-top {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  margin-top: 30px;
+  color: var(--po-green);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+  .po-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 50px;
+  }
+
+  .po-sidebar {
+    position: static;
+    max-height: 300px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .po-container {
+    width: calc(100% - 32px);
+  }
+
+  .po-hero {
+    min-height: 470px;
+    padding: 65px 0 80px;
+  }
+
+  .po-breadcrumb {
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .po-eyebrow {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+
+  .po-hero h1 {
+    font-size: clamp(30px, 8vw, 40px);
+    margin-bottom: 22px;
+  }
+
+  .po-hero-description {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .po-hero-actions {
+    margin-top: 27px;
+  }
+
+  .po-btn {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+
+  .po-clause-heading {
+    gap: 12px;
+  }
+
+  .po-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .po-clause-content {
+    padding-left: 0;
+  }
+
+  .po-clause-content p {
+    font-size: 13px;
+  }
+}
+
+/* PRINT */
+@media print {
+  #navbar-placeholder,
+  .po-sidebar,
+  .po-hero-actions,
+  footer,
+  .po-copyright,
+  .po-back-top {
+    display: none !important;
+  }
+
+  .po-hero {
+    min-height: auto;
+    background: white !important;
+    color: black !important;
+    padding: 15px 0;
+  }
+
+  .po-hero * {
+    color: black !important;
+  }
+
+  .po-layout {
+    display: block;
+    padding: 15px 0;
+  }
+
+  .po-container {
+    width: 100%;
+  }
+
+  .po-clause {
+    break-inside: avoid;
+    padding: 20px 0;
+  }
+
+  .po-clause-content p {
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body class="!bg-white">
+
+<!-- SHARED NAVBAR -->
+<div id="navbar-placeholder"></div>
+
+<main id="top">
+
+  <!-- LANDING SECTION -->
+  <section class="po-hero">
+    <div class="po-container">
+
+      <div class="po-breadcrumb">
+        <a href="/index.html">Home</a>
+        &nbsp;/&nbsp;
+        Terms and Conditions of Purchase Order
+      </div>
+
+      <span class="po-eyebrow">
+        Procurement &amp; Supplier Information
+      </span>
+
+      <h1>
+        General Terms and Conditions<br>
+        of Purchase Order
+      </h1>
+
+      <p class="po-hero-description">
+        Review the terms and conditions governing purchase orders
+        issued by AOS Orwell Limited, including supplier obligations,
+        delivery requirements, payment conditions and applicable
+        contractual provisions.
+      </p>
+
+      <div class="po-hero-actions">
+
+        <a href="#terms-content" class="po-btn po-btn-white">
+          <span class="material-symbols-outlined">menu_book</span>
+          Read the Terms
+        </a>
+
+        <button type="button" class="po-btn po-btn-outline" onclick="window.print()">
+          <span class="material-symbols-outlined">print</span>
+          Print / Save as PDF
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="po-container po-layout">
+
+    <!-- LEFT NAVIGATION -->
+    <aside class="po-sidebar">
+      <h2>On This Page</h2>
+
+      <input type="search" id="po-search" class="po-search"
+        placeholder="Search clause titles..."
+        aria-label="Search clause titles">
+
+      <nav id="po-toc" class="po-toc">
+        <a href="#clause-1"><span>01</span>Definitions</a>
+        <a href="#clause-2"><span>02</span>Delivery Time</a>
+        <a href="#clause-3"><span>03</span>Delivery Term</a>
+        <a href="#clause-4"><span>04</span>Inspection</a>
+        <a href="#clause-5"><span>05</span>Invoicing and Payment</a>
+        <a href="#clause-6"><span>06</span>Change</a>
+        <a href="#clause-7"><span>07</span>Passing of Property and Risk</a>
+        <a href="#clause-8"><span>08</span>Acceptance</a>
+        <a href="#clause-9"><span>09</span>Termination</a>
+        <a href="#clause-10"><span>10</span>Indemnity and Liability</a>
+        <a href="#clause-11"><span>11</span>Patent Indemnity</a>
+        <a href="#clause-12"><span>12</span>Licence and Permit</a>
+        <a href="#clause-13"><span>13</span>Warranty</a>
+        <a href="#clause-14"><span>14</span>Confidentiality</a>
+        <a href="#clause-15"><span>15</span>Force Majeure</a>
+        <a href="#clause-16"><span>16</span>Taxes and Duties</a>
+        <a href="#clause-17"><span>17</span>Insurance</a>
+        <a href="#clause-18"><span>18</span>Applicable Law and Dispute Resolution</a>
+        <a href="#clause-19"><span>19</span>Entire Agreement</a>
+        <a href="#clause-20"><span>20</span>Special Conditions</a>
+        <a href="#clause-21"><span>21</span>Safety</a>
+        <a href="#clause-22"><span>22</span>Quality</a>
+        <a href="#clause-23"><span>23</span>Waiver</a>
+        <a href="#clause-24"><span>24</span>Publicity</a>
+        <a href="#clause-25"><span>25</span>Conflict of Intrest</a>
+        <a href="#clause-26"><span>26</span>Use of Subcontrators</a>
+        <a href="#clause-27"><span>27</span>Serviceability of Individual Provisions</a>
+        <a href="#clause-28"><span>28</span>No Authority</a>
+        <a href="#clause-29"><span>29</span>Data Protection</a>
+        <a href="#clause-30"><span>30</span>Lost-in-Hole</a>
+      </nav>
+    </aside>
+
+    <!-- LEGAL DOCUMENT -->
+    <article class="po-document" id="terms-content">
+
+      <header class="po-document-intro">
+        <span class="po-label">AOS Orwell Limited</span>
+        <h2>Purchase Order Terms &amp; Conditions</h2>
+        <p>
+          Unless specifically stated otherwise, the following
+          clauses shall form the terms and the conditions of
+          the PURCHASE ORDER.
+        </p>
+      </header>
+
+      <!-- 1 -->
+      <section class="po-clause" id="clause-1">
+        <div class="po-clause-heading">
+          <span class="po-number">01</span>
+          <h2>Definitions</h2>
+        </div>
+        <div class="po-clause-content">
+          <p class="po-subclause">1.1 GOODS shall mean the materials, products or services to be purchased or to be supplied as specified in the PURCHASE ORDER and/or any part thereof.</p>
+          <p class="po-subclause">1.2 PURCHASER /BUYER shall mean AOS Orwell Limited.</p>
+          <p class="po-subclause">1.3 PURCHASE ORDER shall mean the PURCHASE ORDER form, this document and any other document listed herein and shall constitute the entire agreement between the parties.</p>
+          <p class="po-subclause">1.4 SUPPLIER /SELLER shall mean any person or company having a contract for the supply of GOODS to PURCHASER.</p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="po-clause" id="clause-2">
+        <div class="po-clause-heading">
+          <span class="po-number">02</span>
+          <h2>Delivery Time</h2>
+        </div>
+        <div class="po-clause-content">
+          <p>Time is of the essence for the PURCHASE ORDER. The time stipulated for delivery of GOODS shall be strictly adhered to. Without prejudice to SUPPLIER’S obligation to deliver the GOODS on time, SUPPLIER shall give PURCHASER notice in writing immediately if any delay is foreseen. Failure to deliver on the date specified or subsequently agreed shall entitle PURCHASER (without prejudice to any other rights it may have)</p>
+          <p class="po-subclause">(a) to cancel order without any penalty to PURCHASER; or</p>
+          <p class="po-subclause">(b) Refuse to accept any subsequent delivery of the GOODS which the SUPPLIER attempts to make; or</p>
+          <p class="po-subclause">(c) Recover from the SUPPLIER any reasonably expenditure incurred by the PURCHASER in obtaining the GOODS in substitution from another SUPPLIER; or</p>
+          <p class="po-subclause">(d) Claim damages for any additional costs incurred by the PURCHASER which are in any way attributable to the SUPPLIER’s failure to deliver the GOODS on the due date.</p>
+          <p class="po-subclause">(e)Recover /Demand any advance paid for material.</p>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="po-clause" id="clause-3">
+        <div class="po-clause-heading">
+          <span class="po-number">03</span>
+          <h2>Delivery Term</h2>
+        </div>
+        <div class="po-clause-content">
+          <p>Delivery term shall be governed and construed in accordance with the provisions of “INCOTERMS” (latest edition INCOTERMS effective January 1, 2020) and any amendments thereto.</p>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="po-clause" id="clause-4">
+        <div class="po-clause-heading">
+          <span class="po-number">04</span>
+          <h2>Inspection</h2>
+        </div>
+        <div class="po-clause-content">
+          <p class="po-subclause">4.1 SUPPLIER shall be responsible for ensuring that all inspections and testing of the GOODS are properly and adequately performed.</p>
+          <p class="po-subclause">4.2 SUPPLIER shall ensure that PURCHASER or any third party appointed by him, has the opportunity to inspect and witness any testing of the GOODS at any time at SUPPLIER’s workplace or at any other places where such GOODS may be.</p>
+          <p class="po-subclause">4.3 Such inspection or testing including the witnessing thereof shall not relieve SUPPLIER from any of its responsibilities and liabilities under the PURCHASE ORDER.</p>
+          <p class="po-subclause">4.4 The GOODS will be subject to final inspection and acceptance or rejection upon arrival at their destination as specified in the PURCHASE ORDER.</p>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="po-clause" id="clause-5">
+        <div class="po-clause-heading">
+          <span class="po-number">05</span>
+          <h2>Invoicing and Payment</h2>
+        </div>
+        <div class="po-clause-content">
+          <p>Invoices shall be mailed /Submitted immediately after shipment of goods or rendering of service is complete to the address shown on the face of the Purchase Order Agreement and including an “attention to” line indicating the Seller’s primary business contact at Buyer. Delays in receiving invoices, errors, or omissions on invoices or lack of supporting documentation required by the terms of this order will be cause for postponing the start of the payments until the correct information is received. Buyer will not be responsible for charges on invoices received more than 120 days after the rendering of service is complete or shipment of the goods unless indicated otherwise in a written agreement between Buyer and Seller.</p>
+          <p>In any case, payment will only be effected by the purchaser within 15 days upon receipt of same from clients after receipt of an undisputed invoice (together with supporting documents) by the PURCHASER provided always that the PURCHASER has accepted the GOODS or as may otherwise be agreed or stipulated in the PURCHASE ORDER.</p>
+          <p>The parties agree that Purchaser will not be liable/ responsible for any supplies or services provided by the Supplier without a valid purchase order from the Purchaser.</p>
+          <p class="po-subclause"><strong>5.1. DISPUTED CHARGES.</strong></p>
+          <p>Where any item or items on an invoice are disputed Buyer may withhold payment for the item or items so disputed until such time as the dispute is resolved.</p>
+          <p class="po-subclause"><strong>5.2 TRAVEL AND EXPENSES.</strong></p>
+          <p>In cases where Buyer may agree to pay Seller for reasonable and customary travel and expenses, all reimbursable expenses must adhere to Buyer’s Travel and Expenditures Policy. The purchase order will include a line item for Travel &amp; Expenses when applicable.</p>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="po-clause" id="clause-6">
+        <div class="po-clause-heading"><span class="po-number">06</span><h2>Change</h2></div>
+        <div class="po-clause-content">
+          <p class="po-subclause">6.1 PURCHASER reserves the right at any time to make changes in the PURCHASE ORDER or any part thereof, before delivery of goods.</p>
+          <p class="po-subclause">6.2 No change to or modification of the items, specifications, terms, conditions and prices appearing in the PURCHASE ORDER shall be binding upon PURCHASER unless expressly agreed in writing by PURCHASER. SUPPLIER shall promptly notify PURCHASER in the event that any GOODS subject of the PURCHASE ORDER are affected by changes in drawings, specifications or design, but SUPPLIER shall not without prior written consent of PURCHASER incorporate any such changes in the order.</p>
+          <p class="po-subclause">6.3. Purchaser is not liable /responsible for any verbal agreement by any of its officers. All terms and conditions are covered by the written terms of Purchase Order and General Condition.</p>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="po-clause" id="clause-7">
+        <div class="po-clause-heading"><span class="po-number">07</span><h2>Passing of Property and Risk</h2></div>
+        <div class="po-clause-content">
+          <p>Property and risk in the GOODS shall remain with SUPPLIER until they are delivered at the point specified in the PURCHASE ORDER and a delivery order is signed.</p>
+          <p>The passing of property shall not affect the right to reject the GOODS.</p>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="po-clause" id="clause-8">
+        <div class="po-clause-heading"><span class="po-number">08</span><h2>Acceptance</h2></div>
+        <div class="po-clause-content">
+          <p>In the case of GOODS delivered by SUPPLIER not conforming with the PURCHASE ORDER whether by reason of not being of the quality or in the quantity or measurement stipulated or being unfit for the purpose for which they are required, PURCHASER shall have the right to reject such GOODS within a reasonable time of their delivery and inspection and to purchase elsewhere and to claim for any additional expense incurred without any prejudice to any other right which PURCHASER may have against SUPPLIER. The making of any prior payments by PURCHASER shall not prejudice PURCHASER’S right of rejection.</p>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="po-clause" id="clause-9">
+        <div class="po-clause-heading"><span class="po-number">09</span><h2>Termination</h2></div>
+        <div class="po-clause-content">
+          <p class="po-subclause"><strong>(a) For Default:</strong></p>
+          <p>In the event of any breach of any of the terms and conditions of the PURCHASE ORDER including failure to deliver by the due date, then PURCHASER without prejudice to any other rights, may terminate the PURCHASE ORDER and may return GOODS previously supplied under the PURCHASE ORDER for full credit by SUPPLIER. In the event of termination due to non-delivery or non-acceptance due to SUPPLIER’s breach of the terms and conditions hereof, SUPPLIER shall undertake to reimburse all monies paid by PURCHASER prior to the date of termination including all direct costs and expenses incurred by PURCHASER arising from or in connection with the termination.</p>
+          <p class="po-subclause"><strong>(b) For Liquidation or Reconstruction:</strong></p>
+          <p>PURCHASER may terminate the PURCHASE ORDER with immediate effect:</p>
+          <p class="po-subclause">(i) if SUPPLIER goes into liquidation, becomes bankrupt or has a winding up order made against it by any court</p>
+          <p class="po-subclause">(ii) in the event of the ownership or control of SUPPLIER being materially altered.</p>
+          <p class="po-subclause"><strong>(c)For Convenience:</strong></p>
+          <p>The PURCHASE ORDER may be terminated at any time by PURCHASER with thirty (30) days notice in writing. On receipt of such notice, SUPPLIER will cease production or delivery of the PURCHASE ORDER. In full settlement, PURCHASER shall pay in line with agreed payment terms above, a fair and reasonable price for all GOODS delivered in line with the Purchase Order at the date when such notice is given together with any reasonable documented cost occasioned directly by the termination as PURCHASER shall consider reasonable. This cost shall represent the full and final liability of the Purchaser with respect to such termination and the Supplier shall to this extent indemnify the Purchaser.</p>
+        </div>
+      </section>
+
+      <!-- 10 -->
+      <section class="po-clause" id="clause-10">
+        <div class="po-clause-heading"><span class="po-number">10</span><h2>Indemnity and Liability</h2></div>
+        <div class="po-clause-content">
+          <p class="po-subclause"><strong>10.1 INDEMINIFICATION</strong></p>
+          <p>Seller shall assume entire responsibility for and shall defend, indemnify and hold Purchaser harmless against all losses, liabilities, claims, costs and expenses arising directly or indirectly out of or in connection with the performance related to this Purchase Order Agreement and arising from:</p>
+          <p class="po-subclause">1. Injury to any person in the employment of the Seller or any Seller subcontractors, and</p>
+          <p class="po-subclause">2. Loss of or damage to the property of Seller, any subcontractor and any of their respective personnel whatsoever and howsoever arising, whether or not the negligence or breach of duty of Buyer or its agents has caused or contributed to such injury, loss or damage.</p>
+          <p class="po-subclause"><strong>10.2 LIMITED LIABILITY</strong></p>
+          <p>With the exception of Seller’s obligations under Section 10.1, in no event shall either party, or its personnel be liable for consequential damages or any actions, damages, claims, liabilities, costs, expenses, or losses in any way arising out of or relating to the services performed hereunder for an aggregate amount in excess of the fees paid by Buyer to Seller under this Purchase Order Agreement.</p>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section class="po-clause" id="clause-11">
+        <div class="po-clause-heading"><span class="po-number">11</span><h2>Patent Indemnity</h2></div>
+        <div class="po-clause-content">
+          <p>SUPPLIER shall protect, indemnify and hold harmless PURCHASER and its personnel, from and against any and all loss, damage, liability, expense, including reasonable defence costs and reasonable legal fees, and claims for damages, in each case to the extent directly and proximately arising from or by reason of any actual or alleged infringement of any country patent, copyright or trade secret arising out of the services and/or deliverables supplied to Buyer by Seller. The provisions of this paragraph 11 shall survive the termination of this Agreement for whatever reason.</p>
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section class="po-clause" id="clause-12">
+        <div class="po-clause-heading"><span class="po-number">12</span><h2>Licence and Permit</h2></div>
+        <div class="po-clause-content">
+          <p>If execution of the PURCHASE ORDER requires any license or other permit issued in the country of shipment and/or origin, the PURCHASE ORDER shall be conditional upon such license or other permit being available at the relevant time. SUPPLIER shall be fully responsible for obtaining the necessary license and permit.</p>
+        </div>
+      </section>
+
+      <!-- 13 -->
+      <section class="po-clause" id="clause-13">
+        <div class="po-clause-heading"><span class="po-number">13</span><h2>Warranty</h2></div>
+        <div class="po-clause-content">
+          <p>SUPPLIER warrants to PURCHASER and its clients that the GOODS shall comply in every respect with any specifications, drawings and other data forming part of the PURCHASE ORDER and shall be free of defective materials or workmanship and is complete without any omissions. SUPPLIER shall be fully responsible for making good immediately upon being notified by PURCHASER any omission and defects in the GOODS or any portion thereof which may appear or occur during the warranty period, which shall not in any case be less than twelve (12) months from the date of receipt by purchaser or as otherwise agreed and stipulated in the PURCHASE ORDER.</p>
+          <p>SUPPLIER shall ensure that the warranty is directly extended to the PURCHASER and, at the PURCHASER’s option, the PURCHASER may exercise any of the warranty herein directly against the manufacturer of the GOODS and its agents.</p>
+          <p>SUPPLIER’s liability hereunder shall extend to all damages directly cause by the omissions or defects, including incidental damages such as removal, inspection, costs of return or storage. SUPPLIER shall not be liable for any indirect, remote or consequential losses.</p>
+          <p>The SUPPLIER warrants that the email and bank account details provided during pre-qualification are correct and current; any change to these details must be formally notified and supported by a valid board resolution.</p>
+        </div>
+      </section>
+
+      <!-- 14 -->
+      <section class="po-clause" id="clause-14">
+        <div class="po-clause-heading"><span class="po-number">14</span><h2>Confidentiality</h2></div>
+        <div class="po-clause-content">
+          <p>Any PURCHASE ORDER placed by the PURCHASER including all accompanying designs, drawings, specifications and information which may be treated as confidential and in particular the SUPPLIER shall not make use of the PURCHASER’S NAME or the name of any companies associated with the PURCHASER for publicity purposes without the consent of the PURCHASER.</p>
+          <p>“Confidential Information” means the terms and conditions of this Agreement, the existence of the discussions between the parties and all information, in whatever form, furnished by the “Disclosing Party” orally or in writing and identified as confidential or proprietary at the time of disclosure including, but not limited to, information concerning the Disclosing Party’s business plans, opportunities, Buyer’s membership materials, products, methods, procedures, customers, services, equipment or systems.</p>
+        </div>
+      </section>
+
+      <!-- 15 -->
+      <section class="po-clause" id="clause-15">
+        <div class="po-clause-heading"><span class="po-number">15</span><h2>Force Majeure</h2></div>
+        <div class="po-clause-content">
+          <p>Neither party shall be liable for any failure to fulfill any term of the PURCHASE ORDER if fulfillment has been delayed interfered with or prevented by a force majeure EVENT OR circumstance including acts of God, war, hostilities (whether war be declared or not), civil disturbance, government action, strikes, lock-outs, or labor disputes, acts of terrorism, pandemics, or any other event or circumstance or cause whatsoever beyond the reasonable control of the party.</p>
+          <p>Force majeure may only be involved if the event preventing the fulfillment is due to no fault of the obligor, is not for his risk and has occurred since the obligation came into being.</p>
+        </div>
+      </section>
+
+      <!-- 16 -->
+      <section class="po-clause" id="clause-16">
+        <div class="po-clause-heading"><span class="po-number">16</span><h2>Taxes and Duties</h2></div>
+        <div class="po-clause-content">
+          <p>All taxes, fees and duties assessed against SUPPLIER, in connection with the PURCHASE ORDER by national or local authorities having jurisdiction over SUPPLIER at its place of business and at place of execution of the PURCHASE ORDER shall be for SUPPLIER’s account.</p>
+          <p>Buyer shall not be liable for any of Seller’s employment related tax, fee, or charge or corporate income taxes or any franchise tax measured by capital, capital stock, net worth, property value, gross margin or gross profit. PURCHASER shall deduct and remit to the applicable tax authority any statutory impost including WHT, VAT and NCD Levy applicable to any Purchase Order.</p>
+        </div>
+      </section>
+
+      <!-- 17 -->
+      <section class="po-clause" id="clause-17">
+        <div class="po-clause-heading"><span class="po-number">17</span><h2>Insurance</h2></div>
+        <div class="po-clause-content">
+          <p>SUPPLIER shall effect and maintain at its own cost, all applicable insurances as required by law and to cover SUPPLIER’s responsibilities and liabilities under the PURCHASE ORDER. Nothing contained herein shall serve in any way to limit or waive SUPPLIER’s responsibilities or liabilities under the PURCHASE ORDER.</p>
+        </div>
+      </section>
+
+      <!-- 18 -->
+      <section class="po-clause" id="clause-18">
+        <div class="po-clause-heading"><span class="po-number">18</span><h2>Applicable Law and Dispute Resolution</h2></div>
+        <div class="po-clause-content">
+          <p>The PURCHASE ORDER shall be governed, construed and shall take effect in accordance with the laws of Nigeria and SUPPLIER agrees to submit to the exclusive jurisdiction of the Nigerian Courts (without giving effect to the choice of law principles thereof).</p>
+          <p>In the event of dispute that cannot be resolved between the parties, any and all disputes, controversies and claims arising out of or relating to this PO Agreement shall be settled and determined by arbitration in the state of Lagos as per Nigerian Laws</p>
+        </div>
+      </section>
+
+      <!-- 19 -->
+      <section class="po-clause" id="clause-19">
+        <div class="po-clause-heading"><span class="po-number">19</span><h2>Entire Agreement</h2></div>
+        <div class="po-clause-content">
+          <p>The terms and conditions set out on the PURCHASE ORDER together with any subsequent amendments made in writing by PURCHASER represent the entire terms and conditions of the agreement between the PURCHASER and SUPPLIER and supersedes any other agreement between the parties.</p>
+        </div>
+      </section>
+
+      <!-- 20 -->
+      <section class="po-clause" id="clause-20">
+        <div class="po-clause-heading"><span class="po-number">20</span><h2>Special Conditions</h2></div>
+        <div class="po-clause-content">
+          <p>Where special conditions are stated in the PURCHASE ORDER, those conditions shall apply equally with the general terms and conditions shown herein except that where there is any inconsistency between the general and special conditions, the special conditions shall apply.</p>
+        </div>
+      </section>
+
+      <!-- 21 -->
+      <section class="po-clause" id="clause-21">
+        <div class="po-clause-heading"><span class="po-number">21</span><h2>Safety</h2></div>
+        <div class="po-clause-content">
+          <p>Where a service is being provided on property occupied by PURCHASER, SUPPLIER shall be responsible for the safety of all persons engaged on the work, and all persons who may be affected by activities of SUPPLIER and shall comply with all PURCHASER’s safety regulations and procedures.</p>
+          <p>Suppliers providing construction services /lifting of heavy object/working at heights /Installation services /general maintenance services (within the company premises), shall contact HSE department before mobilization and commencement of work.</p>
+        </div>
+      </section>
+
+      <!-- 22 -->
+      <section class="po-clause" id="clause-22">
+        <div class="po-clause-heading"><span class="po-number">22</span><h2>Quality</h2></div>
+        <div class="po-clause-content">
+          <p>Supplier shall be responsible for meeting QA/ QC requirements specified or as may be notified to it from time to time. Supplier shall either carry out inspections by itself or engage approved third party inspection service providers with the consent of the purchaser. Supplier shall use only calibrated equipment’s and instruments at all times. Supplier shall indemnify the Purchaser to the full extent permitted by law for any breach of this provision.</p>
+        </div>
+      </section>
+
+      <!-- 23 -->
+      <section class="po-clause" id="clause-23">
+        <div class="po-clause-heading"><span class="po-number">23</span><h2>Waiver</h2></div>
+        <div class="po-clause-content">
+          <p>Failure by PURCHASER to enforce the performance of any of the provision of the PURCHASE ORDER shall neither be deemed to be a waiver of its rights hereunder nor shall it affect the validity of the PURCHASE ORDER in any way.</p>
+          <p>Any waiver by PURCHASER to any breach of the PURCHASE ORDER shall not constitute a precedent nor bind the parties to any subsequent breach by SUPPLIER.</p>
+        </div>
+      </section>
+
+      <!-- 24 -->
+      <section class="po-clause" id="clause-24">
+        <div class="po-clause-heading"><span class="po-number">24</span><h2>Publicity</h2></div>
+        <div class="po-clause-content">
+          <p>Seller shall not make or publish any notice, advertisement, press release, or other communication with respect to the PO Agreement, its contents, or the goods or services without Buyer’s prior written consent. Seller shall not use Buyer’s name or logo in any of its advertising, client list, or sales promotional material, without prior written consent of the purchaser.</p>
+        </div>
+      </section>
+
+      <!-- 25 -->
+      <section class="po-clause" id="clause-25">
+        <div class="po-clause-heading"><span class="po-number">25</span><h2>Conflict of Intrest</h2></div>
+        <div class="po-clause-content">
+          <p>The Seller confirms that it has no conflicts of interest, and will not permit any conflict of interest to arise and/or continue in connection with the provision of the goods and / or services.</p>
+          <p>The supplier should declare any conflict of interest with the Purchaser. Conflict of interest being that any director, employee or their relatives of the purchaser (AOS Orwell) are either owners or partners/share holder above 5% of the supplier. Any default in declaring any conflict of interest will make the Purchase Order invalid without any course for further legal action by the supplier.</p>
+        </div>
+      </section>
+
+      <!-- 26 -->
+      <section class="po-clause" id="clause-26">
+        <div class="po-clause-heading"><span class="po-number">26</span><h2>Use of Subcontrators</h2></div>
+        <div class="po-clause-content">
+          <p>Seller may subcontract any of its obligations under this Purchase Order Agreement to a subcontractor provided that (a) Seller shall remain at all times primarily responsible for the acts and omissions of any such subcontractor and shall retain any such liability and responsibility under this Purchase Order Agreement as if such subcontracted activities were performed by Seller; (b) Buyer has provided prior written express consent to such subcontractor; and (c) Seller shall not subcontract any of its obligations hereunder to any Buyer’s competitor</p>
+        </div>
+      </section>
+
+      <!-- 27 -->
+      <section class="po-clause" id="clause-27">
+        <div class="po-clause-heading"><span class="po-number">27</span><h2>Serviceability of Individual Provisions</h2></div>
+        <div class="po-clause-content">
+          <p>If any term, condition, or provision of this Purchase Order Agreement is for any reason declared or found to be illegal, invalid, ineffective, inoperable, or otherwise unenforceable, it shall be severed and deemed to be deleted from this Purchase Order Agreement and the validity and enforceability of the remainder of this Purchase Order Agreement shall not be affected or impaired thereby the remaining terms shall remain in full force and effect.</p>
+        </div>
+      </section>
+
+      <!-- 28 -->
+      <section class="po-clause" id="clause-28">
+        <div class="po-clause-heading"><span class="po-number">28</span><h2>No Authority</h2></div>
+        <div class="po-clause-content">
+          <p>This Purchase Order Agreement does not confer any authority on the Seller to enter into any commitment on Buyer’s behalf. Any such commitment shall be entered into only with the prior and specific written consent of Buyer.</p>
+          <p>These terms and conditions constitute the full terms and conditions to the exclusion of all the other terms and conditions (including any terms which the SUPPLIER purpose to apply under any purchase order, confirmation of order, specification, or other document).These terms and conditions overrides any general terms and conditions of the supplier contained anywhere else whether or not signed by the purchaser and any or all oral agreement with the supplier.</p>
+        </div>
+      </section>
+
+      <!-- 29 -->
+      <section class="po-clause" id="clause-29">
+        <div class="po-clause-heading"><span class="po-number">29</span><h2>Data Protection</h2></div>
+        <div class="po-clause-content">
+          <p>The SUPPLIER shall comply with the Nigeria Data Protection Act, 2023 and all applicable data protection laws. Where the SUPPLIER processes Personal Data on behalf of the PURCHASER, it shall process data only per the PURCHASER’s documented instructions; implement appropriate security measures; not transfer data outside Nigeria without ensuring adequate protection and obtaining the PURCHASER’s prior written consent; (d) not retain data longer than necessary; assist the PURCHASER in responding to data subject requests and regulatory inquiries; allow for audits of its compliance.</p>
+          <p class="po-subclause">29.1 The SUPPLIER shall notify the PURCHASER immediately upon becoming aware of any Personal Data breach.</p>
+          <p class="po-subclause">29.2 Indemnity: The SUPPLIER shall indemnify the PURCHASER against all losses arising from any breach of this Clause 29.</p>
+        </div>
+      </section>
+
+      <!-- 30 -->
+      <section class="po-clause" id="clause-30">
+        <div class="po-clause-heading"><span class="po-number">30</span><h2>Lost-in-Hole</h2></div>
+        <div class="po-clause-content">
+          <p>The Supplier's entitlement to any payment or compensation for equipment, materials, or tools that become irretrievably lost, stuck, or abandoned downhole ("Lost-in-Hole" or LIH) is strictly conditional upon the Purchaser first receiving corresponding and express payment for such LIH items from its client under the terms of its principal contract; upon such receipt, the Purchaser shall pay the Supplier the amount actually received (less applicable deductions), and the Purchaser shall have no independent liability to the Supplier for LIH. The Supplier bears the credit risk of the Purchaser's client, shall provide all documentation necessary to support the Purchaser's claim at no additional cost, and hereby waives any right to make a direct claim against the Purchaser's client for LIH.</p>
+        </div>
+      </section>
+
+      <!-- SUPPLIER SIGNATURE -->
+      <div class="po-signature">
+        <h3>Supplier</h3>
+        <div class="po-signature-line"></div>
+        <p>SUPPLIER</p>
+      </div>
+
+      <a href="#top" class="po-back-top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+        Back to Top
+      </a>
+
+    </article>
+  </div>
+</main>
+
+<!-- FOOTER — SAME STRUCTURE AS EXISTING WEBSITE -->
+<footer class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white">
+
+  <div class="flex flex-col gap-y-6 lg:flex-row justify-between items-start">
+    <img src="/images/jogo.png" alt="AOS Orwell" class="h-15 sm:h-20 w-auto object-cover">
+
+    <div class="hidden md:flex gap-x-10 text-white font-medium text-sm">
+      <a href="/about.html">About Us</a>
+      <a href="/services.html">Services</a>
+      <a href="/hse.html">QHSE</a>
+      <a href="/media.html">Media</a>
+      <a href="/careers.html">Careers</a>
+      <a href="/contact-us.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10">
+
+    <div class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10">
+      <div class="w-full">
+        <p class="text-xs sm:text-[13px] font-medium leading-loose">
+          Providing integrated oilfield solutions across Well Construction,
+          Process Management, IPM &amp; Turnkey, and Operations &amp;
+          Maintenance to support the energy industry's evolving needs.
+        </p>
+
+        <div class="mt-5 flex flex-col gap-y-2">
+          <h3 class="text-base font-medium">Stay Connected</h3>
+          <div class="flex gap-x-3">
+            <a href="https://www.youtube.com/@aosorwellonline" target="_blank" rel="noopener noreferrer" class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition" aria-label="YouTube"><i class="bi bi-youtube text-white text-lg"></i></a>
+            <a href="https://www.instagram.com/aosorwell/" target="_blank" rel="noopener noreferrer" class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition" aria-label="Instagram"><i class="bi bi-instagram text-white text-lg"></i></a>
+            <a href="https://x.com/AOSOrwell" target="_blank" rel="noopener noreferrer" class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition" aria-label="X"><i class="bi bi-twitter-x text-white text-lg"></i></a>
+            <a href="https://ng.linkedin.com/company/aosorwell" target="_blank" rel="noopener noreferrer" class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition" aria-label="LinkedIn"><i class="bi bi-linkedin text-white text-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+      <h4 class="font-medium text-sm sm:text-base">Locations</h4>
+      <div class="flex flex-col gap-y-3">
+
+        <div class="flex flex-col gap-y-1.5">
+          <p class="font-medium text-[13px] sm:text-sm">Head Office</p>
+          <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 52/53, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+        </div>
+
+        <div class="flex flex-col gap-y-1.5">
+          <p class="font-medium text-[13px] sm:text-sm">Port Harcourt Office 2</p>
+          <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 272, Trans Amadi Industrial Layout, Port Harcourt, Rivers State</p>
+        </div>
+
+        <div class="flex flex-col gap-y-1.5">
+          <p class="font-medium text-[13px] sm:text-sm">Lagos Office</p>
+          <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">3/5, Adeyemo Alakija Street, Victoria Island, Lagos</p>
+        </div>
+
+        <div class="flex flex-col gap-y-1.5">
+          <p class="font-medium text-sm">Ghana Office</p>
+          <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">Plot 53 Apowa Light Industrial Area, Sankoba, New Amanful, Takoradi, Ghana</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+      <h4 class="font-medium text-sm sm:text-base">Links</h4>
+
+      <div class="flex flex-col gap-y-2">
+        <a href="/about.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Our Story</a>
+        <a href="/management.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Management</a>
+        <a href="/media.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Media</a>
+        <a href="/policies-index.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Policy Statement</a>
+        <a href="/whistle-blower.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Whistle Blower</a>
+        <a href="/downloadables.html" class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition">Downloadables</a>
+      </div>
+
+      <h4 class="font-medium text-[13px] sm:text-base">Email Us</h4>
+      <div class="flex flex-col gap-y-1">
+        <a href="mailto:marketing@aosorwell.com" class="text-xs sm:text-[13px] text-gray-200 hover:text-white">marketing@aosorwell.com</a>
+        <a href="mailto:sales@aosorwell.com" class="text-xs sm:text-[13px] text-gray-200 hover:text-white">sales@aosorwell.com</a>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-2/5">
+      <h4 class="font-medium text-base">Contact Us</h4>
+
+      <form class="flex flex-col gap-y-5 mt-2" action="https://formsubmit.co/marketing@aosorwell.com" method="POST">
+        <input type="hidden" name="_subject" value="New footer enquiry from AOS Orwell website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="Form" value="Footer Contact Form">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <input type="text" name="company" placeholder="Company Name" class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+        <input type="text" name="name" placeholder="Your Name" required class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+        <input type="email" name="email" placeholder="Email Address" required class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary">
+        <textarea name="message" placeholder="Your Message" required class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"></textarea>
+
+        <div class="w-full flex justify-end">
+          <button type="submit" class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition">SEND</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</footer>
+
+<div class="po-copyright bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600">
+  &copy; 2026 AOS Orwell. All rights reserved.
+</div>
+
+<!-- SEARCH -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const search = document.getElementById("po-search");
+  const links = document.querySelectorAll("#po-toc a");
+
+  search.addEventListener("input", function() {
+    const query = this.value.trim().toLowerCase();
+
+    links.forEach(function(link) {
+      link.style.display = link.textContent.toLowerCase().includes(query)
+        ? "flex"
+        : "none";
+    });
+  });
+
+  links.forEach(function(link) {
+    link.addEventListener("click", function() {
+      links.forEach(function(item) {
+        item.classList.remove("active");
+      });
+      link.classList.add("active");
+    });
+  });
+});
+</script>
+
+<!-- NAVBAR LOADER -->
+<script>
+fetch("/navbar.html")
+  .then(function(response) {
+    if (!response.ok) {
+      throw new Error("Navbar could not be loaded.");
+    }
+    return response.text();
+  })
+  .then(function(navbarHTML) {
+    const placeholder = document.getElementById("navbar-placeholder");
+    placeholder.innerHTML = navbarHTML;
+
+    const navbarScript = document.createElement("script");
+    navbarScript.src = "/navbar.js";
+    document.body.appendChild(navbarScript);
+  })
+  .catch(function(error) {
+    console.error("Navbar could not load:", error);
+  });
+</script>
+
+</body>
+</html>
