@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>13th Annual Safety Day | AOS Orwell</title>
+
+  <meta
+    name="description"
+    content="AOS Orwell marks its 13th Annual Safety Day, reinforcing its commitment to building a stronger safety culture under the theme From Compliance to Culture."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <link rel="stylesheet" href="/output.css" />
+
+  <style>
+    :root {
+      --news-green: #009b3a;
+      --news-dark: #062b19;
+      --news-deep: #031d10;
+      --news-soft: #f2f7f4;
+      --news-border: #dfe8e2;
+      --news-text: #172019;
+      --news-copy: #657168;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--news-text);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .article-page {
+      padding-top: 120px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .article-shell {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* HERO SECTION */
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 82px 0 90px;
+      color: #ffffff;
+      background:
+        radial-gradient(
+          circle at 92% 8%,
+          rgba(0, 185, 70, 0.24),
+          transparent 34%
+        ),
+        linear-gradient(
+          125deg,
+          #031d10 0%,
+          #07331d 58%,
+          #075a28 100%
+        );
+    }
+
+    .article-hero::after {
+      content: "";
+      position: absolute;
+      top: -280px;
+      right: -180px;
+      width: 620px;
+      height: 620px;
+      border: 90px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+    }
+
+    .article-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #7be5a1;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .article-kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .article-hero h1 {
+      max-width: 1000px;
+      margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(38px, 5.2vw, 64px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.055em;
+    }
+
+    .article-summary {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 11px;
+    }
+
+    .article-meta-dot {
+      width: 4px;
+      height: 4px;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 34px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .article-back:hover {
+      opacity: 0.7;
+    }
+
+    .article-back .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    /* FEATURED PHOTOGRAPHS */
+
+    .article-featured-image-section {
+      padding: 70px 0 30px;
+      background: #ffffff;
+    }
+
+    .article-photo-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .article-photo-main,
+    .article-photo-side {
+      position: relative;
+      overflow: hidden;
+      height: 490px;
+      border-radius: 18px;
+      border: 1px solid var(--news-border);
+      background: #e6eee9;
+      box-shadow: 0 22px 60px rgba(5, 54, 25, 0.11);
+    }
+
+    .article-photo-main img,
+    .article-photo-side img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .article-photo-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 19px 20px;
+      background: rgba(3, 29, 16, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: #ffffff;
+      backdrop-filter: blur(8px);
+    }
+
+    .article-photo-caption span {
+      display: block;
+      margin-bottom: 8px;
+      color: #7be5a1;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .article-photo-caption strong {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    /* ARTICLE CONTENT */
+
+    .article-content-section {
+      padding: 45px 0 90px;
+      background: #ffffff;
+    }
+
+    .article-content-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 0.65fr)
+        minmax(0, 1.35fr);
+      gap: 65px;
+      align-items: start;
+    }
+
+    /* STORY FOCUS SIDEBAR */
+
+    .article-sidebar {
+      position: sticky;
+      top: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .article-side-card {
+      padding: 26px;
+      background: var(--news-soft);
+      border: 1px solid var(--news-border);
+      border-radius: 14px;
+    }
+
+    .article-side-card > span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--news-green);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .article-side-card h3 {
+      margin: 0 0 13px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 23px;
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .article-side-card p {
+      margin: 0;
+      color: var(--news-copy);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .article-event-details {
+      padding: 24px 26px;
+      border: 1px solid var(--news-border);
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+    .article-event-details h4 {
+      margin: 0 0 20px;
+      color: var(--news-green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .article-event-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .article-event-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-event-item .material-symbols-outlined {
+      color: var(--news-green);
+      font-size: 21px;
+    }
+
+    .article-event-item small {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--news-copy);
+      font-size: 10px;
+    }
+
+    .article-event-item strong {
+      display: block;
+      color: var(--news-text);
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    /* MAIN ARTICLE BODY */
+
+    .article-body {
+      max-width: 780px;
+      min-width: 0;
+    }
+
+    .article-body p {
+      margin: 0 0 22px;
+      color: var(--news-copy);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .article-body p strong {
+      color: var(--news-text);
+      font-weight: 600;
+    }
+
+    .article-body h2 {
+      margin: 45px 0 17px;
+      color: var(--news-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.2;
+      font-weight: 750;
+      letter-spacing: -0.04em;
+    }
+
+    /* QUOTE BLOCK */
+
+    .article-quote {
+      margin: 34px 0;
+      padding: 30px 33px;
+      background: var(--news-dark);
+      border-left: 5px solid var(--news-green);
+      border-radius: 12px;
+      color: #ffffff;
+    }
+
+    .article-quote p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(19px, 2.5vw, 27px);
+      line-height: 1.55;
+      font-weight: 650;
+      letter-spacing: -0.025em;
+    }
+
+    .article-quote small {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* ARTICLE IMAGES */
+
+    .article-image-break {
+      margin: 34px 0 40px;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--news-border);
+      background: #e6eee9;
+      box-shadow: 0 18px 50px rgba(5, 54, 25, 0.08);
+    }
+
+    .article-image-break img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .article-image-break figcaption {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 15px 18px;
+      color: var(--news-copy);
+      font-size: 11px;
+      line-height: 1.7;
+      background: #ffffff;
+    }
+
+    .article-image-break figcaption
+    .material-symbols-outlined {
+      font-size: 16px;
+      color: var(--news-green);
+    }
+
+    /* TWO COLUMN IMAGE GALLERY */
+
+    .article-inline-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 34px 0 40px;
+    }
+
+    .article-gallery-item {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--news-border);
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 12px 35px rgba(5, 54, 25, 0.07);
+    }
+
+    .article-gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .article-gallery-item figcaption {
+      padding: 14px 16px;
+      color: var(--news-copy);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .article-gallery-item figcaption strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--news-text);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* FINAL STATEMENT */
+
+    .article-end-note {
+      margin-top: 45px;
+      padding: 34px;
+      background:
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(0, 155, 58, 0.15),
+          transparent 40%
+        ),
+        var(--news-soft);
+      border: 1px solid var(--news-border);
+      border-radius: 16px;
+    }
+
+    .article-end-note span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--news-green);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .article-end-note p {
+      margin: 0;
+      color: var(--news-text);
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    /* FULL WIDTH CLOSING PHOTOGRAPH */
+
+    .article-closing-section {
+      padding: 0 0 80px;
+      background: #ffffff;
+    }
+
+    .article-closing-image {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--news-border);
+      background: #e6eee9;
+      box-shadow: 0 22px 60px rgba(5, 54, 25, 0.09);
+    }
+
+    .article-closing-image img {
+     display: block;
+     width: 100%;
+     height: auto;
+     max-height: 450px;
+     object-fit: contain;
+     object-position: center;
+    }
+
+    .article-closing-image figcaption {
+      padding: 17px 22px;
+      color: var(--news-copy);
+      background: #ffffff;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* MORE NEWS */
+
+    .article-next-section {
+      padding: 72px 0 90px;
+      background: var(--news-soft);
+    }
+
+    .article-next-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      padding: 38px;
+      background: #ffffff;
+      border: 1px solid var(--news-border);
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(5, 54, 25, 0.07);
+    }
+
+    .article-next-card h2 {
+      margin: 0 0 10px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(26px, 3.6vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .article-next-card p {
+      max-width: 640px;
+      margin: 0;
+      color: var(--news-copy);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .article-next-card a {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      padding: 0 20px;
+      background: var(--news-green);
+      border-radius: 6px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .article-next-card a:hover {
+      background: #007b2d;
+    }
+
+    .article-next-card .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    /* TABLET RESPONSIVENESS */
+
+    @media (max-width: 900px) {
+
+      .article-content-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .article-sidebar {
+        position: relative;
+        top: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .article-photo-grid {
+        grid-template-columns:
+          minmax(0, 1.2fr)
+          minmax(0, 0.8fr);
+      }
+
+      .article-photo-main,
+      .article-photo-side {
+        height: 380px;
+      }
+
+      .article-body {
+        max-width: 100%;
+      }
+
+      .article-next-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* MOBILE RESPONSIVENESS */
+
+    @media (max-width: 640px) {
+
+      .article-page {
+        padding-top: 92px;
+      }
+
+      .article-shell {
+        width: calc(100% - 28px);
+      }
+
+      .article-hero {
+        padding: 62px 0 72px;
+      }
+
+      .article-hero h1 {
+        font-size: 36px;
+        line-height: 1.12;
+      }
+
+      .article-summary {
+        font-size: 13px;
+      }
+
+      .article-featured-image-section {
+        padding: 40px 0 15px;
+      }
+
+      .article-photo-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .article-photo-main,
+      .article-photo-side {
+        height: 320px;
+      }
+
+      .article-photo-caption {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 16px;
+      }
+
+      .article-sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .article-content-section {
+        padding: 30px 0 55px;
+      }
+
+      .article-body p {
+        font-size: 13px;
+      }
+
+      .article-body h2 {
+        margin-top: 35px;
+        font-size: 27px;
+      }
+
+      .article-quote {
+        padding: 25px 22px;
+      }
+
+      .article-inline-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .article-image-break {
+        margin: 28px 0;
+      }
+
+      .article-end-note {
+        padding: 25px 22px;
+      }
+
+      .article-end-note p {
+        font-size: 21px;
+      }
+
+      .article-closing-section {
+        padding-bottom: 50px;
+      }
+
+      .article-next-section {
+        padding: 45px 0 55px;
+      }
+
+      .article-next-card {
+        padding: 28px 22px;
+      }
+
+      .article-next-card a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="!bg-white">
+
+  <!-- NAVBAR -->
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="article-page">
+
+    <!-- HERO SECTION -->
+
+    <section class="article-hero">
+      <div class="article-shell">
+        <div class="article-hero-content">
+
+          <span class="article-kicker">
+            Company Updates
+          </span>
+
+          <h1>
+            AOS Orwell Marks 13th Annual Safety Day,
+            Reinforces Commitment to Building a
+            Stronger Safety Culture
+          </h1>
+
+          <p class="article-summary">
+            Under the theme &ldquo;From Compliance to Culture&rdquo;,
+            AOS Orwell reaffirms its commitment to workplace safety,
+            security awareness, employee wellbeing and individual
+            accountability across its operations.
+          </p>
+
+          <div class="article-meta">
+
+            <span>AOS Orwell</span>
+
+            <span class="article-meta-dot"></span>
+
+            <span>QHSE</span>
+
+            <span class="article-meta-dot"></span>
+
+            <span>3 min read</span>
+
+          </div>
+
+          <a href="/news.html" class="article-back">
+
+            <span class="material-symbols-outlined">
+              arrow_back
+            </span>
+
+            Back to news
+
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FEATURED PHOTOGRAPHS -->
+
+    <section class="article-featured-image-section">
+      <div class="article-shell">
+
+        <div class="article-photo-grid">
+
+          <!-- IMAGE 1 -->
+
+          <div class="article-photo-main">
+
+            <img
+              src="/images/news/safety-01.jpg"
+              alt="AOS Orwell 13th Annual Safety Day at the Homebase Facility"
+              fetchpriority="high"
+            />
+
+          </div>
+
+          <!-- IMAGE 2 -->
+
+          <div class="article-photo-side">
+
+            <img
+              src="/images/news/safety-02.jpg"
+              alt="AOS Orwell Managing Director addressing employees during Safety Day"
+            />
+
+            <div class="article-photo-caption">
+
+              <span>
+                13th Annual Safety Day
+              </span>
+
+              <strong>
+                From Compliance to Culture:
+                Making safety an integral part of how we work.
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ARTICLE CONTENT -->
+
+    <section class="article-content-section">
+
+      <div class="article-shell article-content-grid">
+
+        <!-- SIDEBAR -->
+
+        <aside class="article-sidebar">
+
+          <div class="article-side-card">
+
+            <span>
+              Story Focus
+            </span>
+
+            <h3>
+              Building a stronger safety culture
+            </h3>
+
+            <p>
+              The 13th Annual Safety Day reflects AOS Orwell&rsquo;s
+              continued commitment to fostering a proactive safety
+              culture built on shared responsibility, individual
+              accountability and consistent action.
+            </p>
+
+          </div>
+
+          <div class="article-event-details">
+
+            <h4>
+              Event Overview
+            </h4>
+
+            <div class="article-event-item">
+
+              <span class="material-symbols-outlined">
+                verified_user
+              </span>
+
+              <div>
+
+                <small>Event</small>
+
+                <strong>
+                  13th Annual Safety Day
+                </strong>
+
+              </div>
+
+            </div>
+
+            <div class="article-event-item">
+
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+
+              <div>
+
+                <small>Location</small>
+
+                <strong>
+                  Homebase Facility, Port Harcourt,
+                  Rivers State
+                </strong>
+
+              </div>
+
+            </div>
+
+            <div class="article-event-item">
+
+              <span class="material-symbols-outlined">
+                groups
+              </span>
+
+              <div>
+
+                <small>Theme</small>
+
+                <strong>
+                  From Compliance to Culture
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </aside>
+
+
+        <!-- MAIN ARTICLE -->
+
+        <article class="article-body">
+
+          <p>
+            AOS Orwell has successfully hosted the 13th edition
+            of its annual Safety Day at its Homebase Facility in
+            Port Harcourt, Rivers State, bringing employees together
+            to reaffirm the importance of workplace safety and
+            strengthen the organisation&rsquo;s commitment to
+            building a proactive safety culture.
+          </p>
+
+          <p>
+            Held under the theme
+            <strong>&ldquo;From Compliance to Culture&rdquo;</strong>,
+            this year&rsquo;s event emphasised the need to move
+            beyond regulatory compliance and make safety an integral
+            part of everyday decisions, behaviours and operations.
+          </p>
+
+          <p>
+            Addressing employees at the event, the Managing Director
+            of AOS Orwell, <strong>Akeem Ariyo</strong>, emphasised
+            the importance of remaining security-conscious both
+            within the workplace and at home. He urged employees
+            to be alert to their surroundings and take responsibility
+            for reporting suspicious activities or potential threats.
+          </p>
+
+          <p>
+            Reinforcing this message, he highlighted the catchphrase:
+          </p>
+
+
+          <!-- MANAGING DIRECTOR QUOTE -->
+
+          <blockquote class="article-quote">
+
+            <p>
+              &ldquo;If you see something, say something,
+              and when you say something, do something.&rdquo;
+            </p>
+
+            <small>
+              Akeem Ariyo, Managing Director, AOS Orwell
+            </small>
+
+          </blockquote>
+
+          <p>
+            This call to action underscored the importance of
+            vigilance, timely reporting and appropriate action
+            in promoting a safer environment for everyone.
+          </p>
+
+
+          <!-- KEYNOTE SECTION -->
+
+          <h2>
+            Embedding Safety into Organisational Culture
+          </h2>
+
+          <p>
+            A key highlight was the keynote address delivered by
+            <strong>Dr Chris Mitchel Osazuwa</strong>, Fellow and
+            Chairman of the Occupational Health and Safety
+            Association, Nigeria, Rivers State Chapter.
+          </p>
+
+          <p>
+            His address reinforced the importance of embedding
+            safety principles into organisational practices
+            and fostering a culture where everyone takes
+            responsibility for protecting themselves and others.
+          </p>
+
+
+          <!-- IMAGE 3 -->
+
+          <figure class="article-image-break">
+
+            <img
+              src="/images/news/safety-03.jpg"
+              alt="Keynote address during the AOS Orwell Annual Safety Day"
+              loading="lazy"
+            />
+
+            <figcaption>
+
+              <span class="material-symbols-outlined">
+                photo_camera
+              </span>
+
+              Keynote address at the 13th Annual Safety Day,
+              reinforcing the importance of embedding safety
+              into organisational practices.
+
+            </figcaption>
+
+          </figure>
+
+
+          <!-- QHSE COMMITMENT SECTION -->
+
+          <h2>
+            Reinforcing Our QHSE Commitment
+          </h2>
+
+          <p>
+            The event also marked significant milestones in the
+            organisation&rsquo;s ongoing safety journey, including
+            the signing of its
+            <strong>QHSE Culture Commitment</strong>, which is a
+            collection of every staff signature that demonstrates
+            a renewed general resolve to uphold quality, health,
+            safety and environmental standards across all
+            operations.
+          </p>
+
+
+          <!-- IMAGE 4 -->
+
+          <figure class="article-image-break">
+
+            <img
+              src="/images/news/safety-04.jpg"
+              alt="Signing of the AOS Orwell QHSE Culture Commitment"
+              loading="lazy"
+            />
+
+            <figcaption>
+
+              <span class="material-symbols-outlined">
+                photo_camera
+              </span>
+
+              Signing of the QHSE Culture Commitment,
+              demonstrating a shared resolve to uphold
+              quality, health, safety and environmental
+              standards.
+
+            </figcaption>
+
+          </figure>
+
+
+          <!-- SAFETY AWARDS SECTION -->
+
+          <h2>
+            Recognising Safety Excellence
+          </h2>
+
+          <p>
+            Employees who demonstrated outstanding commitment
+            to maintaining safe working practices were recognised
+            with <strong>Safety Awards</strong>, celebrating their
+            contributions to strengthening the organisation&rsquo;s
+            safety culture.
+          </p>
+
+          <p>
+            Another highlight was the unveiling of four new
+            <strong>Core Value Champions for 2027</strong>.
+            Congratulating the newly appointed champions,
+            the Managing Director encouraged them to remain
+            exemplary ambassadors of the values they represent
+            and to consistently demonstrate these values through
+            their conduct, decisions and interactions with
+            colleagues.
+          </p>
+
+
+          <!-- IMAGES 5 AND 6 -->
+
+          <div class="article-inline-gallery">
+
+            <figure class="article-gallery-item">
+
+              <img
+                src="/images/news/safety-05.jpg"
+                alt="AOS Orwell Safety Awards presentation"
+                loading="lazy"
+              />
+
+              <figcaption>
+
+                <strong>
+                  Safety Awards
+                </strong>
+
+                Recognising employees for their outstanding
+                commitment to safe working practices.
+
+              </figcaption>
+
+            </figure>
+
+            <figure class="article-gallery-item">
+
+              <img
+                src="/images/news/safety-06.jpg"
+                alt="Unveiling of AOS Orwell Core Value Champions for 2027"
+                loading="lazy"
+              />
+
+              <figcaption>
+
+                <strong>
+                  2027 Core Value Champions
+                </strong>
+
+                Celebrating the unveiling of four new
+                ambassadors of the organisation&rsquo;s
+                core values.
+
+              </figcaption>
+
+            </figure>
+
+          </div>
+
+
+          <!-- CONCLUSION -->
+
+          <h2>
+            Building a Safer Workplace
+          </h2>
+
+          <p>
+            The 13th edition of AOS Orwell Safety Day reflects
+            the company&rsquo;s continued commitment to workplace
+            safety, security awareness and employee wellbeing.
+            It also reinforces the belief that a sustainable
+            safety culture is built through shared responsibility,
+            individual accountability and consistent action.
+          </p>
+
+          <p>
+            For AOS Orwell, building a safer workplace goes
+            beyond policies and procedures. It requires every
+            individual to remain conscious of their environment,
+            make responsible choices and actively contribute
+            to protecting lives and assets.
+          </p>
+
+
+          <!-- FINAL STATEMENT -->
+
+          <div class="article-end-note">
+
+            <span>
+              Our Commitment
+            </span>
+
+            <p>
+              At AOS Orwell, safety is not just what we do.
+              It is how we work.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- FULL WIDTH CLOSING IMAGE -->
+
+    <section class="article-closing-section">
+
+      <div class="article-shell">
+
+        <!-- IMAGE 7 -->
+
+        <figure class="article-closing-image">
+
+          <img
+            src="/images/news/safety-07.jpg"
+            alt="Employees participating in the AOS Orwell 13th Annual Safety Day"
+            loading="lazy"
+          />
+
+          <figcaption>
+            AOS Orwell&rsquo;s 13th Annual Safety Day at the
+            Homebase Facility, Port Harcourt &mdash; reinforcing
+            a shared commitment to building a stronger safety culture.
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- MORE NEWS -->
+
+    <section class="article-next-section">
+
+      <div class="article-shell">
+
+        <div class="article-next-card">
+
+          <div>
+
+            <h2>
+              More from AOS Orwell
+            </h2>
+
+            <p>
+              Explore more corporate updates, industry events,
+              project stories and community initiatives
+              from across AOS Orwell.
+            </p>
+
+          </div>
+
+          <a href="/news.html">
+
+            View all news
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer
+    class="flex flex-col gap-y-10 pt-10 pb-13 px-4 md:px-20 bg-black text-white"
+  >
+
+    <div
+      class="flex flex-col gap-y-6 lg:flex-row justify-between items-start"
+    >
+
+      <img
+        src="/images/jogo.png"
+        alt="AOS Orwell"
+        class="h-15 sm:h-20 w-auto object-cover"
+      />
+
+      <div
+        class="hidden md:flex gap-x-10 text-white font-medium text-sm"
+      >
+
+        <a href="/about.html">
+          About Us
+        </a>
+
+        <a href="/services.html">
+          Services
+        </a>
+
+        <a href="/hse.html">
+          QHSE
+        </a>
+
+        <a href="/media.html">
+          Media
+        </a>
+
+        <a href="/careers.html">
+          Careers
+        </a>
+
+        <a href="/contact-us.html">
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="flex flex-col lg:flex-row items-start gap-x-15 gap-y-10"
+    >
+
+      <div
+        class="w-full lg:w-[45%] flex flex-col sm:flex-row gap-x-20 gap-y-10"
+      >
+
+        <div class="w-full">
+
+          <p
+            class="text-xs sm:text-[13px] font-medium leading-loose"
+          >
+            Providing integrated oilfield solutions across Well
+            Construction, Process Management, IPM &amp; Turnkey,
+            and Operations &amp; Maintenance to support the
+            energy industry's evolving needs.
+          </p>
+
+          <div class="mt-5 flex flex-col gap-y-2">
+
+            <h3 class="text-base font-medium">
+              Stay Connected
+            </h3>
+
+            <div class="flex gap-x-3">
+
+              <a
+                href="https://www.youtube.com/@aosorwellonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on YouTube"
+              >
+                <i class="bi bi-youtube text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/aosorwell/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on Instagram"
+              >
+                <i class="bi bi-instagram text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://x.com/AOSOrwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on X"
+              >
+                <i class="bi bi-twitter-x text-white text-lg"></i>
+              </a>
+
+              <a
+                href="https://ng.linkedin.com/company/aosorwell"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary h-10 flex justify-center items-center w-10 rounded-full hover:bg-secondary transition"
+                aria-label="AOS Orwell on LinkedIn"
+              >
+                <i class="bi bi-linkedin text-white text-lg"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- LOCATIONS -->
+
+      <div class="w-full sm:w-[35%] flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-sm sm:text-base">
+          Locations
+        </h4>
+
+        <div class="flex flex-col gap-y-3">
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Head Office
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              Plot 52/53, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Port Harcourt Office 2
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              Plot 272, Trans Amadi Industrial Layout,
+              Port Harcourt, Rivers State
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-[13px] sm:text-sm">
+              Lagos Office
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              3/5, Adeyemo Alakija Street,
+              Victoria Island, Lagos
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-y-1.5">
+
+            <p class="font-medium text-sm">
+              Ghana Office
+            </p>
+
+            <p class="text-xs sm:text-[13px] text-gray-200 leading-loose">
+              Plot 53 Apowa Light Industrial Area,
+              Sankoba, New Amanful, Takoradi, Ghana
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER LINKS -->
+
+      <div class="w-full lg:w-1/4 flex flex-col gap-y-4">
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Links
+        </h4>
+
+        <div class="flex flex-col gap-y-2">
+
+          <a
+            href="/about.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Our Story
+          </a>
+
+          <a
+            href="/management.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Management
+          </a>
+
+          <a
+            href="/media.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Media
+          </a>
+
+          <a
+            href="/policies-index.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Policy Statement
+          </a>
+
+          <a
+            href="/whistle-blower.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Whistle Blower
+          </a>
+
+          <a
+            href="/downloadables.html"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white transition"
+          >
+            Downloadables
+          </a>
+
+        </div>
+
+        <h4 class="font-medium text-[13px] sm:text-base">
+          Email Us
+        </h4>
+
+        <div class="flex flex-col gap-y-1">
+
+          <a
+            href="mailto:marketing@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            marketing@aosorwell.com
+          </a>
+
+          <a
+            href="mailto:sales@aosorwell.com"
+            class="text-xs sm:text-[13px] text-gray-200 hover:text-white"
+          >
+            sales@aosorwell.com
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT FORM -->
+
+      <div class="w-full lg:w-2/5">
+
+        <h4 class="font-medium text-base">
+          Contact Us
+        </h4>
+
+        <form class="flex flex-col gap-y-5 mt-2">
+
+          <input
+            type="text"
+            placeholder="Company Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 text-sm border-b border-b-gray-300 focus:outline-none focus:border-b-primary resize-y"
+          ></textarea>
+
+          <div class="w-full flex justify-end">
+
+            <button
+              type="submit"
+              class="w-fit bg-primary text-white text-sm px-5 py-2 rounded-md hover:bg-secondary transition"
+            >
+              SEND
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- COPYRIGHT -->
+
+  <div
+    class="bg-black text-white text-[11px] sm:text-xs px-4 md:px-20 py-6 text-center w-full border-t border-gray-600"
+  >
+    &copy; 2026 AOS Orwell. All rights reserved.
+  </div>
+
+
+  <!-- NAVBAR SCRIPT -->
+
+  <script>
+
+    fetch("/navbar.html")
+      .then(function (response) {
+
+        if (!response.ok) {
+          throw new Error("Navbar file not found");
+        }
+
+        return response.text();
+
+      })
+      .then(function (data) {
+
+        document.getElementById(
+          "navbar-placeholder"
+        ).innerHTML = data;
+
+        const navbarScript = document.createElement("script");
+
+        navbarScript.src = "/navbar.js?v=20261012";
+
+        document.body.appendChild(navbarScript);
+
+      })
+      .catch(function (error) {
+
+        console.error(
+          "Navbar failed to load:",
+          error
+        );
+
+      });
+
+  </script>
+
+</body>
+</html>
